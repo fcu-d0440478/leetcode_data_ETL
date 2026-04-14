@@ -1,0 +1,77 @@
+{
+    "data": {
+        "question": {
+            "questionId": "1225",
+            "questionFrontendId": "1126",
+            "boundTopicId": null,
+            "title": "Active Businesses",
+            "titleSlug": "active-businesses",
+            "content": "<p>Table: <code>Events</code></p>\n\n<pre>\n+---------------+---------+\n| Column Name   | Type    |\n+---------------+---------+\n| business_id   | int     |\n| event_type    | varchar |\n| occurences    | int     | \n+---------------+---------+\n(business_id, event_type) is the primary key of this table.\nEach row in the table logs the info that an event of some type occurred at some business for a number of times.\n</pre>\n\n<p>&nbsp;</p>\n\n<p>The <strong>average activity</strong> for a particular <code>event_type</code> is the average <code>occurences</code> across all companies that have this event.</p>\n\n<p>An <strong>active business</strong> is a business that has <strong>more than one</strong> <code>event_type</code> such that their <code>occurences</code> is <strong>strictly greater</strong> than the average activity for that event.</p>\n\n<p>Write an SQL query to find all <strong>active businesses</strong>.</p>\n\n<p>The query result format is in the following example:</p>\n\n<p>&nbsp;</p>\n\n<pre>\nEvents table:\n+-------------+------------+------------+\n| business_id | event_type | occurences |\n+-------------+------------+------------+\n| 1           | reviews    | 7          |\n| 3           | reviews    | 3          |\n| 1           | ads        | 11         |\n| 2           | ads        | 7          |\n| 3           | ads        | 6          |\n| 1           | page views | 3          |\n| 2           | page views | 12         |\n+-------------+------------+------------+\n\nResult table:\n+-------------+\n| business_id |\n+-------------+\n| 1           |\n+-------------+ \nThe average activity for each event can be calculated as follows:\n- &#39;reviews&#39;: (7+3)/2 = 5\n- &#39;ads&#39;: (11+7+6)/3 = 8\n- &#39;page views&#39;: (3+12)/2 = 7.5\nThe business with id=1 has 7 &#39;reviews&#39; events (more than 5) and 11 &#39;ads&#39; events (more than 8), so it is an active business.\n</pre>\n",
+            "translatedTitle": null,
+            "translatedContent": null,
+            "isPaidOnly": true,
+            "difficulty": "Medium",
+            "likes": 136,
+            "dislikes": 14,
+            "isLiked": null,
+            "similarQuestions": "[]",
+            "exampleTestcases": "{\"headers\":{\"Events\":[\"business_id\",\"event_type\",\"occurences\"]},\"rows\":{\"Events\":[[1,\"reviews\",7],[3,\"reviews\",3],[1,\"ads\",11],[2,\"ads\",7],[3,\"ads\",6],[1,\"page views\",3],[2,\"page views\",12]]}}",
+            "contributors": [],
+            "topicTags": [
+                {
+                    "name": "Database",
+                    "slug": "database",
+                    "translatedName": null,
+                    "__typename": "TopicTagNode"
+                }
+            ],
+            "companyTagStats": "{\"3\": [{\"taggedByAdmin\": true, \"name\": \"Yelp\", \"slug\": \"yelp\", \"timesEncountered\": 5}], \"1\": [], \"2\": []}",
+            "codeSnippets": [
+                {
+                    "lang": "MySQL",
+                    "langSlug": "mysql",
+                    "code": "# Write your MySQL query statement below\n",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "MS SQL Server",
+                    "langSlug": "mssql",
+                    "code": "/* Write your T-SQL query statement below */\n",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Oracle",
+                    "langSlug": "oraclesql",
+                    "code": "/* Write your PL/SQL query statement below */\n",
+                    "__typename": "CodeSnippetNode"
+                }
+            ],
+            "stats": "{\"totalAccepted\": \"20.7K\", \"totalSubmission\": \"30.4K\", \"totalAcceptedRaw\": 20743, \"totalSubmissionRaw\": 30352, \"acRate\": \"68.3%\"}",
+            "hints": [],
+            "solution": null,
+            "status": null,
+            "sampleTestCase": "{\"headers\":{\"Events\":[\"business_id\",\"event_type\",\"occurences\"]},\"rows\":{\"Events\":[[1,\"reviews\",7],[3,\"reviews\",3],[1,\"ads\",11],[2,\"ads\",7],[3,\"ads\",6],[1,\"page views\",3],[2,\"page views\",12]]}}",
+            "metaData": "{\n  \"mysql\": [\n    \"Create table If Not Exists Events (business_id int, event_type varchar(10), occurences int)\"\n  ],\n  \"mssql\": [\n    \"create table Events (business_id int, event_type varchar(10), occurences int)\"\n  ],\n  \"oraclesql\": [\n    \"create table Events (business_id int, event_type varchar(10), occurences int)\"\n  ],\n  \"database\": true\n}",
+            "judgerAvailable": true,
+            "judgeType": "large",
+            "mysqlSchemas": [
+                "Create table If Not Exists Events (business_id int, event_type varchar(10), occurences int)",
+                "Truncate table Events",
+                "insert into Events (business_id, event_type, occurences) values ('1', 'reviews', '7')",
+                "insert into Events (business_id, event_type, occurences) values ('3', 'reviews', '3')",
+                "insert into Events (business_id, event_type, occurences) values ('1', 'ads', '11')",
+                "insert into Events (business_id, event_type, occurences) values ('2', 'ads', '7')",
+                "insert into Events (business_id, event_type, occurences) values ('3', 'ads', '6')",
+                "insert into Events (business_id, event_type, occurences) values ('1', 'page views', '3')",
+                "insert into Events (business_id, event_type, occurences) values ('2', 'page views', '12')"
+            ],
+            "enableRunCode": true,
+            "enableTestMode": false,
+            "enableDebugger": false,
+            "envInfo": "{\"mysql\": [\"MySQL\", \"<p><code>MySQL 8.0</code>.</p>\"], \"mssql\": [\"MS SQL Server\", \"<p><code>mssql server 2019</code>.</p>\"], \"oraclesql\": [\"Oracle\", \"<p><code>Oracle Sql 11.2</code>.</p>\"]}",
+            "libraryUrl": null,
+            "adminUrl": null,
+            "__typename": "QuestionNode"
+        }
+    }
+}

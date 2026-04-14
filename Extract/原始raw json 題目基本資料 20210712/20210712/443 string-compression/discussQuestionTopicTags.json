@@ -1,0 +1,874 @@
+{
+    "data": {
+        "discussQuestionTopicTags": [
+            {
+                "id": "34",
+                "name": "python",
+                "slug": "python",
+                "numTopics": 42,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "123",
+                "name": "c++",
+                "slug": "c",
+                "numTopics": 34,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "135",
+                "name": "java",
+                "slug": "java",
+                "numTopics": 31,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "8214",
+                "name": "python 3",
+                "slug": "python-3",
+                "numTopics": 25,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "200",
+                "name": "cpp",
+                "slug": "cpp",
+                "numTopics": 22,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "98",
+                "name": "javascript",
+                "slug": "javascript",
+                "numTopics": 22,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "14",
+                "name": "java-solution",
+                "slug": "java-solution",
+                "numTopics": 14,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "46",
+                "name": "two-pointers",
+                "slug": "two-pointers",
+                "numTopics": 12,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6668",
+                "name": "constant space",
+                "slug": "constant-space-2",
+                "numTopics": 11,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "415",
+                "name": "easy",
+                "slug": "easy",
+                "numTopics": 10,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6167",
+                "name": "easy-understanding",
+                "slug": "easy-understanding",
+                "numTopics": 10,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6698",
+                "name": "python3",
+                "slug": "python3",
+                "numTopics": 8,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "564",
+                "name": "c#",
+                "slug": "c-2",
+                "numTopics": 7,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7355",
+                "name": "two pointers",
+                "slug": "two-pointers-2",
+                "numTopics": 7,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7636",
+                "name": "inplace",
+                "slug": "inplace",
+                "numTopics": 6,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "8467",
+                "name": "linear time",
+                "slug": "linear-time-2",
+                "numTopics": 6,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6081",
+                "name": "simple",
+                "slug": "simple",
+                "numTopics": 6,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7934",
+                "name": "c",
+                "slug": "c-3",
+                "numTopics": 4,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "10496",
+                "name": "cpp solution",
+                "slug": "cpp-solution-2",
+                "numTopics": 4,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7253",
+                "name": "easy-to-understand",
+                "slug": "easy-to-understand",
+                "numTopics": 4,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "9228",
+                "name": "easy-undestand",
+                "slug": "easy-undestand",
+                "numTopics": 4,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "191",
+                "name": "in-place",
+                "slug": "in-place",
+                "numTopics": 4,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "32",
+                "name": "string",
+                "slug": "string",
+                "numTopics": 4,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "9204",
+                "name": "string compression",
+                "slug": "string-compression",
+                "numTopics": 4,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7219",
+                "name": "easytounderstand",
+                "slug": "easytounderstand",
+                "numTopics": 3,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7986",
+                "name": "explained",
+                "slug": "explained",
+                "numTopics": 3,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7893",
+                "name": "js",
+                "slug": "js",
+                "numTopics": 3,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6812",
+                "name": "1ms",
+                "slug": "1ms",
+                "numTopics": 2,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "9480",
+                "name": "constant memory",
+                "slug": "constant-memory",
+                "numTopics": 2,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "9730",
+                "name": "efficient solution",
+                "slug": "efficient-solution",
+                "numTopics": 2,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "335",
+                "name": "golang",
+                "slug": "golang",
+                "numTopics": 2,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6607",
+                "name": "golang-solution",
+                "slug": "golang-solution",
+                "numTopics": 2,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "11778",
+                "name": "help needed",
+                "slug": "help-needed",
+                "numTopics": 2,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "111",
+                "name": "iterative",
+                "slug": "iterative",
+                "numTopics": 2,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "11447",
+                "name": "no-improvement",
+                "slug": "no-improvement",
+                "numTopics": 2,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7525",
+                "name": "question-not-clear",
+                "slug": "question-not-clear",
+                "numTopics": 2,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "8733",
+                "name": "single pass",
+                "slug": "single-pass",
+                "numTopics": 2,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7112",
+                "name": "sliding window",
+                "slug": "sliding-window-2",
+                "numTopics": 2,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7433",
+                "name": "straight-forward",
+                "slug": "straight-forward",
+                "numTopics": 2,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "10241",
+                "name": "string-to-integer",
+                "slug": "string-to-integer-2",
+                "numTopics": 2,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6160",
+                "name": "two-pointer",
+                "slug": "two-pointer",
+                "numTopics": 2,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "8842",
+                "name": "#best",
+                "slug": "best-2",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "9037",
+                "name": "#c++",
+                "slug": "c-4",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "8960",
+                "name": "#cpp",
+                "slug": "cpp-2",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "8677",
+                "name": "#easy",
+                "slug": "easy-2",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "8230",
+                "name": "#easy-understand",
+                "slug": "easy-understand-3",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "11779",
+                "name": "#easy-understanding",
+                "slug": "easy-understanding-3",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "11789",
+                "name": "#easysolution",
+                "slug": "easysolution",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "11510",
+                "name": "#kotlin",
+                "slug": "kotlin-2",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "8046",
+                "name": "#python",
+                "slug": "python-2",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "8447",
+                "name": "#python3",
+                "slug": "python3-2",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6405",
+                "name": "0ms",
+                "slug": "0ms",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "12346",
+                "name": "0ms runtime",
+                "slug": "0ms-runtime",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "10827",
+                "name": "1 ms",
+                "slug": "1-ms",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "13842",
+                "name": "100 faster runtime",
+                "slug": "100-faster-runtime",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "8964",
+                "name": "100 space",
+                "slug": "100-space",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "8967",
+                "name": "100 speed",
+                "slug": "100-speed",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "9949",
+                "name": "99 faster",
+                "slug": "99-faster",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "12547",
+                "name": "beginner friendly",
+                "slug": "beginner-friendly",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "16570",
+                "name": "broken-questionn",
+                "slug": "broken-questionn",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "9309",
+                "name": "c programming",
+                "slug": "c-programming",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6404",
+                "name": "clean code",
+                "slug": "clean-code",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "8675",
+                "name": "collections",
+                "slug": "collections-2",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "8970",
+                "name": "commentary",
+                "slug": "commentary",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "11875",
+                "name": "comments added",
+                "slug": "comments-added",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6481",
+                "name": "concise",
+                "slug": "concise",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "353",
+                "name": "csharp",
+                "slug": "csharp",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "8319",
+                "name": "easy to read",
+                "slug": "easy-to-read",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7380",
+                "name": "easy understand",
+                "slug": "easy-understand",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7670",
+                "name": "easy-understand",
+                "slug": "easy-understand-2",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6750",
+                "name": "efficient",
+                "slug": "efficient",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "8145",
+                "name": "esay-uderstand",
+                "slug": "esay-uderstand",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6590",
+                "name": "fast",
+                "slug": "fast",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6793",
+                "name": "fast and simple",
+                "slug": "fast-and-simple",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6426",
+                "name": "fast-solution",
+                "slug": "fast-solution",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "13332",
+                "name": "give stars if you like",
+                "slug": "give-stars-if-you-like",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "8492",
+                "name": "go lang",
+                "slug": "go-lang",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "5943",
+                "name": "go-solution",
+                "slug": "go-solution",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "8207",
+                "name": "i",
+                "slug": "i",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6717",
+                "name": "if-else",
+                "slug": "if-else",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "8861",
+                "name": "in place",
+                "slug": "in-place-3",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "10075",
+                "name": "interview preparation",
+                "slug": "interview-preparation-2",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7059",
+                "name": "java solution",
+                "slug": "java-solution-2",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "10497",
+                "name": "javascript solution",
+                "slug": "javascript-solution",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "14185",
+                "name": "just read",
+                "slug": "just-read",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7226",
+                "name": "kotlin",
+                "slug": "kotlin",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "14023",
+                "name": "kotlin-solution",
+                "slug": "kotlin-solution",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "14993",
+                "name": "kotlinvim",
+                "slug": "kotlinvim",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6686",
+                "name": "linear",
+                "slug": "linear",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "325",
+                "name": "linear-time",
+                "slug": "linear-time",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "5839",
+                "name": "no extra space",
+                "slug": "no-extra-space",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "9522",
+                "name": "on",
+                "slug": "on",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6815",
+                "name": "one-pointer",
+                "slug": "one-pointer",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "1",
+                "name": "optimal",
+                "slug": "optimal",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "5966",
+                "name": "pointer",
+                "slug": "pointer",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7960",
+                "name": "python2",
+                "slug": "python2",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "13846",
+                "name": "python3.8",
+                "slug": "python38",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6754",
+                "name": "readable",
+                "slug": "readable",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "228",
+                "name": "recursive",
+                "slug": "recursive",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "382",
+                "name": "ruby",
+                "slug": "ruby",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7898",
+                "name": "rust",
+                "slug": "rust",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "8785",
+                "name": "self-explanatory",
+                "slug": "self-explanatory",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "8456",
+                "name": "simple solution",
+                "slug": "simple-solution-2",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6189",
+                "name": "simplest",
+                "slug": "simplest",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6767",
+                "name": "sliding-window",
+                "slug": "sliding-window",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "9254",
+                "name": "slidingwindow",
+                "slug": "slidingwindow",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7504",
+                "name": "solition-sharing",
+                "slug": "solition-sharing",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "351",
+                "name": "solution",
+                "slug": "solution",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6909",
+                "name": "solution-explaining",
+                "slug": "solution-explaining",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7579",
+                "name": "splice",
+                "slug": "splice",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "12",
+                "name": "string-operation",
+                "slug": "string-operation",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "15469",
+                "name": "stringcompression",
+                "slug": "stringcompression",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "181",
+                "name": "strings",
+                "slug": "strings",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "346",
+                "name": "swift",
+                "slug": "swift",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "31",
+                "name": "test-case",
+                "slug": "test-case",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6043",
+                "name": "tricky",
+                "slug": "tricky",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6641",
+                "name": "two pointer",
+                "slug": "two-pointer-2",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "17732",
+                "name": "two pointer algorithm",
+                "slug": "two-pointer-algorithm",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "8555",
+                "name": "typescript",
+                "slug": "typescript",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "10223",
+                "name": "unit-test",
+                "slug": "unit-test",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6172",
+                "name": "while",
+                "slug": "while",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "8216",
+                "name": "wrong answer",
+                "slug": "wrong-answer-2",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "8968",
+                "name": "wrong output",
+                "slug": "wrong-output",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "10576",
+                "name": "wrong-solution",
+                "slug": "wrong-solution",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            }
+        ]
+    }
+}

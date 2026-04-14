@@ -1,0 +1,43 @@
+{
+    "data": {
+        "topic": {
+            "id": 711754,
+            "viewCount": 33276,
+            "topLevelCommentCount": 31,
+            "subscribed": false,
+            "title": "Word Pattern",
+            "pinned": false,
+            "tags": [],
+            "hideFromTrending": false,
+            "post": {
+                "id": 1313177,
+                "voteCount": 0,
+                "voteStatus": 0,
+                "content": "",
+                "updationDate": 1593443979,
+                "creationDate": 1593443979,
+                "status": null,
+                "isHidden": null,
+                "coinRewards": [],
+                "author": {
+                    "isDiscussAdmin": false,
+                    "isDiscussStaff": false,
+                    "username": "arkaung",
+                    "nameColor": null,
+                    "activeBadge": null,
+                    "profile": {
+                        "userAvatar": "https://assets.leetcode.com/users/arkaung/avatar_1587960505.png",
+                        "reputation": 3680,
+                        "__typename": "UserProfileNode"
+                    },
+                    "isActive": true,
+                    "__typename": "UserNode"
+                },
+                "authorIsModerator": false,
+                "isOwnPost": false,
+                "__typename": "PostNode"
+            },
+            "__typename": "TopicNode"
+        }
+    }
+}

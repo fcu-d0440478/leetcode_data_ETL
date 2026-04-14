@@ -1,0 +1,43 @@
+{
+    "data": {
+        "topic": {
+            "id": 873813,
+            "viewCount": 27989,
+            "topLevelCommentCount": 27,
+            "subscribed": false,
+            "title": "House Robber III",
+            "pinned": false,
+            "tags": [],
+            "hideFromTrending": false,
+            "post": {
+                "id": 1594154,
+                "voteCount": 0,
+                "voteStatus": 0,
+                "content": "",
+                "updationDate": 1601567189,
+                "creationDate": 1601567189,
+                "status": null,
+                "isHidden": null,
+                "coinRewards": [],
+                "author": {
+                    "isDiscussAdmin": false,
+                    "isDiscussStaff": false,
+                    "username": "neal99",
+                    "nameColor": null,
+                    "activeBadge": null,
+                    "profile": {
+                        "userAvatar": "https://assets.leetcode.com/users/neal99/avatar_1537169041.png",
+                        "reputation": 572,
+                        "__typename": "UserProfileNode"
+                    },
+                    "isActive": true,
+                    "__typename": "UserNode"
+                },
+                "authorIsModerator": false,
+                "isOwnPost": false,
+                "__typename": "PostNode"
+            },
+            "__typename": "TopicNode"
+        }
+    }
+}

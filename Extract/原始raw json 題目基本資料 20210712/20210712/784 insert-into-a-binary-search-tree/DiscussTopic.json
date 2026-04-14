@@ -1,0 +1,43 @@
+{
+    "data": {
+        "topic": {
+            "id": 280962,
+            "viewCount": 25401,
+            "topLevelCommentCount": 12,
+            "subscribed": false,
+            "title": "Insert into a BST",
+            "pinned": false,
+            "tags": [],
+            "hideFromTrending": false,
+            "post": {
+                "id": 547872,
+                "voteCount": 0,
+                "voteStatus": 0,
+                "content": "",
+                "updationDate": 1556119388,
+                "creationDate": 1556119388,
+                "status": null,
+                "isHidden": null,
+                "coinRewards": [],
+                "author": {
+                    "isDiscussAdmin": false,
+                    "isDiscussStaff": false,
+                    "username": "andvary",
+                    "nameColor": null,
+                    "activeBadge": null,
+                    "profile": {
+                        "userAvatar": "https://assets.leetcode.com/users/andvary/avatar_1547455970.png",
+                        "reputation": 1502,
+                        "__typename": "UserProfileNode"
+                    },
+                    "isActive": true,
+                    "__typename": "UserNode"
+                },
+                "authorIsModerator": false,
+                "isOwnPost": false,
+                "__typename": "PostNode"
+            },
+            "__typename": "TopicNode"
+        }
+    }
+}

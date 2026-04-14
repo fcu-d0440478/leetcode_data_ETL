@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "1446",
+            "article": "{\"id\": 918, \"url\": \"/articles/angle-between-hands-of-a-clock/\", \"topicId\": 555309}",
+            "solution": {
+                "id": "918",
+                "content": "[TOC]\n\n## Solution\n\n---\n\n#### Approach 1: Math\n\n**Intuition**\n\nThe idea is to calculate separately the angles between 0-minutes \nvertical line and each hand. The answer is the difference between these\ntwo angles. \n\n![fig](../Figures/1344/diff.png)\n\n**Minute Hand Angle**\n\nLet's start from the minute hand. The whole circle is equal to $$360°$$ or \n60 minutes, _i.e._ minute hand moves $$1 \\text{ min} = 360° / 60 = 6°$$ degree\nat each minute.\n\n![fig](../Figures/1344/one_min2.png)\n\nNow one could easily find an angle between 0-minutes vertical line and \na minute hand: $$\\text{minutes\\_angle} = \\text{minutes} \\times 6°$$.\n\n![fig](../Figures/1344/qq_min2.png)\n\n**Hour Hand Angle**\n\nSimilarly with the minute hand angle,\nthe whole circle is equal to $$360°$$ or \n12 hours, hence for each hour,\nthe hour hand moves $$1 \\text{h} = 360° / 12 = 30°$$ degree.\n\n![fig](../Figures/1344/hour.png)\n\nNow for the \"minutes = 0\" case one could easily find an angle \nbetween 12-hour vertical line and an hour hand: \n$$\\text{hour\\_angle} = \\text{hour} \\times 30°$$.\n\n![fig](../Figures/1344/qq_h.png)\n\nNote that for 12-hour the actual angle is zero, therefore the\nexpression has to be corrected \n$$\\text{hour\\_angle} = (\\text{hour mod } 12) \\ \\times 30°$$.\n\nIn a more general case where \"minutes > 0\", \none has to take into account an additional\nmovement of hour hand: it doesn't jump between the integer values\nbut follows the movement of minute hand as well\n\n$$\n\\text{hour\\_angle} = \\left(\\text{hour mod } 12 + \\text{minutes} / 60 \\right)\\times 30°\n$$\n\n![fig](../Figures/1344/minutes_corr2.png)\n\n**Algorithm**\n\n- Initialize the constants: `one_min_angle = 6`,\n`one_hour_angle = 30`.\n\n- The angle between minute hand and 0-minutes vertical line is\n`minutes_angle = one_min_angle * minutes`.\n\n- The angle between hour hand and 12-hour vertical line is \n`hour_angle = (hour % 12 + minutes / 60) * one_hour_angle`.\n\n- Find the difference: `diff = abs(hour_angle - minutes_angle)`.\n\n- Return the smallest angle: `min(diff, 360 - diff)`.\n\n**Implementation**\n\n<iframe src=\"https://leetcode.com/playground/WRkvokQq/shared\" frameBorder=\"0\" width=\"100%\" height=\"276\" name=\"WRkvokQq\"></iframe>\n\n**Complexity Analysis**\n\n* Time complexity : $$\\mathcal{O}(1)$$.\n \n* Space complexity : $$\\mathcal{O}(1)$$.\n<br /> \n<br />",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": true,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "866",
+                    "count": 24,
+                    "average": 4.167,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

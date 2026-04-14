@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "684",
+            "article": "{\"id\": 250, \"url\": \"/articles/redundant-connection/\", \"topicId\": 127469}",
+            "solution": {
+                "id": "250",
+                "content": "[TOC]\n\n#### Approach #1: DFS [Accepted]\n\n**Intuition and Algorithm**\n\nFor each edge `(u, v)`, traverse the graph with a depth-first search to see if we can connect `u` to `v`.  If we can, then it must be the duplicate edge.\n\n<iframe src=\"https://leetcode.com/playground/W7EXu5ND/shared\" frameBorder=\"0\" name=\"W7EXu5ND\" width=\"100%\" height=\"515\"></iframe>\n\n**Complexity Analysis**\n\n* Time Complexity:  $$O(N^2)$$ where $$N$$ is the number of vertices (and also the number of edges) in the graph.  In the worst case, for every edge we include, we have to search every previously-occurring edge of the graph.\n\n* Space Complexity:  $$O(N)$$.  The current construction of the graph has at most $$N$$ nodes.\n\n---\n#### Approach #2: Union-Find [Accepted]\n\n**Intuition and Algorithm**\n\nIf we are familiar with a Disjoint Set Union (DSU) data structure, we can use this in a straightforward manner to solve the problem: we simply find the first edge occurring in the graph that is already connected.  The rest of this explanation will focus on the details of implementing DSU.\n\nA DSU data structure can be used to maintain knowledge of the connected components of a graph, and query for them quickly.  In particular, we would like to support two operations:\n\n* `dsu.find(node x)`, which outputs a unique id so that two nodes have the same id if and only if they are in the same connected component, and:\n\n* `dsu.union(node x, node y)`, which draws an edge `(x, y)` in the graph, connecting the components with id `find(x)` and `find(y)` together.\n\nTo achieve this, we keep track of `parent`, which remembers the `id` of a smaller node in the same connected component.  If the node is it's own parent, we call this the *leader* of that connected component.\n\nA naive implementation of a DSU structure would look something like this:\n\n*Psuedocode*\n\n<iframe src=\"https://leetcode.com/playground/sCjT3wyq/shared\" frameBorder=\"0\" name=\"sCjT3wyq\" width=\"100%\" height=\"190\"></iframe>\n\nWe use two techniques to improve the run-time complexity: *path compression*, and *union-by-rank*.\n\n* Path compression involves changing the `x = parent[x]` in the `find` function to `parent[x] = find(parent[x])`.  Basically, as we compute the correct leader for x, we should remember our calculation.\n\n* Union-by-rank involves distributing the workload of `find` across leaders evenly.  Whenever we `dsu.union(x, y)`, we have two leaders `xr, yr` and we have to choose whether we want `parent[x] = yr` or `parent[y] = xr`.  We choose the leader that has a higher following to pick up a new follower.  \nSpecifically, the meaning of `rank` is that there are less than `2 ^ rank[x]` followers of `x`.  This strategy can be shown to give us better bounds for how long the recursive loop in `dsu.find` could run for.\n\n<iframe src=\"https://leetcode.com/playground/tFfjEuXo/shared\" frameBorder=\"0\" name=\"tFfjEuXo\" width=\"100%\" height=\"515\"></iframe>\n\n*Alternate Implementation of DSU without Union-By-Rank*\n<iframe src=\"https://leetcode.com/playground/DzMVxYRc/shared\" frameBorder=\"0\" name=\"DzMVxYRc\" width=\"100%\" height=\"207\"></iframe>\n\n<iframe src=\"https://leetcode.com/playground/YgdvM9bJ/shared\" frameBorder=\"0\" name=\"YgdvM9bJ\" width=\"100%\" height=\"515\"></iframe>\n\n**Complexity Analysis**\n\n* Time Complexity:  $$O(N\\alpha(N)) \\approx O(N)$$, where $$N$$ is the number of vertices (and also the number of edges) in the graph, and $$\\alpha$$ is the *Inverse-Ackermann* function.  We make up to $$N$$ queries of `dsu.union`, which takes (amortized) $$O(\\alpha(N))$$ time.  Outside the scope of this article, it can be shown why `dsu.union` has $$O(\\alpha(N))$$ complexity, what the Inverse-Ackermann function is, and why $$O(\\alpha(N))$$ is approximately $$O(1)$$.\n\n* Space Complexity:  $$O(N)$$.  The current construction of the graph (embedded in our `dsu` structure) has at most $$N$$ nodes.",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "245",
+                    "count": 174,
+                    "average": 4.161,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

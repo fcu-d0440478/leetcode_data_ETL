@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "737",
+            "article": "{\"id\": 301, \"url\": \"/articles/sentence-similarity-ii/\", \"topicId\": 127679}",
+            "solution": {
+                "id": "301",
+                "content": "[TOC]\n\n#### Approach #1: Depth-First Search [Accepted]\n\n**Intuition**\n\nTwo words are similar if they are the same, or there is a path connecting them from edges represented by `pairs`.\n\nWe can check whether this path exists by performing a depth-first search from a word and seeing if we reach the other word.  The search is performed on the underlying graph specified by the edges in `pairs`.\n\n**Algorithm**\n\nWe start by building our `graph` from the edges in `pairs`.  \n\nThe specific algorithm we go for is an iterative depth-first search.  The implementation we go for is a typical \"visitor pattern\": when searching whether there is a path from `w1 = words1[i]` to `w2 = words2[i]`, `stack` will contain all the nodes that are queued up for processing, while `seen` will be all the nodes that have been queued for processing (whether they have been processed or not).\n\n<iframe src=\"https://leetcode.com/playground/TL6SiGPy/shared\" frameBorder=\"0\" width=\"100%\" height=\"500\" name=\"TL6SiGPy\"></iframe>\n\n**Complexity Analysis**\n\n* Time Complexity: $$O(NP)$$, where $$N$$ is the maximum length of `words1` and `words2`, and $$P$$ is the length of `pairs`.  Each of $$N$$ searches could search the entire graph.\n\n* Space Complexity: $$O(P)$$, the size of `pairs`.\n\n---\n#### Approach #2: Union-Find [Accepted]\n\n**Intuition**\n\nAs in *Approach #1*, we want to know if there is path connecting two words from edges represented by `pairs`.\n\nOur problem comes down to finding the connected components of a graph.  This is a natural fit for a *Disjoint Set Union* (DSU) structure.\n\n**Algorithm**\n\nDraw edges between words if they are similar.  For easier interoperability between our DSU template, we will map each `word` to some integer `ix = index[word]`.  Then, `dsu.find(ix)` will tell us a unique id representing what component that word is in.\n\nFor more information on DSU, please look at *Approach #2* in the [article here](https://leetcode.com/articles/redundant-connection/).  For brevity, the solutions showcased below do not use *union-by-rank*.\n\nAfter putting each word in `pairs` into our DSU template, we check successive pairs of words `w1, w2 = words1[i], words2[i]`.  We require that `w1 == w2`, or `w1` and `w2` are in the same component.  This is easily checked using `dsu.find`.\n\n<iframe src=\"https://leetcode.com/playground/b2FAdLmt/shared\" frameBorder=\"0\" width=\"100%\" height=\"500\" name=\"b2FAdLmt\"></iframe>\n\n\n**Complexity Analysis**\n\n* Time Complexity: $$O(N \\log P + P)$$, where $$N$$ is the maximum length of `words1` and `words2`, and $$P$$ is the length of `pairs`.  If we used union-by-rank, this complexity improves to $$O(N * \\alpha(P) + P) \\approx O(N + P)$$, where $$\\alpha$$ is the *Inverse-Ackermann* function.\n\n* Space Complexity: $$O(P)$$, the size of `pairs`.",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": true,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "296",
+                    "count": 15,
+                    "average": 3.533,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

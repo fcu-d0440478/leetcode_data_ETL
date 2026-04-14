@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "143",
+            "article": "{\"id\": 932, \"url\": \"/articles/reorder-list/\", \"topicId\": 577469}",
+            "solution": {
+                "id": "932",
+                "content": "[TOC]\n\n## Solution\n\n---\n\n#### Solution Bricks\n\nThis problem is a combination of these three easy problems:\n\n- [Middle of the Linked List](https://leetcode.com/articles/middle-of-the-linked-list/).\n\n- [Reverse Linked List](https://leetcode.com/articles/reverse-linked-list/).\n\n- [Merge Two Sorted Lists](https://leetcode.com/articles/merged-two-sorted-lists/).\n\n<br /> \n<br />\n\n\n---\n#### Approach 1: Reverse the Second Part of the List and Merge Two Sorted Lists\n\n**Overview**\n\n- Find a middle node of the linked list. \nIf there are two middle nodes, return the second middle node.\nExample: for the list `1->2->3->4->5->6`, the middle element is `4`.\n\n- Once a middle node has been found, reverse the second part of the list.\nExample: convert `1->2->3->4->5->6` into `1->2->3->4` and `6->5->4`.\n\n- Now merge the two sorted lists.\nExample: merge `1->2->3->4` and `6->5->4` into `1->6->2->5->3->4`.\n\n![append](../Figures/143/overview.png)\n\nNow let's check each algorithm part in more detail.\n\n**Find a Middle Node**\n\nLet's use two pointers, `slow` and `fast`. \nWhile the slow pointer moves one step forward `slow = slow.next`, \nthe fast pointer moves two steps forward `fast = fast.next.next`, \n_i.e._ `fast` traverses twice as fast as `slow`. \nWhen the fast pointer reaches the end of the list, \nthe slow pointer should be in the middle.\n\n![append](../Figures/143/slow_fast.png)\n\n<iframe src=\"https://leetcode.com/playground/GeNJhikz/shared\" frameBorder=\"0\" width=\"100%\" height=\"174\" name=\"GeNJhikz\"></iframe>\n\n**Reverse the Second Part of the List**\n\nLet's traverse the list starting from the middle node `slow` and its virtual\npredecessor `None`.\nFor each current node, save its neighbours:\nthe previous node `prev` and the next node `tmp = curr.next`.\n\nWhile you're moving along the list, \nchange the node's next pointer to point to the previous node: `curr.next = prev`,\nand shift the current node to the right for the next iteration: \n`prev = curr`, `curr = tmp`. \n \n![append](../Figures/143/reverse2.png)\n\n<iframe src=\"https://leetcode.com/playground/Rngn8AQV/shared\" frameBorder=\"0\" width=\"100%\" height=\"242\" name=\"Rngn8AQV\"></iframe>\n\nThere is a more elegant way to do it in Python:\n\n<iframe src=\"https://leetcode.com/playground/u4cutXZn/shared\" frameBorder=\"0\" width=\"100%\" height=\"157\" name=\"u4cutXZn\"></iframe>\n\n**Merge Two Sorted Lists**\n\nThis algorithm is similar to the one for list reversal.\n\nLet's pick the first node of each list - first and second, and save their successors.\nWhile you're traversing the list, \nset the first node's next pointer to point to the second node, \nand the second node's next pointer to point to the successor of\nthe first node.\nFor this iteration the job is done, and for the next iteration \nmove to the previously saved nodes' successors.   \n\n![append](../Figures/143/first_second.png)\n\n<iframe src=\"https://leetcode.com/playground/9t4zjDtN/shared\" frameBorder=\"0\" width=\"100%\" height=\"259\" name=\"9t4zjDtN\"></iframe>\n\nOnce again, there is a way to make things simple in Python\n\n<iframe src=\"https://leetcode.com/playground/CKZJh2mw/shared\" frameBorder=\"0\" width=\"100%\" height=\"157\" name=\"CKZJh2mw\"></iframe>\n\n**Implementation**\n\nNow it's time to put all the pieces together.\n\n<iframe src=\"https://leetcode.com/playground/LRX8BZhb/shared\" frameBorder=\"0\" width=\"100%\" height=\"500\" name=\"LRX8BZhb\"></iframe>\n\n**Complexity Analysis**\n\n* Time complexity: $$\\mathcal{O}(N)$$. There are three steps here.\nTo identify the middle node takes $$\\mathcal{O}(N)$$ time. \nTo reverse the second part of the list, one needs \n$$N/2$$ operations. The final step, to merge two lists, requires $$N/2$$\noperations as well. In total, that results in $$\\mathcal{O}(N)$$ time \ncomplexity. \n\n* Space complexity: $$\\mathcal{O}(1)$$, since we do not allocate any \nadditional data structures.\n  \n<br /> \n<br />",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": true,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "877",
+                    "count": 95,
+                    "average": 4.884,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "1254",
+            "article": "{\"id\": 911, \"url\": \"/articles/deepest-leaves-sum/\", \"topicId\": 547634}",
+            "solution": {
+                "id": "911",
+                "content": "[TOC]\n\n## Solution\n\n---\n\n#### Overview\n\n**DFS vs BFS**\n\nThere are two ways to traverse the tree: DFS _depth first search_ and \nBFS _breadth first search_. Here is a small summary \n\n![diff](../Figures/1302/traversals.png)\n\n> Let's use this problem to discuss the difference between _iterative BFS traversal with\nthe queue_ and _iterative DFS preorder traversal with the stack_.\n\nBoth are starting from the root and going down, both are using additional structures, \nwhat's the difference? \n\nHere is how it looks at the big scale: BFS traverses level by level,\nand DFS first goes to the leaves.\n\n![diff](../Figures/1302/dfs_bfs2.png)\n\nNow let's go down to the implementation. The idea is similar:\n\n- Push root into queue (BFS) or stack (DFS).\n\n- At each step pop out one node, and push its children into stack/queue. \n\nFor BFS: pop out from the _left_, first push the _left_ child, and then \nthe _right_ one. \n\nFor DFS: pop out from the _right_, first push the _right_ child, and then \nthe _left_ one. \n\n![diff](../Figures/1302/implem2.png)\n\n<br />\n<br />\n\n\n---\n#### Approach 1: Iterative DFS Preorder Traversal.\n\n**Intuition**\n\nHere we implement standard iterative preorder traversal with the stack:\n\n- Push root into stack.\n\n- While stack is not empty:\n\n    - Pop out a node from stack and update the current number.\n    \n    - If the node is a leaf\n    \n        - Update the deepest leaves sum `deepest_sum`.\n    \n    - Push right and left child nodes into stack.\n    \n- Return `deepest_sum`.  \n\n\n**Implementation**\n\nNote, that \n[Javadocs recommends to use ArrayDeque, and not Stack as a stack implementation](https://docs.oracle.com/javase/8/docs/api/java/util/ArrayDeque.html).\n\n<iframe src=\"https://leetcode.com/playground/gfP73Lj4/shared\" frameBorder=\"0\" width=\"100%\" height=\"500\" name=\"gfP73Lj4\"></iframe>\n\n**Complexity Analysis**\n\n* Time complexity: $$\\mathcal{O}(N)$$ since one has to visit each node. \n    \n* Space complexity: up to $$\\mathcal{O}(H)$$ to keep the stack,\nwhere $$H$$ is a tree height.  \n<br />\n<br />\n\n\n---\n#### Approach 2: Iterative BFS Traversal.\n\n**Intuition**\n\nHere we implement standard iterative preorder traversal with the stack:\n\n- Add root into queue.\n\n- While queue is not empty:\n\n    - Pop out a node from queue and update the current number.\n    \n    - If the node is a leaf\n    \n        - Update the deepest leaves sum `deepest_sum`.\n    \n    - Add first _left_ and then _right_ child node into queue.\n    \n- Return `deepest_sum`.  \n\n\n**Implementation**\n\n<iframe src=\"https://leetcode.com/playground/RwC8YX8A/shared\" frameBorder=\"0\" width=\"100%\" height=\"500\" name=\"RwC8YX8A\"></iframe>\n\n**Complexity Analysis**\n\n* Time complexity: $$\\mathcal{O}(N)$$ since one has to visit each node. \n    \n* Space complexity: up to $$\\mathcal{O}(N)$$ to keep the queue.\nLet's use the last level to estimate the queue size. \nThis level could contain up to $$N/2$$ tree nodes in the case of \n[complete binary tree](https://leetcode.com/problems/count-complete-tree-nodes/).   \n<br />\n<br />\n\n\n---\n#### Approach 3: Optimized Iterative BFS Traversal.\n\n**Intuition**\n\nThe code in Approach 2 is not the optimal one. \nIt's done this way to simplify DFS vs BFS comparison but now let's \nmove further. Since we traverse level by level, it's enough \njust to check if this level is the last one. If it's the case,\nreturn the sum of all nodes values.  \n\n!?!../Documents/1302_LIS.json:1000,416!?!\n\n**Implementation**\n\n<iframe src=\"https://leetcode.com/playground/AytWXWu6/shared\" frameBorder=\"0\" width=\"100%\" height=\"500\" name=\"AytWXWu6\"></iframe>\n\n**Complexity Analysis**\n\n* Time complexity: $$\\mathcal{O}(N)$$ since one has to visit each node. \n    \n* Space complexity: up to $$\\mathcal{O}(N)$$ to keep the queues.\nLet's use the last level to estimate the queue size. \nThis level could contain up to $$N/2$$ tree nodes in the case of \n[complete binary tree](https://leetcode.com/problems/count-complete-tree-nodes/). \n<br />\n<br />\n\n\n___",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": true,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "859",
+                    "count": 20,
+                    "average": 5.0,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

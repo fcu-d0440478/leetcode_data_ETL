@@ -1,0 +1,475 @@
+{
+    "data": {
+        "discussQuestionTopicTags": [
+            {
+                "id": "34",
+                "name": "python",
+                "slug": "python",
+                "numTopics": 15,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "8214",
+                "name": "python 3",
+                "slug": "python-3",
+                "numTopics": 13,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "135",
+                "name": "java",
+                "slug": "java",
+                "numTopics": 7,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "98",
+                "name": "javascript",
+                "slug": "javascript",
+                "numTopics": 6,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6698",
+                "name": "python3",
+                "slug": "python3",
+                "numTopics": 6,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "564",
+                "name": "c#",
+                "slug": "c-2",
+                "numTopics": 4,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "123",
+                "name": "c++",
+                "slug": "c",
+                "numTopics": 4,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "2",
+                "name": "hashmap",
+                "slug": "hashmap",
+                "numTopics": 4,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7213",
+                "name": "reservoir-sampling",
+                "slug": "reservoir-sampling",
+                "numTopics": 4,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7253",
+                "name": "easy-to-understand",
+                "slug": "easy-to-understand",
+                "numTopics": 3,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6167",
+                "name": "easy-understanding",
+                "slug": "easy-understanding",
+                "numTopics": 3,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6675",
+                "name": "fisher-yates-shuffle",
+                "slug": "fisher-yates-shuffle",
+                "numTopics": 3,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "30",
+                "name": "random",
+                "slug": "random",
+                "numTopics": 3,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "5978",
+                "name": "clear",
+                "slug": "clear",
+                "numTopics": 2,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "200",
+                "name": "cpp",
+                "slug": "cpp",
+                "numTopics": 2,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7226",
+                "name": "kotlin",
+                "slug": "kotlin",
+                "numTopics": 2,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "8467",
+                "name": "linear time",
+                "slug": "linear-time-2",
+                "numTopics": 2,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "208",
+                "name": "map",
+                "slug": "map",
+                "numTopics": 2,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "10773",
+                "name": "#go",
+                "slug": "go-2",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "10759",
+                "name": "#golang",
+                "slug": "golang-2",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "8223",
+                "name": "algorithms",
+                "slug": "algorithms",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7365",
+                "name": "arraylist",
+                "slug": "arraylist",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "61",
+                "name": "binary-search",
+                "slug": "binary-search",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6404",
+                "name": "clean code",
+                "slug": "clean-code",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6466",
+                "name": "complexity",
+                "slug": "complexity",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6481",
+                "name": "concise",
+                "slug": "concise",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "8206",
+                "name": "cpp easy",
+                "slug": "cpp-easy",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "353",
+                "name": "csharp",
+                "slug": "csharp",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6727",
+                "name": "deque",
+                "slug": "deque",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6888",
+                "name": "dictionary",
+                "slug": "dictionary",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "12064",
+                "name": "dictonary",
+                "slug": "dictonary",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7098",
+                "name": "easiest",
+                "slug": "easiest",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "415",
+                "name": "easy",
+                "slug": "easy",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "8107",
+                "name": "easy to understand",
+                "slug": "easy-to-understand-2",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7670",
+                "name": "easy-understand",
+                "slug": "easy-understand-2",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7986",
+                "name": "explained",
+                "slug": "explained",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6793",
+                "name": "fast and simple",
+                "slug": "fast-and-simple",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "335",
+                "name": "golang",
+                "slug": "golang",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "519",
+                "name": "hash table",
+                "slug": "hash-table-2",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7195",
+                "name": "heapq",
+                "slug": "heapq",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7062",
+                "name": "help me",
+                "slug": "help-me",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6163",
+                "name": "interview-friendly",
+                "slug": "interview-friendly",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6513",
+                "name": "intuitive",
+                "slug": "intuitive",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "5889",
+                "name": "java ac solution",
+                "slug": "java-ac-solution",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "14",
+                "name": "java-solution",
+                "slug": "java-solution",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7534",
+                "name": "javascript brute force",
+                "slug": "javascript-brute-force",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "10497",
+                "name": "javascript solution",
+                "slug": "javascript-solution",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "14023",
+                "name": "kotlin-solution",
+                "slug": "kotlin-solution",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "14993",
+                "name": "kotlinvim",
+                "slug": "kotlinvim",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7381",
+                "name": "linq",
+                "slug": "linq",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6145",
+                "name": "one-liner",
+                "slug": "one-liner",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "10729",
+                "name": "probability",
+                "slug": "probability",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "12155",
+                "name": "queue-approach",
+                "slug": "queue-approach",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "5829",
+                "name": "quicksort",
+                "slug": "quicksort",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "9756",
+                "name": "random pick",
+                "slug": "random-pick",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "382",
+                "name": "ruby",
+                "slug": "ruby",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7822",
+                "name": "runtime-error",
+                "slug": "runtime-error",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "12816",
+                "name": "short c++ code",
+                "slug": "short-c-code",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6081",
+                "name": "simple",
+                "slug": "simple",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "8456",
+                "name": "simple solution",
+                "slug": "simple-solution-2",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6909",
+                "name": "solution-explaining",
+                "slug": "solution-explaining",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "8712",
+                "name": "solution-python",
+                "slug": "solution-python",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "346",
+                "name": "swift",
+                "slug": "swift",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "8587",
+                "name": "template",
+                "slug": "template",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7043",
+                "name": "video",
+                "slug": "video",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7064",
+                "name": "well-explained",
+                "slug": "well-explained",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7105",
+                "name": "youtube",
+                "slug": "youtube",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            }
+        ]
+    }
+}

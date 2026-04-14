@@ -1,0 +1,804 @@
+{
+    "data": {
+        "discussQuestionTopicTags": [
+            {
+                "id": "133",
+                "name": "bfs",
+                "slug": "bfs",
+                "numTopics": 124,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "123",
+                "name": "c++",
+                "slug": "c",
+                "numTopics": 44,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "34",
+                "name": "python",
+                "slug": "python",
+                "numTopics": 41,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "135",
+                "name": "java",
+                "slug": "java",
+                "numTopics": 39,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "5958",
+                "name": "breadth first search",
+                "slug": "breadth-first-search",
+                "numTopics": 17,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "200",
+                "name": "cpp",
+                "slug": "cpp",
+                "numTopics": 15,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "8214",
+                "name": "python 3",
+                "slug": "python-3",
+                "numTopics": 15,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "296",
+                "name": "queue",
+                "slug": "queue",
+                "numTopics": 15,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "14",
+                "name": "java-solution",
+                "slug": "java-solution",
+                "numTopics": 14,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "98",
+                "name": "javascript",
+                "slug": "javascript",
+                "numTopics": 12,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6404",
+                "name": "clean code",
+                "slug": "clean-code",
+                "numTopics": 8,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6698",
+                "name": "python3",
+                "slug": "python3",
+                "numTopics": 8,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "140",
+                "name": "dfs",
+                "slug": "dfs",
+                "numTopics": 7,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "13399",
+                "name": "bfs simple solution",
+                "slug": "bfs-simple-solution",
+                "numTopics": 6,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "564",
+                "name": "c#",
+                "slug": "c-2",
+                "numTopics": 6,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7986",
+                "name": "explained",
+                "slug": "explained",
+                "numTopics": 6,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6167",
+                "name": "easy-understanding",
+                "slug": "easy-understanding",
+                "numTopics": 5,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7226",
+                "name": "kotlin",
+                "slug": "kotlin",
+                "numTopics": 4,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6081",
+                "name": "simple",
+                "slug": "simple",
+                "numTopics": 4,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "8670",
+                "name": "a-star search",
+                "slug": "a-star-search",
+                "numTopics": 3,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "45",
+                "name": "dynamic programming",
+                "slug": "dynamic-programming",
+                "numTopics": 3,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7219",
+                "name": "easytounderstand",
+                "slug": "easytounderstand",
+                "numTopics": 3,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "335",
+                "name": "golang",
+                "slug": "golang",
+                "numTopics": 3,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "11778",
+                "name": "help needed",
+                "slug": "help-needed",
+                "numTopics": 3,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7898",
+                "name": "rust",
+                "slug": "rust",
+                "numTopics": 3,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "8668",
+                "name": "a star",
+                "slug": "a-star-2",
+                "numTopics": 2,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "10916",
+                "name": "bidirectional bfs",
+                "slug": "bidirectional-bfs",
+                "numTopics": 2,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "12640",
+                "name": "breadth first traversal",
+                "slug": "breadth-first-traversal",
+                "numTopics": 2,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7530",
+                "name": "breadth-first-search",
+                "slug": "breadth-first-search-2",
+                "numTopics": 2,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7930",
+                "name": "c++17",
+                "slug": "c17",
+                "numTopics": 2,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "10496",
+                "name": "cpp solution",
+                "slug": "cpp-solution-2",
+                "numTopics": 2,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6727",
+                "name": "deque",
+                "slug": "deque",
+                "numTopics": 2,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "415",
+                "name": "easy",
+                "slug": "easy",
+                "numTopics": 2,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7253",
+                "name": "easy-to-understand",
+                "slug": "easy-to-understand",
+                "numTopics": 2,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6590",
+                "name": "fast",
+                "slug": "fast",
+                "numTopics": 2,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7928",
+                "name": "go",
+                "slug": "go",
+                "numTopics": 2,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6607",
+                "name": "golang-solution",
+                "slug": "golang-solution",
+                "numTopics": 2,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "5889",
+                "name": "java ac solution",
+                "slug": "java-ac-solution",
+                "numTopics": 2,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "10497",
+                "name": "javascript solution",
+                "slug": "javascript-solution",
+                "numTopics": 2,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6754",
+                "name": "readable",
+                "slug": "readable",
+                "numTopics": 2,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "199",
+                "name": "recursion",
+                "slug": "recursion",
+                "numTopics": 2,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "346",
+                "name": "swift",
+                "slug": "swift",
+                "numTopics": 2,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6529",
+                "name": "test case generator",
+                "slug": "test-case-generator",
+                "numTopics": 2,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7942",
+                "name": "test-cases",
+                "slug": "test-cases-2",
+                "numTopics": 2,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "12302",
+                "name": "video-explanation",
+                "slug": "video-explanation-2",
+                "numTopics": 2,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7728",
+                "name": "a-star",
+                "slug": "a-star",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "15",
+                "name": "backtracking",
+                "slug": "backtracking",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "9012",
+                "name": "beautiful",
+                "slug": "beautiful",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "10503",
+                "name": "best-solution-ever",
+                "slug": "best-solution-ever",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6924",
+                "name": "bi-direction",
+                "slug": "bi-direction",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "11028",
+                "name": "c++ iterative sol",
+                "slug": "c-iterative-sol",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "8176",
+                "name": "c++ solution",
+                "slug": "c-solution-2",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "12096",
+                "name": "c++code",
+                "slug": "ccode",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "16932",
+                "name": "clean code python",
+                "slug": "clean-code-python",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "9563",
+                "name": "clean-efficient-code",
+                "slug": "clean-efficient-code",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7396",
+                "name": "commented",
+                "slug": "commented",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "379",
+                "name": "comments",
+                "slug": "comments",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6466",
+                "name": "complexity",
+                "slug": "complexity",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6481",
+                "name": "concise",
+                "slug": "concise",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "8206",
+                "name": "cpp easy",
+                "slug": "cpp-easy",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6926",
+                "name": "depth first search",
+                "slug": "depth-first-search-2",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "13466",
+                "name": "depth first traversal",
+                "slug": "depth-first-traversal",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "13380",
+                "name": "dfs solution",
+                "slug": "dfs-solution",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7277",
+                "name": "dijkstra",
+                "slug": "dijkstra",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "13601",
+                "name": "dijsktra",
+                "slug": "dijsktra",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7955",
+                "name": "dp",
+                "slug": "dp",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "13621",
+                "name": "dp pattern",
+                "slug": "dp-pattern",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7098",
+                "name": "easiest",
+                "slug": "easiest",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "14680",
+                "name": "easy python",
+                "slug": "easy-python",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "8319",
+                "name": "easy to read",
+                "slug": "easy-to-read",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "8107",
+                "name": "easy to understand",
+                "slug": "easy-to-understand-2",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6472",
+                "name": "explaination",
+                "slug": "explaination",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "12066",
+                "name": "explanation of logic",
+                "slug": "explanation-of-logic",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6793",
+                "name": "fast and simple",
+                "slug": "fast-and-simple",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "5943",
+                "name": "go-solution",
+                "slug": "go-solution",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7195",
+                "name": "heapq",
+                "slug": "heapq",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6253",
+                "name": "help",
+                "slug": "help",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "191",
+                "name": "in-place",
+                "slug": "in-place",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "203",
+                "name": "interview",
+                "slug": "interview",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "111",
+                "name": "iterative",
+                "slug": "iterative",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "16013",
+                "name": "iterative bfs",
+                "slug": "iterative-bfs-2",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6756",
+                "name": "iteratively",
+                "slug": "iteratively",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "11713",
+                "name": "java bfs",
+                "slug": "java-bfs",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "16919",
+                "name": "javasccript",
+                "slug": "javasccript",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7893",
+                "name": "js",
+                "slug": "js",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "8226",
+                "name": "keep it simple",
+                "slug": "keep-it-simple",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "14023",
+                "name": "kotlin-solution",
+                "slug": "kotlin-solution",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "79",
+                "name": "matrix",
+                "slug": "matrix",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "159",
+                "name": "oop",
+                "slug": "oop",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "12395",
+                "name": "optimisation",
+                "slug": "optimisation",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "13017",
+                "name": "optimised code",
+                "slug": "optimised-code",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6989",
+                "name": "priority queue",
+                "slug": "priority-queue-2",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6587",
+                "name": "priority-queue",
+                "slug": "priority-queue",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "16933",
+                "name": "python bfs iterative easy",
+                "slug": "python-bfs-iterative-easy",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6732",
+                "name": "pythonsolution",
+                "slug": "pythonsolution",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "13698",
+                "name": "queue and stack",
+                "slug": "queue-and-stack",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "12155",
+                "name": "queue-approach",
+                "slug": "queue-approach",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "15930",
+                "name": "redirect21",
+                "slug": "redirect21",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "382",
+                "name": "ruby",
+                "slug": "ruby",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "543",
+                "name": "scala",
+                "slug": "scala",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6618",
+                "name": "shortest",
+                "slug": "shortest",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "10750",
+                "name": "shortest path",
+                "slug": "shortest-path-2",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "16010",
+                "name": "shortestpathbinarymatrix",
+                "slug": "shortestpathbinarymatrix",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6178",
+                "name": "simple clear c++ solution",
+                "slug": "simple-clear-c-solution",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "16931",
+                "name": "simple python",
+                "slug": "simple-python",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "13198",
+                "name": "simple understanding",
+                "slug": "simple-understanding",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "9373",
+                "name": "structure",
+                "slug": "structure",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "5994",
+                "name": "test-case-validation",
+                "slug": "test-case-validation",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7103",
+                "name": "testcase-wrong-and-not",
+                "slug": "testcase-wrong-and-not",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7538",
+                "name": "time limit exceeded",
+                "slug": "time-limit-exceeded-2",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "14376",
+                "name": "ting",
+                "slug": "ting",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7827",
+                "name": "tle",
+                "slug": "tle",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6625",
+                "name": "tuple",
+                "slug": "tuple",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "8826",
+                "name": "tuples",
+                "slug": "tuples",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            }
+        ]
+    }
+}

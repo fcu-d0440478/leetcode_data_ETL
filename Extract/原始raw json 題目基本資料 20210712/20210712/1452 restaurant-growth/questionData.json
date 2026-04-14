@@ -1,0 +1,81 @@
+{
+    "data": {
+        "question": {
+            "questionId": "1452",
+            "questionFrontendId": "1321",
+            "boundTopicId": null,
+            "title": "Restaurant Growth",
+            "titleSlug": "restaurant-growth",
+            "content": "<p>Table: <code>Customer</code></p>\r\n\r\n<pre>\r\n+---------------+---------+\r\n| Column Name   | Type    |\r\n+---------------+---------+\r\n| customer_id   | int     |\r\n| name          | varchar |\r\n| visited_on    | date    |\r\n| amount        | int     |\r\n+---------------+---------+\r\n(customer_id, visited_on) is the primary key for this table.\r\nThis table contains data about customer transactions in a restaurant.\r\nvisited_on is the date on which the customer with ID (customer_id) have visited the restaurant.\r\namount is the total paid by a customer.\r\n</pre>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>You are the restaurant owner and you want to analyze a possible expansion (there will be at least one customer every day).</p>\r\n\r\n<p>Write an SQL query to compute moving average of how much customer paid in a 7 days window (current day + 6&nbsp;days before) .</p>\r\n\r\n<p>The query result format is in the following example:</p>\r\n\r\n<p>Return result table ordered by visited_on.</p>\r\n\r\n<p><code>average_amount&nbsp;</code>should be&nbsp;<strong>rounded to 2 decimal places</strong>, all dates are in the format (&#39;YYYY-MM-DD&#39;).</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<pre>\r\nCustomer table:\r\n+-------------+--------------+--------------+-------------+\r\n| customer_id | name         | visited_on   | amount      |\r\n+-------------+--------------+--------------+-------------+\r\n| 1           | Jhon         | 2019-01-01   | 100         |\r\n| 2           | Daniel       | 2019-01-02   | 110         |\r\n| 3           | Jade         | 2019-01-03   | 120         |\r\n| 4           | Khaled       | 2019-01-04   | 130         |\r\n| 5           | Winston      | 2019-01-05   | 110         | \r\n| 6           | Elvis        | 2019-01-06   | 140         | \r\n| 7           | Anna         | 2019-01-07   | 150         |\r\n| 8           | Maria        | 2019-01-08   | 80          |\r\n| 9           | Jaze         | 2019-01-09   | 110         | \r\n| 1           | Jhon         | 2019-01-10   | 130         | \r\n| 3           | Jade         | 2019-01-10   | 150         | \r\n+-------------+--------------+--------------+-------------+\r\n\r\nResult table:\r\n+--------------+--------------+----------------+\r\n| visited_on   | amount       | average_amount |\r\n+--------------+--------------+----------------+\r\n| 2019-01-07   | 860          | 122.86         |\r\n| 2019-01-08   | 840          | 120            |\r\n| 2019-01-09   | 840          | 120            |\r\n| 2019-01-10   | 1000         | 142.86         |\r\n+--------------+--------------+----------------+\r\n\r\n1st moving average from 2019-01-01 to 2019-01-07 has an average_amount of (100 + 110 + 120 + 130 + 110 + 140 + 150)/7 = 122.86\r\n2nd moving average from 2019-01-02 to 2019-01-08 has an average_amount of (110 + 120 + 130 + 110 + 140 + 150 + 80)/7 = 120\r\n3rd moving average from 2019-01-03 to 2019-01-09 has an average_amount of (120 + 130 + 110 + 140 + 150 + 80 + 110)/7 = 120\r\n4th moving average from 2019-01-04 to 2019-01-10 has an average_amount of (130 + 110 + 140 + 150 + 80 + 110 + 130 + 150)/7 = 142.86\r\n</pre>",
+            "translatedTitle": null,
+            "translatedContent": null,
+            "isPaidOnly": true,
+            "difficulty": "Medium",
+            "likes": 173,
+            "dislikes": 25,
+            "isLiked": null,
+            "similarQuestions": "[]",
+            "exampleTestcases": "{\"headers\":{\"Customer\":[\"customer_id\",\"name\",\"visited_on\",\"amount\"]},\"rows\":{\"Customer\":[[1,\"Jhon\",\"2019-01-01\",100],[2,\"Daniel\",\"2019-01-02\",110],[3,\"Jade\",\"2019-01-03\",120],[4,\"Khaled\",\"2019-01-04\",130],[5,\"Winston\",\"2019-01-05\",110],[6,\"Elvis\",\"2019-01-06\",140],[7,\"Anna\",\"2019-01-07\",150],[8,\"Maria\",\"2019-01-08\",80],[9,\"Jaze\",\"2019-01-09\",110],[1,\"Jhon\",\"2019-01-10\",130],[3,\"Jade\",\"2019-01-10\",150]]}}\r",
+            "contributors": [],
+            "topicTags": [
+                {
+                    "name": "Database",
+                    "slug": "database",
+                    "translatedName": null,
+                    "__typename": "TopicTagNode"
+                }
+            ],
+            "companyTagStats": "{\"3\": [{\"taggedByAdmin\": true, \"name\": \"Point72\", \"slug\": \"point72\", \"timesEncountered\": 0}], \"2\": [{\"taggedByAdmin\": false, \"name\": \"Amazon\", \"slug\": \"amazon\", \"timesEncountered\": 3}], \"1\": []}",
+            "codeSnippets": [
+                {
+                    "lang": "MySQL",
+                    "langSlug": "mysql",
+                    "code": "# Write your MySQL query statement below\n",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "MS SQL Server",
+                    "langSlug": "mssql",
+                    "code": "/* Write your T-SQL query statement below */\n",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Oracle",
+                    "langSlug": "oraclesql",
+                    "code": "/* Write your PL/SQL query statement below */\n",
+                    "__typename": "CodeSnippetNode"
+                }
+            ],
+            "stats": "{\"totalAccepted\": \"13.7K\", \"totalSubmission\": \"18.8K\", \"totalAcceptedRaw\": 13669, \"totalSubmissionRaw\": 18808, \"acRate\": \"72.7%\"}",
+            "hints": [],
+            "solution": null,
+            "status": null,
+            "sampleTestCase": "{\"headers\":{\"Customer\":[\"customer_id\",\"name\",\"visited_on\",\"amount\"]},\"rows\":{\"Customer\":[[1,\"Jhon\",\"2019-01-01\",100],[2,\"Daniel\",\"2019-01-02\",110],[3,\"Jade\",\"2019-01-03\",120],[4,\"Khaled\",\"2019-01-04\",130],[5,\"Winston\",\"2019-01-05\",110],[6,\"Elvis\",\"2019-01-06\",140],[7,\"Anna\",\"2019-01-07\",150],[8,\"Maria\",\"2019-01-08\",80],[9,\"Jaze\",\"2019-01-09\",110],[1,\"Jhon\",\"2019-01-10\",130],[3,\"Jade\",\"2019-01-10\",150]]}}\r",
+            "metaData": "{\n  \"mysql\": [\n    \"Create table If Not Exists Customer (customer_id int, name varchar(20), visited_on date, amount int)\"\n  ],\n  \"mssql\": [\n    \"Create table Customer (customer_id int, name varchar(20), visited_on date, amount int)\"\n  ],\n  \"oraclesql\": [\n    \"Create table Customer (customer_id int, name varchar(20), visited_on date, amount int)\",\n    \"ALTER SESSION SET nls_date_format='YYYY-MM-DD'\"\n  ],\n  \"database\": true\n}",
+            "judgerAvailable": true,
+            "judgeType": "large",
+            "mysqlSchemas": [
+                "Create table If Not Exists Customer (customer_id int, name varchar(20), visited_on date, amount int)",
+                "Truncate table Customer",
+                "insert into Customer (customer_id, name, visited_on, amount) values ('1', 'Jhon', '2019-01-01', '100')",
+                "insert into Customer (customer_id, name, visited_on, amount) values ('2', 'Daniel', '2019-01-02', '110')",
+                "insert into Customer (customer_id, name, visited_on, amount) values ('3', 'Jade', '2019-01-03', '120')",
+                "insert into Customer (customer_id, name, visited_on, amount) values ('4', 'Khaled', '2019-01-04', '130')",
+                "insert into Customer (customer_id, name, visited_on, amount) values ('5', 'Winston', '2019-01-05', '110')",
+                "insert into Customer (customer_id, name, visited_on, amount) values ('6', 'Elvis', '2019-01-06', '140')",
+                "insert into Customer (customer_id, name, visited_on, amount) values ('7', 'Anna', '2019-01-07', '150')",
+                "insert into Customer (customer_id, name, visited_on, amount) values ('8', 'Maria', '2019-01-08', '80')",
+                "insert into Customer (customer_id, name, visited_on, amount) values ('9', 'Jaze', '2019-01-09', '110')",
+                "insert into Customer (customer_id, name, visited_on, amount) values ('1', 'Jhon', '2019-01-10', '130')",
+                "insert into Customer (customer_id, name, visited_on, amount) values ('3', 'Jade', '2019-01-10', '150')"
+            ],
+            "enableRunCode": true,
+            "enableTestMode": false,
+            "enableDebugger": false,
+            "envInfo": "{\"mysql\": [\"MySQL\", \"<p><code>MySQL 8.0</code>.</p>\"], \"mssql\": [\"MS SQL Server\", \"<p><code>mssql server 2019</code>.</p>\"], \"oraclesql\": [\"Oracle\", \"<p><code>Oracle Sql 11.2</code>.</p>\"]}",
+            "libraryUrl": null,
+            "adminUrl": null,
+            "__typename": "QuestionNode"
+        }
+    }
+}

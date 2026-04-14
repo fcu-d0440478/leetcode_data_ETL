@@ -1,0 +1,804 @@
+{
+    "data": {
+        "discussQuestionTopicTags": [
+            {
+                "id": "133",
+                "name": "bfs",
+                "slug": "bfs",
+                "numTopics": 33,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "135",
+                "name": "java",
+                "slug": "java",
+                "numTopics": 23,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "123",
+                "name": "c++",
+                "slug": "c",
+                "numTopics": 18,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "200",
+                "name": "cpp",
+                "slug": "cpp",
+                "numTopics": 17,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "34",
+                "name": "python",
+                "slug": "python",
+                "numTopics": 17,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "8214",
+                "name": "python 3",
+                "slug": "python-3",
+                "numTopics": 15,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "140",
+                "name": "dfs",
+                "slug": "dfs",
+                "numTopics": 9,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7729",
+                "name": "topological-sort",
+                "slug": "topological-sort",
+                "numTopics": 9,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "21",
+                "name": "graph",
+                "slug": "graph",
+                "numTopics": 7,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6698",
+                "name": "python3",
+                "slug": "python3",
+                "numTopics": 7,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "98",
+                "name": "javascript",
+                "slug": "javascript",
+                "numTopics": 6,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "335",
+                "name": "golang",
+                "slug": "golang",
+                "numTopics": 5,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "564",
+                "name": "c#",
+                "slug": "c-2",
+                "numTopics": 4,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "14",
+                "name": "java-solution",
+                "slug": "java-solution",
+                "numTopics": 4,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "170",
+                "name": "tree",
+                "slug": "tree",
+                "numTopics": 4,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "45",
+                "name": "dynamic programming",
+                "slug": "dynamic-programming",
+                "numTopics": 3,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7240",
+                "name": "dynamic-programming",
+                "slug": "dynamic-programming-2",
+                "numTopics": 3,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7986",
+                "name": "explained",
+                "slug": "explained",
+                "numTopics": 3,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "13399",
+                "name": "bfs simple solution",
+                "slug": "bfs-simple-solution",
+                "numTopics": 2,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "10496",
+                "name": "cpp solution",
+                "slug": "cpp-solution-2",
+                "numTopics": 2,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "10611",
+                "name": "diameter",
+                "slug": "diameter",
+                "numTopics": 2,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7955",
+                "name": "dp",
+                "slug": "dp",
+                "numTopics": 2,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7098",
+                "name": "easiest",
+                "slug": "easiest",
+                "numTopics": 2,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7219",
+                "name": "easytounderstand",
+                "slug": "easytounderstand",
+                "numTopics": 2,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7161",
+                "name": "explanation",
+                "slug": "explanation",
+                "numTopics": 2,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "12535",
+                "name": "graph theory",
+                "slug": "graph-theory-2",
+                "numTopics": 2,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7059",
+                "name": "java solution",
+                "slug": "java-solution-2",
+                "numTopics": 2,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "296",
+                "name": "queue",
+                "slug": "queue",
+                "numTopics": 2,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6158",
+                "name": "solution-sharing-cpp",
+                "slug": "solution-sharing-cpp",
+                "numTopics": 2,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6768",
+                "name": "time-limit-exceeded",
+                "slug": "time-limit-exceeded",
+                "numTopics": 2,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "9508",
+                "name": "video explanation",
+                "slug": "video-explanation",
+                "numTopics": 2,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "12164",
+                "name": "#easytounderstand",
+                "slug": "easytounderstand-2",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "13065",
+                "name": "#map",
+                "slug": "map-2",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "12035",
+                "name": "#simplecode",
+                "slug": "simplecode",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "14471",
+                "name": "#trees",
+                "slug": "trees-2",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6724",
+                "name": "accepted",
+                "slug": "accepted",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6411",
+                "name": "beating-100-submission",
+                "slug": "beating-100-submission",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6685",
+                "name": "beating-100-submissions",
+                "slug": "beating-100-submissions",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "12547",
+                "name": "beginner friendly",
+                "slug": "beginner-friendly",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "5958",
+                "name": "breadth first search",
+                "slug": "breadth-first-search",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6774",
+                "name": "breath first search",
+                "slug": "breath-first-search",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7434",
+                "name": "brute force",
+                "slug": "brute-force-2",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "16750",
+                "name": "center of tree",
+                "slug": "center-of-tree",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6055",
+                "name": "clean",
+                "slug": "clean",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "9006",
+                "name": "commetend",
+                "slug": "commetend",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "333",
+                "name": "compile-error",
+                "slug": "compile-error",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6031",
+                "name": "cpp-solution",
+                "slug": "cpp-solution",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "353",
+                "name": "csharp",
+                "slug": "csharp",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6926",
+                "name": "depth first search",
+                "slug": "depth-first-search-2",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6727",
+                "name": "deque",
+                "slug": "deque",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "8761",
+                "name": "detailed",
+                "slug": "detailed",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "8713",
+                "name": "detailed explanation",
+                "slug": "detailed-explanation",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "14161",
+                "name": "dfs traversal",
+                "slug": "dfs-traversal",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "8647",
+                "name": "different approach",
+                "slug": "different-approach",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "415",
+                "name": "easy",
+                "slug": "easy",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "8258",
+                "name": "easy undestanding",
+                "slug": "easy-undestanding",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7253",
+                "name": "easy-to-understand",
+                "slug": "easy-to-understand",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7670",
+                "name": "easy-understand",
+                "slug": "easy-understand-2",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6167",
+                "name": "easy-understanding",
+                "slug": "easy-understanding",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7642",
+                "name": "edge-case",
+                "slug": "edge-case",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "12596",
+                "name": "explained solution",
+                "slug": "explained-solution",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "11361",
+                "name": "explanation with code",
+                "slug": "explanation-with-code",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6590",
+                "name": "fast",
+                "slug": "fast",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6793",
+                "name": "fast and simple",
+                "slug": "fast-and-simple",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7928",
+                "name": "go",
+                "slug": "go",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "5943",
+                "name": "go-solution",
+                "slug": "go-solution",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6607",
+                "name": "golang-solution",
+                "slug": "golang-solution",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "13510",
+                "name": "graph center",
+                "slug": "graph-center",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "95",
+                "name": "hash",
+                "slug": "hash",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7138",
+                "name": "incorrect-test-case",
+                "slug": "incorrect-test-case",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "14568",
+                "name": "init a set",
+                "slug": "init-a-set",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "10360",
+                "name": "intutive",
+                "slug": "intutive",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "16555",
+                "name": "izaac",
+                "slug": "izaac",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "15453",
+                "name": "java solution using bfs",
+                "slug": "java-solution-using-bfs",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "10613",
+                "name": "kahns algo",
+                "slug": "kahns-algo",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "14993",
+                "name": "kotlinvim",
+                "slug": "kotlinvim",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "14562",
+                "name": "leave-node-removal",
+                "slug": "leave-node-removal",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6746",
+                "name": "longest-path",
+                "slug": "longest-path",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "208",
+                "name": "map",
+                "slug": "map",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7818",
+                "name": "meet-in-the-middle",
+                "slug": "meet-in-the-middle",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "28",
+                "name": "memoziation",
+                "slug": "memoziation",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "14336",
+                "name": "onion-peeling",
+                "slug": "onion-peeling",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "10821",
+                "name": "peeling",
+                "slug": "peeling",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7003",
+                "name": "performance",
+                "slug": "performance",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "5966",
+                "name": "pointer",
+                "slug": "pointer",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "12042",
+                "name": "pythonpython3",
+                "slug": "pythonpython3",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6754",
+                "name": "readable",
+                "slug": "readable",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "199",
+                "name": "recursion",
+                "slug": "recursion",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "13434",
+                "name": "removing leaf",
+                "slug": "removing-leaf",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "382",
+                "name": "ruby",
+                "slug": "ruby",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "543",
+                "name": "scala",
+                "slug": "scala",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "369",
+                "name": "set",
+                "slug": "set",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6081",
+                "name": "simple",
+                "slug": "simple",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6178",
+                "name": "simple clear c++ solution",
+                "slug": "simple-clear-c-solution",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6445",
+                "name": "solutionsharing",
+                "slug": "solutionsharing",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "5900",
+                "name": "solved",
+                "slug": "solved",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6725",
+                "name": "stack-over-flow",
+                "slug": "stack-over-flow",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "346",
+                "name": "swift",
+                "slug": "swift",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "31",
+                "name": "test-case",
+                "slug": "test-case",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "5856",
+                "name": "testcase-wrong",
+                "slug": "testcase-wrong",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "10434",
+                "name": "thought-process",
+                "slug": "thought-process-2",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "14376",
+                "name": "ting",
+                "slug": "ting",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "8027",
+                "name": "topological",
+                "slug": "topological",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "8895",
+                "name": "topological sort",
+                "slug": "topological-sort-2",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7470",
+                "name": "topological-sorting",
+                "slug": "topological-sorting",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6440",
+                "name": "trees",
+                "slug": "trees",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "9075",
+                "name": "trim",
+                "slug": "trim",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "16751",
+                "name": "undirected acyclic graph",
+                "slug": "undirected-acyclic-graph",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6200",
+                "name": "updowndota",
+                "slug": "updowndota",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "12302",
+                "name": "video-explanation",
+                "slug": "video-explanation-2",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "8239",
+                "name": "visualization",
+                "slug": "visualization",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6728",
+                "name": "well-commented",
+                "slug": "well-commented",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7064",
+                "name": "well-explained",
+                "slug": "well-explained",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6968",
+                "name": "wrong-test-cases",
+                "slug": "wrong-test-cases",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            }
+        ]
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "688",
+            "article": "{\"id\": 254, \"url\": \"/articles/knight-probability-in-chessboard/\", \"topicId\": 127573}",
+            "solution": {
+                "id": "254",
+                "content": "[TOC]\n\n#### Approach #1: Dynamic Programming [Accepted]\n\n**Intuition and Algorithm**\n\nLet `f[r][c][steps]` be the probability of being on square `(r, c)` after `steps` steps.  Based on how a knight moves, we have the following recursion:\n\n$$f[r][c][steps] = \\sum_{dr, dc} f[r+dr][c+dc][steps-1] / 8.0$$\n\nwhere the sum is taken over the eight $$(dr, dc)$$ pairs $$(2, 1),$$ $$(2, -1),$$ $$(-2, 1),$$ $$(-2, -1),$$ $$(1, 2),$$ $$(1, -2),$$ $$(-1, 2),$$ $$(-1, -2)$$.\n\nInstead of using a three-dimensional array `f`, we will use two two-dimensional ones `dp` and `dp2`, storing the result of the two most recent layers we are working on.  `dp2` will represent `f[][][steps]`, and `dp` will represent `f[][][steps-1]`.\n\n<iframe src=\"https://leetcode.com/playground/VTNPLt6H/shared\" frameBorder=\"0\" name=\"VTNPLt6H\" width=\"100%\" height=\"515\"></iframe>\n\n**Complexity Analysis**\n\n* Time Complexity: $$O(N^2 K)$$ where $$N, K$$ are defined as in the problem.  We do $$O(1)$$ work on each layer `dp` of $$N^2$$ elements, and there are $$K$$ layers considered.\n\n* Space Complexity: $$O(N^2)$$, the size of `dp` and `dp2`.\n\n---\n#### Approach #2: Matrix Exponentiation [Accepted]\n\n**Intuition**\n\nThe recurrence expressed in *Approach #1* expressed states that transitioned to a linear combination of other states.  Any time this happens, we can represent the entire transition as a matrix of those linear combinations.  Then, the $$n$$-th power of this matrix represents the transition of $$n$$ moves, and thus we can reduce the problem to a problem of matrix exponentiation.\n\n**Algorithm**\n\nFirst, there is a lot of symmetry on the board that we can exploit.  Naively, there are $$N^2$$ possible states the knight can be in (assuming it is on the board).  Because of symmetry through the horizontal, vertical, and diagonal axes, we can assume that the knight is in the top-left quadrant of the board, and that the column number is equal to or larger than the row number.  For any square, the square that is found by reflecting about these axes to satisfy these conditions will be the *canonical index* of that square.\n\nThis will reduce the number of states from $$N^2$$ to approximately $$\\frac{N^2}{8}$$, which makes the following (cubic) matrix exponentiation on this $$O(\\frac{N^2}{8}) \\times O(\\frac{N^2}{8})$$ matrix approximately $$8^3$$ times faster.\n\nNow, if we know that every state becomes some linear combination of states after one move, then let's write a transition matrix $$\\mathcal{T}$$ of them, where the $$i$$-th row of $$\\mathcal{T}$$ represents the linear combination of states that the $$i$$-th state goes to.  Then, $$\\mathcal{T}^n$$ represents a transition of $$n$$ moves, for which we want the sum of the $$i$$-th row, where $$i$$ is the index of the starting square.\n\n<iframe src=\"https://leetcode.com/playground/ARu5yUUd/shared\" frameBorder=\"0\" name=\"ARu5yUUd\" width=\"100%\" height=\"515\"></iframe>\n\n**Complexity Analysis**\n\n* Time Complexity: $$O(N^6 \\log(K))$$ where $$N, K$$ are defined as in the problem.  There are approximately $$\\frac{N^2}{8}$$ canonical states, which makes our matrix multiplication $$O(N^6)$$.  To find the $$K$$-th power of this matrix, we make $$O(\\log(K))$$ matrix multiplications.\n\n* Space Complexity: $$O(N^4)$$.  The matrix has approximately $$\\frac{N^4}{64}$$ elements.",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "251",
+                    "count": 78,
+                    "average": 3.782,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

@@ -1,0 +1,43 @@
+{
+    "data": {
+        "topic": {
+            "id": 127440,
+            "viewCount": 575337,
+            "topLevelCommentCount": 279,
+            "subscribed": false,
+            "title": "Best Time to Buy and Sell Stock",
+            "pinned": false,
+            "tags": [],
+            "hideFromTrending": false,
+            "post": {
+                "id": 255641,
+                "voteCount": 0,
+                "voteStatus": 0,
+                "content": "We need to find out the maximum difference (which will be the maximum profit) between two numbers in the given array. Also, the second number (selling price) must be larger than the first one (buying price).\\n\\n---\\n\\n\\n**Click [here](https://leetcode.com/articles/best-time-buy-and-sell-stock/) to see the full article post**",
+                "updationDate": 1466728796,
+                "creationDate": 1466728796,
+                "status": null,
+                "isHidden": null,
+                "coinRewards": [],
+                "author": {
+                    "isDiscussAdmin": true,
+                    "isDiscussStaff": true,
+                    "username": "1337c0d3r",
+                    "nameColor": null,
+                    "activeBadge": null,
+                    "profile": {
+                        "userAvatar": "https://assets.leetcode.com/users/1337c0d3r/avatar_1547177258.png",
+                        "reputation": 3129,
+                        "__typename": "UserProfileNode"
+                    },
+                    "isActive": true,
+                    "__typename": "UserNode"
+                },
+                "authorIsModerator": true,
+                "isOwnPost": false,
+                "__typename": "PostNode"
+            },
+            "__typename": "TopicNode"
+        }
+    }
+}

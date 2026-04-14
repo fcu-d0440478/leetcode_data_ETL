@@ -1,0 +1,43 @@
+{
+    "data": {
+        "topic": {
+            "id": 1301513,
+            "viewCount": 343,
+            "topLevelCommentCount": 2,
+            "subscribed": false,
+            "title": "Optimize Water Distribution in a Village",
+            "pinned": false,
+            "tags": [],
+            "hideFromTrending": false,
+            "post": {
+                "id": 2295164,
+                "voteCount": 0,
+                "voteStatus": 0,
+                "content": "",
+                "updationDate": 1624829971,
+                "creationDate": 1624829971,
+                "status": null,
+                "isHidden": null,
+                "coinRewards": [],
+                "author": {
+                    "isDiscussAdmin": false,
+                    "isDiscussStaff": false,
+                    "username": "liaison",
+                    "nameColor": null,
+                    "activeBadge": null,
+                    "profile": {
+                        "userAvatar": "https://assets.leetcode.com/users/liaison/avatar_1534323504.png",
+                        "reputation": 7170,
+                        "__typename": "UserProfileNode"
+                    },
+                    "isActive": true,
+                    "__typename": "UserNode"
+                },
+                "authorIsModerator": false,
+                "isOwnPost": false,
+                "__typename": "PostNode"
+            },
+            "__typename": "TopicNode"
+        }
+    }
+}

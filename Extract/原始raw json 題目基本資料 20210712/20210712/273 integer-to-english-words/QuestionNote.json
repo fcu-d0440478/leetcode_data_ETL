@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "273",
+            "article": "{\"id\": 627, \"url\": \"/articles/integer-to-english-words/\", \"topicId\": 199494}",
+            "solution": {
+                "id": "627",
+                "content": "[TOC]\n\n## Solution\n\n---\n\n#### Approach 1: Divide and conquer \n\nLet's simplify the problem by representing it as a set of simple sub-problems.\nOne could split the initial integer `1234567890` on the groups \ncontaining not more than three digits `1.234.567.890`.\nThat results in representation `1 Billion 234 Million 567 Thousand 890` and \nreduces the initial problem to how to convert 3-digit integer to English word. \nOne could split further `234` -> `2 Hundred 34` into two sub-problems :\nconvert 1-digit integer and convert 2-digit integer. The first one is trivial. \nThe second one could be reduced to the first one for all 2-digit integers \nbut the ones from `10` to `19` which should be considered separately.\n\n<!--![LIS](../Figures/273/273_tr.gif)-->\n!?!../Documents/273_LIS.json:1000,632!?!\n\n<iframe src=\"https://leetcode.com/playground/hme62cME/shared\" frameBorder=\"0\" width=\"100%\" height=\"500\" name=\"hme62cME\"></iframe>\n\n**Complexity Analysis**\n\n* Time complexity :  $$\\mathcal{O}(N)$$. \nIntuitively the output is proportional\nto the number `N` of digits in the input. \n* Space complexity : $$\\mathcal{O}(1)$$ since the output is just a string.",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": true,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "613",
+                    "count": 103,
+                    "average": 3.359,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

@@ -1,0 +1,81 @@
+{
+    "data": {
+        "question": {
+            "questionId": "175",
+            "questionFrontendId": "175",
+            "boundTopicId": null,
+            "title": "Combine Two Tables",
+            "titleSlug": "combine-two-tables",
+            "content": "<p>Table: <code>Person</code></p>\r\n\r\n<pre>\r\n+-------------+---------+\r\n| Column Name | Type    |\r\n+-------------+---------+\r\n| PersonId    | int     |\r\n| FirstName   | varchar |\r\n| LastName    | varchar |\r\n+-------------+---------+\r\nPersonId is the primary key column for this table.\r\n</pre>\r\n\r\n<p>Table: <code>Address</code></p>\r\n\r\n<pre>\r\n+-------------+---------+\r\n| Column Name | Type    |\r\n+-------------+---------+\r\n| AddressId   | int     |\r\n| PersonId    | int     |\r\n| City        | varchar |\r\n| State       | varchar |\r\n+-------------+---------+\r\nAddressId is the primary key column for this table.\r\n</pre>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Write a SQL query for a report that provides the following information for each person in the Person table, regardless if there is an address for each of those people:</p>\r\n\r\n<pre>\r\nFirstName, LastName, City, State\r\n</pre>\r\n",
+            "translatedTitle": null,
+            "translatedContent": null,
+            "isPaidOnly": false,
+            "difficulty": "Easy",
+            "likes": 1320,
+            "dislikes": 164,
+            "isLiked": null,
+            "similarQuestions": "[{\"title\": \"Employee Bonus\", \"titleSlug\": \"employee-bonus\", \"difficulty\": \"Easy\", \"translatedTitle\": null}]",
+            "exampleTestcases": "{\"headers\": {\"Person\": [\"PersonId\", \"LastName\", \"FirstName\"], \"Address\": [\"AddressId\", \"PersonId\", \"City\", \"State\"]}, \"rows\": {\"Person\": [[1, \"Wang\", \"Allen\"]], \"Address\": [[1, 2, \"New York City\", \"New York\"]]}}",
+            "contributors": [],
+            "topicTags": [
+                {
+                    "name": "Database",
+                    "slug": "database",
+                    "translatedName": null,
+                    "__typename": "TopicTagNode"
+                }
+            ],
+            "companyTagStats": "{\"3\": [{\"taggedByAdmin\": false, \"name\": \"Yahoo\", \"slug\": \"yahoo\", \"timesEncountered\": 2}], \"1\": [{\"taggedByAdmin\": false, \"name\": \"Adobe\", \"slug\": \"adobe\", \"timesEncountered\": 3}, {\"taggedByAdmin\": false, \"name\": \"Amazon\", \"slug\": \"amazon\", \"timesEncountered\": 3}, {\"taggedByAdmin\": false, \"name\": \"Apple\", \"slug\": \"apple\", \"timesEncountered\": 3}, {\"taggedByAdmin\": false, \"name\": \"Bloomberg\", \"slug\": \"bloomberg\", \"timesEncountered\": 2}], \"2\": [{\"taggedByAdmin\": false, \"name\": \"Google\", \"slug\": \"google\", \"timesEncountered\": 3}, {\"taggedByAdmin\": false, \"name\": \"Microsoft\", \"slug\": \"microsoft\", \"timesEncountered\": 2}]}",
+            "codeSnippets": [
+                {
+                    "lang": "MySQL",
+                    "langSlug": "mysql",
+                    "code": "# Write your MySQL query statement below\n",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "MS SQL Server",
+                    "langSlug": "mssql",
+                    "code": "/* Write your T-SQL query statement below */\n",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Oracle",
+                    "langSlug": "oraclesql",
+                    "code": "/* Write your PL/SQL query statement below */\n",
+                    "__typename": "CodeSnippetNode"
+                }
+            ],
+            "stats": "{\"totalAccepted\": \"393K\", \"totalSubmission\": \"594.7K\", \"totalAcceptedRaw\": 392958, \"totalSubmissionRaw\": 594714, \"acRate\": \"66.1%\"}",
+            "hints": [],
+            "solution": {
+                "id": "206",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "__typename": "ArticleNode"
+            },
+            "status": null,
+            "sampleTestCase": "{\"headers\": {\"Person\": [\"PersonId\", \"LastName\", \"FirstName\"], \"Address\": [\"AddressId\", \"PersonId\", \"City\", \"State\"]}, \"rows\": {\"Person\": [[1, \"Wang\", \"Allen\"]], \"Address\": [[1, 2, \"New York City\", \"New York\"]]}}",
+            "metaData": "{\n  \"mysql\": [\n    \"Create table Person (PersonId int, FirstName varchar(255), LastName varchar(255))\",\n    \"Create table Address (AddressId int, PersonId int, City varchar(255), State varchar(255))\"\n  ],\n  \"mssql\": [\n    \"create table Person ( PersonId int, FirstName varchar(255), LastName varchar(255) )\",\n    \"create table Address ( AddressId int, PersonId int, City varchar(255), State varchar(255) )\"\n  ],\n  \"oraclesql\": [\n    \"create table Person ( PersonId int, FirstName varchar(255), LastName varchar(255) )\",\n    \"create table Address ( AddressId int, PersonId int, City varchar(255), State varchar(255) )\"\n  ],\n  \"database\": true,\n  \"manual\": false\n}",
+            "judgerAvailable": true,
+            "judgeType": "large",
+            "mysqlSchemas": [
+                "Create table Person (PersonId int, FirstName varchar(255), LastName varchar(255))",
+                "Create table Address (AddressId int, PersonId int, City varchar(255), State varchar(255))",
+                "Truncate table Person",
+                "insert into Person (PersonId, LastName, FirstName) values ('1', 'Wang', 'Allen')",
+                "Truncate table Address",
+                "insert into Address (AddressId, PersonId, City, State) values ('1', '2', 'New York City', 'New York')"
+            ],
+            "enableRunCode": true,
+            "enableTestMode": false,
+            "enableDebugger": false,
+            "envInfo": "{\"mysql\": [\"MySQL\", \"<p><code>MySQL 8.0</code>.</p>\"], \"mssql\": [\"MS SQL Server\", \"<p><code>mssql server 2019</code>.</p>\"], \"oraclesql\": [\"Oracle\", \"<p><code>Oracle Sql 11.2</code>.</p>\"]}",
+            "libraryUrl": null,
+            "adminUrl": null,
+            "__typename": "QuestionNode"
+        }
+    }
+}

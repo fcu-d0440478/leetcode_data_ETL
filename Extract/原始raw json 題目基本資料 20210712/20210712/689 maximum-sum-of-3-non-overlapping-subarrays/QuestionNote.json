@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "689",
+            "article": "{\"id\": 255, \"url\": \"/articles/maximum-sum-of-3-non-overlapping-intervals/\", \"topicId\": 127574}",
+            "solution": {
+                "id": "255",
+                "content": "[TOC]\n\n#### Approach #1: Ad-Hoc [Accepted]\n\n**Intuition**\n\nIt is natural to consider an array `W` of each interval's sum, \nwhere each interval is the given length `k`.  \nTo create `W`, we can either use prefix sums, or manage the sum of the interval \nas a window slides along the array.\n\nFrom there, we approach the reduced problem: Given some array `W` and an integer `k`, \nwhat is the lexicographically smallest tuple of indices `(i, j, l)` with `i + l <= j` and \n`j + k <= l` that maximizes `W[i] + W[j] + W[l]`?\n\n**Algorithm**\n\nSuppose we fixed `j`.  \nWe would like to know on the intervals $$i \\in [0, j - k]$$ and \n$$l \\in [j + k, \\text{len}(W) - 1]$$, \nwhere the largest value of $$W[i]$$ (and respectively $$W[l]$$) occurs first.  \n(Here, first means the smaller index.)\n\nWe can solve these problems with dynamic programming.  \nFor example, if we know that $$i$$ is where the largest value of \n$$W[i]$$ occurs first on $$[0, 5]$$, then on $$[0, 6]$$ the first occurrence of the \nlargest $$W[i]$$ must be either $$i$$ or $$6$$.  \nIf say, $$6$$ is better, then we set `best = 6`.\n\nAt the end, `left[z]` will be the first occurrence of the largest value of `W[i]` \non the interval $$i \\in [0, z]$$, and `right[z]` will be the same but on the interval \n$$i \\in [z, \\text{len}(W) - 1]$$.  This means that for some choice `j`, \nthe candidate answer must be `(left[j - k], j, right[j + k])`. \nWe take the candidate that produces the maximum `W[i] + W[j] + W[l]`.\n\n<iframe src=\"https://leetcode.com/playground/cQhaBxXV/shared\" frameBorder=\"0\" width=\"100%\" height=\"500\" name=\"cQhaBxXV\"></iframe>\n\n**Complexity Analysis**\n\n* Time Complexity: $$O(N)$$, where $$N$$ is the length of the array.  \nEvery loop is bounded in the number of steps by $$N$$, and does $$O(1)$$ work.\n\n* Space complexity: $$O(N)$$. `W`, `left`, and `right` all take $$O(N)$$ memory.",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "249",
+                    "count": 84,
+                    "average": 3.464,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

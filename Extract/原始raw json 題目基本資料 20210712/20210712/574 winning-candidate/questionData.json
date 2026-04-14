@@ -1,0 +1,89 @@
+{
+    "data": {
+        "question": {
+            "questionId": "574",
+            "questionFrontendId": "574",
+            "boundTopicId": null,
+            "title": "Winning Candidate",
+            "titleSlug": "winning-candidate",
+            "content": "<p>Table: <code>Candidate</code></p>\n\n<pre>\n+-----+---------+\n| id  | Name    |\n+-----+---------+\n| 1   | A       |\n| 2   | B       |\n| 3   | C       |\n| 4   | D       |\n| 5   | E       |\n+-----+---------+  \n</pre>\n\n<p>Table: <code>Vote</code></p>\n\n<pre>\n+-----+--------------+\n| id  | CandidateId  |\n+-----+--------------+\n| 1   |     2        |\n| 2   |     4        |\n| 3   |     3        |\n| 4   |     2        |\n| 5   |     5        |\n+-----+--------------+\nid is the auto-increment primary key,\nCandidateId is the id appeared in Candidate table.\n</pre>\n\n<p>Write a sql to find the name of the winning candidate, the above example will return the winner <code>B</code>.</p>\n\n<pre>\n+------+\n| Name |\n+------+\n| B    |\n+------+\n</pre>\n\n<p><b>Notes:</b></p>\n\n<ol>\n\t<li>You may assume <b>there is no tie</b>, in other words there will be <b>only one</b> winning candidate.</li>\n</ol>\n\n<p>&nbsp;</p>\n",
+            "translatedTitle": null,
+            "translatedContent": null,
+            "isPaidOnly": true,
+            "difficulty": "Medium",
+            "likes": 94,
+            "dislikes": 346,
+            "isLiked": null,
+            "similarQuestions": "[]",
+            "exampleTestcases": "{\"headers\":{\"Candidate\":[\"id\",\"Name\"],\"Vote\":[\"id\",\"CandidateId\"]},\"rows\":{\"Candidate\":[[1,\"A\"],[2,\"B\"],[3,\"C\"],[4,\"D\"],[5,\"E\"]],\"Vote\":[[1,2],[2,4],[3,3],[4,2],[5,5]]}}",
+            "contributors": [],
+            "topicTags": [
+                {
+                    "name": "Database",
+                    "slug": "database",
+                    "translatedName": null,
+                    "__typename": "TopicTagNode"
+                }
+            ],
+            "companyTagStats": "{\"1\": [], \"2\": [], \"3\": []}",
+            "codeSnippets": [
+                {
+                    "lang": "MySQL",
+                    "langSlug": "mysql",
+                    "code": "# Write your MySQL query statement below\n",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "MS SQL Server",
+                    "langSlug": "mssql",
+                    "code": "/* Write your T-SQL query statement below */\n",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Oracle",
+                    "langSlug": "oraclesql",
+                    "code": "/* Write your PL/SQL query statement below */\n",
+                    "__typename": "CodeSnippetNode"
+                }
+            ],
+            "stats": "{\"totalAccepted\": \"32.9K\", \"totalSubmission\": \"60.8K\", \"totalAcceptedRaw\": 32916, \"totalSubmissionRaw\": 60753, \"acRate\": \"54.2%\"}",
+            "hints": [],
+            "solution": {
+                "id": "208",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "__typename": "ArticleNode"
+            },
+            "status": null,
+            "sampleTestCase": "{\"headers\":{\"Candidate\":[\"id\",\"Name\"],\"Vote\":[\"id\",\"CandidateId\"]},\"rows\":{\"Candidate\":[[1,\"A\"],[2,\"B\"],[3,\"C\"],[4,\"D\"],[5,\"E\"]],\"Vote\":[[1,2],[2,4],[3,3],[4,2],[5,5]]}}",
+            "metaData": "{\n  \"mysql\": [\n    \"Create table If Not Exists Candidate (id int, Name varchar(255))\",\n    \"Create table If Not Exists Vote (id int, CandidateId int)\"\n  ],\n  \"mssql\": [\n    \"Create table Candidate (id int, Name varchar(255))\",\n    \"Create table Vote (id int, CandidateId int)\"\n  ],\n  \"oraclesql\": [\n    \"Create table Candidate (id int, Name varchar(255))\",\n    \"Create table Vote (id int, CandidateId int)\"\n  ],\n  \"database\": true\n}",
+            "judgerAvailable": true,
+            "judgeType": "large",
+            "mysqlSchemas": [
+                "Create table If Not Exists Candidate (id int, Name varchar(255))",
+                "Create table If Not Exists Vote (id int, CandidateId int)",
+                "Truncate table Candidate",
+                "insert into Candidate (id, Name) values ('1', 'A')",
+                "insert into Candidate (id, Name) values ('2', 'B')",
+                "insert into Candidate (id, Name) values ('3', 'C')",
+                "insert into Candidate (id, Name) values ('4', 'D')",
+                "insert into Candidate (id, Name) values ('5', 'E')",
+                "Truncate table Vote",
+                "insert into Vote (id, CandidateId) values ('1', '2')",
+                "insert into Vote (id, CandidateId) values ('2', '4')",
+                "insert into Vote (id, CandidateId) values ('3', '3')",
+                "insert into Vote (id, CandidateId) values ('4', '2')",
+                "insert into Vote (id, CandidateId) values ('5', '5')"
+            ],
+            "enableRunCode": true,
+            "enableTestMode": false,
+            "enableDebugger": false,
+            "envInfo": "{\"mysql\": [\"MySQL\", \"<p><code>MySQL 8.0</code>.</p>\"], \"mssql\": [\"MS SQL Server\", \"<p><code>mssql server 2019</code>.</p>\"], \"oraclesql\": [\"Oracle\", \"<p><code>Oracle Sql 11.2</code>.</p>\"]}",
+            "libraryUrl": null,
+            "adminUrl": null,
+            "__typename": "QuestionNode"
+        }
+    }
+}

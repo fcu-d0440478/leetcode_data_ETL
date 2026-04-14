@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "570",
+            "article": "{\"id\": 209, \"url\": \"/articles/managers-with-at-least-5-direct-reports/\", \"topicId\": 127653}",
+            "solution": {
+                "id": "209",
+                "content": "[TOC]\n\n## Solution\n---\n#### Approach: Using `JOIN` and a temporary table [Accepted]\n\n**Algorithm**\n\nFirst, we can get the Id of the manager having more than 5 direct reports just using this *ManagerId* column.\n\nThen, we can get the name of this manager by join that table with the **Employee** table.\n\n**MySQL**\n\n```sql\nSELECT\n    Name\nFROM\n    Employee AS t1 JOIN\n    (SELECT\n        ManagerId\n    FROM\n        Employee\n    GROUP BY ManagerId\n    HAVING COUNT(ManagerId) >= 5) AS t2\n    ON t1.Id = t2.ManagerId\n;\n```",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "204",
+                    "count": 7,
+                    "average": 2.857,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

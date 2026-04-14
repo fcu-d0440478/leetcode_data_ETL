@@ -1,0 +1,43 @@
+{
+    "data": {
+        "topic": {
+            "id": 158938,
+            "viewCount": 30354,
+            "topLevelCommentCount": 22,
+            "subscribed": false,
+            "title": "Uncommon Words from Two Sentences",
+            "pinned": false,
+            "tags": [],
+            "hideFromTrending": false,
+            "post": {
+                "id": 323109,
+                "voteCount": 0,
+                "voteStatus": 0,
+                "content": "",
+                "updationDate": 1534040408,
+                "creationDate": 1534040408,
+                "status": null,
+                "isHidden": null,
+                "coinRewards": [],
+                "author": {
+                    "isDiscussAdmin": false,
+                    "isDiscussStaff": false,
+                    "username": "awice",
+                    "nameColor": null,
+                    "activeBadge": null,
+                    "profile": {
+                        "userAvatar": "https://assets.leetcode.com/users/awice/avatar_1576905115.png",
+                        "reputation": 6689,
+                        "__typename": "UserProfileNode"
+                    },
+                    "isActive": true,
+                    "__typename": "UserNode"
+                },
+                "authorIsModerator": false,
+                "isOwnPost": false,
+                "__typename": "PostNode"
+            },
+            "__typename": "TopicNode"
+        }
+    }
+}

@@ -1,0 +1,804 @@
+{
+    "data": {
+        "discussQuestionTopicTags": [
+            {
+                "id": "45",
+                "name": "dynamic programming",
+                "slug": "dynamic-programming",
+                "numTopics": 50,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "123",
+                "name": "c++",
+                "slug": "c",
+                "numTopics": 25,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7955",
+                "name": "dp",
+                "slug": "dp",
+                "numTopics": 24,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7240",
+                "name": "dynamic-programming",
+                "slug": "dynamic-programming-2",
+                "numTopics": 22,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "135",
+                "name": "java",
+                "slug": "java",
+                "numTopics": 21,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "200",
+                "name": "cpp",
+                "slug": "cpp",
+                "numTopics": 20,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7177",
+                "name": "memoization",
+                "slug": "memoization",
+                "numTopics": 20,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "14",
+                "name": "java-solution",
+                "slug": "java-solution",
+                "numTopics": 10,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "34",
+                "name": "python",
+                "slug": "python",
+                "numTopics": 8,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "8214",
+                "name": "python 3",
+                "slug": "python-3",
+                "numTopics": 7,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "199",
+                "name": "recursion",
+                "slug": "recursion",
+                "numTopics": 7,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "559",
+                "name": "divide and conquer",
+                "slug": "divide-and-conquer",
+                "numTopics": 6,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "98",
+                "name": "javascript",
+                "slug": "javascript",
+                "numTopics": 6,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "11886",
+                "name": "mcm",
+                "slug": "mcm",
+                "numTopics": 6,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6912",
+                "name": "bottom-up-algorithm",
+                "slug": "bottom-up-algorithm",
+                "numTopics": 5,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6698",
+                "name": "python3",
+                "slug": "python3",
+                "numTopics": 5,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "228",
+                "name": "recursive",
+                "slug": "recursive",
+                "numTopics": 5,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "564",
+                "name": "c#",
+                "slug": "c-2",
+                "numTopics": 4,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6525",
+                "name": "dp python",
+                "slug": "dp-python",
+                "numTopics": 4,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6167",
+                "name": "easy-understanding",
+                "slug": "easy-understanding",
+                "numTopics": 4,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7986",
+                "name": "explained",
+                "slug": "explained",
+                "numTopics": 4,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "140",
+                "name": "dfs",
+                "slug": "dfs",
+                "numTopics": 3,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "9728",
+                "name": "dp-techqique",
+                "slug": "dp-techqique",
+                "numTopics": 3,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "415",
+                "name": "easy",
+                "slug": "easy",
+                "numTopics": 3,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "335",
+                "name": "golang",
+                "slug": "golang",
+                "numTopics": 3,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "15",
+                "name": "backtracking",
+                "slug": "backtracking",
+                "numTopics": 2,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "14646",
+                "name": "burst balloons",
+                "slug": "burst-balloons",
+                "numTopics": 2,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "15049",
+                "name": "burstballoons",
+                "slug": "burstballoons",
+                "numTopics": 2,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "10496",
+                "name": "cpp solution",
+                "slug": "cpp-solution-2",
+                "numTopics": 2,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "5866",
+                "name": "divide-and-conquer",
+                "slug": "divide-and-conquer-2",
+                "numTopics": 2,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7502",
+                "name": "divideconquer",
+                "slug": "divideconquer",
+                "numTopics": 2,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "10497",
+                "name": "javascript solution",
+                "slug": "javascript-solution",
+                "numTopics": 2,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "11762",
+                "name": "matrix chain mul.",
+                "slug": "matrix-chain-mul",
+                "numTopics": 2,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "10118",
+                "name": "recursive solution",
+                "slug": "recursive-solution",
+                "numTopics": 2,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6470",
+                "name": "recusion",
+                "slug": "recusion",
+                "numTopics": 2,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6178",
+                "name": "simple clear c++ solution",
+                "slug": "simple-clear-c-solution",
+                "numTopics": 2,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7030",
+                "name": "tabulation",
+                "slug": "tabulation",
+                "numTopics": 2,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "9126",
+                "name": "topdown",
+                "slug": "topdown",
+                "numTopics": 2,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "14645",
+                "name": "312",
+                "slug": "312",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "14543",
+                "name": "awesome samriddhi",
+                "slug": "awesome-samriddhi",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7934",
+                "name": "c",
+                "slug": "c-3",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7343",
+                "name": "c++ dynamic programming",
+                "slug": "c-dynamic-programming",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "11318",
+                "name": "c++ easy to understand",
+                "slug": "c-easy-to-understand",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6404",
+                "name": "clean code",
+                "slug": "clean-code",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7396",
+                "name": "commented",
+                "slug": "commented",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "379",
+                "name": "comments",
+                "slug": "comments",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "11875",
+                "name": "comments added",
+                "slug": "comments-added",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "9006",
+                "name": "commetend",
+                "slug": "commetend",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6481",
+                "name": "concise",
+                "slug": "concise",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7191",
+                "name": "concise-solution",
+                "slug": "concise-solution",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6191",
+                "name": "correct",
+                "slug": "correct",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "16864",
+                "name": "cut-based dp",
+                "slug": "cut-based-dp",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "10378",
+                "name": "diagram",
+                "slug": "diagram",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "5834",
+                "name": "different-oj-runcode",
+                "slug": "different-oj-runcode",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6106",
+                "name": "dive-and-conquer",
+                "slug": "dive-and-conquer",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "13169",
+                "name": "dp-table",
+                "slug": "dp-table",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "12602",
+                "name": "dyanmic programming",
+                "slug": "dyanmic-programming",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "10665",
+                "name": "dynammic programming",
+                "slug": "dynammic-programming",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "8107",
+                "name": "easy to understand",
+                "slug": "easy-to-understand-2",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7253",
+                "name": "easy-to-understand",
+                "slug": "easy-to-understand",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7670",
+                "name": "easy-understand",
+                "slug": "easy-understand-2",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "9228",
+                "name": "easy-undestand",
+                "slug": "easy-undestand",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7161",
+                "name": "explanation",
+                "slug": "explanation",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "10419",
+                "name": "explanation simple",
+                "slug": "explanation-simple",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "14830",
+                "name": "gap-method",
+                "slug": "gap-method",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "16674",
+                "name": "gkt",
+                "slug": "gkt",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "5943",
+                "name": "go-solution",
+                "slug": "go-solution",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6607",
+                "name": "golang-solution",
+                "slug": "golang-solution",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6253",
+                "name": "help",
+                "slug": "help",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7062",
+                "name": "help me",
+                "slug": "help-me",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "17063",
+                "name": "hsnu",
+                "slug": "hsnu",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6513",
+                "name": "intuitive",
+                "slug": "intuitive",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "5889",
+                "name": "java ac solution",
+                "slug": "java-ac-solution",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7059",
+                "name": "java solution",
+                "slug": "java-solution-2",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7921",
+                "name": "logical thinking",
+                "slug": "logical-thinking",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6384",
+                "name": "mask",
+                "slug": "mask",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "15058",
+                "name": "matrix chain",
+                "slug": "matrix-chain",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "11751",
+                "name": "matrix-chain-dp",
+                "slug": "matrix-chain-dp",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "18143",
+                "name": "matrix-chain-mul",
+                "slug": "matrix-chain-mul-2",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "9424",
+                "name": "matrix-multiplication",
+                "slug": "matrix-multiplication",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "13442",
+                "name": "matrixmultiplication",
+                "slug": "matrixmultiplication",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "14005",
+                "name": "mcm pattern",
+                "slug": "mcm-pattern",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "11763",
+                "name": "memoisation",
+                "slug": "memoisation",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6772",
+                "name": "memorized-dfs",
+                "slug": "memorized-dfs",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "28",
+                "name": "memoziation",
+                "slug": "memoziation",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "8431",
+                "name": "modern",
+                "slug": "modern",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6185",
+                "name": "mountain0789",
+                "slug": "mountain0789",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "11857",
+                "name": "on3",
+                "slug": "on3",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "173",
+                "name": "optimization",
+                "slug": "optimization",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6707",
+                "name": "pythonic",
+                "slug": "pythonic",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "13964",
+                "name": "recursion memoization",
+                "slug": "recursion-memoization",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "14509",
+                "name": "ritik",
+                "slug": "ritik",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "382",
+                "name": "ruby",
+                "slug": "ruby",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7822",
+                "name": "runtime-error",
+                "slug": "runtime-error",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "543",
+                "name": "scala",
+                "slug": "scala",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6868",
+                "name": "short",
+                "slug": "short",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6081",
+                "name": "simple",
+                "slug": "simple",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "9751",
+                "name": "simpler",
+                "slug": "simpler",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6189",
+                "name": "simplest",
+                "slug": "simplest",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "12018",
+                "name": "space complexity",
+                "slug": "space-complexity-2",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "10434",
+                "name": "thought-process",
+                "slug": "thought-process-2",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "8090",
+                "name": "time complexity",
+                "slug": "time-complexity-2",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6768",
+                "name": "time-limit-exceeded",
+                "slug": "time-limit-exceeded",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7827",
+                "name": "tle",
+                "slug": "tle",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "8068",
+                "name": "top down",
+                "slug": "top-down-2",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "12812",
+                "name": "top down dp",
+                "slug": "top-down-dp-2",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7394",
+                "name": "top-down",
+                "slug": "top-down",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7890",
+                "name": "top-down dp",
+                "slug": "top-down-dp",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "14264",
+                "name": "typescript javascript",
+                "slug": "typescript-javascript",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "9508",
+                "name": "video explanation",
+                "slug": "video-explanation",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "12302",
+                "name": "video-explanation",
+                "slug": "video-explanation-2",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7064",
+                "name": "well-explained",
+                "slug": "well-explained",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6418",
+                "name": "xjq",
+                "slug": "xjq",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7105",
+                "name": "youtube",
+                "slug": "youtube",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            }
+        ]
+    }
+}

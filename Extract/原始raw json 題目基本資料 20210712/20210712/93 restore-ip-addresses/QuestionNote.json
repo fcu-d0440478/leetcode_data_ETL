@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "93",
+            "article": "{\"id\": 673, \"url\": \"/articles/restore-ip-addresses/\", \"topicId\": 222355}",
+            "solution": {
+                "id": "673",
+                "content": "[TOC]\n\n## Solution\n\n---\n\n#### Intuition\n\nThe naive solution would be to brute-force, \n_i.e._ to check all possible positions for the dots \nand keep only the valid ones. In the worst case that \nmeans `11` possible positions and hence $$11 \\times 10 \\times 9\n= 990$$ validations.\n\nThat could be optimized with the help of two conceptions.\n\n> The first one is called _constrained programming_. \n\nThat basically means\nto put restrictions after each dot placement. \n\nIf one already put a dot that leaves only `3` possibilities\nfor the next dot to be placed : after one digit, \nafter two digits, or after three digits. The first dot has \nonly `3` available slots as well.\n\nThat propagates _constraints_ \nand helps to reduce a number of combinations to consider.\nInstead of $$990$$ combinations it's enough to \ncheck just $$3 \\times 3 \\times 3 = 27$$.\n\n> The second one called _backtracking_. \n\nLet's imagine that one put one or two dots already and that left\nno way to place the others to create a valid IP address. \nWhat to do? _To backtrack_. That means to come back,\nto change the position of the previously placed dot and try \nto proceed again. If that would not work either, _backtrack_ again.\n<br />\n<br />\n\n\n---\n#### Approach 1: Backtracking (DFS)\n\nHere is an algorithm for the backtrack function\n`backtrack(prev_pos = -1, dots = 3)` which takes \nposition of the previously placed dot `prev_pos`\nand number of dots to place `dots` as arguments :\n\n* Iterate over three available slots `curr_pos` to place a dot. \n   * Check if the segment from the previous dot to the current one is valid :\n      * Yes :\n        * Place the dot.\n        * Check if all `3` dots are placed :\n            * Yes :\n                * Add the solution into the output list.\n            * No :\n                * Proceed to place next dots `backtrack(curr_pos, dots - 1)`.\n        * Remove the last dot to backtrack. \n\n!?!../Documents/93_LIS.json:1000,612!?!\n\n<iframe src=\"https://leetcode.com/playground/Jmzi5Ugk/shared\" frameBorder=\"0\" width=\"100%\" height=\"500\" name=\"Jmzi5Ugk\"></iframe>\n\n**Complexity Analysis**\n\n* Time complexity : as discussed above, there is not more than `27`\ncombinations to check. \n* Space complexity : constant space to keep the solutions, not more \nthan `19` valid IP addresses. \n\n<img src=\"../Figures/93/93_max_number.png\" width=\"500\">",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": true,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "659",
+                    "count": 41,
+                    "average": 3.585,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

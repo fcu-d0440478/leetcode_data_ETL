@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "987",
+            "article": "{\"id\": 632, \"url\": \"/articles/reveal-cards-in-increasing-order/\", \"topicId\": 200385}",
+            "solution": {
+                "id": "632",
+                "content": "[TOC]\n\n## Solution\n---\n#### Approach 1: Simulation\n\n**Intuition and Algorithm**\n\nSimulate the revealing process with a deck set to `[0, 1, 2, ...]`.  If for example this deck is revealed in the order `[0, 2, 4, ...]` then we know we need to put the smallest card in index `0`, the second smallest card in index `2`, the third smallest card in index `4`, etc.\n\n<iframe src=\"https://leetcode.com/playground/CrzKyzqd/shared\" frameBorder=\"0\" width=\"100%\" height=\"361\" name=\"CrzKyzqd\"></iframe>\n\n**Complexity Analysis**\n\n* Time Complexity:  $$O(N \\log N)$$, where $$N$$ is the length of `deck`.\n\n* Space Complexity:  $$O(N)$$.\n<br />\n<br />",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "618",
+                    "count": 84,
+                    "average": 3.774,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

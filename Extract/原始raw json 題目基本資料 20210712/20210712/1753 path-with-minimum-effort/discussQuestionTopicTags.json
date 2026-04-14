@@ -1,0 +1,727 @@
+{
+    "data": {
+        "discussQuestionTopicTags": [
+            {
+                "id": "123",
+                "name": "c++",
+                "slug": "c",
+                "numTopics": 26,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "133",
+                "name": "bfs",
+                "slug": "bfs",
+                "numTopics": 20,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "34",
+                "name": "python",
+                "slug": "python",
+                "numTopics": 19,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "61",
+                "name": "binary-search",
+                "slug": "binary-search",
+                "numTopics": 18,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6989",
+                "name": "priority queue",
+                "slug": "priority-queue-2",
+                "numTopics": 12,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "135",
+                "name": "java",
+                "slug": "java",
+                "numTopics": 11,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "200",
+                "name": "cpp",
+                "slug": "cpp",
+                "numTopics": 10,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7277",
+                "name": "dijkstra",
+                "slug": "dijkstra",
+                "numTopics": 10,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "140",
+                "name": "dfs",
+                "slug": "dfs",
+                "numTopics": 9,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "9798",
+                "name": "dijkstras algorithm",
+                "slug": "dijkstras-algorithm",
+                "numTopics": 9,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "13601",
+                "name": "dijsktra",
+                "slug": "dijsktra",
+                "numTopics": 7,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "8214",
+                "name": "python 3",
+                "slug": "python-3",
+                "numTopics": 7,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "98",
+                "name": "javascript",
+                "slug": "javascript",
+                "numTopics": 6,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "564",
+                "name": "c#",
+                "slug": "c-2",
+                "numTopics": 5,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6404",
+                "name": "clean code",
+                "slug": "clean-code",
+                "numTopics": 4,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "8528",
+                "name": "djikstra",
+                "slug": "djikstra",
+                "numTopics": 4,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "14442",
+                "name": "djikstra algorithm",
+                "slug": "djikstra-algorithm",
+                "numTopics": 4,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7986",
+                "name": "explained",
+                "slug": "explained",
+                "numTopics": 4,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6698",
+                "name": "python3",
+                "slug": "python3",
+                "numTopics": 4,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6991",
+                "name": "binary search",
+                "slug": "binary-search-2",
+                "numTopics": 3,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6167",
+                "name": "easy-understanding",
+                "slug": "easy-understanding",
+                "numTopics": 3,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "335",
+                "name": "golang",
+                "slug": "golang",
+                "numTopics": 3,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "21",
+                "name": "graph",
+                "slug": "graph",
+                "numTopics": 3,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "376",
+                "name": "heap",
+                "slug": "heap",
+                "numTopics": 3,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6258",
+                "name": "min-heap",
+                "slug": "min-heap",
+                "numTopics": 3,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6081",
+                "name": "simple",
+                "slug": "simple",
+                "numTopics": 3,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "346",
+                "name": "swift",
+                "slug": "swift",
+                "numTopics": 3,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6696",
+                "name": "union find",
+                "slug": "union-find",
+                "numTopics": 3,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "8967",
+                "name": "100 speed",
+                "slug": "100-speed",
+                "numTopics": 2,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "560",
+                "name": "binarysearch",
+                "slug": "binarysearch",
+                "numTopics": 2,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7530",
+                "name": "breadth-first-search",
+                "slug": "breadth-first-search-2",
+                "numTopics": 2,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "9538",
+                "name": "dfs simple solution",
+                "slug": "dfs-simple-solution",
+                "numTopics": 2,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "14161",
+                "name": "dfs traversal",
+                "slug": "dfs-traversal",
+                "numTopics": 2,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "12779",
+                "name": "dijikstra",
+                "slug": "dijikstra-2",
+                "numTopics": 2,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7955",
+                "name": "dp",
+                "slug": "dp",
+                "numTopics": 2,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "99",
+                "name": "greedy",
+                "slug": "greedy",
+                "numTopics": 2,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "8977",
+                "name": "kruskals algorithm",
+                "slug": "kruskals-algorithm",
+                "numTopics": 2,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7898",
+                "name": "rust",
+                "slug": "rust",
+                "numTopics": 2,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "10266",
+                "name": "unionfind",
+                "slug": "unionfind-2",
+                "numTopics": 2,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "9037",
+                "name": "#c++",
+                "slug": "c-4",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "8960",
+                "name": "#cpp",
+                "slug": "cpp-2",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "11741",
+                "name": "#dijikstra",
+                "slug": "dijikstra",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "13842",
+                "name": "100 faster runtime",
+                "slug": "100-faster-runtime",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "14439",
+                "name": "1102",
+                "slug": "1102",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "13809",
+                "name": "3 approaches",
+                "slug": "3-approaches",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "14789",
+                "name": "ada",
+                "slug": "ada",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "14440",
+                "name": "balanced tree",
+                "slug": "balanced-tree-2",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "9592",
+                "name": "bellman-ford",
+                "slug": "bellman-ford-2",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "9732",
+                "name": "best-first search",
+                "slug": "best-first-search",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "16168",
+                "name": "bfs-java",
+                "slug": "bfs-java-2",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "5958",
+                "name": "breadth first search",
+                "slug": "breadth-first-search",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "8176",
+                "name": "c++ solution",
+                "slug": "c-solution-2",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6055",
+                "name": "clean",
+                "slug": "clean",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "379",
+                "name": "comments",
+                "slug": "comments",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "11875",
+                "name": "comments added",
+                "slug": "comments-added",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "14101",
+                "name": "comments-added",
+                "slug": "comments-added-2",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6256",
+                "name": "comparator",
+                "slug": "comparator",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "10496",
+                "name": "cpp solution",
+                "slug": "cpp-solution-2",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6926",
+                "name": "depth first search",
+                "slug": "depth-first-search-2",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "13380",
+                "name": "dfs solution",
+                "slug": "dfs-solution",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "16533",
+                "name": "dijikstra algorithm",
+                "slug": "dijikstra-algorithm",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "13470",
+                "name": "dijkstra algorithm",
+                "slug": "dijkstra-algorithm",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6222",
+                "name": "dijkstras",
+                "slug": "dijkstras",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "12333",
+                "name": "djiktras",
+                "slug": "djiktras",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "45",
+                "name": "dynamic programming",
+                "slug": "dynamic-programming",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "10356",
+                "name": "early termination",
+                "slug": "early-termination",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "8319",
+                "name": "easy to read",
+                "slug": "easy-to-read",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "8107",
+                "name": "easy to understand",
+                "slug": "easy-to-understand-2",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7253",
+                "name": "easy-to-understand",
+                "slug": "easy-to-understand",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "13316",
+                "name": "expalanation",
+                "slug": "expalanation",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6590",
+                "name": "fast",
+                "slug": "fast",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6793",
+                "name": "fast and simple",
+                "slug": "fast-and-simple",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7928",
+                "name": "go",
+                "slug": "go",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "12535",
+                "name": "graph theory",
+                "slug": "graph-theory-2",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "12641",
+                "name": "graph traversal",
+                "slug": "graph-traversal",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7195",
+                "name": "heapq",
+                "slug": "heapq",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6513",
+                "name": "intuitive",
+                "slug": "intuitive",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "16555",
+                "name": "izaac",
+                "slug": "izaac",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "14",
+                "name": "java-solution",
+                "slug": "java-solution",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "10497",
+                "name": "javascript solution",
+                "slug": "javascript-solution",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7226",
+                "name": "kotlin",
+                "slug": "kotlin",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "14790",
+                "name": "legal concerns",
+                "slug": "legal-concerns",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "8835",
+                "name": "maze",
+                "slug": "maze",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "8510",
+                "name": "minheap",
+                "slug": "minheap",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "17916",
+                "name": "no binary search",
+                "slug": "no-binary-search",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "12395",
+                "name": "optimisation",
+                "slug": "optimisation",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7143",
+                "name": "path compression",
+                "slug": "path-compression",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "15741",
+                "name": "pathwithmineffort",
+                "slug": "pathwithmineffort",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7003",
+                "name": "performance",
+                "slug": "performance",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "11760",
+                "name": "pq",
+                "slug": "pq",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6587",
+                "name": "priority-queue",
+                "slug": "priority-queue",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6535",
+                "name": "priorityqueue",
+                "slug": "priorityqueue",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "13846",
+                "name": "python3.8",
+                "slug": "python38",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "12042",
+                "name": "pythonpython3",
+                "slug": "pythonpython3",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "14792",
+                "name": "question building",
+                "slug": "question-building",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "14791",
+                "name": "question practices",
+                "slug": "question-practices",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "382",
+                "name": "ruby",
+                "slug": "ruby",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6265",
+                "name": "stl",
+                "slug": "stl",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "8587",
+                "name": "template",
+                "slug": "template",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "15743",
+                "name": "timothy h chang",
+                "slug": "timothy-h-chang",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "14376",
+                "name": "ting",
+                "slug": "ting",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7827",
+                "name": "tle",
+                "slug": "tle",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "12302",
+                "name": "video-explanation",
+                "slug": "video-explanation-2",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            }
+        ]
+    }
+}

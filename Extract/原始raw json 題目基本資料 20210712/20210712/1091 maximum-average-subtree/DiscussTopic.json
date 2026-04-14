@@ -1,0 +1,43 @@
+{
+    "data": {
+        "topic": {
+            "id": 898193,
+            "viewCount": 10676,
+            "topLevelCommentCount": 8,
+            "subscribed": false,
+            "title": "Maximum Average Subtree",
+            "pinned": false,
+            "tags": [],
+            "hideFromTrending": false,
+            "post": {
+                "id": 1635960,
+                "voteCount": 0,
+                "voteStatus": 0,
+                "content": "",
+                "updationDate": 1602918793,
+                "creationDate": 1602918793,
+                "status": null,
+                "isHidden": null,
+                "coinRewards": [],
+                "author": {
+                    "isDiscussAdmin": false,
+                    "isDiscussStaff": false,
+                    "username": "khaufnak",
+                    "nameColor": null,
+                    "activeBadge": null,
+                    "profile": {
+                        "userAvatar": "https://assets.leetcode.com/users/khaufnak/avatar_1591528305.png",
+                        "reputation": 1091,
+                        "__typename": "UserProfileNode"
+                    },
+                    "isActive": true,
+                    "__typename": "UserNode"
+                },
+                "authorIsModerator": false,
+                "isOwnPost": false,
+                "__typename": "PostNode"
+            },
+            "__typename": "TopicNode"
+        }
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "834",
+            "article": "{\"id\": 451, \"url\": \"/articles/ambiguous-coordinates/\", \"topicId\": 127517}",
+            "solution": {
+                "id": "451",
+                "content": "[TOC]\n\n---\n#### Approach #1: Cartesian Product [Accepted]\n\n**Intuition and Algorithm**\n\nFor each place to put the comma, we separate the string into two fragments.  For example, with a string like `\"1234\"`, we could separate it into fragments `\"1\" and \"234\"`, `\"12\" and \"34\"`, or `\"123\"` and `\"4\"`.\n\nThen, for each fragment, we have a choice of where to put the period, to create a list `make(...)` of choices.  For example, `\"123\"` could be made into `\"1.23\"`, `\"12.3\"`, or `\"123\"`.\n\nBecause of extranneous zeroes, we should ignore possibilities where the part of the fragment to the `left` of the decimal starts with `\"0\"` (unless it is exactly `\"0\"`), and ignore possibilities where the part of the fragment to the `right` of the decimal ends with `\"0\"`, as these are not allowed.\n\nNote that this process could result in an empty answer, such as for the case `S = \"(000)\"`.\n\n<iframe src=\"https://leetcode.com/playground/QTRoMo9y/shared\" frameBorder=\"0\" width=\"100%\" height=\"463\" name=\"QTRoMo9y\"></iframe>\n\n**Complexity Analysis**\n\n* Time Complexity:  $$O(N^3)$$, where $$N$$ is the length `S`.  We evaluate the sum $$O(\\sum_k k(N-k))$$.\n\n* Space Complexity: $$O(N^3)$$, to store the answer.",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "446",
+                    "count": 38,
+                    "average": 2.895,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

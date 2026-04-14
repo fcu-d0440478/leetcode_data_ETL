@@ -1,0 +1,43 @@
+{
+    "data": {
+        "topic": {
+            "id": 505341,
+            "viewCount": 22000,
+            "topLevelCommentCount": 30,
+            "subscribed": false,
+            "title": "Pascal's Triangle II",
+            "pinned": false,
+            "tags": [],
+            "hideFromTrending": false,
+            "post": {
+                "id": 956108,
+                "voteCount": 0,
+                "voteStatus": 0,
+                "content": "",
+                "updationDate": 1581362954,
+                "creationDate": 1581362954,
+                "status": null,
+                "isHidden": null,
+                "coinRewards": [],
+                "author": {
+                    "isDiscussAdmin": false,
+                    "isDiscussStaff": false,
+                    "username": "babhishek21",
+                    "nameColor": null,
+                    "activeBadge": null,
+                    "profile": {
+                        "userAvatar": "https://www.gravatar.com/avatar/53780b9dd55b52418843419dd2e31d7d.png?s=200",
+                        "reputation": 239,
+                        "__typename": "UserProfileNode"
+                    },
+                    "isActive": true,
+                    "__typename": "UserNode"
+                },
+                "authorIsModerator": false,
+                "isOwnPost": false,
+                "__typename": "PostNode"
+            },
+            "__typename": "TopicNode"
+        }
+    }
+}

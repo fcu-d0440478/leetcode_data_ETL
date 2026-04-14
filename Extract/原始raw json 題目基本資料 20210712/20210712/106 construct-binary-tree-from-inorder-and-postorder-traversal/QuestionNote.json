@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "106",
+            "article": "{\"id\": 732, \"url\": \"/articles/construct-binary-tree-from-inorder-and-postorder-traversal/\", \"topicId\": 298219}",
+            "solution": {
+                "id": "732",
+                "content": "[TOC]\n\n## Solution\n\n--- \n\n#### How to traverse the tree\n\nThere are two general strategies to traverse a tree:\n     \n- *Depth First Search* (`DFS`)\n\n    In this strategy, we adopt the `depth` as the priority, so that one\n    would start from a root and reach all the way down to certain leaf,\n    and then back to root to reach another branch.\n\n    The DFS strategy can further be distinguished as\n    `preorder`, `inorder`, and `postorder` depending on the relative order\n    among the root node, left node and right node.\n    \n- *Breadth First Search* (`BFS`)\n\n    We scan through the tree level by level, following the order of height,\n    from top to bottom. The nodes on higher level would be visited before\n    the ones with lower levels.\n    \nOn the following figure the nodes are enumerated in the order you visit them,\nplease follow `1-2-3-4-5` to compare different strategies.\n\n![postorder](../Figures/106/bfs_dfs.png)\n\n> In this problem one deals with inorder and postorder traversals.\n\n<br /> \n<br />\n\n\n---\n#### Approach 1: Recursion\n\n**How to construct the tree from two traversals: inorder and preorder/postorder/etc**\n\nProblems like this one are often at Facebook interviews, and could be solved in\n$$\\mathcal{O}(N)$$ time:\n\n- Start from not inorder traversal, usually it's preorder or postorder one, and \nuse the traversal picture above to define the strategy to pick the nodes. \nFor example, for preorder traversal the _first_ value is a root, then\nits left child, then its right child, etc. \nFor postorder traversal the _last_ value is a root, then its right child,\nthen its left child, etc. \n\n- The value picked from preorder/postorder traversal splits the inorder \ntraversal into left and right subtrees. The only information one needs from\ninorder - if the current subtree is empty (= return `None`) or not \n(= continue to construct the subtree). \n\n![bla](../Figures/106/recursion.png)\n\n**Algorithm**\n\n- Build hashmap `value -> its index` for inorder traversal.\n\n- Return `helper` function which takes as the arguments \nthe left and right boundaries for the current subtree in the inorder traversal.\nThese boundaries are used only to check if the subtree is empty or not.\nHere is how it works `helper(in_left = 0, in_right = n - 1)`:\n\n    - If `in_left > in_right`, the subtree is empty, return `None`.\n    \n    - Pick the last element in postorder traversal as a root.\n    \n    - Root value has index `index` in the inorder traversal,\n    elements from `in_left` to `index - 1` belong to the left subtree,\n    and elements from `index + 1` to `in_right` belong to the right subtree.\n    \n    - Following the postorder logic, proceed recursively first to construct the\n    right subtree `helper(index + 1, in_right)` and then to construct \n    the left subtree `helper(in_left, index - 1)`.\n    \n    - Return `root`.\n\n**Implementation**\n\n!?!../Documents/106_LIS.json:1000,560!?!\n\n<iframe src=\"https://leetcode.com/playground/PikW3feZ/shared\" frameBorder=\"0\" width=\"100%\" height=\"500\" name=\"PikW3feZ\"></iframe>\n\n**Complexity Analysis**\n\n* Time complexity : $$\\mathcal{O}(N)$$. Let's compute the solution with the help of \n[master theorem](https://en.wikipedia.org/wiki/Master_theorem_(analysis_of_algorithms)) \n$$T(N) = aT\\left(\\frac{b}{N}\\right) + \\Theta(N^d)$$.\nThe equation represents dividing the problem \nup into $$a$$ subproblems of size $$\\frac{N}{b}$$ in $$\\Theta(N^d)$$ time. \nHere one divides the problem in two subproblemes `a = 2`, the size of each subproblem \n(to compute left and right subtree) is a half of initial problem `b = 2`, \nand all this happens in a constant time `d = 0`.\nThat means that $$\\log_b(a) > d$$ and hence we're dealing with \n[case 1](https://en.wikipedia.org/wiki/Master_theorem_(analysis_of_algorithms)#Case_1_example)\nthat means $$\\mathcal{O}(N^{\\log_b(a)}) = \\mathcal{O}(N)$$ time complexity.\n\n* Space complexity : $$\\mathcal{O}(N)$$, since we store the entire tree.",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": true,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "717",
+                    "count": 65,
+                    "average": 4.723,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

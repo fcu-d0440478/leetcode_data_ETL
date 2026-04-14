@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "502",
+            "article": "{\"id\": 739, \"url\": \"/articles/ipo/\", \"topicId\": 312289}",
+            "solution": {
+                "id": "739",
+                "content": "[TOC]\n\n## Solution\n\n---\n\n#### Approach 1: Greedy with Heap\n\n**Intuition**\n\nThis is a greedy problem, and the only hard moment here is that capital \nis changing and so the list of available projects.  \n\n![fig](../Figures/502/user.png)\n\nThat could be solved by using two data structures: \n\n- `projects` to track all the projects which are not implemented yet.\n\n- `available` to track projects available with the current capital. \n\n![pic](../Figures/502/available.png)\n\n**Algorithm**\n\n- To speed up, first check if here is a situation when all the projects are\navailable with the initial capital `W >= max(Capital)`. \nIf so, return the sum of [kth largest elements](https://leetcode.com/articles/kth-largest-element-in-an-array/) \nin `Profits`.\n\n- Build structure `projects` which \n\n    - contains an information about \n    capital and profit from each project, \n\n    - is sorted by capitals, and\n\n    - provides pop operation to remove already taken projects. \n    \n    - That could be min heap in Java and array of sets in Python. \n\n- Iterate over k to choose k projects. At each step\n \n    - Update a list of projects available with the current capital.\n    One could choose max heap as a structure for available projects to\n    simplify the peek of the most profitable one on the next step.\n    \n    - If there are any, choose the most profitable one, update `W` and proceed further.\n    \n    - Break, if the capital isn't large enough to start any project. \n    \n- Return `W`.\n\n**Implementation**\n\n<iframe src=\"https://leetcode.com/playground/2T5J75Ma/shared\" frameBorder=\"0\" width=\"100%\" height=\"500\" name=\"2T5J75Ma\"></iframe>\n\n**Complexity Analysis**\n\n* Time complexity:\n\n    - $$\\mathcal{O}(N \\log k)$$ in the best case when all projects are available with the initial capital. \n\n    - Otherwise, one needs $$\\mathcal{O}(N \\log N)$$ time to create and sort projects, and another $$\\mathcal{O}(N \\log N)$$ to update the available projects, and finally  $$\\mathcal{O}(k \\log N)$$ to compute the capital. \n\n    - Hence, the overall time complexity is $$\\mathcal{O}(N \\log N + N \\log N + k \\log N)$$. Assuming that $$k < N$$, we would have $$\\mathcal{O}(N \\log N)$$ time complexity at the end.\n\n* Space complexity : $$\\mathcal{O}(N)$$.\n\n\n---\n#### Approach 2: Greedy with Array\n\n**Intuition**\n\nIn the previous approach, we applied the **Heap** data structure to track the \navailable projects and the ones that are implemented.\nWe could actually implement the Greedy algorithm without the need of Heap.\n\n> The idea is to keep all projects in the list, and use the technique of **in-place** modification to mark the ones that have been selected.\n\nHere one could set the capital to start as infinity for the projects which are already done.  \n\n![fic](../Figures/502/done.png)\n \n**Algorithm**\n\n- To speed up, first check if here is a situation when all the projects are\navailable with the initial capital `W >= max(Capital)`. \nIf so, return the sum of [kth largest elements](https://leetcode.com/articles/kth-largest-element-in-an-array/) \nin `Profits`. \n\n- Iterate over k to choose k projects. At each step\n \n    - Choose the most profitable project.\n    For that, iterate over all N projects and between the ones\n    with `W >= Capital[j]`, choose the project with max `Profits[j]`.\n    \n    - Break, if the capital isn't large enough to start any project.\n    \n    - Update `W` to add the profit from the chosen project \n    `W += Profits[idx]` and then discard this project from the \n    further consideration `Capital[j] = Integer.MAX_VALUE`.\n    \n- Return `W`.\n\n**Implementation**\n\n<iframe src=\"https://leetcode.com/playground/mRkbYtN6/shared\" frameBorder=\"0\" width=\"100%\" height=\"500\" name=\"mRkbYtN6\"></iframe>\n\n**Complexity Analysis**\n\n* Time complexity: \n\n    - $$\\mathcal{O}(N \\log k)$$ in the best case when all projects are available with the initial capital.\n\n    - Otherwise, $$\\mathcal{O}(k \\cdot N)$$, assuming $$k < N$$.\n\n* Space complexity: \n\n    - If all projects are available with the initial capital,\nthen $$\\mathcal{O}(k)$$ in Java and $$\\mathcal{O}(1)$$ in Python.\n\n    - Otherwise, it is a constant space solution $$\\mathcal{O}(1)$$.\n<br /> \n<br />",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": true,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "724",
+                    "count": 13,
+                    "average": 3.077,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

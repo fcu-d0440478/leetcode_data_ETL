@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "95",
+            "article": "{\"id\": 604, \"url\": \"/articles/unique-binary-search-trees-ii/\", \"topicId\": 187794}",
+            "solution": {
+                "id": "604",
+                "content": "[TOC]\n\n## Solution\n\n**Tree definition**\n\nFirst of all, here is the definition of the ```TreeNode``` which we would use.\n\n<iframe src=\"https://leetcode.com/playground/qARrtrf7/shared\" frameBorder=\"0\" width=\"100%\" height=\"225\" name=\"qARrtrf7\"></iframe>\n<br />\n<br />\n\n\n---\n#### Approach 1: Recursion\n\nFirst of all let's count how many trees do we have to construct.\nAs you could check in [this article](https://leetcode.com/articles/unique-binary-search-trees/),\nthe number of possible BST is actually a [Catalan number](https://en.wikipedia.org/wiki/Catalan_number). \n\nLet's follow the logic from the above article, this time not to count but\nto actually construct the trees. \n \n**Algorithm**\n\nLet's pick up number `i` out of the sequence `1 ..n` and use it as the root\nof the current tree. \nThen there are ```i - 1``` elements available for the construction of the\nleft subtree and ```n - i``` elements available for the right subtree. \nAs we [already discussed](https://leetcode.com/articles/unique-binary-search-trees/)\nthat results in ```G(i - 1)``` different left subtrees and ```G(n - i)```\ndifferent right subtrees, where ```G``` is a Catalan number. \n\n![BST](../Figures/96_BST.png)\n\nNow let's repeat the step above for the sequence `1 ... i - 1` to construct\nall left subtrees, and then for the sequence `i + 1 ... n` to construct all\nright subtrees. \n\nThis way we have a root `i` and two lists for the possible left and right subtrees.\nThe final step is to loop over both lists to link left and right\nsubtrees to the root.  \n\n<iframe src=\"https://leetcode.com/playground/RshkqCas/shared\" frameBorder=\"0\" width=\"100%\" height=\"500\" name=\"RshkqCas\"></iframe>\n\n**Complexity analysis**\n\n* Time complexity : The main computations are to construct all possible \ntrees with a given root, that is actually Catalan number $$G_n$$ as was discussed\nabove. This is done `n` times, that results in time complexity $$n G_n$$.\nCatalan numbers grow as $$\\frac{4^n}{n^{3/2}}$$ that gives the \nfinal complexity $$\\mathcal{O}(\\frac{4^n}{n^{1/2}})$$.\nSeems to be large but let's not forget that here we're asked to generate\n$$G_n \\sim \\frac{4^n}{n^{3/2}}$$ tree objects as output.\n\n* Space complexity : $$n G_n$$ as we keep $$G_n$$ trees with `n` elements each, \nthat results in $$\\mathcal{O}(\\frac{4^n}{n^{1/2}})$$\ncomplexity.",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": true,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "590",
+                    "count": 57,
+                    "average": 3.895,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

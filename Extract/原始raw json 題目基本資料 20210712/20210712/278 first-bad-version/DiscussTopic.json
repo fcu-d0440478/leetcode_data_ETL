@@ -1,0 +1,43 @@
+{
+    "data": {
+        "topic": {
+            "id": 127815,
+            "viewCount": 253594,
+            "topLevelCommentCount": 86,
+            "subscribed": false,
+            "title": "First Bad Version",
+            "pinned": false,
+            "tags": [],
+            "hideFromTrending": false,
+            "post": {
+                "id": 260386,
+                "voteCount": 0,
+                "voteStatus": 0,
+                "content": "---\\n**Click [here](https://leetcode.com/articles/first-bad-version/) to see the full article post**",
+                "updationDate": 1457531606,
+                "creationDate": 1457531606,
+                "status": null,
+                "isHidden": null,
+                "coinRewards": [],
+                "author": {
+                    "isDiscussAdmin": true,
+                    "isDiscussStaff": true,
+                    "username": "1337c0d3r",
+                    "nameColor": null,
+                    "activeBadge": null,
+                    "profile": {
+                        "userAvatar": "https://assets.leetcode.com/users/1337c0d3r/avatar_1547177258.png",
+                        "reputation": 3129,
+                        "__typename": "UserProfileNode"
+                    },
+                    "isActive": true,
+                    "__typename": "UserNode"
+                },
+                "authorIsModerator": true,
+                "isOwnPost": false,
+                "__typename": "PostNode"
+            },
+            "__typename": "TopicNode"
+        }
+    }
+}

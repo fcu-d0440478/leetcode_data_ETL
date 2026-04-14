@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "112",
+            "article": "{\"id\": 616, \"url\": \"/articles/path-sum/\", \"topicId\": 194625}",
+            "solution": {
+                "id": "616",
+                "content": "[TOC]\n\n## Solution\n\n---\n\n#### Binary tree definition\n\nFirst of all, here is the definition of the ```TreeNode``` which we would use\nin the following implementation.\n\n<iframe src=\"https://leetcode.com/playground/zH5qGFyW/shared\" frameBorder=\"0\" width=\"100%\" height=\"225\" name=\"zH5qGFyW\"></iframe>\n<br />\n<br />\n\n\n---\n#### Approach 1: Recursion\n\nThe most intuitive way is to use a recursion here.\nOne is going through the tree \nby considering at each step the node itself and its children.\nIf node *is not* a leaf, one calls recursively `hasPathSum` method \nfor its children with a sum decreased by the current node value.\nIf node *is* a leaf, one checks if the the current sum is zero, *i.e* \nif the initial sum was discovered.\n\n<iframe src=\"https://leetcode.com/playground/hQenht6s/shared\" frameBorder=\"0\" width=\"100%\" height=\"293\" name=\"hQenht6s\"></iframe>\n\n**Complexity Analysis**\n\n* Time complexity : we visit each node exactly once, \nthus the time complexity is $$\\mathcal{O}(N)$$,\nwhere $$N$$ is the number of nodes.\n* Space complexity : in the worst case, the tree is completely unbalanced,\n*e.g.* each node has only one child node, the recursion call would occur\n $$N$$ times (the height of the tree), therefore the storage to keep the call stack would be $$\\mathcal{O}(N)$$.\n But in the best case (the tree is completely balanced), the height of the tree would be $$\\log(N)$$.\n Therefore, the space complexity in this case would be $$\\mathcal{O}(\\log(N))$$.\n<br />\n<br />\n\n\n---\n#### Approach 2: Iterations\n\n**Algorithm**\n\nWe could also convert the above recursion into iteration, \nwith the help of stack. DFS would be better than BFS here since \nit works faster except the worst case. In the worst case the path `root->leaf` \nwith the given sum is the last considered one and in this case DFS results in\nthe same productivity as BFS. \n\n>The idea is to visit each node with the DFS strategy,\nwhile updating the remaining sum to cumulate at each visit.\n\nSo we start from a stack which contains the root node and the corresponding \nremaining sum which is ```sum - root.val```.\nThen we proceed to the iterations: pop the current node out of the stack \nand return ```True``` if the remaining sum is `0` and we're on the leaf node.\nIf the remaining sum is not zero or we're not on the leaf yet \nthen we push the child nodes \nand corresponding remaining sums into stack.  \n\n<!--![LIS](../Figures/112/112_tr.gif)-->\n!?!../Documents/112_LIS.json:1000,543!?!\n\n<iframe src=\"https://leetcode.com/playground/r2vVLbWq/shared\" frameBorder=\"0\" width=\"100%\" height=\"500\" name=\"r2vVLbWq\"></iframe>\n\n**Complexity Analysis**\n\n* Time complexity : the same as the recursion approach $$\\mathcal{O}(N)$$.\n* Space complexity : $$\\mathcal{O}(N)$$ since in the worst case, when the tree is completely unbalanced,\n*e.g.* each node has only one child node, we would keep all $$N$$ nodes in the stack.\n But in the best case (the tree is balanced), the height of the tree would be $$\\log(N)$$.\n Therefore, the space complexity in this case would be $$\\mathcal{O}(\\log(N))$$.",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": true,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "602",
+                    "count": 38,
+                    "average": 4.658,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

@@ -1,0 +1,75 @@
+{
+    "data": {
+        "question": {
+            "questionId": "1981",
+            "questionFrontendId": "1831",
+            "boundTopicId": null,
+            "title": "Maximum Transaction Each Day",
+            "titleSlug": "maximum-transaction-each-day",
+            "content": "<p>Table: <code>Transactions</code></p>\r\n\r\n<pre>\r\n+----------------+----------+\r\n| Column Name    | Type     |\r\n+----------------+----------+\r\n| transaction_id | int      |\r\n| day            | datetime |\r\n| amount         | int      |\r\n+----------------+----------+\r\ntransaction_id is the primary key for this table.\r\nEach row contains information about one transaction.\r\n</pre>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Write an SQL query to report the IDs of the transactions with the <strong>maximum</strong> <code>amount</code> on their respective day. If in one day there are multiple such transactions, return all of them.</p>\r\n\r\n<p>Return the result table <strong>in ascending order by </strong><code>transaction_id</code>.</p>\r\n\r\n<p>The query result format is in the following example:</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<pre>\r\nTransactions table:\r\n+----------------+--------------------+--------+\r\n| transaction_id | day                | amount |\r\n+----------------+--------------------+--------+\r\n| 8              | 2021-4-3 15:57:28  | 57     |\r\n| 9              | 2021-4-28 08:47:25 | 21     |\r\n| 1              | 2021-4-29 13:28:30 | 58     |\r\n| 5              | 2021-4-28 16:39:59 | 40     |\r\n| 6              | 2021-4-29 23:39:28 | 58     |\r\n+----------------+--------------------+--------+\r\n\r\nResult table:\r\n+----------------+\r\n| transaction_id |\r\n+----------------+\r\n| 1              |\r\n| 5              |\r\n| 6              |\r\n| 8              |\r\n+----------------+\r\n&quot;2021-4-3&quot;  --&gt; We have one transaction with ID 8, so we add 8 to the result table.\r\n&quot;2021-4-28&quot; --&gt; We have two transactions with IDs 5 and 9. The transaction with ID 5 has an amount of 40, while the transaction with ID 9 has an amount of 21. We only include the transaction with ID 5 as it has the maximum amount this day.\r\n&quot;2021-4-29&quot; --&gt; We have two transactions with IDs 1 and 6. Both transactions have the same amount of 58, so we include both in the result table.\r\nWe order the result table by transaction_id after collecting these IDs.</pre>\r\n\r\n<p>&nbsp;</p>\r\n<p><strong>Follow up:</strong> Could you solve it without using the <code>MAX()</code> function?</p>",
+            "translatedTitle": null,
+            "translatedContent": null,
+            "isPaidOnly": true,
+            "difficulty": "Medium",
+            "likes": 15,
+            "dislikes": 0,
+            "isLiked": null,
+            "similarQuestions": "[]",
+            "exampleTestcases": null,
+            "contributors": [],
+            "topicTags": [
+                {
+                    "name": "Database",
+                    "slug": "database",
+                    "translatedName": null,
+                    "__typename": "TopicTagNode"
+                }
+            ],
+            "companyTagStats": "{\"1\": [], \"2\": [], \"3\": []}",
+            "codeSnippets": [
+                {
+                    "lang": "MySQL",
+                    "langSlug": "mysql",
+                    "code": "# Write your MySQL query statement below\n",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "MS SQL Server",
+                    "langSlug": "mssql",
+                    "code": "/* Write your T-SQL query statement below */\n",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Oracle",
+                    "langSlug": "oraclesql",
+                    "code": "/* Write your PL/SQL query statement below */\n",
+                    "__typename": "CodeSnippetNode"
+                }
+            ],
+            "stats": "{\"totalAccepted\": \"2.6K\", \"totalSubmission\": \"3.1K\", \"totalAcceptedRaw\": 2593, \"totalSubmissionRaw\": 3051, \"acRate\": \"85.0%\"}",
+            "hints": [],
+            "solution": null,
+            "status": null,
+            "sampleTestCase": "{\"headers\": {\"Transactions\": [\"transaction_id\", \"day\", \"amount\"]}, \"rows\": {\"Transactions\": [[8, \"2021-4-3 15:57:28\", 57], [9, \"2021-4-28 08:47:25\", 21], [1, \"2021-4-29 13:28:30\", 58], [5, \"2021-4-28 16:39:59\", 40], [6, \"2021-4-29 23:39:28\", 58]]}}",
+            "metaData": "{\n  \"mysql\": [\n    \"Create table If Not Exists Transactions (transaction_id int, day datetime, amount int)\"\n  ],\n  \"mssql\": [\n    \"Create table Transactions (transaction_id int, day datetime, amount int)\"\n  ],\n  \"oraclesql\": [\n    \"Create table Transactions (transaction_id int, day date, amount int)\",\n    \"ALTER SESSION SET nls_date_format='YYYY-MM-DD HH24:MI:SS'\"\n  ],\n  \"database\": true\n}",
+            "judgerAvailable": true,
+            "judgeType": "large",
+            "mysqlSchemas": [
+                "Create table If Not Exists Transactions (transaction_id int, day datetime, amount int)",
+                "Truncate table Transactions",
+                "insert into Transactions (transaction_id, day, amount) values ('8', '2021-4-3 15:57:28', '57')",
+                "insert into Transactions (transaction_id, day, amount) values ('9', '2021-4-28 08:47:25', '21')",
+                "insert into Transactions (transaction_id, day, amount) values ('1', '2021-4-29 13:28:30', '58')",
+                "insert into Transactions (transaction_id, day, amount) values ('5', '2021-4-28 16:39:59', '40')",
+                "insert into Transactions (transaction_id, day, amount) values ('6', '2021-4-29 23:39:28', '58')"
+            ],
+            "enableRunCode": true,
+            "enableTestMode": false,
+            "enableDebugger": false,
+            "envInfo": "{\"mysql\": [\"MySQL\", \"<p><code>MySQL 8.0</code>.</p>\"], \"mssql\": [\"MS SQL Server\", \"<p><code>mssql server 2019</code>.</p>\"], \"oraclesql\": [\"Oracle\", \"<p><code>Oracle Sql 11.2</code>.</p>\"]}",
+            "libraryUrl": null,
+            "adminUrl": null,
+            "__typename": "QuestionNode"
+        }
+    }
+}

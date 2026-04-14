@@ -1,0 +1,73 @@
+{
+    "data": {
+        "question": {
+            "questionId": "1209",
+            "questionFrontendId": "1188",
+            "boundTopicId": null,
+            "title": "Design Bounded Blocking Queue",
+            "titleSlug": "design-bounded-blocking-queue",
+            "content": "<p>Implement a thread-safe bounded blocking queue that has the following methods:</p>\n\n<ul>\n\t<li><code>BoundedBlockingQueue(int capacity)</code> The constructor initializes the queue with a maximum <code>capacity</code>.</li>\n\t<li><code>void enqueue(int element)</code> Adds an <code>element</code> to the front of the queue. If the queue is full, the calling thread is blocked until the queue is no longer full.</li>\n\t<li><code>int dequeue()</code> Returns the element at the rear of the queue and removes it. If the queue is empty, the calling thread is blocked until the queue is no longer empty.</li>\n\t<li><code>int size()</code> Returns the number of elements currently in the queue.</li>\n</ul>\n\n<p>Your implementation will be tested using multiple threads at the same time. Each thread will either be a producer thread that only makes calls to the <code>enqueue</code> method or a consumer thread that only makes calls to the <code>dequeue</code> method. The <code>size</code> method will be called after every test case.</p>\n\n<p>Please do not use built-in implementations of bounded blocking queue as this will not be accepted in an interview.</p>\n\n<p>&nbsp;</p>\n<p><strong>Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong>\n1\n1\n[&quot;BoundedBlockingQueue&quot;,&quot;enqueue&quot;,&quot;dequeue&quot;,&quot;dequeue&quot;,&quot;enqueue&quot;,&quot;enqueue&quot;,&quot;enqueue&quot;,&quot;enqueue&quot;,&quot;dequeue&quot;]\n[[2],[1],[],[],[0],[2],[3],[4],[]]\n\n<strong>Output:</strong>\n[1,0,2,2]\n\n<strong>Explanation:</strong>\nNumber of producer threads = 1\nNumber of consumer threads = 1\n\nBoundedBlockingQueue queue = new BoundedBlockingQueue(2);   // initialize the queue with capacity = 2.\n\nqueue.enqueue(1);   // The producer thread enqueues 1 to the queue.\nqueue.dequeue();    // The consumer thread calls dequeue and returns 1 from the queue.\nqueue.dequeue();    // Since the queue is empty, the consumer thread is blocked.\nqueue.enqueue(0);   // The producer thread enqueues 0 to the queue. The consumer thread is unblocked and returns 0 from the queue.\nqueue.enqueue(2);   // The producer thread enqueues 2 to the queue.\nqueue.enqueue(3);   // The producer thread enqueues 3 to the queue.\nqueue.enqueue(4);   // The producer thread is blocked because the queue&#39;s capacity (2) is reached.\nqueue.dequeue();    // The consumer thread returns 2 from the queue. The producer thread is unblocked and enqueues 4 to the queue.\nqueue.size();       // 2 elements remaining in the queue. size() is always called at the end of each test case.\n</pre>\n\n<p><strong>Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong>\n3\n4\n[&quot;BoundedBlockingQueue&quot;,&quot;enqueue&quot;,&quot;enqueue&quot;,&quot;enqueue&quot;,&quot;dequeue&quot;,&quot;dequeue&quot;,&quot;dequeue&quot;,&quot;enqueue&quot;]\n[[3],[1],[0],[2],[],[],[],[3]]\n<strong>Output:</strong>\n[1,0,2,1]\n\n<strong>Explanation:</strong>\nNumber of producer threads = 3\nNumber of consumer threads = 4\n\nBoundedBlockingQueue queue = new BoundedBlockingQueue(3);   // initialize the queue with capacity = 3.\n\nqueue.enqueue(1);   // Producer thread P1 enqueues 1 to the queue.\nqueue.enqueue(0);   // Producer thread P2 enqueues 0 to the queue.\nqueue.enqueue(2);   // Producer thread P3 enqueues 2 to the queue.\nqueue.dequeue();    // Consumer thread C1 calls dequeue.\nqueue.dequeue();    // Consumer thread C2 calls dequeue.\nqueue.dequeue();    // Consumer thread C3 calls dequeue.\nqueue.enqueue(3);   // One of the producer threads enqueues 3 to the queue.\nqueue.size();       // 1 element remaining in the queue.\n\nSince the number of threads for producer/consumer is greater than 1, we do not know how the threads will be scheduled in the operating system, even though the input seems to imply the ordering. Therefore, any of the output [1,0,2] or [1,2,0] or [0,1,2] or [0,2,1] or [2,0,1] or [2,1,0] will be accepted.\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= Number of Prdoucers &lt;= 8</code></li>\n\t<li><code>1 &lt;= Number of Consumers &lt;= 8</code></li>\n\t<li><code>1 &lt;= size &lt;= 30</code></li>\n\t<li><code>0 &lt;= element &lt;= 20</code></li>\n\t<li>The number of calls to <code>enqueue</code> is <strong>greater than or equal to</strong> the number of calls to <code>dequeue</code>.</li>\n\t<li>At most <code>40</code> calls will be made to <code>enque</code>, <code>deque</code>, and <code>size</code>.</li>\n</ul>\n",
+            "translatedTitle": null,
+            "translatedContent": null,
+            "isPaidOnly": true,
+            "difficulty": "Medium",
+            "likes": 305,
+            "dislikes": 28,
+            "isLiked": null,
+            "similarQuestions": "[]",
+            "exampleTestcases": "1\n1\n[\"BoundedBlockingQueue\",\"enqueue\",\"dequeue\",\"dequeue\",\"enqueue\",\"enqueue\",\"enqueue\",\"enqueue\",\"dequeue\"]\n[[2],[1],[],[],[0],[2],[3],[4],[]]\n3\n4\n[\"BoundedBlockingQueue\",\"enqueue\",\"enqueue\",\"enqueue\",\"dequeue\",\"dequeue\",\"dequeue\",\"enqueue\"]\n[[3],[1],[0],[2],[],[],[],[3]]",
+            "contributors": [],
+            "topicTags": [
+                {
+                    "name": "Concurrency",
+                    "slug": "concurrency",
+                    "translatedName": null,
+                    "__typename": "TopicTagNode"
+                }
+            ],
+            "companyTagStats": "{\"1\": [{\"taggedByAdmin\": false, \"name\": \"Rubrik\", \"slug\": \"rubrik\", \"timesEncountered\": 4}, {\"taggedByAdmin\": false, \"name\": \"Apple\", \"slug\": \"apple\", \"timesEncountered\": 3}, {\"taggedByAdmin\": true, \"name\": \"LinkedIn\", \"slug\": \"linkedin\", \"timesEncountered\": 2}, {\"taggedByAdmin\": false, \"name\": \"Microsoft\", \"slug\": \"microsoft\", \"timesEncountered\": 2}], \"3\": [{\"taggedByAdmin\": false, \"name\": \"Amazon\", \"slug\": \"amazon\", \"timesEncountered\": 4}, {\"taggedByAdmin\": false, \"name\": \"Oracle\", \"slug\": \"oracle\", \"timesEncountered\": 3}, {\"taggedByAdmin\": false, \"name\": \"Uber\", \"slug\": \"uber\", \"timesEncountered\": 3}, {\"taggedByAdmin\": false, \"name\": \"Cloudera\", \"slug\": \"cloudera\", \"timesEncountered\": 2}, {\"taggedByAdmin\": false, \"name\": \"Google\", \"slug\": \"google\", \"timesEncountered\": 2}], \"2\": [{\"taggedByAdmin\": false, \"name\": \"Bloomberg\", \"slug\": \"bloomberg\", \"timesEncountered\": 5}, {\"taggedByAdmin\": false, \"name\": \"eBay\", \"slug\": \"ebay\", \"timesEncountered\": 3}]}",
+            "codeSnippets": [
+                {
+                    "lang": "C++",
+                    "langSlug": "cpp",
+                    "code": "class BoundedBlockingQueue {\npublic:\n    BoundedBlockingQueue(int capacity) {\n        \n    }\n    \n    void enqueue(int element) {\n        \n    }\n    \n    int dequeue() {\n        \n    }\n    \n    int size() {\n        \n    }\n};",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Java",
+                    "langSlug": "java",
+                    "code": "class BoundedBlockingQueue {\n\n    public BoundedBlockingQueue(int capacity) {\n        \n    }\n    \n    public void enqueue(int element) throws InterruptedException {\n        \n    }\n    \n    public int dequeue() throws InterruptedException {\n        \n    }\n    \n    public int size() {\n        \n    }\n}",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Python",
+                    "langSlug": "python",
+                    "code": "class BoundedBlockingQueue(object):\n    def __init__(self, capacity):\n        \"\"\"\n        :type capacity: int\n        \"\"\"\n        \n\n    def enqueue(self, element):\n        \"\"\"\n        :type element: int\n        :rtype: void\n        \"\"\"\n        \n\n    def dequeue(self):\n        \"\"\"\n        :rtype: int\n        \"\"\"\n        \n\n    def size(self):\n        \"\"\"\n        :rtype: int\n        \"\"\"\n        ",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Python3",
+                    "langSlug": "python3",
+                    "code": "class BoundedBlockingQueue(object):\n\n    def __init__(self, capacity: int):\n        \n\n    def enqueue(self, element: int) -> None:\n        \n\n    def dequeue(self) -> int:\n        \n\n    def size(self) -> int:\n        ",
+                    "__typename": "CodeSnippetNode"
+                }
+            ],
+            "stats": "{\"totalAccepted\": \"24.9K\", \"totalSubmission\": \"34K\", \"totalAcceptedRaw\": 24914, \"totalSubmissionRaw\": 34041, \"acRate\": \"73.2%\"}",
+            "hints": [],
+            "solution": null,
+            "status": null,
+            "sampleTestCase": "1\n1\n[\"BoundedBlockingQueue\",\"enqueue\",\"dequeue\",\"dequeue\",\"enqueue\",\"enqueue\",\"enqueue\",\"enqueue\",\"dequeue\"]\n[[2],[1],[],[],[0],[2],[3],[4],[]]",
+            "metaData": "{\n  \"name\": \"foobar\",\n  \"params\": [\n    {\n      \"name\": \"numsProducerThread\",\n      \"type\": \"integer\"\n    },\n    {\n      \"type\": \"integer\",\n      \"name\": \"numsConsumerThread\"\n    },\n    {\n      \"type\": \"string[]\",\n      \"name\": \"methods\"\n    },\n    {\n      \"type\": \"integer[]\",\n      \"name\": \"params\"\n    }\n  ],\n  \"return\": {\n    \"type\": \"integer\"\n  },\n  \"languages\": [\n    \"cpp\",\n    \"java\",\n    \"python\",\n    \"python3\"\n  ],\n  \"manual\": true\n}",
+            "judgerAvailable": true,
+            "judgeType": "large",
+            "mysqlSchemas": [],
+            "enableRunCode": true,
+            "enableTestMode": false,
+            "enableDebugger": false,
+            "envInfo": "{\"cpp\": [\"C++\", \"<p>Compiled with <code> clang 11 </code> using the latest C++ 17 standard.</p>\\r\\n\\r\\n<p>Your code is compiled with level two optimization (<code>-O2</code>). <a href=\\\"https://github.com/google/sanitizers/wiki/AddressSanitizer\\\" target=\\\"_blank\\\">AddressSanitizer</a> is also enabled to help detect out-of-bounds and use-after-free bugs.</p>\\r\\n\\r\\n<p>Most standard library headers are already included automatically for your convenience.</p>\"], \"java\": [\"Java\", \"<p><code>Java SE 13</code>.</p>\\r\\n\\r\\n<p>Most standard library headers are already included automatically for your convenience.</p>\\r\\n<p>Includes <code>Pair</code> class from https://docs.oracle.com/javase/8/javafx/api/javafx/util/Pair.html.</p>\"], \"python\": [\"Python\", \"<p><code>Python 2.7.12</code>.</p>\\r\\n\\r\\n<p>Most libraries are already imported automatically for your convenience, such as <a href=\\\"https://docs.python.org/2/library/array.html\\\" target=\\\"_blank\\\">array</a>, <a href=\\\"https://docs.python.org/2/library/bisect.html\\\" target=\\\"_blank\\\">bisect</a>, <a href=\\\"https://docs.python.org/2/library/collections.html\\\" target=\\\"_blank\\\">collections</a>. If you need more libraries, you can import it yourself.</p>\\r\\n\\r\\n<p>For Map/TreeMap data structure, you may use <a href=\\\"http://www.grantjenks.com/docs/sortedcontainers/\\\" target=\\\"_blank\\\">sortedcontainers</a> library.</p>\\r\\n\\r\\n<p>Note that Python 2.7 <a href=\\\"https://www.python.org/dev/peps/pep-0373/\\\" target=\\\"_blank\\\">will not be maintained past 2020</a>. For the latest Python, please choose Python3 instead.</p>\"], \"python3\": [\"Python3\", \"<p><code>Python 3.9</code>.</p>\\r\\n\\r\\n<p>Most libraries are already imported automatically for your convenience, such as <a href=\\\"https://docs.python.org/3/library/array.html\\\" target=\\\"_blank\\\">array</a>, <a href=\\\"https://docs.python.org/3/library/bisect.html\\\" target=\\\"_blank\\\">bisect</a>, <a href=\\\"https://docs.python.org/3/library/collections.html\\\" target=\\\"_blank\\\">collections</a>. If you need more libraries, you can import it yourself.</p>\\r\\n\\r\\n<p>For Map/TreeMap data structure, you may use <a href=\\\"http://www.grantjenks.com/docs/sortedcontainers/\\\" target=\\\"_blank\\\">sortedcontainers</a> library.</p>\"]}",
+            "libraryUrl": null,
+            "adminUrl": null,
+            "__typename": "QuestionNode"
+        }
+    }
+}

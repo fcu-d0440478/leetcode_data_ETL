@@ -1,0 +1,43 @@
+{
+    "data": {
+        "topic": {
+            "id": 138782,
+            "viewCount": 929390,
+            "topLevelCommentCount": 1020,
+            "subscribed": false,
+            "title": "Reverse Integer",
+            "pinned": false,
+            "tags": [],
+            "hideFromTrending": false,
+            "post": {
+                "id": 284167,
+                "voteCount": 0,
+                "voteStatus": 0,
+                "content": "",
+                "updationDate": 1528841005,
+                "creationDate": 1528841005,
+                "status": null,
+                "isHidden": null,
+                "coinRewards": [],
+                "author": {
+                    "isDiscussAdmin": false,
+                    "isDiscussStaff": false,
+                    "username": "laiden",
+                    "nameColor": null,
+                    "activeBadge": null,
+                    "profile": {
+                        "userAvatar": "https://www.gravatar.com/avatar/da5b31fc40120c709be663929906e707.png?s=200",
+                        "reputation": 40,
+                        "__typename": "UserProfileNode"
+                    },
+                    "isActive": true,
+                    "__typename": "UserNode"
+                },
+                "authorIsModerator": false,
+                "isOwnPost": false,
+                "__typename": "PostNode"
+            },
+            "__typename": "TopicNode"
+        }
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "146",
+            "article": "{\"id\": 702, \"url\": \"/articles/lru-cache/\", \"topicId\": 244744}",
+            "solution": {
+                "id": "702",
+                "content": "[TOC]\n\n## Solution\n\n---\n\n#### Approach 1: Ordered dictionary\n\n**Intuition**\n\nWe're asked to implement [the structure](https://en.wikipedia.org/wiki/Cache_replacement_policies#LRU) \nwhich provides the following operations in $$\\mathcal{O}(1)$$ time :\n\n- Get the key / Check if the key exists \n\n- Put the key\n\n- Delete the first added key\n\nThe first two operations in $$\\mathcal{O}(1)$$ time are provided \nby the standard hashmap, and the last one - by linked list.\n\n> There is a structure called _ordered dictionary_, it combines \nbehind both hashmap and linked list. In Python this structure is called\n[_OrderedDict_](https://docs.python.org/3/library/collections.html#collections.OrderedDict)\nand in Java [_LinkedHashMap_](https://docs.oracle.com/javase/8/docs/api/java/util/LinkedHashMap.html).\n\nLet's use this structure here.\n\n**Implementation**\n\n<iframe src=\"https://leetcode.com/playground/hfQBGVXK/shared\" frameBorder=\"0\" width=\"100%\" height=\"500\" name=\"hfQBGVXK\"></iframe>\n\n**Complexity Analysis**\n\n* Time complexity : $$\\mathcal{O}(1)$$ both for `put`\nand `get` since all operations with\nordered dictionary : `get/in/set/move_to_end/popitem` \n(`get/containsKey/put/remove`) are done in a constant time.\n \n* Space complexity : $$\\mathcal{O}(capacity)$$ since the \nspace is used only for an ordered dictionary with at most `capacity + 1` elements.\n<br />\n<br />\n\n\n---\n#### Approach 2: Hashmap + DoubleLinkedList\n\n**Intuition**\n\nThis Java solution is an extended version of the \n[the article published on the Discuss forum](https://leetcode.com/problems/lru-cache/discuss/45911/Java-Hashtable-%2B-Double-linked-list-(with-a-touch-of-pseudo-nodes)).\n\nThe problem can be solved with a hashmap\nthat keeps track of the keys and its values in the double linked list. \nThat results in $$\\mathcal{O}(1)$$ time for `put` and `get` operations and\nallows to remove the first added node in $$\\mathcal{O}(1)$$ time as well.\n\n![compute](../Figures/146/structure.png)\n\nOne advantage of _double_ linked list is that the node can remove itself without other reference. \nIn addition, it takes constant time to add and remove nodes from the head or tail.\n\nOne particularity about the double linked list implemented here\nis that there are _pseudo head_ and _pseudo tail_ to mark the boundary, \nso that we don't need to check the `null` node during the update. \n\n![compute](../Figures/146/new_node.png)\n\n**Implementation**\n\n<iframe src=\"https://leetcode.com/playground/dcSrw233/shared\" frameBorder=\"0\" width=\"100%\" height=\"500\" name=\"dcSrw233\"></iframe>\n\n**Complexity Analysis**\n\n* Time complexity : $$\\mathcal{O}(1)$$ both for `put`\nand `get`.\n \n* Space complexity : $$\\mathcal{O}(capacity)$$ since the \nspace is used only for a hashmap and double linked list \nwith at most `capacity + 1` elements.",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": true,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "687",
+                    "count": 224,
+                    "average": 3.83,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "398",
+            "article": "{\"id\": 1043, \"url\": \"/articles/random-pick-index/\", \"topicId\": 924150}",
+            "solution": {
+                "id": "1043",
+                "content": "[TOC]\r\n\r\n#### Approach 1: Brute force\r\n\r\n**Intuition**\r\n\r\nIn this approach, we will simply store the indices of all the numbers equal to `target` that are present in the array and will return an index at random. The drawback of this approach is, every time the `pick` method is called, an extra space is required, which is dependent on the number of occurences of the number `target` in the given array.\r\n\r\n**Algorithm**\r\n\r\nBelow is the implementation of the above mentioned approach.\r\n\r\n<iframe src=\"https://leetcode.com/playground/meU2TqCf/shared\" frameBorder=\"0\" width=\"100%\" height=\"500\" name=\"meU2TqCf\"></iframe>\r\n\r\n**Complexity Analysis**\r\n\r\n* Time Complexity\r\n    - `pick` - If $$N$$ represents the size of the `nums` array, the time complexity of `pick` method is $$O(N)$$.\r\n\r\n* Space Complexity: $$O(N)$$ (space required by `indices` in pick method).\r\n\r\n#### Approach 2: Caching results using a hashmap\r\n\r\n**Intuition**\r\n\r\nIn this approach, instead of extracting all the positions in the `pick` method where a given target is present, we'll pre-compute it. Hence for each of the number present in the array `nums`, we'll store all the positions (indices) where this number occurs. This will avoid unnecessary creation of `indices` array in case `pick` method is given a `target` value which is repeated. Since we are storing all the indices for each of the number, hence the space requirement for this approach is huge.\r\n\r\n**Algorithm**\r\n\r\nBelow is the implementation of the above mentioned approach.\r\n\r\n<iframe src=\"https://leetcode.com/playground/cEsn5LEB/shared\" frameBorder=\"0\" width=\"100%\" height=\"463\" name=\"cEsn5LEB\"></iframe>\r\n\r\n**Complexity Analysis**\r\n\r\n* Time Complexity\r\n\r\n    * If $$N$$ represents the size of the `nums` array, building `indices` takes $$O(N)$$ time.\r\n\r\n    * `pick` method takes $$O(1)$$ time.\r\n\r\n* Space Complexity: $$O(N)$$ required for `indices`.\r\n\r\n#### Approach 3: Reservoir sampling\r\n\r\n**Intuition**\r\n\r\n[Reservoir sampling](https://en.wikipedia.org/wiki/Reservoir_sampling) is a technique which is used to generate numbers randomly when we have a large pool of numbers. As mentioned in the note for this question, the array size can be large, hence it is a reasonable choice to use Reservoir Sampling. Consider an array of size $$n$$ from which we need to chose a number randomly. Consider these numbers to be coming in the form of a stream, hence at each step, we have to take the decision of whether or not to choose a given number, such that the overall probability of each number being chosen is same ($$\\frac{1}{n}$$ in this case). If we have a total of $$n$$ numbers and we pick the $$i^{th}$$ number, this implies that we do not pick any number further from index $$(i + 1)$$ to $$n$$. In terms of probability, this can be represented as\r\n\r\n$$\r\n\\frac{1}{i} * \\frac{i}{i + 1} * \\frac{i + 1}{i + 2} ... * \\frac{n - 1}{n}\r\n$$\r\n\r\nThis can be interpreted as\r\n\r\n* Picking the $$i^{th}$$ number from the list of $$i$$ numbers\r\n\r\n* Not picking the $$(i + 1)^{th}$$ number from the list of $$(i + 1)$$ numbers. Hence picking any of the remaining $$i$$ numbers.\r\n\r\n* And so on ...\r\n\r\n* Not picking the $$(n)^{th}$$ number from the list of $$(n)$$ numbers. Hence picking any of the remaining $$(n - 1)$$ numbers.\r\n\r\nUpon simplifying the above expression, we can see that the probability of chosing any number at the $$i^{th}$$ step comes out to be $$\\frac{1}{n}$$. Hence we can say that reservoir sampling allows us to choose any number uniformly at random from the list of $$n$$ numbers.\r\n\r\nNote that for any $$i$$, the decision of whether or not to choose this $$i^{th}$$ number depends on the first term of the above mentioned expression, which is $$\\frac{1}{i}$$. In general, if `count` represents the total number of numbers we have from which we need to chose a random number uniformly, we chose such a number with probability $$\\frac{1}{count}$$. This is what we will be doing here.\r\n\r\n**Algorithm**\r\n\r\nBelow is the implementation of the above mentioned approach.\r\n\r\n<iframe src=\"https://leetcode.com/playground/KmdqroPD/shared\" frameBorder=\"0\" width=\"100%\" height=\"500\" name=\"KmdqroPD\"></iframe>\r\n\r\n**Complexity Analysis**\r\n\r\n* Time Complexity\r\n\r\n    * If $$N$$ represents the size of the `nums` array, `pick` method takes $$O(N)$$ time\r\n\r\n* Space Complexity: $$O(1)$$",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "998",
+                    "count": 14,
+                    "average": 2.571,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

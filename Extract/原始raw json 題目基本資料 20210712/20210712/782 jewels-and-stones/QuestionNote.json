@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "782",
+            "article": "{\"id\": 404, \"url\": \"/articles/jewels-and-stones/\", \"topicId\": 127766}",
+            "solution": {
+                "id": "404",
+                "content": "[TOC]\n\n---\n#### Approach #1: Brute Force [Accepted]\n\n**Intuition and Algorithm**\n\nFor each stone, check whether it matches any of the jewels.  We can check with a linear scan.\n\n<iframe src=\"https://leetcode.com/playground/Hr98arhL/shared\" frameBorder=\"0\" width=\"100%\" height=\"259\" name=\"Hr98arhL\"></iframe>\n\n**Complexity Analysis**\n\n* Time Complexity:  $$O(J\\text{.length} * S\\text{.length}))$$.\n\n* Space Complexity: $$O(1)$$ additional space complexity in Python.  In Java, this can be $$O(J\\text{.length} * S\\text{.length}))$$ because of the creation of new arrays.\n\n---\n#### Approach #2: Hash Set [Accepted]\n\n**Intuition and Algorithm**\n\nFor each stone, check whether it matches any of the jewels.  We can check efficiently with a *Hash Set*.\n\n<iframe src=\"https://leetcode.com/playground/cbZKRibw/shared\" frameBorder=\"0\" width=\"100%\" height=\"276\" name=\"cbZKRibw\"></iframe>\n\n**Complexity Analysis**\n\n* Time Complexity:  $$O(J\\text{.length} + S\\text{.length})$$.  The $$O(J\\text{.length})$$ part comes from creating `J`.  The $$O(S\\text{.length})$$ part comes from searching `S`.\n\n* Space Complexity: $$O(J\\text{.length})$$.",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": true,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "399",
+                    "count": 18,
+                    "average": 4.444,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

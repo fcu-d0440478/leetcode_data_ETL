@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "740",
+            "article": "{\"id\": 314, \"url\": \"/articles/delete-and-earn/\", \"topicId\": 127416}",
+            "solution": {
+                "id": "314",
+                "content": "[TOC]\n\n\n#### Approach #1: Dynamic Programming [Accepted]\n\n**Intuition**\n\nBecause all numbers are positive, if we \"take\" a number (use it to score points), we might as well take all copies of it, since we've already erased all its neighbors.  We could keep a count of each number so we know how many points taking a number is worth total.\n\nNow let's investigate what happens when we add a new number `X` (plus copies) that is larger than all previous numbers.  Naively, our answer would be the previous answer, plus the value of `X` - which can be solved with dynamic programming.  However, this fails if our previous answer had a number taken that was adjacent to `X`.\n\nLuckily, we can remedy this.  Let's say we knew `using`, the value of our previous answer, and `avoid`, the value of our previous answer that doesn't use the previously largest value `prev`.  Then we could compute new values of `using` and `avoid` appropriately.\n\n**Algorithm**\n\nFor each unique value `k` of `nums` in increasing order, let's maintain the correct values of `avoid` and `using`, which represent the answer if we don't take or take `k` respectively.\n\nIf the new value `k` is adjacent to the previously largest value `prev`, then the answer if we must take `k` is `(the point value of k) + avoid`, while the answer if we must not take `k` is `max(avoid, using)`.  Similarly, if `k` is not adjacent to `prev`, the answer if we must take `k` is `(the point value of k) + max(avoid, using)`, and the answer if we must not take `k` is `max(avoid, using)`.\n\nAt the end, the best answer may or may not use the largest value in `nums`, so we return `max(avoid, using)`.\n\nOur demonstrated solutions showcase two different kinds of sorts: a library one, and a radix sort.  For each language, the other kind of solution can be done without much difficulty, by using an array (Python) or HashMap (Java) respectively.\n\n<iframe src=\"https://leetcode.com/playground/KAkYkoXj/shared\" frameBorder=\"0\" width=\"100%\" height=\"395\" name=\"KAkYkoXj\"></iframe>\n\n**Complexity Analysis**\n\n* Time Complexity (Python): $$O(N \\log N)$$, where $$N$$ is the length of `nums`.  We make a single pass through the sorted keys of $$N$$, and the complexity is dominated by the sorting step.\n\n* Space Complexity (Python): $$O(N)$$, the size of our `count`.\n\n* Time Complexity (Java): We performed a radix sort instead, so our complexity is $$O(N+W)$$ where $$W$$ is the range of allowable values for `nums[i]`.\n\n* Space Complexity (Java): $$O(W)$$, the size of our `count`.",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "309",
+                    "count": 92,
+                    "average": 3.544,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

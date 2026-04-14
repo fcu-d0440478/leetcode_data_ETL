@@ -1,0 +1,74 @@
+{
+    "data": {
+        "question": {
+            "questionId": "614",
+            "questionFrontendId": "614",
+            "boundTopicId": null,
+            "title": "Second Degree Follower",
+            "titleSlug": "second-degree-follower",
+            "content": "<p>In facebook, there is a <code>follow</code> table with two columns: <b>followee</b>, <b>follower</b>.</p>\r\n\r\n<p>Please write a sql query to get the amount of each follower&rsquo;s follower if he/she has one.</p>\r\n\r\n<p>For example:</p>\r\n\r\n<pre>\r\n+-------------+------------+\r\n| followee    | follower   |\r\n+-------------+------------+\r\n|     A       |     B      |\r\n|     B       |     C      |\r\n|     B       |     D      |\r\n|     D       |     E      |\r\n+-------------+------------+\r\n</pre>\r\nshould output:\r\n\r\n<pre>\r\n+-------------+------------+\r\n| follower    | num        |\r\n+-------------+------------+\r\n|     B       |  2         |\r\n|     D       |  1         |\r\n+-------------+------------+\r\n</pre>\r\n<b>Explaination:</b><br />\r\nBoth B and D exist in the follower list, when as a followee, B&#39;s follower is C and D, and D&#39;s follower is E. A does not exist in follower list.\r\n<p>&nbsp;</p>\r\n\r\n<p>&nbsp;</p>\r\n<b>Note:</b><br />\r\nFollowee would not follow himself/herself in all cases.<br />\r\nPlease display the result in follower&#39;s alphabet order.\r\n<p>&nbsp;</p>\r\n",
+            "translatedTitle": null,
+            "translatedContent": null,
+            "isPaidOnly": true,
+            "difficulty": "Medium",
+            "likes": 88,
+            "dislikes": 620,
+            "isLiked": null,
+            "similarQuestions": "[]",
+            "exampleTestcases": "{\"headers\":{\"follow\":[\"followee\",\"follower\"]},\"rows\":{\"follow\":[[\"A\", \"B\"], [\"B\", \"C\"], [\"B\", \"D\"], [\"D\", \"E\"]]}}",
+            "contributors": [],
+            "topicTags": [
+                {
+                    "name": "Database",
+                    "slug": "database",
+                    "translatedName": null,
+                    "__typename": "TopicTagNode"
+                }
+            ],
+            "companyTagStats": "{\"3\": [{\"taggedByAdmin\": false, \"name\": \"Facebook\", \"slug\": \"facebook\", \"timesEncountered\": 3}], \"1\": [], \"2\": []}",
+            "codeSnippets": [
+                {
+                    "lang": "MySQL",
+                    "langSlug": "mysql",
+                    "code": "# Write your MySQL query statement below\n",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "MS SQL Server",
+                    "langSlug": "mssql",
+                    "code": "/* Write your T-SQL query statement below */\n",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Oracle",
+                    "langSlug": "oraclesql",
+                    "code": "/* Write your PL/SQL query statement below */\n",
+                    "__typename": "CodeSnippetNode"
+                }
+            ],
+            "stats": "{\"totalAccepted\": \"30.5K\", \"totalSubmission\": \"91.4K\", \"totalAcceptedRaw\": 30517, \"totalSubmissionRaw\": 91418, \"acRate\": \"33.4%\"}",
+            "hints": [],
+            "solution": null,
+            "status": null,
+            "sampleTestCase": "{\"headers\":{\"follow\":[\"followee\",\"follower\"]},\"rows\":{\"follow\":[[\"A\", \"B\"], [\"B\", \"C\"], [\"B\", \"D\"], [\"D\", \"E\"]]}}",
+            "metaData": "{\n  \"mysql\": [\n    \"Create table If Not Exists follow (followee varchar(255), follower varchar(255))\"\n  ],\n  \"mssql\": [\n    \"Create table follow (followee varchar(255), follower varchar(255))\"\n  ],\n  \"oraclesql\": [\n    \"Create table follow (followee varchar(255), follower varchar(255))\"\n  ],\n  \"database\": true\n}",
+            "judgerAvailable": true,
+            "judgeType": "large",
+            "mysqlSchemas": [
+                "Create table If Not Exists follow (followee varchar(255), follower varchar(255))",
+                "Truncate table follow",
+                "insert into follow (followee, follower) values ('A', 'B')",
+                "insert into follow (followee, follower) values ('B', 'C')",
+                "insert into follow (followee, follower) values ('B', 'D')",
+                "insert into follow (followee, follower) values ('D', 'E')"
+            ],
+            "enableRunCode": true,
+            "enableTestMode": false,
+            "enableDebugger": false,
+            "envInfo": "{\"mysql\": [\"MySQL\", \"<p><code>MySQL 8.0</code>.</p>\"], \"mssql\": [\"MS SQL Server\", \"<p><code>mssql server 2019</code>.</p>\"], \"oraclesql\": [\"Oracle\", \"<p><code>Oracle Sql 11.2</code>.</p>\"]}",
+            "libraryUrl": null,
+            "adminUrl": null,
+            "__typename": "QuestionNode"
+        }
+    }
+}

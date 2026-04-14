@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "380",
+            "article": "{\"id\": 810, \"url\": \"/articles/insert-delete-getrandom-o1/\", \"topicId\": 418238}",
+            "solution": {
+                "id": "810",
+                "content": "[TOC]\n\n## Solution\n\n--- \n\n#### Overview\n\nWe're asked to implement the structure \nwhich provides the following operations in _average_ $$\\mathcal{O}(1)$$ time:\n\n- Insert \n\n- Delete\n\n- GetRandom\n\nFirst of all - why this weird combination? \nThe structure looks quite theoretical, \nbut it's widely used in popular statistical algorithms like \n[Markov chain Monte Carlo](https://en.wikipedia.org/wiki/Markov_chain_Monte_Carlo) and \n[Metropolis–Hastings algorithm](https://en.wikipedia.org/wiki/Metropolis%E2%80%93Hastings_algorithm). \nThese algorithms are for sampling from a probability distribution \nwhen it's difficult to compute the distribution itself. \n\nLet's figure out how to implement such a structure.\nStarting from the Insert, we immediately have two good candidates with $$\\mathcal{O}(1)$$\n[average insert time](https://wiki.python.org/moin/TimeComplexity):\n\n- Hashmap (or Hashset, the implementation is very similar): [Java HashMap](https://docs.oracle.com/javase/8/docs/api/java/util/HashMap.html) / [Python dictionary](https://docs.python.org/3/tutorial/datastructures.html#dictionaries)\n\n- Array List: [Java ArrayList](https://docs.oracle.com/javase/8/docs/api/java/util/LinkedList.html) / [Python list](https://docs.python.org/3/tutorial/datastructures.html)\n\nLet's consider them one by one. \n\n> Hashmap provides Insert and Delete in \naverage constant time, although has problems with GetRandom. \n\nThe idea of GetRandom is to choose a random index and then to retrieve an\nelement with that index. There is no indexes in hashmap, and hence\nto get true random value, one has first to convert hashmap keys in a list,\nthat would take linear time. The solution here is to build a list of \nkeys aside and to use this list to compute GetRandom in constant time.\n\n> Array List has indexes and could provide Insert and GetRandom in \naverage constant time, though has problems with Delete. \n\nTo delete a value at arbitrary index takes linear time. \nThe solution here is to always delete the last value:\n\n- Swap the element to delete with the last one.\n\n- Pop the last element out.\n\nFor that, one has to compute an index of each element in constant time, and hence\nneeds a hashmap which stores `element -> its index` dictionary.\n\nBoth ways converge into the same combination of data structures:\n\n- Hashmap `element -> its index`.\n\n- Array List of elements.\n\n![fig](../Figures/380/structure2.png)\n<br /> \n<br />\n\n\n---\n#### Approach 1: HashMap + ArrayList\n\n**Insert**\n\n- Add value -> its index into dictionary, average $$\\mathcal{O}(1)$$ time.\n\n- Append value to array list, average $$\\mathcal{O}(1)$$ time as well.\n\n![fig](../Figures/380/isert.png)\n\n<iframe src=\"https://leetcode.com/playground/NBz6A7pX/shared\" frameBorder=\"0\" width=\"100%\" height=\"208\" name=\"NBz6A7pX\"></iframe>\n\n**Delete**\n\n- Retrieve an index of element to delete from the hashmap.\n\n- Move the last element to the place of the element to delete, $$\\mathcal{O}(1)$$ time.\n\n- Pop the last element out, $$\\mathcal{O}(1)$$ time.\n\n![fig](../Figures/380/delete.png)\n\n<iframe src=\"https://leetcode.com/playground/BrKuitZ7/shared\" frameBorder=\"0\" width=\"100%\" height=\"293\" name=\"BrKuitZ7\"></iframe>\n\n**GetRandom**\n\nGetRandom could be implemented in $$\\mathcal{O}(1)$$ time with the help of standard\n`random.choice` in Python and `Random` object in Java.\n\n<iframe src=\"https://leetcode.com/playground/jVvSDTEV/shared\" frameBorder=\"0\" width=\"100%\" height=\"140\" name=\"jVvSDTEV\"></iframe>\n\n**Implementation**\n\n<iframe src=\"https://leetcode.com/playground/cMXhQw7r/shared\" frameBorder=\"0\" width=\"100%\" height=\"500\" name=\"cMXhQw7r\"></iframe>\n\n**Complexity Analysis**\n\n* Time complexity. GetRandom is always $$\\mathcal{O}(1)$$.\nInsert and Delete both have $$\\mathcal{O}(1)$$ average time complexity, \nand $$\\mathcal{O}(N)$$ in the worst-case scenario \nwhen the operation exceeds the capacity of\ncurrently allocated array/hashmap and invokes space reallocation.\n\n* Space complexity: $$\\mathcal{O}(N)$$, to store N elements.",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": true,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "778",
+                    "count": 252,
+                    "average": 4.921,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

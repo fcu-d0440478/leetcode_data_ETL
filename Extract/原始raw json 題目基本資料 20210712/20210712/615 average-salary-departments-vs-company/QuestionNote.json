@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "615",
+            "article": "{\"id\": 169, \"url\": \"/articles/average-salary-departments-vs-company/\", \"topicId\": 127553}",
+            "solution": {
+                "id": "169",
+                "content": "[TOC]\n\n## Solution\n---\n#### Approach: Using `avg()` and `case...when...` [Accepted]\n\n**Intuition**\n\nSolve this problem by 3 steps as below.\n\n**Algorithm**\n\n1.Calculate the company's average salary in every month\nMySQL has the built-in function avg() to get the average of a list of numbers. Also, we need to format the *pay_date* column for future use.\n\n```sql\nselect avg(amount) as company_avg,  date_format(pay_date, '%Y-%m') as pay_month\nfrom salary\ngroup by date_format(pay_date, '%Y-%m')\n;\n```\n\n| company_avg | pay_month |\n|-------------|-----------|\n| 7000.0000   | 2017-02   |\n| 8333.3333   | 2017-03   |\n\n2.Calculate the each department's average salary in every month\nTo do this, we need to join the **salary** table with the **employee** table using condition `salary.employee_id = employee.id`.\n\n```sql\nselect department_id, avg(amount) as department_avg, date_format(pay_date, '%Y-%m') as pay_month\nfrom salary\njoin employee on salary.employee_id = employee.employee_id\ngroup by department_id, pay_month\n;\n```\n\n| department_id | department_avg | pay_month |\n|---------------|----------------|-----------|\n| 1             | 7000.0000      | 2017-02   |\n| 1             | 9000.0000      | 2017-03   |\n| 2             | 7000.0000      | 2017-02   |\n| 2             | 8000.0000      | 2017-03   |\n\n3.Compare the previous numbers and display the result\nThis step might be the hardest if you have no idea on how to use MySQL flow control statement [`case...when...`](https://dev.mysql.com/doc/refman/5.7/en/case.html).\n\nMySQL, like other programming languages, also has its flow control. Click [this link](https://dev.mysql.com/doc/refman/5.7/en/flow-control-statements.html) to learn it.\n\nAt last, combine the above two query and join them `on department_salary.pay_month = company_salary.pay_month`.\n\n**MySQL**\n\n```sql\nselect department_salary.pay_month, department_id,\ncase\n  when department_avg>company_avg then 'higher'\n  when department_avg<company_avg then 'lower'\n  else 'same'\nend as comparison\nfrom\n(\n  select department_id, avg(amount) as department_avg, date_format(pay_date, '%Y-%m') as pay_month\n  from salary join employee on salary.employee_id = employee.employee_id\n  group by department_id, pay_month\n) as department_salary\njoin\n(\n  select avg(amount) as company_avg,  date_format(pay_date, '%Y-%m') as pay_month from salary group by date_format(pay_date, '%Y-%m')\n) as company_salary\non department_salary.pay_month = company_salary.pay_month\n;\n```",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "164",
+                    "count": 10,
+                    "average": 4.9,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

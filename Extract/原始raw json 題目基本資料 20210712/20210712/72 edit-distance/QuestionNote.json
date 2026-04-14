@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "72",
+            "article": "{\"id\": 622, \"url\": \"/articles/edit-distance/\", \"topicId\": 197003}",
+            "solution": {
+                "id": "622",
+                "content": "[TOC]\n\n## Solution\n\n---\n\n#### Intuition\n\nThe edit distance algorithm is very popular among \nthe data scientists. It's one of the basic algorithms\nused for evaluation of machine translation and speech \nrecognition. \n\nThe naive approach would be to check for all possible edit \nsequences and choose the shortest one in-between.\nThat would result in an exponential complexity and it's an overkill\nsince we actually don't need to have all possible edit sequences \nbut just the shortest one. \n<br />\n<br />\n\n\n---\n#### Approach 1: Dynamic Programming\n\nThe idea would be to reduce the problem to simple ones.\nFor example, there are two words, `horse` and `ros` and we want to compute\nan edit distance `D` for them. One could notice that it seems to be\nmore simple for short words and so it would be logical to relate\nan edit distance `D[n][m]` with the lengths `n` and `m` of input words.\n\nLet's go further and introduce an edit distance `D[i][j]` which is\nan edit distance between the first `i` characters of `word1` and \nthe first `j` characters of `word2`.\n\n![edit_distance](../Figures/72/72_edit.png)\n\nIt turns out that one could compute `D[i][j]`, knowing \n`D[i - 1][j]`, `D[i][j - 1]` and `D[i - 1][j - 1]`.\n\n> There is just one more character to add into one or both strings \nand the formula is quite obvious.\n\nIf the last character is the same, *i.e.* `word1[i] = word2[j]` then\n\n$$\nD[i][j] = 1 + \\min(D[i - 1][j], D[i][j - 1], D[i - 1][j - 1] - 1)\n$$\n\nand if not, *i.e.* `word1[i] != word2[j]` we have to\ntake into account the replacement of the last character \nduring the conversion.\n\n$$\nD[i][j] = 1 + \\min(D[i - 1][j], D[i][j - 1], D[i - 1][j - 1])\n$$\n\nSo each step of the computation would be done based on the previous computation,\nas follows: \n\n![compute](../Figures/72/72_compute.png)\n\nThe obvious base case is an edit distance between the empty string and \nnon-empty string that means `D[i][0] = i` and `D[0][j] = j`.\n\nNow we have everything to actually proceed to the computations \n\n<!--![LIS](../Figures/72/72_tr.gif)-->\n!?!../Documents/72_LIS.json:1000,513!?!\n\n<iframe src=\"https://leetcode.com/playground/YihzPbdt/shared\" frameBorder=\"0\" width=\"100%\" height=\"500\" name=\"YihzPbdt\"></iframe>\n\n**Complexity Analysis**\n\n* Time complexity : $$\\mathcal{O}(m n)$$ as \nit follows quite straightforward for the inserted loops. \n* Space complexity : $$\\mathcal{O}(m n)$$ since at each step we\nkeep the results of all previous computations.",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": true,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "608",
+                    "count": 101,
+                    "average": 3.782,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

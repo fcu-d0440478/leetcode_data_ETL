@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "621",
+            "article": "{\"id\": 968, \"url\": \"/articles/task-scheduler/\", \"topicId\": 702422}",
+            "solution": {
+                "id": "968",
+                "content": "[TOC]\n\n---\n\n#### Overview\n\nWe're asked to execute all the tasks in the input array.\nThe main problem is the presence of cooling interval between \nthe same tasks. \n\n![fig](../Figures/621/cooling2.png)\n\n<br />\n<br />\n\n\n---\n#### Approach 1: Greedy\n\n**Intuition**\n\nThe total number of CPU intervals we need consists of busy and idle slots. \nNumber of busy slots is defined by the number of tasks to execute: \n`len(tasks)`. The problem is to compute a number of idle slots.\n\nMaximum possible number of idle slots is defined by the \nfrequency of the most frequent task: `idle_time <= (f_max - 1) * n`.\n\n![fig](../Figures/621/idle.png)\n\nThis maximum could be decreased because one \ndoesn't need to keep the CPU idle during cooling periods. \nIt could execute different tasks as well. \n\nTo compute the minimum number of idle slots, \none could use a greedy strategy.\nThe idea is to sort the tasks by frequency in the descending order \nand fulfill as many idle slots as one could.\n\n!?!../Documents/621_LIS.json:1000,492!?!\n\n**Algorithm**\n\n- The maximum number of tasks is 26. Let's allocate an array \n`frequencies` of 26 elements to keep the frequency of each task.\n\n- Iterate over the input array and store the frequency of task A \nat index 0, the frequency of task B at index 1, etc. \n\n- Sort the array and retrieve the maximum frequency `f_max`.\nThis frequency defines the max possible idle time:\n`idle_time = (f_max - 1) * n`.\n\n- Pick the elements in the descending order one by one.\nAt each step, decrease the idle time by `min(f_max - 1, f)` where \n`f` is a current frequency. \nRemember, that `idle_time` is greater or equal to 0. \n\n- Return busy slots + idle slots: `len(tasks) + idle_time`.\n\n**Implementation**\n\n<iframe src=\"https://leetcode.com/playground/DnNQuVqB/shared\" frameBorder=\"0\" width=\"100%\" height=\"429\" name=\"DnNQuVqB\"></iframe>\n\n**Complexity Analysis**\n\n* Time Complexity: $$\\mathcal{O}(N_{total})$$, where $$N_{total}$$ is\na number of tasks to execute. This time is needed to iterate over the\ninput array `tasks` and compute the array `frequencies`.\nArray `frequencies` contains 26 elements, and hence all operations\nwith it takes constant time.\n\n* Space Complexity: $$O(1)$$, to keep the array `frequencies` \nof 26 elements.\n<br />\n<br />\n\n\n---\n#### Approach 2: Math\n\n**Intuition**\n\nLet's use some math to _compute_ the answer. \nThere are two possible situations: \n\n- The most frequent task is not frequent enough to force \nthe presence of idle slots.\n\n![fig](../Figures/621/all2.png)\n\n- The most frequent task is frequent enough to force some \nidle slots.\n\n![fig](../Figures/621/frequent2.png)\n\n> The answer is the maximum between these two.\n\nThe first situation is straightforward because the total number of slots \nis defined by the number of tasks: `len(tasks)`.\n\nThe second situation is a bit more tricky and requires to know \nthe number `n_max` and the frequency `f_max` of the most frequent tasks.\n\n![fig](../Figures/621/f_max.png)\n\nNow it's easy to compute:\n\n![fig](../Figures/621/compute.png)\n\n\n**Algorithm**\n\n- The maximum number of tasks is 26. Let's allocate an array \n`frequencies` of 26 elements to keep the frequency of each task.\n\n- Iterate over the input array and store the frequency of task A \nat index 0, the frequency of task B at index 1, etc. \n\n- Find the maximum frequency: `f_max = max(frequencies)`.\n\n- Find the number of tasks which have the max frequency:\n`n_max = frequencies.count(f_max)`.\n\n- If the number of slots to use is defined by the most frequent task,\nit's equal to `(f_max - 1) * (n + 1) + n_max`.\n\n- Otherwise, the number of slots to use is defined by the overall\nnumber of tasks: `len(tasks)`.\n\n- Return the maximum of these two: \n`max(len(tasks), (f_max - 1) * (n + 1) + n_max)`.\n\n**Implementation**\n\n<iframe src=\"https://leetcode.com/playground/YjmrQFAv/shared\" frameBorder=\"0\" width=\"100%\" height=\"446\" name=\"YjmrQFAv\"></iframe>\n\n**Complexity Analysis**\n\n* Time Complexity: $$\\mathcal{O}(N_{total})$$, where $$N_{total}$$ is\na number of tasks to execute. This time is needed to iterate over the\ninput array `tasks` and to compute the array `frequencies`.\nArray `frequencies` contains 26 elements, and hence all operations\nwith it takes constant time.\n\n* Space Complexity: $$O(1)$$, to keep the array `frequencies` \nof 26 elements.\n<br />\n<br />\n\n\n---",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": true,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "913",
+                    "count": 136,
+                    "average": 3.287,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

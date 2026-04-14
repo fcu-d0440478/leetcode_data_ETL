@@ -1,0 +1,75 @@
+{
+    "data": {
+        "question": {
+            "questionId": "2024",
+            "questionFrontendId": "1873",
+            "boundTopicId": null,
+            "title": "Calculate Special Bonus",
+            "titleSlug": "calculate-special-bonus",
+            "content": "<p>Table: <code>Employees</code></p>\r\n\r\n<pre>\r\n+-------------+---------+\r\n| Column Name | Type    |\r\n+-------------+---------+\r\n| employee_id | int     |\r\n| name        | varchar |\r\n| salary      | int     |\r\n+-------------+---------+\r\nemployee_id is the primary key for this table.\r\nEach row of this table indicates the employee ID, employee name, and salary.\r\n</pre>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Write an SQL query to calculate the bonus of each employee. The bonus of an employee is <code>100%</code> of their salary if the ID of the employee is <strong>an odd number</strong> and <strong>the employee name does not start with the character </strong><code>&#39;M&#39;</code>. The bonus of an employee is <code>0</code> otherwise.</p>\r\n\r\n<p>Return the result table ordered by <code>employee_id</code>.</p>\r\n\r\n<p>The query result format is in the following example:</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<pre>\r\nEmployees table:\r\n+-------------+---------+--------+\r\n| employee_id | name    | salary |\r\n+-------------+---------+--------+\r\n| 2           | Meir    | 3000   |\r\n| 3           | Michael | 3800   |\r\n| 7           | Addilyn | 7400   |\r\n| 8           | Juan    | 6100   |\r\n| 9           | Kannon  | 7700   |\r\n+-------------+---------+--------+\r\n\r\nResult table:\r\n+-------------+-------+\r\n| employee_id | bonus |\r\n+-------------+-------+\r\n| 2           | 0     |\r\n| 3           | 0     |\r\n| 7           | 7400  |\r\n| 8           | 0     |\r\n| 9           | 7700  |\r\n+-------------+-------+\r\n\r\nThe employees with IDs 2 and 8 get 0 bonus because they have an even employee_id.\r\nThe employee with ID 3 gets 0 bonus because their name starts with &#39;M&#39;.\r\nThe rest of the employees get a 100% bonus.\r\n</pre>",
+            "translatedTitle": null,
+            "translatedContent": null,
+            "isPaidOnly": true,
+            "difficulty": "Easy",
+            "likes": 24,
+            "dislikes": 1,
+            "isLiked": null,
+            "similarQuestions": "[]",
+            "exampleTestcases": null,
+            "contributors": [],
+            "topicTags": [
+                {
+                    "name": "Database",
+                    "slug": "database",
+                    "translatedName": null,
+                    "__typename": "TopicTagNode"
+                }
+            ],
+            "companyTagStats": "{\"1\": [], \"2\": [], \"3\": []}",
+            "codeSnippets": [
+                {
+                    "lang": "MySQL",
+                    "langSlug": "mysql",
+                    "code": "# Write your MySQL query statement below\n",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "MS SQL Server",
+                    "langSlug": "mssql",
+                    "code": "/* Write your T-SQL query statement below */\n",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Oracle",
+                    "langSlug": "oraclesql",
+                    "code": "/* Write your PL/SQL query statement below */\n",
+                    "__typename": "CodeSnippetNode"
+                }
+            ],
+            "stats": "{\"totalAccepted\": \"2.8K\", \"totalSubmission\": \"3.1K\", \"totalAcceptedRaw\": 2792, \"totalSubmissionRaw\": 3073, \"acRate\": \"90.9%\"}",
+            "hints": [],
+            "solution": null,
+            "status": null,
+            "sampleTestCase": "{\"headers\":{\"Employees\":[\"employee_id\",\"name\",\"salary\"]},\"rows\":{\"Employees\":[[2,\"Meir\",3000],[3,\"Michael\",3800],[7,\"Addilyn\",7400],[8,\"Juan\",6100],[9,\"Kannon\",7700]]}}",
+            "metaData": "{\n  \"mysql\": [\n    \"Create table If Not Exists Employees (employee_id int, name varchar(30), salary int)\"\n  ],\n  \"mssql\": [\n    \"Create table Employees (employee_id int, name varchar(30), salary int)\"\n  ],\n  \"oraclesql\": [\n    \"Create table Employees (employee_id int, name varchar(30), salary int)\"\n  ],\n  \"database\": true\n}",
+            "judgerAvailable": true,
+            "judgeType": "large",
+            "mysqlSchemas": [
+                "Create table If Not Exists Employees (employee_id int, name varchar(30), salary int)",
+                "Truncate table Employees",
+                "insert into Employees (employee_id, name, salary) values ('2', 'Meir', '3000')",
+                "insert into Employees (employee_id, name, salary) values ('3', 'Michael', '3800')",
+                "insert into Employees (employee_id, name, salary) values ('7', 'Addilyn', '7400')",
+                "insert into Employees (employee_id, name, salary) values ('8', 'Juan', '6100')",
+                "insert into Employees (employee_id, name, salary) values ('9', 'Kannon', '7700')"
+            ],
+            "enableRunCode": true,
+            "enableTestMode": false,
+            "enableDebugger": false,
+            "envInfo": "{\"mysql\": [\"MySQL\", \"<p><code>MySQL 8.0</code>.</p>\"], \"mssql\": [\"MS SQL Server\", \"<p><code>mssql server 2019</code>.</p>\"], \"oraclesql\": [\"Oracle\", \"<p><code>Oracle Sql 11.2</code>.</p>\"]}",
+            "libraryUrl": null,
+            "adminUrl": null,
+            "__typename": "QuestionNode"
+        }
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "344",
+            "article": "{\"id\": 781, \"url\": \"/articles/reverse-string/\", \"topicId\": 404367}",
+            "solution": {
+                "id": "781",
+                "content": "[TOC]\n\n## Solution\n\n--- \n\n#### Overview\n\n_Life is short, use Python._ (c) \n\n<iframe src=\"https://leetcode.com/playground/AzW3B9hy/shared\" frameBorder=\"0\" width=\"100%\" height=\"106\" name=\"AzW3B9hy\"></iframe>\n\nSpeaking seriously, let's use this problem to discuss two things:\n\n- Does _in-place_ mean constant space complexity?\n\n- Two pointers approach. \n<br /> \n<br />\n\n\n---\n#### Approach 1: Recursion, In-Place, $$\\mathcal{O}(N)$$ Space\n\n**Does _in-place_ mean constant space complexity?**\n\nNo. [By definition](https://en.wikipedia.org/wiki/In-place_algorithm), \nan in-place algorithm is an algorithm \nwhich transforms input using no auxiliary data structure. \n\nThe tricky part is that space is used by many actors, not only by \ndata structures. The classical example is to use recursive function without\nany auxiliary data structures. \n\nIs it in-place? Yes. \n\nIs it constant space? No, because of recursion stack.\n\n![fig](../Figures/344/stack2.png) \n\n**Algorithm**\n\nHere is an example. Let's implement recursive function `helper` which \nreceives two pointers, left and right, as arguments. \n\n- Base case: if `left >= right`, do nothing.\n\n- Otherwise, swap `s[left]` and `s[right]` and call `helper(left + 1, right - 1)`.\n\nTo solve the problem, call helper function passing the head and tail indexes as \narguments: `return helper(0, len(s) - 1)`.\n\n**Implementation**\n\n<iframe src=\"https://leetcode.com/playground/cLDBmvWy/shared\" frameBorder=\"0\" width=\"100%\" height=\"276\" name=\"cLDBmvWy\"></iframe>\n\n**Complexity Analysis**\n\n* Time complexity : $$\\mathcal{O}(N)$$ time to perform $$N/2$$ swaps. \n\n* Space complexity : $$\\mathcal{O}(N)$$ to keep the recursion stack.\n<br /> \n<br />\n\n\n---\n#### Approach 2: Two Pointers, Iteration, $$\\mathcal{O}(1)$$ Space\n\n**Two Pointers Approach**\n\nIn this approach, two pointers are used to process two array elements\nat the same time. Usual implementation is to set one pointer in the \nbeginning and one at the end and then to move them until they both meet.  \n\nSometimes one needs to generalize this approach in order to use three pointers, \nlike for classical [Sort Colors problem](https://leetcode.com/articles/sort-colors/).\n\n**Algorithm**\n\n- Set pointer left at index 0, and pointer right at index `n - 1`,\nwhere n is a number of elements in the array.\n\n- While left < right:\n\n    - Swap `s[left]` and `s[right]`.\n    \n    - Move left pointer one step right, and right pointer one step left.\n    \n![fig](../Figures/344/two.png)    \n\n**Implementation**\n\n<iframe src=\"https://leetcode.com/playground/mryJCRru/shared\" frameBorder=\"0\" width=\"100%\" height=\"225\" name=\"mryJCRru\"></iframe>\n\n**Complexity Analysis**\n\n* Time complexity : $$\\mathcal{O}(N)$$ to swap $$N/2$$ element. \n\n* Space complexity : $$\\mathcal{O}(1)$$, it's a constant space solution.",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "764",
+                    "count": 143,
+                    "average": 4.657,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

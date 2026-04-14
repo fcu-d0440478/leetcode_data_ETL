@@ -1,0 +1,43 @@
+{
+    "data": {
+        "topic": {
+            "id": 127655,
+            "viewCount": 101652,
+            "topLevelCommentCount": 203,
+            "subscribed": false,
+            "title": "Rising Temperature",
+            "pinned": false,
+            "tags": [],
+            "hideFromTrending": false,
+            "post": {
+                "id": 255806,
+                "voteCount": 0,
+                "voteStatus": 0,
+                "content": "---\\n\\n**Click [here](https://leetcode.com/articles/rising-temperature) to see the full article post**",
+                "updationDate": 1499745120,
+                "creationDate": 1499745120,
+                "status": null,
+                "isHidden": null,
+                "coinRewards": [],
+                "author": {
+                    "isDiscussAdmin": false,
+                    "isDiscussStaff": false,
+                    "username": "Mr-Bin",
+                    "nameColor": null,
+                    "activeBadge": null,
+                    "profile": {
+                        "userAvatar": "https://assets.leetcode.com/users/mr-bin/avatar_1547655304.png",
+                        "reputation": 171,
+                        "__typename": "UserProfileNode"
+                    },
+                    "isActive": true,
+                    "__typename": "UserNode"
+                },
+                "authorIsModerator": false,
+                "isOwnPost": false,
+                "__typename": "PostNode"
+            },
+            "__typename": "TopicNode"
+        }
+    }
+}

@@ -1,0 +1,84 @@
+{
+    "data": {
+        "question": {
+            "questionId": "1862",
+            "questionFrontendId": "1715",
+            "boundTopicId": null,
+            "title": "Count Apples and Oranges",
+            "titleSlug": "count-apples-and-oranges",
+            "content": "<p>Table: <code>Boxes</code></p>\n\n<pre>\n+--------------+------+\n| Column Name  | Type |\n+--------------+------+\n| box_id       | int  |\n| chest_id     | int  |\n| apple_count  | int  |\n| orange_count | int  |\n+--------------+------+\nbox_id is the primary key for this table.\nchest_id is a foreign key of the chests table.\nThis table contains information about the boxes and the number of oranges and apples they contain. Each box may contain a chest, which also can contain oranges and apples.\n</pre>\n\n<p>&nbsp;</p>\n\n<p>Table: <code>Chests</code></p>\n\n<pre>\n+--------------+------+\n| Column Name  | Type |\n+--------------+------+\n| chest_id     | int  |\n| apple_count  | int  |\n| orange_count | int  |\n+--------------+------+\nchest_id is the primary key for this table.\nThis table contains information about the chests we have, and the corresponding number if oranges and apples they contain.\n</pre>\n\n<p>&nbsp;</p>\n\n<p>Write an SQL query to count the number of apples and oranges in all the boxes. If a box contains a chest, you should also include the number of apples and oranges it has.</p>\n\n<p>Return the result table in <strong>any order</strong>.</p>\n\n<p>The query result format is in the following example:</p>\n\n<p>&nbsp;</p>\n\n<pre>\nBoxes table:\n+--------+----------+-------------+--------------+\n| box_id | chest_id | apple_count | orange_count |\n+--------+----------+-------------+--------------+\n| 2      | null     | 6           | 15           |\n| 18     | 14       | 4           | 15           |\n| 19     | 3        | 8           | 4            |\n| 12     | 2        | 19          | 20           |\n| 20     | 6        | 12          | 9            |\n| 8      | 6        | 9           | 9            |\n| 3      | 14       | 16          | 7            |\n+--------+----------+-------------+--------------+\n\nChests table:\n+----------+-------------+--------------+\n| chest_id | apple_count | orange_count |\n+----------+-------------+--------------+\n| 6        | 5           | 6            |\n| 14       | 20          | 10           |\n| 2        | 8           | 8            |\n| 3        | 19          | 4            |\n| 16       | 19          | 19           |\n+----------+-------------+--------------+\n\nResult table:\n+-------------+--------------+\n| apple_count | orange_count |\n+-------------+--------------+\n| 151         | 123          |\n+-------------+--------------+\nbox 2 has 6 apples and 15 oranges.\nbox 18 has 4 + 20 (from the chest) = 24 apples and 15 + 10 (from the chest) = 25 oranges.\nbox 19 has 8 + 19 (from the chest) = 27 apples and 4 + 4 (from the chest) = 8 oranges.\nbox 12 has 19 + 8 (from the chest) = 27 apples and 20 + 8 (from the chest) = 28 oranges.\nbox 20 has 12 + 5 (from the chest) = 17 apples and 9 + 6 (from the chest) = 15 oranges.\nbox 8 has 9 + 5 (from the chest) = 14 apples and 9 + 6 (from the chest) = 15 oranges.\nbox 3 has 16 + 20 (from the chest) = 36 apples and 7 + 10 (from the chest) = 17 oranges.\nTotal number of apples = 6 + 24 + 27 + 27 + 17 + 14 + 36 = 151\nTotal number of oranges = 15 + 25 + 8 + 28 + 15 + 15 + 17 = 123\n</pre>\n",
+            "translatedTitle": null,
+            "translatedContent": null,
+            "isPaidOnly": true,
+            "difficulty": "Medium",
+            "likes": 33,
+            "dislikes": 5,
+            "isLiked": null,
+            "similarQuestions": "[]",
+            "exampleTestcases": "{\"headers\":{\"Boxes\":[\"box_id\",\"chest_id\",\"apple_count\",\"orange_count\"],\"Chests\":[\"chest_id\",\"apple_count\",\"orange_count\"]},\"rows\":{\"Boxes\":[[2,null,6,15],[18,14,4,15],[19,3,8,4],[12,2,19,20],[20,6,12,9],[8,6,9,9],[3,14,16,7]],\"Chests\":[[6,5,6],[14,20,10],[2,8,8],[3,19,4],[16,19,19]]}}",
+            "contributors": [],
+            "topicTags": [
+                {
+                    "name": "Database",
+                    "slug": "database",
+                    "translatedName": null,
+                    "__typename": "TopicTagNode"
+                }
+            ],
+            "companyTagStats": "{\"1\": [], \"2\": [], \"3\": []}",
+            "codeSnippets": [
+                {
+                    "lang": "MySQL",
+                    "langSlug": "mysql",
+                    "code": "# Write your MySQL query statement below\n",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "MS SQL Server",
+                    "langSlug": "mssql",
+                    "code": "/* Write your T-SQL query statement below */\n",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Oracle",
+                    "langSlug": "oraclesql",
+                    "code": "/* Write your PL/SQL query statement below */\n",
+                    "__typename": "CodeSnippetNode"
+                }
+            ],
+            "stats": "{\"totalAccepted\": \"4.5K\", \"totalSubmission\": \"5.7K\", \"totalAcceptedRaw\": 4506, \"totalSubmissionRaw\": 5739, \"acRate\": \"78.5%\"}",
+            "hints": [],
+            "solution": null,
+            "status": null,
+            "sampleTestCase": "{\"headers\":{\"Boxes\":[\"box_id\",\"chest_id\",\"apple_count\",\"orange_count\"],\"Chests\":[\"chest_id\",\"apple_count\",\"orange_count\"]},\"rows\":{\"Boxes\":[[2,null,6,15],[18,14,4,15],[19,3,8,4],[12,2,19,20],[20,6,12,9],[8,6,9,9],[3,14,16,7]],\"Chests\":[[6,5,6],[14,20,10],[2,8,8],[3,19,4],[16,19,19]]}}",
+            "metaData": "{\n  \"mysql\": [\n    \"Create table If Not Exists Boxes (box_id int, chest_id int, apple_count int, orange_count int)\",\n    \"Create table If Not Exists Chests (chest_id int, apple_count int, orange_count int)\"\n  ],\n  \"mssql\": [\n    \"Create table Boxes (box_id int, chest_id int, apple_count int, orange_count int)\",\n    \"Create table Chests (chest_id int, apple_count int, orange_count int)\"\n  ],\n  \"oraclesql\": [\n    \"Create table Boxes (box_id int, chest_id int, apple_count int, orange_count int)\",\n    \"Create table Chests (chest_id int, apple_count int, orange_count int)\"\n  ],\n  \"database\": true\n}",
+            "judgerAvailable": true,
+            "judgeType": "large",
+            "mysqlSchemas": [
+                "Create table If Not Exists Boxes (box_id int, chest_id int, apple_count int, orange_count int)",
+                "Create table If Not Exists Chests (chest_id int, apple_count int, orange_count int)",
+                "Truncate table Boxes",
+                "insert into Boxes (box_id, chest_id, apple_count, orange_count) values ('2', 'None', '6', '15')",
+                "insert into Boxes (box_id, chest_id, apple_count, orange_count) values ('18', '14', '4', '15')",
+                "insert into Boxes (box_id, chest_id, apple_count, orange_count) values ('19', '3', '8', '4')",
+                "insert into Boxes (box_id, chest_id, apple_count, orange_count) values ('12', '2', '19', '20')",
+                "insert into Boxes (box_id, chest_id, apple_count, orange_count) values ('20', '6', '12', '9')",
+                "insert into Boxes (box_id, chest_id, apple_count, orange_count) values ('8', '6', '9', '9')",
+                "insert into Boxes (box_id, chest_id, apple_count, orange_count) values ('3', '14', '16', '7')",
+                "Truncate table Chests",
+                "insert into Chests (chest_id, apple_count, orange_count) values ('6', '5', '6')",
+                "insert into Chests (chest_id, apple_count, orange_count) values ('14', '20', '10')",
+                "insert into Chests (chest_id, apple_count, orange_count) values ('2', '8', '8')",
+                "insert into Chests (chest_id, apple_count, orange_count) values ('3', '19', '4')",
+                "insert into Chests (chest_id, apple_count, orange_count) values ('16', '19', '19')"
+            ],
+            "enableRunCode": true,
+            "enableTestMode": false,
+            "enableDebugger": false,
+            "envInfo": "{\"mysql\": [\"MySQL\", \"<p><code>MySQL 8.0</code>.</p>\"], \"mssql\": [\"MS SQL Server\", \"<p><code>mssql server 2019</code>.</p>\"], \"oraclesql\": [\"Oracle\", \"<p><code>Oracle Sql 11.2</code>.</p>\"]}",
+            "libraryUrl": null,
+            "adminUrl": null,
+            "__typename": "QuestionNode"
+        }
+    }
+}

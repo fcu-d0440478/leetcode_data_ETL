@@ -1,0 +1,77 @@
+{
+    "data": {
+        "question": {
+            "questionId": "1214",
+            "questionFrontendId": "1112",
+            "boundTopicId": null,
+            "title": "Highest Grade For Each Student",
+            "titleSlug": "highest-grade-for-each-student",
+            "content": "<p>Table: <code>Enrollments</code></p>\n\n<pre>\n+---------------+---------+\n| Column Name   | Type    |\n+---------------+---------+\n| student_id    | int     |\n| course_id     | int     |\n| grade         | int     |\n+---------------+---------+\n(student_id, course_id) is the primary key of this table.\n\n</pre>\n\n<p>Write a SQL query to find the highest grade with its corresponding course for each student. In case of a tie, you should find the course with the smallest&nbsp;<code>course_id</code>. The output must be sorted by increasing <code>student_id</code>.</p>\n\n<p>The query result format is in the following example:</p>\n\n<pre>\nEnrollments table:\n+------------+-------------------+\n| student_id | course_id | grade |\n+------------+-----------+-------+\n| 2          | 2         | 95    |\n| 2          | 3         | 95    |\n| 1          | 1         | 90    |\n| 1          | 2         | 99    |\n| 3          | 1         | 80    |\n| 3          | 2         | 75    |\n| 3          | 3         | 82    |\n+------------+-----------+-------+\n\nResult table:\n+------------+-------------------+\n| student_id | course_id | grade |\n+------------+-----------+-------+\n| 1          | 2         | 99    |\n| 2          | 2         | 95    |\n| 3          | 3         | 82    |\n+------------+-----------+-------+\n</pre>\n",
+            "translatedTitle": null,
+            "translatedContent": null,
+            "isPaidOnly": true,
+            "difficulty": "Medium",
+            "likes": 130,
+            "dislikes": 4,
+            "isLiked": null,
+            "similarQuestions": "[{\"title\": \"Department Highest Salary\", \"titleSlug\": \"department-highest-salary\", \"difficulty\": \"Medium\", \"translatedTitle\": null}]",
+            "exampleTestcases": "{\"headers\":{\"Enrollments\":[\"student_id\",\"course_id\",\"grade\"]},\"rows\":{\"Enrollments\":[[2,2,95],[2,3,95],[1,1,90],[1,2,99],[3,1,80],[3,2,75],[3,3,82]]}}",
+            "contributors": [],
+            "topicTags": [
+                {
+                    "name": "Database",
+                    "slug": "database",
+                    "translatedName": null,
+                    "__typename": "TopicTagNode"
+                }
+            ],
+            "companyTagStats": "{\"3\": [{\"taggedByAdmin\": true, \"name\": \"Coursera\", \"slug\": \"coursera\", \"timesEncountered\": 0}], \"1\": [], \"2\": []}",
+            "codeSnippets": [
+                {
+                    "lang": "MySQL",
+                    "langSlug": "mysql",
+                    "code": "# Write your MySQL query statement below\n",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "MS SQL Server",
+                    "langSlug": "mssql",
+                    "code": "/* Write your T-SQL query statement below */\n",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Oracle",
+                    "langSlug": "oraclesql",
+                    "code": "/* Write your PL/SQL query statement below */\n",
+                    "__typename": "CodeSnippetNode"
+                }
+            ],
+            "stats": "{\"totalAccepted\": \"23.1K\", \"totalSubmission\": \"31.7K\", \"totalAcceptedRaw\": 23062, \"totalSubmissionRaw\": 31661, \"acRate\": \"72.8%\"}",
+            "hints": [],
+            "solution": null,
+            "status": null,
+            "sampleTestCase": "{\"headers\":{\"Enrollments\":[\"student_id\",\"course_id\",\"grade\"]},\"rows\":{\"Enrollments\":[[2,2,95],[2,3,95],[1,1,90],[1,2,99],[3,1,80],[3,2,75],[3,3,82]]}}",
+            "metaData": "{\n  \"mysql\": [\n    \"Create table If Not Exists Enrollments (student_id int, course_id int, grade int)\"\n  ],\n  \"mssql\": [\n    \"create table Enrollments (student_id int, course_id int, grade int)\"\n  ],\n  \"oraclesql\": [\n    \"create table Enrollments (student_id int, course_id int, grade int)\"\n  ],\n  \"database\": true\n}",
+            "judgerAvailable": true,
+            "judgeType": "large",
+            "mysqlSchemas": [
+                "Create table If Not Exists Enrollments (student_id int, course_id int, grade int)",
+                "Truncate table Enrollments",
+                "insert into Enrollments (student_id, course_id, grade) values ('2', '2', '95')",
+                "insert into Enrollments (student_id, course_id, grade) values ('2', '3', '95')",
+                "insert into Enrollments (student_id, course_id, grade) values ('1', '1', '90')",
+                "insert into Enrollments (student_id, course_id, grade) values ('1', '2', '99')",
+                "insert into Enrollments (student_id, course_id, grade) values ('3', '1', '80')",
+                "insert into Enrollments (student_id, course_id, grade) values ('3', '2', '75')",
+                "insert into Enrollments (student_id, course_id, grade) values ('3', '3', '82')"
+            ],
+            "enableRunCode": true,
+            "enableTestMode": false,
+            "enableDebugger": false,
+            "envInfo": "{\"mysql\": [\"MySQL\", \"<p><code>MySQL 8.0</code>.</p>\"], \"mssql\": [\"MS SQL Server\", \"<p><code>mssql server 2019</code>.</p>\"], \"oraclesql\": [\"Oracle\", \"<p><code>Oracle Sql 11.2</code>.</p>\"]}",
+            "libraryUrl": null,
+            "adminUrl": null,
+            "__typename": "QuestionNode"
+        }
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "181",
+            "article": "{\"id\": 215, \"url\": \"/articles/employees-earning-more-than-their-managers/\", \"topicId\": 127752}",
+            "solution": {
+                "id": "215",
+                "content": "[TOC]\n\n## Solution\n---\n#### Approach I: Using `WHERE` clause [Accepted]\n\n**Algorithm**\n\nAs this table has the employee's manager information, we probably need to select information from it twice.\n\n```sql\nSELECT *\nFROM Employee AS a, Employee AS b\n;\n```\n>Note: The keyword 'AS' is optional.\n\n| Id | Name  | Salary | ManagerId | Id | Name  | Salary | ManagerId |\n|----|-------|--------|-----------|----|-------|--------|-----------|\n| 1  | Joe   | 70000  | 3         | 1  | Joe   | 70000  | 3         |\n| 2  | Henry | 80000  | 4         | 1  | Joe   | 70000  | 3         |\n| 3  | Sam   | 60000  |           | 1  | Joe   | 70000  | 3         |\n| 4  | Max   | 90000  |           | 1  | Joe   | 70000  | 3         |\n| 1  | Joe   | 70000  | 3         | 2  | Henry | 80000  | 4         |\n| 2  | Henry | 80000  | 4         | 2  | Henry | 80000  | 4         |\n| 3  | Sam   | 60000  |           | 2  | Henry | 80000  | 4         |\n| 4  | Max   | 90000  |           | 2  | Henry | 80000  | 4         |\n| 1  | Joe   | 70000  | 3         | 3  | Sam   | 60000  |           |\n| 2  | Henry | 80000  | 4         | 3  | Sam   | 60000  |           |\n| 3  | Sam   | 60000  |           | 3  | Sam   | 60000  |           |\n| 4  | Max   | 90000  |           | 3  | Sam   | 60000  |           |\n| 1  | Joe   | 70000  | 3         | 4  | Max   | 90000  |           |\n| 2  | Henry | 80000  | 4         | 4  | Max   | 90000  |           |\n| 3  | Sam   | 60000  |           | 4  | Max   | 90000  |           |\n| 4  | Max   | 90000  |           | 4  | Max   | 90000  |           |\n> The first 3 columns are from a and the last 3 ones are from b.\n\nSelect from two tables will get the [Cartesian product](https://en.wikipedia.org/wiki/Cartesian_product) of these two tables. In this case, the output will be 4*4 = 16 records. However, what we interest is the employee's salary higher than his/her manager. So we should add two conditions in a `WHERE` clause like below.\n\n\n```sql\nSELECT\n    *\nFROM\n    Employee AS a,\n    Employee AS b\nWHERE\n    a.ManagerId = b.Id\n        AND a.Salary > b.Salary\n;\n```\n\n| Id | Name | Salary | ManagerId | Id | Name | Salary | ManagerId |\n|----|------|--------|-----------|----|------|--------|-----------|\n| 1  | Joe  | 70000  | 3         | 3  | Sam  | 60000  |           |\n\nAs we only need to output the employee's name, so we modify the above code a little to get a solution.\n\n**MySQL**\n\n```sql\nSELECT\n    a.Name AS 'Employee'\nFROM\n    Employee AS a,\n    Employee AS b\nWHERE\n    a.ManagerId = b.Id\n        AND a.Salary > b.Salary\n;\n```\n\n#### Approach I: Using `JOIN` clause [Accepted]\n\n**Algorithm**\n\nActually, `JOIN` is a more common and efficient way to link tables together, and we can use `ON` to specify some conditions.\n\n```sql\nSELECT\n     a.NAME AS Employee\nFROM Employee AS a JOIN Employee AS b\n     ON a.ManagerId = b.Id\n     AND a.Salary > b.Salary\n;\n```",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "210",
+                    "count": 56,
+                    "average": 4.786,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

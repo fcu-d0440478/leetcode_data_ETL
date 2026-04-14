@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "1427",
+            "article": "{\"id\": 855, \"url\": \"/articles/all-elements-in-two-bsts/\", \"topicId\": 482085}",
+            "solution": {
+                "id": "855",
+                "content": "[TOC]\n\n## Solution\n\n---\n\n#### Prerequisites\n\nTo solve this problem we will use recursive and iterative inorder traversals.\nHere are prerequisites you might want to check:\n\n1. There are three DFS ways to traverse the tree: preorder, postorder and inorder.\nPlease check two minutes picture explanation, if you don't remember them quite well:\n[here is Python version](https://leetcode.com/problems/binary-tree-inorder-traversal/discuss/283746/all-dfs-traversals-preorder-inorder-postorder-in-python-in-1-line) \nand \n[here is Java version](https://leetcode.com/problems/binary-tree-inorder-traversal/discuss/328601/all-dfs-traversals-preorder-postorder-inorder-in-java-in-5-lines).\n\n2. > Inorder traversal of BST is an array sorted in the ascending order.\n\n3. To compute inorder traversal follow the direction `Left -> Node -> Right`.\n\n<iframe src=\"https://leetcode.com/playground/cW39g7yk/shared\" frameBorder=\"0\" width=\"100%\" height=\"174\" name=\"cW39g7yk\"></iframe>\n\n![traversal](../Figures/1305/inorder.png)\n<br />\n<br />\n\n\n---\n#### Approach 1: Recursive Inorder Traversal + Sort, Linearithmic Time.\n\nLet's start from the shortest possible solution: \n\n- Implement recursive inorder traversal, 1 line in Python, 5 lines in Java.\n\n- Compute inorder traversal of each tree.\n\n- Merge both lists and then sort the result.\n\n![traversal](../Figures/1305/recursive_inorder.png)\n\nThis solution takes one minute to write, but the time complexity is\nlinearithmic. \n\n**Implementation**\n\n<iframe src=\"https://leetcode.com/playground/kbooPurH/shared\" frameBorder=\"0\" width=\"100%\" height=\"480\" name=\"kbooPurH\"></iframe>\n\n**Complexity Analysis**\n\n* Time complexity: $$\\mathcal{O}((N + M)\\log(M + N))$$, \nwhere $$M$$ and $$N$$ are node numbers. To build inorder traversals takes \n$$\\mathcal{O}(N + M)$$, to merge and sort the resulting lists -\n$$\\mathcal{O}((N + M)\\log(M + N))$$.\n    \n* Space complexity: $$\\mathcal{O}(N + M)$$ to keep the output. \n<br />\n<br />\n\n\n---\n#### Approach 2: Iterative Inorder Traversal, One Pass, Linear Time.\n\n**Intuition**\n\nNow let's optimise the first approach. \n\nFirst, since both inorder traversals are already sorted, \n[one could merge them into one sorted list in linear time](https://leetcode.com/articles/merged-two-sorted-lists/).\nThough it's still two passes solution: first to build two inorder traversals \nand then to merge them.\n\nMore elegant way here is to build iteratively inorder traversals for both trees in parallel,\nand at each step update the output list by the smallest value between both trees.\nThat will be one pass solution. Here is how it works:\n\n![traversal](../Figures/1305/iterative.png)\n\n**Algorithm**\n\n- Do iterative inorder traversal of both trees in parallel.\n\n    - At each step add the smallest available value in the output.\n     \n- Return output list.\n\n**Implementation**\n\n!?!../Documents/1305_LIS.json:1000,530!?!\n\n<iframe src=\"https://leetcode.com/playground/tKhveJc7/shared\" frameBorder=\"0\" width=\"100%\" height=\"500\" name=\"tKhveJc7\"></iframe>\n\n**Complexity Analysis**\n\n* Time complexity: $$\\mathcal{O}(N + M)$$, where $$M$$ and $$N$$ are node numbers. \nIt's one-pass approach along each tree. \n    \n* Space complexity: $$\\mathcal{O}(N + M)$$ to keep the output and both stacks. \n<br />\n<br />\n\n\n---\n#### Further Reading \n\nHere we implemented _recursive_ and _iterative_ inorder traversals.\nThere is also _Morris_ inorder traversal, which is used for the problems \nwhich require constant space solution. \nHere is detailed comparison and implementation of all three \ninorder traversals: \n[Recover BST](https://leetcode.com/articles/recover-binary-search-tree/). \n<br />\n<br />",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": true,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "813",
+                    "count": 24,
+                    "average": 4.792,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

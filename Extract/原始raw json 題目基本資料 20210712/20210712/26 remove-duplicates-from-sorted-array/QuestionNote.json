@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "26",
+            "article": "{\"id\": 4, \"url\": \"/articles/remove-duplicates-from-sorted-array/\", \"topicId\": 127807}",
+            "solution": {
+                "id": "4",
+                "content": "[TOC]\n\n## Solution\n\n---\n#### Approach 1: Two Pointers\n\n**Algorithm**\n\nSince the array is already sorted, we can keep two pointers $$i$$ and $$j$$, where $$i$$ is the slow-runner while $$j$$ is the fast-runner. As long as $$nums[i] = nums[j]$$, we increment $$j$$ to skip the duplicate.\n\nWhen we encounter $$nums[j] \\neq nums[i]$$, the duplicate run has ended so we must copy its value to $$nums[i + 1]$$. $$i$$ is then incremented and we repeat the same process again until $$j$$ reaches the end of array.\n\n<iframe src=\"https://leetcode.com/playground/p8jPfpcx/shared\" frameBorder=\"0\" width=\"100%\" height=\"242\" name=\"p8jPfpcx\"></iframe>\n\n**Complexity analysis**\n\n* Time complextiy : $$O(n)$$.\nAssume that $$n$$ is the length of array. Each of $$i$$ and $$j$$ traverses at most $$n$$ steps.\n\n* Space complexity : $$O(1)$$.",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": true,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "1",
+                    "count": 699,
+                    "average": 3.628,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

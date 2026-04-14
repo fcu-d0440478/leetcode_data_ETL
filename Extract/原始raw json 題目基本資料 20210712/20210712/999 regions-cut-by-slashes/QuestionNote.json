@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "999",
+            "article": "{\"id\": 640, \"url\": \"/articles/regions-cut-by-slashes/\", \"topicId\": 205641}",
+            "solution": {
+                "id": "640",
+                "content": "[TOC]\n\n## Solution\n---\n#### Approach 1: Union-Find\n\n**Intuition**\n\nTo find the number of components in a graph, we can use either depth-first search or union find.  The main difficulty with this problem is in specifying the graph.\n\nOne \"brute force\" way to specify the graph is to associate each grid square with 4 nodes (north, south, west, and east), representing 4 triangles inside the square if it were to have both slashes.  Then, we can connect all 4 nodes if the grid square is `\" \"`, and connect two pairs if the grid square is `\"/\"` or `\"\\\"`.  Finally, we can connect all neighboring nodes (for example, the east node of the square at `grid[0][0]` connects with the west node of the square at `grid[0][1]`).\n\nThis is the most straightforward approach, but there are other approaches that use less nodes to represent the underlying information.\n\n**Algorithm**\n\nCreate `4*N*N` nodes, one for each grid square, and connect them as described above.  After, we use a union find structure to find the number of connected components.\n\nWe will skip the explanation of how a DSU structure is implemented.  Please refer to [https://leetcode.com/problems/redundant-connection/solution/](https://leetcode.com/problems/redundant-connection/solution/) for a tutorial on DSU.\n\n<iframe src=\"https://leetcode.com/playground/MCjyfDe6/shared\" frameBorder=\"0\" width=\"100%\" height=\"500\" name=\"MCjyfDe6\"></iframe>\n\n**Complexity Analysis**\n\n* Time Complexity:  $$O(N * N * \\alpha(N))$$, where $$N$$ is the length of the grid, and $$\\alpha$$ is the Inverse-Ackermann function (if we were to use union-find by rank.)\n\n* Space Complexity:  $$O(N * N)$$.\n<br />\n<br />",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "626",
+                    "count": 89,
+                    "average": 3.573,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

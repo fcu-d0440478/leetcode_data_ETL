@@ -1,0 +1,158 @@
+{
+    "data": {
+        "question": {
+            "questionId": "271",
+            "questionFrontendId": "271",
+            "boundTopicId": null,
+            "title": "Encode and Decode Strings",
+            "titleSlug": "encode-and-decode-strings",
+            "content": "<p>Design an algorithm to encode <b>a list of strings</b> to <b>a string</b>. The encoded string is then sent over the network and is decoded back to the original list of strings.</p>\n\n<p>Machine 1 (sender) has the function:</p>\n\n<pre>\nstring encode(vector&lt;string&gt; strs) {\n  // ... your code\n  return encoded_string;\n}</pre>\nMachine 2 (receiver) has the function:\n\n<pre>\nvector&lt;string&gt; decode(string s) {\n  //... your code\n  return strs;\n}\n</pre>\n\n<p>So Machine 1 does:</p>\n\n<pre>\nstring encoded_string = encode(strs);\n</pre>\n\n<p>and Machine 2 does:</p>\n\n<pre>\nvector&lt;string&gt; strs2 = decode(encoded_string);\n</pre>\n\n<p><code>strs2</code> in Machine 2 should be the same as <code>strs</code> in Machine 1.</p>\n\n<p>Implement the <code>encode</code> and <code>decode</code> methods.</p>\n\n<p>You are not allowed to&nbsp;solve the problem using any serialize methods (such as <code>eval</code>).</p>\n\n<p>&nbsp;</p>\n<p><strong>Example 1:</strong></p>\n\n<pre>\n<strong>Input:</strong> dummy_input = [&quot;Hello&quot;,&quot;World&quot;]\n<strong>Output:</strong> [&quot;Hello&quot;,&quot;World&quot;]\n<strong>Explanation:</strong>\nMachine 1:\nCodec encoder = new Codec();\nString msg = encoder.encode(strs);\nMachine 1 ---msg---&gt; Machine 2\n\nMachine 2:\nCodec decoder = new Codec();\nString[] strs = decoder.decode(msg);\n</pre>\n\n<p><strong>Example 2:</strong></p>\n\n<pre>\n<strong>Input:</strong> dummy_input = [&quot;&quot;]\n<strong>Output:</strong> [&quot;&quot;]\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= strs.length &lt;= 200</code></li>\n\t<li><code>0 &lt;= strs[i].length &lt;= 200</code></li>\n\t<li><code>strs[i]</code> contains any possible characters out of <code>256</code> valid ASCII characters.</li>\n</ul>\n\n<p>&nbsp;</p>\n<p><strong>Follow up: </strong>Could you write a generalized algorithm to work on any possible set of characters?</p>\n",
+            "translatedTitle": null,
+            "translatedContent": null,
+            "isPaidOnly": true,
+            "difficulty": "Medium",
+            "likes": 630,
+            "dislikes": 186,
+            "isLiked": null,
+            "similarQuestions": "[{\"title\": \"Count and Say\", \"titleSlug\": \"count-and-say\", \"difficulty\": \"Medium\", \"translatedTitle\": null}, {\"title\": \"Serialize and Deserialize Binary Tree\", \"titleSlug\": \"serialize-and-deserialize-binary-tree\", \"difficulty\": \"Hard\", \"translatedTitle\": null}, {\"title\": \"String Compression\", \"titleSlug\": \"string-compression\", \"difficulty\": \"Medium\", \"translatedTitle\": null}, {\"title\": \"Count Binary Substrings\", \"titleSlug\": \"count-binary-substrings\", \"difficulty\": \"Easy\", \"translatedTitle\": null}]",
+            "exampleTestcases": "[\"Hello\",\"World\"]\n[\"\"]",
+            "contributors": [],
+            "topicTags": [
+                {
+                    "name": "Array",
+                    "slug": "array",
+                    "translatedName": null,
+                    "__typename": "TopicTagNode"
+                },
+                {
+                    "name": "String",
+                    "slug": "string",
+                    "translatedName": null,
+                    "__typename": "TopicTagNode"
+                },
+                {
+                    "name": "Design",
+                    "slug": "design",
+                    "translatedName": null,
+                    "__typename": "TopicTagNode"
+                }
+            ],
+            "companyTagStats": "{\"1\": [{\"taggedByAdmin\": true, \"name\": \"Google\", \"slug\": \"google\", \"timesEncountered\": 5}, {\"taggedByAdmin\": false, \"name\": \"Microsoft\", \"slug\": \"microsoft\", \"timesEncountered\": 3}], \"3\": [{\"taggedByAdmin\": false, \"name\": \"Square\", \"slug\": \"square\", \"timesEncountered\": 2}, {\"taggedByAdmin\": false, \"name\": \"Atlassian\", \"slug\": \"atlassian\", \"timesEncountered\": 2}], \"2\": []}",
+            "codeSnippets": [
+                {
+                    "lang": "C++",
+                    "langSlug": "cpp",
+                    "code": "class Codec {\npublic:\n\n    // Encodes a list of strings to a single string.\n    string encode(vector<string>& strs) {\n        \n    }\n\n    // Decodes a single string to a list of strings.\n    vector<string> decode(string s) {\n        \n    }\n};\n\n// Your Codec object will be instantiated and called as such:\n// Codec codec;\n// codec.decode(codec.encode(strs));",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Java",
+                    "langSlug": "java",
+                    "code": "public class Codec {\n\n    // Encodes a list of strings to a single string.\n    public String encode(List<String> strs) {\n        \n    }\n\n    // Decodes a single string to a list of strings.\n    public List<String> decode(String s) {\n        \n    }\n}\n\n// Your Codec object will be instantiated and called as such:\n// Codec codec = new Codec();\n// codec.decode(codec.encode(strs));",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Python",
+                    "langSlug": "python",
+                    "code": "class Codec:\n\n    def encode(self, strs):\n        \"\"\"Encodes a list of strings to a single string.\n        \n        :type strs: List[str]\n        :rtype: str\n        \"\"\"\n        \n\n    def decode(self, s):\n        \"\"\"Decodes a single string to a list of strings.\n        \n        :type s: str\n        :rtype: List[str]\n        \"\"\"\n        \n\n# Your Codec object will be instantiated and called as such:\n# codec = Codec()\n# codec.decode(codec.encode(strs))",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Python3",
+                    "langSlug": "python3",
+                    "code": "class Codec:\n    def encode(self, strs: [str]) -> str:\n        \"\"\"Encodes a list of strings to a single string.\n        \"\"\"\n        \n\n    def decode(self, s: str) -> [str]:\n        \"\"\"Decodes a single string to a list of strings.\n        \"\"\"\n        \n\n\n# Your Codec object will be instantiated and called as such:\n# codec = Codec()\n# codec.decode(codec.encode(strs))",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "C",
+                    "langSlug": "c",
+                    "code": "/** Encodes a list of strings to a single string */\nchar* encode(char** strs, int strsSize) {\n    \n}\n\n/**\n * Decodes a single string to a list of strings.\n *\n * Return an array of size *returnSize.\n * Note: The returned array must be malloced, assume caller calls free().\n */\nchar** decode(char* s, int* returnSize) {\n    \n}\n\n// Your functions will be called as such:\n// char* s = encode(strs, strsSize);\n// decode(s, &returnSize);",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "C#",
+                    "langSlug": "csharp",
+                    "code": "public class Codec {\n\n    // Encodes a list of strings to a single string.\n    public string encode(IList<string> strs) {\n        \n    }\n\n    // Decodes a single string to a list of strings.\n    public IList<string> decode(string s) {\n        \n    }\n}\n\n// Your Codec object will be instantiated and called as such:\n// Codec codec = new Codec();\n// codec.decode(codec.encode(strs));",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "JavaScript",
+                    "langSlug": "javascript",
+                    "code": "/**\n * Encodes a list of strings to a single string.\n *\n * @param {string[]} strs\n * @return {string}\n */\nvar encode = function(strs) {\n    \n};\n\n/**\n * Decodes a single string to a list of strings.\n *\n * @param {string} s\n * @return {string[]}\n */\nvar decode = function(s) {\n    \n};\n\n/**\n * Your functions will be called as such:\n * decode(encode(strs));\n */",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Ruby",
+                    "langSlug": "ruby",
+                    "code": "# Encodes a list of strings to a single string.\n#\n# @param {string[]} strs\n# @return {string}\ndef encode(strs)\n    \nend\n\n# Decodes a single string to a list of strings.\n#\n# @param {string} s\n# @return {string[]}\ndef decode(s)\n    \nend\n\n\n# Your functions will be called as such:\n# decode(encode(strs))",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Swift",
+                    "langSlug": "swift",
+                    "code": "class Codec {\n    func encode(_ strs: [String]) -> String {\n        \n    }\n    \n    func decode(_ s: String) -> [String] {\n        \n    }\n}\n\n/**\n * Your Codec object will be instantiated and called as such:\n * let obj = Codec()\n * val s = obj.encode(strs)\n * let ans = obj.decode(s)\n*/",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Go",
+                    "langSlug": "golang",
+                    "code": "type Codec struct {\n    \n}\n\n// Encodes a list of strings to a single string.\nfunc (codec *Codec) Encode(strs []string) string {\n    \n}\n\n// Decodes a single string to a list of strings.\nfunc (codec *Codec) Decode(strs string) []string {\n    \n}\n\n// Your Codec object will be instantiated and called as such:\n// var codec Codec\n// codec.Decode(codec.Encode(strs));",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Scala",
+                    "langSlug": "scala",
+                    "code": "class Codec {\n    // Encodes a list of strings to a single string.\n    def encode(strs: List[String]): String = {\n        \n    }\n    \n    // Decodes a single string to a list of strings.\n    def decode(s: String): List[String] = {\n        \n    }\n}\n\n/**\n * Your Codec object will be instantiated and called as such:\n * var obj = new Codec()\n * val s = obj.encode(strs)\n * val ans = obj.decode(s)\n */",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Kotlin",
+                    "langSlug": "kotlin",
+                    "code": "class Codec {\n    // Encodes a list of strings to a single string.\n    fun encode(strs: List<String>): String {\n        \n    }\n    \n    // Decodes a single string to a list of strings.\n    fun decode(s: String): List<String> {\n        \n    }\n}\n\n/**\n * Your Codec object will be instantiated and called as such:\n * var obj = Codec()\n * val s = obj.encode(strs)\n * val ans = obj.decode(s)\n */",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Rust",
+                    "langSlug": "rust",
+                    "code": "struct Codec {\n\t\n}\n\n/** \n * `&self` means the method takes an immutable reference.\n * If you need a mutable reference, change it to `&mut self` instead.\n */\nimpl Codec {\n    fn new() -> Self {\n        \n    }\n\t\n    fn encode(&self, strs: Vec<String>) -> String {\n        \n    }\n\t\n    fn decode(&self, s: String) -> Vec<String> {\n        \n    }\n}\n\n/**\n * Your Codec object will be instantiated and called as such:\n * let obj = Codec::new();\n * let s: String = obj.encode(strs);\n * let ans: VecVec<String> = obj.decode(s);\n */",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "PHP",
+                    "langSlug": "php",
+                    "code": "class Codec {\n    /**\n     * @param String[] $strs\n     * @return String\n     */\n    function encode($strs) {\n        \n    }\n    \n    /**\n     * @param String $s\n     * @return String[]\n     */\n    function decode($s) {\n        \n    }\n}\n\n/**\n * Your Codec object will be instantiated and called as such:\n * $obj = Codec();\n * $s = $obj->encode($strs);\n * $ans = $obj->decode($s);\n */",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "TypeScript",
+                    "langSlug": "typescript",
+                    "code": "/**\n * Encodes a list of strings to a single string.\n */\nfunction encode(strs: string[]): string {\n\t\n};\n\n/**\n * Decodes a single string to a list of strings.\n */\nfunction decode(s: string): string[] {\n\t\n};\n\n/**\n * Your functions will be called as such:\n * decode(encode(strs));\n */",
+                    "__typename": "CodeSnippetNode"
+                }
+            ],
+            "stats": "{\"totalAccepted\": \"73.6K\", \"totalSubmission\": \"215.6K\", \"totalAcceptedRaw\": 73570, \"totalSubmissionRaw\": 215575, \"acRate\": \"34.1%\"}",
+            "hints": [],
+            "solution": {
+                "id": "748",
+                "canSeeDetail": true,
+                "paidOnly": true,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "__typename": "ArticleNode"
+            },
+            "status": null,
+            "sampleTestCase": "[\"Hello\",\"World\"]",
+            "metaData": "{\n  \"name\": \"encode\",\n  \"params\": [\n    {\n      \"name\": \"dummy_input\",\n      \"type\": \"list<string>\"\n    }\n  ],\n  \"return\": {\n    \"type\": \"list<string>\"\n  },\n  \"manual\": true\n}",
+            "judgerAvailable": true,
+            "judgeType": "large",
+            "mysqlSchemas": [],
+            "enableRunCode": true,
+            "enableTestMode": false,
+            "enableDebugger": true,
+            "envInfo": "{\"cpp\": [\"C++\", \"<p>Compiled with <code> clang 11 </code> using the latest C++ 17 standard.</p>\\r\\n\\r\\n<p>Your code is compiled with level two optimization (<code>-O2</code>). <a href=\\\"https://github.com/google/sanitizers/wiki/AddressSanitizer\\\" target=\\\"_blank\\\">AddressSanitizer</a> is also enabled to help detect out-of-bounds and use-after-free bugs.</p>\\r\\n\\r\\n<p>Most standard library headers are already included automatically for your convenience.</p>\"], \"java\": [\"Java\", \"<p><code>Java SE 13</code>.</p>\\r\\n\\r\\n<p>Most standard library headers are already included automatically for your convenience.</p>\\r\\n<p>Includes <code>Pair</code> class from https://docs.oracle.com/javase/8/javafx/api/javafx/util/Pair.html.</p>\"], \"python\": [\"Python\", \"<p><code>Python 2.7.12</code>.</p>\\r\\n\\r\\n<p>Most libraries are already imported automatically for your convenience, such as <a href=\\\"https://docs.python.org/2/library/array.html\\\" target=\\\"_blank\\\">array</a>, <a href=\\\"https://docs.python.org/2/library/bisect.html\\\" target=\\\"_blank\\\">bisect</a>, <a href=\\\"https://docs.python.org/2/library/collections.html\\\" target=\\\"_blank\\\">collections</a>. If you need more libraries, you can import it yourself.</p>\\r\\n\\r\\n<p>For Map/TreeMap data structure, you may use <a href=\\\"http://www.grantjenks.com/docs/sortedcontainers/\\\" target=\\\"_blank\\\">sortedcontainers</a> library.</p>\\r\\n\\r\\n<p>Note that Python 2.7 <a href=\\\"https://www.python.org/dev/peps/pep-0373/\\\" target=\\\"_blank\\\">will not be maintained past 2020</a>. For the latest Python, please choose Python3 instead.</p>\"], \"c\": [\"C\", \"<p>Compiled with <code>gcc 8.2</code> using the gnu99 standard.</p>\\r\\n\\r\\n<p>Your code is compiled with level one optimization (<code>-O1</code>). <a href=\\\"https://github.com/google/sanitizers/wiki/AddressSanitizer\\\" target=\\\"_blank\\\">AddressSanitizer</a> is also enabled to help detect out-of-bounds and use-after-free bugs.</p>\\r\\n\\r\\n<p>Most standard library headers are already included automatically for your convenience.</p>\\r\\n\\r\\n<p>For hash table operations, you may use <a href=\\\"https://troydhanson.github.io/uthash/\\\" target=\\\"_blank\\\">uthash</a>. \\\"uthash.h\\\" is included by default. Below are some examples:</p>\\r\\n\\r\\n<p><b>1. Adding an item to a hash.</b>\\r\\n<pre>\\r\\nstruct hash_entry {\\r\\n    int id;            /* we'll use this field as the key */\\r\\n    char name[10];\\r\\n    UT_hash_handle hh; /* makes this structure hashable */\\r\\n};\\r\\n\\r\\nstruct hash_entry *users = NULL;\\r\\n\\r\\nvoid add_user(struct hash_entry *s) {\\r\\n    HASH_ADD_INT(users, id, s);\\r\\n}\\r\\n</pre>\\r\\n</p>\\r\\n\\r\\n<p><b>2. Looking up an item in a hash:</b>\\r\\n<pre>\\r\\nstruct hash_entry *find_user(int user_id) {\\r\\n    struct hash_entry *s;\\r\\n    HASH_FIND_INT(users, &user_id, s);\\r\\n    return s;\\r\\n}\\r\\n</pre>\\r\\n</p>\\r\\n\\r\\n<p><b>3. Deleting an item in a hash:</b>\\r\\n<pre>\\r\\nvoid delete_user(struct hash_entry *user) {\\r\\n    HASH_DEL(users, user);  \\r\\n}\\r\\n</pre>\\r\\n</p>\"], \"csharp\": [\"C#\", \"<p><a href=\\\"https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-8\\\" target=\\\"_blank\\\">C# 8.0 </a></p>\\r\\n\\r\\n<p>Your code is compiled with debug flag enabled (<code>/debug</code>).</p>\"], \"javascript\": [\"JavaScript\", \"<p><code>Node.js 14.8.0</code>.</p>\\r\\n\\r\\n<p>Your code is run with <code>--harmony</code> flag, enabling <a href=\\\"http://node.green/\\\" target=\\\"_blank\\\">new ES6 features</a>.</p>\\r\\n\\r\\n<p><a href=\\\"https://lodash.com\\\" target=\\\"_blank\\\">lodash.js</a> library is included by default.</p>\\r\\n\\r\\n<p>For Priority Queue / Queue data structures, you may use <a href=\\\"https://github.com/datastructures-js/priority-queue\\\" target=\\\"_blank\\\">datastructures-js/priority-queue</a> and <a href=\\\"https://github.com/datastructures-js/queue\\\" target=\\\"_blank\\\">datastructures-js/queue</a>.</p>\"], \"ruby\": [\"Ruby\", \"<p><code>Ruby 2.7.1</code></p>\\r\\n\\r\\n<p>Some common data structure implementations are provided in the Algorithms module: https://www.rubydoc.info/github/kanwei/algorithms/Algorithms</p>\"], \"swift\": [\"Swift\", \"<p><code>Swift 5.3</code>.</p>\"], \"golang\": [\"Go\", \"<p><code>Go 1.16.2</code>.</p>\\r\\n\\r\\n<p>Support <a href=\\\"https://godoc.org/github.com/emirpasic/gods\\\" target=\\\"_blank\\\">https://godoc.org/github.com/emirpasic/gods</a> library.</p>\"], \"python3\": [\"Python3\", \"<p><code>Python 3.9</code>.</p>\\r\\n\\r\\n<p>Most libraries are already imported automatically for your convenience, such as <a href=\\\"https://docs.python.org/3/library/array.html\\\" target=\\\"_blank\\\">array</a>, <a href=\\\"https://docs.python.org/3/library/bisect.html\\\" target=\\\"_blank\\\">bisect</a>, <a href=\\\"https://docs.python.org/3/library/collections.html\\\" target=\\\"_blank\\\">collections</a>. If you need more libraries, you can import it yourself.</p>\\r\\n\\r\\n<p>For Map/TreeMap data structure, you may use <a href=\\\"http://www.grantjenks.com/docs/sortedcontainers/\\\" target=\\\"_blank\\\">sortedcontainers</a> library.</p>\"], \"scala\": [\"Scala\", \"<p><code>Scala 2.13</code>.</p>\"], \"kotlin\": [\"Kotlin\", \"<p><code>Kotlin 1.3.10</code>.</p>\"], \"rust\": [\"Rust\", \"<p><code>Rust 1.45.2</code></p>\\r\\n\\r\\n<p>Supports <a href=\\\"https://crates.io/crates/rand\\\" target=\\\"_blank\\\">rand</a>\\u00a0from crates.io</p>\"], \"php\": [\"PHP\", \"<p><code>PHP 7.2</code>.</p>\\r\\n<p>With bcmath module</p>\"], \"typescript\": [\"Typescript\", \"<p><code>Node.js 14.8.0</code>.</p>\\r\\n\\r\\n<p>Your code is run with <code>--harmony</code> flag, enabling <a href=\\\"http://node.green/\\\" target=\\\"_blank\\\">new ES2020 features</a>.</p>\\r\\n\\r\\n<p><a href=\\\"https://lodash.com\\\" target=\\\"_blank\\\">lodash.js</a> library is included by default.</p>\"]}",
+            "libraryUrl": null,
+            "adminUrl": null,
+            "__typename": "QuestionNode"
+        }
+    }
+}

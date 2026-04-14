@@ -1,0 +1,76 @@
+{
+    "data": {
+        "question": {
+            "questionId": "1327",
+            "questionFrontendId": "1204",
+            "boundTopicId": null,
+            "title": "Last Person to Fit in the Bus",
+            "titleSlug": "last-person-to-fit-in-the-bus",
+            "content": "<p>Table: <code>Queue</code></p>\r\n\r\n<pre>\r\n+-------------+---------+\r\n| Column Name | Type    |\r\n+-------------+---------+\r\n| person_id   | int     |\r\n| person_name | varchar |\r\n| weight      | int     |\r\n| turn        | int     |\r\n+-------------+---------+\r\nperson_id is the primary key column for this table.\r\nThis table has the information about all people waiting for a bus.\r\nThe person_id and turn columns will contain all numbers from 1 to n, where n is the number of rows in the table.\r\nturn determines the order of which the people will board the bus, where turn=1 denotes the first person to board and turn=n denotes the last person to board.\r\nweight is the weight of the person in kilograms.\r\n</pre>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>There is a queue of people waiting to board a bus. However, the bus has a weight limit of <strong>1000 kilograms</strong>, so there may be some people who cannot board.</p>\r\n\r\n<p>Write an SQL query to find the <code>person_name</code> of the <strong>last person</strong> that can fit on the bus without exceeding the weight limit. The testcases are generated such that the first person does not exceed the weight limit.</p>\r\n\r\n<p>The query result format is in the following example:</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<pre>\r\nQueue table:\r\n+-----------+-------------+--------+------+\r\n| person_id | person_name | weight | turn |\r\n+-----------+-------------+--------+------+\r\n| 5         | Alice       | 250    | 1    |\r\n| 4         | Bob         | 175    | 5    |\r\n| 3         | Alex        | 350    | 2    |\r\n| 6         | John Cena   | 400    | 3    |\r\n| 1         | Winston     | 500    | 6    |\r\n| 2         | Marie       | 200    | 4    |\r\n+-----------+-------------+--------+------+\r\n\r\nResult table\r\n+-------------+\r\n| person_name |\r\n+-------------+\r\n| John Cena   |\r\n+-------------+\r\n\r\nThe table is ordered by the turn for simplicity.\r\n+------+----+-----------+--------+--------------+\r\n| Turn | ID | Name      | Weight | Total Weight |\r\n+------+----+-----------+--------+--------------+\r\n| 1    | 5  | Alice     | 250    | 250          |\r\n| 2    | 3  | Alex      | 350    | 600          |\r\n| 3    | 6  | John Cena | 400    | 1000         | (last person to board)\r\n| 4    | 2  | Marie     | 200    | 1200         | (cannot board)\r\n| 5    | 4  | Bob       | 175    | ___          |\r\n| 6    | 1  | Winston   | 500    | ___          |\r\n+------+----+-----------+--------+--------------+\r\n</pre>",
+            "translatedTitle": null,
+            "translatedContent": null,
+            "isPaidOnly": true,
+            "difficulty": "Medium",
+            "likes": 142,
+            "dislikes": 12,
+            "isLiked": null,
+            "similarQuestions": "[{\"title\": \"Running Total for Different Genders\", \"titleSlug\": \"running-total-for-different-genders\", \"difficulty\": \"Medium\", \"translatedTitle\": null}]",
+            "exampleTestcases": "{\"headers\":{\"Queue\":[\"person_id\",\"person_name\",\"weight\",\"turn\"]},\"rows\":{\"Queue\":[[5,\"Alice\",250,1],[4,\"Bob\",175,5],[3,\"Alex\",350,2],[6,\"John Cena\",400,3],[1,\"Winston\",500,6],[2,\"Marie\",200,4]]}}",
+            "contributors": [],
+            "topicTags": [
+                {
+                    "name": "Database",
+                    "slug": "database",
+                    "translatedName": null,
+                    "__typename": "TopicTagNode"
+                }
+            ],
+            "companyTagStats": "{\"2\": [{\"taggedByAdmin\": false, \"name\": \"Wayfair\", \"slug\": \"wayfair\", \"timesEncountered\": 5}], \"1\": [], \"3\": []}",
+            "codeSnippets": [
+                {
+                    "lang": "MySQL",
+                    "langSlug": "mysql",
+                    "code": "# Write your MySQL query statement below",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "MS SQL Server",
+                    "langSlug": "mssql",
+                    "code": "/* Write your T-SQL query statement below */",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Oracle",
+                    "langSlug": "oraclesql",
+                    "code": "/* Write your PL/SQL query statement below */",
+                    "__typename": "CodeSnippetNode"
+                }
+            ],
+            "stats": "{\"totalAccepted\": \"20.4K\", \"totalSubmission\": \"28.1K\", \"totalAcceptedRaw\": 20410, \"totalSubmissionRaw\": 28149, \"acRate\": \"72.5%\"}",
+            "hints": [],
+            "solution": null,
+            "status": null,
+            "sampleTestCase": "{\"headers\":{\"Queue\":[\"person_id\",\"person_name\",\"weight\",\"turn\"]},\"rows\":{\"Queue\":[[5,\"Alice\",250,1],[4,\"Bob\",175,5],[3,\"Alex\",350,2],[6,\"John Cena\",400,3],[1,\"Winston\",500,6],[2,\"Marie\",200,4]]}}",
+            "metaData": "{\r\n  \"manual\": false,\r\n  \"mysql\": [\r\n    \"Create table If Not Exists Queue (person_id int, person_name varchar(30), weight int, turn int)\"\r\n  ],\r\n  \"mssql\": [\r\n    \"create table Queue (person_id int, person_name varchar(30), weight int, turn int)\"\r\n  ],\r\n  \"oraclesql\": [\r\n    \"create table Queue (person_id int, person_name varchar(30), weight int, turn int)\"\r\n  ],\r\n  \"database\": true\r\n}",
+            "judgerAvailable": true,
+            "judgeType": "large",
+            "mysqlSchemas": [
+                "Create table If Not Exists Queue (person_id int, person_name varchar(30), weight int, turn int)",
+                "Truncate table Queue",
+                "insert into Queue (person_id, person_name, weight, turn) values ('5', 'Alice', '250', '1')",
+                "insert into Queue (person_id, person_name, weight, turn) values ('4', 'Bob', '175', '5')",
+                "insert into Queue (person_id, person_name, weight, turn) values ('3', 'Alex', '350', '2')",
+                "insert into Queue (person_id, person_name, weight, turn) values ('6', 'John Cena', '400', '3')",
+                "insert into Queue (person_id, person_name, weight, turn) values ('1', 'Winston', '500', '6')",
+                "insert into Queue (person_id, person_name, weight, turn) values ('2', 'Marie', '200', '4')"
+            ],
+            "enableRunCode": true,
+            "enableTestMode": false,
+            "enableDebugger": false,
+            "envInfo": "{\"mysql\": [\"MySQL\", \"<p><code>MySQL 8.0</code>.</p>\"], \"mssql\": [\"MS SQL Server\", \"<p><code>mssql server 2019</code>.</p>\"], \"oraclesql\": [\"Oracle\", \"<p><code>Oracle Sql 11.2</code>.</p>\"]}",
+            "libraryUrl": null,
+            "adminUrl": null,
+            "__typename": "QuestionNode"
+        }
+    }
+}

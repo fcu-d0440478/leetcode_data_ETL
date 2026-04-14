@@ -1,0 +1,161 @@
+{
+    "data": {
+        "question": {
+            "questionId": "1624",
+            "questionFrontendId": "1485",
+            "boundTopicId": null,
+            "title": "Clone Binary Tree With Random Pointer",
+            "titleSlug": "clone-binary-tree-with-random-pointer",
+            "content": "<p>A binary tree is given such that each node contains an additional random pointer which could point to any node in the tree or null.</p>\n\n<p>Return a&nbsp;<a href=\"https://en.wikipedia.org/wiki/Object_copying#Deep_copy\" target=\"_blank\"><strong>deep copy</strong></a>&nbsp;of the tree.</p>\n\n<p>The tree is represented in the same input/output way as normal binary trees where each node is represented as a pair of&nbsp;<code>[val, random_index]</code>&nbsp;where:</p>\n\n<ul>\n\t<li><code>val</code>: an integer representing&nbsp;<code>Node.val</code></li>\n\t<li><code>random_index</code>: the index of the node (in the input) where the random pointer points to, or&nbsp;<code>null</code>&nbsp;if it does not point to any node.</li>\n</ul>\n\n<p>You will be given the tree in class <code>Node</code> and you should return the cloned tree in class <code>NodeCopy</code>. <code>NodeCopy</code> class is just a clone of <code>Node</code> class with the same attributes and constructors.</p>\n\n<p>&nbsp;</p>\n<p><strong>Example 1:</strong></p>\n<img alt=\"\" src=\"https://assets.leetcode.com/uploads/2020/06/17/clone_1.png\" style=\"width: 500px; height: 473px;\" />\n<pre>\n<strong>Input:</strong> root = [[1,null],null,[4,3],[7,0]]\n<strong>Output:</strong> [[1,null],null,[4,3],[7,0]]\n<strong>Explanation:</strong> The original binary tree is [1,null,4,7].\nThe random pointer of node one is null, so it is represented as [1, null].\nThe random pointer of node 4 is node 7, so it is represented as [4, 3] where 3 is the index of node 7 in the array representing the tree.\nThe random pointer of node 7 is node 1, so it is represented as [7, 0] where 0 is the index of node 1 in the array representing the tree.\n</pre>\n\n<p><strong>Example 2:</strong></p>\n<img alt=\"\" src=\"https://assets.leetcode.com/uploads/2020/06/17/clone_2.png\" style=\"width: 500px; height: 540px;\" />\n<pre>\n<strong>Input:</strong> root = [[1,4],null,[1,0],null,[1,5],[1,5]]\n<strong>Output:</strong> [[1,4],null,[1,0],null,[1,5],[1,5]]\n<strong>Explanation:</strong> The random pointer of a node can be the node itself.\n</pre>\n\n<p><strong>Example 3:</strong></p>\n<img alt=\"\" src=\"https://assets.leetcode.com/uploads/2020/06/17/clone_3.png\" style=\"width: 500px; height: 426px;\" />\n<pre>\n<strong>Input:</strong> root = [[1,6],[2,5],[3,4],[4,3],[5,2],[6,1],[7,0]]\n<strong>Output:</strong> [[1,6],[2,5],[3,4],[4,3],[5,2],[6,1],[7,0]]\n</pre>\n\n<p><strong>Example 4:</strong></p>\n\n<pre>\n<strong>Input:</strong> root = []\n<strong>Output:</strong> []\n</pre>\n\n<p><strong>Example 5:</strong></p>\n\n<pre>\n<strong>Input:</strong> root = [[1,null],null,[2,null],null,[1,null]]\n<strong>Output:</strong> [[1,null],null,[2,null],null,[1,null]]\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li>The number of nodes in the&nbsp;<code>tree</code>&nbsp;is in the range&nbsp;<code>[0, 1000].</code></li>\n\t<li>Each node&#39;s value is between&nbsp;<code>[1, 10^6]</code>.</li>\n</ul>\n",
+            "translatedTitle": null,
+            "translatedContent": null,
+            "isPaidOnly": true,
+            "difficulty": "Medium",
+            "likes": 173,
+            "dislikes": 34,
+            "isLiked": null,
+            "similarQuestions": "[{\"title\": \"Clone Graph\", \"titleSlug\": \"clone-graph\", \"difficulty\": \"Medium\", \"translatedTitle\": null}, {\"title\": \"Copy List with Random Pointer\", \"titleSlug\": \"copy-list-with-random-pointer\", \"difficulty\": \"Medium\", \"translatedTitle\": null}, {\"title\": \"Clone N-ary Tree\", \"titleSlug\": \"clone-n-ary-tree\", \"difficulty\": \"Medium\", \"translatedTitle\": null}]",
+            "exampleTestcases": "[[1,null],null,[4,3],[7,0]]\r\n[[1,4],null,[1,0],null,[1,5],[1,5]]\r\n[[1,6],[2,5],[3,4],[4,3],[5,2],[6,1],[7,0]]\r\n[]\r\n[[1,null],null,[2,null],null,[1,null]]\r",
+            "contributors": [],
+            "topicTags": [
+                {
+                    "name": "Hash Table",
+                    "slug": "hash-table",
+                    "translatedName": null,
+                    "__typename": "TopicTagNode"
+                },
+                {
+                    "name": "Tree",
+                    "slug": "tree",
+                    "translatedName": null,
+                    "__typename": "TopicTagNode"
+                },
+                {
+                    "name": "Depth-First Search",
+                    "slug": "depth-first-search",
+                    "translatedName": null,
+                    "__typename": "TopicTagNode"
+                },
+                {
+                    "name": "Breadth-First Search",
+                    "slug": "breadth-first-search",
+                    "translatedName": null,
+                    "__typename": "TopicTagNode"
+                },
+                {
+                    "name": "Binary Tree",
+                    "slug": "binary-tree",
+                    "translatedName": null,
+                    "__typename": "TopicTagNode"
+                }
+            ],
+            "companyTagStats": "{\"3\": [{\"taggedByAdmin\": true, \"name\": \"Amazon\", \"slug\": \"amazon\", \"timesEncountered\": 0}], \"2\": [{\"taggedByAdmin\": false, \"name\": \"Bloomberg\", \"slug\": \"bloomberg\", \"timesEncountered\": 2}], \"1\": []}",
+            "codeSnippets": [
+                {
+                    "lang": "C++",
+                    "langSlug": "cpp",
+                    "code": "/**\n * Definition for a Node.\n * struct Node {\n *     int val;\n *     Node *left;\n *     Node *right;\n *     Node *random;\n *     Node() : val(0), left(nullptr), right(nullptr), random(nullptr) {}\n *     Node(int x) : val(x), left(nullptr), right(nullptr), random(nullptr) {}\n *     Node(int x, Node *left, Node *right, Node *random) : val(x), left(left), right(right), random(random) {}\n * };\n */\n\nclass Solution {\npublic:\n    NodeCopy* copyRandomBinaryTree(Node* root) {\n        \n    }\n};",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Java",
+                    "langSlug": "java",
+                    "code": "/**\n * Definition for Node.\n * public class Node {\n *     int val;\n *     Node left;\n *     Node right;\n *     Node random;\n *     Node() {}\n *     Node(int val) { this.val = val; }\n *     Node(int val, Node left, Node right, Node random) {\n *         this.val = val;\n *         this.left = left;\n *         this.right = right;\n *         this.random = random;\n *     }\n * }\n */\n\nclass Solution {\n    public NodeCopy copyRandomBinaryTree(Node root) {\n        \n    }\n}",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Python",
+                    "langSlug": "python",
+                    "code": "# Definition for Node.\n# class Node(object):\n#     def __init__(self, val=0, left=None, right=None, random=None):\n#         self.val = val\n#         self.left = left\n#         self.right = right\n#         self.random = random\n\nclass Solution(object):\n    def copyRandomBinaryTree(self, root):\n        \"\"\"\n        :type root: Node\n        :rtype: NodeCopy\n        \"\"\"\n        ",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Python3",
+                    "langSlug": "python3",
+                    "code": "# Definition for Node.\n# class Node:\n#     def __init__(self, val=0, left=None, right=None, random=None):\n#         self.val = val\n#         self.left = left\n#         self.right = right\n#         self.random = random\n\nclass Solution:\n    def copyRandomBinaryTree(self, root: 'Node') -> 'NodeCopy':\n        ",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "C#",
+                    "langSlug": "csharp",
+                    "code": "/**\n * Definition for Node.\n * public class Node {\n *     public int val;\n *     public Node left;\n *     public Node right;\n *     public Node random;\n *     public Node(int val=0, Node left=null, Node right=null, Node random=null) {\n *         this.val = val;\n *         this.left = left;\n *         this.right = right;\n *         this.random = random;\n *     }\n * }\n */\n\npublic class Solution {\n    public NodeCopy CopyRandomBinaryTree(Node root) {\n        \n    }\n}",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "JavaScript",
+                    "langSlug": "javascript",
+                    "code": "/**\n * // Definition for a Node.\n * function Node(val, left, right, random) {\n *    this.val = val === undefined ? null : val;\n *    this.left = left === undefined ? null : left;\n *    this.right = right === undefined ? null : right;\n *    this.random = random === undefined ? null : random;\n * };\n */\n\n/**\n * @param {Node} root\n * @return {NodeCopy}\n */\nvar copyRandomBinaryTree = function(root) {\n    \n};",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Ruby",
+                    "langSlug": "ruby",
+                    "code": "# Definition for Node.\n# class Node\n#     attr_accessor :val, :left, :right, :random\n#     def initialize(val = 0, left = nil, right = nil, random = nil)\n#         @val = val\n#         @left = left\n#         @right = right\n#         @random = random\n#     end\n# end\n\n# @param {Node} root\n# @return {NodeCopy}\ndef copy_random_binary_tree(root)\n\nend",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Swift",
+                    "langSlug": "swift",
+                    "code": "/**\n * Definition for a Node.\n * public class Node {\n *     public var val: Int\n *     public var left: Node?\n *     public var right: Node?\n *\t   public var random: Node?\n *     public init() { self.val = 0; self.left = nil; self.right = nil; self.random = nil; }\n *     public init(_ val: Int) {self.val = val; self.left = nil; self.right = nil; self.random = nil; }\n *     public init(_ val: Int) {\n *         self.val = val\n *         self.left = nil\n *         self.right = nil\n *         self.random = nil\n *     }\n * }\n */\n\nclass Solution {\n    func copyRandomBinaryTree(_ root: Node?) -> NodeCopy? {\n        \n    }\n}",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Go",
+                    "langSlug": "golang",
+                    "code": "/**\n * Definition for a Node.\n * type Node struct {\n *     Val int\n *     Left *Node\n *     Right *Node\n *     Random *Node\n * }\n */\n\nfunc copyRandomBinaryTree(root *Node) *NodeCopy {\n    \n}",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Scala",
+                    "langSlug": "scala",
+                    "code": "/**\n * Definition for a Node.\n * class Node(var _value: Int, _left: Node = null, _right: Node = null, _random: Node = null) {\n *   var value: Int = _value\n *   var left: Node = _left\n *   var right: Node = _right\n *   var random: Node = _random\n * }\n */\n\nobject Solution {\n    def copyRandomBinaryTree(root: Node): NodeCopy = {\n        \n    }\n}",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Kotlin",
+                    "langSlug": "kotlin",
+                    "code": "/**\n * Example:\n * var ti = Node(5)\n * var v = ti.`val`\n * Definition for a Node.\n * class Node(var `val`: Int) {\n *     var left: Node? = null\n *     var right: Node? = null\n *     var random: Node? = null\n * }\n */\n\nclass Solution {\n    fun copyRandomBinaryTree(root: Node?): NodeCopy? {\n    \n    }\n}",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "PHP",
+                    "langSlug": "php",
+                    "code": "/**\n * Definition for a Node.\n * class Node {\n *     public $val = null;\n *     public $left = null;\n *     public $right = null;\n *     public $random = null;\n *     function __construct($val = 0, $left = null, $right = null, $random = null) {\n *         $this->val = $val;\n *         $this->left = $left;\n *         $this->right = $right;\n *         $this->random = $random;\n *     }\n * }\n */\n\nclass Solution {\n    /**\n     * @param Node $root\n     * @return NodeCopy\n     */\n    public function copyRandomBinaryTree($root) {\n    \n    }\n}",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "TypeScript",
+                    "langSlug": "typescript",
+                    "code": "/**\n * Definition for Node.\n * class Node {\n *     val: number\n *     left: Node | null\n *     right: Node | null\n *     random: Node | null\n *     constructor(val?: number, left?: Node | null, right?: Node | null, random?: Node | null) {\n *         this.val = (val===undefined ? 0 : val)\n *         this.left = (left===undefined ? null : left)\n *         this.right = (right===undefined ? null : right)\n *         this.random = (random===undefined ? null : random)\n *     }\n * }\n */\n\nfunction copyRandomBinaryTree(root: Node | null): NodeCopy | null {\n\n};",
+                    "__typename": "CodeSnippetNode"
+                }
+            ],
+            "stats": "{\"totalAccepted\": \"9.9K\", \"totalSubmission\": \"12.5K\", \"totalAcceptedRaw\": 9915, \"totalSubmissionRaw\": 12455, \"acRate\": \"79.6%\"}",
+            "hints": [
+                "Traverse the tree, keep a hashtable with you and create a nodecopy for each node in the tree.",
+                "Start traversing the original tree again and connect the left, right and random pointers in the cloned tree the same way as the original tree with the help of the hashtable."
+            ],
+            "solution": {
+                "id": "1083",
+                "canSeeDetail": true,
+                "paidOnly": true,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "__typename": "ArticleNode"
+            },
+            "status": null,
+            "sampleTestCase": "[[1,null],null,[4,3],[7,0]]\r",
+            "metaData": "{\n  \"name\": \"copyRandomBinaryTree\",\n  \"params\": [\n    {\n      \"name\": \"root\",\n      \"type\": \"TreeNode\"\n    }\n  ],\n  \"return\": {\n    \"type\": \"TreeNode\"\n  },\n  \"manual\": true,\n  \"languages\": [\n    \"cpp\",\n    \"java\",\n    \"python\",\n    \"csharp\",\n    \"python3\",\n    \"javascript\",\n    \"typescript\",\n    \"kotlin\",\n    \"scala\",\n    \"swift\",\n    \"php\",\n    \"ruby\",\n    \"golang\"\n  ]\n}",
+            "judgerAvailable": true,
+            "judgeType": "large",
+            "mysqlSchemas": [],
+            "enableRunCode": true,
+            "enableTestMode": false,
+            "enableDebugger": true,
+            "envInfo": "{\"cpp\": [\"C++\", \"<p>Compiled with <code> clang 11 </code> using the latest C++ 17 standard.</p>\\r\\n\\r\\n<p>Your code is compiled with level two optimization (<code>-O2</code>). <a href=\\\"https://github.com/google/sanitizers/wiki/AddressSanitizer\\\" target=\\\"_blank\\\">AddressSanitizer</a> is also enabled to help detect out-of-bounds and use-after-free bugs.</p>\\r\\n\\r\\n<p>Most standard library headers are already included automatically for your convenience.</p>\"], \"java\": [\"Java\", \"<p><code>Java SE 13</code>.</p>\\r\\n\\r\\n<p>Most standard library headers are already included automatically for your convenience.</p>\\r\\n<p>Includes <code>Pair</code> class from https://docs.oracle.com/javase/8/javafx/api/javafx/util/Pair.html.</p>\"], \"python\": [\"Python\", \"<p><code>Python 2.7.12</code>.</p>\\r\\n\\r\\n<p>Most libraries are already imported automatically for your convenience, such as <a href=\\\"https://docs.python.org/2/library/array.html\\\" target=\\\"_blank\\\">array</a>, <a href=\\\"https://docs.python.org/2/library/bisect.html\\\" target=\\\"_blank\\\">bisect</a>, <a href=\\\"https://docs.python.org/2/library/collections.html\\\" target=\\\"_blank\\\">collections</a>. If you need more libraries, you can import it yourself.</p>\\r\\n\\r\\n<p>For Map/TreeMap data structure, you may use <a href=\\\"http://www.grantjenks.com/docs/sortedcontainers/\\\" target=\\\"_blank\\\">sortedcontainers</a> library.</p>\\r\\n\\r\\n<p>Note that Python 2.7 <a href=\\\"https://www.python.org/dev/peps/pep-0373/\\\" target=\\\"_blank\\\">will not be maintained past 2020</a>. For the latest Python, please choose Python3 instead.</p>\"], \"csharp\": [\"C#\", \"<p><a href=\\\"https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-8\\\" target=\\\"_blank\\\">C# 8.0 </a></p>\\r\\n\\r\\n<p>Your code is compiled with debug flag enabled (<code>/debug</code>).</p>\"], \"javascript\": [\"JavaScript\", \"<p><code>Node.js 14.8.0</code>.</p>\\r\\n\\r\\n<p>Your code is run with <code>--harmony</code> flag, enabling <a href=\\\"http://node.green/\\\" target=\\\"_blank\\\">new ES6 features</a>.</p>\\r\\n\\r\\n<p><a href=\\\"https://lodash.com\\\" target=\\\"_blank\\\">lodash.js</a> library is included by default.</p>\\r\\n\\r\\n<p>For Priority Queue / Queue data structures, you may use <a href=\\\"https://github.com/datastructures-js/priority-queue\\\" target=\\\"_blank\\\">datastructures-js/priority-queue</a> and <a href=\\\"https://github.com/datastructures-js/queue\\\" target=\\\"_blank\\\">datastructures-js/queue</a>.</p>\"], \"ruby\": [\"Ruby\", \"<p><code>Ruby 2.7.1</code></p>\\r\\n\\r\\n<p>Some common data structure implementations are provided in the Algorithms module: https://www.rubydoc.info/github/kanwei/algorithms/Algorithms</p>\"], \"swift\": [\"Swift\", \"<p><code>Swift 5.3</code>.</p>\"], \"golang\": [\"Go\", \"<p><code>Go 1.16.2</code>.</p>\\r\\n\\r\\n<p>Support <a href=\\\"https://godoc.org/github.com/emirpasic/gods\\\" target=\\\"_blank\\\">https://godoc.org/github.com/emirpasic/gods</a> library.</p>\"], \"python3\": [\"Python3\", \"<p><code>Python 3.9</code>.</p>\\r\\n\\r\\n<p>Most libraries are already imported automatically for your convenience, such as <a href=\\\"https://docs.python.org/3/library/array.html\\\" target=\\\"_blank\\\">array</a>, <a href=\\\"https://docs.python.org/3/library/bisect.html\\\" target=\\\"_blank\\\">bisect</a>, <a href=\\\"https://docs.python.org/3/library/collections.html\\\" target=\\\"_blank\\\">collections</a>. If you need more libraries, you can import it yourself.</p>\\r\\n\\r\\n<p>For Map/TreeMap data structure, you may use <a href=\\\"http://www.grantjenks.com/docs/sortedcontainers/\\\" target=\\\"_blank\\\">sortedcontainers</a> library.</p>\"], \"scala\": [\"Scala\", \"<p><code>Scala 2.13</code>.</p>\"], \"kotlin\": [\"Kotlin\", \"<p><code>Kotlin 1.3.10</code>.</p>\"], \"php\": [\"PHP\", \"<p><code>PHP 7.2</code>.</p>\\r\\n<p>With bcmath module</p>\"], \"typescript\": [\"Typescript\", \"<p><code>Node.js 14.8.0</code>.</p>\\r\\n\\r\\n<p>Your code is run with <code>--harmony</code> flag, enabling <a href=\\\"http://node.green/\\\" target=\\\"_blank\\\">new ES2020 features</a>.</p>\\r\\n\\r\\n<p><a href=\\\"https://lodash.com\\\" target=\\\"_blank\\\">lodash.js</a> library is included by default.</p>\"]}",
+            "libraryUrl": null,
+            "adminUrl": null,
+            "__typename": "QuestionNode"
+        }
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "280",
+            "article": "{\"id\": 12, \"url\": \"/articles/wiggle-sort/\", \"topicId\": 127818}",
+            "solution": {
+                "id": "12",
+                "content": "[TOC]\r\n\r\n## Solution\r\n---\r\n#### Approach #1 (Sorting) [Accepted]\r\n\r\nThe obvious solution is to just sort the array first, then swap elements pair-wise starting from the second element. For example:\r\n\r\n       [1, 2, 3, 4, 5, 6]\r\n           ↑  ↑  ↑  ↑\r\n           swap  swap\r\n\r\n    => [1, 3, 2, 5, 4, 6]\r\n\r\n```java\r\npublic void wiggleSort(int[] nums) {\r\n    Arrays.sort(nums);\r\n    for (int i = 1; i < nums.length - 1; i += 2) {\r\n        swap(nums, i, i + 1);\r\n    }\r\n}\r\n\r\nprivate void swap(int[] nums, int i, int j) {\r\n    int temp = nums[i];\r\n    nums[i] = nums[j];\r\n    nums[j] = temp;\r\n}\r\n```\r\n\r\n**Complexity analysis**\r\n\r\n* Time complexity : $$O(n \\log n)$$.\r\nThe entire algorithm is dominated by the sorting step, which costs $$O(n \\log n)$$ time to sort $$n$$ elements.\r\n\r\n* Space complexity : $$O(1)$$. Space depends on the sorting implementation which, usually, costs $$O(1)$$ auxiliary space if `heapsort` is used.\r\n\r\n---\r\n#### Approach #2 (One-pass Swap) [Accepted]\r\n\r\nIntuitively, we should be able to reorder it in one-pass. As we iterate through the array, we compare the current element to its next element and if the order is incorrect, we swap them.\r\n\r\n```java\r\npublic void wiggleSort(int[] nums) {\r\n    boolean less = true;\r\n    for (int i = 0; i < nums.length - 1; i++) {\r\n        if (less) {\r\n            if (nums[i] > nums[i + 1]) {\r\n                swap(nums, i, i + 1);\r\n            }\r\n        } else {\r\n            if (nums[i] < nums[i + 1]) {\r\n                swap(nums, i, i + 1);\r\n            }\r\n        }\r\n        less = !less;\r\n    }\r\n}\r\n```\r\n\r\nWe could shorten the code further by compacting the condition to a single line. Also observe the boolean value of `less` actually depends on whether the index is even or odd.\r\n\r\n```java\r\npublic void wiggleSort(int[] nums) {\r\n    for (int i = 0; i < nums.length - 1; i++) {\r\n        if (((i % 2 == 0) && nums[i] > nums[i + 1])\r\n                || ((i % 2 == 1) && nums[i] < nums[i + 1])) {\r\n            swap(nums, i, i + 1);\r\n        }\r\n    }\r\n}\r\n```\r\n\r\nHere is another amazing solution by @StefanPochmann who came up with [originally here](https://leetcode.com/discuss/57113/java-o-n-solution?show=57192#a57192).\r\n\r\n```java\r\npublic void wiggleSort(int[] nums) {\r\n    for (int i = 0; i < nums.length - 1; i++) {\r\n        if ((i % 2 == 0) == (nums[i] > nums[i + 1])) {\r\n            swap(nums, i, i + 1);\r\n        }\r\n    }\r\n}\r\n```\r\n\r\n**Complexity analysis**\r\n\r\n* Time complexity : $$O(n)$$.\r\nIn the worst case we swap at most $$n \\over 2$$ times. An example input is `[2,1,3,1,4,1]`.\r\n\r\n* Space complexity : $$O(1)$$.",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": true,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "14",
+                    "count": 41,
+                    "average": 4.244,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

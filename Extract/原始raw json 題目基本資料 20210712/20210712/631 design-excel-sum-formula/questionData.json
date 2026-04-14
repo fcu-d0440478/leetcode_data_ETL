@@ -1,0 +1,164 @@
+{
+    "data": {
+        "question": {
+            "questionId": "631",
+            "questionFrontendId": "631",
+            "boundTopicId": null,
+            "title": "Design Excel Sum Formula",
+            "titleSlug": "design-excel-sum-formula",
+            "content": "<p>Design the basic function of <strong>Excel</strong> and implement the function of the sum formula.</p>\n\n<p>Implement the <code>Excel</code> class:</p>\n\n<ul>\n\t<li><code>Excel(int height, char width)</code> Initializes the object with the <code>height</code> and the <code>width</code> of the sheet. The sheet is an integer matrix <code>mat</code> of size <code>height x width</code> with the row index in the range <code>[1, height]</code> and the column index in the range <code>[&#39;A&#39;, width]</code>. All the values should be <strong>zero</strong> initially.</li>\n\t<li><code>void set(int row, char column, int val)</code> Changes the value at <code>mat[row][column]</code> to be <code>val</code>.</li>\n\t<li><code>int get(int row, char column)</code> Returns the value at <code>mat[row][column]</code>.</li>\n\t<li><code>int sum(int row, char column, List&lt;String&gt; numbers)</code> Sets the value at <code>mat[row][column]</code> to be the sum of cells represented by <code>numbers</code> and returns the value at <code>mat[row][column]</code>. This sum formula <strong>should exist</strong> until this cell is overlapped by another value or another sum formula. <code>numbers[i]</code> could be on the format:\n\t<ul>\n\t\t<li><code>&quot;ColRow&quot;</code> that represents a single cell.\n\t\t<ul>\n\t\t\t<li>For example, <code>&quot;F7&quot;</code> represents the cell <code>mat[7][&#39;F&#39;]</code>.</li>\n\t\t</ul>\n\t\t</li>\n\t\t<li><code>&quot;ColRow1:ColRow2&quot;</code> that represents a range of cells. The range will always be a rectangle where <code>&quot;ColRow1&quot;</code> represent the position of the top-left cell, and <code>&quot;ColRow2&quot;</code> represents the position of the bottom-right cell.\n\t\t<ul>\n\t\t\t<li>For example, <code>&quot;B3:F7&quot;</code> represents the cells <code>mat[i][j]</code> for <code>3 &lt;= i &lt;= 7</code> and <code>&#39;B&#39; &lt;= j &lt;= &#39;F&#39;</code>.</li>\n\t\t</ul>\n\t\t</li>\n\t</ul>\n\t</li>\n</ul>\n\n<p><strong>Note:</strong> You could assume that there will not be any circular sum reference.</p>\n\n<ul>\n\t<li>For example, <code>mat[1][&#39;A&#39;] == sum(1, &quot;B&quot;)</code> and <code>mat[1][&#39;B&#39;] == sum(1, &quot;A&quot;)</code>.</li>\n</ul>\n\n<p>&nbsp;</p>\n<p><strong>Example 1:</strong></p>\n\n<pre>\n<strong>Input</strong>\n[&quot;Excel&quot;, &quot;set&quot;, &quot;sum&quot;, &quot;set&quot;, &quot;get&quot;]\n[[3, &quot;C&quot;], [1, &quot;A&quot;, 2], [3, &quot;C&quot;, [&quot;A1&quot;, &quot;A1:B2&quot;]], [2, &quot;B&quot;, 2], [3, &quot;C&quot;]]\n<strong>Output</strong>\n[null, null, 4, null, 6]\n\n<strong>Explanation</strong>\nExcel excel = new Excel(3, &quot;C&quot;);\n // construct a 3*3 2D array with all zero.\n //   A B C\n // 1 0 0 0\n // 2 0 0 0\n // 3 0 0 0\nexcel.set(1, &quot;A&quot;, 2);\n // set mat[1][&quot;A&quot;] to be 2.\n //   A B C\n // 1 2 0 0\n // 2 0 0 0\n // 3 0 0 0\nexcel.sum(3, &quot;C&quot;, [&quot;A1&quot;, &quot;A1:B2&quot;]); // return 4\n // set mat[3][&quot;C&quot;] to be the sum of value at mat[1][&quot;A&quot;] and the values sum of the rectangle range whose top-left cell is mat[1][&quot;A&quot;] and bottom-right cell is mat[2][&quot;B&quot;].\n //   A B C\n // 1 2 0 0\n // 2 0 0 0\n // 3 0 0 4\nexcel.set(2, &quot;B&quot;, 2);\n // set mat[2][&quot;B&quot;] to be 2. Note mat[3][&quot;C&quot;] should also be changed.\n //   A B C\n // 1 2 0 0\n // 2 0 2 0\n // 3 0 0 6\nexcel.get(3, &quot;C&quot;); // return 6\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= height &lt;= 26</code></li>\n\t<li><code>&#39;A&#39; &lt;= width &lt;= &#39;Z&#39;</code></li>\n\t<li><code>1 &lt;= row &lt;= height</code></li>\n\t<li><code>&#39;A&#39; &lt;= column &lt;= width</code></li>\n\t<li><code>-100 &lt;= val &lt;= 100</code></li>\n\t<li><code>1 &lt;= numbers.length &lt;= 5</code></li>\n\t<li><code>numbers[i]</code> has the format <code>&quot;ColRow&quot;</code> or <code>&quot;ColRow1:ColRow2&quot;</code>.</li>\n\t<li>At most <code>100</code> calls will be made to <code>set</code>, <code>get</code>, and <code>sum</code>.</li>\n</ul>\n",
+            "translatedTitle": null,
+            "translatedContent": null,
+            "isPaidOnly": true,
+            "difficulty": "Hard",
+            "likes": 110,
+            "dislikes": 120,
+            "isLiked": null,
+            "similarQuestions": "[]",
+            "exampleTestcases": "[\"Excel\",\"set\",\"sum\",\"set\",\"get\"]\n[[3,\"C\"],[1,\"A\",2],[3,\"C\",[\"A1\",\"A1:B2\"]],[2,\"B\",2],[3,\"C\"]]",
+            "contributors": [],
+            "topicTags": [
+                {
+                    "name": "Graph",
+                    "slug": "graph",
+                    "translatedName": null,
+                    "__typename": "TopicTagNode"
+                },
+                {
+                    "name": "Design",
+                    "slug": "design",
+                    "translatedName": null,
+                    "__typename": "TopicTagNode"
+                },
+                {
+                    "name": "Topological Sort",
+                    "slug": "topological-sort",
+                    "translatedName": null,
+                    "__typename": "TopicTagNode"
+                }
+            ],
+            "companyTagStats": "{\"1\": [{\"taggedByAdmin\": false, \"name\": \"Opendoor\", \"slug\": \"opendoor\", \"timesEncountered\": 4}, {\"taggedByAdmin\": false, \"name\": \"Google\", \"slug\": \"google\", \"timesEncountered\": 2}], \"3\": [{\"taggedByAdmin\": true, \"name\": \"Microsoft\", \"slug\": \"microsoft\", \"timesEncountered\": 0}], \"2\": []}",
+            "codeSnippets": [
+                {
+                    "lang": "C++",
+                    "langSlug": "cpp",
+                    "code": "class Excel {\npublic:\n    Excel(int height, char width) {\n        \n    }\n    \n    void set(int row, char column, int val) {\n        \n    }\n    \n    int get(int row, char column) {\n        \n    }\n    \n    int sum(int row, char column, vector<string> numbers) {\n        \n    }\n};\n\n/**\n * Your Excel object will be instantiated and called as such:\n * Excel* obj = new Excel(height, width);\n * obj->set(row,column,val);\n * int param_2 = obj->get(row,column);\n * int param_3 = obj->sum(row,column,numbers);\n */",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Java",
+                    "langSlug": "java",
+                    "code": "class Excel {\n\n    public Excel(int height, char width) {\n        \n    }\n    \n    public void set(int row, char column, int val) {\n        \n    }\n    \n    public int get(int row, char column) {\n        \n    }\n    \n    public int sum(int row, char column, String[] numbers) {\n        \n    }\n}\n\n/**\n * Your Excel object will be instantiated and called as such:\n * Excel obj = new Excel(height, width);\n * obj.set(row,column,val);\n * int param_2 = obj.get(row,column);\n * int param_3 = obj.sum(row,column,numbers);\n */",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Python",
+                    "langSlug": "python",
+                    "code": "class Excel(object):\n\n    def __init__(self, height, width):\n        \"\"\"\n        :type height: int\n        :type width: str\n        \"\"\"\n        \n\n    def set(self, row, column, val):\n        \"\"\"\n        :type row: int\n        :type column: str\n        :type val: int\n        :rtype: None\n        \"\"\"\n        \n\n    def get(self, row, column):\n        \"\"\"\n        :type row: int\n        :type column: str\n        :rtype: int\n        \"\"\"\n        \n\n    def sum(self, row, column, numbers):\n        \"\"\"\n        :type row: int\n        :type column: str\n        :type numbers: List[str]\n        :rtype: int\n        \"\"\"\n        \n\n\n# Your Excel object will be instantiated and called as such:\n# obj = Excel(height, width)\n# obj.set(row,column,val)\n# param_2 = obj.get(row,column)\n# param_3 = obj.sum(row,column,numbers)",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Python3",
+                    "langSlug": "python3",
+                    "code": "class Excel:\n\n    def __init__(self, height: int, width: str):\n        \n\n    def set(self, row: int, column: str, val: int) -> None:\n        \n\n    def get(self, row: int, column: str) -> int:\n        \n\n    def sum(self, row: int, column: str, numbers: List[str]) -> int:\n        \n\n\n# Your Excel object will be instantiated and called as such:\n# obj = Excel(height, width)\n# obj.set(row,column,val)\n# param_2 = obj.get(row,column)\n# param_3 = obj.sum(row,column,numbers)",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "C",
+                    "langSlug": "c",
+                    "code": "\n\n\ntypedef struct {\n    \n} Excel;\n\n\nExcel* excelCreate(int height, char width) {\n    \n}\n\nvoid excelSet(Excel* obj, int row, char column, int val) {\n  \n}\n\nint excelGet(Excel* obj, int row, char column) {\n  \n}\n\nint excelSum(Excel* obj, int row, char column, char ** numbers, int numbersSize) {\n  \n}\n\nvoid excelFree(Excel* obj) {\n    \n}\n\n/**\n * Your Excel struct will be instantiated and called as such:\n * Excel* obj = excelCreate(height, width);\n * excelSet(obj, row, column, val);\n \n * int param_2 = excelGet(obj, row, column);\n \n * int param_3 = excelSum(obj, row, column, numbers, numbersSize);\n \n * excelFree(obj);\n*/",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "C#",
+                    "langSlug": "csharp",
+                    "code": "public class Excel {\n\n    public Excel(int height, char width) {\n        \n    }\n    \n    public void Set(int row, char column, int val) {\n        \n    }\n    \n    public int Get(int row, char column) {\n        \n    }\n    \n    public int Sum(int row, char column, string[] numbers) {\n        \n    }\n}\n\n/**\n * Your Excel object will be instantiated and called as such:\n * Excel obj = new Excel(height, width);\n * obj.Set(row,column,val);\n * int param_2 = obj.Get(row,column);\n * int param_3 = obj.Sum(row,column,numbers);\n */",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "JavaScript",
+                    "langSlug": "javascript",
+                    "code": "/**\n * @param {number} height\n * @param {character} width\n */\nvar Excel = function(height, width) {\n    \n};\n\n/** \n * @param {number} row \n * @param {character} column \n * @param {number} val\n * @return {void}\n */\nExcel.prototype.set = function(row, column, val) {\n    \n};\n\n/** \n * @param {number} row \n * @param {character} column\n * @return {number}\n */\nExcel.prototype.get = function(row, column) {\n    \n};\n\n/** \n * @param {number} row \n * @param {character} column \n * @param {string[]} numbers\n * @return {number}\n */\nExcel.prototype.sum = function(row, column, numbers) {\n    \n};\n\n/** \n * Your Excel object will be instantiated and called as such:\n * var obj = new Excel(height, width)\n * obj.set(row,column,val)\n * var param_2 = obj.get(row,column)\n * var param_3 = obj.sum(row,column,numbers)\n */",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Ruby",
+                    "langSlug": "ruby",
+                    "code": "class Excel\n\n=begin\n    :type height: Integer\n    :type width: Character\n=end\n    def initialize(height, width)\n        \n    end\n\n\n=begin\n    :type row: Integer\n    :type column: Character\n    :type val: Integer\n    :rtype: Void\n=end\n    def set(row, column, val)\n        \n    end\n\n\n=begin\n    :type row: Integer\n    :type column: Character\n    :rtype: Integer\n=end\n    def get(row, column)\n        \n    end\n\n\n=begin\n    :type row: Integer\n    :type column: Character\n    :type numbers: String[]\n    :rtype: Integer\n=end\n    def sum(row, column, numbers)\n        \n    end\n\n\nend\n\n# Your Excel object will be instantiated and called as such:\n# obj = Excel.new(height, width)\n# obj.set(row, column, val)\n# param_2 = obj.get(row, column)\n# param_3 = obj.sum(row, column, numbers)",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Swift",
+                    "langSlug": "swift",
+                    "code": "\nclass Excel {\n\n    init(_ height: Int, _ width: Character) {\n        \n    }\n    \n    func set(_ row: Int, _ column: Character, _ val: Int) {\n        \n    }\n    \n    func get(_ row: Int, _ column: Character) -> Int {\n        \n    }\n    \n    func sum(_ row: Int, _ column: Character, _ numbers: [String]) -> Int {\n        \n    }\n}\n\n/**\n * Your Excel object will be instantiated and called as such:\n * let obj = Excel(height, width)\n * obj.set(row, column, val)\n * let ret_2: Int = obj.get(row, column)\n * let ret_3: Int = obj.sum(row, column, numbers)\n */",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Go",
+                    "langSlug": "golang",
+                    "code": "type Excel struct {\n    \n}\n\n\nfunc Constructor(height int, width byte) Excel {\n    \n}\n\n\nfunc (this *Excel) Set(row int, column byte, val int)  {\n    \n}\n\n\nfunc (this *Excel) Get(row int, column byte) int {\n    \n}\n\n\nfunc (this *Excel) Sum(row int, column byte, numbers []string) int {\n    \n}\n\n\n/**\n * Your Excel object will be instantiated and called as such:\n * obj := Constructor(height, width);\n * obj.Set(row,column,val);\n * param_2 := obj.Get(row,column);\n * param_3 := obj.Sum(row,column,numbers);\n */",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Scala",
+                    "langSlug": "scala",
+                    "code": "class Excel(_height: Int, _width: Char) {\n\n    def set(row: Int, column: Char, `val`: Int) {\n        \n    }\n\n    def get(row: Int, column: Char): Int = {\n        \n    }\n\n    def sum(row: Int, column: Char, numbers: Array[String]): Int = {\n        \n    }\n\n}\n\n/**\n * Your Excel object will be instantiated and called as such:\n * var obj = new Excel(height, width)\n * obj.set(row,column,`val`)\n * var param_2 = obj.get(row,column)\n * var param_3 = obj.sum(row,column,numbers)\n */",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Kotlin",
+                    "langSlug": "kotlin",
+                    "code": "class Excel(height: Int, width: Char) {\n\n    fun set(row: Int, column: Char, `val`: Int) {\n        \n    }\n\n    fun get(row: Int, column: Char): Int {\n        \n    }\n\n    fun sum(row: Int, column: Char, numbers: Array<String>): Int {\n        \n    }\n\n}\n\n/**\n * Your Excel object will be instantiated and called as such:\n * var obj = Excel(height, width)\n * obj.set(row,column,`val`)\n * var param_2 = obj.get(row,column)\n * var param_3 = obj.sum(row,column,numbers)\n */",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Rust",
+                    "langSlug": "rust",
+                    "code": "struct Excel {\n\n}\n\n\n/** \n * `&self` means the method takes an immutable reference.\n * If you need a mutable reference, change it to `&mut self` instead.\n */\nimpl Excel {\n\n    fn new(height: i32, width: char) -> Self {\n        \n    }\n    \n    fn set(&self, row: i32, column: char, val: i32) {\n        \n    }\n    \n    fn get(&self, row: i32, column: char) -> i32 {\n        \n    }\n    \n    fn sum(&self, row: i32, column: char, numbers: Vec<String>) -> i32 {\n        \n    }\n}\n\n/**\n * Your Excel object will be instantiated and called as such:\n * let obj = Excel::new(height, width);\n * obj.set(row, column, val);\n * let ret_2: i32 = obj.get(row, column);\n * let ret_3: i32 = obj.sum(row, column, numbers);\n */",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "PHP",
+                    "langSlug": "php",
+                    "code": "class Excel {\n    /**\n     * @param Integer $height\n     * @param String $width\n     */\n    function __construct($height, $width) {\n        \n    }\n  \n    /**\n     * @param Integer $row\n     * @param String $column\n     * @param Integer $val\n     * @return NULL\n     */\n    function set($row, $column, $val) {\n        \n    }\n  \n    /**\n     * @param Integer $row\n     * @param String $column\n     * @return Integer\n     */\n    function get($row, $column) {\n        \n    }\n  \n    /**\n     * @param Integer $row\n     * @param String $column\n     * @param String[] $numbers\n     * @return Integer\n     */\n    function sum($row, $column, $numbers) {\n        \n    }\n}\n\n/**\n * Your Excel object will be instantiated and called as such:\n * $obj = Excel($height, $width);\n * $obj->set($row, $column, $val);\n * $ret_2 = $obj->get($row, $column);\n * $ret_3 = $obj->sum($row, $column, $numbers);\n */",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "TypeScript",
+                    "langSlug": "typescript",
+                    "code": "class Excel {\n    constructor(height: number, width: string) {\n\n    }\n\n    set(row: number, column: string, val: number): void {\n\n    }\n\n    get(row: number, column: string): number {\n\n    }\n\n    sum(row: number, column: string, numbers: string[]): number {\n\n    }\n}\n\n/**\n * Your Excel object will be instantiated and called as such:\n * var obj = new Excel(height, width)\n * obj.set(row,column,val)\n * var param_2 = obj.get(row,column)\n * var param_3 = obj.sum(row,column,numbers)\n */",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Racket",
+                    "langSlug": "racket",
+                    "code": "(define excel%\n  (class object%\n    (super-new)\n\n    ; height : exact-integer?\n\n    ; width : char?\n    (init-field\n      height\n      width)\n    \n    ; set : exact-integer? char? exact-integer? -> void?\n    (define/public (set row column val)\n\n      )\n    ; get : exact-integer? char? -> exact-integer?\n    (define/public (get row column)\n\n      )\n    ; sum : exact-integer? char? (listof string?) -> exact-integer?\n    (define/public (sum row column numbers)\n\n      )))\n\n;; Your excel% object will be instantiated and called as such:\n;; (define obj (new excel% [height height] [width width]))\n;; (send obj set row column val)\n;; (define param_2 (send obj get row column))\n;; (define param_3 (send obj sum row column numbers))",
+                    "__typename": "CodeSnippetNode"
+                }
+            ],
+            "stats": "{\"totalAccepted\": \"5.5K\", \"totalSubmission\": \"16.2K\", \"totalAcceptedRaw\": 5504, \"totalSubmissionRaw\": 16243, \"acRate\": \"33.9%\"}",
+            "hints": [],
+            "solution": {
+                "id": "187",
+                "canSeeDetail": true,
+                "paidOnly": true,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "__typename": "ArticleNode"
+            },
+            "status": null,
+            "sampleTestCase": "[\"Excel\",\"set\",\"sum\",\"set\",\"get\"]\n[[3,\"C\"],[1,\"A\",2],[3,\"C\",[\"A1\",\"A1:B2\"]],[2,\"B\",2],[3,\"C\"]]",
+            "metaData": "{\n  \"classname\": \"Excel\",\n  \"maxbytesperline\": 200000,\n  \"constructor\": {\n    \"params\": [\n      {\n        \"type\": \"integer\",\n        \"name\": \"height\"\n      },\n      {\n        \"type\": \"character\",\n        \"name\": \"width\"\n      }\n    ]\n  },\n  \"methods\": [\n    {\n      \"name\": \"set\",\n      \"params\": [\n        {\n          \"type\": \"integer\",\n          \"name\": \"row\"\n        },\n        {\n          \"type\": \"character\",\n          \"name\": \"column\"\n        },\n        {\n          \"type\": \"integer\",\n          \"name\": \"val\"\n        }\n      ],\n      \"return\": {\n        \"type\": \"void\"\n      }\n    },\n    {\n      \"name\": \"get\",\n      \"params\": [\n        {\n          \"type\": \"integer\",\n          \"name\": \"row\"\n        },\n        {\n          \"type\": \"character\",\n          \"name\": \"column\"\n        }\n      ],\n      \"return\": {\n        \"type\": \"integer\"\n      }\n    },\n    {\n      \"name\": \"sum\",\n      \"params\": [\n        {\n          \"type\": \"integer\",\n          \"name\": \"row\"\n        },\n        {\n          \"type\": \"character\",\n          \"name\": \"column\"\n        },\n        {\n          \"type\": \"string[]\",\n          \"name\": \"numbers\"\n        }\n      ],\n      \"return\": {\n        \"type\": \"integer\"\n      }\n    }\n  ],\n  \"systemdesign\": true,\n  \"params\": [\n    {\n      \"name\": \"inputs\",\n      \"type\": \"integer[]\"\n    },\n    {\n      \"name\": \"inputs\",\n      \"type\": \"integer[]\"\n    }\n  ],\n  \"return\": {\n    \"type\": \"list<String>\",\n    \"dealloc\": true\n  }\n}",
+            "judgerAvailable": true,
+            "judgeType": "large",
+            "mysqlSchemas": [],
+            "enableRunCode": true,
+            "enableTestMode": false,
+            "enableDebugger": true,
+            "envInfo": "{\"cpp\": [\"C++\", \"<p>Compiled with <code> clang 11 </code> using the latest C++ 17 standard.</p>\\r\\n\\r\\n<p>Your code is compiled with level two optimization (<code>-O2</code>). <a href=\\\"https://github.com/google/sanitizers/wiki/AddressSanitizer\\\" target=\\\"_blank\\\">AddressSanitizer</a> is also enabled to help detect out-of-bounds and use-after-free bugs.</p>\\r\\n\\r\\n<p>Most standard library headers are already included automatically for your convenience.</p>\"], \"java\": [\"Java\", \"<p><code>Java SE 13</code>.</p>\\r\\n\\r\\n<p>Most standard library headers are already included automatically for your convenience.</p>\\r\\n<p>Includes <code>Pair</code> class from https://docs.oracle.com/javase/8/javafx/api/javafx/util/Pair.html.</p>\"], \"python\": [\"Python\", \"<p><code>Python 2.7.12</code>.</p>\\r\\n\\r\\n<p>Most libraries are already imported automatically for your convenience, such as <a href=\\\"https://docs.python.org/2/library/array.html\\\" target=\\\"_blank\\\">array</a>, <a href=\\\"https://docs.python.org/2/library/bisect.html\\\" target=\\\"_blank\\\">bisect</a>, <a href=\\\"https://docs.python.org/2/library/collections.html\\\" target=\\\"_blank\\\">collections</a>. If you need more libraries, you can import it yourself.</p>\\r\\n\\r\\n<p>For Map/TreeMap data structure, you may use <a href=\\\"http://www.grantjenks.com/docs/sortedcontainers/\\\" target=\\\"_blank\\\">sortedcontainers</a> library.</p>\\r\\n\\r\\n<p>Note that Python 2.7 <a href=\\\"https://www.python.org/dev/peps/pep-0373/\\\" target=\\\"_blank\\\">will not be maintained past 2020</a>. For the latest Python, please choose Python3 instead.</p>\"], \"c\": [\"C\", \"<p>Compiled with <code>gcc 8.2</code> using the gnu99 standard.</p>\\r\\n\\r\\n<p>Your code is compiled with level one optimization (<code>-O1</code>). <a href=\\\"https://github.com/google/sanitizers/wiki/AddressSanitizer\\\" target=\\\"_blank\\\">AddressSanitizer</a> is also enabled to help detect out-of-bounds and use-after-free bugs.</p>\\r\\n\\r\\n<p>Most standard library headers are already included automatically for your convenience.</p>\\r\\n\\r\\n<p>For hash table operations, you may use <a href=\\\"https://troydhanson.github.io/uthash/\\\" target=\\\"_blank\\\">uthash</a>. \\\"uthash.h\\\" is included by default. Below are some examples:</p>\\r\\n\\r\\n<p><b>1. Adding an item to a hash.</b>\\r\\n<pre>\\r\\nstruct hash_entry {\\r\\n    int id;            /* we'll use this field as the key */\\r\\n    char name[10];\\r\\n    UT_hash_handle hh; /* makes this structure hashable */\\r\\n};\\r\\n\\r\\nstruct hash_entry *users = NULL;\\r\\n\\r\\nvoid add_user(struct hash_entry *s) {\\r\\n    HASH_ADD_INT(users, id, s);\\r\\n}\\r\\n</pre>\\r\\n</p>\\r\\n\\r\\n<p><b>2. Looking up an item in a hash:</b>\\r\\n<pre>\\r\\nstruct hash_entry *find_user(int user_id) {\\r\\n    struct hash_entry *s;\\r\\n    HASH_FIND_INT(users, &user_id, s);\\r\\n    return s;\\r\\n}\\r\\n</pre>\\r\\n</p>\\r\\n\\r\\n<p><b>3. Deleting an item in a hash:</b>\\r\\n<pre>\\r\\nvoid delete_user(struct hash_entry *user) {\\r\\n    HASH_DEL(users, user);  \\r\\n}\\r\\n</pre>\\r\\n</p>\"], \"csharp\": [\"C#\", \"<p><a href=\\\"https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-8\\\" target=\\\"_blank\\\">C# 8.0 </a></p>\\r\\n\\r\\n<p>Your code is compiled with debug flag enabled (<code>/debug</code>).</p>\"], \"javascript\": [\"JavaScript\", \"<p><code>Node.js 14.8.0</code>.</p>\\r\\n\\r\\n<p>Your code is run with <code>--harmony</code> flag, enabling <a href=\\\"http://node.green/\\\" target=\\\"_blank\\\">new ES6 features</a>.</p>\\r\\n\\r\\n<p><a href=\\\"https://lodash.com\\\" target=\\\"_blank\\\">lodash.js</a> library is included by default.</p>\\r\\n\\r\\n<p>For Priority Queue / Queue data structures, you may use <a href=\\\"https://github.com/datastructures-js/priority-queue\\\" target=\\\"_blank\\\">datastructures-js/priority-queue</a> and <a href=\\\"https://github.com/datastructures-js/queue\\\" target=\\\"_blank\\\">datastructures-js/queue</a>.</p>\"], \"ruby\": [\"Ruby\", \"<p><code>Ruby 2.7.1</code></p>\\r\\n\\r\\n<p>Some common data structure implementations are provided in the Algorithms module: https://www.rubydoc.info/github/kanwei/algorithms/Algorithms</p>\"], \"swift\": [\"Swift\", \"<p><code>Swift 5.3</code>.</p>\"], \"golang\": [\"Go\", \"<p><code>Go 1.16.2</code>.</p>\\r\\n\\r\\n<p>Support <a href=\\\"https://godoc.org/github.com/emirpasic/gods\\\" target=\\\"_blank\\\">https://godoc.org/github.com/emirpasic/gods</a> library.</p>\"], \"python3\": [\"Python3\", \"<p><code>Python 3.9</code>.</p>\\r\\n\\r\\n<p>Most libraries are already imported automatically for your convenience, such as <a href=\\\"https://docs.python.org/3/library/array.html\\\" target=\\\"_blank\\\">array</a>, <a href=\\\"https://docs.python.org/3/library/bisect.html\\\" target=\\\"_blank\\\">bisect</a>, <a href=\\\"https://docs.python.org/3/library/collections.html\\\" target=\\\"_blank\\\">collections</a>. If you need more libraries, you can import it yourself.</p>\\r\\n\\r\\n<p>For Map/TreeMap data structure, you may use <a href=\\\"http://www.grantjenks.com/docs/sortedcontainers/\\\" target=\\\"_blank\\\">sortedcontainers</a> library.</p>\"], \"scala\": [\"Scala\", \"<p><code>Scala 2.13</code>.</p>\"], \"kotlin\": [\"Kotlin\", \"<p><code>Kotlin 1.3.10</code>.</p>\"], \"rust\": [\"Rust\", \"<p><code>Rust 1.45.2</code></p>\\r\\n\\r\\n<p>Supports <a href=\\\"https://crates.io/crates/rand\\\" target=\\\"_blank\\\">rand</a>\\u00a0from crates.io</p>\"], \"php\": [\"PHP\", \"<p><code>PHP 7.2</code>.</p>\\r\\n<p>With bcmath module</p>\"], \"typescript\": [\"Typescript\", \"<p><code>Node.js 14.8.0</code>.</p>\\r\\n\\r\\n<p>Your code is run with <code>--harmony</code> flag, enabling <a href=\\\"http://node.green/\\\" target=\\\"_blank\\\">new ES2020 features</a>.</p>\\r\\n\\r\\n<p><a href=\\\"https://lodash.com\\\" target=\\\"_blank\\\">lodash.js</a> library is included by default.</p>\"], \"racket\": [\"Racket\", \"<p>Run with <code>Racket 8.0</code>.</p>\"]}",
+            "libraryUrl": null,
+            "adminUrl": null,
+            "__typename": "QuestionNode"
+        }
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "745",
+            "article": "{\"id\": 336, \"url\": \"/articles/find-smallest-letter-greater-than-target/\", \"topicId\": 127593}",
+            "solution": {
+                "id": "336",
+                "content": "[TOC]\n\n#### Approach #1: Record Letters Seen [Accepted]\n\n**Intuition and Algorithm**\n\nLet's scan through `letters` and record if we see a letter or not.  We could do this with an array of size 26, or with a Set structure.\n\nThen, for every next letter (starting with the letter that is one greater than the target), let's check if we've seen it.  If we have, it must be the answer.\n\n<iframe src=\"https://leetcode.com/playground/vCkvYV3q/shared\" frameBorder=\"0\" width=\"100%\" height=\"276\" name=\"vCkvYV3q\"></iframe>\n\n**Complexity Analysis**\n\n* Time Complexity: $$O(N)$$, where $$N$$ is the length of `letters`.  We scan every element of the array.\n\n* Space Complexity: $$O(1)$$, the maximum size of `seen`.\n\n---\n#### Approach #2: Linear Scan [Accepted]\n\n**Intuition and Algorithm**\n\nSince `letters` are sorted, if we see something larger when scanning form left to right, it must be the answer.  Otherwise, (since `letters` is non-empty), the answer is `letters[0]`.\n\n<iframe src=\"https://leetcode.com/playground/YKuLPei8/shared\" frameBorder=\"0\" width=\"100%\" height=\"174\" name=\"YKuLPei8\"></iframe>\n\n**Complexity Analysis**\n\n* Time Complexity: $$O(N)$$, where $$N$$ is the length of `letters`.  We scan every element of the array.\n\n* Space Complexity: $$O(1)$$, as we maintain only pointers.\n\n---\n#### Approach #3: Binary Search [Accepted]\n\n**Intuition and Algorithm**\n\nLike in *Approach #2*, we want to find something larger than target in a sorted array.  This is ideal for a *binary search*: Let's find the rightmost position to insert `target` into `letters` so that it remains sorted.\n\nOur binary search (a typical one) proceeds in a number of rounds.  At each round, let's maintain the *loop invariant* that the answer must be in the interval `[lo, hi]`.  Let `mi = (lo + hi) / 2`.  If `letters[mi] <= target`, then we must insert it in the interval `[mi + 1, hi]`.  Otherwise, we must insert it in the interval `[lo, mi]`.\n\nAt the end, if our insertion position says to insert `target` into the last position `letters.length`, we return `letters[0]` instead.  This is what the modulo operation does.\n\n<iframe src=\"https://leetcode.com/playground/QpdBm22u/shared\" frameBorder=\"0\" width=\"100%\" height=\"242\" name=\"QpdBm22u\"></iframe>\n\n**Complexity Analysis**\n\n* Time Complexity: $$O(\\log N)$$, where $$N$$ is the length of `letters`.  We peek only at $$\\log N$$ elements in the array.\n\n* Space Complexity: $$O(1)$$, as we maintain only pointers.",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "331",
+                    "count": 31,
+                    "average": 3.677,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

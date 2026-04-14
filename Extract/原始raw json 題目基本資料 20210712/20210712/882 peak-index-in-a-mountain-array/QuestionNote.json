@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "882",
+            "article": "{\"id\": 488, \"url\": \"/articles/peak-index-in-a-mountain-array/\", \"topicId\": 139842}",
+            "solution": {
+                "id": "488",
+                "content": "[TOC]\n\n---\n#### Approach 1: Linear Scan\n\n**Intuition and Algorithm**\n\nThe mountain increases until it doesn't.  The point at which it stops increasing is the peak.\n\n<iframe src=\"https://leetcode.com/playground/nyrN6Rc6/shared\" frameBorder=\"0\" width=\"100%\" height=\"174\" name=\"nyrN6Rc6\"></iframe>\n\n**Complexity Analysis**\n\n* Time Complexity:  $$O(N)$$, where $$N$$ is the length of `A`.\n\n* Space Complexity:  $$O(1)$$.\n\n\n---\n#### Approach 2: Binary Search\n\n**Intuition and Algorithm**\n\nThe comparison `A[i] < A[i+1]` in a mountain array looks like `[True, True, True, ..., True, False, False, ..., False]`: 1 or more boolean `True`s, followed by 1 or more boolean `False`.  For example, in the mountain array `[1, 2, 3, 4, 1]`, the comparisons `A[i] < A[i+1]` would be `True, True, True, False`.\n\nWe can binary search over this array of comparisons, to find the largest index `i` such that `A[i] < A[i+1]`.  For more on *binary search*, see the [LeetCode explore topic here.](https://leetcode.com/explore/learn/card/binary-search/)\n\n<iframe src=\"https://leetcode.com/playground/udiXhFoT/shared\" frameBorder=\"0\" width=\"100%\" height=\"276\" name=\"udiXhFoT\"></iframe>\n\n**Complexity Analysis**\n\n* Time Complexity:  $$O(\\log N)$$, where $$N$$ is the length of `A`.\n\n* Space Complexity:  $$O(1)$$.",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "481",
+                    "count": 73,
+                    "average": 3.808,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

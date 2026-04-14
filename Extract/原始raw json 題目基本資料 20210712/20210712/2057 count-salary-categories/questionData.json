@@ -1,0 +1,74 @@
+{
+    "data": {
+        "question": {
+            "questionId": "2057",
+            "questionFrontendId": "1907",
+            "boundTopicId": null,
+            "title": "Count Salary Categories",
+            "titleSlug": "count-salary-categories",
+            "content": "<p>Table: <code>Accounts</code></p>\n\n<pre>\n+-------------+------+\n| Column Name | Type |\n+-------------+------+\n| account_id  | int  |\n| income      | int  |\n+-------------+------+\naccount_id is the primary key for this table.\nEach row contains information about the monthly income for one bank account.\n</pre>\n\n<p>&nbsp;</p>\n\n<p>Write an SQL query to report the number of bank accounts of each salary category. The salary categories are:</p>\n\n<ul>\n\t<li><code>&quot;Low Salary&quot;</code>: All the salaries <strong>strictly less</strong> than <code>$20000</code>.</li>\n\t<li><code>&quot;Average Salary&quot;</code>: All the salaries in the <strong>inclusive</strong> range <code>[$20000, $50000]</code>.</li>\n\t<li><code>&quot;High Salary&quot;</code>: All the salaries <strong>strictly greater</strong> than <code>$50000</code>.</li>\n</ul>\n\n<p>The result table <strong>must</strong> contain all three categories. If there are no accounts in a category, then report <code>0</code>. Return the result table in <strong>any order</strong>.</p>\n\n<p>The query result format is in the following example.</p>\n\n<p>&nbsp;</p>\n\n<pre>\nAccounts table:\n+------------+--------+\n| account_id | income |\n+------------+--------+\n| 3          | 108939 |\n| 2          | 12747  |\n| 8          | 87709  |\n| 6          | 91796  |\n+------------+--------+\n\nResult table:\n+----------------+----------------+\n| category       | accounts_count |\n+----------------+----------------+\n| Low Salary     | 1              |\n| Average Salary | 0              |\n| High Salary    | 3              |\n+----------------+----------------+\n\nLow Salary: Account 2.\nAverage Salary: No accounts.\nHigh Salary: Accounts 3, 6, and 8.\n</pre>\n",
+            "translatedTitle": null,
+            "translatedContent": null,
+            "isPaidOnly": true,
+            "difficulty": "Medium",
+            "likes": 11,
+            "dislikes": 7,
+            "isLiked": null,
+            "similarQuestions": "[{\"title\": \"Create a Session Bar Chart\", \"titleSlug\": \"create-a-session-bar-chart\", \"difficulty\": \"Easy\", \"translatedTitle\": null}]",
+            "exampleTestcases": "{\"headers\":{\"Accounts\":[\"account_id\",\"income\"]},\"rows\":{\"Accounts\":[[3,108939],[2,12747],[8,87709],[6,91796]]}}",
+            "contributors": [],
+            "topicTags": [
+                {
+                    "name": "Database",
+                    "slug": "database",
+                    "translatedName": null,
+                    "__typename": "TopicTagNode"
+                }
+            ],
+            "companyTagStats": "{\"1\": [], \"2\": [], \"3\": []}",
+            "codeSnippets": [
+                {
+                    "lang": "MySQL",
+                    "langSlug": "mysql",
+                    "code": "# Write your MySQL query statement below\n",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "MS SQL Server",
+                    "langSlug": "mssql",
+                    "code": "/* Write your T-SQL query statement below */\n",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Oracle",
+                    "langSlug": "oraclesql",
+                    "code": "/* Write your PL/SQL query statement below */\n",
+                    "__typename": "CodeSnippetNode"
+                }
+            ],
+            "stats": "{\"totalAccepted\": \"631\", \"totalSubmission\": \"950\", \"totalAcceptedRaw\": 631, \"totalSubmissionRaw\": 950, \"acRate\": \"66.4%\"}",
+            "hints": [],
+            "solution": null,
+            "status": null,
+            "sampleTestCase": "{\"headers\":{\"Accounts\":[\"account_id\",\"income\"]},\"rows\":{\"Accounts\":[[3,108939],[2,12747],[8,87709],[6,91796]]}}",
+            "metaData": "{\n  \"mysql\": [\n    \"Create table If Not Exists Accounts (account_id int, income int)\"\n  ],\n  \"mssql\": [\n    \"Create table Accounts (account_id int, income int)\"\n  ],\n  \"oraclesql\": [\n    \"Create table Accounts (account_id int, income int)\"\n  ],\n  \"database\": true\n}",
+            "judgerAvailable": true,
+            "judgeType": "large",
+            "mysqlSchemas": [
+                "Create table If Not Exists Accounts (account_id int, income int)",
+                "Truncate table Accounts",
+                "insert into Accounts (account_id, income) values ('3', '108939')",
+                "insert into Accounts (account_id, income) values ('2', '12747')",
+                "insert into Accounts (account_id, income) values ('8', '87709')",
+                "insert into Accounts (account_id, income) values ('6', '91796')"
+            ],
+            "enableRunCode": true,
+            "enableTestMode": false,
+            "enableDebugger": false,
+            "envInfo": "{\"mysql\": [\"MySQL\", \"<p><code>MySQL 8.0</code>.</p>\"], \"mssql\": [\"MS SQL Server\", \"<p><code>mssql server 2019</code>.</p>\"], \"oraclesql\": [\"Oracle\", \"<p><code>Oracle Sql 11.2</code>.</p>\"]}",
+            "libraryUrl": null,
+            "adminUrl": null,
+            "__typename": "QuestionNode"
+        }
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "387",
+            "article": "{\"id\": 638, \"url\": \"/articles/first-unique-character-in-a-string/\", \"topicId\": 203359}",
+            "solution": {
+                "id": "638",
+                "content": "[TOC]\n\n## Solution\n\n---\n\n#### Approach 1: Linear time solution\n\nThe best possible solution here could be of a linear time \nbecause to ensure \nthat the character is unique \nyou have to check the whole string anyway. \n\nThe idea is to go through the string and \nsave in a hash map the number of times \neach character appears in the string. \nThat would take $$\\mathcal{O}(N)$$ time, \nwhere `N` is a number of characters in the string.\n \nAnd then we go through the string the second time, this time \nwe use the hash map as a reference to check if a character \nis unique or not.   \nIf the character is unique, one could just return its index. \nThe complexity of the second iteration is $$\\mathcal{O}(N)$$ as well.\n\n!?!../Documents/387_LIS.json:1000,621!?!\n\n<iframe src=\"https://leetcode.com/playground/B3jVCyWZ/shared\" frameBorder=\"0\" width=\"100%\" height=\"361\" name=\"B3jVCyWZ\"></iframe>\n\n**Complexity Analysis**\n\n* Time complexity : $$\\mathcal{O}(N)$$ since we go \nthrough the string of length `N` two times. \n* Space complexity : $$\\mathcal{O}(1)$$ because English alphabet contains \n26 letters.",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "624",
+                    "count": 92,
+                    "average": 4.239,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

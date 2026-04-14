@@ -1,0 +1,43 @@
+{
+    "data": {
+        "topic": {
+            "id": 127418,
+            "viewCount": 35772,
+            "topLevelCommentCount": 30,
+            "subscribed": false,
+            "title": "Open The Lock",
+            "pinned": false,
+            "tags": [],
+            "hideFromTrending": false,
+            "post": {
+                "id": 255665,
+                "voteCount": 0,
+                "voteStatus": 0,
+                "content": "---\\n\\n**Click [here](https://leetcode.com/articles/open-the-lock) to see the full article post**",
+                "updationDate": 1514096920,
+                "creationDate": 1514096920,
+                "status": null,
+                "isHidden": null,
+                "coinRewards": [],
+                "author": {
+                    "isDiscussAdmin": false,
+                    "isDiscussStaff": false,
+                    "username": "awice",
+                    "nameColor": null,
+                    "activeBadge": null,
+                    "profile": {
+                        "userAvatar": "https://assets.leetcode.com/users/awice/avatar_1576905115.png",
+                        "reputation": 6689,
+                        "__typename": "UserProfileNode"
+                    },
+                    "isActive": true,
+                    "__typename": "UserNode"
+                },
+                "authorIsModerator": false,
+                "isOwnPost": false,
+                "__typename": "PostNode"
+            },
+            "__typename": "TopicNode"
+        }
+    }
+}

@@ -1,0 +1,43 @@
+{
+    "data": {
+        "topic": {
+            "id": 127533,
+            "viewCount": 112016,
+            "topLevelCommentCount": 38,
+            "subscribed": false,
+            "title": "Implement Queue using Stacks",
+            "pinned": false,
+            "tags": [],
+            "hideFromTrending": false,
+            "post": {
+                "id": 255746,
+                "voteCount": 0,
+                "voteStatus": 0,
+                "content": "Queue is **FIFO** (first in - first out) data structure, in which the elements are inserted from one side - `rear` and removed from the other - `front`.\\nThe most intuitive way to implement it is with linked lists, but this article will introduce another approach  using stacks.\\nStack is **LIFO** (last in - first out) data structure, in which elements are added and removed from the same end, called `top`.\\nTo satisfy **FIFO** property of a queue we need to keep two stacks. They serve to reverse arrival order of the  elements and one of them store the queue elements in their final order.\\n\\n---\\n\\n\\n**Click [here](https://leetcode.com/articles/implement-queue-using-stacks/) to see the full article post**",
+                "updationDate": 1462254635,
+                "creationDate": 1462254635,
+                "status": null,
+                "isHidden": null,
+                "coinRewards": [],
+                "author": {
+                    "isDiscussAdmin": true,
+                    "isDiscussStaff": true,
+                    "username": "1337c0d3r",
+                    "nameColor": null,
+                    "activeBadge": null,
+                    "profile": {
+                        "userAvatar": "https://assets.leetcode.com/users/1337c0d3r/avatar_1547177258.png",
+                        "reputation": 3129,
+                        "__typename": "UserProfileNode"
+                    },
+                    "isActive": true,
+                    "__typename": "UserNode"
+                },
+                "authorIsModerator": true,
+                "isOwnPost": false,
+                "__typename": "PostNode"
+            },
+            "__typename": "TopicNode"
+        }
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "121",
+            "article": "{\"id\": 51, \"url\": \"/articles/best-time-to-buy-and-sell-stock/\", \"topicId\": 127440}",
+            "solution": {
+                "id": "51",
+                "content": "[TOC]\n\n## Solution\n\nWe need to find out the maximum difference (which will be the maximum profit) between two numbers in the given array. Also, the second number (selling price) must be larger than the first one (buying price).\n\nIn formal terms, we need to find $$\\max(\\text{prices[j]} - \\text{prices[i]})$$, for every $$i$$ and $$j$$ such that $$j > i$$.\n\n---\n#### Approach 1: Brute Force\n\n<iframe src=\"https://leetcode.com/playground/tVDNcEFQ/shared\" frameBorder=\"0\" width=\"100%\" height=\"276\" name=\"tVDNcEFQ\"></iframe>\n\n**Complexity Analysis**\n\n* Time complexity : $$O(n^2)$$. Loop runs $$\\dfrac{n (n-1)}{2}$$ times.\n\n* Space complexity : $$O(1)$$. Only two variables - $$\\text{maxprofit}$$ and $$\\text{profit}$$ are used.\n<br />\n<br />\n---\n#### Approach 2: One Pass\n\n**Algorithm**\n\nSay the given array is:\n\n[7, 1, 5, 3, 6, 4]\n\nIf we plot the numbers of the given array on a graph, we get:\n\n![Profit Graph](https://leetcode.com/media/original_images/121_profit_graph.png)\n\nThe points of interest are the peaks and valleys in the given graph. We need to find the largest peak following the smallest valley.\nWe can maintain two variables - minprice and maxprofit corresponding to the smallest valley and maximum profit (maximum difference between selling price and minprice) obtained so far respectively.\n\n<iframe src=\"https://leetcode.com/playground/WQBerWww/shared\" frameBorder=\"0\" width=\"100%\" height=\"276\" name=\"WQBerWww\"></iframe>\n\n**Complexity Analysis**\n\n* Time complexity : $$O(n)$$. Only a single pass is needed.\n\n* Space complexity : $$O(1)$$. Only two variables are used.",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "49",
+                    "count": 272,
+                    "average": 4.522,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

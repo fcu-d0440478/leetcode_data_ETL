@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "792",
+            "article": "{\"id\": 719, \"url\": \"/articles/binary-search/\", \"topicId\": 277216}",
+            "solution": {
+                "id": "719",
+                "content": "[TOC]\n\n## Solution\n\n---\n\n#### Approach 1: Binary Search \n\n**Intuition**\n\n[Binary search](https://leetcode.com/explore/learn/card/binary-search/)\nis a textbook algorithm based on the idea to \ncompare the target value to the middle element of the array.\n\nIf the target value is equal to the middle element - we're done.\n\nIf the target value is smaller - continue to search on the left.\n\nIf the target value is larger - continue to search on the right.\n\n![postorder](../Figures/704/search.png)\n\n**Algorithm**\n\n- Initialise left and right pointers : `left = 0`, `right = n - 1`.\n\n- While `left <= right` :\n\n    - Compare middle element of the array `nums[pivot]` to the target\n    value `target`.\n    \n        - If the middle element _is_ the target `target = nums[pivot]` : return `pivot`. \n        \n        - If the target is not yet found : \n        \n            - If `target < nums[pivot]`, continue the search on the left \n            `right = pivot - 1`.\n            \n            - Else continue the search on the right \n            `left = pivot + 1`.\n            \n**Implementation**\n\n!?!../Documents/704_LIS.json:1000,401!?!\n\n<iframe src=\"https://leetcode.com/playground/6Y6zY87x/shared\" frameBorder=\"0\" width=\"100%\" height=\"276\" name=\"6Y6zY87x\"></iframe>\n\n**Complexity Analysis**\n\n* Time complexity : $$\\mathcal{O}(\\log N)$$. \n\n    Let's compute time complexity with the help of \n    [master theorem](https://en.wikipedia.org/wiki/Master_theorem_(analysis_of_algorithms)) \n    $$T(N) = aT\\left(\\frac{N}{b}\\right) + \\Theta(N^d)$$.\n    The equation represents dividing the problem \n    up into $$a$$ subproblems of size $$\\frac{N}{b}$$ in $$\\Theta(N^d)$$ time. \n    Here at step there is only one subproblem `a = 1`, its size \n    is a half of the initial problem `b = 2`, \n    and all this happens in a constant time `d = 0`.\n    That means that $$\\log_b{a} = d$$ and hence we're dealing with \n    [case 2](https://en.wikipedia.org/wiki/Master_theorem_(analysis_of_algorithms)#Case_2_example)\n    that results in $$\\mathcal{O}(n^{\\log_b{a}} \\log^{d + 1} N)$$\n    = $$\\mathcal{O}(\\log N)$$ time complexity.\n \n* Space complexity : $$\\mathcal{O}(1)$$ since it's a constant space\nsolution.",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "704",
+                    "count": 40,
+                    "average": 4.65,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

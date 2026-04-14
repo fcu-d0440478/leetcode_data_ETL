@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "690",
+            "article": "{\"id\": 303, \"url\": \"/articles/employee-importance/\", \"topicId\": 127681}",
+            "solution": {
+                "id": "303",
+                "content": "[TOC]\n\n#### Approach #1: Depth-First Search [Accepted]\n\n**Intuition and Algorithm**\n\nLet's use a hashmap `emap = {employee.id -> employee}` to query employees quickly.\n\nNow to find the total importance of an employee, it will be the importance of that employee, plus the total importance of each of that employee's subordinates.  This is a straightforward depth-first search.\n\n<iframe src=\"https://leetcode.com/playground/Y9QW7TMB/shared\" frameBorder=\"0\" width=\"100%\" height=\"310\" name=\"Y9QW7TMB\"></iframe>\n\n\n**Complexity Analysis**\n\n* Time Complexity: $$O(N)$$, where $$N$$ is the number of employees.  We might query each employee in `dfs`.\n\n* Space Complexity: $$O(N)$$, the size of the implicit call stack when evaluating `dfs`.",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "298",
+                    "count": 51,
+                    "average": 4.196,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

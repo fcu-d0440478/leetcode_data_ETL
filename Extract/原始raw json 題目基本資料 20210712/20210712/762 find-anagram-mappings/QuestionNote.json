@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "762",
+            "article": "{\"id\": 368, \"url\": \"/articles/find-anagram-mappings/\", \"topicId\": 127699}",
+            "solution": {
+                "id": "368",
+                "content": "[TOC]\n\n#### Approach #1: Hash Table [Accepted]\n\n**Intuition**\n\nTake the example `A = [12, 28, 46]`, `B = [46, 12, 28]`.  We want to know where the `12` occurs in `B`, say at position `1`; then where the `28` occurs in `B`, which is position `2`; then where the `46` occurs in `B`, which is position `0`.\n\nIf we had a dictionary (hash table) `D = {46: 0, 12: 1, 28: 2}`, then this question could be handled easily.\n\n**Algorithm**\n\nCreate the hash table `D` as described above.  Then, the answer is a list of `D[A[i]]` for `i = 0, 1, ...`.\n\n<iframe src=\"https://leetcode.com/playground/6uKzPtyG/shared\" frameBorder=\"0\" width=\"100%\" height=\"276\" name=\"6uKzPtyG\"></iframe>\n\n**Complexity Analysis**\n\n* Time Complexity: $$O(N)$$, where $$N$$ is the length of $$A$$.\n\n* Space Complexity: $$O(N)$$.",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": true,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "363",
+                    "count": 23,
+                    "average": 4.174,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

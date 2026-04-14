@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "82",
+            "article": "{\"id\": 1062, \"url\": \"/articles/remove-duplicates-from-sorted-list-ii/\", \"topicId\": 952302}",
+            "solution": {
+                "id": "1062",
+                "content": "[TOC]\r\n\r\n## Solution\r\n\r\n---\r\n\r\n#### Approach 1: Sentinel Head + Predecessor\r\n\r\n**Sentinel Head**\r\n\r\nLet's start from the most challenging situation: the list head is to be removed.\r\n\r\n![diff](../Figures/82/how_to_handle.png)\r\n*Figure 1. The list head is to be removed.*\r\n{:align=\"center\"}\r\n\r\nThe standard way to handle this use case is to use the so-called [Sentinel Node](https://en.wikipedia.org/wiki/Sentinel_node).\r\nSentinel nodes are widely used for trees and linked lists as pseudo-heads, \r\npseudo-tails, etc. \r\nThey are purely functional and usually don't hold any data. \r\nTheir primary purpose is to standardize the situation to avoid edge case\r\nhandling.\r\n \r\nFor example, let's use here pseudo-head with zero value\r\nto ensure that the situation \"delete the list head\" could never happen,\r\nand all nodes to delete are \"inside\" the list.\r\n\r\n**Delete Internal Nodes**\r\n\r\nThe input list is sorted, and we can determine if a node is a \r\nduplicate by comparing its value to the node *after* it in the list. \r\nStep by step, we could identify the current sublist of duplicates.\r\n\r\nNow it's time to delete it using pointer manipulations. \r\nNote that the first node in the duplicates sublist should be removed as well.\r\nThat means that we have to track the predecessor of duplicates sublist, *i.e.*,\r\nthe last node *before* the sublist of duplicates.\r\n\r\n![diff](../Figures/82/remove.png)\r\n*Figure 2. The sentinel head, the predecessor, and the sublist of duplicates to delete.*\r\n{:align=\"center\"}\r\n\r\nHaving predecessor, we skip the entire duplicate sublist and \r\nmake predecessor to point to the node *after* the sublist.\r\n\r\n![diff](../Figures/82/delete.png)\r\n*Figure 2. Delete the sublist of duplicates.*\r\n{:align=\"center\"}\r\n\r\n**Implementation**\r\n\r\n<iframe src=\"https://leetcode.com/playground/ZJ2wsoch/shared\" frameBorder=\"0\" width=\"100%\" height=\"500\" name=\"ZJ2wsoch\"></iframe>\r\n\r\n**Complexity Analysis**\r\n\r\n* Time complexity: $$\\mathcal{O}(N)$$ since it's one pass along the input list.\r\n \r\n* Space complexity: $$\\mathcal{O}(1)$$ because we don't allocate any additional \r\ndata structure.",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "1017",
+                    "count": 52,
+                    "average": 4.865,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

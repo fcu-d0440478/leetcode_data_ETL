@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "1603",
+            "article": "{\"id\": 1124, \"url\": \"/articles/running-sum-of-1d-array/\", \"topicId\": 1136761}",
+            "solution": {
+                "id": "1124",
+                "content": "[TOC]\r\n\r\n## Solution\r\n\r\n---\r\n\r\n#### Approach 1: Using Separate Space\r\n\r\n**Intuition**\r\n\r\nWe are required to find the running sum of numbers `nums[i]` in the input array where `i` ranges from `0` to `n-1` and `n` is the size of the input array. We can see that the running sum is the sum of all of the elements from index `0` to index `i` inclusive. Since we start building our output array at index `0`, at each index `i` we have already calculated the sum of all numbers up to and including index `i-1`. Thus, instead of recalculating the sum, we can get the result for index `i` by simply adding the element at index `i` to the previously calculated running sum for index `i-1`.\r\n\r\n**Algorithm**\r\n\r\n1. Define an array `result`.\r\n2. Initialize the first element of `result` with the first element of the input array.\r\n3. At index `i` append the sum of the element `nums[i]` and previous running sum `result[i - 1]` to the `result` array.\r\n4. We repeat step 3 for all indices from `1` to `n-1`.\r\n\r\n<iframe src=\"https://leetcode.com/playground/HmpnCZtd/shared\" frameBorder=\"0\" width=\"100%\" height=\"276\" name=\"HmpnCZtd\"></iframe>\r\n\r\n**Complexity Analysis**\r\n\r\n* Time complexity: $$O(n)$$ where $$n$$ is the length of the input array. This is because we use a single loop that iterates over the entire array to calculate the running sum.\r\n\r\n* Space complexity: $$O(1)$$ since we don't use any additional space to find the running sum. _Note_ that we do not take into consideration the space occupied by the output array.\r\n\r\n\r\n<br />\r\n\r\n---\r\n\r\n#### Approach 2: Using Input Array for Output\r\n\r\n**Intuition**\r\n\r\nIn the previous approach we created an extra array to store our results. However, we do not actually need to do so. We can obtain the same result without using extra space by performing the same operations on the input array instead.\r\n\r\n**Algorithm**\r\n\r\n1. Increase `nums[i]` by the previous index's running sum.  The previous index's running sum is stored at index `i-1` in the input array.\r\n2. We repeat step 1 for all indices from `1` to `n-1`.\r\n\r\n<iframe src=\"https://leetcode.com/playground/8p9N4E2a/shared\" frameBorder=\"0\" width=\"100%\" height=\"225\" name=\"8p9N4E2a\"></iframe>\r\n\r\n**Complexity Analysis**\r\n\r\n* Time complexity: $$O(n)$$ where $$n$$ is the length of input array.\r\n\r\n* Space complexity: $$O(1)$$ since we don't use any additional space to find the running sum. _Note_ that we do not take into consideration the space occupied by the output array.\r\n\r\n</br>",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "1085",
+                    "count": 26,
+                    "average": 4.346,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

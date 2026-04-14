@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "303",
+            "article": "{\"id\": 9, \"url\": \"/articles/range-sum-query-immutable/\", \"topicId\": 127816}",
+            "solution": {
+                "id": "9",
+                "content": "[TOC]\r\n\r\n## Solution\r\n---\r\n#### Approach #1 (Brute Force) [Time Limit Exceeded]\r\n\r\nEach time *sumRange* is called, we use a for loop to sum each individual element from index $$i$$ to $$j$$.\r\n\r\n```java\r\nprivate int[] data;\r\n\r\npublic NumArray(int[] nums) {\r\n    data = nums;\r\n}\r\n\r\npublic int sumRange(int i, int j) {\r\n    int sum = 0;\r\n    for (int k = i; k <= j; k++) {\r\n        sum += data[k];\r\n    }\r\n    return sum;\r\n}\r\n```\r\n\r\n**Complexity analysis:**\r\n\r\n* Time complexity : $$O(n)$$ time per query.\r\nEach *sumRange* query takes $$O(n)$$ time.\r\n\r\n* Space complexity : $$O(1)$$. Note that `data` is a *reference* to `nums` and is not a copy of it.\r\n\r\n---\r\n#### Approach #2 (Caching) [Accepted]\r\n\r\nImagine that *sumRange* is called one thousand times with the exact same arguments. How could we speed that up?\r\n\r\nWe could trade in extra space for speed. By pre-computing all range sum possibilities and store its results in a hash table, we can speed up the query to constant time.\r\n\r\n```java\r\nprivate Map<Pair<Integer, Integer>, Integer> map = new HashMap<>();\r\n\r\npublic NumArray(int[] nums) {\r\n    for (int i = 0; i < nums.length; i++) {\r\n        int sum = 0;\r\n        for (int j = i; j < nums.length; j++) {\r\n            sum += nums[j];\r\n            map.put(Pair.create(i, j), sum);\r\n        }\r\n    }\r\n}\r\n\r\npublic int sumRange(int i, int j) {\r\n    return map.get(Pair.create(i, j));\r\n}\r\n```\r\n\r\n**Complexity analysis**\r\n\r\n* Time complexity : $$O(1)$$ time per query, $$O(n^2)$$ time pre-computation.\r\nThe pre-computation done in the constructor takes $$O(n^2)$$ time. Each *sumRange* query's time complexity is $$O(1)$$ as the hash table's look up operation is constant time.\r\n\r\n* Space complexity : $$O(n^2)$$.\r\nThe extra space required is $$O(n^2)$$ as there are $$n$$ candidates for both $$i$$ and $$j$$.\r\n\r\n---\r\n#### Approach #3 (Caching) [Accepted]\r\n\r\nThe above approach takes a lot of space, could we optimize it?\r\n\r\nImagine that we pre-compute the cummulative sum from index $$0$$ to $$k$$. Could we use this information to derive $$Sum(i, j)$$?\r\n\r\nLet us define $$sum[k]$$ as the cumulative sum for $$nums[0 \\cdots k-1]$$ (inclusive):\r\n\r\n$$\r\nsum[k] = \\left\\{ \\begin{array}{rl} \\sum_{i=0}^{k-1}nums[i] & , k > 0 \\\\ 0 &, k = 0 \\end{array} \\right.\r\n$$\r\n\r\nNow, we can calculate *sumRange* as following:\r\n\r\n$$\r\nsumRange(i, j) = sum[j + 1] - sum[i]\r\n$$\r\n\r\n```java\r\nprivate int[] sum;\r\n\r\npublic NumArray(int[] nums) {\r\n    sum = new int[nums.length + 1];\r\n    for (int i = 0; i < nums.length; i++) {\r\n        sum[i + 1] = sum[i] + nums[i];\r\n    }\r\n}\r\n\r\npublic int sumRange(int i, int j) {\r\n    return sum[j + 1] - sum[i];\r\n}\r\n```\r\n\r\nNotice in the code above we inserted a dummy 0 as the first element in the *sum* array. This trick saves us from an extra conditional check in *sumRange* function.\r\n\r\n**Complexity analysis**\r\n\r\n* Time complexity : $$O(1)$$ time per query, $$O(n)$$ time pre-computation.\r\nSince the cumulative sum is cached, each *sumRange* query can be calculated in $$O(1)$$ time.\r\n\r\n* Space complexity : $$O(n)$$.",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "12",
+                    "count": 121,
+                    "average": 4.62,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

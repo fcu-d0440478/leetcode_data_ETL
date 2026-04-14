@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "218",
+            "article": "{\"id\": 715, \"url\": \"/articles/skyline-problem/\", \"topicId\": 269323}",
+            "solution": {
+                "id": "715",
+                "content": "[TOC]\n\n## Solution\n\n---\n\n#### Approach 1: Divide and Conquer\n\n**Solution Template**\n\nThe problem is a classical example of divide and conquer\napproach, and typically implemented exactly the same way as\nmerge sort algorithm.\n\nLet's follow here a solution template for divide and conquer\nproblems :\n\n- Define the base case(s).\n\n- Split the problem into subproblems and solve them recursively.\n\n- Merge the subproblems solutions into the problem solution.\n\n**Algorithm**\n\ngetSkyline for `n` buildings :\n\n- If `n == 0` : return an empty list.\n\n- If `n == 1` : return the skyline for one building (it's straightforward).\n\n- `leftSkyline` = getSkyline for the first n/2 buildings.\n\n- `rightSkyline` = getSkyline for the last n/2 buildings.\n\n- Merge `leftSkyline` and `rightSkyline`.\n\nNow let's discuss each step in more details.\n\n**Base Cases**\n\nThe first base case is an empty `buildings` list.\nThen the skyline is an empty list, too.\n\nThe second base case is the only one building in the list, when\nthe skyline construction is quite straightforward.\n\n![bla](../Figures/218/base5.png)\n\n**How to split the problem**\n\nThe idea is the same as for merge sort : at each step\nsplit the list exactly in two parts : from `0` to `n/2` and\n from `n/2` to `n`, and then construct\nthe skylines recursively for each part.\n\n![bla](../Figures/218/split5.png)\n\n**How to merge two skylines**\n\nThe algorithm for merge function is quite straightforward\nand based on the same merge sort logic : the height of an output skyline is\nalways a maximum between the left and right skylines.\n\n![bla](../Figures/218/merge5.png)\n\nLet's use here two\npointers `pR` and `pL` to track the current element index in both\nskylines, and three integers `leftY`, `rightY`, and `currY` to track the current height\nfor the `left` skyline, `right` skyline and the merged skyline.\n\nmergeSkylines (left, right) :\n\n- currY = leftY = rightY = 0\n\n- While we're in the region where both skylines are present\n(`pR < nR` and `pL < nL`) :\n\n    - Pick up the element with the smallest `x` coordinate. If it's\n    an element from the left skyline, move `pL` and update `leftY`.\n    If it's\n    an element from the right skyline, move `pR` and update `rightY`.\n\n    - Compute the largest height at the current point :\n    `maxY = max(leftY, rightY)`.\n\n    - Update an output skyline by `(x, maxY)` point, if `maxY` is not equal to `currY`.\n\n- While there are still elements in the left skyline (`pL < nL`),\nprocess them following the same logic as above.\n\n- While there are still elements in the right skyline (`pR < nR`),\nprocess them following the same logic as above.\n\n- Return output skyline.\n\n> Here are three usecases to illustrate the merge algorithm execution\n\n![bla](../Figures/218/merge3.png)\n\n![bla](../Figures/218/merge4.png)\n\n![bla](../Figures/218/merge7.png)\n\n**Implementation**\n\n<iframe src=\"https://leetcode.com/playground/KJU4KcvC/shared\" frameBorder=\"0\" width=\"100%\" height=\"500\" name=\"KJU4KcvC\"></iframe>\n\n* Time complexity : $$\\mathcal{O}(N \\log N)$$, where $$N$$ is number of\nbuildings. The problem is an example of\n[Master Theorem case II](https://en.wikipedia.org/wiki/Master_theorem_(analysis_of_algorithms)#Case_2_example)\n : $$T(N) = 2 T(\\frac{N}{2}) + 2N$$, that results in $$\\mathcal{O}(N \\log N)$$\n time complexity.\n\n\n* Space complexity : $$\\mathcal{O}(N)$$.\n\n  - We use the `output` variable to keep track of the results.\n\n---",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": true,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "700",
+                    "count": 102,
+                    "average": 3.559,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

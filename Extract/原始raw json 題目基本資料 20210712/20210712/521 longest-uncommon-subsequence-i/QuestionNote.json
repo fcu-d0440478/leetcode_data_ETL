@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "521",
+            "article": "{\"id\": 99, \"url\": \"/articles/longest-uncommon-subsequence-i/\", \"topicId\": 127617}",
+            "solution": {
+                "id": "99",
+                "content": "[TOC]\n\n## Solution\n\n---\n#### Approach #1 Brute Force [Time Limit Exceeded]\n\nIn the brute force approach we will generate all the possible $$2^n$$ subsequences of both the strings and store their number of occurences in a hashmap.\nLongest subsequence whose frequency is equal to $$1$$ will be the required subsequence.\nAnd, if it is not found we will return $$-1$$.\n\n\n<iframe src=\"https://leetcode.com/playground/tSXGPoqU/shared\" frameBorder=\"0\" name=\"tSXGPoqU\" width=\"100%\" height=\"479\"></iframe>\n\n**Complexity Analysis**\n\n* Time complexity : $$O(2^x+2^y)$$. where $$x$$ and $$y$$ are the lengths of strings $$a$$ and $$b$$ respectively . Number of subsequences will be $$2^x+2^y$$.\n* Space complexity : $$O(2^x+2^y)$$. $$2^x+2^y$$ subsequences will be generated.\n\n---\n#### Approach #2 Simple Solution[Accepted]\n\n**Algorithm**\n\nSimple analysis of this problem can lead to an easy solution.\n\nThese three cases are possible with string $$a$$ and $$b$$:-\n\n* $$a=b$$. If both the strings are identical, it is obvious that no subsequence will be uncommon. Hence, return -1.\n\n* $$length(a)=length(b)$$ and $$a \\ne b$$. Example: $$abc$$ and $$abd$$. In this case we can consider any string i.e. $$abc$$ or $$abd$$ as a required subsequence, as out of these two strings one string will never be a subsequence of other string. Hence, return $$length(a)$$ or $$length(b)$$.\n\n* $$length(a) \\ne length(b)$$. Example $$abcd$$ and $$abc$$. In this case we can consider bigger string as a required subsequence because bigger string can't be a subsequence of smaller string. Hence, return $$max(length(a),length(b))$$.\n\n\n<iframe src=\"https://leetcode.com/playground/YdNcPgTE/shared\" frameBorder=\"0\" name=\"YdNcPgTE\" width=\"100%\" height=\"173\"></iframe>\n\n**Complexity Analysis**\n\n* Time complexity : $$O(min(x,y))$$. where $$x$$ and $$y$$ are the lengths of strings $$a$$ and $$b$$ respectively. Here equals method will take $$min(x,y)$$ time .\n\n* Space complexity : $$O(1)$$. No extra space required.",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "97",
+                    "count": 52,
+                    "average": 3.365,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

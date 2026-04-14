@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "666",
+            "article": "{\"id\": 328, \"url\": \"/articles/path-sum-iv/\", \"topicId\": 127586}",
+            "solution": {
+                "id": "328",
+                "content": "[TOC]\n\n#### Approach #1: Convert to Tree [Accepted]\n\n**Intuition**\n\nConvert the given array into a tree using Node objects.  Afterwards, for each path from root to leaf, we can add the sum of that path to our answer.\n\n**Algorithm**\n\nThere are two steps, the tree construction, and the traversal.\n\nIn the tree construction, we have some depth, position, and value, and we want to know where the new node goes.  With some effort, we can see the relevant condition for whether a node should be left or right is `pos - 1 < 2**(depth - 2)`.  For example, when `depth = 4`, the positions are `1, 2, 3, 4, 5, 6, 7, 8`, and it's left when `pos <= 4`.\n\nIn the traversal, we perform a depth-first search from root to leaf, keeping track of the current sum along the path we have travelled.  Every time we reach a leaf `(node.left == null && node.right == null)`, we have to add that running sum to our answer.\n\n<iframe src=\"https://leetcode.com/playground/ne38nVFY/shared\" frameBorder=\"0\" width=\"100%\" height=\"500\" name=\"ne38nVFY\"></iframe>\n\n**Complexity Analysis**\n\n* Time Complexity: $$O(N)$$ where $$N$$ is the length of `nums`.  We construct the graph and traverse it in this time.\n\n* Space Complexity: $$O(N)$$, the size of the implicit call stack in our depth-first search.\n\n---\n#### Approach #2: Direct Traversal [Accepted]\n\n**Intuition and Algorithm**\n\nAs in *Approach #1*, we will depth-first search on the tree.  One time-saving idea is that we can use `num / 10 = 10 * depth + pos` as a unique identifier for that node.  The left child of such a node would have identifier `10 * (depth + 1) + 2 * pos - 1`, and the right child would be one greater.\n\n<iframe src=\"https://leetcode.com/playground/pamheDYq/shared\" frameBorder=\"0\" width=\"100%\" height=\"500\" name=\"pamheDYq\"></iframe>\n\n**Complexity Analysis**\n\n* Time and Space Complexity: $$O(N)$$.  The analysis is the same as in *Approach #1*.",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "321",
+                    "count": 13,
+                    "average": 3.0,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

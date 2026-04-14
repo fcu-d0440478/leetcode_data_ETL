@@ -1,0 +1,80 @@
+{
+    "data": {
+        "question": {
+            "questionId": "1565",
+            "questionFrontendId": "1440",
+            "boundTopicId": null,
+            "title": "Evaluate Boolean Expression",
+            "titleSlug": "evaluate-boolean-expression",
+            "content": "<p>Table <code>Variables</code>:</p>\r\n\r\n<pre>\r\n+---------------+---------+\r\n| Column Name   | Type    |\r\n+---------------+---------+\r\n| name          | varchar |\r\n| value         | int     |\r\n+---------------+---------+\r\nname is the primary key for this table.\r\nThis table contains the stored variables and their values.\r\n</pre>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Table <code>Expressions</code>:</p>\r\n\r\n<pre>\r\n+---------------+---------+\r\n| Column Name   | Type    |\r\n+---------------+---------+\r\n| left_operand  | varchar |\r\n| operator      | enum    |\r\n| right_operand | varchar |\r\n+---------------+---------+\r\n(left_operand, operator, right_operand) is the primary key for this table.\r\nThis table contains a boolean expression that should be evaluated.\r\noperator is an enum that takes one of the values (&#39;&lt;&#39;, &#39;&gt;&#39;, &#39;=&#39;)\r\nThe values of left_operand and right_operand are guaranteed to be in the Variables table.\r\n</pre>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Write an SQL query to evaluate the boolean expressions in <code>Expressions</code> table.</p>\r\n\r\n<p>Return the result table in any order.</p>\r\n\r\n<p>The query result format is in the following example.</p>\r\n\r\n<pre>\r\nVariables table:\r\n+------+-------+\r\n| name | value |\r\n+------+-------+\r\n| x    | 66    |\r\n| y    | 77    |\r\n+------+-------+\r\n\r\nExpressions table:\r\n+--------------+----------+---------------+\r\n| left_operand | operator | right_operand |\r\n+--------------+----------+---------------+\r\n| x            | &gt;        | y             |\r\n| x            | &lt;        | y             |\r\n| x            | =        | y             |\r\n| y            | &gt;        | x             |\r\n| y            | &lt;        | x             |\r\n| x            | =        | x             |\r\n+--------------+----------+---------------+\r\n\r\nResult table:\r\n+--------------+----------+---------------+-------+\r\n| left_operand | operator | right_operand | value |\r\n+--------------+----------+---------------+-------+\r\n| x            | &gt;        | y             | false |\r\n| x            | &lt;        | y             | true  |\r\n| x            | =        | y             | false |\r\n| y            | &gt;        | x             | true  |\r\n| y            | &lt;        | x             | false |\r\n| x            | =        | x             | true  |\r\n+--------------+----------+---------------+-------+\r\nAs shown, you need find the value of each boolean exprssion in the table using the variables table.\r\n</pre>",
+            "translatedTitle": null,
+            "translatedContent": null,
+            "isPaidOnly": true,
+            "difficulty": "Medium",
+            "likes": 76,
+            "dislikes": 3,
+            "isLiked": null,
+            "similarQuestions": "[]",
+            "exampleTestcases": "{\"headers\":{\"Variables\":[\"name\",\"value\"],\"Expressions\":[\"left_operand\",\"operator\",\"right_operand\"]},\"rows\":{\"Variables\":[[\"x\",66],[\"y\",77]],\"Expressions\":[[\"x\",\">\",\"y\"],[\"x\",\"<\",\"y\"],[\"x\",\"=\",\"y\"],[\"y\",\">\",\"x\"],[\"y\",\"<\",\"x\"],[\"x\",\"=\",\"x\"]]}}",
+            "contributors": [],
+            "topicTags": [
+                {
+                    "name": "Database",
+                    "slug": "database",
+                    "translatedName": null,
+                    "__typename": "TopicTagNode"
+                }
+            ],
+            "companyTagStats": "{\"3\": [{\"taggedByAdmin\": true, \"name\": \"Point72\", \"slug\": \"point72\", \"timesEncountered\": 0}], \"1\": [], \"2\": []}",
+            "codeSnippets": [
+                {
+                    "lang": "MySQL",
+                    "langSlug": "mysql",
+                    "code": "# Write your MySQL query statement below\n",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "MS SQL Server",
+                    "langSlug": "mssql",
+                    "code": "/* Write your T-SQL query statement below */\n",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Oracle",
+                    "langSlug": "oraclesql",
+                    "code": "/* Write your PL/SQL query statement below */\n",
+                    "__typename": "CodeSnippetNode"
+                }
+            ],
+            "stats": "{\"totalAccepted\": \"7.8K\", \"totalSubmission\": \"10.4K\", \"totalAcceptedRaw\": 7836, \"totalSubmissionRaw\": 10422, \"acRate\": \"75.2%\"}",
+            "hints": [],
+            "solution": null,
+            "status": null,
+            "sampleTestCase": "{\"headers\":{\"Variables\":[\"name\",\"value\"],\"Expressions\":[\"left_operand\",\"operator\",\"right_operand\"]},\"rows\":{\"Variables\":[[\"x\",66],[\"y\",77]],\"Expressions\":[[\"x\",\">\",\"y\"],[\"x\",\"<\",\"y\"],[\"x\",\"=\",\"y\"],[\"y\",\">\",\"x\"],[\"y\",\"<\",\"x\"],[\"x\",\"=\",\"x\"]]}}",
+            "metaData": "{\n  \"mysql\": [\n    \"Create Table If Not Exists Variables (name varchar(3), value int)\",\n    \"Create Table If Not Exists Expressions (left_operand varchar(3), operator ENUM('>', '<', '='), right_operand varchar(3))\"\n  ],\n  \"mssql\": [\n    \"Create Table Variables (name varchar(3), value int)\",\n    \"Create Table Expressions (left_operand varchar(3), operator varchar(3) NOT NULL CHECK (operator IN ('>', '<', '=')), right_operand varchar(3))\"\n  ],\n  \"oraclesql\": [\n    \"Create Table Variables (name varchar(3), value int)\",\n    \"Create Table Expressions (left_operand varchar(3), operator varchar(3) NOT NULL CHECK (operator IN ('>', '<', '=')), right_operand varchar(3))\"\n  ],\n  \"database\": true\n}",
+            "judgerAvailable": true,
+            "judgeType": "large",
+            "mysqlSchemas": [
+                "Create Table If Not Exists Variables (name varchar(3), value int)",
+                "Create Table If Not Exists Expressions (left_operand varchar(3), operator ENUM('>', '<', '='), right_operand varchar(3))",
+                "Truncate table Variables",
+                "insert into Variables (name, value) values ('x', '66')",
+                "insert into Variables (name, value) values ('y', '77')",
+                "Truncate table Expressions",
+                "insert into Expressions (left_operand, operator, right_operand) values ('x', '>', 'y')",
+                "insert into Expressions (left_operand, operator, right_operand) values ('x', '<', 'y')",
+                "insert into Expressions (left_operand, operator, right_operand) values ('x', '=', 'y')",
+                "insert into Expressions (left_operand, operator, right_operand) values ('y', '>', 'x')",
+                "insert into Expressions (left_operand, operator, right_operand) values ('y', '<', 'x')",
+                "insert into Expressions (left_operand, operator, right_operand) values ('x', '=', 'x')"
+            ],
+            "enableRunCode": true,
+            "enableTestMode": false,
+            "enableDebugger": false,
+            "envInfo": "{\"mysql\": [\"MySQL\", \"<p><code>MySQL 8.0</code>.</p>\"], \"mssql\": [\"MS SQL Server\", \"<p><code>mssql server 2019</code>.</p>\"], \"oraclesql\": [\"Oracle\", \"<p><code>Oracle Sql 11.2</code>.</p>\"]}",
+            "libraryUrl": null,
+            "adminUrl": null,
+            "__typename": "QuestionNode"
+        }
+    }
+}

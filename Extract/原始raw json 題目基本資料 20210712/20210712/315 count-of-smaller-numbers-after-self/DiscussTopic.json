@@ -1,0 +1,43 @@
+{
+    "data": {
+        "topic": {
+            "id": 1182188,
+            "viewCount": 18663,
+            "topLevelCommentCount": 14,
+            "subscribed": false,
+            "title": "Count of Smaller Numbers After Self",
+            "pinned": false,
+            "tags": [],
+            "hideFromTrending": false,
+            "post": {
+                "id": 2106782,
+                "voteCount": 0,
+                "voteStatus": 0,
+                "content": "",
+                "updationDate": 1619700659,
+                "creationDate": 1619700659,
+                "status": null,
+                "isHidden": null,
+                "coinRewards": [],
+                "author": {
+                    "isDiscussAdmin": false,
+                    "isDiscussStaff": false,
+                    "username": "neal99",
+                    "nameColor": null,
+                    "activeBadge": null,
+                    "profile": {
+                        "userAvatar": "https://assets.leetcode.com/users/neal99/avatar_1537169041.png",
+                        "reputation": 572,
+                        "__typename": "UserProfileNode"
+                    },
+                    "isActive": true,
+                    "__typename": "UserNode"
+                },
+                "authorIsModerator": false,
+                "isOwnPost": false,
+                "__typename": "PostNode"
+            },
+            "__typename": "TopicNode"
+        }
+    }
+}

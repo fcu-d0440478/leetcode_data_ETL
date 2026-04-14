@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "406",
+            "article": "{\"id\": 754, \"url\": \"/articles/queue-reconstruction-by-height/\", \"topicId\": 344621}",
+            "solution": {
+                "id": "754",
+                "content": "[TOC]\n\n## Solution\n\n--- \n\n#### Approach 1: Greedy\n\n**Intuition**\n\nThe problem is to reconstruct the queue.\n\n![pic](../Figures/406/input.png)\n\nLet's start from the simplest case, \nwhen all guys (h, k) in the queue are of the same height h,\nand differ by their k values only (the number of people in front \nwho have a greater or the same height).\nThen the solution is simple: each guy's index is equal to his k value.\nThe guy with zero people in front takes the place number 0,\nthe guy with 1 person in front takes the place number 1, and \nso on and so forth.  \n\n![fig](../Figures/406/same.png)\n\nThis strategy could be used even in the case when not all people\nare of the same height. The smaller persons are \"invisible\" for the \ntaller ones, and hence one could first arrange the tallest guys as if \nthere was no one else.\n\nLet's now consider a queue with people of two different heights: 7 and 6.\nFor simplicity, let's have just one 6-height guy.\nFirst follow the strategy above and arrange guys of height 7. Now it's \ntime to find a place for the guy of height 6. \nSince he is \"invisible\" for the 7-height guys, he could take \nwhatever place without disturbing 7-height guys order. \nHowever, for him the others are visible, and hence he should \ntake the position equal to his k-value, in order to have his proper place. \n \n![fig](../Figures/406/two.png)\n\n> This idea is easy to extend for the case of numerous guys of height 6.\nJust sort them by k-values, as it was done before for 7-height guys,\nand insert them one by one on the positions equal to their k-values. \n\nThe following strategy could be continued recursively:\n\n- Sort the tallest guys in the ascending order by k-values \nand then insert them one by one into output queue at the \nindexes equal to their k-values.\n\n- Take the next height in the descending order. \nSort the guys of that height in the ascending order by k-values \nand then insert them one by one into output queue at the \nindexes equal to their k-values.\n\n- And so on and so forth.\n\n!?!../Documents/406_LIS.json:1000,612!?!\n\n**Algorithm**\n\n- Sort people: \n    - In the descending order by height. \n    - Among the guys of the same height, in the ascending order by k-values.\n\n- Take guys one by one, \nand place them in the output array at the indexes equal to their k-values.\n\n- Return output array.\n\n**Implementation**\n\n<iframe src=\"https://leetcode.com/playground/p3kzy72R/shared\" frameBorder=\"0\" width=\"100%\" height=\"378\" name=\"p3kzy72R\"></iframe>\n\n**Complexity Analysis**\n\n* Time complexity : $$\\mathcal{O}(N^2)$$. To sort people takes \n$$\\mathcal{O}(N \\log N)$$ time. Then one proceeds to n insert\noperations, and each takes up to $$\\mathcal{O}(k)$$ time, \nwhere k is a current number of elements in the list. In total,\none needs up to \n$$\\mathcal{O}\\left({\\sum\\limits_{k = 0}^{N - 1}{k}}\\right)$$ time,\ni.e. up to $$\\mathcal{O}(N^2)$$ time.\n \n* Space complexity : $$\\mathcal{O}(N)$$ to keep the output.",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": true,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "739",
+                    "count": 81,
+                    "average": 4.617,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

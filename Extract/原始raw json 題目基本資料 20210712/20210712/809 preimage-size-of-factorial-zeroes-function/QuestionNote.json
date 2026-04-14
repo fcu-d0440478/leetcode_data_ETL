@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "809",
+            "article": "{\"id\": 426, \"url\": \"/articles/preimage-size-of-factorial-zeroes-function/\", \"topicId\": 127425}",
+            "solution": {
+                "id": "426",
+                "content": "[TOC]\n\n---\n#### Approach #1: Binary Search [Accepted]\n\n**Intuition and Algorithm**\n\nLet `zeta(x)` be the number of zeroes at the end of `x!`.  If the prime factorization of `x!` is $$(2^a * 5^b * \\cdots )$$, then the number of times that `10` divides this is `min(a, b)` which is `b`.\n\nThus, `zeta(x)` is the number of times `5` divides `x!`, which is equal to $$\\lfloor \\frac{x}{5^1} \\rfloor + \\lfloor \\frac{x}{5^2} \\rfloor + \\lfloor \\frac{x}{5^3} \\rfloor + \\lfloor \\frac{x}{5^4} \\rfloor + \\cdots$$.\n\nIndeed, `zeta` is a monotone increasing function, so we can binary search for the answer.  Our technique follows the same approaches in many other binary search problems.\n\nWe could binary search for both the largest and smallest value `x` such that `zeta(x) = K`.  However, since `zeta(5a-1) < zeta(5a) = zeta(5a+1) = zeta(5a+2) = zeta(5a+3) = zeta(5a+4) < zeta(5a+5)`, if it is possible for `zeta(x)` to equal `K` for some `x`, then the answer is `5`, else the answer is `0`.\n\n<iframe src=\"https://leetcode.com/playground/3FX3Mqu2/shared\" frameBorder=\"0\" width=\"100%\" height=\"361\" name=\"3FX3Mqu2\"></iframe>\n\n**Complexity Analysis**\n\n* Time Complexity:  $$O(\\log^2 K)$$.  Our binary search is $$O(\\log K)$$, and in each step of that binary search we do $$O(\\log K)$$ work to evaluate the function `zeta`.\n\n* Space Complexity: $$O(\\log K)$$, the size of our recursive call stack when calling `zeta`.",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": true,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "421",
+                    "count": 7,
+                    "average": 3.286,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

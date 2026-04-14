@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "226",
+            "article": "{\"id\": 37, \"url\": \"/articles/invert-binary-tree/\", \"topicId\": 127840}",
+            "solution": {
+                "id": "37",
+                "content": "[TOC]\r\n\r\n## Solution\r\n---\r\n#### Approach #1 (Recursive) [Accepted]\r\n\r\n\r\nThis is a classic tree problem that is best-suited for a recursive approach.\r\n\r\n\r\n**Algorithm**\r\n\r\nThe inverse of an empty tree is the empty tree. The inverse of a tree with root $$r$$, and subtrees $$\\mbox{right}$$ and $$\\mbox{left}$$, is a tree with root $$r$$, whose right subtree is the inverse of $$\\mbox{left}$$, and whose left subtree is the inverse of $$\\mbox{right}$$.\r\n\r\n**Java**\r\n\r\n```java\r\npublic TreeNode invertTree(TreeNode root) {\r\n    if (root == null) {\r\n        return null;\r\n    }\r\n    TreeNode right = invertTree(root.right);\r\n    TreeNode left = invertTree(root.left);\r\n    root.left = right;\r\n    root.right = left;\r\n    return root;\r\n}\r\n```\r\n\r\n**Complexity Analysis**\r\n\r\nSince each node in the tree is visited only once, the time complexity is $$O(n)$$, where $$n$$ is the number of nodes in the tree. We cannot do better than that, since at the very least we have to visit each node to invert it.\r\n\r\nBecause of recursion, $$O(h)$$ function calls will be placed on the stack in the worst case, where $$h$$ is the height of the tree. Because $$h\\in O(n)$$, the space complexity is $$O(n)$$.\r\n\r\n---\r\n#### Approach #2 (Iterative) [Accepted]\r\n\r\nAlternatively, we can solve the problem iteratively, in a manner similar to breadth-first search.\r\n\r\n**Algorithm**\r\n\r\nThe idea is that we need to swap the left and right child of all nodes in the tree. So we create a queue to store nodes whose left and right child have not been swapped yet. Initially, only the root is in the queue. As long as the queue is not empty, remove the next node from the queue, swap its children, and add the children to the queue. Null nodes are not added to the queue. Eventually, the queue will be empty and all the children swapped, and we return the original root.\r\n\r\n**Java**\r\n```java\r\npublic TreeNode invertTree(TreeNode root) {\r\n    if (root == null) return null;\r\n    Queue<TreeNode> queue = new LinkedList<TreeNode>();\r\n    queue.add(root);\r\n    while (!queue.isEmpty()) {\r\n        TreeNode current = queue.poll();\r\n        TreeNode temp = current.left;\r\n        current.left = current.right;\r\n        current.right = temp;\r\n        if (current.left != null) queue.add(current.left);\r\n        if (current.right != null) queue.add(current.right);\r\n    }\r\n    return root;\r\n}\r\n```\r\n\r\n**Complexity Analysis**\r\n\r\nSince each node in the tree is visited / added to the queue only once, the time complexity is $$O(n)$$, where $$n$$ is the number of nodes in the tree.\r\n\r\nSpace complexity is $$O(n)$$, since in the worst case, the queue will contain all nodes in one level of the binary tree. For a full binary tree, the leaf level has $$\\lceil \\frac{n}{2}\\rceil=O(n)$$ leaves.\r\n\r\nAnalysis written by: @noran",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "39",
+                    "count": 165,
+                    "average": 4.746,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

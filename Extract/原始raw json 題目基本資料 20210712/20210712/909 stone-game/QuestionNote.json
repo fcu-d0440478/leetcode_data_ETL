@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "909",
+            "article": "{\"id\": 521, \"url\": \"/articles/stone-game/\", \"topicId\": 154716}",
+            "solution": {
+                "id": "521",
+                "content": "[TOC]\n\n## Solution\n---\n#### Approach 1: Dynamic Programming\n\n**Intuition**\n\nLet's change the game so that whenever Lee scores points, it deducts from Alex's score instead.\n\nLet `dp(i, j)` be the largest score Alex can achieve where the piles remaining are `piles[i], piles[i+1], ..., piles[j]`.  This is natural in games with scoring: we want to know what the value of each position of the game is.\n\nWe can formulate a recursion for `dp(i, j)` in terms of `dp(i+1, j)` and `dp(i, j-1)`, and we can use dynamic programming to not repeat work in this recursion.  (This approach can output the correct answer, because the states form a DAG (directed acyclic graph).)\n\n**Algorithm**\n\nWhen the piles remaining are `piles[i], piles[i+1], ..., piles[j]`, the player who's turn it is has at most 2 moves.\n\nThe person who's turn it is can be found by comparing `j-i` to `N` modulo 2.\n\nIf the player is Alex, then she either takes `piles[i]` or `piles[j]`, increasing her score by that amount.  Afterwards, the total score is either `piles[i] + dp(i+1, j)`, or `piles[j] + dp(i, j-1)`; and we want the maximum possible score.\n\nIf the player is Lee, then he either takes `piles[i]` or `piles[j]`, decreasing Alex's score by that amount.  Afterwards, the total score is either `-piles[i] + dp(i+1, j)`, or `-piles[j] + dp(i, j-1)`; and we want the *minimum* possible score.\n\n\n<iframe src=\"https://leetcode.com/playground/NrhEfmjs/shared\" frameBorder=\"0\" width=\"100%\" height=\"412\" name=\"NrhEfmjs\"></iframe>\n\n**Complexity Analysis**\n\n* Time Complexity:  $$O(N^2)$$, where $$N$$ is the number of piles.\n\n* Space Complexity:  $$O(N^2)$$, the space used storing the intermediate results of each subgame.\n<br />\n<br />\n\n\n---\n#### Approach 2: Mathematical\n\n**Intuition and Algorithm**\n\nAlex clearly always wins the 2 pile game.  With some effort, we can see that she always wins the 4 pile game.\n\nIf Alex takes the first pile initially, she can always take the third pile.  If she takes the fourth pile initially, she can always take the second pile.  At least one of `first + third, second + fourth` is larger, so she can always win.\n\nWe can extend this idea to `N` piles.  Say the first, third, fifth, seventh, etc. piles are white, and the second, fourth, sixth, eighth, etc. piles are black.  Alex can always take either all white piles or all black piles, and one of the colors must have a sum number of stones larger than the other color.\n\nHence, Alex always wins the game.\n\n<iframe src=\"https://leetcode.com/playground/kQCFqgHM/shared\" frameBorder=\"0\" width=\"100%\" height=\"157\" name=\"kQCFqgHM\"></iframe>\n\n**Complexity Analysis**\n\n* Time and Space Complexity:  $$O(1)$$.\n<br />\n<br />",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "514",
+                    "count": 106,
+                    "average": 4.226,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

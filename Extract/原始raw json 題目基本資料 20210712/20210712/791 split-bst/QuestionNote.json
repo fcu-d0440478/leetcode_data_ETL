@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "791",
+            "article": "{\"id\": 407, \"url\": \"/articles/split-bst/\", \"topicId\": 127503}",
+            "solution": {
+                "id": "407",
+                "content": "[TOC]\n\n---\n#### Approach 1: Recursion\n\n**Intuition and Algorithm**\n\nThe `root` node either belongs to the first half or the second half.  Let's say it belongs to the first half.\n\nThen, because the given tree is a *binary search tree* (BST), the entire subtree at `root.left` must be in the first half.  However, the subtree at `root.right` may have nodes in either halves, so it needs to be split.\n\n<br />\n<center>\n    <img src=\"../Figures/776/split_line.png\" alt=\"Diagram of tree being split\" width=\"350\"/>\n</center>\n<br />\n\nIn the diagram above, the thick lines represent the main child relationships between the nodes, while the thinner colored lines represent the subtrees after the split.\n\nLets say our secondary answer `bns = split(root.right)` is the result of such a split.  Recall that `bns[0]` and `bns[1]` will both be BSTs on either side of the split.  The left half of `bns` must be in the first half, and it must be to the right of `root` for the first half to remain a BST.  The right half of `bns` is the right half in the final answer.\n\n<br />\n<center>\n    <img src=\"../Figures/776/sub_tree.png\" alt=\"Diagram of how root tree connects to split of subtree at root.right\" width=\"350\"/>\n</center>\n<br />\n\nThe diagram above explains how we merge the two halves of `split(root.right)` with the main tree, and illustrates the line of code `root.right = bns[0]` in the implementations.\n\n<iframe src=\"https://leetcode.com/playground/MgCV2itW/shared\" frameBorder=\"0\" width=\"100%\" height=\"344\" name=\"MgCV2itW\"></iframe>\n\n**Complexity Analysis**\n\n* Time Complexity: $$O(N)$$, where $$N$$ is the number of nodes in the input tree, as each node is checked once.\n\n* Space Complexity: $$O(N)$$.",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": true,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "402",
+                    "count": 74,
+                    "average": 3.392,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

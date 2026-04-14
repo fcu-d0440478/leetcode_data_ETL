@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "185",
+            "article": "{\"id\": 212, \"url\": \"/articles/department-top-three-salaries/\", \"topicId\": 127656}",
+            "solution": {
+                "id": "212",
+                "content": "[TOC]\n\n## Solution\n---\n#### Approach: Using `JOIN` and sub-query [Accepted]\n\n**Algorithm**\n\nA top 3 salary in this company means there is no more than 3 salary bigger than itself in the company.\n\n```sql\nselect e1.Name as 'Employee', e1.Salary\nfrom Employee e1\nwhere 3 >\n(\n    select count(distinct e2.Salary)\n    from Employee e2\n    where e2.Salary > e1.Salary\n)\n;\n```\n\nIn this code, we count the salary number of which is bigger than e1.Salary. So the output is as below for the sample data.\n```\n| Employee | Salary |\n|----------|--------|\n| Henry    | 80000  |\n| Max      | 90000  |\n| Randy    | 85000  |\n```\n\nThen, we need to join the **Employee** table with **Department** in order to retrieve the department information.\n\n**MySQL**\n\n```sql\nSELECT\n    d.Name AS 'Department', e1.Name AS 'Employee', e1.Salary\nFROM\n    Employee e1\n        JOIN\n    Department d ON e1.DepartmentId = d.Id\nWHERE\n    3 > (SELECT\n            COUNT(DISTINCT e2.Salary)\n        FROM\n            Employee e2\n        WHERE\n            e2.Salary > e1.Salary\n                AND e1.DepartmentId = e2.DepartmentId\n        )\n;\n```\n\n```\n| Department | Employee | Salary |\n|------------|----------|--------|\n| IT         | Joe      | 70000  |\n| Sales      | Henry    | 80000  |\n| Sales      | Sam      | 60000  |\n| IT         | Max      | 90000  |\n| IT         | Randy    | 85000  |\n```",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "207",
+                    "count": 66,
+                    "average": 3.97,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

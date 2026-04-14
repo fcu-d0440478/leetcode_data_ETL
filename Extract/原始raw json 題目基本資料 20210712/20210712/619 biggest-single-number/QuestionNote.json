@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "619",
+            "article": "{\"id\": 188, \"url\": \"/articles/biggest-single-number/\", \"topicId\": 127749}",
+            "solution": {
+                "id": "188",
+                "content": "[TOC]\n\n## Solution\n---\n#### Approach: Using **subquery** and `MAX()` function [Accepted]\n\n**Algorithm**\n\nUse subquery to select all the numbers appearing just one time.\n\n```sql\nSELECT\n    num\nFROM\n    my_numbers\nGROUP BY num\nHAVING COUNT(num) = 1;\n```\n\nThen choose the biggest one using `MAX()`.\n\n```sql\nSELECT\n    MAX(num) AS num\nFROM\n    (SELECT\n        num\n    FROM\n        my_numbers\n    GROUP BY num\n    HAVING COUNT(num) = 1) AS t;\n```",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "183",
+                    "count": 12,
+                    "average": 4.333,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

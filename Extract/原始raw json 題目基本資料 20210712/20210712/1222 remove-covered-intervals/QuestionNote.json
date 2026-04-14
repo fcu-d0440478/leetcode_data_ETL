@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "1222",
+            "article": "{\"id\": 870, \"url\": \"/articles/remove-covered-intervals/\", \"topicId\": 509126}",
+            "solution": {
+                "id": "870",
+                "content": "[TOC]\n\n## Solution\n\n---\n\n#### Approach 1: Greedy Algorithm\n\n**Solution Pattern**\n\n> The idea of greedy algorithm is to pick the _locally_\noptimal move at each step, which would lead to the _globally_ optimal solution.\n\nTypical greedy solution has $$\\mathcal{O}(N \\log N)$$ time complexity \nand consists of two steps:\n\n- Figure out how to sort the input data.\nThat would take $$\\mathcal{O}(N \\log N)$$ time, and\ncould be done directly by sorting or indirectly by using heap data structure. \nUsually sorting is better than heap usage because of gain in space.\n\n- Parse the sorted input in $$\\mathcal{O}(N)$$ time to construct a solution. \n\nIn the case of already sorted input,\nthe greedy solution could have $$\\mathcal{O}(N)$$ time complexity,\n[here is an example](https://leetcode.com/articles/gas-station/).\n\n**Intuition**\n\nLet us figure out how to sort the input. \nThe idea to sort by start point is pretty obvious, because it simplifies\nfurther parsing:\n\n![traversal](../Figures/1288/sort.png)\n\nLet us consider two subsequent intervals after sorting. Since \nsorting ensures that `start1 < start2`, it's sufficient to compare the end boundaries:   \n\n- If `end1 < end2`, the intervals won't completely cover one another, though they have some overlapping.\n\n![traversal](../Figures/1288/dont_cover2.png) \n\n- If `end1 >= end2`, the interval 2 is covered by the interval 1.\n\n![traversal](../Figures/1288/cover.png) \n\n**Edge case: How to treat intervals which share start point**\n\n> We've missed an important edge case in the previous discussion:\nwhat if two intervals share the start point, _i.e._ `start1 == start2`? \n\nThe above algorithm will fail because it cannot distinguish these two situations as follows: \n\n![traversal](../Figures/1288/share.png) \n\nOne of the intervals is covered by another, but if we sort only by the start point, \nwe would not know which one. Hence, we need to sort by the end point as well.\n\n> If two intervals share the same start point,\none has to put the longer interval in front.\n\nThis way the above algorithm would work fine here as well. \nMoreover, it can deal with more complex cases, like the one below:\n\n![traversal](../Figures/1288/complex.png)\n\n**Algorithm**\n\n- Sort in the ascending order by the start point. If two intervals share \nthe same start point, put the longer one to be the first.\n\n- Initiate the number of non-covered intervals: `count = 0`.\n\n- Iterate over sorted intervals and compare end points. \n    \n    - If the current interval is not covered by the previous one \n    `end > prev_end`, increase the number of non-covered intervals.\n    Assign the current interval to be previous for the next step.\n    \n    - Otherwise, the current interval is covered by the previous one.\n    Do nothing.\n\n- Return `count`.\n\n**Implementation**\n\n!?!../Documents/1288_LIS.json:1000,302!?!\n\n<iframe src=\"https://leetcode.com/playground/iEDhw7a3/shared\" frameBorder=\"0\" width=\"100%\" height=\"497\" name=\"iEDhw7a3\"></iframe>\n\n**Complexity Analysis**\n\n* Time complexity : $$\\mathcal{O}(N \\log N)$$ since the sorting dominates the complexity of the algorithm.\n \n* Space complexity : $$\\mathcal{O}(N)$$ or $$\\mathcal{O}(\\log{N})$$\n\n  - The space complexity of the sorting algorithm depends on the implementation of each program language.\n\n  - For instance, the `sorted()` function in Python is implemented with the [Timsort](https://en.wikipedia.org/wiki/Timsort) algorithm whose space complexity is $$\\mathcal{O}(N)$$.\n\n  - In Java, the [Arrays.sort()](https://docs.oracle.com/javase/8/docs/api/java/util/Arrays.html#sort-byte:A-) is implemented as a variant of quicksort algorithm whose space complexity is $$\\mathcal{O}(\\log{N})$$.\n\n\n---",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": true,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "828",
+                    "count": 29,
+                    "average": 4.724,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

@@ -1,0 +1,43 @@
+{
+    "data": {
+        "topic": {
+            "id": 924150,
+            "viewCount": 17535,
+            "topLevelCommentCount": 17,
+            "subscribed": false,
+            "title": "Random Pick Index",
+            "pinned": false,
+            "tags": [],
+            "hideFromTrending": false,
+            "post": {
+                "id": 1682078,
+                "voteCount": 0,
+                "voteStatus": 0,
+                "content": "",
+                "updationDate": 1604566065,
+                "creationDate": 1604566065,
+                "status": null,
+                "isHidden": null,
+                "coinRewards": [],
+                "author": {
+                    "isDiscussAdmin": false,
+                    "isDiscussStaff": false,
+                    "username": "ironmaniiith",
+                    "nameColor": null,
+                    "activeBadge": null,
+                    "profile": {
+                        "userAvatar": "https://www.gravatar.com/avatar/34543057266eea612c458b9896eca299.png?s=200",
+                        "reputation": 4,
+                        "__typename": "UserProfileNode"
+                    },
+                    "isActive": true,
+                    "__typename": "UserNode"
+                },
+                "authorIsModerator": false,
+                "isOwnPost": false,
+                "__typename": "PostNode"
+            },
+            "__typename": "TopicNode"
+        }
+    }
+}

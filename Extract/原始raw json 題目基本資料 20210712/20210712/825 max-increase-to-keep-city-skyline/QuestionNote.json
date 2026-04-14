@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "825",
+            "article": "{\"id\": 436, \"url\": \"/articles/max-increase-to-keep-city-skyline/\", \"topicId\": 127505}",
+            "solution": {
+                "id": "436",
+                "content": "[TOC]\n\n---\n#### Approach #1: Row and Column Maximums [Accepted]\n\n**Intuition and Algorithm**\n\nThe skyline looking from the top is `col_maxes = [max(column_0), max(column_1), ...]`.  Similarly, the skyline from the left is `row_maxes [max(row_0), max(row_1), ...]`\n\nIn particular, each building `grid[r][c]` could become height `min(max(row_r), max(col_c))`, and this is the largest such height.  If it were larger, say `grid[r][c] > max(row_r)`, then the part of the skyline `row_maxes = [..., max(row_r), ...]` would change.\n\nThese increases are also independent (none of them change the skyline), so we can perform them independently.\n\n<iframe src=\"https://leetcode.com/playground/99bfFWZc/shared\" frameBorder=\"0\" width=\"100%\" height=\"395\" name=\"99bfFWZc\"></iframe>\n\n**Complexity Analysis**\n\n* Time Complexity:  $$O(N^2)$$, where $$N$$ is the number of rows (and columns) of the grid.  We iterate through every cell of the grid.\n\n* Space Complexity: $$O(N)$$, the space used by `row_maxes` and `col_maxes`.",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "431",
+                    "count": 56,
+                    "average": 3.161,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

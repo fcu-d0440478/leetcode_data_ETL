@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "184",
+            "article": "{\"id\": 213, \"url\": \"/articles/department-highest-salary/\", \"topicId\": 127657}",
+            "solution": {
+                "id": "213",
+                "content": "[TOC]\n\n## Solution\n---\n#### Approach: Using `JOIN` and `IN` clause [Accepted]\n\n**Algorithm**\n\nSince the **Employee** table contains the *Salary* and *DepartmentId* information, we can query the highest salary in a department.\n\n```sql\nSELECT\n    DepartmentId, MAX(Salary)\nFROM\n    Employee\nGROUP BY DepartmentId;\n```\n>Note: There might be multiple employees having the same highest salary, so it is safe not to include the employee name information in this query.\n\n```\n| DepartmentId | MAX(Salary) |\n|--------------|-------------|\n| 1            | 90000       |\n| 2            | 80000       |\n```\n\nThen, we can join table **Employee** and **Department**, and query the (DepartmentId, Salary) are in the temp table using `IN` statement as below.\n\n**MySQL**\n\n```sql\nSELECT\n    Department.name AS 'Department',\n    Employee.name AS 'Employee',\n    Salary\nFROM\n    Employee\n        JOIN\n    Department ON Employee.DepartmentId = Department.Id\nWHERE\n    (Employee.DepartmentId , Salary) IN\n    (   SELECT\n            DepartmentId, MAX(Salary)\n        FROM\n            Employee\n        GROUP BY DepartmentId\n    )\n;\n```\n```\n| Department | Employee | Salary |\n|------------|----------|--------|\n| Sales      | Henry    | 80000  |\n| IT         | Max      | 90000  |\n```",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "208",
+                    "count": 39,
+                    "average": 4.641,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

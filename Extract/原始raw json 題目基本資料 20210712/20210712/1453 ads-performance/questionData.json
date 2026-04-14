@@ -1,0 +1,80 @@
+{
+    "data": {
+        "question": {
+            "questionId": "1453",
+            "questionFrontendId": "1322",
+            "boundTopicId": null,
+            "title": "Ads Performance",
+            "titleSlug": "ads-performance",
+            "content": "<p>Table: <code>Ads</code></p>\n\n<pre>\n+---------------+---------+\n| Column Name   | Type    |\n+---------------+---------+\n| ad_id         | int     |\n| user_id       | int     |\n| action        | enum    |\n+---------------+---------+\n(ad_id, user_id) is the primary key for this table.\nEach row of this table contains the ID of an Ad, the ID of a user and the action taken by this user regarding this Ad.\nThe action column is an ENUM type of (&#39;Clicked&#39;, &#39;Viewed&#39;, &#39;Ignored&#39;).\n</pre>\n\n<p>&nbsp;</p>\n\n<p>A company is running Ads and wants to calculate the performance of each Ad.</p>\n\n<p>Performance of the Ad is measured using&nbsp;Click-Through Rate (CTR) where:</p>\n\n<p><img alt=\"\" src=\"https://assets.leetcode.com/uploads/2020/01/17/sql1.png\" style=\"width: 600px; height: 75px;\" /></p>\n\n<p>Write an SQL query to find the <code>ctr</code> of each Ad.</p>\n\n<p><strong>Round</strong> <code>ctr</code>&nbsp;to 2 decimal points. <strong>Order</strong> the result table by <code>ctr</code>&nbsp;in descending order&nbsp;and by&nbsp;<code>ad_id</code>&nbsp;in ascending order in case of a tie.</p>\n\n<p>The query result format is in the following example:</p>\n\n<pre>\nAds table:\n+-------+---------+---------+\n| ad_id | user_id | action  |\n+-------+---------+---------+\n| 1     | 1       | Clicked |\n| 2     | 2       | Clicked |\n| 3     | 3       | Viewed  |\n| 5     | 5       | Ignored |\n| 1     | 7       | Ignored |\n| 2     | 7       | Viewed  |\n| 3     | 5       | Clicked |\n| 1     | 4       | Viewed  |\n| 2     | 11      | Viewed  |\n| 1     | 2       | Clicked |\n+-------+---------+---------+\nResult table:\n+-------+-------+\n| ad_id | ctr   |\n+-------+-------+\n| 1     | 66.67 |\n| 3     | 50.00 |\n| 2     | 33.33 |\n| 5     | 0.00  |\n+-------+-------+\nfor ad_id = 1, ctr = (2/(2+1)) * 100 = 66.67\nfor ad_id = 2, ctr = (1/(1+2)) * 100 = 33.33\nfor ad_id = 3, ctr = (1/(1+1)) * 100 = 50.00\nfor ad_id = 5, ctr = 0.00, Note that ad_id = 5 has no clicks or views.\nNote that we don&#39;t care about Ignored Ads.\nResult table is ordered by the ctr. in case of a tie we order them by ad_id\n</pre>\n",
+            "translatedTitle": null,
+            "translatedContent": null,
+            "isPaidOnly": true,
+            "difficulty": "Easy",
+            "likes": 133,
+            "dislikes": 32,
+            "isLiked": null,
+            "similarQuestions": "[]",
+            "exampleTestcases": "{\"headers\":{\"Ads\":[\"ad_id\",\"user_id\",\"action\"]},\"rows\":{\"Ads\":[[1,1,\"Clicked\"],[2,2,\"Clicked\"],[3,3,\"Viewed\"],[5,5,\"Ignored\"],[1,7,\"Ignored\"],[2,7,\"Viewed\"],[3,5,\"Clicked\"],[1,4,\"Viewed\"],[2,11,\"Viewed\"],[1,2,\"Clicked\"]]}}\r",
+            "contributors": [],
+            "topicTags": [
+                {
+                    "name": "Database",
+                    "slug": "database",
+                    "translatedName": null,
+                    "__typename": "TopicTagNode"
+                }
+            ],
+            "companyTagStats": "{\"1\": [{\"taggedByAdmin\": true, \"name\": \"Facebook\", \"slug\": \"facebook\", \"timesEncountered\": 2}], \"2\": [], \"3\": []}",
+            "codeSnippets": [
+                {
+                    "lang": "MySQL",
+                    "langSlug": "mysql",
+                    "code": "# Write your MySQL query statement below\n",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "MS SQL Server",
+                    "langSlug": "mssql",
+                    "code": "/* Write your T-SQL query statement below */\n",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Oracle",
+                    "langSlug": "oraclesql",
+                    "code": "/* Write your PL/SQL query statement below */\n",
+                    "__typename": "CodeSnippetNode"
+                }
+            ],
+            "stats": "{\"totalAccepted\": \"18.1K\", \"totalSubmission\": \"30.8K\", \"totalAcceptedRaw\": 18063, \"totalSubmissionRaw\": 30769, \"acRate\": \"58.7%\"}",
+            "hints": [],
+            "solution": null,
+            "status": null,
+            "sampleTestCase": "{\"headers\":{\"Ads\":[\"ad_id\",\"user_id\",\"action\"]},\"rows\":{\"Ads\":[[1,1,\"Clicked\"],[2,2,\"Clicked\"],[3,3,\"Viewed\"],[5,5,\"Ignored\"],[1,7,\"Ignored\"],[2,7,\"Viewed\"],[3,5,\"Clicked\"],[1,4,\"Viewed\"],[2,11,\"Viewed\"],[1,2,\"Clicked\"]]}}\r",
+            "metaData": "{\n  \"mysql\": [\n    \"Create table If Not Exists Ads (ad_id int, user_id int, action ENUM('Clicked', 'Viewed', 'Ignored'))\"\n  ],\n  \"mssql\": [\n    \"create table Ads (ad_id int, user_id int, action VARCHAR(10) NOT NULL CHECK (action IN ('Clicked', 'Viewed', 'Ignored')))\"\n  ],\n  \"oraclesql\": [\n    \"create table Ads (ad_id int, user_id int, action VARCHAR(10) NOT NULL CHECK (action IN ('Clicked', 'Viewed', 'Ignored')))\"\n  ],\n  \"database\": true\n}",
+            "judgerAvailable": true,
+            "judgeType": "large",
+            "mysqlSchemas": [
+                "Create table If Not Exists Ads (ad_id int, user_id int, action ENUM('Clicked', 'Viewed', 'Ignored'))",
+                "Truncate table Ads",
+                "insert into Ads (ad_id, user_id, action) values ('1', '1', 'Clicked')",
+                "insert into Ads (ad_id, user_id, action) values ('2', '2', 'Clicked')",
+                "insert into Ads (ad_id, user_id, action) values ('3', '3', 'Viewed')",
+                "insert into Ads (ad_id, user_id, action) values ('5', '5', 'Ignored')",
+                "insert into Ads (ad_id, user_id, action) values ('1', '7', 'Ignored')",
+                "insert into Ads (ad_id, user_id, action) values ('2', '7', 'Viewed')",
+                "insert into Ads (ad_id, user_id, action) values ('3', '5', 'Clicked')",
+                "insert into Ads (ad_id, user_id, action) values ('1', '4', 'Viewed')",
+                "insert into Ads (ad_id, user_id, action) values ('2', '11', 'Viewed')",
+                "insert into Ads (ad_id, user_id, action) values ('1', '2', 'Clicked')"
+            ],
+            "enableRunCode": true,
+            "enableTestMode": false,
+            "enableDebugger": false,
+            "envInfo": "{\"mysql\": [\"MySQL\", \"<p><code>MySQL 8.0</code>.</p>\"], \"mssql\": [\"MS SQL Server\", \"<p><code>mssql server 2019</code>.</p>\"], \"oraclesql\": [\"Oracle\", \"<p><code>Oracle Sql 11.2</code>.</p>\"]}",
+            "libraryUrl": null,
+            "adminUrl": null,
+            "__typename": "QuestionNode"
+        }
+    }
+}

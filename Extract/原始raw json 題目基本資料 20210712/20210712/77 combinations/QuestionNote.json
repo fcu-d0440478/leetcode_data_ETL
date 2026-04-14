@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "77",
+            "article": "{\"id\": 710, \"url\": \"/articles/combinations/\", \"topicId\": 260240}",
+            "solution": {
+                "id": "710",
+                "content": "[TOC]\n\n## Solution\n\n---\n\n#### Approach 1: Backtracking\n\n**Algorithm**\n\n[Backtracking](https://en.wikipedia.org/wiki/Backtracking) \nis an algorithm for finding all\nsolutions by exploring all potential candidates.\nIf the solution candidate turns to be _not_ a solution \n(or at least not the _last_ one), \nbacktracking algorithm discards it by making some changes \non the previous step, *i.e.* _backtracks_ and then try again.\n\nHere is a backtrack function \nwhich takes a first integer to add and \na current combination as arguments `backtrack(first, curr)`.\n\n* If the current combination is done - add it to output.\n\n* Iterate over the integers from `first` to `n`.\n\n    * Add integer `i` into the current combination `curr`.\n\n    * Proceed to add more integers into the combination : \n    `backtrack(i + 1, curr)`.\n\n    * Backtrack by removing `i` from `curr`.\n\n**Implementation**\n\n!?!../Documents/77_LIS.json:1000,528!?!\n\n<iframe src=\"https://leetcode.com/playground/7SP4C8Q6/shared\" frameBorder=\"0\" width=\"100%\" height=\"500\" name=\"7SP4C8Q6\"></iframe>\n\n**Complexity Analysis**\n\n* Time complexity : $$\\mathcal{O}(k C_N^k)$$, where \n$$C_N^k = \\frac{N!}{(N - k)! k!}$$ is a number of combinations to build.\n`append / pop` (`add / removeLast`) operations are constant-time ones\nand the only consuming part here is to append the built combination of\nlength `k` to the output.\n \n* Space complexity : $$\\mathcal{O}(C_N^k)$$ to keep all\nthe combinations for an output.\n<br />\n<br />\n\n\n---\n#### Approach 2: Lexicographic (binary sorted) combinations\n\n**Intuition**\n\nThe idea here is not just to get the combinations but\nto generate them in a lexicographic sorted order. \n\n![postorder](../Figures/77/77_lex.png)\n\n**Algorithm**\n\nThe algorithm is quite straightforward : \n\n* Initiate `nums` as a list of integers from `1` to `k`. Add `n + 1`\nas a last element, it will serve as a sentinel. \nSet the pointer in the beginning of the list `j = 0`.\n\n* While `j < k` :\n    \n    * Add the first k elements from `nums` into the output, i.e.\n    all elements but the sentinel.\n    \n    * Find the first number in nums such that `nums[j] + 1 != nums[j + 1]`\n    and increase it by one `nums[j]++` to move to the next combination.\n\n**Implementation**\n\n<iframe src=\"https://leetcode.com/playground/XjdDUhMi/shared\" frameBorder=\"0\" width=\"100%\" height=\"446\" name=\"XjdDUhMi\"></iframe>\n\n**Complexity Analysis**\n\n* Time complexity : $$\\mathcal{O}(k C_N^k)$$, where \n$$C_N^k = \\frac{N!}{(N - k)! k!}$$ is a number of combinations to build.\n\n    The external while loop is executed $$C_N^k$$ times since the\nnumber of combinations is $$C_N^k$$. \nThe inner while loop is performed $$C_{N - j}^{k - j}$$ times for a given `j`. \nIn average over $$C_N^k$$ visits from the external loop \nthat results in less than one execution per visit.   \nHence the most consuming part here is to append each combination \nof length $$k$$ ($$C_N^k$$ combinations in total) to the output,\nthat takes $$\\mathcal{O}(k C_N^k)$$ time.\n\n    You could notice that the second algorithm is much faster than the \n    first one despite they both have the same time complexity.\n    It's a consequence of dealing \n    with the recursive call stack frame for the first algorithm,\n    and the effect is much more pronounced in Python than in Java.\n    \n* Space complexity : $$\\mathcal{O}(C_N^k)$$ to keep all\nthe combinations for an output. \n\n**Links**\n\n[Donald E. Knuth, The Art of Computer Programming, 4A (2011)](https://www-cs-faculty.stanford.edu/~knuth/taocp.html)",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": true,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "695",
+                    "count": 40,
+                    "average": 3.625,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

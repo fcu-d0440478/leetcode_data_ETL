@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "577",
+            "article": "{\"id\": 182, \"url\": \"/articles/employee-bonus/\", \"topicId\": 127639}",
+            "solution": {
+                "id": "182",
+                "content": "[TOC]\n\n## Solution\n---\n#### Approach: Using `OUTER JOIN` and `WHERE` clause [Accepted]\n\n**Intuition**\n\nJoin table **Employee** with **Bonus** and then use `WHERE` clause to get the required records.\n\n**Algorithm**\n\nSince foreign key **Bonus.empId** refers to **Employee.empId** and some employees do not have bonus records, we can use `OUTER JOIN` to link these two tables as the first step.\n\n```sql\nSELECT\n    Employee.name, Bonus.bonus\nFROM\n    Employee\n        LEFT OUTER JOIN\n    Bonus ON Employee.empid = Bonus.empid\n;\n```\n>Note: \"LEFT OUTER JOIN\" could be written as \"LEFT JOIN\".\n\nThe output to run this code with the sample data is as below.\n\n```\n| name   | bonus |\n|--------|-------|\n| Dan    | 500   |\n| Thomas | 2000  |\n| Brad   |       |\n| John   |       |\n```\nThe bonus value for 'Brad' and 'John' is empty, which is actually `NULL` in the database. \"Conceptually, NULL means “a missing unknown value” and it is treated somewhat differently from other values.\" Check the [Working with NULL Values](https://dev.mysql.com/doc/refman/5.7/en/working-with-null.html) in MySQL manual for more details. In addition, we have to use `IS NULL` or `IS NOT NULL` to compare a value with `NULL`.\n\nAt last, we can add a `WHERE` clause with the proper conditions to filter these records.\n\n**MySQL**\n\n```sql\nSELECT\n    Employee.name, Bonus.bonus\nFROM\n    Employee\n        LEFT JOIN\n    Bonus ON Employee.empid = Bonus.empid\nWHERE\n    bonus < 1000 OR bonus IS NULL\n;\n```",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "177",
+                    "count": 16,
+                    "average": 4.312,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

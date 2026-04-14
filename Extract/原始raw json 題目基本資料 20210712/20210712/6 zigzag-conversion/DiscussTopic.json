@@ -1,0 +1,43 @@
+{
+    "data": {
+        "topic": {
+            "id": 138588,
+            "viewCount": 291960,
+            "topLevelCommentCount": 215,
+            "subscribed": false,
+            "title": "ZigZag Conversion",
+            "pinned": false,
+            "tags": [],
+            "hideFromTrending": false,
+            "post": {
+                "id": 283783,
+                "voteCount": 0,
+                "voteStatus": 0,
+                "content": "",
+                "updationDate": 1528779813,
+                "creationDate": 1528779813,
+                "status": null,
+                "isHidden": null,
+                "coinRewards": [],
+                "author": {
+                    "isDiscussAdmin": false,
+                    "isDiscussStaff": false,
+                    "username": "laiden",
+                    "nameColor": null,
+                    "activeBadge": null,
+                    "profile": {
+                        "userAvatar": "https://www.gravatar.com/avatar/da5b31fc40120c709be663929906e707.png?s=200",
+                        "reputation": 40,
+                        "__typename": "UserProfileNode"
+                    },
+                    "isActive": true,
+                    "__typename": "UserNode"
+                },
+                "authorIsModerator": false,
+                "isOwnPost": false,
+                "__typename": "PostNode"
+            },
+            "__typename": "TopicNode"
+        }
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "898",
+            "article": "{\"id\": 502, \"url\": \"/articles/transpose-matrix/\", \"topicId\": 146662}",
+            "solution": {
+                "id": "502",
+                "content": "[TOC]\n\n## Solution\n---\n#### Approach 1: Copy Directly\n\n**Intuition and Algorithm**\n\nThe transpose of a matrix `A` with dimensions `R x C` is a matrix `ans` with dimensions `C x R` for which `ans[c][r] = A[r][c]`.\n\nLet's initialize a new matrix `ans` representing the answer.  Then, we'll copy each entry of the matrix as appropriate.\n\n<iframe src=\"https://leetcode.com/playground/irg2mSz8/shared\" frameBorder=\"0\" width=\"100%\" height=\"242\" name=\"irg2mSz8\"></iframe>\n\n**Complexity Analysis**\n\n* Time Complexity:  $$O(R * C)$$, where $$R$$ and $$C$$ are the number of rows and columns in the given matrix `A`.\n\n* Space Complexity:  $$O(R * C)$$, the space used by the answer.\n<br />\n<br />",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "495",
+                    "count": 31,
+                    "average": 4.355,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

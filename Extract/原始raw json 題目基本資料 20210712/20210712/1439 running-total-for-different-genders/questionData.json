@@ -1,0 +1,79 @@
+{
+    "data": {
+        "question": {
+            "questionId": "1439",
+            "questionFrontendId": "1308",
+            "boundTopicId": null,
+            "title": "Running Total for Different Genders",
+            "titleSlug": "running-total-for-different-genders",
+            "content": "<p>Table: <code>Scores</code></p>\n\n<pre>\n+---------------+---------+\n| Column Name   | Type    |\n+---------------+---------+\n| player_name   | varchar |\n| gender        | varchar |\n| day           | date    |\n| score_points  | int     |\n+---------------+---------+\n(gender, day) is the primary key for this table.\nA competition is held between females team and males team.\nEach row of this table indicates that a player_name and with gender has scored score_point in someday.\nGender is &#39;F&#39; if the player is in females team and &#39;M&#39; if the player is in males team.\n</pre>\n\n<p>&nbsp;</p>\n\n<p>Write an SQL query to find the total score for each gender at each day.</p>\n\n<p>Order the result table by gender and day</p>\n\n<p>The query result format is in the following example:</p>\n\n<pre>\nScores table:\n+-------------+--------+------------+--------------+\n| player_name | gender | day        | score_points |\n+-------------+--------+------------+--------------+\n| Aron        | F      | 2020-01-01 | 17           |\n| Alice       | F      | 2020-01-07 | 23           |\n| Bajrang     | M      | 2020-01-07 | 7            |\n| Khali       | M      | 2019-12-25 | 11           |\n| Slaman      | M      | 2019-12-30 | 13           |\n| Joe         | M      | 2019-12-31 | 3            |\n| Jose        | M      | 2019-12-18 | 2            |\n| Priya       | F      | 2019-12-31 | 23           |\n| Priyanka    | F      | 2019-12-30 | 17           |\n+-------------+--------+------------+--------------+\nResult table:\n+--------+------------+-------+\n| gender | day        | total |\n+--------+------------+-------+\n| F      | 2019-12-30 | 17    |\n| F      | 2019-12-31 | 40    |\n| F      | 2020-01-01 | 57    |\n| F      | 2020-01-07 | 80    |\n| M      | 2019-12-18 | 2     |\n| M      | 2019-12-25 | 13    |\n| M      | 2019-12-30 | 26    |\n| M      | 2019-12-31 | 29    |\n| M      | 2020-01-07 | 36    |\n+--------+------------+-------+\nFor females team:\nFirst day is 2019-12-30, Priyanka scored 17 points and the total score for the team is 17.\nSecond day is 2019-12-31, Priya scored 23 points and the total score for the team is 40.\nThird day is 2020-01-01, Aron scored 17 points and the total score for the team is 57.\nFourth day is 2020-01-07, Alice scored 23 points and the total score for the team is 80.\nFor males team:\nFirst day is 2019-12-18, Jose scored 2 points and the total score for the team is 2.\nSecond day is 2019-12-25, Khali scored 11 points and the total score for the team is 13.\nThird day is 2019-12-30, Slaman scored 13 points and the total score for the team is 26.\nFourth day is 2019-12-31, Joe scored 3 points and the total score for the team is 29.\nFifth day is 2020-01-07, Bajrang scored 7 points and the total score for the team is 36.\n</pre>\n",
+            "translatedTitle": null,
+            "translatedContent": null,
+            "isPaidOnly": true,
+            "difficulty": "Medium",
+            "likes": 106,
+            "dislikes": 18,
+            "isLiked": null,
+            "similarQuestions": "[{\"title\": \"Last Person to Fit in the Bus\", \"titleSlug\": \"last-person-to-fit-in-the-bus\", \"difficulty\": \"Medium\", \"translatedTitle\": null}]",
+            "exampleTestcases": "{\"headers\":{\"Scores\":[\"player_name\",\"gender\",\"day\",\"score_points\"]},\"rows\":{\"Scores\":[[\"Aron\",\"F\",\"2020-01-01\",17],[\"Alice\",\"F\",\"2020-01-07\",23],[\"Bajrang\",\"M\",\"2020-01-07\",7],[\"Khali\",\"M\",\"2019-12-25\",11],[\"Slaman\",\"M\",\"2019-12-30\",13],[\"Joe\",\"M\",\"2019-12-31\",3],[\"Jose\",\"M\",\"2019-12-18\",2],[\"Priya\",\"F\",\"2019-12-31\",23],[\"Priyanka\",\"F\",\"2019-12-30\",17]]}}",
+            "contributors": [],
+            "topicTags": [
+                {
+                    "name": "Database",
+                    "slug": "database",
+                    "translatedName": null,
+                    "__typename": "TopicTagNode"
+                }
+            ],
+            "companyTagStats": "{\"1\": [], \"2\": [], \"3\": []}",
+            "codeSnippets": [
+                {
+                    "lang": "MySQL",
+                    "langSlug": "mysql",
+                    "code": "# Write your MySQL query statement below\n",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "MS SQL Server",
+                    "langSlug": "mssql",
+                    "code": "/* Write your T-SQL query statement below */\n",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Oracle",
+                    "langSlug": "oraclesql",
+                    "code": "/* Write your PL/SQL query statement below */\n",
+                    "__typename": "CodeSnippetNode"
+                }
+            ],
+            "stats": "{\"totalAccepted\": \"15.9K\", \"totalSubmission\": \"18.1K\", \"totalAcceptedRaw\": 15935, \"totalSubmissionRaw\": 18055, \"acRate\": \"88.3%\"}",
+            "hints": [],
+            "solution": null,
+            "status": null,
+            "sampleTestCase": "{\"headers\":{\"Scores\":[\"player_name\",\"gender\",\"day\",\"score_points\"]},\"rows\":{\"Scores\":[[\"Aron\",\"F\",\"2020-01-01\",17],[\"Alice\",\"F\",\"2020-01-07\",23],[\"Bajrang\",\"M\",\"2020-01-07\",7],[\"Khali\",\"M\",\"2019-12-25\",11],[\"Slaman\",\"M\",\"2019-12-30\",13],[\"Joe\",\"M\",\"2019-12-31\",3],[\"Jose\",\"M\",\"2019-12-18\",2],[\"Priya\",\"F\",\"2019-12-31\",23],[\"Priyanka\",\"F\",\"2019-12-30\",17]]}}",
+            "metaData": "{\n  \"mysql\": [\n    \"Create table If Not Exists Scores (player_name varchar(20), gender varchar(1), day date, score_points int)\"\n  ],\n  \"mssql\": [\n    \"Create table Scores (player_name varchar(20), gender varchar(1), day date, score_points int)\"\n  ],\n  \"oraclesql\": [\n    \"Create table Scores (player_name varchar(20), gender varchar(1), day date, score_points int)\",\n    \"ALTER SESSION SET nls_date_format='YYYY-MM-DD'\"\n  ],\n  \"database\": true\n}",
+            "judgerAvailable": true,
+            "judgeType": "large",
+            "mysqlSchemas": [
+                "Create table If Not Exists Scores (player_name varchar(20), gender varchar(1), day date, score_points int)",
+                "Truncate table Scores",
+                "insert into Scores (player_name, gender, day, score_points) values ('Aron', 'F', '2020-01-01', '17')",
+                "insert into Scores (player_name, gender, day, score_points) values ('Alice', 'F', '2020-01-07', '23')",
+                "insert into Scores (player_name, gender, day, score_points) values ('Bajrang', 'M', '2020-01-07', '7')",
+                "insert into Scores (player_name, gender, day, score_points) values ('Khali', 'M', '2019-12-25', '11')",
+                "insert into Scores (player_name, gender, day, score_points) values ('Slaman', 'M', '2019-12-30', '13')",
+                "insert into Scores (player_name, gender, day, score_points) values ('Joe', 'M', '2019-12-31', '3')",
+                "insert into Scores (player_name, gender, day, score_points) values ('Jose', 'M', '2019-12-18', '2')",
+                "insert into Scores (player_name, gender, day, score_points) values ('Priya', 'F', '2019-12-31', '23')",
+                "insert into Scores (player_name, gender, day, score_points) values ('Priyanka', 'F', '2019-12-30', '17')"
+            ],
+            "enableRunCode": true,
+            "enableTestMode": false,
+            "enableDebugger": false,
+            "envInfo": "{\"mysql\": [\"MySQL\", \"<p><code>MySQL 8.0</code>.</p>\"], \"mssql\": [\"MS SQL Server\", \"<p><code>mssql server 2019</code>.</p>\"], \"oraclesql\": [\"Oracle\", \"<p><code>Oracle Sql 11.2</code>.</p>\"]}",
+            "libraryUrl": null,
+            "adminUrl": null,
+            "__typename": "QuestionNode"
+        }
+    }
+}

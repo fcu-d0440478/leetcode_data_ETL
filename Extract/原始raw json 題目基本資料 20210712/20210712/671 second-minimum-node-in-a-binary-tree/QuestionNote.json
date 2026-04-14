@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "671",
+            "article": "{\"id\": 244, \"url\": \"/articles/second-minimum-node-in-a-binary-tree/\", \"topicId\": 127571}",
+            "solution": {
+                "id": "244",
+                "content": "[TOC]\n\n## Solution\n\n---\n#### Approach #1: Brute Force [Accepted]\n\n**Intuition and Algorithm**\n\nTraverse the tree with a depth-first search, and record every unique value in the tree using a Set structure `uniques`.\n\nThen, we'll look through the recorded values for the second minimum.  The first minimum must be $$\\text{root.val}$$.\n\n<iframe src=\"https://leetcode.com/playground/rVYM4qCQ/shared\" frameBorder=\"0\" name=\"rVYM4qCQ\" width=\"100%\" height=\"394\"></iframe>\n\n\n**Complexity Analysis**\n\n* Time Complexity:  $$O(N)$$, where $$N$$ is the total number of nodes in the given tree.  We visit each node exactly once, and scan through the $$O(N)$$ values in `unique` once.\n\n* Space Complexity: $$O(N)$$, the information stored in `uniques`.\n\n---\n#### Approach #2: Ad-Hoc [Accepted]\n\n**Intuition and Algorithm**\n\nLet $$\\text{min1 = root.val}$$.  When traversing the tree at some node, $$\\text{node}$$, if $$\\text{node.val > min1}$$, we know all values in the subtree at $$\\text{node}$$ are at least $$\\text{node.val}$$, so there cannot be a better candidate for the second minimum in this subtree.  Thus, we do not need to search this subtree.\n\nAlso, as we only care about the second minimum $$\\text{ans}$$, we do not need to record any values that are larger than our current candidate for the second minimum, so unlike Approach #1 we can skip maintaining a Set of values(`uniques`) entirely.\n\n\n<iframe src=\"https://leetcode.com/playground/btTLPkjK/shared\" frameBorder=\"0\" name=\"btTLPkjK\" width=\"100%\" height=\"394\"></iframe>\n\n\n**Complexity Analysis**\n\n* Time Complexity:  $$O(N)$$, where $$N$$ is the total number of nodes in the given tree.  We visit each node at most once.\n\n* Space Complexity: $$O(N)$$.  The information stored in $$\\text{ans}$$ and $$\\text{min1}$$ is $$O(1)$$, but our depth-first search may store up to $$O(h) = O(N)$$ information in the call stack, where $$h$$ is the height of the tree.",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "237",
+                    "count": 33,
+                    "average": 3.061,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

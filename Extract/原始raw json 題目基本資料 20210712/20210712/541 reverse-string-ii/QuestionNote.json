@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "541",
+            "article": "{\"id\": 321, \"url\": \"/articles/reverse-string-ii/\", \"topicId\": 127489}",
+            "solution": {
+                "id": "321",
+                "content": "[TOC]\n\n---\n#### Approach #1: Direct [Accepted]\n\n**Intuition and Algorithm**\n\nWe will reverse each block of `2k` characters directly.\n\nEach block starts at a multiple of `2k`: for example, `0, 2k, 4k, 6k, ...`.  One thing to be careful about is we may not reverse each block if there aren't enough characters.\n\nTo reverse a block of characters from `i` to `j`, we can swap characters in positions `i++` and `j--`.\n\n<iframe src=\"https://leetcode.com/playground/GRuDtVaZ/shared\" frameBorder=\"0\" width=\"100%\" height=\"293\" name=\"GRuDtVaZ\"></iframe>\n\n**Complexity Analysis**\n\n* Time Complexity: $$O(N)$$, where $$N$$ is the size of `s`.  We build a helper array, plus reverse about half the characters in `s`.\n\n* Space Complexity: $$O(N)$$, the size of `a`.",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "316",
+                    "count": 42,
+                    "average": 3.857,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

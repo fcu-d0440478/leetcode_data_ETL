@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "585",
+            "article": "{\"id\": 130, \"url\": \"/articles/investments-in-2016/\", \"topicId\": 127734}",
+            "solution": {
+                "id": "130",
+                "content": "[TOC]\n\n## Solution\n---\n#### Approach: Using `GROUP BY` and `COUNT` [Accepted]\n\n**Intuition**\n\nTo decide whether a value in a column is unique or not, we can use `GROUP BY` and `COUNT`.\n\n**Algorithm**\n\nCheck whether the value of a record's **TIV_2015** is unique, if it is not unique, and at the same time, its location (LAT, LON) pair is unique, then this record meeting the criteria. So it should be counted in the sum.\n\n**MySQL**\n\n```sql\nSELECT\n    SUM(insurance.TIV_2016) AS TIV_2016\nFROM\n    insurance\nWHERE\n    insurance.TIV_2015 IN\n    (\n      SELECT\n        TIV_2015\n      FROM\n        insurance\n      GROUP BY TIV_2015\n      HAVING COUNT(*) > 1\n    )\n    AND CONCAT(LAT, LON) IN\n    (\n      SELECT\n        CONCAT(LAT, LON)\n      FROM\n        insurance\n      GROUP BY LAT , LON\n      HAVING COUNT(*) = 1\n    )\n;\n```\n>Tips: Concat the **LAT** and **LON** as a whole to represent the location information.\n\nNote: These two criteria should be met without an order, so if you attempt to filter data using criteria #1 first and then criteria #2, you will get a wrong result.\n\nTaking the sample input as an example, the data set will be as following after taking the first criteria.\n\n| PID | TIV_2015 | TIV_2016 | LAT | LON |\n|-----|----------|----------|-----|-----|\n| 1   | 10       | 5        | 10  | 10  |\n| 3   | 10       | 30       | 20  | 20  |\n| 4   | 10       | 40       | 40  | 40  |\n\nThen, the second criteria cannot filter any records on this data set. So the result is 75(5+30+40), which is obviously wrong since the location of record with PID '3' is actually the same with the record having been filtered by the first criteria.\n\n| PID | TIV_2015 | TIV_2016 | LAT | LON |\n|-----|----------|----------|-----|-----|\n| 2   | 20       | 20       | 20  | 20  |\n| 3   | 10       | 30       | 20  | 20  |",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "127",
+                    "count": 18,
+                    "average": 4.278,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

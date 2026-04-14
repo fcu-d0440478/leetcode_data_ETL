@@ -1,0 +1,78 @@
+{
+    "data": {
+        "question": {
+            "questionId": "578",
+            "questionFrontendId": "578",
+            "boundTopicId": null,
+            "title": "Get Highest Answer Rate Question",
+            "titleSlug": "get-highest-answer-rate-question",
+            "content": "<p>Get the highest answer rate question from a table <code>survey_log</code> with these columns: <b>id</b>, <b>action</b>, <b>question_id</b>, <b>answer_id</b>, <b>q_num</b>, <b>timestamp</b>.</p>\n\n<p>id means user id; action has these kind of values: &quot;show&quot;, &quot;answer&quot;, &quot;skip&quot;; answer_id is not null when action column is &quot;answer&quot;, while is null for &quot;show&quot; and &quot;skip&quot;; q_num is the numeral order of the question in current session.</p>\n\n<p>Write a sql query to identify the question which has the highest answer rate.</p>\n\n<p><b>Example:</b></p>\n\n<pre>\n<b>Input:</b>\n+------+-----------+--------------+------------+-----------+------------+\n| id   | action    | question_id  | answer_id  | q_num     | timestamp  |\n+------+-----------+--------------+------------+-----------+------------+\n| 5    | show      | 285          | null       | 1         | 123        |\n| 5    | answer    | 285          | 124124     | 1         | 124        |\n| 5    | show      | 369          | null       | 2         | 125        |\n| 5    | skip      | 369          | null       | 2         | 126        |\n+------+-----------+--------------+------------+-----------+------------+\n<b>Output:</b>\n+-------------+\n| survey_log  |\n+-------------+\n|    285      |\n+-------------+\n<b>Explanation:</b>\nquestion 285 has answer rate 1/1, while question 369 has 0/1 answer rate, so output 285.\n</pre>\n\n<p>&nbsp;</p>\n\n<p><b>Note:</b> The highest answer rate meaning is: answer number&#39;s ratio in show number in the same question.</p>\n",
+            "translatedTitle": null,
+            "translatedContent": null,
+            "isPaidOnly": true,
+            "difficulty": "Medium",
+            "likes": 56,
+            "dislikes": 641,
+            "isLiked": null,
+            "similarQuestions": "[]",
+            "exampleTestcases": "{\"headers\": {\"survey_log\": [\"id\", \"action\", \"question_id\", \"answer_id\", \"q_num\", \"timestamp\"]},\"rows\": {\"survey_log\": [[5, \"show\", 285, null, 1, 123], [5, \"answer\", 285, 124124, 1, 124], [5, \"show\", 369, null, 2, 125], [5, \"skip\", 369, null, 2, 126]]}}",
+            "contributors": [],
+            "topicTags": [
+                {
+                    "name": "Database",
+                    "slug": "database",
+                    "translatedName": null,
+                    "__typename": "TopicTagNode"
+                }
+            ],
+            "companyTagStats": "{\"3\": [{\"taggedByAdmin\": true, \"name\": \"Facebook\", \"slug\": \"facebook\", \"timesEncountered\": 0}], \"1\": [], \"2\": []}",
+            "codeSnippets": [
+                {
+                    "lang": "MySQL",
+                    "langSlug": "mysql",
+                    "code": "# Write your MySQL query statement below\n",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "MS SQL Server",
+                    "langSlug": "mssql",
+                    "code": "/* Write your T-SQL query statement below */\n",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Oracle",
+                    "langSlug": "oraclesql",
+                    "code": "/* Write your PL/SQL query statement below */\n",
+                    "__typename": "CodeSnippetNode"
+                }
+            ],
+            "stats": "{\"totalAccepted\": \"28.4K\", \"totalSubmission\": \"66.5K\", \"totalAcceptedRaw\": 28399, \"totalSubmissionRaw\": 66494, \"acRate\": \"42.7%\"}",
+            "hints": [
+                "Try to find all question ids by group",
+                "Try to find each group answer number and show number.",
+                "Rank all the rates (answer/(answer+show)) and return the max one"
+            ],
+            "solution": null,
+            "status": null,
+            "sampleTestCase": "{\"headers\": {\"survey_log\": [\"id\", \"action\", \"question_id\", \"answer_id\", \"q_num\", \"timestamp\"]},\"rows\": {\"survey_log\": [[5, \"show\", 285, null, 1, 123], [5, \"answer\", 285, 124124, 1, 124], [5, \"show\", 369, null, 2, 125], [5, \"skip\", 369, null, 2, 126]]}}",
+            "metaData": "{\n  \"mysql\": [\n    \"Create table If Not Exists survey_log (id int, action varchar(255), question_id int, answer_id int, q_num int, timestamp int)\"\n  ],\n  \"mssql\": [\n    \"Create table survey_log (id int, action varchar(255), question_id int, answer_id int, q_num int, timestamp int)\"\n  ],\n  \"oraclesql\": [\n    \"Create table survey_log (id int, action varchar(255), question_id int, answer_id int, q_num int, timestamp int)\"\n  ],\n  \"database\": true\n}",
+            "judgerAvailable": true,
+            "judgeType": "large",
+            "mysqlSchemas": [
+                "Create table If Not Exists survey_log (id int, action varchar(255), question_id int, answer_id int, q_num int, timestamp int)",
+                "Truncate table survey_log",
+                "insert into survey_log (id, action, question_id, answer_id, q_num, timestamp) values ('5', 'show', '285', 'None', '1', '123')",
+                "insert into survey_log (id, action, question_id, answer_id, q_num, timestamp) values ('5', 'answer', '285', '124124', '1', '124')",
+                "insert into survey_log (id, action, question_id, answer_id, q_num, timestamp) values ('5', 'show', '369', 'None', '2', '125')",
+                "insert into survey_log (id, action, question_id, answer_id, q_num, timestamp) values ('5', 'skip', '369', 'None', '2', '126')"
+            ],
+            "enableRunCode": true,
+            "enableTestMode": false,
+            "enableDebugger": false,
+            "envInfo": "{\"mysql\": [\"MySQL\", \"<p><code>MySQL 8.0</code>.</p>\"], \"mssql\": [\"MS SQL Server\", \"<p><code>mssql server 2019</code>.</p>\"], \"oraclesql\": [\"Oracle\", \"<p><code>Oracle Sql 11.2</code>.</p>\"]}",
+            "libraryUrl": null,
+            "adminUrl": null,
+            "__typename": "QuestionNode"
+        }
+    }
+}

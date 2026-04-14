@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "608",
+            "article": "{\"id\": 201, \"url\": \"/articles/tree-node/\", \"topicId\": 127645}",
+            "solution": {
+                "id": "201",
+                "content": "[TOC]\n\n## Solution\n---\n\n#### Approach I: Using `UNION` [Accepted]\n\n**Intuition**\n\nWe can print the node type by judging every record by its definition in this table.\n* Root: it does not have a parent node at all\n* Inner: it is the parent node of some nodes, and it has a not NULL parent itself.\n* Leaf: rest of the cases other than above two\n\n**Algorithm**\n\nBy transiting the node type definition, we can have the following code.\n\nFor the root node, it does not have a parent.\n```sql\nSELECT\n    id, 'Root' AS Type\nFROM\n    tree\nWHERE\n    p_id IS NULL\n```\n\nFor the leaf nodes, they do not have any children, and it has a parent.\n```sql\nSELECT\n    id, 'Leaf' AS Type\nFROM\n    tree\nWHERE\n    id NOT IN (SELECT DISTINCT\n            p_id\n        FROM\n            tree\n        WHERE\n            p_id IS NOT NULL)\n        AND p_id IS NOT NULL\n```\n\nFor the inner nodes, they have have some children and a parent.\n```sql\nSELECT\n    id, 'Inner' AS Type\nFROM\n    tree\nWHERE\n    id IN (SELECT DISTINCT\n            p_id\n        FROM\n            tree\n        WHERE\n            p_id IS NOT NULL)\n        AND p_id IS NOT NULL\n```\nSo, one solution to the problem is to combine these cases together using `UNION`.\n\n**MySQL**\n\n```sql\nSELECT\n    id, 'Root' AS Type\nFROM\n    tree\nWHERE\n    p_id IS NULL\n\nUNION\n\nSELECT\n    id, 'Leaf' AS Type\nFROM\n    tree\nWHERE\n    id NOT IN (SELECT DISTINCT\n            p_id\n        FROM\n            tree\n        WHERE\n            p_id IS NOT NULL)\n        AND p_id IS NOT NULL\n\nUNION\n\nSELECT\n    id, 'Inner' AS Type\nFROM\n    tree\nWHERE\n    id IN (SELECT DISTINCT\n            p_id\n        FROM\n            tree\n        WHERE\n            p_id IS NOT NULL)\n        AND p_id IS NOT NULL\nORDER BY id;\n```\n\n#### Approach II: Using flow control statement `CASE` [Accepted]\n\n**Algorithm**\n\nThe idea is similar with the above solution but the code is simpler by utilizing the flow control statements, which is effective to output differently based on different input values. In this case, we can use [`CASE`](https://dev.mysql.com/doc/refman/5.7/en/case.html) statement.\n\n**MySQL**\n\n```sql\nSELECT\n    id AS `Id`,\n    CASE\n        WHEN tree.id = (SELECT atree.id FROM tree atree WHERE atree.p_id IS NULL)\n          THEN 'Root'\n        WHEN tree.id IN (SELECT atree.p_id FROM tree atree)\n          THEN 'Inner'\n        ELSE 'Leaf'\n    END AS Type\nFROM\n    tree\nORDER BY `Id`\n;\n```\n>MySQL provides different flow control statements besides `CASE`. You can try to rewrite the slution above using [`IF`](https://dev.mysql.com/doc/refman/5.7/en/control-flow-functions.html#function_if) flow control statement.\n\n#### Approach III: Using `IF` function [Accepted]\n\n**Algorithm**\n\nAlso, we can use a single [`IF`](https://dev.mysql.com/doc/refman/5.7/en/control-flow-functions.html#function_if) function instead of the complex flow control statements.\n\n**MySQL**\n\n```sql\nSELECT\n    atree.id,\n    IF(ISNULL(atree.p_id),\n        'Root',\n        IF(atree.id IN (SELECT p_id FROM tree), 'Inner','Leaf')) Type\nFROM\n    tree atree\nORDER BY atree.id\n```\n>Note: This solution was inspired by [@richarddia](https://discuss.leetcode.com/user/richarddia)",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "195",
+                    "count": 11,
+                    "average": 4.818,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

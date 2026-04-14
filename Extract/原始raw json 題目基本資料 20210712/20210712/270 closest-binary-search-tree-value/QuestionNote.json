@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "270",
+            "article": "{\"id\": 749, \"url\": \"/articles/closest-bst-value/\", \"topicId\": 332444}",
+            "solution": {
+                "id": "749",
+                "content": "[TOC]\n\n## Solution\n\n--- \n\n#### Approach 1: Recursive Inorder + Linear search, O(N) time\n\n**Intuition**\n\nThe simplest approach (3 lines in Python) is to build inorder traversal\nand then find the closest element in a sorted array with built-in \nfunction `min`.  \n\n![pic](../Figures/270/dummy.png)\n\nThis approach is simple stupid, and serves to identify the subproblems.\n\n**Algorithm**\n\n- Build an inorder traversal array.\n\n- Find the closest to target element in that array.\n\n**Implementation**\n\n<iframe src=\"https://leetcode.com/playground/2FAkaVd3/shared\" frameBorder=\"0\" width=\"100%\" height=\"378\" name=\"2FAkaVd3\"></iframe>\n\n**Complexity Analysis**\n\n* Time complexity : $$\\mathcal{O}(N)$$ because to build inorder traversal\nand then to perform linear search takes linear time.\n* Space complexity : $$\\mathcal{O}(N)$$ to keep inorder traversal.\n<br /> \n<br />\n\n\n---\n#### Approach 2: Iterative Inorder, O(k) time\n\n**Intuition**\n\nLet's optimise Approach 1 in the case when index k of the closest \nelement is much smaller than the tree heigh H.\n\nFirst, one could merge both steps by traversing the tree and \nsearching the closest value at the same time.  \n\nSecond, one could stop just after identifying the closest value, there \nis no need to traverse the whole tree. \nThe closest value is found if the target value is \nin-between of two inorder array elements \n`nums[i] <= target < nums[i + 1]`. Then the closest value\nis one of these elements.\n\n![pic](../Figures/270/iteration.png)\n\n**Algorithm**\n\n- Initiate stack as an empty array and predecessor value as a very small \nnumber.\n\n- While root is not null:\n\n    - To build an inorder traversal iteratively, \n    go left as far as you can and add all nodes on the way into stack.\n    \n    - Pop the last element from stack `root = stack.pop()`. \n\n    - If target is in-between of `pred` and `root.val`, return \n    the closest between these two elements.\n    \n    - Set predecessor value to be equal to `root.val` and go one\n    step right: `root = root.right`.\n    \n- We're here because during the loop one couldn't \nidentify the closest value. That means that the closest value is\nthe last value in the inorder traversal, \ni.e. current predecessor value. Return it. \n\n**Implementation**\n\n<iframe src=\"https://leetcode.com/playground/DP4RW2aP/shared\" frameBorder=\"0\" width=\"100%\" height=\"412\" name=\"DP4RW2aP\"></iframe>\n\n**Complexity Analysis**\n\n* Time complexity : $$\\mathcal{O}(k)$$ in the average case and \n$$\\mathcal{O}(H + k)$$ in the worst case, \nwhere k is an index of closest element. \nIt's known that [average case is a balanced tree](https://pages.cpsc.ucalgary.ca/~jacobs/Courses/cpsc331/F08/notes/lecture17.pdf),\nin that case stack always contains a few elements, and hence \none does $$2k$$ operations to go to kth element in \ninorder traversal (k times to push into stack and \nthen k times to pop out of stack). That results in\n$$\\mathcal{O}(k)$$ time complexity.\nThe worst case is a completely unbalanced tree, then you \nfirst push H elements into stack and then pop out k elements,\nthat results in $$\\mathcal{O}(H + k)$$ time complexity.\n\n![pic](../Figures/270/unbalanced.png)\n\n* Space complexity : up to $$\\mathcal{O}(H)$$ to keep the stack\nin the case of non-balanced tree.\n<br /> \n<br />\n\n\n---\n#### Approach 3: Binary Search, O(H) time \n\n**Intuition**\n\nApproach 2 works fine when index k of closest element \nis much smaller than the tree height H.  \n\nLet's now consider another limit and optimise Approach 1 in the \ncase of relatively large k, comparable with N. \n\nThen it makes sense to use a binary search: \ngo left if target is smaller than current root value,\nand go right otherwise. Choose the closest to target value at each step.\n\n![pic](../Figures/270/binary.png)\n\nKudos for this solution go to @[stefanpochmann](https://leetcode.com/stefanpochmann/).  \n\n**Implementation**\n\n<iframe src=\"https://leetcode.com/playground/DtzChTTs/shared\" frameBorder=\"0\" width=\"100%\" height=\"242\" name=\"DtzChTTs\"></iframe>\n\n**Complexity Analysis**\n\n* Time complexity : $$\\mathcal{O}(H)$$ since here one goes from \nroot down to a leaf.\n\n* Space complexity : $$\\mathcal{O}(1)$$.",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": true,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "734",
+                    "count": 41,
+                    "average": 4.171,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

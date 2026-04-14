@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "776",
+            "article": "{\"id\": 595, \"url\": \"/articles/n-ary-tree-postorder-traversal/\", \"topicId\": 184175}",
+            "solution": {
+                "id": "595",
+                "content": "[TOC]\n\n## Solution\n\n---\n\n#### How to traverse the tree\n\nThere are two general strategies to traverse a tree:\n\n- *Breadth First Search* (`BFS`)\n\n    We scan through the tree level by level, following the order of height,\n    from top to bottom. The nodes on higher level would be visited before\n    the ones with lower levels.\n     \n- *Depth First Search* (`DFS`)\n\n    In this strategy, we adopt the `depth` as the priority, so that one\n    would start from a root and reach all the way down to certain leaf,\n    and then back to root to reach another branch.\n\n    The DFS strategy can further be distinguished as\n    `preorder`, `inorder`, and `postorder` depending on the relative order\n    among the root node, left node and right node.\n    \nOn the following figure the nodes are numerated in the order you visit them,\nplease follow ```1-2-3-4-5``` to compare different strategies.\n\n![postorder](../Figures/145_transverse.png)\n\nHere the problem is to implement postorder traversal using iterations.\n<br />\n<br />\n\n\n---\n#### Approach 1: Iterations\n\n**Algorithm**\n\nFirst of all, here is the definition of the ```TreeNode``` which we would use\nin the following implementation.\n\n<iframe src=\"https://leetcode.com/playground/QZQ7ufB2/shared\" frameBorder=\"0\" width=\"100%\" height=\"259\" name=\"QZQ7ufB2\"></iframe>\n\nLet's start from the root and then at each iteration \npop the current node out of the stack and\npush its child nodes. \nIn the implemented strategy we push nodes into stack following the order ```Top->Bottom``` and ```Left->Right```.\nSince DFS postorder traversal is ```Bottom->Top``` and ```Left->Right``` the output list\nshould be reverted after the end of loop.\n\n<iframe src=\"https://leetcode.com/playground/aVxuGY5m/shared\" frameBorder=\"0\" width=\"100%\" height=\"412\" name=\"aVxuGY5m\"></iframe>\n\n\n\n**Complexity Analysis**\n\n* Time complexity : we visit each node exactly once, thus the \ntime complexity is $$\\mathcal{O}(N)$$,\nwhere $$N$$ is the number of nodes, *i.e.* the size of tree.\n\n* Space complexity : depending on the tree structure, \nwe could keep up to the entire tree, therefore, the space complexity is $$\\mathcal{O}(N)$$.",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": true,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "581",
+                    "count": 19,
+                    "average": 4.105,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

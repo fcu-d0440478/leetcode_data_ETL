@@ -1,0 +1,666 @@
+{
+    "data": {
+        "questionTopicTags": {
+            "edges": [
+                {
+                    "node": {
+                        "name": "Array",
+                        "translatedName": null,
+                        "slug": "array",
+                        "__typename": "TopicTagNode"
+                    },
+                    "__typename": "TopicTagEdge"
+                },
+                {
+                    "node": {
+                        "name": "Hash Table",
+                        "translatedName": null,
+                        "slug": "hash-table",
+                        "__typename": "TopicTagNode"
+                    },
+                    "__typename": "TopicTagEdge"
+                },
+                {
+                    "node": {
+                        "name": "Linked List",
+                        "translatedName": null,
+                        "slug": "linked-list",
+                        "__typename": "TopicTagNode"
+                    },
+                    "__typename": "TopicTagEdge"
+                },
+                {
+                    "node": {
+                        "name": "Math",
+                        "translatedName": null,
+                        "slug": "math",
+                        "__typename": "TopicTagNode"
+                    },
+                    "__typename": "TopicTagEdge"
+                },
+                {
+                    "node": {
+                        "name": "Two Pointers",
+                        "translatedName": null,
+                        "slug": "two-pointers",
+                        "__typename": "TopicTagNode"
+                    },
+                    "__typename": "TopicTagEdge"
+                },
+                {
+                    "node": {
+                        "name": "String",
+                        "translatedName": null,
+                        "slug": "string",
+                        "__typename": "TopicTagNode"
+                    },
+                    "__typename": "TopicTagEdge"
+                },
+                {
+                    "node": {
+                        "name": "Binary Search",
+                        "translatedName": null,
+                        "slug": "binary-search",
+                        "__typename": "TopicTagNode"
+                    },
+                    "__typename": "TopicTagEdge"
+                },
+                {
+                    "node": {
+                        "name": "Divide and Conquer",
+                        "translatedName": null,
+                        "slug": "divide-and-conquer",
+                        "__typename": "TopicTagNode"
+                    },
+                    "__typename": "TopicTagEdge"
+                },
+                {
+                    "node": {
+                        "name": "Dynamic Programming",
+                        "translatedName": null,
+                        "slug": "dynamic-programming",
+                        "__typename": "TopicTagNode"
+                    },
+                    "__typename": "TopicTagEdge"
+                },
+                {
+                    "node": {
+                        "name": "Backtracking",
+                        "translatedName": null,
+                        "slug": "backtracking",
+                        "__typename": "TopicTagNode"
+                    },
+                    "__typename": "TopicTagEdge"
+                },
+                {
+                    "node": {
+                        "name": "Stack",
+                        "translatedName": null,
+                        "slug": "stack",
+                        "__typename": "TopicTagNode"
+                    },
+                    "__typename": "TopicTagEdge"
+                },
+                {
+                    "node": {
+                        "name": "Greedy",
+                        "translatedName": null,
+                        "slug": "greedy",
+                        "__typename": "TopicTagNode"
+                    },
+                    "__typename": "TopicTagEdge"
+                },
+                {
+                    "node": {
+                        "name": "Sort",
+                        "translatedName": null,
+                        "slug": "sort",
+                        "__typename": "TopicTagNode"
+                    },
+                    "__typename": "TopicTagEdge"
+                },
+                {
+                    "node": {
+                        "name": "Bit Manipulation",
+                        "translatedName": null,
+                        "slug": "bit-manipulation",
+                        "__typename": "TopicTagNode"
+                    },
+                    "__typename": "TopicTagEdge"
+                },
+                {
+                    "node": {
+                        "name": "Tree",
+                        "translatedName": null,
+                        "slug": "tree",
+                        "__typename": "TopicTagNode"
+                    },
+                    "__typename": "TopicTagEdge"
+                },
+                {
+                    "node": {
+                        "name": "Depth-First Search",
+                        "translatedName": null,
+                        "slug": "depth-first-search",
+                        "__typename": "TopicTagNode"
+                    },
+                    "__typename": "TopicTagEdge"
+                },
+                {
+                    "node": {
+                        "name": "Breadth-First Search",
+                        "translatedName": null,
+                        "slug": "breadth-first-search",
+                        "__typename": "TopicTagNode"
+                    },
+                    "__typename": "TopicTagEdge"
+                },
+                {
+                    "node": {
+                        "name": "Union Find",
+                        "translatedName": null,
+                        "slug": "union-find",
+                        "__typename": "TopicTagNode"
+                    },
+                    "__typename": "TopicTagEdge"
+                },
+                {
+                    "node": {
+                        "name": "Graph",
+                        "translatedName": null,
+                        "slug": "graph",
+                        "__typename": "TopicTagNode"
+                    },
+                    "__typename": "TopicTagEdge"
+                },
+                {
+                    "node": {
+                        "name": "Design",
+                        "translatedName": null,
+                        "slug": "design",
+                        "__typename": "TopicTagNode"
+                    },
+                    "__typename": "TopicTagEdge"
+                },
+                {
+                    "node": {
+                        "name": "Topological Sort",
+                        "translatedName": null,
+                        "slug": "topological-sort",
+                        "__typename": "TopicTagNode"
+                    },
+                    "__typename": "TopicTagEdge"
+                },
+                {
+                    "node": {
+                        "name": "Trie",
+                        "translatedName": null,
+                        "slug": "trie",
+                        "__typename": "TopicTagNode"
+                    },
+                    "__typename": "TopicTagEdge"
+                },
+                {
+                    "node": {
+                        "name": "Binary Indexed Tree",
+                        "translatedName": null,
+                        "slug": "binary-indexed-tree",
+                        "__typename": "TopicTagNode"
+                    },
+                    "__typename": "TopicTagEdge"
+                },
+                {
+                    "node": {
+                        "name": "Segment Tree",
+                        "translatedName": null,
+                        "slug": "segment-tree",
+                        "__typename": "TopicTagNode"
+                    },
+                    "__typename": "TopicTagEdge"
+                },
+                {
+                    "node": {
+                        "name": "Binary Search Tree",
+                        "translatedName": null,
+                        "slug": "binary-search-tree",
+                        "__typename": "TopicTagNode"
+                    },
+                    "__typename": "TopicTagEdge"
+                },
+                {
+                    "node": {
+                        "name": "Recursion",
+                        "translatedName": null,
+                        "slug": "recursion",
+                        "__typename": "TopicTagNode"
+                    },
+                    "__typename": "TopicTagEdge"
+                },
+                {
+                    "node": {
+                        "name": "Brainteaser",
+                        "translatedName": null,
+                        "slug": "brainteaser",
+                        "__typename": "TopicTagNode"
+                    },
+                    "__typename": "TopicTagEdge"
+                },
+                {
+                    "node": {
+                        "name": "Memoization",
+                        "translatedName": null,
+                        "slug": "memoization",
+                        "__typename": "TopicTagNode"
+                    },
+                    "__typename": "TopicTagEdge"
+                },
+                {
+                    "node": {
+                        "name": "Queue",
+                        "translatedName": null,
+                        "slug": "queue",
+                        "__typename": "TopicTagNode"
+                    },
+                    "__typename": "TopicTagEdge"
+                },
+                {
+                    "node": {
+                        "name": "Reservoir Sampling",
+                        "translatedName": null,
+                        "slug": "reservoir-sampling",
+                        "__typename": "TopicTagNode"
+                    },
+                    "__typename": "TopicTagEdge"
+                },
+                {
+                    "node": {
+                        "name": "Ordered Map",
+                        "translatedName": null,
+                        "slug": "ordered-map",
+                        "__typename": "TopicTagNode"
+                    },
+                    "__typename": "TopicTagEdge"
+                },
+                {
+                    "node": {
+                        "name": "Geometry",
+                        "translatedName": null,
+                        "slug": "geometry",
+                        "__typename": "TopicTagNode"
+                    },
+                    "__typename": "TopicTagEdge"
+                },
+                {
+                    "node": {
+                        "name": "Rejection Sampling",
+                        "translatedName": null,
+                        "slug": "rejection-sampling",
+                        "__typename": "TopicTagNode"
+                    },
+                    "__typename": "TopicTagEdge"
+                },
+                {
+                    "node": {
+                        "name": "Sliding Window",
+                        "translatedName": null,
+                        "slug": "sliding-window",
+                        "__typename": "TopicTagNode"
+                    },
+                    "__typename": "TopicTagEdge"
+                },
+                {
+                    "node": {
+                        "name": "Line Sweep",
+                        "translatedName": null,
+                        "slug": "line-sweep",
+                        "__typename": "TopicTagNode"
+                    },
+                    "__typename": "TopicTagEdge"
+                },
+                {
+                    "node": {
+                        "name": "Rolling Hash",
+                        "translatedName": null,
+                        "slug": "rolling-hash",
+                        "__typename": "TopicTagNode"
+                    },
+                    "__typename": "TopicTagEdge"
+                },
+                {
+                    "node": {
+                        "name": "Suffix Array",
+                        "translatedName": null,
+                        "slug": "suffix-array",
+                        "__typename": "TopicTagNode"
+                    },
+                    "__typename": "TopicTagEdge"
+                },
+                {
+                    "node": {
+                        "name": "Database",
+                        "translatedName": null,
+                        "slug": "database",
+                        "__typename": "TopicTagNode"
+                    },
+                    "__typename": "TopicTagEdge"
+                },
+                {
+                    "node": {
+                        "name": "Shell",
+                        "translatedName": null,
+                        "slug": "shell",
+                        "__typename": "TopicTagNode"
+                    },
+                    "__typename": "TopicTagEdge"
+                },
+                {
+                    "node": {
+                        "name": "Concurrency",
+                        "translatedName": null,
+                        "slug": "concurrency",
+                        "__typename": "TopicTagNode"
+                    },
+                    "__typename": "TopicTagEdge"
+                },
+                {
+                    "node": {
+                        "name": "Sorting",
+                        "translatedName": null,
+                        "slug": "sorting",
+                        "__typename": "TopicTagNode"
+                    },
+                    "__typename": "TopicTagEdge"
+                },
+                {
+                    "node": {
+                        "name": "Heap (Priority Queue)",
+                        "translatedName": null,
+                        "slug": "heap-priority-queue",
+                        "__typename": "TopicTagNode"
+                    },
+                    "__typename": "TopicTagEdge"
+                },
+                {
+                    "node": {
+                        "name": "Merge Sort",
+                        "translatedName": null,
+                        "slug": "merge-sort",
+                        "__typename": "TopicTagNode"
+                    },
+                    "__typename": "TopicTagEdge"
+                },
+                {
+                    "node": {
+                        "name": "String Matching",
+                        "translatedName": null,
+                        "slug": "string-matching",
+                        "__typename": "TopicTagNode"
+                    },
+                    "__typename": "TopicTagEdge"
+                },
+                {
+                    "node": {
+                        "name": "Matrix",
+                        "translatedName": null,
+                        "slug": "matrix",
+                        "__typename": "TopicTagNode"
+                    },
+                    "__typename": "TopicTagEdge"
+                },
+                {
+                    "node": {
+                        "name": "Monotonic Stack",
+                        "translatedName": null,
+                        "slug": "monotonic-stack",
+                        "__typename": "TopicTagNode"
+                    },
+                    "__typename": "TopicTagEdge"
+                },
+                {
+                    "node": {
+                        "name": "Simulation",
+                        "translatedName": null,
+                        "slug": "simulation",
+                        "__typename": "TopicTagNode"
+                    },
+                    "__typename": "TopicTagEdge"
+                },
+                {
+                    "node": {
+                        "name": "Combinatorics",
+                        "translatedName": null,
+                        "slug": "combinatorics",
+                        "__typename": "TopicTagNode"
+                    },
+                    "__typename": "TopicTagEdge"
+                },
+                {
+                    "node": {
+                        "name": "Binary Tree",
+                        "translatedName": null,
+                        "slug": "binary-tree",
+                        "__typename": "TopicTagNode"
+                    },
+                    "__typename": "TopicTagEdge"
+                },
+                {
+                    "node": {
+                        "name": "Doubly-Linked List",
+                        "translatedName": null,
+                        "slug": "doubly-linked-list",
+                        "__typename": "TopicTagNode"
+                    },
+                    "__typename": "TopicTagEdge"
+                },
+                {
+                    "node": {
+                        "name": "Interactive",
+                        "translatedName": null,
+                        "slug": "interactive",
+                        "__typename": "TopicTagNode"
+                    },
+                    "__typename": "TopicTagEdge"
+                },
+                {
+                    "node": {
+                        "name": "Bucket Sort",
+                        "translatedName": null,
+                        "slug": "bucket-sort",
+                        "__typename": "TopicTagNode"
+                    },
+                    "__typename": "TopicTagEdge"
+                },
+                {
+                    "node": {
+                        "name": "Radix Sort",
+                        "translatedName": null,
+                        "slug": "radix-sort",
+                        "__typename": "TopicTagNode"
+                    },
+                    "__typename": "TopicTagEdge"
+                },
+                {
+                    "node": {
+                        "name": "Counting",
+                        "translatedName": null,
+                        "slug": "counting",
+                        "__typename": "TopicTagNode"
+                    },
+                    "__typename": "TopicTagEdge"
+                },
+                {
+                    "node": {
+                        "name": "Data Stream",
+                        "translatedName": null,
+                        "slug": "data-stream",
+                        "__typename": "TopicTagNode"
+                    },
+                    "__typename": "TopicTagEdge"
+                },
+                {
+                    "node": {
+                        "name": "Iterator",
+                        "translatedName": null,
+                        "slug": "iterator",
+                        "__typename": "TopicTagNode"
+                    },
+                    "__typename": "TopicTagEdge"
+                },
+                {
+                    "node": {
+                        "name": "Hash Function",
+                        "translatedName": null,
+                        "slug": "hash-function",
+                        "__typename": "TopicTagNode"
+                    },
+                    "__typename": "TopicTagEdge"
+                },
+                {
+                    "node": {
+                        "name": "Enumeration",
+                        "translatedName": null,
+                        "slug": "enumeration",
+                        "__typename": "TopicTagNode"
+                    },
+                    "__typename": "TopicTagEdge"
+                },
+                {
+                    "node": {
+                        "name": "Number Theory",
+                        "translatedName": null,
+                        "slug": "number-theory",
+                        "__typename": "TopicTagNode"
+                    },
+                    "__typename": "TopicTagEdge"
+                },
+                {
+                    "node": {
+                        "name": "Prefix Sum",
+                        "translatedName": null,
+                        "slug": "prefix-sum",
+                        "__typename": "TopicTagNode"
+                    },
+                    "__typename": "TopicTagEdge"
+                },
+                {
+                    "node": {
+                        "name": "Quickselect",
+                        "translatedName": null,
+                        "slug": "quickselect",
+                        "__typename": "TopicTagNode"
+                    },
+                    "__typename": "TopicTagEdge"
+                },
+                {
+                    "node": {
+                        "name": "Ordered Set",
+                        "translatedName": null,
+                        "slug": "ordered-set",
+                        "__typename": "TopicTagNode"
+                    },
+                    "__typename": "TopicTagEdge"
+                },
+                {
+                    "node": {
+                        "name": "Monotonic Queue",
+                        "translatedName": null,
+                        "slug": "monotonic-queue",
+                        "__typename": "TopicTagNode"
+                    },
+                    "__typename": "TopicTagEdge"
+                },
+                {
+                    "node": {
+                        "name": "Counting Sort",
+                        "translatedName": null,
+                        "slug": "counting-sort",
+                        "__typename": "TopicTagNode"
+                    },
+                    "__typename": "TopicTagEdge"
+                },
+                {
+                    "node": {
+                        "name": "Game Theory",
+                        "translatedName": null,
+                        "slug": "game-theory",
+                        "__typename": "TopicTagNode"
+                    },
+                    "__typename": "TopicTagEdge"
+                },
+                {
+                    "node": {
+                        "name": "Eulerian Circuit",
+                        "translatedName": null,
+                        "slug": "eulerian-circuit",
+                        "__typename": "TopicTagNode"
+                    },
+                    "__typename": "TopicTagEdge"
+                },
+                {
+                    "node": {
+                        "name": "Randomized",
+                        "translatedName": null,
+                        "slug": "randomized",
+                        "__typename": "TopicTagNode"
+                    },
+                    "__typename": "TopicTagEdge"
+                },
+                {
+                    "node": {
+                        "name": "Shortest Path",
+                        "translatedName": null,
+                        "slug": "shortest-path",
+                        "__typename": "TopicTagNode"
+                    },
+                    "__typename": "TopicTagEdge"
+                },
+                {
+                    "node": {
+                        "name": "Bitmask",
+                        "translatedName": null,
+                        "slug": "bitmask",
+                        "__typename": "TopicTagNode"
+                    },
+                    "__typename": "TopicTagEdge"
+                },
+                {
+                    "node": {
+                        "name": "Probability and Statistics",
+                        "translatedName": null,
+                        "slug": "probability-and-statistics",
+                        "__typename": "TopicTagNode"
+                    },
+                    "__typename": "TopicTagEdge"
+                },
+                {
+                    "node": {
+                        "name": "Minimum Spanning Tree",
+                        "translatedName": null,
+                        "slug": "minimum-spanning-tree",
+                        "__typename": "TopicTagNode"
+                    },
+                    "__typename": "TopicTagEdge"
+                },
+                {
+                    "node": {
+                        "name": "Biconnected Component",
+                        "translatedName": null,
+                        "slug": "biconnected-component",
+                        "__typename": "TopicTagNode"
+                    },
+                    "__typename": "TopicTagEdge"
+                },
+                {
+                    "node": {
+                        "name": "Strongly Connected Component",
+                        "translatedName": null,
+                        "slug": "strongly-connected-component",
+                        "__typename": "TopicTagNode"
+                    },
+                    "__typename": "TopicTagEdge"
+                }
+            ],
+            "__typename": "TopicTagConnection"
+        }
+    }
+}

@@ -1,0 +1,43 @@
+{
+    "data": {
+        "topic": {
+            "id": 702422,
+            "viewCount": 62547,
+            "topLevelCommentCount": 80,
+            "subscribed": false,
+            "title": "Task Scheduler",
+            "pinned": false,
+            "tags": [],
+            "hideFromTrending": false,
+            "post": {
+                "id": 1297144,
+                "voteCount": 0,
+                "voteStatus": 0,
+                "content": "",
+                "updationDate": 1592944784,
+                "creationDate": 1592944784,
+                "status": null,
+                "isHidden": null,
+                "coinRewards": [],
+                "author": {
+                    "isDiscussAdmin": true,
+                    "isDiscussStaff": true,
+                    "username": "LeetCode",
+                    "nameColor": null,
+                    "activeBadge": null,
+                    "profile": {
+                        "userAvatar": "https://assets.leetcode.com/users/leetcode/avatar_1568224780.png",
+                        "reputation": 8911,
+                        "__typename": "UserProfileNode"
+                    },
+                    "isActive": true,
+                    "__typename": "UserNode"
+                },
+                "authorIsModerator": true,
+                "isOwnPost": false,
+                "__typename": "PostNode"
+            },
+            "__typename": "TopicNode"
+        }
+    }
+}

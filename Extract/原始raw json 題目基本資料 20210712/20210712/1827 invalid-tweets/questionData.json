@@ -1,0 +1,72 @@
+{
+    "data": {
+        "question": {
+            "questionId": "1827",
+            "questionFrontendId": "1683",
+            "boundTopicId": null,
+            "title": "Invalid Tweets",
+            "titleSlug": "invalid-tweets",
+            "content": "<p>Table: <code>Tweets</code></p>\n\n<pre>\n+----------------+---------+\n| Column Name    | Type    |\n+----------------+---------+\n| tweet_id       | int     |\n| content        | varchar |\n+----------------+---------+\ntweet_id is the primary key for this table.\nThis table contains all the tweets in a social media app.\n</pre>\n\n<p>&nbsp;</p>\n\n<p>Write an SQL query to find the IDs of the invalid tweets. The tweet is invalid if the number of characters used in the content of the tweet is <strong>strictly greater</strong> than <code>15</code>.</p>\n\n<p>Return the result table <strong>in any order</strong>.</p>\n\n<p>The query result format is in the following example:</p>\n\n<p>&nbsp;</p>\n\n<pre>\nTweets table:\n+----------+----------------------------------+\n| tweet_id | content                          |\n+----------+----------------------------------+\n| 1        | Vote for Biden                   |\n| 2        | Let us make America great again! |\n+----------+----------------------------------+\n\nResult table:\n+----------+\n| tweet_id |\n+----------+\n| 2        |\n+----------+\nTweet 1 has length = 14. It is a valid tweet.\nTweet 2 has length = 32. It is an invalid tweet.\n</pre>\n",
+            "translatedTitle": null,
+            "translatedContent": null,
+            "isPaidOnly": true,
+            "difficulty": "Easy",
+            "likes": 43,
+            "dislikes": 45,
+            "isLiked": null,
+            "similarQuestions": "[]",
+            "exampleTestcases": "{\"headers\":{\"Tweets\":[\"tweet_id\",\"content\"]},\"rows\":{\"Tweets\":[[1,\"Vote for Biden\"],[2,\"Let us make America great again!\"]]}}",
+            "contributors": [],
+            "topicTags": [
+                {
+                    "name": "Database",
+                    "slug": "database",
+                    "translatedName": null,
+                    "__typename": "TopicTagNode"
+                }
+            ],
+            "companyTagStats": "{\"3\": [{\"taggedByAdmin\": true, \"name\": \"Twitter\", \"slug\": \"twitter\", \"timesEncountered\": 0}], \"1\": [], \"2\": []}",
+            "codeSnippets": [
+                {
+                    "lang": "MySQL",
+                    "langSlug": "mysql",
+                    "code": "# Write your MySQL query statement below\n",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "MS SQL Server",
+                    "langSlug": "mssql",
+                    "code": "/* Write your T-SQL query statement below */\n",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Oracle",
+                    "langSlug": "oraclesql",
+                    "code": "/* Write your PL/SQL query statement below */\n",
+                    "__typename": "CodeSnippetNode"
+                }
+            ],
+            "stats": "{\"totalAccepted\": \"11.9K\", \"totalSubmission\": \"13.1K\", \"totalAcceptedRaw\": 11901, \"totalSubmissionRaw\": 13103, \"acRate\": \"90.8%\"}",
+            "hints": [],
+            "solution": null,
+            "status": null,
+            "sampleTestCase": "{\"headers\":{\"Tweets\":[\"tweet_id\",\"content\"]},\"rows\":{\"Tweets\":[[1,\"Vote for Biden\"],[2,\"Let us make America great again!\"]]}}",
+            "metaData": "{\n  \"mysql\": [\n    \"Create table If Not Exists Tweets(tweet_id int, content varchar(50))\"\n  ],\n  \"mssql\": [\n    \"Create table Tweets(tweet_id int, content varchar(50))\"\n  ],\n  \"oraclesql\": [\n    \"Create table Tweets(tweet_id int, content varchar(50))\"\n  ],\n  \"database\": true\n}",
+            "judgerAvailable": true,
+            "judgeType": "large",
+            "mysqlSchemas": [
+                "Create table If Not Exists Tweets(tweet_id int, content varchar(50))",
+                "Truncate table Tweets",
+                "insert into Tweets (tweet_id, content) values ('1', 'Vote for Biden')",
+                "insert into Tweets (tweet_id, content) values ('2', 'Let us make America great again!')"
+            ],
+            "enableRunCode": true,
+            "enableTestMode": false,
+            "enableDebugger": false,
+            "envInfo": "{\"mysql\": [\"MySQL\", \"<p><code>MySQL 8.0</code>.</p>\"], \"mssql\": [\"MS SQL Server\", \"<p><code>mssql server 2019</code>.</p>\"], \"oraclesql\": [\"Oracle\", \"<p><code>Oracle Sql 11.2</code>.</p>\"]}",
+            "libraryUrl": null,
+            "adminUrl": null,
+            "__typename": "QuestionNode"
+        }
+    }
+}

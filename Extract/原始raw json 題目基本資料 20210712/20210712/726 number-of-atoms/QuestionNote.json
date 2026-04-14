@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "726",
+            "article": "{\"id\": 289, \"url\": \"/articles/number-of-atoms/\", \"topicId\": 127674}",
+            "solution": {
+                "id": "289",
+                "content": "[TOC]\n\n#### Approach #1: Recursion [Accepted]\n\n**Intuition and Algorithm**\n\nWrite a function `parse` that parses the formula from index `i`, returning a map `count` from names to multiplicities (the number of times that name is recorded).\n\nWe will put `i` in global state: our `parse` function increments `i` throughout any future calls to `parse`.\n\n* When we see a `'('`, we will parse whatever is inside the brackets (up to the closing ending bracket) and add it to our count.\n\n* Otherwise, we should see an uppercase character: we will parse the rest of the letters to get the name, and add that (plus the multiplicity if there is one.)\n\n* At the end, if there is a final multiplicity (representing the multiplicity of a bracketed sequence), we'll multiply our answer by this.\n\n<iframe src=\"https://leetcode.com/playground/ANiqSCxc/shared\" frameBorder=\"0\" width=\"100%\" height=\"500\" name=\"ANiqSCxc\"></iframe>\n\n**Complexity Analysis**\n\n* Time Complexity: $$O(N^2)$$, where $$N$$ is the length of the formula.  It is $$O(N)$$ to parse through the formula, but each of $$O(N)$$ multiplicities after a bracket may increment the count of each name in the formula (inside those brackets), leading to an $$O(N^2)$$ complexity.\n\n* Space Complexity: $$O(N)$$.  We aren't recording more intermediate information than what is contained in the formula.\n\n---\n#### Approach #2: Stack [Accepted]\n\n**Intuition and Algorithm**\n\nInstead of recursion, we can simulate the call stack by using a stack of `count`s directly.\n\n<iframe src=\"https://leetcode.com/playground/iRChyyGM/shared\" frameBorder=\"0\" width=\"100%\" height=\"500\" name=\"iRChyyGM\"></iframe>\n\n**Complexity Analysis**\n\n* Time Complexity $$O(N^2)$$, and Space Complexity $$O(N)$$.  The analysis is the same as *Approach #1*.\n\n---\n#### Approach #3: Regular Expressions [Accepted]\n\n**Intuition and Algorithm**\n\nWhenever parsing is involved, we can use *regular expressions*, a language for defining patterns in text.\n\nOur regular expression will be `\"([A-Z][a-z]*)(\\d*)|(\\()|(\\))(\\d*)\"`.  Breaking this down by *capture group*, this is:\n\n* `([A-Z][a-z]*)` Match an uppercase character followed by any number of lowercase characters, then (`(\\d*)`) match any number of digits.\n* OR, `(\\()` match a left bracket or `(\\))` right bracket, then `(\\d*)` match any number of digits.\n\nNow we can proceed as in *Approach #2*.\n\n* If we parsed a name and multiplicity `([A-Z][a-z]*)(\\d*)`, we will add it to our current count.\n\n* If we parsed a left bracket, we will append a new `count` to our stack, representing the nested depth of parentheses.\n\n* If we parsed a right bracket (and possibly another multiplicity), we will multiply our deepest level `count`, `top = stack.pop()`, and add those entries to our current count.\n\n<iframe src=\"https://leetcode.com/playground/iuXagcZD/shared\" frameBorder=\"0\" width=\"100%\" height=\"500\" name=\"iuXagcZD\"></iframe>\n\n**Complexity Analysis**\n\n* Time Complexity $$O(N^2)$$, and Space Complexity $$O(N)$$.  The analysis is the same as *Approach #1*, as this regular expression did not look backwards when parsing.",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "284",
+                    "count": 20,
+                    "average": 3.9,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

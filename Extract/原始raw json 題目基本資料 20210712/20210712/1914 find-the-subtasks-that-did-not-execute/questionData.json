@@ -1,0 +1,80 @@
+{
+    "data": {
+        "question": {
+            "questionId": "1914",
+            "questionFrontendId": "1767",
+            "boundTopicId": null,
+            "title": "Find the Subtasks That Did Not Execute",
+            "titleSlug": "find-the-subtasks-that-did-not-execute",
+            "content": "<p>Table: <code>Tasks</code></p>\n\n<pre>\n+----------------+---------+\n| Column Name    | Type    |\n+----------------+---------+\n| task_id        | int     |\n| subtasks_count | int     |\n+----------------+---------+\ntask_id is the primary key for this table.\nEach row in this table indicates that task_id was divided into subtasks_count subtasks labelled from 1 to subtasks_count.\nIt is guaranteed that 2 &lt;= subtasks_count &lt;= 20.\n</pre>\n\n<p>&nbsp;</p>\n\n<p>Table: <code>Executed</code></p>\n\n<pre>\n+---------------+---------+\n| Column Name   | Type    |\n+---------------+---------+\n| task_id       | int     |\n| subtask_id    | int     |\n+---------------+---------+\n(task_id, subtask_id) is the primary key for this table.\nEach row in this table indicates that for the task task_id, the subtask with ID subtask_id was executed successfully.\nIt is <strong>guaranteed</strong> that subtask_id &lt;= subtasks_count for each task_id.</pre>\n\n<p>&nbsp;</p>\n\n<p>Write an SQL query to report the IDs of the missing subtasks for each <code>task_id</code>.</p>\n\n<p>Return the result table in <strong>any order</strong>.</p>\n\n<p>The query result format is in the following example:</p>\n\n<p>&nbsp;</p>\n\n<pre>\nTasks table:\n+---------+----------------+\n| task_id | subtasks_count |\n+---------+----------------+\n| 1       | 3              |\n| 2       | 2              |\n| 3       | 4              |\n+---------+----------------+\n\nExecuted table:\n+---------+------------+\n| task_id | subtask_id |\n+---------+------------+\n| 1       | 2          |\n| 3       | 1          |\n| 3       | 2          |\n| 3       | 3          |\n| 3       | 4          |\n+---------+------------+\n\nResult table:\n+---------+------------+\n| task_id | subtask_id |\n+---------+------------+\n| 1       | 1          |\n| 1       | 3          |\n| 2       | 1          |\n| 2       | 2          |\n+---------+------------+\nTask 1 was divided into 3 subtasks (1, 2, 3). Only subtask 2 was executed successfully, so we include (1, 1) and (1, 3) in the answer.\nTask 2 was divided into 2 subtasks (1, 2). No subtask was executed successfully, so we include (2, 1) and (2, 2) in the answer.\nTask 3 was divided into 4 subtasks (1, 2, 3, 4). All of the subtasks were executed successfully.\n</pre>\n",
+            "translatedTitle": null,
+            "translatedContent": null,
+            "isPaidOnly": true,
+            "difficulty": "Hard",
+            "likes": 45,
+            "dislikes": 3,
+            "isLiked": null,
+            "similarQuestions": "[]",
+            "exampleTestcases": "{\"headers\": {\"Tasks\": [\"task_id\", \"subtasks_count\"], \"Executed\": [\"task_id\", \"subtask_id\"]}, \"rows\": {\"Tasks\": [[1, 3], [2, 2], [3, 4]], \"Executed\": [[1, 2], [3, 1], [3, 2], [3, 3], [3, 4]]}}",
+            "contributors": [],
+            "topicTags": [
+                {
+                    "name": "Database",
+                    "slug": "database",
+                    "translatedName": null,
+                    "__typename": "TopicTagNode"
+                }
+            ],
+            "companyTagStats": "{\"3\": [{\"taggedByAdmin\": true, \"name\": \"Google\", \"slug\": \"google\", \"timesEncountered\": 0}], \"1\": [], \"2\": []}",
+            "codeSnippets": [
+                {
+                    "lang": "MySQL",
+                    "langSlug": "mysql",
+                    "code": "# Write your MySQL query statement below\n",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "MS SQL Server",
+                    "langSlug": "mssql",
+                    "code": "/* Write your T-SQL query statement below */\n",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Oracle",
+                    "langSlug": "oraclesql",
+                    "code": "/* Write your PL/SQL query statement below */\n",
+                    "__typename": "CodeSnippetNode"
+                }
+            ],
+            "stats": "{\"totalAccepted\": \"2.1K\", \"totalSubmission\": \"2.5K\", \"totalAcceptedRaw\": 2143, \"totalSubmissionRaw\": 2476, \"acRate\": \"86.6%\"}",
+            "hints": [],
+            "solution": null,
+            "status": null,
+            "sampleTestCase": "{\"headers\": {\"Tasks\": [\"task_id\", \"subtasks_count\"], \"Executed\": [\"task_id\", \"subtask_id\"]}, \"rows\": {\"Tasks\": [[1, 3], [2, 2], [3, 4]], \"Executed\": [[1, 2], [3, 1], [3, 2], [3, 3], [3, 4]]}}",
+            "metaData": "{\n  \"mysql\": [\n    \"Create table If Not Exists Tasks (task_id int, subtasks_count int)\",\n    \"Create table If Not Exists Executed (task_id int, subtask_id int)\"\n  ],\n  \"mssql\": [\n    \"Create table Tasks (task_id int, subtasks_count int)\",\n    \"Create table Executed (task_id int, subtask_id int)\"\n  ],\n  \"oraclesql\": [\n    \"Create table Tasks (task_id int, subtasks_count int)\",\n    \"Create table Executed (task_id int, subtask_id int)\"\n  ],\n  \"database\": true\n}",
+            "judgerAvailable": true,
+            "judgeType": "large",
+            "mysqlSchemas": [
+                "Create table If Not Exists Tasks (task_id int, subtasks_count int)",
+                "Create table If Not Exists Executed (task_id int, subtask_id int)",
+                "Truncate table Tasks",
+                "insert into Tasks (task_id, subtasks_count) values ('1', '3')",
+                "insert into Tasks (task_id, subtasks_count) values ('2', '2')",
+                "insert into Tasks (task_id, subtasks_count) values ('3', '4')",
+                "Truncate table Executed",
+                "insert into Executed (task_id, subtask_id) values ('1', '2')",
+                "insert into Executed (task_id, subtask_id) values ('3', '1')",
+                "insert into Executed (task_id, subtask_id) values ('3', '2')",
+                "insert into Executed (task_id, subtask_id) values ('3', '3')",
+                "insert into Executed (task_id, subtask_id) values ('3', '4')"
+            ],
+            "enableRunCode": true,
+            "enableTestMode": false,
+            "enableDebugger": false,
+            "envInfo": "{\"mysql\": [\"MySQL\", \"<p><code>MySQL 8.0</code>.</p>\"], \"mssql\": [\"MS SQL Server\", \"<p><code>mssql server 2019</code>.</p>\"], \"oraclesql\": [\"Oracle\", \"<p><code>Oracle Sql 11.2</code>.</p>\"]}",
+            "libraryUrl": null,
+            "adminUrl": null,
+            "__typename": "QuestionNode"
+        }
+    }
+}

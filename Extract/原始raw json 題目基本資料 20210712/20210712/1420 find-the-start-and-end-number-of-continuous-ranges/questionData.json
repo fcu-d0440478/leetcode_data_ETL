@@ -1,0 +1,76 @@
+{
+    "data": {
+        "question": {
+            "questionId": "1420",
+            "questionFrontendId": "1285",
+            "boundTopicId": null,
+            "title": "Find the Start and End Number of Continuous Ranges",
+            "titleSlug": "find-the-start-and-end-number-of-continuous-ranges",
+            "content": "<p>Table: <code>Logs</code></p>\r\n\r\n<pre>\r\n+---------------+---------+\r\n| Column Name   | Type    |\r\n+---------------+---------+\r\n| log_id        | int     |\r\n+---------------+---------+\r\nid is the primary key for this table.\r\nEach row of this table contains the ID in a log Table.\r\n\r\n</pre>\r\n\r\n<p>Since some IDs&nbsp;have been removed from <code>Logs</code>. Write an SQL query to find the start and end number of continuous ranges in table <code>Logs</code>.</p>\r\n\r\n<p>Order the result table by <code>start_id</code>.</p>\r\n\r\n<p>The query result format is in the following example:</p>\r\n\r\n<pre>\r\nLogs table:\r\n+------------+\r\n| log_id     |\r\n+------------+\r\n| 1          |\r\n| 2          |\r\n| 3          |\r\n| 7          |\r\n| 8          |\r\n| 10         |\r\n+------------+\r\n\r\nResult table:\r\n+------------+--------------+\r\n| start_id   | end_id       |\r\n+------------+--------------+\r\n| 1          | 3            |\r\n| 7          | 8            |\r\n| 10         | 10           |\r\n+------------+--------------+\r\nThe result table should contain all ranges in table Logs.\r\nFrom 1 to 3 is contained in the table.\r\nFrom 4 to 6 is missing in the table\r\nFrom 7 to 8 is contained in the table.\r\nNumber 9 is missing in the table.\r\nNumber 10 is contained in the table.\r\n</pre>",
+            "translatedTitle": null,
+            "translatedContent": null,
+            "isPaidOnly": true,
+            "difficulty": "Medium",
+            "likes": 236,
+            "dislikes": 13,
+            "isLiked": null,
+            "similarQuestions": "[{\"title\": \"Report Contiguous Dates\", \"titleSlug\": \"report-contiguous-dates\", \"difficulty\": \"Hard\", \"translatedTitle\": null}, {\"title\": \"Find the Missing IDs\", \"titleSlug\": \"find-the-missing-ids\", \"difficulty\": \"Medium\", \"translatedTitle\": null}]",
+            "exampleTestcases": "{\"headers\":{\"Logs\":[\"log_id\"]},\"rows\":{\"Logs\":[[1],[2],[3],[7],[8],[10]]}}",
+            "contributors": [],
+            "topicTags": [
+                {
+                    "name": "Database",
+                    "slug": "database",
+                    "translatedName": null,
+                    "__typename": "TopicTagNode"
+                }
+            ],
+            "companyTagStats": "{\"3\": [{\"taggedByAdmin\": true, \"name\": \"Microsoft\", \"slug\": \"microsoft\", \"timesEncountered\": 0}], \"2\": [{\"taggedByAdmin\": false, \"name\": \"Amazon\", \"slug\": \"amazon\", \"timesEncountered\": 2}], \"1\": []}",
+            "codeSnippets": [
+                {
+                    "lang": "MySQL",
+                    "langSlug": "mysql",
+                    "code": "# Write your MySQL query statement below\n",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "MS SQL Server",
+                    "langSlug": "mssql",
+                    "code": "/* Write your T-SQL query statement below */\n",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Oracle",
+                    "langSlug": "oraclesql",
+                    "code": "/* Write your PL/SQL query statement below */\n",
+                    "__typename": "CodeSnippetNode"
+                }
+            ],
+            "stats": "{\"totalAccepted\": \"14K\", \"totalSubmission\": \"15.9K\", \"totalAcceptedRaw\": 13995, \"totalSubmissionRaw\": 15928, \"acRate\": \"87.9%\"}",
+            "hints": [],
+            "solution": null,
+            "status": null,
+            "sampleTestCase": "{\"headers\":{\"Logs\":[\"log_id\"]},\"rows\":{\"Logs\":[[1],[2],[3],[7],[8],[10]]}}",
+            "metaData": "{\n  \"mysql\": [\n    \"Create table If Not Exists Logs (log_id int)\"\n  ],\n  \"mssql\": [\n    \"Create table Logs (log_id int)\"\n  ],\n  \"oraclesql\": [\n    \"Create table Logs (log_id int)\"\n  ],\n  \"database\": true\n}",
+            "judgerAvailable": true,
+            "judgeType": "large",
+            "mysqlSchemas": [
+                "Create table If Not Exists Logs (log_id int)",
+                "Truncate table Logs",
+                "insert into Logs (log_id) values ('1')",
+                "insert into Logs (log_id) values ('2')",
+                "insert into Logs (log_id) values ('3')",
+                "insert into Logs (log_id) values ('7')",
+                "insert into Logs (log_id) values ('8')",
+                "insert into Logs (log_id) values ('10')"
+            ],
+            "enableRunCode": true,
+            "enableTestMode": false,
+            "enableDebugger": false,
+            "envInfo": "{\"mysql\": [\"MySQL\", \"<p><code>MySQL 8.0</code>.</p>\"], \"mssql\": [\"MS SQL Server\", \"<p><code>mssql server 2019</code>.</p>\"], \"oraclesql\": [\"Oracle\", \"<p><code>Oracle Sql 11.2</code>.</p>\"]}",
+            "libraryUrl": null,
+            "adminUrl": null,
+            "__typename": "QuestionNode"
+        }
+    }
+}

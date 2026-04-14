@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "349",
+            "article": "{\"id\": 704, \"url\": \"/articles/intersection-of-two-arrays/\", \"topicId\": 246525}",
+            "solution": {
+                "id": "704",
+                "content": "[TOC]\n\n## Solution\n\n---\n\n#### Approach 1: Two Sets\n\n**Intuition**\n\nThe naive approach would be to iterate along the first array `nums1`\nand to check for each value if this value in `nums2` or not. \nIf yes - add the value to output. Such an approach would result \nin a pretty bad\n$$\\mathcal{O}(n \\times m)$$ time complexity, where `n` and `m` are \narrays' lengths.\n\n> To solve the problem in linear time, let's use the structure `set`,\nwhich provides `in/contains` operation in $$\\mathcal{O}(1)$$ time in\naverage case.\n\nThe idea is to convert both arrays into sets, and then iterate over \nthe smallest set checking the presence of each element in the larger set.\nTime complexity of this approach is $$\\mathcal{O}(n + m)$$ in the average case.\n\n!?!../Documents/349_LIS.json:1000,352!?!\n\n**Implementation**\n\n<iframe src=\"https://leetcode.com/playground/QbhdgTQp/shared\" frameBorder=\"0\" width=\"100%\" height=\"395\" name=\"QbhdgTQp\"></iframe>\n\n**Complexity Analysis**\n\n* Time complexity : $$\\mathcal{O}(n + m)$$, where `n` and `m` are \narrays' lengths. $$\\mathcal{O}(n)$$ time is used to convert `nums1`\ninto set, $$\\mathcal{O}(m)$$ time is used to convert `nums2`, and\n`contains/in` operations are $$\\mathcal{O}(1)$$ in the average case.\n \n* Space complexity : $$\\mathcal{O}(m + n)$$ in the worst case when\nall elements in the arrays are different.\n<br />\n<br />\n\n\n---\n#### Approach 2: Built-in Set Intersection\n\n**Intuition**\n\nThere are built-in intersection facilities,\nwhich provide $$\\mathcal{O}(n + m)$$ time complexity in the \naverage case and $$\\mathcal{O}(n \\times m)$$ time complexity in the \nworst case. \n\n> In Python it's [intersection operator](https://wiki.python.org/moin/TimeComplexity#set), \nin Java - [retainAll() function](https://docs.oracle.com/javase/8/docs/api/java/util/AbstractCollection.html#retainAll-java.util.Collection-).\n\n**Implementation**\n\n<iframe src=\"https://leetcode.com/playground/ukbkHM7f/shared\" frameBorder=\"0\" width=\"100%\" height=\"310\" name=\"ukbkHM7f\"></iframe>\n\n**Complexity Analysis**\n\n* Time complexity : $$\\mathcal{O}(n + m)$$ in the average case \n and $$\\mathcal{O}(n \\times m)$$ [in the worst case\n when load factor is high enough](https://wiki.python.org/moin/TimeComplexity#set).\n \n* Space complexity : $$\\mathcal{O}(n + m)$$ in the worst case when\nall elements in the arrays are different.",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "689",
+                    "count": 78,
+                    "average": 3.974,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

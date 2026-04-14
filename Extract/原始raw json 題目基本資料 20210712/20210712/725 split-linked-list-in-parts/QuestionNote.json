@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "725",
+            "article": "{\"id\": 292, \"url\": \"/articles/split-linked-list-in-parts/\", \"topicId\": 127677}",
+            "solution": {
+                "id": "292",
+                "content": "[TOC]\n\n#### Approach #1: Create New Lists [Accepted]\n\n**Intuition and Algorithm**\n\nIf there are $$N$$ nodes in the linked list `root`, then there are $$N / k$$ items in each part, plus the first $$N \\% k$$ parts have an extra item.  We can count $$N$$ with a simple loop.\n\nNow for each part, we have calculated how many nodes that part will have: `width + (i < remainder ? 1 : 0)`.  We create a new list and write the part to that list.\n\nOur solution showcases constructs of the form `a = b = c`.  Note that this syntax behaves differently for different languages.\n\n<iframe src=\"https://leetcode.com/playground/eEgVuXVr/shared\" frameBorder=\"0\" width=\"100%\" height=\"463\" name=\"eEgVuXVr\"></iframe>\n\n**Complexity Analysis**\n\n* Time Complexity: $$O(N + k)$$, where $$N$$ is the number of nodes in the given list.  If $$k$$ is large, it could still require creating many new empty lists.\n\n* Space Complexity: $$O(max(N, k))$$, the space used in writing the answer.\n\n---\n#### Approach #2: Split Input List [Accepted]\n\n**Intuition and Algorithm**\n\nAs in *Approach #1*, we know the size of each part.  Instead of creating new lists, we will split the input list directly and return a list of pointers to nodes in the original list as appropriate.\n\nOur solution proceeds similarly.  For a part of size `L = width + (i < remainder ? 1 : 0)`, instead of stepping `L` times, we will step `L-1` times, and our final time will also sever the link between the last node from the previous part and the first node from the next part.\n\n<iframe src=\"https://leetcode.com/playground/zL6atUfN/shared\" frameBorder=\"0\" width=\"100%\" height=\"500\" name=\"zL6atUfN\"></iframe>\n\n**Complexity Analysis**\n\n* Time Complexity: $$O(N + k)$$, where $$N$$ is the number of nodes in the given list.  If $$k$$ is large, it could still require creating many new empty lists.\n\n* Space Complexity: $$O(k)$$, the additional space used in writing the answer.",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "287",
+                    "count": 32,
+                    "average": 3.938,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

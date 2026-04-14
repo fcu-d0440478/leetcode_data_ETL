@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "732",
+            "article": "{\"id\": 304, \"url\": \"/articles/my-calendar-iii/\", \"topicId\": 127484}",
+            "solution": {
+                "id": "304",
+                "content": "[TOC]\n\n#### Approach #1: Boundary Count [Accepted]\n\n**Intuition and Algorithm**\n\nWhen booking a new event `[start, end)`, count `delta[start]++` and `delta[end]--`.  When processing the values of `delta` in sorted order of their keys, the largest such value is the answer.\n\nIn Python, we sort the set each time instead, as there is no analog to *TreeMap* available.\n\n<iframe src=\"https://leetcode.com/playground/zbM2oKJX/shared\" frameBorder=\"0\" width=\"100%\" height=\"378\" name=\"zbM2oKJX\"></iframe>\n\n\n**Complexity Analysis**\n\n* Time Complexity: $$O(N^2)$$, where $$N$$ is the number of events booked.  For each new event, we traverse `delta` in $$O(N)$$ time.  In Python, this is $$O(N^2 \\log N)$$ owing to the extra sort step.\n\n* Space Complexity: $$O(N)$$, the size of `delta`.",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "299",
+                    "count": 31,
+                    "average": 4.064,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "175",
+            "article": "{\"id\": 206, \"url\": \"/articles/combine-two-tables/\", \"topicId\": 127650}",
+            "solution": {
+                "id": "206",
+                "content": "[TOC]\n\n## Solution\n---\n#### Approach: Using `outer join` [Accepted]\n\n**Algorithm**\n\nSince the *PersonId* in table **Address** is the foreign key of table **Person**, we can join this two table to get the address information of a person.\n\nConsidering there might not be an address information for every person, we should use `outer join` instead of the default `inner join`.\n\n**MySQL**\n\n```sql\nselect FirstName, LastName, City, State\nfrom Person left join Address\non Person.PersonId = Address.PersonId\n;\n```\n>Note: Using `where` clause to filter the records will fail if there is no address information for a person because it will not display the name information.",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "201",
+                    "count": 60,
+                    "average": 4.367,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

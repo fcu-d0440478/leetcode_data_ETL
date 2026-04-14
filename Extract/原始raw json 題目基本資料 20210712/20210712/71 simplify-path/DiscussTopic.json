@@ -1,0 +1,43 @@
+{
+    "data": {
+        "topic": {
+            "id": 511289,
+            "viewCount": 25914,
+            "topLevelCommentCount": 23,
+            "subscribed": false,
+            "title": "Simplify Path",
+            "pinned": false,
+            "tags": [],
+            "hideFromTrending": false,
+            "post": {
+                "id": 966761,
+                "voteCount": 0,
+                "voteStatus": 0,
+                "content": "",
+                "updationDate": 1581897593,
+                "creationDate": 1581897593,
+                "status": null,
+                "isHidden": null,
+                "coinRewards": [],
+                "author": {
+                    "isDiscussAdmin": false,
+                    "isDiscussStaff": true,
+                    "username": "sachinmalhotra1993",
+                    "nameColor": null,
+                    "activeBadge": null,
+                    "profile": {
+                        "userAvatar": "https://assets.leetcode.com/users/sachinmalhotra1993/avatar_1552114480.png",
+                        "reputation": 493,
+                        "__typename": "UserProfileNode"
+                    },
+                    "isActive": true,
+                    "__typename": "UserNode"
+                },
+                "authorIsModerator": true,
+                "isOwnPost": false,
+                "__typename": "PostNode"
+            },
+            "__typename": "TopicNode"
+        }
+    }
+}

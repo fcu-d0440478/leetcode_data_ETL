@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "627",
+            "article": "{\"id\": 177, \"url\": \"/articles/swap-salary/\", \"topicId\": 127635}",
+            "solution": {
+                "id": "177",
+                "content": "[TOC]\n\n## Solution\n---\n#### Approach: Using `UPDATE` and `CASE...WHEN` [Accepted]\n\n**Algorithm**\n\nTo dynamically set a value to a column, we can use [`UPDATE`](https://dev.mysql.com/doc/refman/5.7/en/update.html) statement together when [`CASE...WHEN...`](https://dev.mysql.com/doc/refman/5.7/en/case.html) flow control statement.\n\n**MySQL**\n\n```sql\nUPDATE salary\nSET\n    sex = CASE sex\n        WHEN 'm' THEN 'f'\n        ELSE 'm'\n    END;\n```",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "172",
+                    "count": 40,
+                    "average": 4.525,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

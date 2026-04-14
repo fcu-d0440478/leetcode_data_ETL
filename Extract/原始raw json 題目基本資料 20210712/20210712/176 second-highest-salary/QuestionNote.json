@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "176",
+            "article": "{\"id\": 217, \"url\": \"/articles/second-highest-salary/\", \"topicId\": 127754}",
+            "solution": {
+                "id": "217",
+                "content": "[TOC]\n\n## Solution\n---\n#### Approach: Using sub-query and `LIMIT` clause [Accepted]\n\n**Algorithm**\n\nSort the distinct salary in descend order and then utilize the [`LIMIT`](https://dev.mysql.com/doc/refman/5.7/en/select.html) clause to get the second highest salary.\n\n```sql\nSELECT DISTINCT\n    Salary AS SecondHighestSalary\nFROM\n    Employee\nORDER BY Salary DESC\nLIMIT 1 OFFSET 1\n```\n\nHowever, this solution will be judged as 'Wrong Answer' if there is no such second highest salary since there might be only one record in this table. To overcome this issue, we can take this as a temp table.\n\n**MySQL**\n\n```sql\nSELECT\n    (SELECT DISTINCT\n            Salary\n        FROM\n            Employee\n        ORDER BY Salary DESC\n        LIMIT 1 OFFSET 1) AS SecondHighestSalary\n;\n```\n\n#### Approach: Using `IFNULL` and `LIMIT` clause [Accepted]\n\nAnother way to solve the 'NULL' problem is to use `IFNULL` funtion as below.\n\n**MySQL**\n```sql\nSELECT\n    IFNULL(\n      (SELECT DISTINCT Salary\n       FROM Employee\n       ORDER BY Salary DESC\n        LIMIT 1 OFFSET 1),\n    NULL) AS SecondHighestSalary\n```",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "212",
+                    "count": 134,
+                    "average": 3.91,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

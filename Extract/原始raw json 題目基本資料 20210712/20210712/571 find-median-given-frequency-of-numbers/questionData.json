@@ -1,0 +1,74 @@
+{
+    "data": {
+        "question": {
+            "questionId": "571",
+            "questionFrontendId": "571",
+            "boundTopicId": null,
+            "title": "Find Median Given Frequency of Numbers",
+            "titleSlug": "find-median-given-frequency-of-numbers",
+            "content": "<p>The <code>Numbers</code> table keeps the value of number and its frequency.</p>\r\n\r\n<pre>\r\n+----------+-------------+\r\n|  Number  |  Frequency  |\r\n+----------+-------------|\r\n|  0       |  7          |\r\n|  1       |  1          |\r\n|  2       |  3          |\r\n|  3       |  1          |\r\n+----------+-------------+\r\n</pre>\r\n\r\n<p>In this table, the numbers are <code>0, 0, 0, 0, 0, 0, 0, 1, 2, 2, 2, 3</code>, so the median is <code>(0 + 0) / 2 = 0</code>.</p>\r\n\r\n<pre>\r\n+--------+\r\n| median |\r\n+--------|\r\n| 0.0000 |\r\n+--------+\r\n</pre>\r\n\r\n<p>Write a query to find the median of all numbers and name the result as <code>median</code>.</p>\r\n",
+            "translatedTitle": null,
+            "translatedContent": null,
+            "isPaidOnly": true,
+            "difficulty": "Hard",
+            "likes": 152,
+            "dislikes": 54,
+            "isLiked": null,
+            "similarQuestions": "[{\"title\": \"Median Employee Salary\", \"titleSlug\": \"median-employee-salary\", \"difficulty\": \"Hard\", \"translatedTitle\": null}]",
+            "exampleTestcases": "{\"headers\": {\"Numbers\": [\"Number\", \"Frequency\"]}, \"rows\": {\"Numbers\": [[0, 7], [1, 1], [2, 3], [3, 1]]}}",
+            "contributors": [],
+            "topicTags": [
+                {
+                    "name": "Database",
+                    "slug": "database",
+                    "translatedName": null,
+                    "__typename": "TopicTagNode"
+                }
+            ],
+            "companyTagStats": "{\"3\": [{\"taggedByAdmin\": true, \"name\": \"Pinterest\", \"slug\": \"pinterest\", \"timesEncountered\": 0}], \"1\": [], \"2\": []}",
+            "codeSnippets": [
+                {
+                    "lang": "MySQL",
+                    "langSlug": "mysql",
+                    "code": "# Write your MySQL query statement below\n",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "MS SQL Server",
+                    "langSlug": "mssql",
+                    "code": "/* Write your T-SQL query statement below */\n",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Oracle",
+                    "langSlug": "oraclesql",
+                    "code": "/* Write your PL/SQL query statement below */\n",
+                    "__typename": "CodeSnippetNode"
+                }
+            ],
+            "stats": "{\"totalAccepted\": \"13.2K\", \"totalSubmission\": \"29K\", \"totalAcceptedRaw\": 13210, \"totalSubmissionRaw\": 28965, \"acRate\": \"45.6%\"}",
+            "hints": [],
+            "solution": null,
+            "status": null,
+            "sampleTestCase": "{\"headers\": {\"Numbers\": [\"Number\", \"Frequency\"]}, \"rows\": {\"Numbers\": [[0, 7], [1, 1], [2, 3], [3, 1]]}}",
+            "metaData": "{\r\n  \"mysql\": [\r\n    \"Create table If Not Exists Numbers (Number int, Frequency int)\"\r\n  ],\r\n  \"mssql\": [\r\n    \"Create table Numbers (Number int, Frequency int)\"\r\n  ],\r\n  \"oraclesql\": [\r\n    \"Create table Numbers (Number int, Frequency int)\"\r\n  ],\r\n  \"database\": true\r\n}",
+            "judgerAvailable": true,
+            "judgeType": "large",
+            "mysqlSchemas": [
+                "Create table If Not Exists Numbers (Number int, Frequency int)",
+                "Truncate table Numbers",
+                "insert into Numbers (Number, Frequency) values ('0', '7')",
+                "insert into Numbers (Number, Frequency) values ('1', '1')",
+                "insert into Numbers (Number, Frequency) values ('2', '3')",
+                "insert into Numbers (Number, Frequency) values ('3', '1')"
+            ],
+            "enableRunCode": true,
+            "enableTestMode": false,
+            "enableDebugger": false,
+            "envInfo": "{\"mysql\": [\"MySQL\", \"<p><code>MySQL 8.0</code>.</p>\"], \"mssql\": [\"MS SQL Server\", \"<p><code>mssql server 2019</code>.</p>\"], \"oraclesql\": [\"Oracle\", \"<p><code>Oracle Sql 11.2</code>.</p>\"]}",
+            "libraryUrl": null,
+            "adminUrl": null,
+            "__typename": "QuestionNode"
+        }
+    }
+}

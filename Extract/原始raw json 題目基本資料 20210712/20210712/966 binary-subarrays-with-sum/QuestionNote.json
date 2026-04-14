@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "966",
+            "article": "{\"id\": 600, \"url\": \"/articles/binary-subarrays-with-sum/\", \"topicId\": 186800}",
+            "solution": {
+                "id": "600",
+                "content": "[TOC]\n\n## Solution\n---\n#### Approach 1: Index of Ones\n\n**Intuition**\n\nSay we number the `1`s in `A`: $$(x_1, x_2, \\cdots, x_n)$$ with $$A[x_i] = 1$$.\n\nThen, if we have a subarray of sum $$S$$, it has to use the ones $$x_i, x_{i+1}, \\cdots, x_{i+S-1}$$.  For each $$i$$, we can count the number of such subarrays individually.\n\n**Algorithm**\n\nIn general, the number of such subarrays (for $$i$$) is $$(x_i - x_{i-1}) * (x_{i+S} - x_{i+S-1})$$.\n\nFor example, if $$S = 2$$, then in `A = [1,0,1,0,1,0,0,1]`, let's count the number of subarrays `[i, j]` that use the middle two `1`s.  There are 2 choices for the `i` `(i = 1, 2)` and 3 choices for the `j` `(j = 4, 5, 6)`.\n\nThe corner cases are when $$S = 0$$, $$i = 1$$, or $$i+S = n+1$$. We can handle these gracefully.\n\n<iframe src=\"https://leetcode.com/playground/Cb2DKSB7/shared\" frameBorder=\"0\" width=\"100%\" height=\"500\" name=\"Cb2DKSB7\"></iframe>\n\n**Complexity Analysis**\n\n* Time Complexity:  $$O(N)$$, where $$N$$ is the length of `A`.\n\n* Space Complexity:  $$O(N)$$.\n<br />\n<br />\n\n\n---\n#### Approach 2: Prefix Sums\n\n**Intuition**\n\nLet `P[i] = A[0] + A[1] + ... + A[i-1]`.  Then `P[j+1] - P[i] = A[i] + A[i+1] + ... + A[j]`, the sum of the subarray `[i, j]`.\n\nHence, we are looking for the number of `i < j` with `P[j] - P[i] = S`.\n\n**Algorithm**\n\nFor each `j`, let's count the number of `i` with `P[j] = P[i] + S`.  This is analogous to counting the number of subarrays ending in `j` with sum `S`.\n\nIt comes down to counting how many `P[i] + S` we've seen before.  We can keep this count on the side to help us find the final answer.\n\n<iframe src=\"https://leetcode.com/playground/fqvGJzPd/shared\" frameBorder=\"0\" width=\"100%\" height=\"344\" name=\"fqvGJzPd\"></iframe>\n\n**Complexity Analysis**\n\n* Time Complexity:  $$O(N)$$, where $$N$$ is the length of `A`.\n\n* Space Complexity:  $$O(N)$$.\n<br />\n<br />\n\n\n---\n#### Approach 3: Three Pointer\n\n**Intuition**\n\nFor each `j`, let's try to count the number of `i`'s that have the subarray `[i, j]` equal to `S`.\n\nIt is easy to see these `i`'s form an interval `[i_lo, i_hi]`, and each of `i_lo`, `i_hi` are increasing with respect to `j`.  So we can use a \"two pointer\" style approach.\n\n**Algorithm**\n\nFor each `j` (in increasing order), let's maintain 4 variables:\n\n* `sum_lo` : the sum of subarray `[i_lo, j]`\n* `sum_hi` : the sum of subarray `[i_hi, j]`\n* `i_lo` : the smallest `i` so that `sum_lo <= S`\n* `i_hi` : the largest `i` so that `sum_hi <= S`\n\nThen, (provided that `sum_lo == S`), the number of subarrays ending in `j` is `i_hi - i_lo + 1`.\n\nAs an example, with `A = [1,0,0,1,0,1]` and `S = 2`, when `j = 5`, we want `i_lo = 1` and `i_hi = 3`.\n\n<iframe src=\"https://leetcode.com/playground/BQEUvTEm/shared\" frameBorder=\"0\" width=\"100%\" height=\"480\" name=\"BQEUvTEm\"></iframe>\n\n**Complexity Analysis**\n\n* Time Complexity:  $$O(N)$$, where $$N$$ is the length of `A`.\n\n* Space Complexity:  $$O(1)$$.\n<br />\n<br />",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "586",
+                    "count": 44,
+                    "average": 3.932,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

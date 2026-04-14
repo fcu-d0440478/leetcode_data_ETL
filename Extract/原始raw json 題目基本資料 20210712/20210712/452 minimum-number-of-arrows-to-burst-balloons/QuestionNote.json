@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "452",
+            "article": "{\"id\": 725, \"url\": \"/articles/minimum-number-of-arrows-to-burst-balloons/\", \"topicId\": 288049}",
+            "solution": {
+                "id": "725",
+                "content": "[TOC]\n\n## Solution\n\n---\n\n#### Approach 1: Greedy\n\n**Greedy algorithms**\n\nGreedy problems usually look like \n\"Find minimum number of _something_ to do _something_\" or \n\"Find maximum number of _something_ to fit in _some conditions_\", \nand typically propose an unsorted input.\n\n> The idea of greedy algorithm is to pick the _locally_\noptimal move at each step, that will lead to the _globally_ optimal solution.\n\nThe standard solution has $$\\mathcal{O}(N \\log N)$$ time complexity and consists of two parts:\n\n- Figure out how to sort the input data ($$\\mathcal{O}(N \\log N)$$ time).\nThat could be done directly by a sorting or indirectly by a heap usage. \nTypically sort is better than the heap usage because of gain in space.\n\n- Parse the sorted input to have a solution ($$\\mathcal{O}(N)$$ time). \n\nPlease notice that in case of well-sorted input one doesn't need the first \npart and the greedy solution could have $$\\mathcal{O}(N)$$ time complexity,\n[here is an example](https://leetcode.com/articles/gas-station/).\n\n> How to prove that your greedy algorithm provides globally optimal solution?\n\nUsually you could use the [proof by contradiction](https://en.wikipedia.org/wiki/Proof_by_contradiction). \n\n**Intuition**\n\nLet's consider the following combinations of the balloons.\n\n![bla](../Figures/452/balloons.png)\n\nThat's quite obvious that two arrows is enough to burst them all, let's figure out\nhow to compute this result with the help of greedy algorithm.\n\n![bla](../Figures/452/arrows.png)\n\nLet's sort the balloons by the end coordinate, and then check them \none by one. The first balloon is a green one number `0`, \nit ends at coordinate `6`, and there is no balloons \nending before it because of sorting.\n\nThe other balloons have two possibilities :\n\n- To have a start coordinate smaller than `6`, like a red balloon.\nThese ones could be burst together with the balloon `0` by one arrow.\n\n- To have a start coordinate larger than `6`, like a yellow balloon.\nThese ones couldn't be burst together with the balloon `0` by one arrow,\nand hence one needs to increase the number of arrows here.\n\n![bla](../Figures/452/sorted.png)\n\n> That means that one could always track the end of the current balloon,\nand ignore all the balloons which end before it. Once the current balloon\nis ended (= the next balloon starts after the current balloon),\none has to increase the number of arrows by one and start to track \nthe end of the next balloon.\n\n**Algorithm**\n\nNow the algorithm is straightforward :\n\n- Sort the balloons by end coordinate `x_end`.\n\n- Initiate the end coordinate of a balloon which ends first : \n`first_end = points[0][1]`.\n \n- Initiate number of arrows: `arrows = 1`.\n\n- Iterate over all balloons:\n\n    - If the balloon starts after `first_end`:\n        \n        - Increase  the number of arrows by one.\n        \n        - Set `first_end` to be equal to the end of the current\n        balloon.\n        \n- Return arrows.\n\n**Implementation**\n\n<iframe src=\"https://leetcode.com/playground/RYK5QdxD/shared\" frameBorder=\"0\" width=\"100%\" height=\"500\" name=\"RYK5QdxD\"></iframe>\n\n**Complexity Analysis**\n\n* Time complexity : $$\\mathcal{O}(N \\log N)$$ because of sorting of\ninput data.\n \n* Space complexity : $$\\mathcal{O}(N)$$ or $$\\mathcal{O}(\\log{N})$$\n\n  - The space complexity of the sorting algorithm depends on the implementation of each program language.\n\n  - For instance, the `list.sort()` function in Python is implemented with the [Timsort](https://en.wikipedia.org/wiki/Timsort) algorithm whose space complexity is $$\\mathcal{O}(N)$$.\n\n  - In Java, the [Arrays.sort()](https://docs.oracle.com/javase/8/docs/api/java/util/Arrays.html#sort-byte:A-) is implemented as a variant of quicksort algorithm whose space complexity is $$\\mathcal{O}(\\log{N})$$.\n\n\n---",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": true,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "710",
+                    "count": 35,
+                    "average": 4.429,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

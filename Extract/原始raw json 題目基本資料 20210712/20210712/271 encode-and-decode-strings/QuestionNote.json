@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "271",
+            "article": "{\"id\": 748, \"url\": \"/articles/encode-and-decode-strings/\", \"topicId\": 328340}",
+            "solution": {
+                "id": "748",
+                "content": "[TOC]\n\n## Solution\n\n--- \n\n#### Approach 1: Non-ASCII Delimiter\n\n**Intuition**\n\nNaive solution here is to join strings using delimiters.\n\n> What to use as a delimiter? Each string may contain \nany possible characters out of 256 valid ascii characters.\n\nSeems like one has to use non-ASCII unichar character, \nfor example `unichr(257)` in Python and\n`Character.toString((char)257)` in Java (it's character `ā`). \n\n![fig](../Figures/271/delimiter.png)\n\nHere it's convenient to use two different non-ASCII characters,\nto distinguish between situations of \"empty array\" and \nof \"array of empty strings\". \n\n**Implementation**\n\nUse `split` in Java with a second argument `-1` to \nmake it work as `split` in Python.\n\n<iframe src=\"https://leetcode.com/playground/VNZA4dA2/shared\" frameBorder=\"0\" width=\"100%\" height=\"463\" name=\"VNZA4dA2\"></iframe>\n\n**Complexity Analysis**\n\n* Time complexity : $$\\mathcal{O}(N)$$ both for encode and decode,\nwhere N is a number of strings in the input array.\n\n* Space complexity : $$\\mathcal{O}(1)$$ for encode to keep the output,\nsince the output is one string.\n$$\\mathcal{O}(N)$$ for decode keep the output,\nsince the output is an array of strings.\n<br /> \n<br />\n\n\n---\n#### Approach 2: Chunked Transfer Encoding\n\nPay attention to this approach because last year Google likes\nto ask that sort of low-level optimisation. \n[Serialize and deserialize BST problem](https://leetcode.com/articles/serialize-and-deserialize-bst/)\nis a similar example. \n\nThis approach is based on the \n[encoding used in HTTP v1.1](https://en.wikipedia.org/wiki/Chunked_transfer_encoding).\nIt doesn't depend on the set of input characters, and hence\nis more versatile and effective than Approach 1.\n\n> Data stream is divided into chunks.\nEach chunk is preceded by its size in bytes.\n\n**Encoding Algorithm**\n\n![fig](../Figures/271/encodin.png)\n\n- Iterate over the array of chunks, i.e. strings. \n\n    - For each chunk compute its length, and convert that length into\n    4-bytes string.\n    \n    - Append to encoded string :\n     \n        - 4-bytes string with information about chunk size in bytes.\n        \n        - Chunk itself.\n        \n- Return encoded string.\n\n**Decoding Algorithm**\n\n![fig](../Figures/271/decodin.png)\n\n- Iterate over the encoded string with a pointer `i` initiated as 0.\nWhile `i < n`:\n\n    - Read 4 bytes `s[i: i + 4]`. It's chunk size in bytes. \n    Convert this 4-bytes string to integer `length`.\n    \n    - Move the pointer by 4 bytes `i += 4`.\n    \n    - Append to the decoded array string `s[i: i + length]`.\n    \n    - Move the pointer by `length` bytes `i += length`.\n    \n- Return decoded array of strings.\n\n**Implementation**\n\n<iframe src=\"https://leetcode.com/playground/p2MyhHK7/shared\" frameBorder=\"0\" width=\"100%\" height=\"500\" name=\"p2MyhHK7\"></iframe>\n\n**Complexity Analysis**\n\n* Time complexity : $$\\mathcal{O}(N)$$ both for encode and decode,\nwhere N is a number of strings in the input array.\n\n* Space complexity : $$\\mathcal{O}(1)$$ for encode to keep the output,\nsince the output is one string.\n$$\\mathcal{O}(N)$$ for decode keep the output,\nsince the output is an array of strings.",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": true,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "733",
+                    "count": 25,
+                    "average": 4.24,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

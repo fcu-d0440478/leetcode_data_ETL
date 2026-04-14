@@ -1,0 +1,80 @@
+{
+    "data": {
+        "question": {
+            "questionId": "1608",
+            "questionFrontendId": "1468",
+            "boundTopicId": null,
+            "title": "Calculate Salaries",
+            "titleSlug": "calculate-salaries",
+            "content": "<p>Table <code>Salaries</code>:</p>\n\n<pre>\n+---------------+---------+\n| Column Name   | Type    |\n+---------------+---------+\n| company_id    | int     |\n| employee_id   | int     |\n| employee_name | varchar |\n| salary        | int     |\n+---------------+---------+\n(company_id, employee_id) is the primary key for this table.\nThis table contains the company id, the id, the name and the salary for an employee.\n</pre>\n\n<p>&nbsp;</p>\n\n<p>Write an SQL query to find the salaries of the employees after applying taxes.</p>\n\n<p>The tax rate is calculated for each company based on the following criteria:</p>\n\n<ul>\n\t<li>0% If the max salary of any employee in the company is less than&nbsp;1000$.</li>\n\t<li>24% If the max salary of any employee in the company is in the range [1000, 10000] inclusive.</li>\n\t<li>49% If the max salary of any employee in the company is greater than 10000$.</li>\n</ul>\n\n<p>Return the result table <b>in any order</b>. Round the salary to the nearest integer.</p>\n\n<p>The query result format is in the following example:</p>\n\n<pre>\nSalaries table:\n+------------+-------------+---------------+--------+\n| company_id | employee_id | employee_name | salary |\n+------------+-------------+---------------+--------+\n| 1          | 1           | Tony          | 2000   |\n| 1          | 2           | Pronub        | 21300  |\n| 1          | 3           | Tyrrox        | 10800  |\n| 2          | 1           | Pam           | 300    |\n| 2          | 7           | Bassem        | 450    |\n| 2          | 9           | Hermione      | 700    |\n| 3          | 7           | Bocaben       | 100    |\n| 3          | 2           | Ognjen        | 2200   |\n| 3          | 13          | Nyancat       | 3300   |\n| 3          | 15          | Morninngcat   | 7777   |\n+------------+-------------+---------------+--------+\n\nResult table:\n+------------+-------------+---------------+--------+\n| company_id | employee_id | employee_name | salary |\n+------------+-------------+---------------+--------+\n| 1          | 1           | Tony          | 1020   |\n| 1          | 2           | Pronub        | 10863  |\n| 1          | 3           | Tyrrox        | 5508   |\n| 2          | 1           | Pam           | 300    |\n| 2          | 7           | Bassem        | 450    |\n| 2          | 9           | Hermione      | 700    |\n| 3          | 7           | Bocaben       | 76     |\n| 3          | 2           | Ognjen        | 1672   |\n| 3          | 13          | Nyancat       | 2508   |\n| 3          | 15          | Morninngcat   | 5911   |\n+------------+-------------+---------------+--------+\nFor company 1, Max salary is 21300. Employees in company 1 have taxes = 49%\nFor company 2, Max salary is 700. Employees in company 2 have taxes = 0%\nFor company 3, Max salary is 7777. Employees in company 3 have taxes = 24%\nThe salary after taxes = salary - (taxes percentage / 100) * salary\nFor example, Salary for Morninngcat (3, 15) after taxes = 7777 - 7777 * (24 / 100) = 7777 - 1866.48 = 5910.52, which is rounded to 5911.\n</pre>\n",
+            "translatedTitle": null,
+            "translatedContent": null,
+            "isPaidOnly": true,
+            "difficulty": "Medium",
+            "likes": 53,
+            "dislikes": 10,
+            "isLiked": null,
+            "similarQuestions": "[]",
+            "exampleTestcases": "{\"headers\":{\"Salaries\":[\"company_id\",\"employee_id\",\"employee_name\",\"salary\"]},\"rows\":{\"Salaries\":[[1,1,\"Tony\",2000],[1,2,\"Pronub\",21300],[1,3,\"Tyrrox\",10800],[2,1,\"Pam\",300],[2,7,\"Bassem\",450],[2,9,\"Hermione\",700],[3,7,\"Bocaben\",100],[3,2,\"Ognjen\",2200],[3,13,\"Nyancat\",3300],[3,15,\"Morninngcat\",7777]]}}",
+            "contributors": [],
+            "topicTags": [
+                {
+                    "name": "Database",
+                    "slug": "database",
+                    "translatedName": null,
+                    "__typename": "TopicTagNode"
+                }
+            ],
+            "companyTagStats": "{\"3\": [{\"taggedByAdmin\": true, \"name\": \"Startup\", \"slug\": \"startup\", \"timesEncountered\": 0}], \"1\": [], \"2\": []}",
+            "codeSnippets": [
+                {
+                    "lang": "MySQL",
+                    "langSlug": "mysql",
+                    "code": "# Write your MySQL query statement below\n",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "MS SQL Server",
+                    "langSlug": "mssql",
+                    "code": "/* Write your T-SQL query statement below */\n",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Oracle",
+                    "langSlug": "oraclesql",
+                    "code": "/* Write your PL/SQL query statement below */\n",
+                    "__typename": "CodeSnippetNode"
+                }
+            ],
+            "stats": "{\"totalAccepted\": \"9.6K\", \"totalSubmission\": \"11.7K\", \"totalAcceptedRaw\": 9633, \"totalSubmissionRaw\": 11685, \"acRate\": \"82.4%\"}",
+            "hints": [],
+            "solution": null,
+            "status": null,
+            "sampleTestCase": "{\"headers\":{\"Salaries\":[\"company_id\",\"employee_id\",\"employee_name\",\"salary\"]},\"rows\":{\"Salaries\":[[1,1,\"Tony\",2000],[1,2,\"Pronub\",21300],[1,3,\"Tyrrox\",10800],[2,1,\"Pam\",300],[2,7,\"Bassem\",450],[2,9,\"Hermione\",700],[3,7,\"Bocaben\",100],[3,2,\"Ognjen\",2200],[3,13,\"Nyancat\",3300],[3,15,\"Morninngcat\",7777]]}}",
+            "metaData": "{\n  \"mysql\": [\n    \"Create table If Not Exists Salaries (company_id int, employee_id int, employee_name varchar(13), salary int)\"\n  ],\n  \"mssql\": [\n    \"Create table Salaries (company_id int, employee_id int, employee_name varchar(13), salary int)\"\n  ],\n  \"oraclesql\": [\n    \"Create table Salaries (company_id int, employee_id int, employee_name varchar(13), salary int)\"\n  ],\n  \"database\": true\n}",
+            "judgerAvailable": true,
+            "judgeType": "large",
+            "mysqlSchemas": [
+                "Create table If Not Exists Salaries (company_id int, employee_id int, employee_name varchar(13), salary int)",
+                "Truncate table Salaries",
+                "insert into Salaries (company_id, employee_id, employee_name, salary) values ('1', '1', 'Tony', '2000')",
+                "insert into Salaries (company_id, employee_id, employee_name, salary) values ('1', '2', 'Pronub', '21300')",
+                "insert into Salaries (company_id, employee_id, employee_name, salary) values ('1', '3', 'Tyrrox', '10800')",
+                "insert into Salaries (company_id, employee_id, employee_name, salary) values ('2', '1', 'Pam', '300')",
+                "insert into Salaries (company_id, employee_id, employee_name, salary) values ('2', '7', 'Bassem', '450')",
+                "insert into Salaries (company_id, employee_id, employee_name, salary) values ('2', '9', 'Hermione', '700')",
+                "insert into Salaries (company_id, employee_id, employee_name, salary) values ('3', '7', 'Bocaben', '100')",
+                "insert into Salaries (company_id, employee_id, employee_name, salary) values ('3', '2', 'Ognjen', '2200')",
+                "insert into Salaries (company_id, employee_id, employee_name, salary) values ('3', '13', 'Nyancat', '3300')",
+                "insert into Salaries (company_id, employee_id, employee_name, salary) values ('3', '15', 'Morninngcat', '7777')"
+            ],
+            "enableRunCode": true,
+            "enableTestMode": false,
+            "enableDebugger": false,
+            "envInfo": "{\"mysql\": [\"MySQL\", \"<p><code>MySQL 8.0</code>.</p>\"], \"mssql\": [\"MS SQL Server\", \"<p><code>mssql server 2019</code>.</p>\"], \"oraclesql\": [\"Oracle\", \"<p><code>Oracle Sql 11.2</code>.</p>\"]}",
+            "libraryUrl": null,
+            "adminUrl": null,
+            "__typename": "QuestionNode"
+        }
+    }
+}

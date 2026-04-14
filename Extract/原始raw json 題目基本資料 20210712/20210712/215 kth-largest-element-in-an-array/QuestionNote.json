@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "215",
+            "article": "{\"id\": 660, \"url\": \"/articles/kth-largest-element-in-an-array/\", \"topicId\": 214469}",
+            "solution": {
+                "id": "660",
+                "content": "[TOC]\n\n## Solution\n\n---\n\n#### Approach 0: Sort\n\nThe naive solution would be to sort an array first and then return kth \nelement from the end, something like `sorted(nums)[-k]` on Python. \nThat would be an algorithm of $$\\mathcal{O}(N \\log N)$$ time complexity\nand $$\\mathcal{O}(1)$$ space complexity.\nThis time complexity is not really exciting so \nlet's check how to improve it by using some additional space.\n<br />\n<br />\n\n\n---     \n#### Approach 1: Heap\n\nThe idea is to init a heap \"the smallest element first\",\nand add all elements from the array into this heap one by one\nkeeping the size of the heap always less or equal to `k`. \nThat would results in a heap containing `k` largest elements of the array.\n\nThe head of this heap is the answer, \ni.e. the kth largest element of the array. \n\nThe time complexity of adding an element in a heap of size `k`\nis $$\\mathcal{O}(\\log k)$$, and we do it `N` times that means \n$$\\mathcal{O}(N \\log k)$$ time complexity for the algorithm.\n\nIn Python there is a method `nlargest` in `heapq` library \nwhich has the same $$\\mathcal{O}(N \\log k)$$\ntime complexity and reduces the code to one line.\n\nThis algorithm improves time complexity, but one pays with \n$$\\mathcal{O}(k)$$ space complexity.\n        \n<!--![LIS](../Figures/72/72_tr.gif)-->\n!?!../Documents/215_LIS.json:1000,530!?!\n\n<iframe src=\"https://leetcode.com/playground/3fPxq2Yv/shared\" frameBorder=\"0\" width=\"100%\" height=\"344\" name=\"3fPxq2Yv\"></iframe>\n\n**Complexity Analysis**\n\n* Time complexity : $$\\mathcal{O}(N \\log k)$$. \n* Space complexity : $$\\mathcal{O}(k)$$ to store the heap elements. \n<br />\n<br />\n\n\n---\n#### Approach 2: Quickselect \n\nThis [textbook algorthm](https://en.wikipedia.org/wiki/Quickselect) \nhas $$\\mathcal{O}(N)$$ average time complexity.\nLike quicksort, it was developed by Tony Hoare, \nand is also known as _Hoare's selection algorithm_.\n\nThe approach is basically the same as for quicksort. \nFor simplicity let's notice that `k`th largest element is the same as\n`N - k`th smallest element, hence one could implement \n`k`th smallest algorithm for this problem.\n\nFirst one chooses a pivot, \nand defines its position in a sorted array in a linear time.\nThis could be done with the help of _partition algorithm_.\n\n> To implement partition one moves along an array,\ncompares each element with a pivot, \nand moves all elements smaller than pivot to the left of the pivot.\n \nAs an output we have an array where pivot is on its perfect position\nin the ascending sorted array, \nall elements on the left of the pivot are smaller than pivot,\nand all elements on the right of the pivot are larger or equal to pivot.\n\nHence the array is now split into two parts.\nIf that would be a quicksort algorithm, one would proceed recursively \nto use quicksort for the both parts that would result in \n$$\\mathcal{O}(N \\log N)$$ time complexity.\nHere there is no need to deal with both parts since now one knows \nin which part to search for `N - k`th smallest element, and that\nreduces average time complexity to $$\\mathcal{O}(N)$$.\n\nFinally the overall algorithm is quite straightforward :\n\n* Choose a random pivot.\n\n* Use a partition algorithm to place the pivot \ninto its perfect position `pos` in the sorted array,\nmove smaller elements to the left of pivot, and larger or equal ones - to the right.\n\n* Compare `pos` and `N - k` to choose the side of array to proceed recursively.\n\n> ! Please notice that this algorithm works well even for arrays with duplicates.\n\n![quickselect](../Figures/215/215_quickselect.png)\n\n<iframe src=\"https://leetcode.com/playground/QsycSKCS/shared\" frameBorder=\"0\" width=\"100%\" height=\"500\" name=\"QsycSKCS\"></iframe>\n\n* Time complexity : $$\\mathcal{O}(N)$$ in the average case, $$\\mathcal{O}(N^2)$$ in the worst case. \n* Space complexity : $$\\mathcal{O}(1)$$.",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": true,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "646",
+                    "count": 101,
+                    "average": 4.178,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

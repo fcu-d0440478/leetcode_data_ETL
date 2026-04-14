@@ -1,0 +1,80 @@
+{
+    "data": {
+        "question": {
+            "questionId": "612",
+            "questionFrontendId": "612",
+            "boundTopicId": null,
+            "title": "Shortest Distance in a Plane",
+            "titleSlug": "shortest-distance-in-a-plane",
+            "content": "Table <code>point_2d</code> holds the coordinates (x,y) of some unique points (more than two) in a plane.\r\n<p>&nbsp;</p>\r\nWrite a query to find the shortest distance between these points rounded to 2 decimals.\r\n\r\n<p>&nbsp;</p>\r\n\r\n<pre>\r\n| x  | y  |\r\n|----|----|\r\n| -1 | -1 |\r\n| 0  | 0  |\r\n| -1 | -2 |\r\n</pre>\r\n\r\n<p>&nbsp;</p>\r\nThe shortest distance is 1.00 from point (-1,-1) to (-1,2). So the output should be:\r\n\r\n<p>&nbsp;</p>\r\n\r\n<pre>\r\n| shortest |\r\n|----------|\r\n| 1.00     |\r\n</pre>\r\n\r\n<p>&nbsp;</p>\r\n<b>Note:</b> The longest distance among all the points are less than 10000.\r\n\r\n<p>&nbsp;</p>\r\n",
+            "translatedTitle": null,
+            "translatedContent": null,
+            "isPaidOnly": true,
+            "difficulty": "Medium",
+            "likes": 130,
+            "dislikes": 47,
+            "isLiked": null,
+            "similarQuestions": "[]",
+            "exampleTestcases": "{\"headers\":{\"point_2d\":[\"x\",\"y\"]},\"rows\":{\"point_2d\":[[-1,-1],[0,0],[-1,-2]]}}",
+            "contributors": [],
+            "topicTags": [
+                {
+                    "name": "Database",
+                    "slug": "database",
+                    "translatedName": null,
+                    "__typename": "TopicTagNode"
+                }
+            ],
+            "companyTagStats": "{\"1\": [], \"2\": [], \"3\": []}",
+            "codeSnippets": [
+                {
+                    "lang": "MySQL",
+                    "langSlug": "mysql",
+                    "code": "# Write your MySQL query statement below\n",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "MS SQL Server",
+                    "langSlug": "mssql",
+                    "code": "/* Write your T-SQL query statement below */\n",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Oracle",
+                    "langSlug": "oraclesql",
+                    "code": "/* Write your PL/SQL query statement below */\n",
+                    "__typename": "CodeSnippetNode"
+                }
+            ],
+            "stats": "{\"totalAccepted\": \"22.2K\", \"totalSubmission\": \"35.8K\", \"totalAcceptedRaw\": 22235, \"totalSubmissionRaw\": 35770, \"acRate\": \"62.2%\"}",
+            "hints": [],
+            "solution": {
+                "id": "178",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "__typename": "ArticleNode"
+            },
+            "status": null,
+            "sampleTestCase": "{\"headers\":{\"point_2d\":[\"x\",\"y\"]},\"rows\":{\"point_2d\":[[-1,-1],[0,0],[-1,-2]]}}",
+            "metaData": "{\r\n  \"mysql\": [\r\n    \"CREATE TABLE If Not Exists point_2d (x INT NOT NULL, y INT NOT NULL)\"\r\n  ],\r\n  \"mssql\": [\r\n    \"CREATE TABLE point_2d (x INT NOT NULL, y INT NOT NULL)\"\r\n  ],\r\n  \"oraclesql\": [\r\n    \"CREATE TABLE point_2d (x INT NOT NULL, y INT NOT NULL)\"\r\n  ],\r\n  \"database\": true\r\n}",
+            "judgerAvailable": true,
+            "judgeType": "large",
+            "mysqlSchemas": [
+                "CREATE TABLE If Not Exists point_2d (x INT NOT NULL, y INT NOT NULL)",
+                "Truncate table point_2d",
+                "insert into point_2d (x, y) values ('-1', '-1')",
+                "insert into point_2d (x, y) values ('0', '0')",
+                "insert into point_2d (x, y) values ('-1', '-2')"
+            ],
+            "enableRunCode": true,
+            "enableTestMode": false,
+            "enableDebugger": false,
+            "envInfo": "{\"mysql\": [\"MySQL\", \"<p><code>MySQL 8.0</code>.</p>\"], \"mssql\": [\"MS SQL Server\", \"<p><code>mssql server 2019</code>.</p>\"], \"oraclesql\": [\"Oracle\", \"<p><code>Oracle Sql 11.2</code>.</p>\"]}",
+            "libraryUrl": null,
+            "adminUrl": null,
+            "__typename": "QuestionNode"
+        }
+    }
+}

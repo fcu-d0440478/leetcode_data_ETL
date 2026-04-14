@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "1092",
+            "article": "{\"id\": 1027, \"url\": \"/articles/maximum-difference-between-node-and-ancestor/\", \"topicId\": 895566}",
+            "solution": {
+                "id": "1027",
+                "content": "[TOC]\r\n\r\n#### Overview\r\n\r\nThe problem is one of the typical tree problems that can be implemented using recursion. We could simply perform recursive tree traversal. Also, with a little insight, we can implement a slightly different approach.\r\n\r\nBelow, we will discuss two similar approaches: *Recursion* and *Maximum Minus Minimum*. Both are recursive approaches, but the later one uses a little insight.\r\n\r\n---\r\n\r\n#### Approach #1: Recursion\r\n\r\n**Intuition**\r\n\r\nLet's start from **Brute Force**.\r\n\r\nA typical Brute Force approach is to compare every node with its ancestors. In the worst case, we have to compare every node-pair (when the tree is a single line).\r\n\r\nThe time complexity would be $$\\mathcal{O}(N^2)$$, given $$N$$ is the number of nodes in the binary tree.\r\n\r\nCan we simplify it?\r\n\r\nSince the problem asks us the **Maximum Difference**, maybe we do not need to compare all ancestor for a given node and we only need to compare the ancestors with **Maximum** value and **Minimum** value.\r\n\r\nTherefore, for a given node, we only need the maximum value and the minimum value from the root to this node.\r\n\r\nTo achieve this, we can define a function `helper` to start recursion, which receives a node and two integers, the maximum and minimum value of its ancestors, as input.\r\n\r\nIn the function `helper`, we need to update the maximum difference, the current maximum value, and the current minimum value.\r\n\r\n**Algorithm**\r\n\r\n*Step 1:* Initialize a variable `result` to record the required maximum difference.\r\n\r\n*Step 2:* Define a function `helper`, which takes three arguments as input.\r\n\r\n- The first argument is the current node, and the second and third arguments are the maximum and minimum values along the root to the current node, respectively.\r\n\r\n- In the function `helper`, update `result` and call `helper` on the left and right subtrees.\r\n\r\n*Step 3:* Run `helper` on the `root`. It will automatically do recursion on every node.\r\n\r\n*Step 4:* Finally, return `result`.\r\n\r\n**Implementation**\r\n\r\n<iframe src=\"https://leetcode.com/playground/2dQf9QYf/shared\" frameBorder=\"0\" width=\"100%\" height=\"500\" name=\"2dQf9QYf\"></iframe>\r\n\r\n**Complexity Analysis**\r\n\r\nLet $$N$$ be the number of nodes in the binary tree.\r\n\r\n* Time complexity: $$\\mathcal{O}(N)$$ since we visit all nodes once.\r\n\r\n* Space complexity: $$\\mathcal{O}(N)$$ since we need stacks to do recursion, and the maximum depth of the recursion is the height of the tree, which is $$\\mathcal{O}(N)$$ in the worst case and $$\\mathcal{O}(\\log(N))$$ in the best case.\r\n\r\n---\r\n\r\n#### Approach #2: Maximum Minus Minimum\r\n\r\n**Intuition**\r\n\r\nAn insight is that: \r\n- Given any two nodes on the same root-to-leaf path, they must have the required **ancestor** relationship.\r\n\r\nTherefore, we just need to record the maximum and minimum values of all root-to-leaf paths and return the maximum difference.\r\n\r\nTo achieve this, we can record the maximum and minimum values during the recursion and return the difference when encountering leaves.\r\n\r\n**Algorithm**\r\n\r\n*Step 1:* Define a function `helper`, which takes three arguments as input and returns an integer.\r\n\r\n- The first argument `node` is the current node, and the second argument `cur_max` and third argument `cur_min` are the maximum and minimum values along the root to the current node, respectively.\r\n\r\n- Function `helper` returns `cur_max - cur_min` when encountering leaves. Otherwise, it calls `helper` on the left and right subtrees and returns their maximum.\r\n\r\n*Step 2:* Run `helper` on the `root` and return the result.\r\n\r\n**Implementation**\r\n\r\n<iframe src=\"https://leetcode.com/playground/22yjHADq/shared\" frameBorder=\"0\" width=\"100%\" height=\"429\" name=\"22yjHADq\"></iframe>\r\n\r\n**Complexity Analysis**\r\n\r\nLet $$N$$ be the number of nodes in the binary tree.\r\n\r\n* Time complexity: $$\\mathcal{O}(N)$$ since we visit all nodes once.\r\n\r\n* Space complexity: $$\\mathcal{O}(N)$$ since we need stacks to do recursion, and the maximum depth of the recursion is the height of the tree, which is $$\\mathcal{O}(N)$$ in the worst case and $$\\mathcal{O}(\\log(N))$$ in the best case.",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "972",
+                    "count": 24,
+                    "average": 4.708,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

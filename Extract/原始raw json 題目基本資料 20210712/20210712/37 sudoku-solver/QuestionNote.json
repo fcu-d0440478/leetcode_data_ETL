@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "37",
+            "article": "{\"id\": 709, \"url\": \"/articles/sudoku-solver/\", \"topicId\": 259057}",
+            "solution": {
+                "id": "709",
+                "content": "[TOC]\n\n## Solution\n\n---\n\n#### Approach 0: Brute Force\n\nThe first idea is to use brut-force \nto generate all possible ways to fill the cells\nwith numbers from `1` to `9`,\nand then check them to keep the solution only. \nThat means $$9^{81}$$ operations to do, \nwhere $$9$$ is a number of available digits \nand $$81$$ is a number of cells to fill.\nHence we're forced to think further how to optimize.\n<br />\n<br />\n\n\n---\n#### Approach 1: Backtracking\n\n**Conceptions to use**\n\nThere are two programming conceptions here which could\nhelp.\n\n> The first one is called _constrained programming_. \n\nThat basically means\nto put restrictions after each number placement. One puts a number on the \nboard and that immediately excludes this number from further \nusage in the current _row_, _column_ and _sub-box_. That propagates \n_constraints_ and helps to reduce the number of combinations to consider.\n\n![bla](../Figures/37/37_const3.png)\n\n> The second one called _backtracking_. \n\nLet's imagine that one has already managed to\nput several numbers on the board. \nBut the combination chosen is not the optimal one and there is no way \nto place the further numbers. What to do? _To backtrack_. \nThat means to come back,\nto change the previously placed number and try \nto proceed again. If that would not work either, _backtrack_ again.\n\n![bla](../Figures/37/37_backtrack2.png)\n\n**How to enumerate sub-boxes**\n\n> One tip to enumerate sub-boxes: \nlet's use `box_index = (row / 3) * 3 + column / 3` \nwhere `/` is an integer division.\n\n<img src=\"../Figures/36/36_boxes_2.png\" width=\"500\">\n\n**Algorithm**\n\nNow everything is ready to write down the backtrack function \n`backtrack(row = 0, col = 0)`.\n\n* Start from the upper left cell `row = 0, col = 0`. Proceed till the\nfirst free cell.\n* Iterate over the numbers from `1` to `9` \nand try to put each number `d` in the `(row, col)` cell.\n\n    * If number `d` is not yet in the current row, column and box :\n        \n        * Place the `d` in a `(row, col)` cell.\n        * Write down that `d` is now present in the current row, column and box.\n        * If we're on the last cell `row == 8, col == 8` :\n            * That means that we've solved the sudoku.\n        * Else\n            * Proceed to place further numbers.\n        * Backtrack if the solution is not yet here : \n        remove the last number from the `(row, col)` cell.\n\n**Implementation**\n\n<iframe src=\"https://leetcode.com/playground/9T3dE2W6/shared\" frameBorder=\"0\" width=\"100%\" height=\"500\" name=\"9T3dE2W6\"></iframe>\n\n**Complexity Analysis**\n\n* Time complexity is constant here since the board size is fixed and there is no \nN-parameter to measure. \nThough let's discuss the number of operations needed : $$(9!)^9$$. \nLet's consider one row, i.e. not more than $$9$$ cells to fill. \nThere are not more than $$9$$ possibilities for the first number to put,\nnot more than $$9 \\times 8$$ for the second one,\nnot more than $$9 \\times 8 \\times 7$$ for the third one etc. In total that\nresults in not more than $$9!$$ possibilities for a just one row,\nthat means not more than $$(9!)^9$$ operations in total.\nLet's compare:\n\n    - $$9^{81} = 196627050475552913618075908526912116283103450944214766927315415537966391196809$$\nfor the brute force, \n\n    - and $$(9!)^9 = 109110688415571316480344899355894085582848000000000$$\nfor the standard backtracking,\ni.e. the number of operations is reduced in $$10^{27}$$ times !\n\n* Space complexity : the board size is fixed, and the space is used \nto store board, rows, columns and boxes structures, each contains `81` elements.",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": true,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "694",
+                    "count": 40,
+                    "average": 4.25,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

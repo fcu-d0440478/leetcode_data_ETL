@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "257",
+            "article": "{\"id\": 617, \"url\": \"/articles/binary-tree-paths/\", \"topicId\": 194640}",
+            "solution": {
+                "id": "617",
+                "content": "[TOC]\n\n## Solution\n\n---\n\n#### Binary tree definition\n\nFirst of all, here is the definition of the ```TreeNode``` which we would use\nin the following implementation.\n\n<iframe src=\"https://leetcode.com/playground/uJU5jdnZ/shared\" frameBorder=\"0\" width=\"100%\" height=\"225\" name=\"uJU5jdnZ\"></iframe>\n<br />\n<br />\n\n\n---\n#### Approach 1: Recursion\n\nThe most intuitive way is to use a recursion here.\nOne is going through the tree \nby considering at each step the node itself and its children.\nIf node *is not* a leaf, one extends the current path by a node value and\ncalls recursively the path construction for its children.\nIf node *is* a leaf, one closes the current path and adds it into \nthe list of paths.\n\n<iframe src=\"https://leetcode.com/playground/ueSCRjpj/shared\" frameBorder=\"0\" width=\"100%\" height=\"395\" name=\"ueSCRjpj\"></iframe>\n\n**Complexity Analysis**\n\n* Time complexity : we visit each node exactly once, \nthus the time complexity is $$\\mathcal{O}(N)$$,\nwhere $$N$$ is the number of nodes.\n* Space complexity : $$\\mathcal{O}(N)$$. Here we use the space for a stack call and for a \n`paths` list to store the answer. `paths` contains as many elements as leafs in the tree and \nhence couldn't be larger than $$\\log N$$ for the trees containing more than one element. \nHence the space complexity is determined by a stack call.\nIn the worst case, when the tree is completely unbalanced,\n*e.g.* each node has only one child node, the recursion call would occur\n$$N$$ times (the height of the tree), therefore the storage to keep the call stack would be $$\\mathcal{O}(N)$$.\nBut in the best case (the tree is balanced), the height of the tree would be $$\\log(N)$$.\nTherefore, the space complexity in this case would be $$\\mathcal{O}(\\log(N))$$.\n<br/>\n<br/>\n\n\n---\n#### Approach 2: Iterations\n\nThe approach above could be rewritten with the help of iterations. \nThis way we initiate the stack by a root node and then at each step\nwe pop out one node and its path.\nIf the poped node *is* a leaf, one update the list of all paths.\nIf not, one pushes its child nodes and\ncorresponding paths into stack till all nodes are checked.\n\n<!--![LIS](../Figures/257/257_tr.gif)-->\n!?!../Documents/257_LIS.json:1000,491!?!\n\n<iframe src=\"https://leetcode.com/playground/4znAcEDG/shared\" frameBorder=\"0\" width=\"100%\" height=\"500\" name=\"4znAcEDG\"></iframe>\n\n**Complexity Analysis**\n\n* Time complexity : $$\\mathcal{O}(N)$$ since each node is visited exactly once. \n* Space complexity : $$\\mathcal{O}(N)$$ as we could keep up to the entire tree.",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": true,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "603",
+                    "count": 28,
+                    "average": 3.964,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

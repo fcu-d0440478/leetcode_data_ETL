@@ -1,0 +1,75 @@
+{
+    "data": {
+        "question": {
+            "questionId": "2030",
+            "questionFrontendId": "1875",
+            "boundTopicId": null,
+            "title": "Group Employees of the Same Salary",
+            "titleSlug": "group-employees-of-the-same-salary",
+            "content": "<p>Table: <code>Employees</code></p>\r\n\r\n<pre>\r\n+-------------+---------+\r\n| Column Name | Type    |\r\n+-------------+---------+\r\n| employee_id | int     |\r\n| name        | varchar |\r\n| salary      | int     |\r\n+-------------+---------+\r\nemployee_id is the primary key for this table.\r\nEach row of this table indicates the employee ID, employee name, and salary.\r\n</pre>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>A company wants to divide the employees into teams such that all the members on each team have the <strong>same salary</strong>. The teams should follow these criteria:</p>\r\n\r\n<ul>\r\n\t<li>Each team should consist of <strong>at least two</strong> employees.</li>\r\n\t<li>All the employees on a team should have the <strong>same salary</strong>.</li>\r\n\t<li>All the employees of the same salary should be assigned to the same team.</li>\r\n\t<li>If the salary of an employee is unique, we <strong>do not</strong> assign this employee to any team.</li>\r\n\t<li>A team&#39;s ID is assigned based on the <strong>rank of the team&#39;s salary</strong> relative to the other teams&#39; salaries, where the team with the <strong>lowest</strong> salary has <code>team_id = 1</code>. Note that the salaries for employees not on a team are <strong>not included</strong> in this ranking.</li>\r\n</ul>\r\n\r\n<p>Write an SQL query to get the <code>team_id</code> of each employee that is in a team.</p>\r\n\r\n<p>Return the result table ordered by <code>team_id</code> <strong>in ascending order</strong>. In case of a tie, order it by&nbsp;<code>employee_id</code> in <strong>ascending order</strong>.</p>\r\n\r\n<p>The query result format is in the following example:</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<pre>\r\nEmployees table:\r\n+-------------+---------+--------+\r\n| employee_id | name    | salary |\r\n+-------------+---------+--------+\r\n| 2           | Meir    | 3000   |\r\n| 3           | Michael | 3000   |\r\n| 7           | Addilyn | 7400   |\r\n| 8           | Juan    | 6100   |\r\n| 9           | Kannon  | 7400   |\r\n+-------------+---------+--------+\r\n\r\nResult table:\r\n+-------------+---------+--------+---------+\r\n| employee_id | name    | salary | team_id |\r\n+-------------+---------+--------+---------+\r\n| 2           | Meir    | 3000   | 1       |\r\n| 3           | Michael | 3000   | 1       |\r\n| 7           | Addilyn | 7400   | 2       |\r\n| 9           | Kannon  | 7400   | 2       |\r\n+-------------+---------+--------+---------+\r\n\r\nMeir (employee_id=2) and Michael (employee_id=3) are in the same team because they have the same salary of 3000.\r\nAddilyn (employee_id=7) and Kannon (employee_id=9) are in the same team because they have the same salary of 7400.\r\nJuan (employee_id=8) is not included in any team because their salary of 6100 is unique (i.e. no other employee has the same salary).\r\nThe team IDs are assigned as follows (based on salary ranking, lowest first):\r\n- team_id=1: Meir and Michael, salary of 3000\r\n- team_id=2: Addilyn and Kannon, salary of 7400\r\nJuan&#39;s salary of 6100 is not included in the ranking because they are not on a team.</pre>",
+            "translatedTitle": null,
+            "translatedContent": null,
+            "isPaidOnly": true,
+            "difficulty": "Medium",
+            "likes": 16,
+            "dislikes": 1,
+            "isLiked": null,
+            "similarQuestions": "[]",
+            "exampleTestcases": null,
+            "contributors": [],
+            "topicTags": [
+                {
+                    "name": "Database",
+                    "slug": "database",
+                    "translatedName": null,
+                    "__typename": "TopicTagNode"
+                }
+            ],
+            "companyTagStats": "{\"3\": [{\"taggedByAdmin\": true, \"name\": \"Clari\", \"slug\": \"clari\", \"timesEncountered\": 0}], \"1\": [], \"2\": []}",
+            "codeSnippets": [
+                {
+                    "lang": "MySQL",
+                    "langSlug": "mysql",
+                    "code": "# Write your MySQL query statement below\n",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "MS SQL Server",
+                    "langSlug": "mssql",
+                    "code": "/* Write your T-SQL query statement below */\n",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Oracle",
+                    "langSlug": "oraclesql",
+                    "code": "/* Write your PL/SQL query statement below */\n",
+                    "__typename": "CodeSnippetNode"
+                }
+            ],
+            "stats": "{\"totalAccepted\": \"1.5K\", \"totalSubmission\": \"1.9K\", \"totalAcceptedRaw\": 1452, \"totalSubmissionRaw\": 1923, \"acRate\": \"75.5%\"}",
+            "hints": [],
+            "solution": null,
+            "status": null,
+            "sampleTestCase": "{\"headers\":{\"Employees\":[\"employee_id\",\"name\",\"salary\"]},\"rows\":{\"Employees\":[[2,\"Meir\",3000],[3,\"Michael\",3000],[7,\"Addilyn\",7400],[8,\"Juan\",6100],[9,\"Kannon\",7400]]}}",
+            "metaData": "{\n  \"mysql\": [\n    \"Create table If Not Exists Employees (employee_id int, name varchar(30), salary int)\"\n  ],\n  \"mssql\": [\n    \"Create table Employees (employee_id int, name varchar(30), salary int)\"\n  ],\n  \"oraclesql\": [\n    \"Create table Employees (employee_id int, name varchar(30), salary int)\"\n  ],\n  \"database\": true\n}",
+            "judgerAvailable": true,
+            "judgeType": "large",
+            "mysqlSchemas": [
+                "Create table If Not Exists Employees (employee_id int, name varchar(30), salary int)",
+                "Truncate table Employees",
+                "insert into Employees (employee_id, name, salary) values ('2', 'Meir', '3000')",
+                "insert into Employees (employee_id, name, salary) values ('3', 'Michael', '3000')",
+                "insert into Employees (employee_id, name, salary) values ('7', 'Addilyn', '7400')",
+                "insert into Employees (employee_id, name, salary) values ('8', 'Juan', '6100')",
+                "insert into Employees (employee_id, name, salary) values ('9', 'Kannon', '7400')"
+            ],
+            "enableRunCode": true,
+            "enableTestMode": false,
+            "enableDebugger": false,
+            "envInfo": "{\"mysql\": [\"MySQL\", \"<p><code>MySQL 8.0</code>.</p>\"], \"mssql\": [\"MS SQL Server\", \"<p><code>mssql server 2019</code>.</p>\"], \"oraclesql\": [\"Oracle\", \"<p><code>Oracle Sql 11.2</code>.</p>\"]}",
+            "libraryUrl": null,
+            "adminUrl": null,
+            "__typename": "QuestionNode"
+        }
+    }
+}

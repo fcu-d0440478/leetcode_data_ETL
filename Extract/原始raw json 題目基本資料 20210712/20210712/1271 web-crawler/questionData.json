@@ -1,0 +1,147 @@
+{
+    "data": {
+        "question": {
+            "questionId": "1271",
+            "questionFrontendId": "1236",
+            "boundTopicId": null,
+            "title": "Web Crawler",
+            "titleSlug": "web-crawler",
+            "content": "<p>Given a url <code>startUrl</code> and an interface <code>HtmlParser</code>, implement a web&nbsp;crawler to crawl all links that are under the&nbsp;<strong>same hostname</strong> as&nbsp;<code>startUrl</code>.&nbsp;</p>\n\n<p>Return&nbsp;all urls obtained by your web crawler in <strong>any</strong> order.</p>\n\n<p>Your crawler should:</p>\n\n<ul>\n\t<li>Start from the page: <code>startUrl</code></li>\n\t<li>Call <code>HtmlParser.getUrls(url)</code> to get all urls from a webpage of given url.</li>\n\t<li>Do not crawl the same link twice.</li>\n\t<li>Explore only the links that are under the <strong>same hostname</strong> as <code>startUrl</code>.</li>\n</ul>\n\n<p><img alt=\"\" src=\"https://assets.leetcode.com/uploads/2019/08/13/urlhostname.png\" style=\"width: 600px; height: 164px;\" /></p>\n\n<p>As shown in the example url above, the hostname is <code>example.org</code>. For simplicity sake, you may assume all&nbsp;urls use <strong>http protocol</strong> without any&nbsp;<strong>port</strong> specified. For example, the urls&nbsp;<code>http://leetcode.com/problems</code> and&nbsp;<code>http://leetcode.com/contest</code> are under the same hostname, while urls <code>http://example.org/test</code> and <code>http://example.com/abc</code> are not under the same hostname.</p>\n\n<p>The <code>HtmlParser</code> interface is defined as such:&nbsp;</p>\n\n<pre>\ninterface HtmlParser {\n  // Return a list of all urls from a webpage of given <em>url</em>.\n  public List&lt;String&gt; getUrls(String url);\n}</pre>\n\n<p>Below&nbsp;are two examples explaining the functionality of the problem, for custom testing purposes you&#39;ll have three&nbsp;variables&nbsp;<code data-stringify-type=\"code\">urls</code>,&nbsp;<code data-stringify-type=\"code\">edges</code>&nbsp;and&nbsp;<code data-stringify-type=\"code\">startUrl</code>. Notice that you will only have access to&nbsp;<code data-stringify-type=\"code\">startUrl</code>&nbsp;in your code, while&nbsp;<code data-stringify-type=\"code\">urls</code>&nbsp;and&nbsp;<code data-stringify-type=\"code\">edges</code>&nbsp;are not directly accessible to you in code.</p>\n\n<p>&nbsp;</p>\n<p><strong>Example 1:</strong></p>\n\n<p><img alt=\"\" src=\"https://assets.leetcode.com/uploads/2019/10/23/sample_2_1497.png\" style=\"width: 610px; height: 300px;\" /></p>\n\n<pre>\n<strong>Input:\n</strong>urls = [\n&nbsp; &quot;http://news.yahoo.com&quot;,\n&nbsp; &quot;http://news.yahoo.com/news&quot;,\n&nbsp; &quot;http://news.yahoo.com/news/topics/&quot;,\n&nbsp; &quot;http://news.google.com&quot;,\n&nbsp; &quot;http://news.yahoo.com/us&quot;\n]\nedges = [[2,0],[2,1],[3,2],[3,1],[0,4]]\nstartUrl = &quot;http://news.yahoo.com/news/topics/&quot;\n<strong>Output:</strong> [\n&nbsp; &quot;http://news.yahoo.com&quot;,\n&nbsp; &quot;http://news.yahoo.com/news&quot;,\n&nbsp; &quot;http://news.yahoo.com/news/topics/&quot;,\n&nbsp; &quot;http://news.yahoo.com/us&quot;\n]\n</pre>\n\n<p><strong>Example 2:</strong></p>\n\n<p><strong><img alt=\"\" src=\"https://assets.leetcode.com/uploads/2019/10/23/sample_3_1497.png\" style=\"width: 540px; height: 270px;\" /></strong></p>\n\n<pre>\n<strong>Input:</strong> \nurls = [\n&nbsp; &quot;http://news.yahoo.com&quot;,\n&nbsp; &quot;http://news.yahoo.com/news&quot;,\n&nbsp; &quot;http://news.yahoo.com/news/topics/&quot;,\n&nbsp; &quot;http://news.google.com&quot;\n]\nedges = [[0,2],[2,1],[3,2],[3,1],[3,0]]\nstartUrl = &quot;http://news.google.com&quot;\n<strong>Output:</strong> [&quot;http://news.google.com&quot;]\n<strong>Explanation: </strong>The startUrl links to all other pages that do not share the same hostname.</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= urls.length &lt;= 1000</code></li>\n\t<li><code>1 &lt;= urls[i].length &lt;= 300</code></li>\n\t<li><code>startUrl</code>&nbsp;is one of the <code>urls</code>.</li>\n\t<li>Hostname label must be from 1 to 63 characters long, including the dots, may contain only the ASCII letters from &#39;a&#39; to&nbsp;&#39;z&#39;, digits&nbsp; from &#39;0&#39; to &#39;9&#39; and the&nbsp;hyphen-minus&nbsp;character (&#39;-&#39;).</li>\n\t<li>The hostname may not start or end with&nbsp;the hyphen-minus character (&#39;-&#39;).&nbsp;</li>\n\t<li>See:&nbsp;&nbsp;<a href=\"https://en.wikipedia.org/wiki/Hostname#Restrictions_on_valid_hostnames\">https://en.wikipedia.org/wiki/Hostname#Restrictions_on_valid_hostnames</a></li>\n\t<li>You may assume there&#39;re&nbsp;no duplicates in url library.</li>\n</ul>\n",
+            "translatedTitle": null,
+            "translatedContent": null,
+            "isPaidOnly": true,
+            "difficulty": "Medium",
+            "likes": 140,
+            "dislikes": 165,
+            "isLiked": null,
+            "similarQuestions": "[{\"title\": \"Web Crawler Multithreaded\", \"titleSlug\": \"web-crawler-multithreaded\", \"difficulty\": \"Medium\", \"translatedTitle\": null}]",
+            "exampleTestcases": "[\"http://news.yahoo.com\",\"http://news.yahoo.com/news\",\"http://news.yahoo.com/news/topics/\",\"http://news.google.com\",\"http://news.yahoo.com/us\"]\n[[2,0],[2,1],[3,2],[3,1],[0,4]]\n\"http://news.yahoo.com/news/topics/\"\n[\"http://news.yahoo.com\",\"http://news.yahoo.com/news\",\"http://news.yahoo.com/news/topics/\",\"http://news.google.com\"]\n[[0,2],[2,1],[3,2],[3,1],[3,0]]\n\"http://news.google.com\"",
+            "contributors": [],
+            "topicTags": [
+                {
+                    "name": "String",
+                    "slug": "string",
+                    "translatedName": null,
+                    "__typename": "TopicTagNode"
+                },
+                {
+                    "name": "Depth-First Search",
+                    "slug": "depth-first-search",
+                    "translatedName": null,
+                    "__typename": "TopicTagNode"
+                },
+                {
+                    "name": "Breadth-First Search",
+                    "slug": "breadth-first-search",
+                    "translatedName": null,
+                    "__typename": "TopicTagNode"
+                },
+                {
+                    "name": "Interactive",
+                    "slug": "interactive",
+                    "translatedName": null,
+                    "__typename": "TopicTagNode"
+                }
+            ],
+            "companyTagStats": "{\"1\": [{\"taggedByAdmin\": false, \"name\": \"Opendoor\", \"slug\": \"opendoor\", \"timesEncountered\": 5}, {\"taggedByAdmin\": false, \"name\": \"Amazon\", \"slug\": \"amazon\", \"timesEncountered\": 2}, {\"taggedByAdmin\": false, \"name\": \"Microsoft\", \"slug\": \"microsoft\", \"timesEncountered\": 2}], \"3\": [{\"taggedByAdmin\": false, \"name\": \"Oracle\", \"slug\": \"oracle\", \"timesEncountered\": 2}, {\"taggedByAdmin\": false, \"name\": \"Google\", \"slug\": \"google\", \"timesEncountered\": 2}, {\"taggedByAdmin\": true, \"name\": \"Dropbox\", \"slug\": \"dropbox\", \"timesEncountered\": 0}, {\"taggedByAdmin\": true, \"name\": \"Facebook\", \"slug\": \"facebook\", \"timesEncountered\": 0}], \"2\": [{\"taggedByAdmin\": false, \"name\": \"GoDaddy\", \"slug\": \"godaddy\", \"timesEncountered\": 2}]}",
+            "codeSnippets": [
+                {
+                    "lang": "C++",
+                    "langSlug": "cpp",
+                    "code": "/**\n * // This is the HtmlParser's API interface.\n * // You should not implement it, or speculate about its implementation\n * class HtmlParser {\n *   public:\n *     vector<string> getUrls(string url);\n * };\n */\n\nclass Solution {\npublic:\n    vector<string> crawl(string startUrl, HtmlParser htmlParser) {\n        \n    }\n};",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Java",
+                    "langSlug": "java",
+                    "code": "/**\n * // This is the HtmlParser's API interface.\n * // You should not implement it, or speculate about its implementation\n * interface HtmlParser {\n *     public List<String> getUrls(String url) {}\n * }\n */\n\nclass Solution {\n    public List<String> crawl(String startUrl, HtmlParser htmlParser) {\n        \n    }\n}",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Python",
+                    "langSlug": "python",
+                    "code": "# \"\"\"\n# This is HtmlParser's API interface.\n# You should not implement it, or speculate about its implementation\n# \"\"\"\n#class HtmlParser(object):\n#    def getUrls(self, url):\n#        \"\"\"\n#        :type url: str\n#        :rtype List[str]\n#        \"\"\"\n\nclass Solution(object):\n    def crawl(self, startUrl, htmlParser):\n        \"\"\"\n        :type startUrl: str\n        :type htmlParser: HtmlParser\n        :rtype: List[str]\n        \"\"\"\n        ",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Python3",
+                    "langSlug": "python3",
+                    "code": "# \"\"\"\n# This is HtmlParser's API interface.\n# You should not implement it, or speculate about its implementation\n# \"\"\"\n#class HtmlParser(object):\n#    def getUrls(self, url):\n#        \"\"\"\n#        :type url: str\n#        :rtype List[str]\n#        \"\"\"\n\nclass Solution:\n    def crawl(self, startUrl: str, htmlParser: 'HtmlParser') -> List[str]:\n        ",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "C#",
+                    "langSlug": "csharp",
+                    "code": "/**\n * // This is the HtmlParser's API interface.\n * // You should not implement it, or speculate about its implementation\n * class HtmlParser {\n *     public List<String> GetUrls(String url) {}\n * }\n */\n\nclass Solution {\n    public IList<string> Crawl(string startUrl, HtmlParser htmlParser) {\n        \n    }\n}",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "JavaScript",
+                    "langSlug": "javascript",
+                    "code": "/**\n * // This is the HtmlParser's API interface.\n * // You should not implement it, or speculate about its implementation\n * function HtmlParser() {\n *\n *\t\t@param {string} url\n *     \t@return {string[]}\n *     \tthis.getUrls = function(url) {\n *      \t...\n *     \t};\n * };\n */\n\n/**\n * @param {string} startUrl\n * @param {HtmlParser} htmlParser\n * @return {string[]}\n*/\nvar crawl = function(startUrl, htmlParser) {\n    \n};",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Ruby",
+                    "langSlug": "ruby",
+                    "code": "# This is HtmlParser's API interface.\n# You should not implement it, or speculate about its implementation\n# class HtmlParser\n#     def getUrls(url)\n#         @return {List[String]}\n#     end\n# end\n\n# @param {String} startUrl\n# @param {HtmlParser} htmlParser\n# @return {String}\ndef crawl(startUrl, htmlParser)\n    \nend",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Swift",
+                    "langSlug": "swift",
+                    "code": "/**\n * // This is the HtmlParser's API interface.\n * // You should not implement it, or speculate about its implementation\n * public class HtmlParser {\n *     public func getUrls(_ url: String) -> [String] {}\n * }\n */\n\nclass Solution {   \n    func crawl(_ startUrl: String, _ htmlParser: HtmlParser) -> [String] {\n        \n    }\n}",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Go",
+                    "langSlug": "golang",
+                    "code": "/**\n * // This is HtmlParser's API interface.\n * // You should not implement it, or speculate about its implementation\n * type HtmlParser struct {\n *     func GetUrls(url string) []string {}\n * }\n */\n\nfunc crawl(startUrl string, htmlParser HtmlParser) []string {\n    \n}",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Scala",
+                    "langSlug": "scala",
+                    "code": "/**\n * // This is the HtmlParser's API interface.\n * // You should not implement it, or speculate about its implementation\n * class HtmlParser {\n *     def getUrls(url: String): List[String] = {}\n * }\n */\n\nobject Solution {\n    def crawl(startUrl: String, htmlParser: HtmlParser): Array[String] = {\n    \t\n    }\n}",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Kotlin",
+                    "langSlug": "kotlin",
+                    "code": "/**\n * // This is the HtmlParser's API interface.\n * // You should not implement it, or speculate about its implementation\n * class HtmlParser {\n *     fun getUrls(url:String):List<String> {}\n * }\n */\n\nclass Solution {\n    fun crawl(startUrl:String, htmlParser:HtmlParser):List<String> {\n        \n    }\n}",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "PHP",
+                    "langSlug": "php",
+                    "code": "/**\n * // This is the HtmlParser's API interface.\n * // You should not implement it, or speculate about its implementation\n * class  {\n *     public function getUrls($url) {}\n * }\n */\n\nclass Solution {\n    /**\n     * @param String $startUrl\n     * @param HtmlParser $htmlParser\n     * @return String[]\n     */\n    function crawl($startUrl, $htmlParser) {\n\t\t\n\t}\n}",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "TypeScript",
+                    "langSlug": "typescript",
+                    "code": "/**\n * // This is the HtmlParser's API interface.\n * // You should not implement it, or speculate about its implementation\n * class HtmlParser {\n *      getUrls(url: string): string[] {}\n * }\n */\n\nfunction crawl(startUrl: string, htmlParser: HtmlParser): string[] {\n\t\n};",
+                    "__typename": "CodeSnippetNode"
+                }
+            ],
+            "stats": "{\"totalAccepted\": \"17.3K\", \"totalSubmission\": \"26.6K\", \"totalAcceptedRaw\": 17301, \"totalSubmissionRaw\": 26620, \"acRate\": \"65.0%\"}",
+            "hints": [
+                "Use DFS/BFS to search start from the startURL. Remember to get rid of duplicate URLs."
+            ],
+            "solution": null,
+            "status": null,
+            "sampleTestCase": "[\"http://news.yahoo.com\",\"http://news.yahoo.com/news\",\"http://news.yahoo.com/news/topics/\",\"http://news.google.com\",\"http://news.yahoo.com/us\"]\n[[2,0],[2,1],[3,2],[3,1],[0,4]]\n\"http://news.yahoo.com/news/topics/\"",
+            "metaData": "{\n  \"name\": \"crawl\",\n  \"params\": [\n    {\n      \"name\": \"urls\",\n      \"type\": \"string[]\"\n    },\n    {\n      \"type\": \"integer[][]\",\n      \"name\": \"edges\"\n    },\n    {\n      \"type\": \"string\",\n      \"name\": \"startUrl\"\n    }\n  ],\n  \"return\": {\n    \"type\": \"list<string>\"\n  },\n  \"manual\": true,\n  \"languages\": [\n    \"cpp\",\n    \"java\",\n    \"python\",\n    \"csharp\",\n    \"python3\",\n    \"javascript\",\n    \"kotlin\",\n    \"ruby\",\n    \"scala\",\n    \"swift\",\n    \"php\",\n    \"golang\",\n    \"typescript\"\n  ]\n}",
+            "judgerAvailable": true,
+            "judgeType": "large",
+            "mysqlSchemas": [],
+            "enableRunCode": true,
+            "enableTestMode": false,
+            "enableDebugger": true,
+            "envInfo": "{\"cpp\": [\"C++\", \"<p>Compiled with <code> clang 11 </code> using the latest C++ 17 standard.</p>\\r\\n\\r\\n<p>Your code is compiled with level two optimization (<code>-O2</code>). <a href=\\\"https://github.com/google/sanitizers/wiki/AddressSanitizer\\\" target=\\\"_blank\\\">AddressSanitizer</a> is also enabled to help detect out-of-bounds and use-after-free bugs.</p>\\r\\n\\r\\n<p>Most standard library headers are already included automatically for your convenience.</p>\"], \"java\": [\"Java\", \"<p><code>Java SE 13</code>.</p>\\r\\n\\r\\n<p>Most standard library headers are already included automatically for your convenience.</p>\\r\\n<p>Includes <code>Pair</code> class from https://docs.oracle.com/javase/8/javafx/api/javafx/util/Pair.html.</p>\"], \"python\": [\"Python\", \"<p><code>Python 2.7.12</code>.</p>\\r\\n\\r\\n<p>Most libraries are already imported automatically for your convenience, such as <a href=\\\"https://docs.python.org/2/library/array.html\\\" target=\\\"_blank\\\">array</a>, <a href=\\\"https://docs.python.org/2/library/bisect.html\\\" target=\\\"_blank\\\">bisect</a>, <a href=\\\"https://docs.python.org/2/library/collections.html\\\" target=\\\"_blank\\\">collections</a>. If you need more libraries, you can import it yourself.</p>\\r\\n\\r\\n<p>For Map/TreeMap data structure, you may use <a href=\\\"http://www.grantjenks.com/docs/sortedcontainers/\\\" target=\\\"_blank\\\">sortedcontainers</a> library.</p>\\r\\n\\r\\n<p>Note that Python 2.7 <a href=\\\"https://www.python.org/dev/peps/pep-0373/\\\" target=\\\"_blank\\\">will not be maintained past 2020</a>. For the latest Python, please choose Python3 instead.</p>\"], \"csharp\": [\"C#\", \"<p><a href=\\\"https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-8\\\" target=\\\"_blank\\\">C# 8.0 </a></p>\\r\\n\\r\\n<p>Your code is compiled with debug flag enabled (<code>/debug</code>).</p>\"], \"javascript\": [\"JavaScript\", \"<p><code>Node.js 14.8.0</code>.</p>\\r\\n\\r\\n<p>Your code is run with <code>--harmony</code> flag, enabling <a href=\\\"http://node.green/\\\" target=\\\"_blank\\\">new ES6 features</a>.</p>\\r\\n\\r\\n<p><a href=\\\"https://lodash.com\\\" target=\\\"_blank\\\">lodash.js</a> library is included by default.</p>\\r\\n\\r\\n<p>For Priority Queue / Queue data structures, you may use <a href=\\\"https://github.com/datastructures-js/priority-queue\\\" target=\\\"_blank\\\">datastructures-js/priority-queue</a> and <a href=\\\"https://github.com/datastructures-js/queue\\\" target=\\\"_blank\\\">datastructures-js/queue</a>.</p>\"], \"ruby\": [\"Ruby\", \"<p><code>Ruby 2.7.1</code></p>\\r\\n\\r\\n<p>Some common data structure implementations are provided in the Algorithms module: https://www.rubydoc.info/github/kanwei/algorithms/Algorithms</p>\"], \"swift\": [\"Swift\", \"<p><code>Swift 5.3</code>.</p>\"], \"golang\": [\"Go\", \"<p><code>Go 1.16.2</code>.</p>\\r\\n\\r\\n<p>Support <a href=\\\"https://godoc.org/github.com/emirpasic/gods\\\" target=\\\"_blank\\\">https://godoc.org/github.com/emirpasic/gods</a> library.</p>\"], \"python3\": [\"Python3\", \"<p><code>Python 3.9</code>.</p>\\r\\n\\r\\n<p>Most libraries are already imported automatically for your convenience, such as <a href=\\\"https://docs.python.org/3/library/array.html\\\" target=\\\"_blank\\\">array</a>, <a href=\\\"https://docs.python.org/3/library/bisect.html\\\" target=\\\"_blank\\\">bisect</a>, <a href=\\\"https://docs.python.org/3/library/collections.html\\\" target=\\\"_blank\\\">collections</a>. If you need more libraries, you can import it yourself.</p>\\r\\n\\r\\n<p>For Map/TreeMap data structure, you may use <a href=\\\"http://www.grantjenks.com/docs/sortedcontainers/\\\" target=\\\"_blank\\\">sortedcontainers</a> library.</p>\"], \"scala\": [\"Scala\", \"<p><code>Scala 2.13</code>.</p>\"], \"kotlin\": [\"Kotlin\", \"<p><code>Kotlin 1.3.10</code>.</p>\"], \"php\": [\"PHP\", \"<p><code>PHP 7.2</code>.</p>\\r\\n<p>With bcmath module</p>\"], \"typescript\": [\"Typescript\", \"<p><code>Node.js 14.8.0</code>.</p>\\r\\n\\r\\n<p>Your code is run with <code>--harmony</code> flag, enabling <a href=\\\"http://node.green/\\\" target=\\\"_blank\\\">new ES2020 features</a>.</p>\\r\\n\\r\\n<p><a href=\\\"https://lodash.com\\\" target=\\\"_blank\\\">lodash.js</a> library is included by default.</p>\"]}",
+            "libraryUrl": null,
+            "adminUrl": null,
+            "__typename": "QuestionNode"
+        }
+    }
+}

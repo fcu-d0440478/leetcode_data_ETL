@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "438",
+            "article": "{\"id\": 863, \"url\": \"/articles/find-all-anagrams-in-a-string/\", \"topicId\": 498476}",
+            "solution": {
+                "id": "863",
+                "content": "[TOC]\n\n## Solution\n\n--- \n\n#### Solution Template\n\n![traversal](../Figures/438/snake3.png)\n\nThis is a problem of multiple pattern search in a string.\nAll such problems usually could be solved by sliding window approach in a linear\ntime. The challenge here is how to implement constant-time slice \nto fit into this linear time. \n\nIf the patterns are not known in advance, i.e. it's \"find duplicates\" problem,\none could use one of two ways to implement constant-time slice: Bitmasks or Rabin-Karp.\nPlease check article [Repeated DNA Sequences](https://leetcode.com/articles/repeated-dna-sequences/)\nfor the detailed comparison of these two algorithms. \n\nHere the situation is more simple: patterns are known in advance, and the set\nof characters in the patterns is very limited as well: 26 lowercase English letters. \nHence one could allocate array or hashmap with 26 elements and use it as a \nletter counter in the sliding window. \n\n![traversal](../Figures/438/anagrams2.png)\n<br />\n<br />\n\n\n---\n#### Approach 1: Sliding Window with HashMap\n\nLet's start from the simplest approach: sliding window + two counter hashmaps \n`letter -> its count`. \nThe first hashmap is a reference counter `pCount` for string `p`, \nand the second one is a counter `sCount` for string in the sliding window.\n\nThe idea is to move sliding window along the string `s`, \nrecompute the second hashmap `sCount` in a \nconstant time and compare it with the first hashmap `pCount`. \nIf `sCount == pCount`, then the string in the sliding window is a permutation\nof string `p`, and one could add its start position in the output list. \n\n**Algorithm**\n\n- Build reference counter `pCount` for string `p`. \n\n- Move sliding window along the string `s`:\n\n    - Recompute sliding window counter `sCount` at each step by adding \n    one letter on the right and removing one letter on the left. \n    \n    - If `sCount == pCount`, update the output list.\n    \n- Return output list.   \n\n**Implementation**\n\n!?!../Documents/438_LIS.json:1000,535!?!\n\n<iframe src=\"https://leetcode.com/playground/6CxR9J56/shared\" frameBorder=\"0\" width=\"100%\" height=\"500\" name=\"6CxR9J56\"></iframe>\n\n**Complexity Analysis**\n\n* Time complexity: $$\\mathcal{O}(N_s + N_p)$$ since it's one pass along both strings.\n\n* Space complexity: $$\\mathcal{O}(1)$$, because `pCount` and `sCount`\ncontain not more than 26 elements.\n<br /> \n<br />\n\n\n---\n#### Approach 2: Sliding Window with Array\n\n**Algorithm**\n\nHashmap is quite complex structure, \n[with known performance issues in Java](https://github.com/vavr-io/vavr/issues/571).\nLet's implement approach 1 using 26-elements array instead of hashmap: \n\n- Element number 0 contains count of letter `a`.\n\n- Element number 1 contains count of letter `b`.\n\n- ...\n\n- Element number 26 contains count of letter `z`.\n\n**Algorithm**\n\n- Build reference array `pCount` for string `p`. \n\n- Move sliding window along the string `s`:\n\n    - Recompute sliding window array `sCount` at each step by adding \n    one letter on the right and removing one letter on the left. \n    \n    - If `sCount == pCount`, update the output list.\n    \n- Return output list. \n\n**Implementation**\n\n<iframe src=\"https://leetcode.com/playground/AAD2cGnD/shared\" frameBorder=\"0\" width=\"100%\" height=\"500\" name=\"AAD2cGnD\"></iframe>\n\n**Complexity Analysis**\n\n* Time complexity: $$\\mathcal{O}(N_s + N_p)$$ since it's one pass along both strings.\n\n* Space complexity: $$\\mathcal{O}(1)$$, because `pCount` and `sCount`\ncontain 26 elements each.\n<br /> \n<br />",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": true,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "821",
+                    "count": 46,
+                    "average": 4.326,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "596",
+            "article": "{\"id\": 202, \"url\": \"/articles/classes-more-than-5-students/\", \"topicId\": 127646}",
+            "solution": {
+                "id": "202",
+                "content": "[TOC]\n\n## Solution\n---\n#### Approach: Using `GROUP BY` clause and **sub-query** [Accepted]\n\n**Intuition**\n\nFirst, we can count the student number in each class. And then select the ones have more than 5 students.\n\n**Algorithm**\n\nTo get the student number in each class. We can use `GROUP BY` and `COUNT`, which is very popular used to statistic bases on some character in a table.\n\n```sql\nSELECT\n    class, COUNT(DISTINCT student)\nFROM\n    courses\nGROUP BY class\n;\n```\n>Note: We use `DISTINCT` here since the student name may duplicated in a class as it is mentioned int he problem description.\n\n```\n| class    | COUNT(student) |\n|----------|----------------|\n| Biology  | 1              |\n| Computer | 1              |\n| English  | 1              |\n| Math     | 6              |\n```\nTo continue, we can filter the classes by taking the above query as a sub-query.\n\n```sql\nSELECT\n    class\nFROM\n    (SELECT\n        class, COUNT(DISTINCT student) AS num\n    FROM\n        courses\n    GROUP BY class) AS temp_table\nWHERE\n    num >= 5\n;\n```\n>Note: Make an alias of `COUNT(student)` ('num' in this case) so that you can use in the `WHERE` clause because it cannot be used directly over there.\n\n#### Approach: Using `GROUP BY` and `HAVING` condition [Accepted]\n\n**Algorithm**\n\nUsing sub-query is one way to add some condition to a `GROUP BY` clause, however, using [`HAVING`](https://dev.mysql.com/doc/refman/5.7/en/group-by-handling.html) is another simpler and natural approach. So we can rewrite the above solution as below.\n\n**MySQL**\n```sql\nSELECT\n    class\nFROM\n    courses\nGROUP BY class\nHAVING COUNT(DISTINCT student) >= 5\n;\n```",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "196",
+                    "count": 21,
+                    "average": 4.429,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

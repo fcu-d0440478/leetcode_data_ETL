@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "557",
+            "article": "{\"id\": 104, \"url\": \"/articles/reverse-words-in-a-string-iii/\", \"topicId\": 127725}",
+            "solution": {
+                "id": "104",
+                "content": "[TOC]\n\n## Solution\n\n---\n#### Approach #1 Simple Solution[Accepted]\n\nThe first method is really simple. We simply split up the given string based on whitespaces and put the individual words in an array of strings. Then, we reverse each individual string and concatenate the result. We return the result after removing the additional whitespaces at the end.\n\n\n<iframe src=\"https://leetcode.com/playground/DjRyo9vA/shared\" frameBorder=\"0\" name=\"DjRyo9vA\" width=\"100%\" height=\"207\"></iframe>\n\n**Complexity Analysis**\n\n* Time complexity : $$O(n)$$. where $$n$$ is the length of the string.\n\n* Space complexity : $$O(n)$$. $$res$$ of size $$n$$ is used.\n\n---\n#### Approach #2 Without using pre-defined split and reverse function [Accepted]\n\n**Algorithm**\n\nWe can create our own split and reverse function. Split function splits the string based on the delimiter \" \"(space) and returns the array of words. Reverse function returns the string after reversing the characters.\n\n\n\n<iframe src=\"https://leetcode.com/playground/oxasWgHd/shared\" frameBorder=\"0\" name=\"oxasWgHd\" width=\"100%\" height=\"515\"></iframe>\n**Complexity Analysis**\n\n* Time complexity : $$O(n)$$. where $$n$$ is the length of the string.\n* Space complexity : $$O(n)$$. $$res$$ of size $$n$$ is used.\n\n---\n#### Approach #3 Using StringBuilder and reverse method [Accepted]\n\n**Algorithm**\n\nInstead of using split method, we can use temporary string $$word$$ to store the word. We simply append the characters to the $$word$$ until `' '` character is not found. On getting `' '` we append the reverse of the $$word$$ to the resultant string $$result$$. Also after completion of loop , we still have to append the $$reverse$$ of the $$word$$(last word) to the $$result$$ string. \n\nBelow code is inspired by [@ApolloX](http://leetcode.com/apolloX).\n\n\n<iframe src=\"https://leetcode.com/playground/Xt8eMTKv/shared\" frameBorder=\"0\" name=\"Xt8eMTKv\" width=\"100%\" height=\"343\"></iframe>\n**Complexity Analysis**\n\n* Time complexity : $$O(n)$$. Single loop upto $$n$$ is there, where $$n$$ is the length of the string.\n* Space complexity : $$O(n)$$. $$result$$ and $$word$$ size will grow upto $$n$$.",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "104",
+                    "count": 57,
+                    "average": 3.123,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

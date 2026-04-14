@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "833",
+            "article": "{\"id\": 444, \"url\": \"/articles/bus-routes/\", \"topicId\": 127510}",
+            "solution": {
+                "id": "444",
+                "content": "[TOC]\n\n---\n#### Approach #1: Breadth First Search [Accepted]\n\n**Intuition**\n\nInstead of thinking of the stops as nodes (of a graph), think of the buses as nodes.  We want to take the least number of buses, which is a shortest path problem, conducive to using a breadth-first search.\n\n**Algorithm**\n\nWe perform a breadth first search on bus numbers.  When we start at `S`, originally we might be able to board many buses, and if we end at `T` we may have many `targets` for our goal state.\n\nOne difficulty is to efficiently decide whether two buses are connected by an edge.  They are connected if they share at least one bus stop.  Whether two lists share a common value can be done by set intersection (HashSet), or by sorting each list and using a two pointer approach.\n\nTo make our search easy, we will annotate the depth of each node: `info[0] = node, info[1] = depth`.\n\n<iframe src=\"https://leetcode.com/playground/AEba8t6x/shared\" frameBorder=\"0\" width=\"100%\" height=\"500\" name=\"AEba8t6x\"></iframe>\n\n**Complexity Analysis**\n\n* Time Complexity:  Let $$N$$ denote the number of buses, and $$b_i$$ be the number of stops on the $$i$$th bus.\n\n    * To create the graph, in Python we do $$O(\\sum (N - i) b_i)$$ work (we can improve this by checking for which of `r1, r2` is smaller), while in Java we did a $$O(\\sum b_i \\log b_i)$$ sorting step, plus our searches are $$O(N \\sum b_i)$$ work.\n\n    * Our (breadth-first) search is on $$N$$ nodes, and each node could have $$N$$ edges, so it is $$O(N^2)$$.\n\n* Space Complexity: $$O(N^2 + \\sum b_i)$$ additional space complexity, the size of `graph` and `routes`.  In Java, our space complexity is $$O(N^2)$$ because we do not have an equivalent of `routes`.  Dual-pivot quicksort (as used in `Arrays.sort(int[])`) is an in-place algorithm, so in Java we did not increase our space complexity by sorting.",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "439",
+                    "count": 48,
+                    "average": 3.583,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

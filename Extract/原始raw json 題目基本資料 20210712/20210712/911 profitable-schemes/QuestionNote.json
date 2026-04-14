@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "911",
+            "article": "{\"id\": 523, \"url\": \"/articles/profitable-schemes/\", \"topicId\": 154721}",
+            "solution": {
+                "id": "523",
+                "content": "[TOC]\n\n## Solution\n\n---\n\n#### Approach 1: Dynamic Programming\n\n**Intuition**\n\nWe don't care about the profit of the scheme if it is $$\\geq P$$, because it surely will be over the threshold of profitability required.  Similarly, we don't care about the number of people required in the scheme if it is $$> G$$, since we know the scheme will be too big for the gang to execute.\n\nAs a result, the bounds are small enough to use dynamic programming.  Let's keep track of `cur[p][g]`, the number of schemes with profitability $$p$$ and requiring $$g$$ gang members: except we'll say (without changing the answer) that all schemes that profit *at least* `P` dollars will instead profit *exactly* `P` dollars.\n\n**Algorithm**\n\nKeeping track of `cur[p][g]` as defined above, let's understand how it changes as we consider 1 extra crime that will profit `p0` and require `g0` gang members.  We will put the updated counts into `cur2`.\n\nFor each possible scheme with profit `p1` and group size `g1`, that scheme plus the extra crime (`p0, g0`) being considered, has a profit of `p2 = min(p1 + p0, P)`, and uses a group size of `g2 = g1 + g0`.\n\n<iframe src=\"https://leetcode.com/playground/84xdDTFj/shared\" frameBorder=\"0\" width=\"100%\" height=\"500\" name=\"84xdDTFj\"></iframe>\n\n**Complexity Analysis**\n\n* Time Complexity:  $$O(N * P * G)$$, where $$N$$ is the number of crimes available to the gang.\n\n* Space Complexity:  $$O(P * G)$$.\n<br />\n<br />",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "516",
+                    "count": 16,
+                    "average": 3.5,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

@@ -1,0 +1,43 @@
+{
+    "data": {
+        "topic": {
+            "id": 362772,
+            "viewCount": 105007,
+            "topLevelCommentCount": 40,
+            "subscribed": false,
+            "title": "Fibonacci Number",
+            "pinned": false,
+            "tags": [],
+            "hideFromTrending": false,
+            "post": {
+                "id": 690618,
+                "voteCount": 0,
+                "voteStatus": 0,
+                "content": "",
+                "updationDate": 1566282210,
+                "creationDate": 1566282210,
+                "status": null,
+                "isHidden": null,
+                "coinRewards": [],
+                "author": {
+                    "isDiscussAdmin": false,
+                    "isDiscussStaff": false,
+                    "username": "MorrisLaw",
+                    "nameColor": null,
+                    "activeBadge": null,
+                    "profile": {
+                        "userAvatar": "https://www.gravatar.com/avatar/88fa9bce6de3c95c775dfdc776ee327b.png?s=200",
+                        "reputation": 0,
+                        "__typename": "UserProfileNode"
+                    },
+                    "isActive": true,
+                    "__typename": "UserNode"
+                },
+                "authorIsModerator": false,
+                "isOwnPost": false,
+                "__typename": "PostNode"
+            },
+            "__typename": "TopicNode"
+        }
+    }
+}

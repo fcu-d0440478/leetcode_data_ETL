@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "1097",
+            "article": "{\"id\": 978, \"url\": \"/articles/stream-of-characters/\", \"topicId\": 739483}",
+            "solution": {
+                "id": "978",
+                "content": "[TOC]\r\n\r\n## Solution\r\n\r\n---\r\n\r\n#### Prerequisites\r\n\r\nThis design article uses [data structure Trie](https://leetcode.com/articles/add-and-search-word/). If you never worked\r\nwith trie before, you might want to check [this introduction article](https://leetcode.com/articles/add-and-search-word/)\r\nfirst to simplify the further reading.\r\n\r\n#### Approach 1: Trie\r\n\r\n**Trie**\r\n\r\nTrie is widely used in real life:\r\nautocomplete search, spell checker, T9 predictive text, \r\n[IP routing (longest prefix matching)](https://www.researchgate.net/figure/An-example-routing-table-and-the-corresponding-binary-trie-built-from-it_fig3_4236637), \r\n[some GCC containers](https://gcc.gnu.org/onlinedocs/libstdc++/ext/pb_ds/trie_based_containers.html).\r\n\r\nTrie is something to think about if you're asked to design \r\na structure to dynamically add and search strings.\r\n\r\n**Intuition**\r\n\r\nThe first idea is to add all input words in the trie and then implement \r\na standard search.\r\n\r\n![fig](../Figures/1032/naive4.png)\r\n{:align=\"center\"}\r\n\r\n*Figure 1. Naive implementation.*\r\n{:align=\"center\"}\r\n\r\nThe problem is we don't know how many characters to match.\r\nOn the example above, should we try to match the last three stream characters\r\n\"jkl\", the last two \"kl\", or the last one \"l\"?  \r\n\r\nThe way to solve the problem is to notice that we always know \r\nthe last character to match. That gives us an idea to build a trie\r\nof _reversed_ words, and try to match the _reversed_ stream of characters.\r\n\r\n![fig](../Figures/1032/reverse.png)\r\n{:align=\"center\"}\r\n\r\n*Figure 2. Trie of the reversed words and the reversed stream of characters.*\r\n{:align=\"center\"}\r\n\r\nThis way, instead of multiple choices to match, we always have one path: \r\nto match character by character starting from the end of the stream.\r\nWe could stop once we meet the \"end of word\" label, which means success.\r\nIf we couldn't match a character before we meet that label, that means fail.\r\n\r\n**Constructor StreamChecker**\r\n\r\nTrie is usually implemented as nested hashmaps.\r\nAt each step, one has to verify if the child node to add is already present. If yes, \r\nwe go one level down. If not, we add the node into a trie and then go one step down.\r\nThe particularity of the current problem is that we add \r\nin the trie the _reversed_ words. \r\n\r\nThe last thing to discuss is how to store the reversed stream of characters.\r\nFor that, we need a structure for which `appendleft` / `addFirst` \r\noperation takes a constant time. The good choice here is \r\n_double ended queue_, it's implemented as [deque](https://docs.python.org/3/library/collections.html#collections.deque)\r\nin Python, and as [ArrayDeque](https://docs.oracle.com/javase/8/docs/api/java/util/ArrayDeque.html) in Java.\r\n\r\n<iframe src=\"https://leetcode.com/playground/4ef8bHhB/shared\" frameBorder=\"0\" width=\"100%\" height=\"446\" name=\"4ef8bHhB\"></iframe>\r\n\r\n**Complexity Analysis**\r\n\r\n* Time complexity: $$\\mathcal{O}(N \\cdot M)$$, where \r\n$$N$$ is a number of input words, and $$M$$ is the word length.\r\nWe have $$N$$ words to process. \r\nAt each step, we either examine or create a node in the trie. \r\nThat takes only $$M$$ operations.\r\n\r\n* Space complexity: $$\\mathcal{O}(N \\cdot M)$$. \r\nIn the worst-case newly inserted \r\nkey doesn't share a prefix with the keys already added in the trie. \r\nWe have to add $$N \\cdot M$$ new nodes, which takes \r\n$$\\mathcal{O}(N \\cdot M)$$ space. \r\n\r\n**Query Implementation**\r\n\r\nThe search is very straightforward: we start from the end of the stream\r\nand check character by character, going down in trie. \r\n\r\n![fig](../Figures/1032/query.png)\r\n{:align=\"center\"}\r\n\r\n*Figure 3. Search in trie.*\r\n{:align=\"center\"}\r\n\r\n<iframe src=\"https://leetcode.com/playground/hHQcMjV8/shared\" frameBorder=\"0\" width=\"100%\" height=\"310\" name=\"hHQcMjV8\"></iframe>\r\n\r\n* Time complexity: $$\\mathcal{O}(M)$$, where $$M$$ is a max word length,\r\n_i.e._ the depth of trie.\r\n\r\n* Space complexity: $$\\mathcal{O}(M)$$ to keep a stream of characters.\r\nOne could limit the size of deque to be equal to the length of the longest\r\ninput word. \r\n\r\n**Implementation**\r\n\r\nLet's bring everything together. \r\n\r\n<iframe src=\"https://leetcode.com/playground/jUJVNMHN/shared\" frameBorder=\"0\" width=\"100%\" height=\"500\" name=\"jUJVNMHN\"></iframe>",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": true,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "923",
+                    "count": 36,
+                    "average": 4.722,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

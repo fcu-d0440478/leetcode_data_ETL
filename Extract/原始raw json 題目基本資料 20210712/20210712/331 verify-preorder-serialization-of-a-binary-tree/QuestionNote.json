@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "331",
+            "article": "{\"id\": 756, \"url\": \"/articles/verify-preorder-serialization-of-a-binary-tree/\", \"topicId\": 350361}",
+            "solution": {
+                "id": "756",
+                "content": "[TOC]\n\n## Solution\n\n--- \n\n#### Approach 1: Iteration\n\n**Intuition**\n\nLet's start from the simplest but not optimal solution to discuss the idea.\n\nBinary tree could be considered as a number of slots to fulfill.\nAt the start there is just one slot available for a number \nor null node. \nBoth number and null node take one slot to be placed.\nFor the null node the story ends up here, \nwhereas the number will add into the tree two slots \nfor the child nodes. Each child node could be,\nagain, a number or a null.  \n \n> The idea is straightforward : \ntake the nodes one by one from preorder traversal, \nand compute the number of available slots.\nIf at the end all available slots are used up, the preorder\ntraversal represents the valid serialization. \n\n- In the beginning there is one available slot.   \n\n- Each number or null consumes one slot.\n\n- Null node adds no slots, whereas each number adds two slots for the\nchild nodes.\n\n![fig](../Figures/331/rules.png)\n\n**Algorithm**\n\n- Initiate the number of available slots: `slots = 1`.\n\n- Split preorder traversal by comma, and iterate over the resulting array. \nAt each step :\n\n    - Both a number or a null node take one slot : `slots = slot - 1`.\n    \n    - If the number of available slots is negative, the \n    preorder traversal is invalid, return False.\n    \n    - Non-empty node `node != '#'` creates two more available slots:\n    `slots = slots + 2`.\n    \n- Preorder traversal is valid if all available slots are used up : \nreturn `slots == 0`.\n\n**Implementation**\n\n<iframe src=\"https://leetcode.com/playground/aF3KSqaH/shared\" frameBorder=\"0\" width=\"100%\" height=\"395\" name=\"aF3KSqaH\"></iframe>\n\n**Complexity Analysis**\n\n* Time complexity : $$\\mathcal{O}(N)$$ to iterate over the \nstring of length N. \n\n* Space complexity : $$\\mathcal{O}(N)$$ to keep split array in memory. \n<br /> \n<br />\n\n\n---\n#### Approach 2: One pass\n\n**Intuition**\n\nApproach 1 uses $$\\mathcal{O}(N)$$ space to keep split array in memory,\nand for sure that should be optimised. The idea is to \niterate over the string itself and not over the array of nodes.\n\nDuring the iteration, one has to update the number of\navailable slots at each comma character. \nFirst, one should decrease the number of slots by one, because \nboth empty and non-empty node take one slot.\nSecond, if the node is a non-empty one, i.e. \nthe character just before the comma is not equal to `#`, one\nshould add two more slots for the child nodes. \n\nThe last node should be considered separately, since there is \nno comma after it.\n\n!?!../Documents/331_LIS.json:1000,520!?!\n\n**Algorithm**\n\n- Initiate the number of available slots: `slots = 1`.\n\n- Iterate over the string. At each comma :\n\n    - Both a number or a null node take one slot : `slots = slot - 1`.\n    \n    - If the number of available slots is negative, the \n    preorder traversal is invalid, return False.\n    \n    - Non-empty node, detected by non-`#` character before comma,\n    creates two more available slots: `slots = slots + 2`.\n    \n- The last node should be considered separately, since there is \nno comma after it. \n    \n- Preorder traversal is valid if all available slots are used up : \nreturn `slots == 0`.\n\n**Implementation**\n\n<iframe src=\"https://leetcode.com/playground/oUyFXgvU/shared\" frameBorder=\"0\" width=\"100%\" height=\"480\" name=\"oUyFXgvU\"></iframe>\n\n**Complexity Analysis**\n\n* Time complexity : $$\\mathcal{O}(N)$$ to iterate over the \nstring of length N. \n\n* Space complexity : $$\\mathcal{O}(1)$$, it's a constant space \nsolution.",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": true,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "741",
+                    "count": 17,
+                    "average": 4.235,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

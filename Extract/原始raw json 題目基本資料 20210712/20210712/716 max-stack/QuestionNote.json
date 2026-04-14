@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "716",
+            "article": "{\"id\": 308, \"url\": \"/articles/max-stack/\", \"topicId\": 127684}",
+            "solution": {
+                "id": "308",
+                "content": "[TOC]\n\n#### Approach #1: Two Stacks [Accepted]\n\n**Intuition and Algorithm**\n\nA regular stack already supports the first 3 operations, so we focus on the last two.\n\nFor `peekMax`, we remember the largest value we've seen on the side.  For example if we add `[2, 1, 5, 3, 9]`, we'll remember `[2, 2, 5, 5, 9]`.  This works seamlessly with `pop` operations, and also it's easy to compute: it's just the maximum of the element we are adding and the previous maximum.\n\nFor `popMax`, we know what the current maximum (`peekMax`) is.  We can pop until we find that maximum, then push the popped elements back on the stack.\n\nOur implementation in Python will showcase extending the `list` class.\n\n<iframe src=\"https://leetcode.com/playground/AZuvbhq6/shared\" frameBorder=\"0\" width=\"100%\" height=\"500\" name=\"AZuvbhq6\"></iframe>\n\n\n**Complexity Analysis**\n\n* Time Complexity: $$O(N)$$ for the `popMax` operation, and $$O(1)$$ for the other operations, where $$N$$ is the number of operations performed.\n\n* Space Complexity: $$O(N)$$, the maximum size of the stack.\n\n---\n#### Approach #2: Double Linked List + TreeMap [Accepted]\n\n**Intuition**\n\nUsing structures like Array or Stack will never let us `popMax` quickly.  We turn our attention to tree and linked-list structures that have a lower time complexity for removal, with the aim of making `popMax` faster than $$O(N)$$ time complexity.\n\nSay we have a double linked list as our \"stack\".  This reduces the problem to finding which node to remove, since we can remove nodes in $$O(1)$$ time.\n\nWe can use a TreeMap mapping values to a list of nodes to answer this question.  TreeMap can find the largest value, insert values, and delete values, all in $$O(\\log N)$$ time.\n\n**Algorithm**\n\nLet's store the stack as a double linked list `dll`, and store a `map` from `value` to a `List` of `Node`.\n\n* When we `MaxStack.push(x)`, we add a node to our `dll`, and add or update our entry `map.get(x).add(node)`.\n\n* When we `MaxStack.pop()`, we find the value `val = dll.pop()`, and remove the node from our `map`, deleting the entry if it was the last one.\n\n* When we `MaxStack.popMax()`, we use the `map` to find the relevant node to `unlink`, and return it's value.\n\nThe above operations are more clear given that we have a working `DoubleLinkedList` class.  The implementation provided uses `head` and `tail` *sentinels* to simplify the relevant `DoubleLinkedList` operations.\n\nA Python implementation was not included for this approach because there is no analog to *TreeMap* available.\n\n<iframe src=\"https://leetcode.com/playground/b9tKyzdr/shared\" frameBorder=\"0\" width=\"100%\" height=\"500\" name=\"b9tKyzdr\"></iframe>\n\n**Complexity Analysis**\n\n* Time Complexity: $$O(\\log N)$$ for all operations except `peek` which is $$O(1)$$, where $$N$$ is the number of operations performed.  Most operations involving `TreeMap` are $$O(\\log N)$$.\n\n* Space Complexity: $$O(N)$$, the size of the data structures used.",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "303",
+                    "count": 78,
+                    "average": 3.462,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

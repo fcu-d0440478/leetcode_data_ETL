@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "182",
+            "article": "{\"id\": 214, \"url\": \"/articles/duplicate-emails/\", \"topicId\": 127658}",
+            "solution": {
+                "id": "214",
+                "content": "[TOC]\n\n## Solution\n---\n#### Approach I: Using `GROUP BY` and a temporary table [Accepted]\n\n**Algorithm**\n\nDuplicated emails existed more than one time. To count the times each email exists, we can use the following code.\n\n```sql\nselect Email, count(Email) as num\nfrom Person\ngroup by Email;\n```\n\n```\n| Email   | num |\n|---------|-----|\n| a@b.com | 2   |\n| c@d.com | 1   |\n```\n\nTaking this as a temporary table, we can get a solution as below.\n\n```sql\nselect Email from\n(\n  select Email, count(Email) as num\n  from Person\n  group by Email\n) as statistic\nwhere num > 1\n;\n```\n\n#### Approach II: Using `GROUP BY` and `HAVING` condition [Accepted]\n\nA more common used way to add a condition to a `GROUP BY` is to use the `HAVING` clause, which is much simpler and more efficient.\n\nSo we can rewrite the above solution to this one.\n\n**MySQL**\n\n```sql\nselect Email\nfrom Person\ngroup by Email\nhaving count(Email) > 1;\n```",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "209",
+                    "count": 44,
+                    "average": 4.704,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

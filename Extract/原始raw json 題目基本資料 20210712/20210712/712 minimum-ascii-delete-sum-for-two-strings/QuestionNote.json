@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "712",
+            "article": "{\"id\": 266, \"url\": \"/articles/minimum-ascii-delete-sum-for-two-strings/\", \"topicId\": 127669}",
+            "solution": {
+                "id": "266",
+                "content": "[TOC]\n\n\n#### Approach #1: Dynamic Programming [Accepted]\n\n**Intuition and Algorithm**\n\nLet `dp[i][j]` be the answer to the problem for the strings `s1[i:], s2[j:]`.\n\nWhen one of the input strings is empty, the answer is the ASCII-sum of the other string.  We can calculate this cumulatively using code like `dp[i][s2.length()] = dp[i+1][s2.length()] + s1.codePointAt(i)`.\n\nWhen `s1[i] == s2[j]`, we have `dp[i][j] = dp[i+1][j+1]` as we can ignore these two characters.\n\nWhen `s1[i] != s2[j]`, we will have to delete at least one of them.  We'll have `dp[i][j]` as the minimum of the answers after both deletion options.\n\nThe solutions presented will use *bottom-up* dynamic programming.\n\n**Python**\n```python\nclass Solution(object):\n    def minimumDeleteSum(self, s1, s2):\n        dp = [[0] * (len(s2) + 1) for _ in xrange(len(s1) + 1)]\n\n        for i in xrange(len(s1) - 1, -1, -1):\n            dp[i][len(s2)] = dp[i+1][len(s2)] + ord(s1[i])\n        for j in xrange(len(s2) - 1, -1, -1):\n            dp[len(s1)][j] = dp[len(s1)][j+1] + ord(s2[j])\n\n        for i in xrange(len(s1) - 1, -1, -1):\n            for j in xrange(len(s2) - 1, -1, -1):\n                if s1[i] == s2[j]:\n                    dp[i][j] = dp[i+1][j+1]\n                else:\n                    dp[i][j] = min(dp[i+1][j] + ord(s1[i]),\n                                   dp[i][j+1] + ord(s2[j]))\n\n        return dp[0][0]\n```\n\n**Java**\n```java\nclass Solution {\n    public int minimumDeleteSum(String s1, String s2) {\n        int[][] dp = new int[s1.length() + 1][s2.length() + 1];\n\n        for (int i = s1.length() - 1; i >= 0; i--) {\n            dp[i][s2.length()] = dp[i+1][s2.length()] + s1.codePointAt(i);\n        }\n        for (int j = s2.length() - 1; j >= 0; j--) {\n            dp[s1.length()][j] = dp[s1.length()][j+1] + s2.codePointAt(j);\n        }\n        for (int i = s1.length() - 1; i >= 0; i--) {\n            for (int j = s2.length() - 1; j >= 0; j--) {\n                if (s1.charAt(i) == s2.charAt(j)) {\n                    dp[i][j] = dp[i+1][j+1];\n                } else {\n                    dp[i][j] = Math.min(dp[i+1][j] + s1.codePointAt(i),\n                                        dp[i][j+1] + s2.codePointAt(j));\n                }\n            }\n        }\n        return dp[0][0];\n    }\n}\n```\n\n**Complexity Analysis**\n\n* Time Complexity: $$O(M*N)$$, where $$M, N$$ are the lengths of the given strings.  We use nested for loops: each loop is $$O(M)$$ and $$O(N)$$ respectively.\n\n* Space Complexity: $$O(M*N)$$, the space used by `dp`.",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "262",
+                    "count": 45,
+                    "average": 3.867,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

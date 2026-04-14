@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "252",
+            "article": "{\"id\": 39, \"url\": \"/articles/meeting-rooms/\", \"topicId\": 127842}",
+            "solution": {
+                "id": "39",
+                "content": "[TOC]\n\n## Video Solution\n---\n\n<div>\n    <div class=\"video-container\">\n        <iframe src=\"https://player.vimeo.com/video/474301408\" width=\"640\" height=\"360\" frameborder=\"0\" allow=\"autoplay; fullscreen\" allowfullscreen></iframe>\n    </div>\n</div>\n\n<div>&nbsp;\n</div>\n\n## Solution Article\n---\n\n#### Approach 1: Brute Force\nThe straight-forward solution is to compare every two meetings in the array, and see if they conflict with each other (i.e. if they overlap). Two meetings overlap if one of them starts while the other is still taking place.\n\n\n<iframe src=\"https://leetcode.com/playground/95ZmV83L/shared\" frameBorder=\"0\" width=\"100%\" height=\"361\" name=\"95ZmV83L\"></iframe>\n\n**Overlap Condition**\n\nThe overlap condition in the code above can be written in a more concise way. Consider two non-overlapping meetings. The earlier meeting ends before the later meeting begins. Therefore, the *minimum* end time of the two meetings (which is the end time of the earlier meeting) is smaller than or equal the *maximum* start time of the two meetings (which is the start time of the later meeting).\n\n![Two non-overlapping intervals](https://leetcode.com/media/original_images/252_NonOverlappingIntervals.png \"Odd Even Linked List\"){:width=\"300px\"}\n{:align=\"center\"}\n\n*Figure 1. Two non-overlapping intervals.*\n{:align=\"center\"}\n\n![Two overlapping intervals](https://leetcode.com/media/original_images/252_OverlappingIntervals.png \"Odd Even Linked List\"){:width=\"280px\"}\n{:align=\"center\"}\n\n*Figure 2. Two overlapping intervals.*\n{:align=\"center\"}\n\nSo the condition can be rewritten as follows.\n\n<iframe src=\"https://leetcode.com/playground/5vf5WRoU/shared\" frameBorder=\"0\" width=\"100%\" height=\"123\" name=\"5vf5WRoU\"></iframe>\n\n**Complexity Analysis**\n\nBecause we have two check every meeting with every other meeting, the total run time is $$O(n^2)$$. No additional space is used, so the space complexity is $$O(1)$$.\n<br/>\n<br/>\n\n---\n#### Approach 2: Sorting\n\nThe idea here is to sort the meetings by starting time. Then, go through the meetings one by one and make sure that each meeting ends before the next one starts.\n\n<iframe src=\"https://leetcode.com/playground/fLKAwhF5/shared\" frameBorder=\"0\" width=\"100%\" height=\"361\" name=\"fLKAwhF5\"></iframe>\n\n\n**Complexity Analysis**\n\n* Time complexity : $$O(n \\log n)$$.\nThe time complexity is dominated by sorting. Once the array has been sorted, only $$O(n)$$ time is taken to go through the array and determine if there is any overlap.\n\n* Space complexity : $$O(1)$$.\nSince no additional space is allocated.\n<br/>\n</br>",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": true,
+                "hasVideoSolution": true,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "36",
+                    "count": 51,
+                    "average": 4.882,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

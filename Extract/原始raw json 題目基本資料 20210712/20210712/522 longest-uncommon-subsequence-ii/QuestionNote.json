@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "522",
+            "article": "{\"id\": 100, \"url\": \"/articles/longest-uncommon-subsequence-ii/\", \"topicId\": 127618}",
+            "solution": {
+                "id": "100",
+                "content": "[TOC]\n\n## Solution\n\n---\n#### Approach #1 Brute Force[Accepted]\n\nIn the brute force approach we will generate all the possible $$2^n$$ subsequences of all the strings and store their number of occurences in a hashmap. Longest subsequence whose frequency is equal to $$1$$ will be the required subsequence. And, if it is not found we will return $$-1$$.\n\n\n<iframe src=\"https://leetcode.com/playground/HSf9Ggnx/shared\" frameBorder=\"0\" name=\"HSf9Ggnx\" width=\"100%\" height=\"479\"></iframe>\n\n**Complexity Analysis**\n\n* Time complexity : $$O(n*2^x)$$. where $$x$$ is the average length of the strings and $$n$$ is the total number of given strings.\n* Space complexity : $$O(n*2^x)$$. Hashmap of size $$n*2^x$$ is used.\n\n---\n#### Approach #2 Checking Subsequence [Accepted]\n\n**Algorithm**\n\nBy some analysis, we can note that if longest uncommon subsequence is there, then it will always be one of the string from the given list of strings.\nUsing this idea, we can check each string that whether it is a subsequence of any other string. If a string is not a subsequence of any other string i.e. it is uncommon , we will return maximum length string out of them. If no string found, we will return $$-1$$.\n\nTo understand the method, look at the example given below:\n\n<!--![Checking_Subsequence](../Figures/595_Longest_Uncommon_Subsequence.gif)-->\n!?!../Documents/595_Longest_Uncommon.json:1000,563!?!\n\n<iframe src=\"https://leetcode.com/playground/8u5yUq7G/shared\" frameBorder=\"0\" name=\"8u5yUq7G\" width=\"100%\" height=\"462\"></iframe>\n\n**Complexity Analysis**\n\n* Time complexity : $$O(x*n^2)$$. where $$n$$ is the number of strings and $$x$$ is the average length of the strings.\n\n* Space complexity : $$O(1)$$. Constant space required.\n\n---\n#### Approach #3 Sorting and Checking Subsequence [Accepted]\n\n**Algorithm**\n\nIn the last approach, we needed to compare all the given strings and compare them for the subsequence criteria. We can save some computations if we sort the given set of strings based on their lengths initially.\n\nIn this approach, firstly we sort the given strings in decreasing order of their lengths. Then, we start off by comparing the longest string with all the other strings. If none of the other strings happens to be the subsequence of the longest string, we return the length of the longest string as the result without any need of further comparisons. If some string happens to be a subsequence of the longest string, we continue the same process by choosing the second largest string as the first string and repeat the process, and so on.\n\n<iframe src=\"https://leetcode.com/playground/88P8AEzt/shared\" frameBorder=\"0\" name=\"88P8AEzt\" width=\"100%\" height=\"515\"></iframe>\n\n**Complexity Analysis**\n\n* Time complexity : $$O(x*n^2)$$. where $$n$$ is the number of strings and $$x$$ is the average length of the strings.\n\n* Space complexity : $$O(1)$$. Constant space required.",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": true,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "98",
+                    "count": 9,
+                    "average": 4.444,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

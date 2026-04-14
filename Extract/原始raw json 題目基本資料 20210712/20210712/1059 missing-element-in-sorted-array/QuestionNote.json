@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "1059",
+            "article": "{\"id\": 738, \"url\": \"/articles/missing-element-in-sorted-array/\", \"topicId\": 310531}",
+            "solution": {
+                "id": "738",
+                "content": "[TOC]\n\n## Solution\n\n---\n\n#### Approach 1: One Pass\n\n**Intuition**\n\nThe problem is similar to [First Missing Positive](https://leetcode.com/articles/first-missing-positive/)\nand the naive idea would be to solve it in a similar way \nby one pass approach.\n\nLet's first assume that one has a function `missing(idx)`\nthat returns how many numbers are missing until the element\nat index `idx`. \n\n![fig](../Figures/1060/function.png)\n\nWith the help of such a function the solution is\nstraightforward :\n\n- Find an index such that `missing(idx - 1) < k <= missing(idx)`.\nIn other words, that means that kth missing number is in-between\n`nums[idx - 1]` and `nums[idx]`. \n\n    One even could \n    compute a difference between kth missing number and \n    `nums[idx - 1]`. First, there are `missing(idx - 1)`\n    missing numbers until `nums[idx - 1]`. \n    Second, all `k - missing(idx - 1)` missing numbers from\n    `nums[idx - 1]` to kth missing are _consecutive ones_,\n    because all of them are less than `nums[idx]` and hence\n    there is nothing to separate them.\n    Together that means that kth smallest is\n    larger than `nums[idx - 1]` by `k - missing(idx - 1)`.\n\n- Return kth smallest `nums[idx - 1] + k - missing(idx - 1)`.\n\n![fic](../Figures/1060/algor.png)\n\n> The last thing to discuss is how to implement `missing(idx)` function.\n\nLet's consider an array element at index `idx`. If there is no numbers\nmissing, the element should be equal to `nums[idx] = nums[0] + idx`.\nIf k numbers are missing, the element should be equal to\n`nums[idx] = nums[0] + idx + k`. \nHence the number of missing elements is equal to\n`nums[idx] - nums[0] - idx`.\n\n![pic](../Figures/1060/missing.png)\n\n**Algorithm**\n\n- Implement `missing(idx)` function that returns how many numbers\nare missing until array element with index `idx`.\nFunction returns `nums[idx] - nums[0] - idx`.\n\n- Find an index such that `missing(idx - 1) < k <= missing(idx)`\nby a linear search.\n\n- Return kth smallest `nums[idx - 1] + k - missing(idx - 1)`.\n\n**Implementation**\n\n<iframe src=\"https://leetcode.com/playground/BhRaH34k/shared\" frameBorder=\"0\" width=\"100%\" height=\"463\" name=\"BhRaH34k\"></iframe>\n\n**Complexity Analysis**\n\n* Time complexity: $$\\mathcal{O}(N)$$ since in the worst case \nit's one pass along the array.\n\n* Space complexity: $$\\mathcal{O}(1)$$ since it's a constant space solution.\n<br /> \n<br />\n\n\n---\n#### Approach 2: Binary Search\n\n**Intuition**\n\nApproach 1 uses the linear search and \ndoesn't profit from the fact that array is _sorted_.\nOne could replace the linear search by a [binary one](https://leetcode.com/articles/binary-search/) \nand \nreduce the time complexity from $$\\mathcal{O}(N)$$ \ndown to $$\\mathcal{O}(\\log N)$$.\n\n> The idea is to find the leftmost element such that \nthe number of missing numbers until this element \nis less or equal to k.\n\n![fif](../Figures/1060/inary.png)\n\n**Algorithm**\n\n- Implement `missing(idx)` function that returns how many numbers\nare missing until array element with index `idx`.\nFunction returns `nums[idx] - nums[0] - idx`.\n\n- Find an index such that `missing(idx - 1) < k <= missing(idx)`\nby a _binary search_.\n\n- Return kth smallest `nums[idx - 1] + k - missing(idx - 1)`.\n\n**Implementation**\n\n<iframe src=\"https://leetcode.com/playground/xMQHrhUF/shared\" frameBorder=\"0\" width=\"100%\" height=\"500\" name=\"xMQHrhUF\"></iframe>\n\n**Complexity Analysis**\n\n* Time complexity: $$\\mathcal{O}(\\log N)$$ since it's a binary search algorithm\nin the worst case when the missing\nnumber is less than the last element of the array.\n\n* Space complexity : $$\\mathcal{O}(1)$$ since it's a constant space solution.",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": true,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "723",
+                    "count": 50,
+                    "average": 3.52,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

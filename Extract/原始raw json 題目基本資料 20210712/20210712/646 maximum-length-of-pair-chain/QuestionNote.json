@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "646",
+            "article": "{\"id\": 317, \"url\": \"/articles/maximum-length-of-pair-chain/\", \"topicId\": 127487}",
+            "solution": {
+                "id": "317",
+                "content": "[TOC]\n\n---\n#### Approach #1: Dynamic Programming [Accepted]\n\n**Intuition**\n\nIf a chain of length `k` ends at some `pairs[i]`, and `pairs[i][1] < pairs[j][0]`, we can extend this chain to a chain of length `k+1`.\n\n**Algorithm**\n\nSort the pairs by first coordinate, and let `dp[i]` be the length of the longest chain ending at `pairs[i]`.  When `i < j` and `pairs[i][1] < pairs[j][0]`, we can extend the chain, and so we have the candidate answer `dp[j] = max(dp[j], dp[i] + 1)`.\n\n<iframe src=\"https://leetcode.com/playground/cBD958Bm/shared\" frameBorder=\"0\" width=\"100%\" height=\"378\" name=\"cBD958Bm\"></iframe>\n\n**Complexity Analysis**\n\n* Time Complexity: $$O(N^2)$$ where $$N$$ is the length of `pairs`.  There are two for loops, and $$N^2$$ dominates the sorting step.\n\n* Space Complexity: $$O(N)$$ for sorting and to store `dp`.\n\n---\n#### Approach #2: Greedy [Accepted]\n\n**Intuition**\n\nWe can greedily add to our chain.  Choosing the next addition to be the one with the lowest second coordinate is at least better than a choice with a larger second coordinate.\n\n**Algorithm**\n\nConsider the pairs in increasing order of their *second* coordinate.  We'll try to add them to our chain.  If we can, by the above argument we know that it is correct to do so.\n\n<iframe src=\"https://leetcode.com/playground/fZtpFsK8/shared\" frameBorder=\"0\" width=\"100%\" height=\"242\" name=\"fZtpFsK8\"></iframe>\n\n**Complexity Analysis**\n\n* Time Complexity: $$O(N \\log N)$$ where $$N$$ is the length of `S`.  The complexity comes from the sorting step, but the rest of the solution does linear work.\n\n* Space Complexity: $$O(N)$$.  The additional space complexity of storing `cur` and `ans`, but sorting uses $$O(N)$$ space.  Depending on the implementation of the language used, sorting can sometimes use less space.",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "312",
+                    "count": 85,
+                    "average": 3.082,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

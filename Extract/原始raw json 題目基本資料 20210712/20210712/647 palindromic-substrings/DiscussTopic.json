@@ -1,0 +1,43 @@
+{
+    "data": {
+        "topic": {
+            "id": 953080,
+            "viewCount": 44628,
+            "topLevelCommentCount": 33,
+            "subscribed": false,
+            "title": "Palindromic Substrings",
+            "pinned": false,
+            "tags": [],
+            "hideFromTrending": false,
+            "post": {
+                "id": 1732745,
+                "voteCount": 0,
+                "voteStatus": 0,
+                "content": "",
+                "updationDate": 1606636017,
+                "creationDate": 1606636017,
+                "status": null,
+                "isHidden": null,
+                "coinRewards": [],
+                "author": {
+                    "isDiscussAdmin": false,
+                    "isDiscussStaff": false,
+                    "username": "babhishek21",
+                    "nameColor": null,
+                    "activeBadge": null,
+                    "profile": {
+                        "userAvatar": "https://www.gravatar.com/avatar/53780b9dd55b52418843419dd2e31d7d.png?s=200",
+                        "reputation": 239,
+                        "__typename": "UserProfileNode"
+                    },
+                    "isActive": true,
+                    "__typename": "UserNode"
+                },
+                "authorIsModerator": false,
+                "isOwnPost": false,
+                "__typename": "PostNode"
+            },
+            "__typename": "TopicNode"
+        }
+    }
+}

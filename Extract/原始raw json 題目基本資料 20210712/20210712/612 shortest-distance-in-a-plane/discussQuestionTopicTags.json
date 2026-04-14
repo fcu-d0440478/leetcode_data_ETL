@@ -1,0 +1,34 @@
+{
+    "data": {
+        "discussQuestionTopicTags": [
+            {
+                "id": "6156",
+                "name": "mysql",
+                "slug": "mysql",
+                "numTopics": 2,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "14702",
+                "name": "cross join",
+                "slug": "cross-join",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "8695",
+                "name": "mssql",
+                "slug": "mssql",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "8578",
+                "name": "oracle sql",
+                "slug": "oracle-sql",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            }
+        ]
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "179",
+            "article": "{\"id\": 339, \"url\": \"/articles/largest-number/\", \"topicId\": 127595}",
+            "solution": {
+                "id": "339",
+                "content": "[TOC]\n\n#### Approach #1 Sorting via Custom Comparator [Accepted]\n\n**Intuition**\n\nTo construct the largest number, we want to ensure that the most significant\ndigits are occupied by the largest digits.\n\n**Algorithm**\n\nFirst, we convert each integer to a string. Then, we sort the array of strings.\n\nWhile it might be tempting to simply sort the numbers in descending order,\nthis causes problems for sets of numbers with the same leading digit. For\nexample, sorting the problem example in descending order would produce the\nnumber $$9534303$$, while the correct answer can be achieved by transposing\nthe $$3$$ and the $$30$$. Therefore, for each pairwise comparison during the\nsort, we compare the numbers achieved by concatenating the pair in both\norders. We can prove that this sorts into the proper order as follows: \n\nAssume that (without loss of generality), for some pair of integers $$a$$ and\n$$b$$, our comparator dictates that $$a$$ should precede $$b$$ in sorted\norder. This means that $$a\\frown b > b\\frown a$$ (where $$\\frown$$ represents\nconcatenation). For the sort to produce an incorrect ordering, there must be\nsome $$c$$ for which $$b$$ precedes $$c$$ and $$c$$ precedes $$a$$. This is a\ncontradiction because $$a\\frown b > b\\frown a$$ and $$b\\frown c > c\\frown b$$\nimplies $$a\\frown c > c\\frown a$$. In other words, our custom comparator\npreserves transitivity, so the sort is correct.\n\nOnce the array is sorted, the most \"signficant\" number will be at the front.\nThere is a minor edge case that comes up when the array consists of only\nzeroes, so if the most significant number is $$0$$, we can simply return\n$$0$$. Otherwise, we build a string out of the sorted array and return it.\n\n<iframe src=\"https://leetcode.com/playground/wVZb2DmS/shared\" frameBorder=\"0\" width=\"100%\" height=\"500\" name=\"wVZb2DmS\"></iframe>\n\n**Complexity Analysis**\n\n* Time complexity : $$\\mathcal{O}(nlgn)$$\n\n    Although we are doing extra work in our comparator, it is only by a\n    constant factor. Therefore, the overall runtime is dominated by the\n    complexity of `sort`, which is $$\\mathcal{O}(nlgn)$$ in Python and Java.\n\n* Space complexity : $$\\mathcal{O}(n)$$\n\n    Here, we allocate $$\\mathcal{O}(n)$$ additional space to store the copy of `nums`.\n    Although we could do that work in place (if we decide that it is okay to\n    modify `nums`), we must allocate $$\\mathcal{O}(n)$$ space for the final return\n    string. Therefore, the overall memory footprint is linear in the length\n    of `nums`.\n\n---\n\nAnalysis and solutions written by: [@emptyset](https://leetcode.com/emptyset)",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "334",
+                    "count": 126,
+                    "average": 3.818,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

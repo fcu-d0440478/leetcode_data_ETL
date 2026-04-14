@@ -1,0 +1,43 @@
+{
+    "data": {
+        "topic": {
+            "id": 1171185,
+            "viewCount": 8100,
+            "topLevelCommentCount": 10,
+            "subscribed": false,
+            "title": "Design Tic Tac Toe",
+            "pinned": false,
+            "tags": [],
+            "hideFromTrending": false,
+            "post": {
+                "id": 2088929,
+                "voteCount": 0,
+                "voteStatus": 0,
+                "content": "",
+                "updationDate": 1619089535,
+                "creationDate": 1619089535,
+                "status": null,
+                "isHidden": null,
+                "coinRewards": [],
+                "author": {
+                    "isDiscussAdmin": false,
+                    "isDiscussStaff": false,
+                    "username": "Shradha1994",
+                    "nameColor": null,
+                    "activeBadge": null,
+                    "profile": {
+                        "userAvatar": "https://assets.leetcode.com/users/shradha1994/avatar_1595749595.png",
+                        "reputation": 1008,
+                        "__typename": "UserProfileNode"
+                    },
+                    "isActive": true,
+                    "__typename": "UserNode"
+                },
+                "authorIsModerator": false,
+                "isOwnPost": false,
+                "__typename": "PostNode"
+            },
+            "__typename": "TopicNode"
+        }
+    }
+}

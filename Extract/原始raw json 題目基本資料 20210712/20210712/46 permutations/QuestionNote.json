@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "46",
+            "article": "{\"id\": 672, \"url\": \"/articles/permutations/\", \"topicId\": 222300}",
+            "solution": {
+                "id": "672",
+                "content": "[TOC]\n\n## Solution\n\n---\n\n#### Approach 1: Backtracking\n\n[Backtracking](https://en.wikipedia.org/wiki/Backtracking) \nis an algorithm for finding all\nsolutions by exploring all potential candidates.\nIf the solution candidate turns to be _not_ a solution \n(or at least not the _last_ one), \nbacktracking algorithm discards it by making some changes \non the previous step, *i.e.* _backtracks_ and then try again.\n\nHere is a backtrack function \nwhich takes the index of the first integer to consider \nas an argument `backtrack(first)`.\n\n* If the first integer to consider has index `n` that means \nthat the current permutation is done.\n* Iterate over the integers from index `first` to index `n - 1`.\n    * Place `i`-th integer first in the permutation, \n    i.e. `swap(nums[first], nums[i])`.\n    * Proceed to create all permutations which starts from \n    `i`-th integer : `backtrack(first + 1)`.\n    * Now backtrack, i.e. `swap(nums[first], nums[i])` back.\n        \n!?!../Documents/46_LIS.json:1000,548!?!\n\n<iframe src=\"https://leetcode.com/playground/cCeKUsLu/shared\" frameBorder=\"0\" width=\"100%\" height=\"500\" name=\"cCeKUsLu\"></iframe>\n\n**Complexity Analysis**\n\n* Time complexity : $$\\mathcal{O}(\\sum_{k = 1}^{N}{P(N, k)})$$ where $$P(N, k) = \\frac{N!}{(N - k)!} = N (N - 1) ... (N - k + 1)$$\nis so-called [_k-permutations_of_n_, or _partial permutation_](https://en.wikipedia.org/wiki/Permutation#k-permutations_of_n). \n\nHere $$first + 1 = k$$ for the expression simplicity. \nThe formula is easy to understand : for each $$k$$ (each $$first$$) \none performs $$N(N - 1) ... (N - k + 1)$$ operations, \nand $$k$$ is going through the range of values from $$1$$ to $$N$$ (and $$first$$ from $$0$$ to $$N - 1$$). \n\nLet's do a rough estimation of the result : \n$$N! \\le \\sum_{k = 1}^{N}{\\frac{N!}{(N - k)!}} = \\sum_{k = 1}^{N}{P(N, k)} \\le N \\times N!$$,\ni.e. the algorithm performs better than $$\\mathcal{O}(N \\times N!)$$ and \na bit slower than $$\\mathcal{O}(N!)$$.\n \n* Space complexity : $$\\mathcal{O}(N!)$$ since one has to keep\n`N!` solutions.",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": true,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "658",
+                    "count": 91,
+                    "average": 3.769,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

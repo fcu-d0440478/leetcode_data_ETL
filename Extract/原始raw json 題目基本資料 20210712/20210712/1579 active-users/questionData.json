@@ -1,0 +1,83 @@
+{
+    "data": {
+        "question": {
+            "questionId": "1579",
+            "questionFrontendId": "1454",
+            "boundTopicId": null,
+            "title": "Active Users",
+            "titleSlug": "active-users",
+            "content": "<p>Table <code>Accounts</code>:</p>\n\n<pre>\n+---------------+---------+\n| Column Name   | Type    |\n+---------------+---------+\n| id            | int     |\n| name          | varchar |\n+---------------+---------+\nthe id is the primary key for this table.\nThis table contains the account id and the user name of each account.\n</pre>\n\n<p>&nbsp;</p>\n\n<p>Table <code>Logins</code>:</p>\n\n<pre>\n+---------------+---------+\n| Column Name   | Type    |\n+---------------+---------+\n| id            | int     |\n| login_date    | date    |\n+---------------+---------+\nThere is no primary key for this table, it may contain duplicates.\nThis table contains the account id of the user who logged in and the login date. A user may log in multiple times in the day.\n</pre>\n\n<p>&nbsp;</p>\n\n<p>Write an SQL query to find the id and the name of active users.</p>\n\n<p>Active users are those who logged in to their accounts for 5 or more consecutive days.</p>\n\n<p>Return the result table <strong>ordered</strong> by the id.</p>\n\n<p>The query result format is in the following example:</p>\n\n<pre>\nAccounts table:\n+----+----------+\n| id | name     |\n+----+----------+\n| 1  | Winston  |\n| 7  | Jonathan |\n+----+----------+\n\nLogins table:\n+----+------------+\n| id | login_date |\n+----+------------+\n| 7  | 2020-05-30 |\n| 1  | 2020-05-30 |\n| 7  | 2020-05-31 |\n| 7  | 2020-06-01 |\n| 7  | 2020-06-02 |\n| 7  | 2020-06-02 |\n| 7  | 2020-06-03 |\n| 1  | 2020-06-07 |\n| 7  | 2020-06-10 |\n+----+------------+\n\nResult table:\n+----+----------+\n| id | name     |\n+----+----------+\n| 7  | Jonathan |\n+----+----------+\nUser Winston with id = 1 logged in 2 times only in 2 different days, so, Winston is not an active user.\nUser Jonathan with id = 7 logged in 7 times in 6 different days, five of them were consecutive days, so, Jonathan is an active user.\n</pre>\n\n<p><strong>Follow up question:</strong><br />\nCan you write a general solution if the active&nbsp;users are those who logged in to their accounts for <code>n</code> or more consecutive days?</p>\n",
+            "translatedTitle": null,
+            "translatedContent": null,
+            "isPaidOnly": true,
+            "difficulty": "Medium",
+            "likes": 187,
+            "dislikes": 22,
+            "isLiked": null,
+            "similarQuestions": "[]",
+            "exampleTestcases": "{\"headers\":{\"Accounts\":[\"id\",\"name\"],\"Logins\":[\"id\",\"login_date\"]},\"rows\":{\"Accounts\":[[1,\"Winston\"],[7,\"Jonathan\"]],\"Logins\":[[7,\"2020-05-30\"],[1,\"2020-05-30\"],[7,\"2020-05-31\"],[7,\"2020-06-01\"],[7,\"2020-06-02\"],[7,\"2020-06-02\"],[7,\"2020-06-03\"],[1,\"2020-06-07\"],[7,\"2020-06-10\"]]}}",
+            "contributors": [],
+            "topicTags": [
+                {
+                    "name": "Database",
+                    "slug": "database",
+                    "translatedName": null,
+                    "__typename": "TopicTagNode"
+                }
+            ],
+            "companyTagStats": "{\"2\": [{\"taggedByAdmin\": false, \"name\": \"Amazon\", \"slug\": \"amazon\", \"timesEncountered\": 2}], \"1\": [], \"3\": []}",
+            "codeSnippets": [
+                {
+                    "lang": "MySQL",
+                    "langSlug": "mysql",
+                    "code": "# Write your MySQL query statement below\n",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "MS SQL Server",
+                    "langSlug": "mssql",
+                    "code": "/* Write your T-SQL query statement below */\n",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Oracle",
+                    "langSlug": "oraclesql",
+                    "code": "/* Write your PL/SQL query statement below */\n",
+                    "__typename": "CodeSnippetNode"
+                }
+            ],
+            "stats": "{\"totalAccepted\": \"14.2K\", \"totalSubmission\": \"36.6K\", \"totalAcceptedRaw\": 14165, \"totalSubmissionRaw\": 36571, \"acRate\": \"38.7%\"}",
+            "hints": [],
+            "solution": null,
+            "status": null,
+            "sampleTestCase": "{\"headers\":{\"Accounts\":[\"id\",\"name\"],\"Logins\":[\"id\",\"login_date\"]},\"rows\":{\"Accounts\":[[1,\"Winston\"],[7,\"Jonathan\"]],\"Logins\":[[7,\"2020-05-30\"],[1,\"2020-05-30\"],[7,\"2020-05-31\"],[7,\"2020-06-01\"],[7,\"2020-06-02\"],[7,\"2020-06-02\"],[7,\"2020-06-03\"],[1,\"2020-06-07\"],[7,\"2020-06-10\"]]}}",
+            "metaData": "{\n  \"mysql\": [\n    \"Create table If Not Exists Accounts (id int, name varchar(10))\",\n    \"Create table If Not Exists Logins (id int, login_date date)\"\n  ],\n  \"mssql\": [\n    \"Create table Accounts (id int, name varchar(10))\",\n    \"Create table Logins (id int, login_date date)\"\n  ],\n  \"oraclesql\": [\n    \"Create table Accounts (id int, name varchar(10))\",\n    \"Create table Logins (id int, login_date date)\",\n    \"ALTER SESSION SET nls_date_format='YYYY-MM-DD'\"\n  ],\n  \"database\": true\n}",
+            "judgerAvailable": true,
+            "judgeType": "large",
+            "mysqlSchemas": [
+                "Create table If Not Exists Accounts (id int, name varchar(10))",
+                "Create table If Not Exists Logins (id int, login_date date)",
+                "Truncate table Accounts",
+                "insert into Accounts (id, name) values ('1', 'Winston')",
+                "insert into Accounts (id, name) values ('7', 'Jonathan')",
+                "Truncate table Logins",
+                "insert into Logins (id, login_date) values ('7', '2020-05-30')",
+                "insert into Logins (id, login_date) values ('1', '2020-05-30')",
+                "insert into Logins (id, login_date) values ('7', '2020-05-31')",
+                "insert into Logins (id, login_date) values ('7', '2020-06-01')",
+                "insert into Logins (id, login_date) values ('7', '2020-06-02')",
+                "insert into Logins (id, login_date) values ('7', '2020-06-02')",
+                "insert into Logins (id, login_date) values ('7', '2020-06-03')",
+                "insert into Logins (id, login_date) values ('1', '2020-06-07')",
+                "insert into Logins (id, login_date) values ('7', '2020-06-10')"
+            ],
+            "enableRunCode": true,
+            "enableTestMode": false,
+            "enableDebugger": false,
+            "envInfo": "{\"mysql\": [\"MySQL\", \"<p><code>MySQL 8.0</code>.</p>\"], \"mssql\": [\"MS SQL Server\", \"<p><code>mssql server 2019</code>.</p>\"], \"oraclesql\": [\"Oracle\", \"<p><code>Oracle Sql 11.2</code>.</p>\"]}",
+            "libraryUrl": null,
+            "adminUrl": null,
+            "__typename": "QuestionNode"
+        }
+    }
+}

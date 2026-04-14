@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "1141",
+            "article": "{\"id\": 1074, \"url\": \"/articles/how-many-apples-can-you-put-into-the-basket/\", \"topicId\": 965118}",
+            "solution": {
+                "id": "1074",
+                "content": "[TOC]\n\n## Solution\n\nTo put as many apples in the basket as possible, we would want to choose the apple with the smallest weight each time in a greedy manner, until we reach `5000` units of weights or we've taken all apples.\n\n\n---\n\n#### Approach 1: Sort\n\n**Intuition**\n\nThe most straightforward approach would be sorting the input array `arr` first.\nThen we can iterate through it, and count how many apples we can put in the basket until it reaches the weight limit.\n\n**Algorithm**\n\n- Sort `arr`, and initialize two integer variables: `apples` to count the number of apples we have put in the basket and `units` to record the current weight of the basket.\n- Iterate through `arr` until `units` reaches `5000`:\n    - increment `apple` by `1`;\n    - increment `units` by the weight of the current apple.\n\n\n<iframe src=\"https://leetcode.com/playground/hcaonUis/shared\" frameBorder=\"0\" width=\"100%\" height=\"259\" name=\"hcaonUis\"></iframe>\n\n**Complexity Analysis**\n\n* Time Complexity: $$\\mathcal{O}(N \\log N)$$, where $$N$$ is the length of the input array.\nThis is determined by the sorting.\n* Space Complexity: $$\\mathcal{O}(1)$$.\nThis is because we do not use additional data structures.\n<br/>\n---\n\n#### Approach 2: Min-Heap\n\n**Intuition**\n\nAnother approach to select the lightest apple at each time is using a min-heap.\nWe can transform the input array `arr` into a min-heap;\nwe then keep popping the first element from it, which is the lightest apple due to min-heap's nature.\n\n**Algorithm**\n\n- Transform `arr` into a min-heap, and initialize two integer variables: `apples` to count the number of apples we have put in the basket and `units` to record the current weight of the basket.\n- Before `units` reaches `5000` and while there are remaining elements in the min-heap:\n    - increment `apples` by `1`;\n    - increment `units` by the popped element from the min-heap;\n\n\n<iframe src=\"https://leetcode.com/playground/Lost4raq/shared\" frameBorder=\"0\" width=\"100%\" height=\"327\" name=\"Lost4raq\"></iframe>\n\n**Complexity Analysis**\n\n* Time Complexity: $$\\mathcal{O}(N + k \\log N)$$, where $$N$$ is the length of the input array and $$k$$ is the number of apples that will be put into the basket. This is because: transforming an array into a heap takes $$\\mathcal{O}(N)$$ time; each pop operation on the heap takes $$\\mathcal{O}(\\log N)$$, and it will called for $$k$$ times.\n* Space Complexity: $$\\mathcal{O}(N)$$, as we construct a min-heap and put all apples into it. Note that for Python, the space complexity is $$\\mathcal{O}(1)$$ because, as stated in the Python docs, `heapify(x)` transforms list `x` into a heap, in-place, in linear time.\n<br/>\n---\n\n#### Approach 3: Bucket Sort\n\n**Intuition**\n\nNotably, this question has the constraint that `1 <= arr[i].length <= 10^3`, and taking advantage of this we can improve the time complexity to $$\\mathcal{O}(n)$$ using [bucket sort](https://en.wikipedia.org/wiki/Bucket_sort#:~:text=Bucket%20sort%2C%20or%20bin%20sort,applying%20the%20bucket%20sorting%20algorithm.).\n\n**Algorithm**\n\n- Create an array `bucket` with the length of `max(arr) + 1`, where `bucket[i]` represents the number of apples with weight `i`.\n- Iterate through `arr`:\n    - for each `arr[i]`, increment `bucket[arr[i]]` by `1`;\n- initialize two integer variables: `apples` to count the number of apples we have put in the basket and `units` to record the current weight of the basket.\n- Iterate through `bucket`:\n    - to make sure it will not exceed `5000` units of weight, the number of apples we take is  `take = min{bucket[i], (5000-units)/i}`;\n    - increment `units` by `take * i`;\n    - increment `apples` by `take`;\n\n\n!?!../Documents/1196_How_Many_Apples_Can_You_Put_into_the_Basket.json:661,191!?!\n\n\n<iframe src=\"https://leetcode.com/playground/YNXii9oN/shared\" frameBorder=\"0\" width=\"100%\" height=\"500\" name=\"YNXii9oN\"></iframe>\n\n**Complexity Analysis**\n\n* Time Complexity: $$\\mathcal{O}(N + W)$$, where $$N$$ is the length of `arr` and $$W$$ is the largest element in `arr`. This is because we iterate through `arr` and `bucket` once and the lengths are $$N$$ and $$W$$ accordingly.\n* Space Complexity: $$\\mathcal{O}(W)$$. This is because we initialize an array `bucket` with the size of `max(arr)`.\n<br/>\n---",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": true,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "1029",
+                    "count": 5,
+                    "average": 4.6,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

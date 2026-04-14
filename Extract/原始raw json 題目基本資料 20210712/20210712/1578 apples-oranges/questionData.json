@@ -1,0 +1,78 @@
+{
+    "data": {
+        "question": {
+            "questionId": "1578",
+            "questionFrontendId": "1445",
+            "boundTopicId": null,
+            "title": "Apples & Oranges",
+            "titleSlug": "apples-oranges",
+            "content": "<p>Table: <code>Sales</code></p>\n\n<pre>\n+---------------+---------+\n| Column Name   | Type    |\n+---------------+---------+\n| sale_date     | date    |\n| fruit         | enum    | \n| sold_num      | int     | \n+---------------+---------+\n(sale_date,fruit) is the primary key for this table.\nThis table contains the sales of &quot;apples&quot; and &quot;oranges&quot; sold each day.\n</pre>\n\n<p>&nbsp;</p>\n\n<p>Write an SQL query to&nbsp;report the&nbsp;difference between number of <strong>apples</strong> and <strong>oranges</strong> sold each day.</p>\n\n<p>Return the result table <strong>ordered</strong> by sale_date in format (&#39;YYYY-MM-DD&#39;).</p>\n\n<p>The query result format is in the following example:</p>\n\n<p>&nbsp;</p>\n\n<pre>\n<code>Sales</code> table:\n+------------+------------+-------------+\n| sale_date  | fruit      | sold_num    |\n+------------+------------+-------------+\n| 2020-05-01 | apples     | 10          |\n| 2020-05-01 | oranges    | 8           |\n| 2020-05-02 | apples     | 15          |\n| 2020-05-02 | oranges    | 15          |\n| 2020-05-03 | apples     | 20          |\n| 2020-05-03 | oranges    | 0           |\n| 2020-05-04 | apples     | 15          |\n| 2020-05-04 | oranges    | 16          |\n+------------+------------+-------------+\n\nResult table:\n+------------+--------------+\n| sale_date  | diff         |\n+------------+--------------+\n| 2020-05-01 | 2            |\n| 2020-05-02 | 0            |\n| 2020-05-03 | 20           |\n| 2020-05-04 | -1           |\n+------------+--------------+\n\nDay 2020-05-01, 10 apples and 8 oranges were sold (Difference  10 - 8 = 2).\nDay 2020-05-02, 15 apples and 15 oranges were sold (Difference 15 - 15 = 0).\nDay 2020-05-03, 20 apples and 0 oranges were sold (Difference 20 - 0 = 20).\nDay 2020-05-04, 15 apples and 16 oranges were sold (Difference 15 - 16 = -1).\n</pre>\n",
+            "translatedTitle": null,
+            "translatedContent": null,
+            "isPaidOnly": true,
+            "difficulty": "Medium",
+            "likes": 90,
+            "dislikes": 14,
+            "isLiked": null,
+            "similarQuestions": "[]",
+            "exampleTestcases": "{\"headers\":{\"Sales\":[\"sale_date\",\"fruit\",\"sold_num\"]},\"rows\":{\"Sales\":[[\"2020-05-01\",\"apples\",10],[\"2020-05-01\",\"oranges\",8],[\"2020-05-02\",\"apples\",15],[\"2020-05-02\",\"oranges\",15],[\"2020-05-03\",\"apples\",20],[\"2020-05-03\",\"oranges\",0],[\"2020-05-04\",\"apples\",15],[\"2020-05-04\",\"oranges\",16]]}}\r",
+            "contributors": [],
+            "topicTags": [
+                {
+                    "name": "Database",
+                    "slug": "database",
+                    "translatedName": null,
+                    "__typename": "TopicTagNode"
+                }
+            ],
+            "companyTagStats": "{\"3\": [{\"taggedByAdmin\": true, \"name\": \"Facebook\", \"slug\": \"facebook\", \"timesEncountered\": 0}], \"1\": [], \"2\": []}",
+            "codeSnippets": [
+                {
+                    "lang": "MySQL",
+                    "langSlug": "mysql",
+                    "code": "# Write your MySQL query statement below\n",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "MS SQL Server",
+                    "langSlug": "mssql",
+                    "code": "/* Write your T-SQL query statement below */\n",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Oracle",
+                    "langSlug": "oraclesql",
+                    "code": "/* Write your PL/SQL query statement below */\n",
+                    "__typename": "CodeSnippetNode"
+                }
+            ],
+            "stats": "{\"totalAccepted\": \"17K\", \"totalSubmission\": \"18.7K\", \"totalAcceptedRaw\": 17041, \"totalSubmissionRaw\": 18675, \"acRate\": \"91.3%\"}",
+            "hints": [],
+            "solution": null,
+            "status": null,
+            "sampleTestCase": "{\"headers\":{\"Sales\":[\"sale_date\",\"fruit\",\"sold_num\"]},\"rows\":{\"Sales\":[[\"2020-05-01\",\"apples\",10],[\"2020-05-01\",\"oranges\",8],[\"2020-05-02\",\"apples\",15],[\"2020-05-02\",\"oranges\",15],[\"2020-05-03\",\"apples\",20],[\"2020-05-03\",\"oranges\",0],[\"2020-05-04\",\"apples\",15],[\"2020-05-04\",\"oranges\",16]]}}\r",
+            "metaData": "{\n  \"mysql\": [\n    \"Create table If Not Exists Sales (sale_date date, fruit ENUM('apples', 'oranges'), sold_num int)\"\n  ],\n  \"mssql\": [\n    \"Create Table Sales (sale_date date, fruit varchar(10) NOT NULL CHECK (fruit IN ('apples', 'oranges')), sold_num int)\"\n  ],\n  \"oraclesql\": [\n    \"Create Table Sales (sale_date date, fruit varchar(10) NOT NULL CHECK (fruit IN ('apples', 'oranges')), sold_num int)\",\n    \"ALTER SESSION SET nls_date_format='YYYY-MM-DD'\"\n  ],\n  \"database\": true\n}",
+            "judgerAvailable": true,
+            "judgeType": "large",
+            "mysqlSchemas": [
+                "Create table If Not Exists Sales (sale_date date, fruit ENUM('apples', 'oranges'), sold_num int)",
+                "Truncate table Sales",
+                "insert into Sales (sale_date, fruit, sold_num) values ('2020-05-01', 'apples', '10')",
+                "insert into Sales (sale_date, fruit, sold_num) values ('2020-05-01', 'oranges', '8')",
+                "insert into Sales (sale_date, fruit, sold_num) values ('2020-05-02', 'apples', '15')",
+                "insert into Sales (sale_date, fruit, sold_num) values ('2020-05-02', 'oranges', '15')",
+                "insert into Sales (sale_date, fruit, sold_num) values ('2020-05-03', 'apples', '20')",
+                "insert into Sales (sale_date, fruit, sold_num) values ('2020-05-03', 'oranges', '0')",
+                "insert into Sales (sale_date, fruit, sold_num) values ('2020-05-04', 'apples', '15')",
+                "insert into Sales (sale_date, fruit, sold_num) values ('2020-05-04', 'oranges', '16')"
+            ],
+            "enableRunCode": true,
+            "enableTestMode": false,
+            "enableDebugger": false,
+            "envInfo": "{\"mysql\": [\"MySQL\", \"<p><code>MySQL 8.0</code>.</p>\"], \"mssql\": [\"MS SQL Server\", \"<p><code>mssql server 2019</code>.</p>\"], \"oraclesql\": [\"Oracle\", \"<p><code>Oracle Sql 11.2</code>.</p>\"]}",
+            "libraryUrl": null,
+            "adminUrl": null,
+            "__typename": "QuestionNode"
+        }
+    }
+}

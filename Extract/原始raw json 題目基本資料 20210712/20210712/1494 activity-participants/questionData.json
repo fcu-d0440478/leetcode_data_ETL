@@ -1,0 +1,81 @@
+{
+    "data": {
+        "question": {
+            "questionId": "1494",
+            "questionFrontendId": "1355",
+            "boundTopicId": null,
+            "title": "Activity Participants",
+            "titleSlug": "activity-participants",
+            "content": "<p>Table: <code>Friends</code></p>\n\n<pre>\n+---------------+---------+\n| Column Name   | Type    |\n+---------------+---------+\n| id            | int     |\n| name          | varchar |\n| activity      | varchar |\n+---------------+---------+\nid is the id of the friend and primary key for this table.\nname is the name of the friend.\nactivity is the name of the activity which the friend takes part in.\n</pre>\n\n<p>Table: <code>Activities</code></p>\n\n<pre>\n+---------------+---------+\n| Column Name   | Type    |\n+---------------+---------+\n| id            | int     |\n| name          | varchar |\n+---------------+---------+\nid is the primary key for this table.\nname is the name of the activity.\n</pre>\n\n<p>&nbsp;</p>\n\n<p>Write an SQL query to find the names of all the activities with neither maximum, nor minimum number of participants.</p>\n\n<p>Return the result table in any order. Each activity in table Activities is performed by any person in the table Friends.</p>\n\n<p>The query result format is in the following example:</p>\n\n<pre>\nFriends table:\n+------+--------------+---------------+\n| id   | name         | activity      |\n+------+--------------+---------------+\n| 1    | Jonathan D.  | Eating        |\n| 2    | Jade W.      | Singing       |\n| 3    | Victor J.    | Singing       |\n| 4    | Elvis Q.     | Eating        |\n| 5    | Daniel A.    | Eating        |\n| 6    | Bob B.       | Horse Riding  |\n+------+--------------+---------------+\n\nActivities table:\n+------+--------------+\n| id   | name         |\n+------+--------------+\n| 1    | Eating       |\n| 2    | Singing      |\n| 3    | Horse Riding |\n+------+--------------+\n\nResult table:\n+--------------+\n| activity     |\n+--------------+\n| Singing      |\n+--------------+\n\nEating activity is performed by 3 friends, maximum number of participants, (Jonathan D. , Elvis Q. and Daniel A.)\nHorse Riding activity is performed by 1 friend, minimum number of participants, (Bob B.)\nSinging is performed by 2 friends (Victor J. and Jade W.)\n</pre>\n",
+            "translatedTitle": null,
+            "translatedContent": null,
+            "isPaidOnly": true,
+            "difficulty": "Medium",
+            "likes": 70,
+            "dislikes": 25,
+            "isLiked": null,
+            "similarQuestions": "[]",
+            "exampleTestcases": "{\"headers\": {\"Friends\": [\"id\", \"name\", \"activity\"], \"Activities\": [\"id\", \"name\"]}, \"rows\": {\"Friends\": [[1, \"Jonathan D.\", \"Eating\"], [2, \"Jade W.\", \"Singing\"], [3, \"Victor J.\", \"Singing\"], [4, \"Elvis Q.\", \"Eating\"], [5, \"Daniel A.\", \"Eating\"], [6, \"Bob B.\", \"Horse Riding\"]], \"Activities\": [[1, \"Eating\"], [2, \"Singing\"], [3, \"Horse Riding\"]]}}\r",
+            "contributors": [],
+            "topicTags": [
+                {
+                    "name": "Database",
+                    "slug": "database",
+                    "translatedName": null,
+                    "__typename": "TopicTagNode"
+                }
+            ],
+            "companyTagStats": "{\"2\": [{\"taggedByAdmin\": true, \"name\": \"IBM\", \"slug\": \"ibm\", \"timesEncountered\": 3}], \"1\": [], \"3\": []}",
+            "codeSnippets": [
+                {
+                    "lang": "MySQL",
+                    "langSlug": "mysql",
+                    "code": "# Write your MySQL query statement below\n",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "MS SQL Server",
+                    "langSlug": "mssql",
+                    "code": "/* Write your T-SQL query statement below */\n",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Oracle",
+                    "langSlug": "oraclesql",
+                    "code": "/* Write your PL/SQL query statement below */\n",
+                    "__typename": "CodeSnippetNode"
+                }
+            ],
+            "stats": "{\"totalAccepted\": \"15.3K\", \"totalSubmission\": \"20.4K\", \"totalAcceptedRaw\": 15271, \"totalSubmissionRaw\": 20415, \"acRate\": \"74.8%\"}",
+            "hints": [],
+            "solution": null,
+            "status": null,
+            "sampleTestCase": "{\"headers\": {\"Friends\": [\"id\", \"name\", \"activity\"], \"Activities\": [\"id\", \"name\"]}, \"rows\": {\"Friends\": [[1, \"Jonathan D.\", \"Eating\"], [2, \"Jade W.\", \"Singing\"], [3, \"Victor J.\", \"Singing\"], [4, \"Elvis Q.\", \"Eating\"], [5, \"Daniel A.\", \"Eating\"], [6, \"Bob B.\", \"Horse Riding\"]], \"Activities\": [[1, \"Eating\"], [2, \"Singing\"], [3, \"Horse Riding\"]]}}\r",
+            "metaData": "{\n  \"mysql\": [\n    \"Create table If Not Exists Friends (id int, name varchar(30), activity varchar(30))\",\n    \"Create table If Not Exists Activities (id int, name varchar(30))\"\n  ],\n  \"mssql\": [\n    \"Create table Friends (id int, name varchar(30), activity varchar(30))\",\n    \"Create table Activities (id int, name varchar(30))\"\n  ],\n  \"oraclesql\": [\n    \"Create table Friends (id int, name varchar(30), activity varchar(30))\",\n    \"Create table Activities (id int, name varchar(30))\"\n  ],\n  \"database\": true\n}",
+            "judgerAvailable": true,
+            "judgeType": "large",
+            "mysqlSchemas": [
+                "Create table If Not Exists Friends (id int, name varchar(30), activity varchar(30))",
+                "Create table If Not Exists Activities (id int, name varchar(30))",
+                "Truncate table Friends",
+                "insert into Friends (id, name, activity) values ('1', 'Jonathan D.', 'Eating')",
+                "insert into Friends (id, name, activity) values ('2', 'Jade W.', 'Singing')",
+                "insert into Friends (id, name, activity) values ('3', 'Victor J.', 'Singing')",
+                "insert into Friends (id, name, activity) values ('4', 'Elvis Q.', 'Eating')",
+                "insert into Friends (id, name, activity) values ('5', 'Daniel A.', 'Eating')",
+                "insert into Friends (id, name, activity) values ('6', 'Bob B.', 'Horse Riding')",
+                "Truncate table Activities",
+                "insert into Activities (id, name) values ('1', 'Eating')",
+                "insert into Activities (id, name) values ('2', 'Singing')",
+                "insert into Activities (id, name) values ('3', 'Horse Riding')"
+            ],
+            "enableRunCode": true,
+            "enableTestMode": false,
+            "enableDebugger": false,
+            "envInfo": "{\"mysql\": [\"MySQL\", \"<p><code>MySQL 8.0</code>.</p>\"], \"mssql\": [\"MS SQL Server\", \"<p><code>mssql server 2019</code>.</p>\"], \"oraclesql\": [\"Oracle\", \"<p><code>Oracle Sql 11.2</code>.</p>\"]}",
+            "libraryUrl": null,
+            "adminUrl": null,
+            "__typename": "QuestionNode"
+        }
+    }
+}

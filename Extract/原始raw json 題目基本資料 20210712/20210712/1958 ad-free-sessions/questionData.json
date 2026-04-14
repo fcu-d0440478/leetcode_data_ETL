@@ -1,0 +1,80 @@
+{
+    "data": {
+        "question": {
+            "questionId": "1958",
+            "questionFrontendId": "1809",
+            "boundTopicId": null,
+            "title": "Ad-Free Sessions",
+            "titleSlug": "ad-free-sessions",
+            "content": "<p>Table: <code>Playback</code></p>\n\n<pre>\n+-------------+------+\n| Column Name | Type |\n+-------------+------+\n| session_id  | int  |\n| customer_id | int  |\n| start_time  | int  |\n| end_time    | int  |\n+-------------+------+\nsession_id is the primary key for this table.\ncustomer_id is the ID of the customer watching this session.\nThe session runs during the <strong>inclusive</strong> interval between start_time and end_time.\nIt is guaranteed that start_time &lt;= end_time and that two sessions for the same customer do not intersect.</pre>\n\n<p>&nbsp;</p>\n\n<p>Table: <code>Ads</code></p>\n\n<pre>\n+-------------+------+\n| Column Name | Type |\n+-------------+------+\n| ad_id       | int  |\n| customer_id | int  |\n| timestamp   | int  |\n+-------------+------+\nad_id is the primary key for this table.\ncustomer_id is the ID of the customer viewing this ad.\ntimestamp is the moment of time at which the ad was shown.\n</pre>\n\n<p>&nbsp;</p>\n\n<p>Write an SQL query to report all the sessions that did not get shown any ads.</p>\n\n<p>Return the result table in <strong>any order</strong>.</p>\n\n<p>The query result format is in the following example:</p>\n\n<p>&nbsp;</p>\n\n<pre>\nPlayback table:\n+------------+-------------+------------+----------+\n| session_id | customer_id | start_time | end_time |\n+------------+-------------+------------+----------+\n| 1          | 1           | 1          | 5        |\n| 2          | 1           | 15         | 23       |\n| 3          | 2           | 10         | 12       |\n| 4          | 2           | 17         | 28       |\n| 5          | 2           | 2          | 8        |\n+------------+-------------+------------+----------+\n\nAds table:\n+-------+-------------+-----------+\n| ad_id | customer_id | timestamp |\n+-------+-------------+-----------+\n| 1     | 1           | 5         |\n| 2     | 2           | 17        |\n| 3     | 2           | 20        |\n+-------+-------------+-----------+\n\nResult table:\n+------------+\n| session_id |\n+------------+\n| 2          |\n| 3          |\n| 5          |\n+------------+\nThe ad with ID 1 was shown to user 1 at time 5 while they were in session 1.\nThe ad with ID 2 was shown to user 2 at time 17 while they were in session 4.\nThe ad with ID 3 was shown to user 2 at time 20 while they were in session 4.\nWe can see that sessions 1 and 4 had at least one ad. Sessions 2, 3, and 5 did not have any ads, so we return them.</pre>\n",
+            "translatedTitle": null,
+            "translatedContent": null,
+            "isPaidOnly": true,
+            "difficulty": "Easy",
+            "likes": 24,
+            "dislikes": 9,
+            "isLiked": null,
+            "similarQuestions": "[]",
+            "exampleTestcases": "{\"headers\":{\"Playback\":[\"session_id\",\"customer_id\",\"start_time\",\"end_time\"],\"Ads\":[\"ad_id\",\"customer_id\",\"timestamp\"]},\"rows\":{\"Playback\":[[1,1,1,5],[2,1,15,23],[3,2,10,12],[4,2,17,28],[5,2,2,8]],\"Ads\":[[1,1,5],[2,2,17],[3,2,20]]}}",
+            "contributors": [],
+            "topicTags": [
+                {
+                    "name": "Database",
+                    "slug": "database",
+                    "translatedName": null,
+                    "__typename": "TopicTagNode"
+                }
+            ],
+            "companyTagStats": "{\"3\": [{\"taggedByAdmin\": true, \"name\": \"Amazon\", \"slug\": \"amazon\", \"timesEncountered\": 0}], \"1\": [], \"2\": []}",
+            "codeSnippets": [
+                {
+                    "lang": "MySQL",
+                    "langSlug": "mysql",
+                    "code": "# Write your MySQL query statement below\n",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "MS SQL Server",
+                    "langSlug": "mssql",
+                    "code": "/* Write your T-SQL query statement below */\n",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Oracle",
+                    "langSlug": "oraclesql",
+                    "code": "/* Write your PL/SQL query statement below */\n",
+                    "__typename": "CodeSnippetNode"
+                }
+            ],
+            "stats": "{\"totalAccepted\": \"3.7K\", \"totalSubmission\": \"5.8K\", \"totalAcceptedRaw\": 3653, \"totalSubmissionRaw\": 5837, \"acRate\": \"62.6%\"}",
+            "hints": [],
+            "solution": null,
+            "status": null,
+            "sampleTestCase": "{\"headers\":{\"Playback\":[\"session_id\",\"customer_id\",\"start_time\",\"end_time\"],\"Ads\":[\"ad_id\",\"customer_id\",\"timestamp\"]},\"rows\":{\"Playback\":[[1,1,1,5],[2,1,15,23],[3,2,10,12],[4,2,17,28],[5,2,2,8]],\"Ads\":[[1,1,5],[2,2,17],[3,2,20]]}}",
+            "metaData": "{\n  \"mysql\": [\n    \"Create table If Not Exists Playback(session_id int,customer_id int,start_time int,end_time int)\",\n    \"Create table If Not Exists Ads (ad_id int, customer_id int, timestamp int)\"\n  ],\n  \"mssql\": [\n    \"Create table Playback(session_id int,customer_id int,start_time int,end_time int)\",\n    \"Create table Ads (ad_id int, customer_id int, timestamp int)\"\n  ],\n  \"oraclesql\": [\n    \"Create table Playback(session_id int,customer_id int,start_time int,end_time int)\",\n    \"Create table Ads (ad_id int, customer_id int, timestamp int)\"\n  ],\n  \"database\": true\n}",
+            "judgerAvailable": true,
+            "judgeType": "large",
+            "mysqlSchemas": [
+                "Create table If Not Exists Playback(session_id int,customer_id int,start_time int,end_time int)",
+                "Create table If Not Exists Ads (ad_id int, customer_id int, timestamp int)",
+                "Truncate table Playback",
+                "insert into Playback (session_id, customer_id, start_time, end_time) values ('1', '1', '1', '5')",
+                "insert into Playback (session_id, customer_id, start_time, end_time) values ('2', '1', '15', '23')",
+                "insert into Playback (session_id, customer_id, start_time, end_time) values ('3', '2', '10', '12')",
+                "insert into Playback (session_id, customer_id, start_time, end_time) values ('4', '2', '17', '28')",
+                "insert into Playback (session_id, customer_id, start_time, end_time) values ('5', '2', '2', '8')",
+                "Truncate table Ads",
+                "insert into Ads (ad_id, customer_id, timestamp) values ('1', '1', '5')",
+                "insert into Ads (ad_id, customer_id, timestamp) values ('2', '2', '17')",
+                "insert into Ads (ad_id, customer_id, timestamp) values ('3', '2', '20')"
+            ],
+            "enableRunCode": true,
+            "enableTestMode": false,
+            "enableDebugger": false,
+            "envInfo": "{\"mysql\": [\"MySQL\", \"<p><code>MySQL 8.0</code>.</p>\"], \"mssql\": [\"MS SQL Server\", \"<p><code>mssql server 2019</code>.</p>\"], \"oraclesql\": [\"Oracle\", \"<p><code>Oracle Sql 11.2</code>.</p>\"]}",
+            "libraryUrl": null,
+            "adminUrl": null,
+            "__typename": "QuestionNode"
+        }
+    }
+}

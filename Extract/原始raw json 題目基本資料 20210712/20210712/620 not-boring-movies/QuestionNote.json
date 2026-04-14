@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "620",
+            "article": "{\"id\": 204, \"url\": \"/articles/not-boring-movies/\", \"topicId\": 127648}",
+            "solution": {
+                "id": "204",
+                "content": "[TOC]\n\n## Solution\n---\n#### Approach: Using `MOD()` function [Accepted]\n\n**Algorithm**\n\nWe can use the `mod(id,2)=1` to determine the odd id, and then add a `description != 'boring'` should address this problem.\n\n**MySQL**\n\n```sql\nselect *\nfrom cinema\nwhere mod(id, 2) = 1 and description != 'boring'\norder by rating DESC\n;\n```",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "199",
+                    "count": 14,
+                    "average": 4.857,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

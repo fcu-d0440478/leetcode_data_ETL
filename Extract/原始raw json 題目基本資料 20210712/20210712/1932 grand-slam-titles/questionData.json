@@ -1,0 +1,78 @@
+{
+    "data": {
+        "question": {
+            "questionId": "1932",
+            "questionFrontendId": "1783",
+            "boundTopicId": null,
+            "title": "Grand Slam Titles",
+            "titleSlug": "grand-slam-titles",
+            "content": "<p>Table: <code>Players</code></p>\r\n\r\n<pre>\r\n+----------------+---------+\r\n| Column Name    | Type    |\r\n+----------------+---------+\r\n| player_id      | int     |\r\n| player_name    | varchar |\r\n+----------------+---------+\r\nplayer_id is the primary key for this table.\r\nEach row in this table contains the name and the ID of a tennis player.\r\n</pre>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Table: <code>Championships</code></p>\r\n\r\n<pre>\r\n+---------------+---------+\r\n| Column Name   | Type    |\r\n+---------------+---------+\r\n| year          | int     |\r\n| Wimbledon     | int     |\r\n| Fr_open       | int     |\r\n| US_open       | int     |\r\n| Au_open       | int     |\r\n+---------------+---------+\r\nyear is the primary key for this table.\r\nEach row of this table containts the IDs of the players who won one each tennis tournament of the grand slam.\r\n</pre>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Write an SQL query to report the number of grand slam tournaments won by each player. Do not include the players who did not win any tournament.</p>\r\n\r\n<p>Return the result table in <strong>any order</strong>.</p>\r\n\r\n<p>The query result format is in the following example:</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<pre>\r\nPlayers table:\r\n+-----------+-------------+\r\n| player_id | player_name |\r\n+-----------+-------------+\r\n| 1         | Nadal       |\r\n| 2         | Federer     |\r\n| 3         | Novak       |\r\n+-----------+-------------+\r\n\r\nChampionships table:\r\n+------+-----------+---------+---------+---------+\r\n| year | Wimbledon | Fr_open | US_open | Au_open |\r\n+------+-----------+---------+---------+---------+\r\n| 2018 | 1         | 1       | 1       | 1       |\r\n| 2019 | 1         | 1       | 2       | 2       |\r\n| 2020 | 2         | 1       | 2       | 2       |\r\n+------+-----------+---------+---------+---------+\r\n\r\nResult table:\r\n+-----------+-------------+-------------------+\r\n| player_id | player_name | grand_slams_count |\r\n+-----------+-------------+-------------------+\r\n| 2         | Federer     | 5                 |\r\n| 1         | Nadal       | 7                 |\r\n+-----------+-------------+-------------------+\r\n\r\nPlayer 1 (Nadal) won 7 titles: Wimbledon (2018, 2019), Fr_open (2018, 2019, 2020), US_open (2018), and Au_open (2018).\r\nPlayer 2 (Federer) won 5 titles: Wimbledon (2020), US_open (2019, 2020), and Au_open (2019, 2020).\r\nPlayer 3 (Novak) did not win anything, we did not include them in the result table.\r\n</pre>",
+            "translatedTitle": null,
+            "translatedContent": null,
+            "isPaidOnly": true,
+            "difficulty": "Medium",
+            "likes": 54,
+            "dislikes": 0,
+            "isLiked": null,
+            "similarQuestions": "[]",
+            "exampleTestcases": null,
+            "contributors": [],
+            "topicTags": [
+                {
+                    "name": "Database",
+                    "slug": "database",
+                    "translatedName": null,
+                    "__typename": "TopicTagNode"
+                }
+            ],
+            "companyTagStats": "{\"1\": [{\"taggedByAdmin\": true, \"name\": \"Amazon\", \"slug\": \"amazon\", \"timesEncountered\": 2}], \"2\": [], \"3\": []}",
+            "codeSnippets": [
+                {
+                    "lang": "MySQL",
+                    "langSlug": "mysql",
+                    "code": "# Write your MySQL query statement below\n",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "MS SQL Server",
+                    "langSlug": "mssql",
+                    "code": "/* Write your T-SQL query statement below */\n",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Oracle",
+                    "langSlug": "oraclesql",
+                    "code": "/* Write your PL/SQL query statement below */\n",
+                    "__typename": "CodeSnippetNode"
+                }
+            ],
+            "stats": "{\"totalAccepted\": \"4.8K\", \"totalSubmission\": \"5.3K\", \"totalAcceptedRaw\": 4829, \"totalSubmissionRaw\": 5329, \"acRate\": \"90.6%\"}",
+            "hints": [],
+            "solution": null,
+            "status": null,
+            "sampleTestCase": "{\"headers\": {\"Players\": [\"player_id\", \"player_name\"], \"Championships\": [\"year\", \"Wimbledon\", \"Fr_open\", \"US_open\", \"Au_open\"]}, \"rows\": {\"Players\": [[1, \"Nadal\"], [2, \"Federer\"], [3, \"Novak\"]], \"Championships\": [[2018, 1, 1, 1, 1], [2019, 1, 1, 2, 2], [2020, 2, 1, 2, 2]]}}",
+            "metaData": "{\n  \"mysql\": [\n    \"Create table If Not Exists Players (player_id int, player_name varchar(20))\",\n    \"Create table If Not Exists Championships (year int, Wimbledon int, Fr_open int, US_open int, Au_open int)\"\n  ],\n  \"mssql\": [\n    \"Create table Players (player_id int, player_name varchar(20))\",\n    \"Create table Championships (year int, Wimbledon int, Fr_open int, US_open int, Au_open int)\"\n  ],\n  \"oraclesql\": [\n    \"Create table Players (player_id int, player_name varchar(20))\",\n    \"Create table Championships (year int, Wimbledon int, Fr_open int, US_open int, Au_open int)\"\n  ],\n  \"database\": true\n}",
+            "judgerAvailable": true,
+            "judgeType": "large",
+            "mysqlSchemas": [
+                "Create table If Not Exists Players (player_id int, player_name varchar(20))",
+                "Create table If Not Exists Championships (year int, Wimbledon int, Fr_open int, US_open int, Au_open int)",
+                "Truncate table Players",
+                "insert into Players (player_id, player_name) values ('1', 'Nadal')",
+                "insert into Players (player_id, player_name) values ('2', 'Federer')",
+                "insert into Players (player_id, player_name) values ('3', 'Novak')",
+                "Truncate table Championships",
+                "insert into Championships (year, Wimbledon, Fr_open, US_open, Au_open) values ('2018', '1', '1', '1', '1')",
+                "insert into Championships (year, Wimbledon, Fr_open, US_open, Au_open) values ('2019', '1', '1', '2', '2')",
+                "insert into Championships (year, Wimbledon, Fr_open, US_open, Au_open) values ('2020', '2', '1', '2', '2')"
+            ],
+            "enableRunCode": true,
+            "enableTestMode": false,
+            "enableDebugger": false,
+            "envInfo": "{\"mysql\": [\"MySQL\", \"<p><code>MySQL 8.0</code>.</p>\"], \"mssql\": [\"MS SQL Server\", \"<p><code>mssql server 2019</code>.</p>\"], \"oraclesql\": [\"Oracle\", \"<p><code>Oracle Sql 11.2</code>.</p>\"]}",
+            "libraryUrl": null,
+            "adminUrl": null,
+            "__typename": "QuestionNode"
+        }
+    }
+}

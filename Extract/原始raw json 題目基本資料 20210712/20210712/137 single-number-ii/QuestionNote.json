@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "137",
+            "article": "{\"id\": 758, \"url\": \"/articles/single-number-ii/\", \"topicId\": 356460}",
+            "solution": {
+                "id": "758",
+                "content": "[TOC]\n\n## Solution\n\n--- \n\n#### Overview\n\nThe problem seems to be quite simple and one could solve it\nin $$\\mathcal{O}(N)$$ time and $$\\mathcal{O}(N)$$ space by using\nan additional data structure like set or hashmap. \n\nThe real game starts at the moment when Google interviewer \n(the problem is quite popular at Google the last six months)\nasks you to solve the problem in a constant space, \ntesting if you are OK with bitwise operators. \n\n![fig](../Figures/137/methods.png)\n\n<br /> \n<br />\n\n\n---\n#### Approach 1: HashSet\n\nThe idea is to convert an input array into hashset and then \nto compare the tripled sum of the set with the array sum \n\n$$\n3 \\times (a + b + c) - (a + a + a + b + b + b + c) = 2 c\n$$\n\n**Implementation**\n\n<iframe src=\"https://leetcode.com/playground/JtmTNZd4/shared\" frameBorder=\"0\" width=\"100%\" height=\"259\" name=\"JtmTNZd4\"></iframe>\n\n**Complexity Analysis**\n\n* Time complexity : $$\\mathcal{O}(N)$$ to iterate over the input array. \n\n* Space complexity : $$\\mathcal{O}(N)$$ to keep the set of $$N/3$$ elements.\n<br /> \n<br />\n\n\n---\n#### Approach 2: HashMap\n\nLet's iterate over the input array \nto count the frequency of each number, and then return an\nelement with a frequency 1.\n\n**Implementation**\n\n<iframe src=\"https://leetcode.com/playground/Cgs6QrMC/shared\" frameBorder=\"0\" width=\"100%\" height=\"242\" name=\"Cgs6QrMC\"></iframe>\n\n**Complexity Analysis**\n\n* Time complexity : $$\\mathcal{O}(N)$$ to iterate over the input array. \n\n* Space complexity : $$\\mathcal{O}(N)$$ to keep the hashmap of $$N/3$$ elements.\n<br /> \n<br />\n\n\n---\n#### Approach 3: Bitwise Operators : NOT, AND and XOR\n\n**Intuition**\n\nNow let's discuss $$\\mathcal{O}(1)$$ space solution by using\nthree [bitwise operators](https://wiki.python.org/moin/BitwiseOperators)\n\n$$\n\\sim x \\qquad \\textrm{that means} \\qquad \\textrm{bitwise NOT} \n$$\n\n$$\nx \\& y \\qquad \\textrm{that means} \\qquad \\textrm{bitwise AND} \n$$\n\n$$\nx \\oplus y \\qquad \\textrm{that means} \\qquad \\textrm{bitwise XOR}  \n$$\n\n**XOR**\n\nLet's start from XOR operator which could be used to detect \nthe bit which appears odd number of times: 1, 3, 5, etc.\n\nXOR of zero and a bit results in that bit\n\n$$\n0 \\oplus x = x  \n$$\n\nXOR of two equal bits (even if they are zeros) results in a zero\n\n$$\nx \\oplus x = 0  \n$$\n\nand so on and so forth, i.e. one could see the bit in a bitmask \nonly if it appears odd number of times.\n\n![fig](../Figures/137/xor.png)\n\nThat's already great, so one could detect the bit which \nappears once, and the bit which appears three times. \nThe problem is to distinguish between these two situations.\n\n**AND and NOT**\n\nTo separate number that appears once from a number that appears \nthree times let's use two bitmasks instead of one: `seen_once`\nand `seen_twice`. \n\nThe idea is to \n\n- change `seen_once` only if `seen_twice` is unchanged\n\n- change `seen_twice` only if `seen_once` is unchanged\n\n![fig](../Figures/137/three.png)\n\nThis way bitmask `seen_once` will keep only the number \nwhich appears once and not the numbers which appear three times. \n\n**Implementation**\n\n<iframe src=\"https://leetcode.com/playground/vEa6UrEV/shared\" frameBorder=\"0\" width=\"100%\" height=\"446\" name=\"vEa6UrEV\"></iframe>\n\n**Complexity Analysis**\n\n* Time complexity : $$\\mathcal{O}(N)$$ to iterate over the input\narray.\n\n* Space complexity : $$\\mathcal{O}(1)$$ since no additional data \nstructures are allocated.",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": true,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "743",
+                    "count": 84,
+                    "average": 4.131,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "744",
+            "article": "{\"id\": 335, \"url\": \"/articles/network-delay-time/\", \"topicId\": 127592}",
+            "solution": {
+                "id": "335",
+                "content": "[TOC]\n\n#### Approach #1: Depth-First Search [Accepted]\n\n**Intuition**\n\nLet's record the time `dist[node]` when the signal reaches the node.  If some signal arrived earlier, we don't need to broadcast it anymore.  Otherwise, we should broadcast the signal.\n\n**Algorithm**\n\nWe'll maintain `dist[node]`, the earliest that we arrived at each `node`.  When visiting a `node` while `elapsed` time has elapsed, if this is the currently-fastest signal at this node, let's broadcast signals from this node.\n\nTo speed things up, at each visited node we'll consider signals exiting the node that are faster first, by sorting the edges.\n\n\n<iframe src=\"https://leetcode.com/playground/G4rhDsxS/shared\" frameBorder=\"0\" width=\"100%\" height=\"500\" name=\"G4rhDsxS\"></iframe>\n\n**Complexity Analysis**\n\n* Time Complexity: $$O(N^N + E \\log E)$$ where $$E$$ is the length of `times`.  We can only fully visit each node up to $$N-1$$ times, one per each other node.  Plus, we have to explore every edge and sort them.  Sorting each small bucket of outgoing edges is bounded by sorting all of them, because of repeated use of the inequality $$x \\log x + y \\log y \\leq (x+y) \\log (x+y)$$.\n\n* Space Complexity: $$O(N + E)$$, the size of the graph ($$O(E)$$), plus the size of the implicit call stack in our DFS ($$O(N)$$).\n\n---\n#### Approach #2: Dijkstra's Algorithm [Accepted]\n\n**Intuition and Algorithm**\n\nWe use *Dijkstra's algorithm* to find the shortest path from our source to all targets.  This is a textbook algorithm, refer to [this link](https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm) for more details.\n\nDijkstra's algorithm is based on repeatedly making the candidate move that has the least distance travelled.\n\nIn our implementations below, we showcase both $$O(N^2)$$ (basic) and $$O(N \\log N)$$ (heap) approaches.\n\n*Basic Implementation*\n<iframe src=\"https://leetcode.com/playground/yJvLKDzT/shared\" frameBorder=\"0\" width=\"100%\" height=\"500\" name=\"yJvLKDzT\"></iframe>\n\n*Heap Implementation*\n\n<iframe src=\"https://leetcode.com/playground/b3GshKFG/shared\" frameBorder=\"0\" width=\"100%\" height=\"500\" name=\"b3GshKFG\"></iframe>\n\n**Complexity Analysis**\n\n* Time Complexity: $$O(N^2 + E)$$m where $$E$$ is the length of `times` in the basic implementation, and $$O(E \\log E)$$ in the heap implementation, as potentially every edge gets added to the heap.\n\n* Space Complexity: $$O(N + E)$$, the size of the graph ($$O(E)$$), plus the size of the other objects used ($$O(N)$$).",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "330",
+                    "count": 89,
+                    "average": 3.607,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

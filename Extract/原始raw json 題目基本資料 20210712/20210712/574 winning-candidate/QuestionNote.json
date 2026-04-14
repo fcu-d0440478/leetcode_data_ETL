@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "574",
+            "article": "{\"id\": 208, \"url\": \"/articles/winning-candidate/\", \"topicId\": 127652}",
+            "solution": {
+                "id": "208",
+                "content": "[TOC]\n\n## Solution\n---\n#### Approach: Using `JOIN` and a temporary table [Accepted]\n\n**Algorithm**\n\nQuery in the **Vote** table to get the winner's id and then join it with the **Candidate** table to get the name.\n\n**MySQL**\n\n```sql\nSELECT\n    name AS 'Name'\nFROM\n    Candidate\n        JOIN\n    (SELECT\n        Candidateid\n    FROM\n        Vote\n    GROUP BY Candidateid\n    ORDER BY COUNT(*) DESC\n    LIMIT 1) AS winner\nWHERE\n    Candidate.id = winner.Candidateid\n;\n```",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "203",
+                    "count": 12,
+                    "average": 3.417,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

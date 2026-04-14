@@ -1,0 +1,87 @@
+{
+    "data": {
+        "question": {
+            "questionId": "1773",
+            "questionFrontendId": "1633",
+            "boundTopicId": null,
+            "title": "Percentage of Users Attended a Contest",
+            "titleSlug": "percentage-of-users-attended-a-contest",
+            "content": "<p>Table: <code>Users</code></p>\n\n<pre>\n+-------------+---------+\n| Column Name | Type    |\n+-------------+---------+\n| user_id     | int     |\n| user_name   | varchar |\n+-------------+---------+\nuser_id is the primary key for this table.\nEach row of this table contains the name and the id of a user.\n</pre>\n\n<p>&nbsp;</p>\n\n<p>Table: <code>Register</code></p>\n\n<pre>\n+-------------+---------+\n| Column Name | Type    |\n+-------------+---------+\n| contest_id  | int     |\n| user_id     | int     |\n+-------------+---------+\n(contest_id, user_id) is the primary key for this table.\nEach row of this table contains the id of a user and the contest they registered into.\n</pre>\n\n<p>&nbsp;</p>\n\n<p>Write an SQL query to find the percentage of the users registered in each contest rounded to two decimals.</p>\n\n<p>Return the result table ordered by <code>percentage</code> in <strong>descending order</strong>. In case of a tie, order it by <code>contest_id</code> in <strong>ascending order</strong>.</p>\n\n<p>The query result format is in the following example.</p>\n\n<p>&nbsp;</p>\n\n<pre>\n<code>Users</code> table:\n+---------+-----------+\n| user_id | user_name |\n+---------+-----------+\n| 6       | Alice     |\n| 2       | Bob       |\n| 7       | Alex      |\n+---------+-----------+\n\n<code>Register</code> table:\n+------------+---------+\n| contest_id | user_id |\n+------------+---------+\n| 215        | 6       |\n| 209        | 2       |\n| 208        | 2       |\n| 210        | 6       |\n| 208        | 6       |\n| 209        | 7       |\n| 209        | 6       |\n| 215        | 7       |\n| 208        | 7       |\n| 210        | 2       |\n| 207        | 2       |\n| 210        | 7       |\n+------------+---------+\n\nResult table:\n+------------+------------+\n| contest_id | percentage |\n+------------+------------+\n| 208        | 100.0      |\n| 209        | 100.0      |\n| 210        | 100.0      |\n| 215        | 66.67      |\n| 207        | 33.33      |\n+------------+------------+\nAll the users registered in contests 208, 209, and 210. The percentage is 100% and we sort them in the answer table by contest_id in ascending order.\nAlice and Alex registered in contest 215 and the percentage is ((2/3) * 100) = 66.67%\nBob registered in contest 207 and the percentage is ((1/3) * 100) = 33.33%\n</pre>\n",
+            "translatedTitle": null,
+            "translatedContent": null,
+            "isPaidOnly": true,
+            "difficulty": "Easy",
+            "likes": 29,
+            "dislikes": 6,
+            "isLiked": null,
+            "similarQuestions": "[{\"title\": \"Queries Quality and Percentage\", \"titleSlug\": \"queries-quality-and-percentage\", \"difficulty\": \"Easy\", \"translatedTitle\": null}]",
+            "exampleTestcases": "{\"headers\":{\"Users\":[\"user_id\",\"user_name\"],\"Register\":[\"contest_id\",\"user_id\"]},\"rows\":{\"Users\":[[6,\"Alice\"],[2,\"Bob\"],[7,\"Alex\"]],\"Register\":[[215,6],[209,2],[208,2],[210,6],[208,6],[209,7],[209,6],[215,7],[208,7],[210,2],[207,2],[210,7]]}}",
+            "contributors": [],
+            "topicTags": [
+                {
+                    "name": "Database",
+                    "slug": "database",
+                    "translatedName": null,
+                    "__typename": "TopicTagNode"
+                }
+            ],
+            "companyTagStats": "{\"1\": [], \"2\": [], \"3\": []}",
+            "codeSnippets": [
+                {
+                    "lang": "MySQL",
+                    "langSlug": "mysql",
+                    "code": "# Write your MySQL query statement below\n",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "MS SQL Server",
+                    "langSlug": "mssql",
+                    "code": "/* Write your T-SQL query statement below */\n",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Oracle",
+                    "langSlug": "oraclesql",
+                    "code": "/* Write your PL/SQL query statement below */\n",
+                    "__typename": "CodeSnippetNode"
+                }
+            ],
+            "stats": "{\"totalAccepted\": \"6.8K\", \"totalSubmission\": \"9.5K\", \"totalAcceptedRaw\": 6755, \"totalSubmissionRaw\": 9539, \"acRate\": \"70.8%\"}",
+            "hints": [],
+            "solution": null,
+            "status": null,
+            "sampleTestCase": "{\"headers\":{\"Users\":[\"user_id\",\"user_name\"],\"Register\":[\"contest_id\",\"user_id\"]},\"rows\":{\"Users\":[[6,\"Alice\"],[2,\"Bob\"],[7,\"Alex\"]],\"Register\":[[215,6],[209,2],[208,2],[210,6],[208,6],[209,7],[209,6],[215,7],[208,7],[210,2],[207,2],[210,7]]}}",
+            "metaData": "{\n  \"mysql\": [\n    \"Create table If Not Exists Users (user_id int, user_name varchar(20))\",\n    \"Create table If Not Exists Register (contest_id int, user_id int)\"\n  ],\n  \"mssql\": [\n    \"Create table Users (user_id int, user_name varchar(20))\",\n    \"Create table Register (contest_id int, user_id int)\"\n  ],\n  \"oraclesql\": [\n    \"Create table Users (user_id int, user_name varchar(20))\",\n    \"Create table Register (contest_id int, user_id int)\"\n  ],\n  \"database\": true\n}",
+            "judgerAvailable": true,
+            "judgeType": "large",
+            "mysqlSchemas": [
+                "Create table If Not Exists Users (user_id int, user_name varchar(20))",
+                "Create table If Not Exists Register (contest_id int, user_id int)",
+                "Truncate table Users",
+                "insert into Users (user_id, user_name) values ('6', 'Alice')",
+                "insert into Users (user_id, user_name) values ('2', 'Bob')",
+                "insert into Users (user_id, user_name) values ('7', 'Alex')",
+                "Truncate table Register",
+                "insert into Register (contest_id, user_id) values ('215', '6')",
+                "insert into Register (contest_id, user_id) values ('209', '2')",
+                "insert into Register (contest_id, user_id) values ('208', '2')",
+                "insert into Register (contest_id, user_id) values ('210', '6')",
+                "insert into Register (contest_id, user_id) values ('208', '6')",
+                "insert into Register (contest_id, user_id) values ('209', '7')",
+                "insert into Register (contest_id, user_id) values ('209', '6')",
+                "insert into Register (contest_id, user_id) values ('215', '7')",
+                "insert into Register (contest_id, user_id) values ('208', '7')",
+                "insert into Register (contest_id, user_id) values ('210', '2')",
+                "insert into Register (contest_id, user_id) values ('207', '2')",
+                "insert into Register (contest_id, user_id) values ('210', '7')"
+            ],
+            "enableRunCode": true,
+            "enableTestMode": false,
+            "enableDebugger": false,
+            "envInfo": "{\"mysql\": [\"MySQL\", \"<p><code>MySQL 8.0</code>.</p>\"], \"mssql\": [\"MS SQL Server\", \"<p><code>mssql server 2019</code>.</p>\"], \"oraclesql\": [\"Oracle\", \"<p><code>Oracle Sql 11.2</code>.</p>\"]}",
+            "libraryUrl": null,
+            "adminUrl": null,
+            "__typename": "QuestionNode"
+        }
+    }
+}

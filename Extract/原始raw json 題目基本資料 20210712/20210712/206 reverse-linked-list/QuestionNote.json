@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "206",
+            "article": "{\"id\": 6, \"url\": \"/articles/reverse-linked-list/\", \"topicId\": 127809}",
+            "solution": {
+                "id": "6",
+                "content": "[TOC]\r\n\r\n## Solution\r\n---\r\n#### Approach #1 (Iterative) [Accepted]\r\n\r\nAssume that we have linked list `1 → 2 → 3 → Ø`, we would like to change it to `Ø ← 1 ← 2 ← 3`.\r\n\r\nWhile you are traversing the list, change the current node's next pointer to point to its previous element. Since a node does not have reference to its previous node, you must store its previous element beforehand. You also need another pointer to store the next node before changing the reference. Do not forget to return the new head reference at the end!\r\n\r\n```java\r\npublic ListNode reverseList(ListNode head) {\r\n    ListNode prev = null;\r\n    ListNode curr = head;\r\n    while (curr != null) {\r\n        ListNode nextTemp = curr.next;\r\n        curr.next = prev;\r\n        prev = curr;\r\n        curr = nextTemp;\r\n    }\r\n    return prev;\r\n}\r\n```\r\n\r\n**Complexity analysis**\r\n\r\n* Time complexity : $$O(n)$$.\r\nAssume that $$n$$ is the list's length, the time complexity is $$O(n)$$.\r\n\r\n* Space complexity : $$O(1)$$.\r\n\r\n---\r\n#### Approach #2 (Recursive) [Accepted]\r\n\r\nThe recursive version is slightly trickier and the key is to work backwards. Assume that the rest of the list had already been reversed, now how do I reverse the front part? Let's assume the list is: n<sub>1</sub> → … → n<sub>k-1</sub> → n<sub>k</sub> → n<sub>k+1</sub> → … → n<sub>m</sub> → Ø\r\n\r\nAssume from node n<sub>k+1</sub> to n<sub>m</sub> had been reversed and you are at node n<sub>k</sub>.\r\n\r\nn<sub>1</sub> → … → n<sub>k-1</sub> → <b>n<sub>k</sub></b> → n<sub>k+1</sub> ← … ← n<sub>m</sub>\r\n\r\nWe want n<sub>k+1</sub>’s next node to point to n<sub>k</sub>.\r\n\r\nSo,\r\n\r\nn<sub>k</sub>.next.next = n<sub>k</sub>;\r\n\r\nBe very careful that n<sub>1</sub>'s next must point to Ø. If you forget about this, your linked list has a cycle in it. This bug could be caught if you test your code with a linked list of size 2.\r\n\r\n\r\n```java\r\npublic ListNode reverseList(ListNode head) {\r\n    if (head == null || head.next == null) return head;\r\n    ListNode p = reverseList(head.next);\r\n    head.next.next = head;\r\n    head.next = null;\r\n    return p;\r\n}\r\n```\r\n\r\n**Complexity analysis**\r\n\r\n* Time complexity : $$O(n)$$.\r\nAssume that $$n$$ is the list's length, the time complexity is $$O(n)$$.\r\n\r\n* Space complexity : $$O(n)$$.\r\nThe extra space comes from implicit stack space due to recursion. The recursion could go up to $$n$$ levels deep.",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "3",
+                    "count": 328,
+                    "average": 4.646,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

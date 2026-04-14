@@ -1,0 +1,41 @@
+{
+    "data": {
+        "discussQuestionTopicTags": [
+            {
+                "id": "6156",
+                "name": "mysql",
+                "slug": "mysql",
+                "numTopics": 3,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "7494",
+                "name": "sql",
+                "slug": "sql",
+                "numTopics": 2,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "6081",
+                "name": "simple",
+                "slug": "simple",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "16516",
+                "name": "too simple",
+                "slug": "too-simple",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "8807",
+                "name": "tsql",
+                "slug": "tsql",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            }
+        ]
+    }
+}

@@ -1,0 +1,73 @@
+{
+    "data": {
+        "question": {
+            "questionId": "1607",
+            "questionFrontendId": "1459",
+            "boundTopicId": null,
+            "title": "Rectangles Area",
+            "titleSlug": "rectangles-area",
+            "content": "<p>Table: <code>Points</code></p>\n\n<pre>\n+---------------+---------+\n| Column Name   | Type    |\n+---------------+---------+\n| id            | int     |\n| x_value       | int     |\n| y_value       | int     |\n+---------------+---------+\nid is the primary key for this table.\nEach point is represented as a 2D coordinate (x_value, y_value).</pre>\n\n<p>&nbsp;</p>\n\n<p>Write an SQL query to report all possible <strong>axis-aligned</strong> rectangles with <strong>non-zero area</strong> that can be formed by any two points in the <code>Points</code> table.</p>\n\n<p>Each row in the result should contain three columns <code>(p1, p2, area)</code> where:</p>\n\n<ul>\n\t<li><code>p1</code> and <code>p2</code> are the <code>id</code>&#39;s of the two points that determine the opposite corners of a rectangle.</li>\n\t<li><code>area</code> is the area of the rectangle and must be <strong>non-zero</strong>.</li>\n</ul>\n\n<p>Report the query in descending order by <code>area</code> first, then in ascending order by <code>p1</code>&#39;s <code>id</code> if there is a tie, then in ascending order by <code>p2</code>&#39;s <code>id</code> if there is another tie.</p>\n\n<p>The query result format is in the following table:</p>\n\n<p>&nbsp;</p>\n\n<pre>\nPoints table:\n+----------+-------------+-------------+\n| id       | x_value     | y_value     |\n+----------+-------------+-------------+\n| 1        | 2           | 7           |\n| 2        | 4           | 8           |\n| 3        | 2           | 10          |\n+----------+-------------+-------------+\n\nResult table:\n+----------+-------------+-------------+\n| p1       | p2          | area        |\n+----------+-------------+-------------+\n| 2        | 3           | 4           |\n| 1        | 2           | 2           |\n+----------+-------------+-------------+\n\n<img alt=\"\" src=\"https://assets.leetcode.com/uploads/2021/03/12/rect.png\" style=\"width: 200px; height: 330px;\" />\nThe rectangle formed by p1 = 2 and p2 = 3 has an area equal to |4-2| * |8-10| = 4.\nThe rectangle formed by p1 = 1 and p2 = 2 has an area equal to |2-4| * |7-8| = 2.\nNote that the rectangle formed by p1 = 1 and p2 = 3 is invalid because the area is 0.\n</pre>\n",
+            "translatedTitle": null,
+            "translatedContent": null,
+            "isPaidOnly": true,
+            "difficulty": "Medium",
+            "likes": 40,
+            "dislikes": 63,
+            "isLiked": null,
+            "similarQuestions": "[]",
+            "exampleTestcases": "{\"headers\":{\"Points\":[\"id\",\"x_value\",\"y_value\"]},\"rows\":{\"Points\":[[1,2,7],[2,4,8],[3,2,10]]}}",
+            "contributors": [],
+            "topicTags": [
+                {
+                    "name": "Database",
+                    "slug": "database",
+                    "translatedName": null,
+                    "__typename": "TopicTagNode"
+                }
+            ],
+            "companyTagStats": "{\"3\": [{\"taggedByAdmin\": true, \"name\": \"Twitter\", \"slug\": \"twitter\", \"timesEncountered\": 0}], \"1\": [], \"2\": []}",
+            "codeSnippets": [
+                {
+                    "lang": "MySQL",
+                    "langSlug": "mysql",
+                    "code": "# Write your MySQL query statement below\n",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "MS SQL Server",
+                    "langSlug": "mssql",
+                    "code": "/* Write your T-SQL query statement below */\n",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Oracle",
+                    "langSlug": "oraclesql",
+                    "code": "/* Write your PL/SQL query statement below */\n",
+                    "__typename": "CodeSnippetNode"
+                }
+            ],
+            "stats": "{\"totalAccepted\": \"6.1K\", \"totalSubmission\": \"9.2K\", \"totalAcceptedRaw\": 6105, \"totalSubmissionRaw\": 9181, \"acRate\": \"66.5%\"}",
+            "hints": [],
+            "solution": null,
+            "status": null,
+            "sampleTestCase": "{\"headers\":{\"Points\":[\"id\",\"x_value\",\"y_value\"]},\"rows\":{\"Points\":[[1,2,7],[2,4,8],[3,2,10]]}}",
+            "metaData": "{\n  \"mysql\": [\n    \"Create table If Not Exists Points (id int, x_value int, y_value int)\"\n  ],\n  \"mssql\": [\n    \"Create table Points (id int, x_value int, y_value int)\"\n  ],\n  \"oraclesql\": [\n    \"Create table Points (id int, x_value int, y_value int)\"\n  ],\n  \"database\": true\n}",
+            "judgerAvailable": true,
+            "judgeType": "large",
+            "mysqlSchemas": [
+                "Create table If Not Exists Points (id int, x_value int, y_value int)",
+                "Truncate table Points",
+                "insert into Points (id, x_value, y_value) values ('1', '2', '7')",
+                "insert into Points (id, x_value, y_value) values ('2', '4', '8')",
+                "insert into Points (id, x_value, y_value) values ('3', '2', '10')"
+            ],
+            "enableRunCode": true,
+            "enableTestMode": false,
+            "enableDebugger": false,
+            "envInfo": "{\"mysql\": [\"MySQL\", \"<p><code>MySQL 8.0</code>.</p>\"], \"mssql\": [\"MS SQL Server\", \"<p><code>mssql server 2019</code>.</p>\"], \"oraclesql\": [\"Oracle\", \"<p><code>Oracle Sql 11.2</code>.</p>\"]}",
+            "libraryUrl": null,
+            "adminUrl": null,
+            "__typename": "QuestionNode"
+        }
+    }
+}

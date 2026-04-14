@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "125",
+            "article": "{\"id\": 909, \"url\": \"/articles/valid-palindrome/\", \"topicId\": 546199}",
+            "solution": {
+                "id": "909",
+                "content": "[TOC]\n\n## Solution\n\n---\n\n#### Approach 1: Compare with Reverse\n\n**Intuition**\n\nA palindrome is a word, phrase, or sequence that reads the same backwards as forwards. e.g. `madam`\n\nA palindrome, and its reverse, are identical to each other.\n\n**Algorithm**\n\nWe'll reverse the given string and compare it with the original. If those are equivalent, it's a palindrome.\n\nSince only alphanumeric characters are considered, we'll filter out all other types of characters before we apply our algorithm.\n\nAdditionally, because we're treating letters as case-insensitive, we'll convert the remaining letters to lower case. The digits will be left the same.\n\n<iframe src=\"https://leetcode.com/playground/JNcSr4tR/shared\" frameBorder=\"0\" width=\"100%\" height=\"500\" name=\"JNcSr4tR\"></iframe>\n\n**Complexity Analysis**\n\n* Time complexity : $$O(n)$$, in length $$n$$ of the string.\n\n  We need to iterate thrice through the string:\n    1. When we filter out non-alphanumeric characters, and convert the remaining characters to lower-case.\n    2. When we reverse the string.\n    3. When we compare the original and the reversed strings.\n\n  Each iteration runs linear in time (since each character operation completes in constant time). Thus, the effective run-time complexity is linear.\n\n* Space complexity : $$O(n)$$, in length $$n$$ of the string. We need $$O(n)$$ additional space to stored the filtered string and the reversed string.\n\n<br />\n\n---\n\n#### Approach 2: Two Pointers\n\n**Intuition**\n\nIf you take any ordinary string, and concatenate its reverse to it, you'll get a palindrome. This leads to an interesting insight about the converse: every palindrome half is reverse of the other half.\n\nSimply speaking, if one were to start in the middle of a palindrome, and traverse outwards, they'd encounter the same characters, in the exact same order, in both halves!\n\n!?!../Documents/125_valid_palindrome.json:800,600!?!\n\n**Algorithm**\n\nSince the input string contains characters that we need to ignore in our palindromic check, it becomes tedious to figure out the real middle point of our palindromic input.\n\n> Instead of going outwards from the middle, we could just go inwards towards the middle!\n\nSo, if we start traversing inwards, from both ends of the input string, we can expect to _see_ the same characters, in the same order.\n\nThe resulting algorithm is simple:\n+ Set two pointers, one at each end of the input string\n+ If the input is palindromic, both the pointers should point to equivalent characters, _at all times_. [^note-1]\n  + If this condition is not met at any point of time, we break and return early.  [^note-2]\n+ We can simply ignore non-alphanumeric characters by continuing to traverse further.\n+ Continue traversing inwards until the pointers meet in the middle.\n\n<iframe src=\"https://leetcode.com/playground/ZZg94fK4/shared\" frameBorder=\"0\" width=\"100%\" height=\"361\" name=\"ZZg94fK4\"></iframe>\n\n**Complexity Analysis**\n\n* Time complexity : $$O(n)$$, in length $$n$$ of the string. We traverse over each character at-most once, until the two pointers meet in the middle, or when we break and return early.\n\n* Space complexity : $$O(1)$$. No extra space required, at all.\n\n\n\n[^note-1]: Such a property is formally known as a [loop invariant](https://en.wikipedia.org/wiki/Loop_invariant).\n\n[^note-2]: Such a property is often called a _loop termination condition_. It is one of several used in this solution. Can you identify the others?",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": true,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "857",
+                    "count": 41,
+                    "average": 4.098,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

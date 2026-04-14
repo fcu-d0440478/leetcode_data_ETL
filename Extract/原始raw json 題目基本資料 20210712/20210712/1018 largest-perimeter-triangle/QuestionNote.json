@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "1018",
+            "article": "{\"id\": 665, \"url\": \"/articles/largest-perimeter-triangle/\", \"topicId\": 217809}",
+            "solution": {
+                "id": "665",
+                "content": "[TOC]\n\n## Solution\n---\n#### Approach 1: Sort\n\n**Intuition**\n\nWithout loss of generality, say the sidelengths of the triangle are $$a \\leq b \\leq c$$.  The necessary and sufficient condition for these lengths to form a triangle of non-zero area is $$a + b > c$$.\n\nSay we knew $$c$$ already.  There is no reason not to choose the largest possible $$a$$ and $$b$$ from the array.  If $$a + b > c$$, then it forms a triangle, otherwise it doesn't.\n\n**Algorithm**\n\nThis leads to a simple algorithm:  Sort the array.  For any $$c$$ in the array, we choose the largest possible $$a \\leq b \\leq c$$:  these are just the two values adjacent to $$c$$.  If this forms a triangle, we return the answer.\n\n<iframe src=\"https://leetcode.com/playground/GgqxkKqV/shared\" frameBorder=\"0\" width=\"100%\" height=\"208\" name=\"GgqxkKqV\"></iframe>\n\n**Complexity Analysis**\n\n* Time Complexity:  $$O(N \\log N)$$, where $$N$$ is the length of `A`.\n\n* Space Complexity:  $$O(1)$$.\n<br />\n<br />",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "651",
+                    "count": 25,
+                    "average": 4.68,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

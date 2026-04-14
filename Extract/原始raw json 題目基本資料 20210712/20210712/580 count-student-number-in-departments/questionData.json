@@ -1,0 +1,88 @@
+{
+    "data": {
+        "question": {
+            "questionId": "580",
+            "questionFrontendId": "580",
+            "boundTopicId": null,
+            "title": "Count Student Number in Departments",
+            "titleSlug": "count-student-number-in-departments",
+            "content": "<p>A university uses 2 data tables, <b><i>student</i></b> and <b><i>department</i></b>, to store data about its students and the departments associated with each major.</p>\r\n\r\n<p>Write a query to print the respective department name and number of students majoring in each department for all departments in the <b><i>department</i></b> table (even ones with no current students).</p>\r\n\r\n<p>Sort your results by descending number of students; if two or more departments have the same number of students, then sort those departments alphabetically by department name.</p>\r\n\r\n<p>The <b><i>student</i></b> is described as follow:</p>\r\n\r\n<pre>\r\n| Column Name  | Type      |\r\n|--------------|-----------|\r\n| student_id   | Integer   |\r\n| student_name | String    |\r\n| gender       | Character |\r\n| dept_id      | Integer   |\r\n</pre>\r\n\r\n<p>where student_id is the student&#39;s ID number, student_name is the student&#39;s name, gender is their gender, and dept_id is the department ID associated with their declared major.</p>\r\n\r\n<p>And the <b><i>department</i></b> table is described as below:</p>\r\n\r\n<pre>\r\n| Column Name | Type    |\r\n|-------------|---------|\r\n| dept_id     | Integer |\r\n| dept_name   | String  |\r\n</pre>\r\n\r\n<p>where dept_id is the department&#39;s ID number and dept_name is the department name.</p>\r\n\r\n<p>Here is an example <b>input</b>:<br />\r\n<b><i>student</i></b> table:</p>\r\n\r\n<pre>\r\n| student_id | student_name | gender | dept_id |\r\n|------------|--------------|--------|---------|\r\n| 1          | Jack         | M      | 1       |\r\n| 2          | Jane         | F      | 1       |\r\n| 3          | Mark         | M      | 2       |\r\n</pre>\r\n\r\n<p><b><i>department</i></b> table:</p>\r\n\r\n<pre>\r\n| dept_id | dept_name   |\r\n|---------|-------------|\r\n| 1       | Engineering |\r\n| 2       | Science     |\r\n| 3       | Law         |\r\n</pre>\r\n\r\n<p>The <b>Output</b> should be:</p>\r\n\r\n<pre>\r\n| dept_name   | student_number |\r\n|-------------|----------------|\r\n| Engineering | 2              |\r\n| Science     | 1              |\r\n| Law         | 0              |\r\n</pre>\r\n",
+            "translatedTitle": null,
+            "translatedContent": null,
+            "isPaidOnly": true,
+            "difficulty": "Medium",
+            "likes": 135,
+            "dislikes": 26,
+            "isLiked": null,
+            "similarQuestions": "[]",
+            "exampleTestcases": "{\"headers\":{\"student\":[\"student_id\",\"student_name\",\"gender\",\"dept_id\"],\"department\":[\"dept_id\",\"dept_name\"]},\"rows\":{\"student\":[[1,\"Jack\",\"M\",1],[2,\"Jane\",\"F\",1],[3,\"Mark\",\"M\",2]],\"department\":[[1,\"Engineering\"],[2,\"Science\"],[3,\"Law\"]]}}",
+            "contributors": [],
+            "topicTags": [
+                {
+                    "name": "Database",
+                    "slug": "database",
+                    "translatedName": null,
+                    "__typename": "TopicTagNode"
+                }
+            ],
+            "companyTagStats": "{\"3\": [{\"taggedByAdmin\": true, \"name\": \"Twitter\", \"slug\": \"twitter\", \"timesEncountered\": 0}], \"1\": [], \"2\": []}",
+            "codeSnippets": [
+                {
+                    "lang": "MySQL",
+                    "langSlug": "mysql",
+                    "code": "# Write your MySQL query statement below\r\n",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "MS SQL Server",
+                    "langSlug": "mssql",
+                    "code": "/* Write your T-SQL query statement below */\n",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Oracle",
+                    "langSlug": "oraclesql",
+                    "code": "/* Write your PL/SQL query statement below */\r\n",
+                    "__typename": "CodeSnippetNode"
+                }
+            ],
+            "stats": "{\"totalAccepted\": \"30.1K\", \"totalSubmission\": \"56.5K\", \"totalAcceptedRaw\": 30061, \"totalSubmissionRaw\": 56513, \"acRate\": \"53.2%\"}",
+            "hints": [
+                "Still remember the difference between 'INNER JOIN' and 'OUTTER JOIN' in SQL?",
+                "Do you know other expressions using the 'COUNT' function besides 'COUNT(*)'?"
+            ],
+            "solution": {
+                "id": "159",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "__typename": "ArticleNode"
+            },
+            "status": null,
+            "sampleTestCase": "{\"headers\":{\"student\":[\"student_id\",\"student_name\",\"gender\",\"dept_id\"],\"department\":[\"dept_id\",\"dept_name\"]},\"rows\":{\"student\":[[1,\"Jack\",\"M\",1],[2,\"Jane\",\"F\",1],[3,\"Mark\",\"M\",2]],\"department\":[[1,\"Engineering\"],[2,\"Science\"],[3,\"Law\"]]}}",
+            "metaData": "{\r\n  \"mysql\": [\r\n    \"CREATE TABLE IF NOT EXISTS student (student_id INT,student_name VARCHAR(45), gender VARCHAR(6), dept_id INT)\",\r\n    \"CREATE TABLE IF NOT EXISTS department (dept_id INT, dept_name VARCHAR(255))\"\r\n  ],\r\n  \"mssql\": [\r\n    \"CREATE TABLE student (student_id INT,student_name VARCHAR(45), gender VARCHAR(6), dept_id INT)\",\r\n    \"CREATE TABLE department (dept_id INT, dept_name VARCHAR(255))\"\r\n  ],\r\n  \"oraclesql\": [\r\n    \"CREATE TABLE student (student_id INT,student_name VARCHAR(45), gender VARCHAR(6), dept_id INT)\",\r\n    \"CREATE TABLE department (dept_id INT, dept_name VARCHAR(255))\"\r\n  ],\r\n  \"database\": true\r\n}",
+            "judgerAvailable": true,
+            "judgeType": "large",
+            "mysqlSchemas": [
+                "CREATE TABLE IF NOT EXISTS student (student_id INT,student_name VARCHAR(45), gender VARCHAR(6), dept_id INT)",
+                "CREATE TABLE IF NOT EXISTS department (dept_id INT, dept_name VARCHAR(255))",
+                "Truncate table student",
+                "insert into student (student_id, student_name, gender, dept_id) values ('1', 'Jack', 'M', '1')",
+                "insert into student (student_id, student_name, gender, dept_id) values ('2', 'Jane', 'F', '1')",
+                "insert into student (student_id, student_name, gender, dept_id) values ('3', 'Mark', 'M', '2')",
+                "Truncate table department",
+                "insert into department (dept_id, dept_name) values ('1', 'Engineering')",
+                "insert into department (dept_id, dept_name) values ('2', 'Science')",
+                "insert into department (dept_id, dept_name) values ('3', 'Law')"
+            ],
+            "enableRunCode": true,
+            "enableTestMode": false,
+            "enableDebugger": false,
+            "envInfo": "{\"mysql\": [\"MySQL\", \"<p><code>MySQL 8.0</code>.</p>\"], \"mssql\": [\"MS SQL Server\", \"<p><code>mssql server 2019</code>.</p>\"], \"oraclesql\": [\"Oracle\", \"<p><code>Oracle Sql 11.2</code>.</p>\"]}",
+            "libraryUrl": null,
+            "adminUrl": null,
+            "__typename": "QuestionNode"
+        }
+    }
+}

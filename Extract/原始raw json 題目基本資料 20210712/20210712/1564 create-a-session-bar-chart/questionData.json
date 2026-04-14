@@ -1,0 +1,75 @@
+{
+    "data": {
+        "question": {
+            "questionId": "1564",
+            "questionFrontendId": "1435",
+            "boundTopicId": null,
+            "title": "Create a Session Bar Chart",
+            "titleSlug": "create-a-session-bar-chart",
+            "content": "<p>Table: <code>Sessions</code></p>\n\n<pre>\n+---------------------+---------+\n| Column Name         | Type    |\n+---------------------+---------+\n| session_id          | int     |\n| duration            | int     |\n+---------------------+---------+\nsession_id is the primary key for this table.\nduration is the time in seconds that a user has visited the application.\n</pre>\n\n<p>&nbsp;</p>\n\n<p>You want to know how long a user visits your application. You decided to create bins of &quot;[0-5&gt;&quot;, &quot;[5-10&gt;&quot;, &quot;[10-15&gt;&quot; and &quot;15 minutes or more&quot; and count the number of sessions on it.</p>\n\n<p>Write an SQL query to report the (bin, total) in <strong>any</strong> order.</p>\n\n<p>The query result format is in the following example.</p>\n\n<pre>\nSessions table:\n+-------------+---------------+\n| session_id  | duration      |\n+-------------+---------------+\n| 1           | 30            |\n| 2           | 199           |\n| 3           | 299           |\n| 4           | 580           |\n| 5           | 1000          |\n+-------------+---------------+\n\nResult table:\n+--------------+--------------+\n| bin          | total        |\n+--------------+--------------+\n| [0-5&gt;        | 3            |\n| [5-10&gt;       | 1            |\n| [10-15&gt;      | 0            |\n| 15 or more   | 1            |\n+--------------+--------------+\n\nFor session_id 1, 2 and 3 have a duration greater or equal than 0 minutes and less than 5 minutes.\nFor session_id 4 has a duration greater or equal than 5 minutes and less than 10 minutes.\nThere are no session with a duration greater or equial than 10 minutes and less than 15 minutes.\nFor session_id 5 has a duration greater or equal than 15 minutes.\n</pre>\n",
+            "translatedTitle": null,
+            "translatedContent": null,
+            "isPaidOnly": true,
+            "difficulty": "Easy",
+            "likes": 73,
+            "dislikes": 129,
+            "isLiked": null,
+            "similarQuestions": "[{\"title\": \"Count Salary Categories\", \"titleSlug\": \"count-salary-categories\", \"difficulty\": \"Medium\", \"translatedTitle\": null}]",
+            "exampleTestcases": "{\"headers\": {\"Sessions\": [\"session_id\", \"duration\"]}, \"rows\": {\"Sessions\": [[1, 30], [2, 199], [3, 299], [4, 580], [5, 1000]]}}\r",
+            "contributors": [],
+            "topicTags": [
+                {
+                    "name": "Database",
+                    "slug": "database",
+                    "translatedName": null,
+                    "__typename": "TopicTagNode"
+                }
+            ],
+            "companyTagStats": "{\"3\": [{\"taggedByAdmin\": true, \"name\": \"Twitch\", \"slug\": \"twitch\", \"timesEncountered\": 0}], \"1\": [], \"2\": []}",
+            "codeSnippets": [
+                {
+                    "lang": "MySQL",
+                    "langSlug": "mysql",
+                    "code": "# Write your MySQL query statement below\n",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "MS SQL Server",
+                    "langSlug": "mssql",
+                    "code": "/* Write your T-SQL query statement below */\n",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Oracle",
+                    "langSlug": "oraclesql",
+                    "code": "/* Write your PL/SQL query statement below */\n",
+                    "__typename": "CodeSnippetNode"
+                }
+            ],
+            "stats": "{\"totalAccepted\": \"10.6K\", \"totalSubmission\": \"13.4K\", \"totalAcceptedRaw\": 10550, \"totalSubmissionRaw\": 13430, \"acRate\": \"78.6%\"}",
+            "hints": [],
+            "solution": null,
+            "status": null,
+            "sampleTestCase": "{\"headers\": {\"Sessions\": [\"session_id\", \"duration\"]}, \"rows\": {\"Sessions\": [[1, 30], [2, 199], [3, 299], [4, 580], [5, 1000]]}}\r",
+            "metaData": "{\n  \"mysql\": [\n    \"Create table If Not Exists Sessions (session_id int, duration int)\"\n  ],\n  \"mssql\": [\n    \"Create table Sessions (session_id int, duration int)\"\n  ],\n  \"oraclesql\": [\n    \"Create table Sessions (session_id int, duration int)\"\n  ],\n  \"database\": true\n}",
+            "judgerAvailable": true,
+            "judgeType": "large",
+            "mysqlSchemas": [
+                "Create table If Not Exists Sessions (session_id int, duration int)",
+                "Truncate table Sessions",
+                "insert into Sessions (session_id, duration) values ('1', '30')",
+                "insert into Sessions (session_id, duration) values ('2', '199')",
+                "insert into Sessions (session_id, duration) values ('3', '299')",
+                "insert into Sessions (session_id, duration) values ('4', '580')",
+                "insert into Sessions (session_id, duration) values ('5', '1000')"
+            ],
+            "enableRunCode": true,
+            "enableTestMode": false,
+            "enableDebugger": false,
+            "envInfo": "{\"mysql\": [\"MySQL\", \"<p><code>MySQL 8.0</code>.</p>\"], \"mssql\": [\"MS SQL Server\", \"<p><code>mssql server 2019</code>.</p>\"], \"oraclesql\": [\"Oracle\", \"<p><code>Oracle Sql 11.2</code>.</p>\"]}",
+            "libraryUrl": null,
+            "adminUrl": null,
+            "__typename": "QuestionNode"
+        }
+    }
+}

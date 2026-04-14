@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "871",
+            "article": "{\"id\": 472, \"url\": \"/articles/keys-and-rooms/\", \"topicId\": 133880}",
+            "solution": {
+                "id": "472",
+                "content": "[TOC]\n\n---\n#### Approach #1: Depth-First Search [Accepted]\n\n**Intuition and Algorithm**\n\nWhen visiting a room for the first time, look at all the keys in that room.  For any key that hasn't been used yet, add it to the todo list (`stack`) for it to be used.\n\nSee the comments of the code for more details.\n\n<iframe src=\"https://leetcode.com/playground/gB4GZBww/shared\" frameBorder=\"0\" width=\"100%\" height=\"446\" name=\"gB4GZBww\"></iframe>\n\n**Complexity Analysis**\n\n* Time Complexity:  $$O(N + E)$$, where $$N$$ is the number of rooms, and $$E$$ is the total number of keys.\n\n* Space Complexity:  $$O(N)$$ in additional space complexity, to store `stack` and `seen`.",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "469",
+                    "count": 48,
+                    "average": 4.208,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

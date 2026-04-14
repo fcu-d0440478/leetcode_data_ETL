@@ -1,0 +1,168 @@
+{
+    "data": {
+        "question": {
+            "questionId": "1176",
+            "questionFrontendId": "1244",
+            "boundTopicId": null,
+            "title": "Design A Leaderboard",
+            "titleSlug": "design-a-leaderboard",
+            "content": "<p>Design a Leaderboard class, which has 3 functions:</p>\n\n<ol>\n\t<li><code>addScore(playerId, score)</code>: Update the leaderboard by adding <code>score</code> to the given player&#39;s score. If there is no player with such id in the leaderboard, add him to the leaderboard with the given <code>score</code>.</li>\n\t<li><code>top(K)</code>: Return the score sum of the top <code>K</code> players.</li>\n\t<li><code>reset(playerId)</code>: Reset the score of the player with the given id&nbsp;to 0 (in other words erase it from the leaderboard). It is guaranteed that the player was added to the leaderboard before calling this function.</li>\n</ol>\n\n<p>Initially, the leaderboard is empty.</p>\n\n<p>&nbsp;</p>\n<p><strong>Example 1:</strong></p>\n\n<pre>\n<b>Input: </b>\n[&quot;Leaderboard&quot;,&quot;addScore&quot;,&quot;addScore&quot;,&quot;addScore&quot;,&quot;addScore&quot;,&quot;addScore&quot;,&quot;top&quot;,&quot;reset&quot;,&quot;reset&quot;,&quot;addScore&quot;,&quot;top&quot;]\n[[],[1,73],[2,56],[3,39],[4,51],[5,4],[1],[1],[2],[2,51],[3]]\n<b>Output: </b>\n[null,null,null,null,null,null,73,null,null,null,141]\n\n<b>Explanation: </b>\nLeaderboard leaderboard = new Leaderboard ();\nleaderboard.addScore(1,73);   // leaderboard = [[1,73]];\nleaderboard.addScore(2,56);   // leaderboard = [[1,73],[2,56]];\nleaderboard.addScore(3,39);   // leaderboard = [[1,73],[2,56],[3,39]];\nleaderboard.addScore(4,51);   // leaderboard = [[1,73],[2,56],[3,39],[4,51]];\nleaderboard.addScore(5,4);    // leaderboard = [[1,73],[2,56],[3,39],[4,51],[5,4]];\nleaderboard.top(1);           // returns 73;\nleaderboard.reset(1);         // leaderboard = [[2,56],[3,39],[4,51],[5,4]];\nleaderboard.reset(2);         // leaderboard = [[3,39],[4,51],[5,4]];\nleaderboard.addScore(2,51);   // leaderboard = [[2,51],[3,39],[4,51],[5,4]];\nleaderboard.top(3);           // returns 141 = 51 + 51 + 39;\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= playerId, K &lt;= 10000</code></li>\n\t<li>It&#39;s guaranteed that <code>K</code> is less than or equal to the current number of players.</li>\n\t<li><code>1 &lt;= score&nbsp;&lt;= 100</code></li>\n\t<li>There will be at most <code>1000</code>&nbsp;function calls.</li>\n</ul>\n",
+            "translatedTitle": null,
+            "translatedContent": null,
+            "isPaidOnly": true,
+            "difficulty": "Medium",
+            "likes": 289,
+            "dislikes": 60,
+            "isLiked": null,
+            "similarQuestions": "[]",
+            "exampleTestcases": "[\"Leaderboard\",\"addScore\",\"addScore\",\"addScore\",\"addScore\",\"addScore\",\"top\",\"reset\",\"reset\",\"addScore\",\"top\"]\n[[],[1,73],[2,56],[3,39],[4,51],[5,4],[1],[1],[2],[2,51],[3]]",
+            "contributors": [],
+            "topicTags": [
+                {
+                    "name": "Hash Table",
+                    "slug": "hash-table",
+                    "translatedName": null,
+                    "__typename": "TopicTagNode"
+                },
+                {
+                    "name": "Design",
+                    "slug": "design",
+                    "translatedName": null,
+                    "__typename": "TopicTagNode"
+                },
+                {
+                    "name": "Sorting",
+                    "slug": "sorting",
+                    "translatedName": null,
+                    "__typename": "TopicTagNode"
+                }
+            ],
+            "companyTagStats": "{\"3\": [{\"taggedByAdmin\": false, \"name\": \"Oracle\", \"slug\": \"oracle\", \"timesEncountered\": 2}, {\"taggedByAdmin\": true, \"name\": \"Wayfair\", \"slug\": \"wayfair\", \"timesEncountered\": 0}], \"1\": [{\"taggedByAdmin\": false, \"name\": \"Bloomberg\", \"slug\": \"bloomberg\", \"timesEncountered\": 9}, {\"taggedByAdmin\": false, \"name\": \"Amazon\", \"slug\": \"amazon\", \"timesEncountered\": 3}], \"2\": [{\"taggedByAdmin\": false, \"name\": \"Google\", \"slug\": \"google\", \"timesEncountered\": 4}]}",
+            "codeSnippets": [
+                {
+                    "lang": "C++",
+                    "langSlug": "cpp",
+                    "code": "class Leaderboard {\npublic:\n    Leaderboard() {\n        \n    }\n    \n    void addScore(int playerId, int score) {\n        \n    }\n    \n    int top(int K) {\n        \n    }\n    \n    void reset(int playerId) {\n        \n    }\n};\n\n/**\n * Your Leaderboard object will be instantiated and called as such:\n * Leaderboard* obj = new Leaderboard();\n * obj->addScore(playerId,score);\n * int param_2 = obj->top(K);\n * obj->reset(playerId);\n */",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Java",
+                    "langSlug": "java",
+                    "code": "class Leaderboard {\n\n    public Leaderboard() {\n        \n    }\n    \n    public void addScore(int playerId, int score) {\n        \n    }\n    \n    public int top(int K) {\n        \n    }\n    \n    public void reset(int playerId) {\n        \n    }\n}\n\n/**\n * Your Leaderboard object will be instantiated and called as such:\n * Leaderboard obj = new Leaderboard();\n * obj.addScore(playerId,score);\n * int param_2 = obj.top(K);\n * obj.reset(playerId);\n */",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Python",
+                    "langSlug": "python",
+                    "code": "class Leaderboard(object):\n\n    def __init__(self):\n        \n\n    def addScore(self, playerId, score):\n        \"\"\"\n        :type playerId: int\n        :type score: int\n        :rtype: None\n        \"\"\"\n        \n\n    def top(self, K):\n        \"\"\"\n        :type K: int\n        :rtype: int\n        \"\"\"\n        \n\n    def reset(self, playerId):\n        \"\"\"\n        :type playerId: int\n        :rtype: None\n        \"\"\"\n        \n\n\n# Your Leaderboard object will be instantiated and called as such:\n# obj = Leaderboard()\n# obj.addScore(playerId,score)\n# param_2 = obj.top(K)\n# obj.reset(playerId)",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Python3",
+                    "langSlug": "python3",
+                    "code": "class Leaderboard:\n\n    def __init__(self):\n        \n\n    def addScore(self, playerId: int, score: int) -> None:\n        \n\n    def top(self, K: int) -> int:\n        \n\n    def reset(self, playerId: int) -> None:\n        \n\n\n# Your Leaderboard object will be instantiated and called as such:\n# obj = Leaderboard()\n# obj.addScore(playerId,score)\n# param_2 = obj.top(K)\n# obj.reset(playerId)",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "C",
+                    "langSlug": "c",
+                    "code": "\n\n\ntypedef struct {\n    \n} Leaderboard;\n\n\nLeaderboard* leaderboardCreate() {\n    \n}\n\nvoid leaderboardAddScore(Leaderboard* obj, int playerId, int score) {\n  \n}\n\nint leaderboardTop(Leaderboard* obj, int K) {\n  \n}\n\nvoid leaderboardReset(Leaderboard* obj, int playerId) {\n  \n}\n\nvoid leaderboardFree(Leaderboard* obj) {\n    \n}\n\n/**\n * Your Leaderboard struct will be instantiated and called as such:\n * Leaderboard* obj = leaderboardCreate();\n * leaderboardAddScore(obj, playerId, score);\n \n * int param_2 = leaderboardTop(obj, K);\n \n * leaderboardReset(obj, playerId);\n \n * leaderboardFree(obj);\n*/",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "C#",
+                    "langSlug": "csharp",
+                    "code": "public class Leaderboard {\n\n    public Leaderboard() {\n        \n    }\n    \n    public void AddScore(int playerId, int score) {\n        \n    }\n    \n    public int Top(int K) {\n        \n    }\n    \n    public void Reset(int playerId) {\n        \n    }\n}\n\n/**\n * Your Leaderboard object will be instantiated and called as such:\n * Leaderboard obj = new Leaderboard();\n * obj.AddScore(playerId,score);\n * int param_2 = obj.Top(K);\n * obj.Reset(playerId);\n */",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "JavaScript",
+                    "langSlug": "javascript",
+                    "code": "\nvar Leaderboard = function() {\n    \n};\n\n/** \n * @param {number} playerId \n * @param {number} score\n * @return {void}\n */\nLeaderboard.prototype.addScore = function(playerId, score) {\n    \n};\n\n/** \n * @param {number} K\n * @return {number}\n */\nLeaderboard.prototype.top = function(K) {\n    \n};\n\n/** \n * @param {number} playerId\n * @return {void}\n */\nLeaderboard.prototype.reset = function(playerId) {\n    \n};\n\n/** \n * Your Leaderboard object will be instantiated and called as such:\n * var obj = new Leaderboard()\n * obj.addScore(playerId,score)\n * var param_2 = obj.top(K)\n * obj.reset(playerId)\n */",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Ruby",
+                    "langSlug": "ruby",
+                    "code": "class Leaderboard\n    def initialize()\n        \n    end\n\n\n=begin\n    :type player_id: Integer\n    :type score: Integer\n    :rtype: Void\n=end\n    def add_score(player_id, score)\n        \n    end\n\n\n=begin\n    :type k: Integer\n    :rtype: Integer\n=end\n    def top(k)\n        \n    end\n\n\n=begin\n    :type player_id: Integer\n    :rtype: Void\n=end\n    def reset(player_id)\n        \n    end\n\n\nend\n\n# Your Leaderboard object will be instantiated and called as such:\n# obj = Leaderboard.new()\n# obj.add_score(player_id, score)\n# param_2 = obj.top(k)\n# obj.reset(player_id)",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Swift",
+                    "langSlug": "swift",
+                    "code": "\nclass Leaderboard {\n\n    init() {\n        \n    }\n    \n    func addScore(_ playerId: Int, _ score: Int) {\n        \n    }\n    \n    func top(_ K: Int) -> Int {\n        \n    }\n    \n    func reset(_ playerId: Int) {\n        \n    }\n}\n\n/**\n * Your Leaderboard object will be instantiated and called as such:\n * let obj = Leaderboard()\n * obj.addScore(playerId, score)\n * let ret_2: Int = obj.top(K)\n * obj.reset(playerId)\n */",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Go",
+                    "langSlug": "golang",
+                    "code": "type Leaderboard struct {\n    \n}\n\n\nfunc Constructor() Leaderboard {\n    \n}\n\n\nfunc (this *Leaderboard) AddScore(playerId int, score int)  {\n    \n}\n\n\nfunc (this *Leaderboard) Top(K int) int {\n    \n}\n\n\nfunc (this *Leaderboard) Reset(playerId int)  {\n    \n}\n\n\n/**\n * Your Leaderboard object will be instantiated and called as such:\n * obj := Constructor();\n * obj.AddScore(playerId,score);\n * param_2 := obj.Top(K);\n * obj.Reset(playerId);\n */",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Scala",
+                    "langSlug": "scala",
+                    "code": "class Leaderboard() {\n\n    def addScore(playerId: Int, score: Int) {\n        \n    }\n\n    def top(K: Int): Int = {\n        \n    }\n\n    def reset(playerId: Int) {\n        \n    }\n\n}\n\n/**\n * Your Leaderboard object will be instantiated and called as such:\n * var obj = new Leaderboard()\n * obj.addScore(playerId,score)\n * var param_2 = obj.top(K)\n * obj.reset(playerId)\n */",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Kotlin",
+                    "langSlug": "kotlin",
+                    "code": "class Leaderboard() {\n\n    fun addScore(playerId: Int, score: Int) {\n        \n    }\n\n    fun top(K: Int): Int {\n        \n    }\n\n    fun reset(playerId: Int) {\n        \n    }\n\n}\n\n/**\n * Your Leaderboard object will be instantiated and called as such:\n * var obj = Leaderboard()\n * obj.addScore(playerId,score)\n * var param_2 = obj.top(K)\n * obj.reset(playerId)\n */",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Rust",
+                    "langSlug": "rust",
+                    "code": "struct Leaderboard {\n\n}\n\n\n/** \n * `&self` means the method takes an immutable reference.\n * If you need a mutable reference, change it to `&mut self` instead.\n */\nimpl Leaderboard {\n\n    fn new() -> Self {\n        \n    }\n    \n    fn add_score(&self, player_id: i32, score: i32) {\n        \n    }\n    \n    fn top(&self, k: i32) -> i32 {\n        \n    }\n    \n    fn reset(&self, player_id: i32) {\n        \n    }\n}\n\n/**\n * Your Leaderboard object will be instantiated and called as such:\n * let obj = Leaderboard::new();\n * obj.add_score(playerId, score);\n * let ret_2: i32 = obj.top(K);\n * obj.reset(playerId);\n */",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "PHP",
+                    "langSlug": "php",
+                    "code": "class Leaderboard {\n    /**\n     */\n    function __construct() {\n        \n    }\n  \n    /**\n     * @param Integer $playerId\n     * @param Integer $score\n     * @return NULL\n     */\n    function addScore($playerId, $score) {\n        \n    }\n  \n    /**\n     * @param Integer $K\n     * @return Integer\n     */\n    function top($K) {\n        \n    }\n  \n    /**\n     * @param Integer $playerId\n     * @return NULL\n     */\n    function reset($playerId) {\n        \n    }\n}\n\n/**\n * Your Leaderboard object will be instantiated and called as such:\n * $obj = Leaderboard();\n * $obj->addScore($playerId, $score);\n * $ret_2 = $obj->top($K);\n * $obj->reset($playerId);\n */",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "TypeScript",
+                    "langSlug": "typescript",
+                    "code": "class Leaderboard {\n    constructor() {\n\n    }\n\n    addScore(playerId: number, score: number): void {\n\n    }\n\n    top(K: number): number {\n\n    }\n\n    reset(playerId: number): void {\n\n    }\n}\n\n/**\n * Your Leaderboard object will be instantiated and called as such:\n * var obj = new Leaderboard()\n * obj.addScore(playerId,score)\n * var param_2 = obj.top(K)\n * obj.reset(playerId)\n */",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Racket",
+                    "langSlug": "racket",
+                    "code": "(define leaderboard%\n  (class object%\n    (super-new)\n    (init-field)\n    \n    ; add-score : exact-integer? exact-integer? -> void?\n    (define/public (add-score playerId score)\n\n      )\n    ; top : exact-integer? -> exact-integer?\n    (define/public (top K)\n\n      )\n    ; reset : exact-integer? -> void?\n    (define/public (reset playerId)\n\n      )))\n\n;; Your leaderboard% object will be instantiated and called as such:\n;; (define obj (new leaderboard%))\n;; (send obj add-score player-id score)\n;; (define param_2 (send obj top k))\n;; (send obj reset player-id)",
+                    "__typename": "CodeSnippetNode"
+                }
+            ],
+            "stats": "{\"totalAccepted\": \"24.3K\", \"totalSubmission\": \"36.3K\", \"totalAcceptedRaw\": 24278, \"totalSubmissionRaw\": 36270, \"acRate\": \"66.9%\"}",
+            "hints": [
+                "What data structure can we use to keep the players' data?",
+                "Keep a map (dictionary) of player scores.",
+                "For each top(K) function call, find the maximum K scores and add them."
+            ],
+            "solution": {
+                "id": "1072",
+                "canSeeDetail": true,
+                "paidOnly": true,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "__typename": "ArticleNode"
+            },
+            "status": null,
+            "sampleTestCase": "[\"Leaderboard\",\"addScore\",\"addScore\",\"addScore\",\"addScore\",\"addScore\",\"top\",\"reset\",\"reset\",\"addScore\",\"top\"]\n[[],[1,73],[2,56],[3,39],[4,51],[5,4],[1],[1],[2],[2,51],[3]]",
+            "metaData": "{\r\n    \"classname\": \"Leaderboard\",\r\n    \"maxbytesperline\": 200000,\r\n    \"constructor\": {\r\n        \"params\": []\r\n    },\r\n    \"methods\": [\r\n        {\r\n            \"name\" : \"addScore\",\r\n            \"params\": [\r\n                {\r\n                    \"type\": \"integer\",\r\n                    \"name\": \"playerId\"\r\n                },\r\n                {\r\n                    \"type\": \"integer\",\r\n                    \"name\": \"score\"\r\n                }\r\n            ],\r\n            \"return\": {\r\n                \"type\": \"void\"\r\n            }\r\n        },\r\n        {\r\n            \"name\" : \"top\",\r\n            \"params\": [\r\n                {\r\n                    \"type\": \"integer\",\r\n                    \"name\": \"K\"\r\n                }\r\n            ],\r\n            \"return\": {\r\n                \"type\": \"integer\"\r\n            }\r\n        },\r\n        {\r\n            \"name\" : \"reset\",\r\n            \"params\": [\r\n                {\r\n                    \"type\": \"integer\",\r\n                    \"name\": \"playerId\"\r\n                }\r\n            ],\r\n            \"return\": {\r\n                \"type\": \"void\"\r\n            }\r\n        }\r\n    ],\r\n    \"systemdesign\": true,\r\n    \"params\": [\r\n        {\r\n            \"name\": \"inputs\",\r\n            \"type\": \"integer[]\"\r\n        },\r\n        {\r\n            \"name\": \"inputs\",\r\n            \"type\": \"integer[]\"\r\n        }\r\n    ],\r\n    \"return\": {\r\n        \"type\": \"list<String>\",\r\n        \"dealloc\": true\r\n    }\r\n}",
+            "judgerAvailable": true,
+            "judgeType": "large",
+            "mysqlSchemas": [],
+            "enableRunCode": true,
+            "enableTestMode": false,
+            "enableDebugger": true,
+            "envInfo": "{\"cpp\": [\"C++\", \"<p>Compiled with <code> clang 11 </code> using the latest C++ 17 standard.</p>\\r\\n\\r\\n<p>Your code is compiled with level two optimization (<code>-O2</code>). <a href=\\\"https://github.com/google/sanitizers/wiki/AddressSanitizer\\\" target=\\\"_blank\\\">AddressSanitizer</a> is also enabled to help detect out-of-bounds and use-after-free bugs.</p>\\r\\n\\r\\n<p>Most standard library headers are already included automatically for your convenience.</p>\"], \"java\": [\"Java\", \"<p><code>Java SE 13</code>.</p>\\r\\n\\r\\n<p>Most standard library headers are already included automatically for your convenience.</p>\\r\\n<p>Includes <code>Pair</code> class from https://docs.oracle.com/javase/8/javafx/api/javafx/util/Pair.html.</p>\"], \"python\": [\"Python\", \"<p><code>Python 2.7.12</code>.</p>\\r\\n\\r\\n<p>Most libraries are already imported automatically for your convenience, such as <a href=\\\"https://docs.python.org/2/library/array.html\\\" target=\\\"_blank\\\">array</a>, <a href=\\\"https://docs.python.org/2/library/bisect.html\\\" target=\\\"_blank\\\">bisect</a>, <a href=\\\"https://docs.python.org/2/library/collections.html\\\" target=\\\"_blank\\\">collections</a>. If you need more libraries, you can import it yourself.</p>\\r\\n\\r\\n<p>For Map/TreeMap data structure, you may use <a href=\\\"http://www.grantjenks.com/docs/sortedcontainers/\\\" target=\\\"_blank\\\">sortedcontainers</a> library.</p>\\r\\n\\r\\n<p>Note that Python 2.7 <a href=\\\"https://www.python.org/dev/peps/pep-0373/\\\" target=\\\"_blank\\\">will not be maintained past 2020</a>. For the latest Python, please choose Python3 instead.</p>\"], \"c\": [\"C\", \"<p>Compiled with <code>gcc 8.2</code> using the gnu99 standard.</p>\\r\\n\\r\\n<p>Your code is compiled with level one optimization (<code>-O1</code>). <a href=\\\"https://github.com/google/sanitizers/wiki/AddressSanitizer\\\" target=\\\"_blank\\\">AddressSanitizer</a> is also enabled to help detect out-of-bounds and use-after-free bugs.</p>\\r\\n\\r\\n<p>Most standard library headers are already included automatically for your convenience.</p>\\r\\n\\r\\n<p>For hash table operations, you may use <a href=\\\"https://troydhanson.github.io/uthash/\\\" target=\\\"_blank\\\">uthash</a>. \\\"uthash.h\\\" is included by default. Below are some examples:</p>\\r\\n\\r\\n<p><b>1. Adding an item to a hash.</b>\\r\\n<pre>\\r\\nstruct hash_entry {\\r\\n    int id;            /* we'll use this field as the key */\\r\\n    char name[10];\\r\\n    UT_hash_handle hh; /* makes this structure hashable */\\r\\n};\\r\\n\\r\\nstruct hash_entry *users = NULL;\\r\\n\\r\\nvoid add_user(struct hash_entry *s) {\\r\\n    HASH_ADD_INT(users, id, s);\\r\\n}\\r\\n</pre>\\r\\n</p>\\r\\n\\r\\n<p><b>2. Looking up an item in a hash:</b>\\r\\n<pre>\\r\\nstruct hash_entry *find_user(int user_id) {\\r\\n    struct hash_entry *s;\\r\\n    HASH_FIND_INT(users, &user_id, s);\\r\\n    return s;\\r\\n}\\r\\n</pre>\\r\\n</p>\\r\\n\\r\\n<p><b>3. Deleting an item in a hash:</b>\\r\\n<pre>\\r\\nvoid delete_user(struct hash_entry *user) {\\r\\n    HASH_DEL(users, user);  \\r\\n}\\r\\n</pre>\\r\\n</p>\"], \"csharp\": [\"C#\", \"<p><a href=\\\"https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-8\\\" target=\\\"_blank\\\">C# 8.0 </a></p>\\r\\n\\r\\n<p>Your code is compiled with debug flag enabled (<code>/debug</code>).</p>\"], \"javascript\": [\"JavaScript\", \"<p><code>Node.js 14.8.0</code>.</p>\\r\\n\\r\\n<p>Your code is run with <code>--harmony</code> flag, enabling <a href=\\\"http://node.green/\\\" target=\\\"_blank\\\">new ES6 features</a>.</p>\\r\\n\\r\\n<p><a href=\\\"https://lodash.com\\\" target=\\\"_blank\\\">lodash.js</a> library is included by default.</p>\\r\\n\\r\\n<p>For Priority Queue / Queue data structures, you may use <a href=\\\"https://github.com/datastructures-js/priority-queue\\\" target=\\\"_blank\\\">datastructures-js/priority-queue</a> and <a href=\\\"https://github.com/datastructures-js/queue\\\" target=\\\"_blank\\\">datastructures-js/queue</a>.</p>\"], \"ruby\": [\"Ruby\", \"<p><code>Ruby 2.7.1</code></p>\\r\\n\\r\\n<p>Some common data structure implementations are provided in the Algorithms module: https://www.rubydoc.info/github/kanwei/algorithms/Algorithms</p>\"], \"swift\": [\"Swift\", \"<p><code>Swift 5.3</code>.</p>\"], \"golang\": [\"Go\", \"<p><code>Go 1.16.2</code>.</p>\\r\\n\\r\\n<p>Support <a href=\\\"https://godoc.org/github.com/emirpasic/gods\\\" target=\\\"_blank\\\">https://godoc.org/github.com/emirpasic/gods</a> library.</p>\"], \"python3\": [\"Python3\", \"<p><code>Python 3.9</code>.</p>\\r\\n\\r\\n<p>Most libraries are already imported automatically for your convenience, such as <a href=\\\"https://docs.python.org/3/library/array.html\\\" target=\\\"_blank\\\">array</a>, <a href=\\\"https://docs.python.org/3/library/bisect.html\\\" target=\\\"_blank\\\">bisect</a>, <a href=\\\"https://docs.python.org/3/library/collections.html\\\" target=\\\"_blank\\\">collections</a>. If you need more libraries, you can import it yourself.</p>\\r\\n\\r\\n<p>For Map/TreeMap data structure, you may use <a href=\\\"http://www.grantjenks.com/docs/sortedcontainers/\\\" target=\\\"_blank\\\">sortedcontainers</a> library.</p>\"], \"scala\": [\"Scala\", \"<p><code>Scala 2.13</code>.</p>\"], \"kotlin\": [\"Kotlin\", \"<p><code>Kotlin 1.3.10</code>.</p>\"], \"rust\": [\"Rust\", \"<p><code>Rust 1.45.2</code></p>\\r\\n\\r\\n<p>Supports <a href=\\\"https://crates.io/crates/rand\\\" target=\\\"_blank\\\">rand</a>\\u00a0from crates.io</p>\"], \"php\": [\"PHP\", \"<p><code>PHP 7.2</code>.</p>\\r\\n<p>With bcmath module</p>\"], \"typescript\": [\"Typescript\", \"<p><code>Node.js 14.8.0</code>.</p>\\r\\n\\r\\n<p>Your code is run with <code>--harmony</code> flag, enabling <a href=\\\"http://node.green/\\\" target=\\\"_blank\\\">new ES2020 features</a>.</p>\\r\\n\\r\\n<p><a href=\\\"https://lodash.com\\\" target=\\\"_blank\\\">lodash.js</a> library is included by default.</p>\"], \"racket\": [\"Racket\", \"<p>Run with <code>Racket 8.0</code>.</p>\"]}",
+            "libraryUrl": null,
+            "adminUrl": null,
+            "__typename": "QuestionNode"
+        }
+    }
+}

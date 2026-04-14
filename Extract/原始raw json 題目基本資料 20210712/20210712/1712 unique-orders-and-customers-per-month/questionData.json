@@ -1,0 +1,80 @@
+{
+    "data": {
+        "question": {
+            "questionId": "1712",
+            "questionFrontendId": "1565",
+            "boundTopicId": null,
+            "title": "Unique Orders and Customers Per Month",
+            "titleSlug": "unique-orders-and-customers-per-month",
+            "content": "<p>Table: <code>Orders</code></p>\n\n<pre>\n+---------------+---------+\n| Column Name   | Type    |\n+---------------+---------+\n| order_id      | int     |\n| order_date    | date    |\n| customer_id   | int     |\n| invoice       | int     |\n+---------------+---------+\norder_id is the primary key for this table.\nThis table contains information about the orders made by customer_id.\n</pre>\n\n<p>&nbsp;</p>\n\n<p>Write an SQL query to find the number of <strong>unique orders</strong> and the number of <strong>unique customers</strong> with invoices <strong>&gt; $20</strong> for each <strong>different month</strong>.</p>\n\n<p>Return the result table sorted in <strong>any order</strong>.</p>\n\n<p>The query result format is in the following example:</p>\n\n<pre>\n<code>Orders</code>\n+----------+------------+-------------+------------+\n| order_id | order_date | customer_id | invoice    |\n+----------+------------+-------------+------------+\n| 1        | 2020-09-15 | 1           | 30         |\n| 2        | 2020-09-17 | 2           | 90         |\n| 3        | 2020-10-06 | 3           | 20         |\n| 4        | 2020-10-20 | 3           | 21         |\n| 5        | 2020-11-10 | 1           | 10         |\n| 6        | 2020-11-21 | 2           | 15         |\n| 7        | 2020-12-01 | 4           | 55         |\n| 8        | 2020-12-03 | 4           | 77         |\n| 9        | 2021-01-07 | 3           | 31         |\n| 10       | 2021-01-15 | 2           | 20         |\n+----------+------------+-------------+------------+\n\nResult table:\n+---------+-------------+----------------+\n| month   | order_count | customer_count |\n+---------+-------------+----------------+\n| 2020-09 | 2           | 2              |\n| 2020-10 | 1           | 1              |\n| 2020-12 | 2           | 1              |\n| 2021-01 | 1           | 1              |\n+---------+-------------+----------------+\nIn September 2020 we have two orders from 2 different customers with invoices &gt; $20.\nIn October 2020 we have two orders from 1 customer, and only one of the two orders has invoice &gt; $20.\nIn November 2020 we have two orders from 2 different customers but invoices &lt; $20, so we don&#39;t include that month.\nIn December 2020 we have two orders from 1 customer both with invoices &gt; $20.\nIn January 2021 we have two orders from 2 different customers, but only one of them with invoice &gt; $20.\n</pre>\n",
+            "translatedTitle": null,
+            "translatedContent": null,
+            "isPaidOnly": true,
+            "difficulty": "Easy",
+            "likes": 38,
+            "dislikes": 15,
+            "isLiked": null,
+            "similarQuestions": "[]",
+            "exampleTestcases": "{\"headers\":{\"Orders\":[\"order_id\",\"order_date\",\"customer_id\",\"invoice\"]},\"rows\":{\"Orders\":[[1,\"2020-09-15\",1,30],[2,\"2020-09-17\",2,90],[3,\"2020-10-06\",3,20],[4,\"2020-10-20\",3,21],[5,\"2020-11-10\",1,10],[6,\"2020-11-21\",2,15],[7,\"2020-12-01\",4,55],[8,\"2020-12-03\",4,77],[9,\"2021-01-07\",3,31],[10,\"2021-01-15\",2,20]]}}",
+            "contributors": [],
+            "topicTags": [
+                {
+                    "name": "Database",
+                    "slug": "database",
+                    "translatedName": null,
+                    "__typename": "TopicTagNode"
+                }
+            ],
+            "companyTagStats": "{\"3\": [{\"taggedByAdmin\": true, \"name\": \"Whole Foods Market\", \"slug\": \"whole-foods-market\", \"timesEncountered\": 0}], \"1\": [], \"2\": []}",
+            "codeSnippets": [
+                {
+                    "lang": "MySQL",
+                    "langSlug": "mysql",
+                    "code": "# Write your MySQL query statement below\n",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "MS SQL Server",
+                    "langSlug": "mssql",
+                    "code": "/* Write your T-SQL query statement below */\n",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Oracle",
+                    "langSlug": "oraclesql",
+                    "code": "/* Write your PL/SQL query statement below */\n",
+                    "__typename": "CodeSnippetNode"
+                }
+            ],
+            "stats": "{\"totalAccepted\": \"9.3K\", \"totalSubmission\": \"11.2K\", \"totalAcceptedRaw\": 9274, \"totalSubmissionRaw\": 11180, \"acRate\": \"83.0%\"}",
+            "hints": [],
+            "solution": null,
+            "status": null,
+            "sampleTestCase": "{\"headers\":{\"Orders\":[\"order_id\",\"order_date\",\"customer_id\",\"invoice\"]},\"rows\":{\"Orders\":[[1,\"2020-09-15\",1,30],[2,\"2020-09-17\",2,90],[3,\"2020-10-06\",3,20],[4,\"2020-10-20\",3,21],[5,\"2020-11-10\",1,10],[6,\"2020-11-21\",2,15],[7,\"2020-12-01\",4,55],[8,\"2020-12-03\",4,77],[9,\"2021-01-07\",3,31],[10,\"2021-01-15\",2,20]]}}",
+            "metaData": "{\n  \"mysql\": [\n    \"Create table If Not Exists Orders (order_id int, order_date date, customer_id int, invoice int)\"\n  ],\n  \"mssql\": [\n    \"Create table Orders (order_id int, order_date date, customer_id int, invoice int)\"\n  ],\n  \"oraclesql\": [\n    \"Create table Orders (order_id int, order_date date, customer_id int, invoice int)\",\n    \"ALTER SESSION SET nls_date_format='YYYY-MM-DD'\"\n  ],\n  \"database\": true\n}",
+            "judgerAvailable": true,
+            "judgeType": "large",
+            "mysqlSchemas": [
+                "Create table If Not Exists Orders (order_id int, order_date date, customer_id int, invoice int)",
+                "Truncate table Orders",
+                "insert into Orders (order_id, order_date, customer_id, invoice) values ('1', '2020-09-15', '1', '30')",
+                "insert into Orders (order_id, order_date, customer_id, invoice) values ('2', '2020-09-17', '2', '90')",
+                "insert into Orders (order_id, order_date, customer_id, invoice) values ('3', '2020-10-06', '3', '20')",
+                "insert into Orders (order_id, order_date, customer_id, invoice) values ('4', '2020-10-20', '3', '21')",
+                "insert into Orders (order_id, order_date, customer_id, invoice) values ('5', '2020-11-10', '1', '10')",
+                "insert into Orders (order_id, order_date, customer_id, invoice) values ('6', '2020-11-21', '2', '15')",
+                "insert into Orders (order_id, order_date, customer_id, invoice) values ('7', '2020-12-01', '4', '55')",
+                "insert into Orders (order_id, order_date, customer_id, invoice) values ('8', '2020-12-03', '4', '77')",
+                "insert into Orders (order_id, order_date, customer_id, invoice) values ('9', '2021-01-07', '3', '31')",
+                "insert into Orders (order_id, order_date, customer_id, invoice) values ('10', '2021-01-15', '2', '20')"
+            ],
+            "enableRunCode": true,
+            "enableTestMode": false,
+            "enableDebugger": false,
+            "envInfo": "{\"mysql\": [\"MySQL\", \"<p><code>MySQL 8.0</code>.</p>\"], \"mssql\": [\"MS SQL Server\", \"<p><code>mssql server 2019</code>.</p>\"], \"oraclesql\": [\"Oracle\", \"<p><code>Oracle Sql 11.2</code>.</p>\"]}",
+            "libraryUrl": null,
+            "adminUrl": null,
+            "__typename": "QuestionNode"
+        }
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "527",
+            "article": "{\"id\": 344, \"url\": \"/articles/word-abbreviation/\", \"topicId\": 127693}",
+            "solution": {
+                "id": "344",
+                "content": "[TOC]\n\n#### Approach #1: Greedy [Accepted]\n\n**Intuition**\n\nLet's choose the shortest abbreviation for each word.  Then, while we have duplicates, we'll increase the length of all duplicates.\n\n**Algorithm**\n\nFor example, let's say we have `\"aabaaa\", \"aacaaa\", \"aacdaa\"`, then we start with `\"a4a\", \"a4a\", \"a4a\"`.  Since these are duplicated, we lengthen them to `\"aa3a\", \"aa3a\", \"aa3a\"`.  They are still duplicated, so we lengthen them to `\"aab2a\", \"aac2a\", \"aac2a\"`.  The last two are still duplicated, so we lengthen them to `\"aacaaa\", \"aacdaa\"`.\n\nThroughout this process, we were tracking an index `prefix[i]` which told us up to what index to take the prefix to.  For example, `prefix[i] = 2` means to take a prefix of `word[0], word[1], word[2]`.\n\n<iframe src=\"https://leetcode.com/playground/4A56cMbF/shared\" frameBorder=\"0\" width=\"100%\" height=\"500\" name=\"4A56cMbF\"></iframe>\n\n**Complexity Analysis**\n\n* Time Complexity: $$O(C^2)$$ where $$C$$ is the number of characters across all words in the given array.\n\n* Space Complexity: $$O(C)$$.\n\n---\n#### Approach #2: Group + Least Common Prefix [Accepted]\n\n**Intuition and Algorithm**\n\nTwo words are only eligible to have the same abbreviation if they have the same first letter, last letter, and length.  Let's group each word based on these properties, and then sort out the conflicts.\n\nIn each group `G`, if a word `W` has a longest common prefix `P` with any other word `X` in `G`, then our abbreviation must contain a prefix of more than `|P|` characters.  The longest common prefixes must occur with words adjacent to `W` (in lexicographical order), so we can just sort `G` and look at the adjacent words.\n\n<iframe src=\"https://leetcode.com/playground/SUrAuMyC/shared\" frameBorder=\"0\" width=\"100%\" height=\"500\" name=\"SUrAuMyC\"></iframe>\n\n**Complexity Analysis**\n\n* Time Complexity: $$O(C \\log C)$$ where $$C$$ is the number of characters across all words in the given array.  The complexity is dominated by the sorting step.\n\n* Space Complexity: $$O(C)$$.\n\n---\n#### Approach #3: Group + Trie [Accepted]\n\n**Intuition and Algorithm**\n\nAs in *Approach #1*, let's group words based on length, first letter, and last letter, and discuss when words in a group do not share a longest common prefix.\n\nPut the words of a group into a trie (prefix tree), and count at each node (representing some prefix `P`) the number of words with prefix `P`.  If the count is 1, we know the prefix is unique.\n\n<iframe src=\"https://leetcode.com/playground/DvpehjMe/shared\" frameBorder=\"0\" width=\"100%\" height=\"500\" name=\"DvpehjMe\"></iframe>\n\n**Complexity Analysis**\n\n* Time Complexity: $$O(C)$$ where $$C$$ is the number of characters across all words in the given array.\n\n* Space Complexity: $$O(C)$$.",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": true,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "339",
+                    "count": 22,
+                    "average": 4.454,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

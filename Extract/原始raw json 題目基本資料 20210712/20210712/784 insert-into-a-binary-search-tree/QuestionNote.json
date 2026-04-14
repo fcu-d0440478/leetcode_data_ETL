@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "784",
+            "article": "{\"id\": 720, \"url\": \"/articles/insert-into-a-bst/\", \"topicId\": 280962}",
+            "solution": {
+                "id": "720",
+                "content": "[TOC]\n\n## Solution\n\n--- \n\n#### Intuition\n\nOne of the huge BST advantages is a [search](https://leetcode.com/problems/search-in-a-binary-search-tree/) \nfor _arbitrary_ element in $$\\mathcal{O}(\\log N)$$ time.\nHere we'll see that the insert time is $$\\mathcal{O}(\\log N)$$, too, in the average case. \n\nThe problem solution is very simple - one could always insert new node as a child of the leaf.\nTo define which leaf to use, one could follow the standard BST logic :\n\n- If `val > node.val` - go to insert into the right subtree.\n\n- If `val < node.val` - go to insert into the left subtree.\n\n![bla](../Figures/701/insert.png)\n\n<br />\n<br />\n\n\n---\n#### Approach 1: Recursion\n\nThe recursion implementation is very straightforward :\n\n- If `root` is null - return `TreeNode(val)`.\n\n- If `val > root.val` - go to insert into the right subtree.\n\n- If `val < root.val` - go to insert into the left subtree.\n\n- Return `root`.\n\n!?!../Documents/701_LIS.json:1000,420!?!\n\n<iframe src=\"https://leetcode.com/playground/c8NnS28B/shared\" frameBorder=\"0\" width=\"100%\" height=\"259\" name=\"c8NnS28B\"></iframe>\n\n**Complexity Analysis**\n\n* Time complexity : $$\\mathcal{O}(H)$$, where $$H$$ is a tree height. That results in\n$$\\mathcal{O}(\\log N)$$ in the average case, and $$\\mathcal{O}(N)$$ in the worst case. \n\n    Let's compute time complexity with the help of \n    [master theorem](https://en.wikipedia.org/wiki/Master_theorem_(analysis_of_algorithms)) \n    $$T(N) = aT\\left(\\frac{N}{b}\\right) + \\Theta(N^d)$$.\n    The equation represents dividing the problem \n    up into $$a$$ subproblems of size $$\\frac{N}{b}$$ in $$\\Theta(N^d)$$ time. \n    Here at step there is only one subproblem `a = 1`, its size \n    is a half of the initial problem `b = 2`, \n    and all this happens in a constant time `d = 0`, as for\n    the binary search.\n    That means that $$\\log_b{a} = d$$ and hence we're dealing with \n    [case 2](https://en.wikipedia.org/wiki/Master_theorem_(analysis_of_algorithms)#Case_2_example)\n    that results in $$\\mathcal{O}(n^{\\log_b{a}} \\log^{d + 1} N)$$\n    = $$\\mathcal{O}(\\log N)$$ time complexity.\n    \n* Space complexity : $$\\mathcal{O}(H)$$ to keep the recursion stack,\ni.e. $$\\mathcal{O}(\\log N)$$ in the average case, \nand $$\\mathcal{O}(N)$$ in the worst case.\n\n<br />\n<br />\n\n\n---\n#### Approach 2: Iteration\n\nThe recursion above could be converted into the iteration\n\n<iframe src=\"https://leetcode.com/playground/bEboLTtL/shared\" frameBorder=\"0\" width=\"100%\" height=\"497\" name=\"bEboLTtL\"></iframe>\n\n**Complexity Analysis**\n\n* Time complexity : $$\\mathcal{O}(H)$$, where $$H$$ is a tree height. That results in\n$$\\mathcal{O}(\\log N)$$ in the average case, and $$\\mathcal{O}(N)$$ in the worst case. \n\n    Let's compute time complexity with the help of \n    [master theorem](https://en.wikipedia.org/wiki/Master_theorem_(analysis_of_algorithms)) \n    $$T(N) = aT\\left(\\frac{N}{b}\\right) + \\Theta(N^d)$$.\n    The equation represents dividing the problem \n    up into $$a$$ subproblems of size $$\\frac{N}{b}$$ in $$\\Theta(N^d)$$ time. \n    Here at step there is only one subproblem `a = 1`, its size \n    is a half of the initial problem `b = 2`, \n    and all this happens in a constant time `d = 0`, as for\n    the binary search.\n    That means that $$\\log_b{a} = d$$ and hence we're dealing with \n    [case 2](https://en.wikipedia.org/wiki/Master_theorem_(analysis_of_algorithms)#Case_2_example)\n    that results in $$\\mathcal{O}(n^{\\log_b{a}} \\log^{d + 1} N)$$\n    = $$\\mathcal{O}(\\log N)$$ time complexity.\n    \n* Space complexity : $$\\mathcal{O}(1)$$ since it's a constant space\nsolution.",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": true,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "705",
+                    "count": 26,
+                    "average": 4.538,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "648",
+            "article": "{\"id\": 324, \"url\": \"/articles/replace-words/\", \"topicId\": 127492}",
+            "solution": {
+                "id": "324",
+                "content": "[TOC]\n\n---\n#### Approach #1: Prefix Hash [Accepted]\n\n**Intuition**\n\nFor each word in the sentence, we'll look at successive prefixes and see if we saw them before.\n\n**Algorithm**\n\nStore all the `roots` in a *Set* structure.  Then for each word, look at successive prefixes of that word.  If you find a prefix that is a root, replace the word with that prefix.  Otherwise, the prefix will just be the word itself, and we should add that to the final sentence answer.\n\n<iframe src=\"https://leetcode.com/playground/uDtKQPAS/shared\" frameBorder=\"0\" width=\"100%\" height=\"361\" name=\"uDtKQPAS\"></iframe>\n\n**Complexity Analysis**\n\n* Time Complexity: $$O(\\sum w_i^2)$$ where $$w_i$$ is the length of the $$i$$-th word.  We might check every prefix, the $$i$$-th of which is $$O(w_i^2)$$ work.\n\n* Space Complexity: $$O(N)$$ where $$N$$ is the length of our sentence; the space used by `rootset`.\n\n---\n#### Approach #2: Trie [Accepted]\n\n**Intuition and Algorithm**\n\nPut all the roots in a trie (prefix tree).  Then for any query word, we can find the smallest root that was a prefix in linear time.\n\n<iframe src=\"https://leetcode.com/playground/HziYkFQF/shared\" frameBorder=\"0\" width=\"100%\" height=\"500\" name=\"HziYkFQF\"></iframe>\n\n**Complexity Analysis**\n\n* Time Complexity: $$O(N)$$ where $$N$$ is the length of the `sentence`.  Every query of a word is in linear time.\n\n* Space Complexity: $$O(N)$$, the size of our trie.",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "319",
+                    "count": 26,
+                    "average": 3.385,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

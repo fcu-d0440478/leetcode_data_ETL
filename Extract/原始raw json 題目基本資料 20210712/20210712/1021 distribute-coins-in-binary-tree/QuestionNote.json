@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "1021",
+            "article": "{\"id\": 668, \"url\": \"/articles/distribute-coins-in-binary-tree/\", \"topicId\": 221846}",
+            "solution": {
+                "id": "668",
+                "content": "[TOC]\n\n## Solution\n---\n#### Approach 1: Depth First Search\n\n**Intuition**\n\nIf the leaf of a tree has 0 coins (an excess of -1 from what it needs), then we should push a coin from its parent onto the leaf.  If it has say, 4 coins (an excess of 3), then we should push 3 coins off the leaf.  In total, the number of moves from that leaf to or from its parent is `excess = Math.abs(num_coins - 1)`.  Afterwards, we never have to consider this leaf again in the rest of our calculation.\n\n**Algorithm**\n\nWe can use the above fact to build our answer.  Let `dfs(node)` be the *excess* number of coins in the subtree at or below this `node`: namely, the number of coins in the subtree, minus the number of nodes in the subtree.  Then, the number of moves we make from this node to and from its children is `abs(dfs(node.left)) + abs(dfs(node.right))`.  After, we have an excess of `node.val + dfs(node.left) + dfs(node.right) - 1` coins at this node.\n\n<iframe src=\"https://leetcode.com/playground/BQYPwrpr/shared\" frameBorder=\"0\" width=\"100%\" height=\"327\" name=\"BQYPwrpr\"></iframe>\n\n**Complexity Analysis**\n\n* Time Complexity:  $$O(N)$$, where $$N$$ is the number of nodes in the tree.\n\n* Space Complexity:  $$O(H)$$, where $$H$$ is the height of the tree.\n<br />\n<br />",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "654",
+                    "count": 148,
+                    "average": 3.21,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

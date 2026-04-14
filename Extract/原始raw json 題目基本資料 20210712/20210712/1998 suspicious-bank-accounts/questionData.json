@@ -1,0 +1,84 @@
+{
+    "data": {
+        "question": {
+            "questionId": "1998",
+            "questionFrontendId": "1843",
+            "boundTopicId": null,
+            "title": "Suspicious Bank Accounts",
+            "titleSlug": "suspicious-bank-accounts",
+            "content": "<p>Table: <code>Accounts</code></p>\r\n\r\n<pre>\r\n+----------------+------+\r\n| Column Name    | Type |\r\n+----------------+------+\r\n| account_id     | int  |\r\n| max_income     | int  |\r\n+----------------+------+\r\naccount_id is the primary key for this table.\r\nEach row contains information about the maximum monthly income for one bank account.\r\n</pre>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Table: <code>Transactions</code></p>\r\n\r\n<pre>\r\n+----------------+----------+\r\n| Column Name    | Type     |\r\n+----------------+----------+\r\n| transaction_id | int      |\r\n| account_id     | int      |\r\n| type           | ENUM     |\r\n| amount         | int      |\r\n| day            | datetime |\r\n+----------------+----------+\r\ntransaction_id is the primary key for this table.\r\nEach row contains information about one transaction.\r\ntype is ENUM (&#39;Creditor&#39;,&#39;Debtor&#39;) where &#39;Creditor&#39; means the user deposited money into their account and &#39;Debtor&#39; means the user withdrew money from their account.\r\namount is the amount of money depositied/withdrawn during the transaction.\r\n</pre>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Write an SQL query to report the IDs of all&nbsp;<strong>suspicious</strong> bank accounts.</p>\r\n\r\n<p>A bank account is <strong>suspicious</strong> if the <strong>total income</strong> exceeds the <code>max_income</code> for this account for <strong>two or more consecutive</strong> months. The <strong>total income</strong> of an account in some month is the sum of all its deposits in that month (i.e., transactions of the type <code>&#39;Creditor&#39;</code>).</p>\r\n\r\n<p>Return the result table <strong>in ascending order by </strong><code>transaction_id</code>.</p>\r\n\r\n<p>The query result format is in the following example:</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<pre>\r\nAccounts table:\r\n+------------+------------+\r\n| account_id | max_income |\r\n+------------+------------+\r\n| 3          | 21000      |\r\n| 4          | 10400      |\r\n+------------+------------+\r\n\r\nTransactions table:\r\n+----------------+------------+----------+--------+---------------------+\r\n| transaction_id | account_id | type     | amount | day                 |\r\n+----------------+------------+----------+--------+---------------------+\r\n| 2              | 3          | Creditor | 107100 | 2021-06-02 11:38:14 |\r\n| 4              | 4          | Creditor | 10400  | 2021-06-20 12:39:18 |\r\n| 11             | 4          | Debtor   | 58800  | 2021-07-23 12:41:55 |\r\n| 1              | 4          | Creditor | 49300  | 2021-05-03 16:11:04 |\r\n| 15             | 3          | Debtor   | 75500  | 2021-05-23 14:40:20 |\r\n| 10             | 3          | Creditor | 102100 | 2021-06-15 10:37:16 |\r\n| 14             | 4          | Creditor | 56300  | 2021-07-21 12:12:25 |\r\n| 19             | 4          | Debtor   | 101100 | 2021-05-09 15:21:49 |\r\n| 8              | 3          | Creditor | 64900  | 2021-07-26 15:09:56 |\r\n| 7              | 3          | Creditor | 90900  | 2021-06-14 11:23:07 |\r\n+----------------+------------+----------+--------+---------------------+\r\n\r\nResult table:\r\n+------------+\r\n| account_id |\r\n+------------+\r\n| 3          |\r\n+------------+\r\n\r\nFor account 3:\r\n- In 6-2021, the user had an income of 107100 + 102100 + 90900 = 300100.\r\n- In 7-2021, the user had an income of 64900.\r\nWe can see that the income exceeded the max income of 21000 for two consecutive months, so we include 3 in the result table.\r\n\r\nFor account 4:\r\n- In 5-2021, the user had an income of 49300.\r\n- In 6-2021, the user had an income of 10400.\r\n- In 7-2021, the user had an income of 56300.\r\nWe can see that the income exceeded the max income in May and July, but not in June. Since the account did not exceed the max income for two consecutive months, we do not include it in the result table.\r\n</pre>",
+            "translatedTitle": null,
+            "translatedContent": null,
+            "isPaidOnly": true,
+            "difficulty": "Medium",
+            "likes": 23,
+            "dislikes": 12,
+            "isLiked": null,
+            "similarQuestions": "[]",
+            "exampleTestcases": null,
+            "contributors": [],
+            "topicTags": [
+                {
+                    "name": "Database",
+                    "slug": "database",
+                    "translatedName": null,
+                    "__typename": "TopicTagNode"
+                }
+            ],
+            "companyTagStats": "{\"3\": [{\"taggedByAdmin\": true, \"name\": \"JPMorgan\", \"slug\": \"jpmorgan\", \"timesEncountered\": 0}], \"1\": [], \"2\": []}",
+            "codeSnippets": [
+                {
+                    "lang": "MySQL",
+                    "langSlug": "mysql",
+                    "code": "# Write your MySQL query statement below\n",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "MS SQL Server",
+                    "langSlug": "mssql",
+                    "code": "/* Write your T-SQL query statement below */\n",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Oracle",
+                    "langSlug": "oraclesql",
+                    "code": "/* Write your PL/SQL query statement below */\n",
+                    "__typename": "CodeSnippetNode"
+                }
+            ],
+            "stats": "{\"totalAccepted\": \"1.8K\", \"totalSubmission\": \"3.4K\", \"totalAcceptedRaw\": 1758, \"totalSubmissionRaw\": 3384, \"acRate\": \"52.0%\"}",
+            "hints": [],
+            "solution": null,
+            "status": null,
+            "sampleTestCase": "{\"headers\": {\"Accounts\": [\"account_id\", \"max_income\"], \"Transactions\": [\"transaction_id\", \"account_id\", \"type\", \"amount\", \"day\"]}, \"rows\": {\"Accounts\": [[3, 21000], [4, 10400]], \"Transactions\": [[2, 3, \"Creditor\", 107100, \"2021-06-02 11:38:14\"], [4, 4, \"Creditor\", 10400, \"2021-06-20 12:39:18\"], [11, 4, \"Debtor\", 58800, \"2021-07-23 12:41:55\"], [1, 4, \"Creditor\", 49300, \"2021-05-03 16:11:04\"], [15, 3, \"Debtor\", 75500, \"2021-05-23 14:40:20\"], [10, 3, \"Creditor\", 102100, \"2021-06-15 10:37:16\"], [14, 4, \"Creditor\", 56300, \"2021-07-21 12:12:25\"], [19, 4, \"Debtor\", 101100, \"2021-05-09 15:21:49\"], [8, 3, \"Creditor\", 64900, \"2021-07-26 15:09:56\"], [7, 3, \"Creditor\", 90900, \"2021-06-14 11:23:07\"]]}}",
+            "metaData": "{\n  \"mysql\": [\n    \"Create table If Not Exists Accounts (account_id int, max_income int)\",\n    \"Create table If Not Exists Transactions (transaction_id int, account_id int, type ENUM('creditor', 'debtor'), amount int, day datetime)\"\n  ],\n  \"mssql\": [\n    \"Create table Accounts (account_id int, max_income int)\",\n    \"Create table Transactions (transaction_id int, account_id int, type varchar(8) NOT NULL CHECK (type IN('creditor', 'debtor')), amount int, day datetime)\"\n  ],\n  \"oraclesql\": [\n    \"Create table Accounts (account_id int, max_income int)\",\n    \"Create table Transactions (transaction_id int, account_id int, type varchar(8) NOT NULL CHECK (type IN('Creditor', 'Debtor')), amount int, day date)\",\n    \"ALTER SESSION SET nls_date_format='YYYY-MM-DD HH24:MI:SS'\"\n  ],\n  \"database\": true\n}",
+            "judgerAvailable": true,
+            "judgeType": "large",
+            "mysqlSchemas": [
+                "Create table If Not Exists Accounts (account_id int, max_income int)",
+                "Create table If Not Exists Transactions (transaction_id int, account_id int, type ENUM('creditor', 'debtor'), amount int, day datetime)",
+                "Truncate table Accounts",
+                "insert into Accounts (account_id, max_income) values ('3', '21000')",
+                "insert into Accounts (account_id, max_income) values ('4', '10400')",
+                "Truncate table Transactions",
+                "insert into Transactions (transaction_id, account_id, type, amount, day) values ('2', '3', 'Creditor', '107100', '2021-06-02 11:38:14')",
+                "insert into Transactions (transaction_id, account_id, type, amount, day) values ('4', '4', 'Creditor', '10400', '2021-06-20 12:39:18')",
+                "insert into Transactions (transaction_id, account_id, type, amount, day) values ('11', '4', 'Debtor', '58800', '2021-07-23 12:41:55')",
+                "insert into Transactions (transaction_id, account_id, type, amount, day) values ('1', '4', 'Creditor', '49300', '2021-05-03 16:11:04')",
+                "insert into Transactions (transaction_id, account_id, type, amount, day) values ('15', '3', 'Debtor', '75500', '2021-05-23 14:40:20')",
+                "insert into Transactions (transaction_id, account_id, type, amount, day) values ('10', '3', 'Creditor', '102100', '2021-06-15 10:37:16')",
+                "insert into Transactions (transaction_id, account_id, type, amount, day) values ('14', '4', 'Creditor', '56300', '2021-07-21 12:12:25')",
+                "insert into Transactions (transaction_id, account_id, type, amount, day) values ('19', '4', 'Debtor', '101100', '2021-05-09 15:21:49')",
+                "insert into Transactions (transaction_id, account_id, type, amount, day) values ('8', '3', 'Creditor', '64900', '2021-07-26 15:09:56')",
+                "insert into Transactions (transaction_id, account_id, type, amount, day) values ('7', '3', 'Creditor', '90900', '2021-06-14 11:23:07')"
+            ],
+            "enableRunCode": true,
+            "enableTestMode": false,
+            "enableDebugger": false,
+            "envInfo": "{\"mysql\": [\"MySQL\", \"<p><code>MySQL 8.0</code>.</p>\"], \"mssql\": [\"MS SQL Server\", \"<p><code>mssql server 2019</code>.</p>\"], \"oraclesql\": [\"Oracle\", \"<p><code>Oracle Sql 11.2</code>.</p>\"]}",
+            "libraryUrl": null,
+            "adminUrl": null,
+            "__typename": "QuestionNode"
+        }
+    }
+}

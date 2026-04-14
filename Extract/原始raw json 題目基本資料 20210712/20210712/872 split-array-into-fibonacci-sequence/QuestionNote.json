@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "872",
+            "article": "{\"id\": 475, \"url\": \"/articles/split-array-into-fibonacci-sequence/\", \"topicId\": 133883}",
+            "solution": {
+                "id": "475",
+                "content": "[TOC]\n\n---\n#### Approach #1: Brute Force [Accepted]\n\n**Intuition**\n\nThe first two elements of the array uniquely determine the rest of the sequence.\n\n**Algorithm**\n\nFor each of the first two elements, assuming they have no leading zero, let's iterate through the rest of the string.  At each stage, we expect a number less than or equal to `2^31 - 1` that starts with the sum of the two previous numbers.\n\n<iframe src=\"https://leetcode.com/playground/p4xZdPbF/shared\" frameBorder=\"0\" width=\"100%\" height=\"500\" name=\"p4xZdPbF\"></iframe>\n\n**Complexity Analysis**\n\n* Time Complexity:  $$O(N^2)$$, where $$N$$ is the length of `S`, and with the requirement that the values of the answer are $$O(1)$$ in length.\n\n* Space Complexity:  $$O(N)$$.",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "470",
+                    "count": 26,
+                    "average": 3.654,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

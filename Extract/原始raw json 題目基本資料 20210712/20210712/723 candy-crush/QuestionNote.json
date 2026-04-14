@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "723",
+            "article": "{\"id\": 283, \"url\": \"/articles/candy-crush/\", \"topicId\": 127579}",
+            "solution": {
+                "id": "283",
+                "content": "[TOC]\n\n#### Approach #1: Ad-Hoc \n\n**Intuition**\n\nWe need to simply perform the algorithm as described.  It consists of two major steps: a crush step, and a gravity step.  We work through each step individually.\n\n**Algorithm**\n\n*Crushing Step*\n\nWhen crushing, one difficulty is that we might accidentally crush candy that is part of another row.  For example, if the board is:\n\n```python\n123\n145\n111\n```\nand we crush the vertical row of `1`s early, we may not see there was also a horizontal row.\n\nTo remedy this, we should flag candy that should be crushed first.  We could use an auxillary `toCrush` boolean array, or we could mark it directly on the board by making the entry negative (ie. `board[i][j] = -Math.abs(board[i][j])`)\n\nAs for how to scan the board, we have two approaches.  Let's call a *line* any row or column of the board.  \n\nFor each line, we could use a sliding window (or `itertools.groupby` in Python) to find contiguous segments of the same character.  If any of these segments have length 3 or more, we should flag them.\n\nAlternatively, for each line, we could look at each width-3 slice of the line: if they are all the same, then we should flag those 3.\n\nAfter, we can crush the candy by setting all flagged `board` cells to zero.\n\n*Gravity Step*\n\nFor each column, we want all the candy to go to the bottom.  One way is to iterate through and keep a stack of the (uncrushed) candy, popping and setting as we iterate through the column in reverse order.\n\nAlternatively, we could use a sliding window approach, maintaining a read and write head.  As the read head iterates through the column in reverse order, when the read head sees candy, the write head will write it down and move one place.  Then, the write head will write zeroes to the remainder of the column.\n\nWe showcase the simplest approaches to these steps in the solutions below.\n\n<iframe src=\"https://leetcode.com/playground/WktHXw9m/shared\" frameBorder=\"0\" width=\"100%\" height=\"500\" name=\"WktHXw9m\"></iframe>\n**Complexity Analysis**\n\n* Time Complexity: $$O((R*C)^2)$$, where $$R, C$$ is the number of rows and columns in `board`.  We need $$O(R*C)$$ to scan the board, and we might crush only 3 candies repeatedly.\n\n* Space Complexity: $$O(1)$$ additional complexity, as we edit the board in place.",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": true,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "280",
+                    "count": 50,
+                    "average": 3.84,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

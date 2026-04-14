@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "250",
+            "article": "{\"id\": 703, \"url\": \"/articles/count-univalue-subtrees/\", \"topicId\": 246194}",
+            "solution": {
+                "id": "703",
+                "content": "[TOC]\n\n## Solution\n\n---\n\n#### Approach 1: Depth First Search\n\n**Intuition**\n\nGiven a node in our tree, we know that it is a univalue subtree if it meets one of the following criteria:\n\n   1. The node has no children (base case)\n   2. All of the node's children are univalue subtrees, and the node and its children all have the same value\n\nWith this in mind we can perform a depth-first-search on our tree, and test if each subtree is uni-value in a bottom-up manner.\n\n\n!?!../Documents/250_Count_Univalue_SUbtrees.json:1000,518!?!\n\n**Algorithm**\n\n<iframe src=\"https://leetcode.com/playground/dN5bMg4Z/shared\" frameBorder=\"0\" width=\"100%\" height=\"500\" name=\"dN5bMg4Z\"></iframe>\n\n**Complexity Analysis**\n\n* Time complexity : $$O(n)$$.\n\n    Due to the algorithm's depth-first nature, the `is_uni` status of each node is computed from bottom up. When given the `is_uni` status of its children, computing the `is_uni` status of a node occurs in $$O(1)$$\n\n    This gives us $$O(1)$$ time for each node in the tree with $$O(N)$$ total nodes for a time complexity of $$O(N)$$\n\n* Space complexity : $$O(H)$$, with `H` being the height of the tree. Each recursive call of `is_uni` requires stack space. Since we fully process `is_uni(node.left)` before calling `is_uni(node.right)`, the recursive stack is bound by the longest path from the root to a leaf - in other words the height of the tree.\n<br />\n<br />\n\n---\n\n#### Approach 2: Depth First Search - Pass Parent Values\n\n**Algorithm**\n\nWe can use the intuition from approach one to further simplify our algorithm. Instead of checking if a node has no children, we treat `null` values as univalue subtrees that we don't add to the count.\n\nIn this manner, if a node has a `null` child, that child is automatically considered to a valid subtree, which results in the algorithm only checking if other children are invalid.\n\nFinally, the helper function checks if the current node is a valid subtree but returns a boolean indicating if it is a valid component for its parent. This is done by passing in the value of the parent node.\n\n\n<iframe src=\"https://leetcode.com/playground/KkbW68w3/shared\" frameBorder=\"0\" width=\"100%\" height=\"446\" name=\"KkbW68w3\"></iframe>\n\nThe above code is a commented version of the code [here](https://leetcode.com/problems/count-univalue-subtrees/discuss/67602/Java-11-lines-added), originally written by [Stefan Pochmann](https://leetcode.com/stefanpochmann/).\n\n\n**Complexity Analysis**\n\n* Time complexity : $$O(N)$$. Same as the previous approach.\n\n* Space complexity : $$O(H)$$, with `H` being the height of the tree. Same as the previous approach.\n\n<br />\n\n---\n\nWritten by [@alwinpeng](https://leetcode.com/alwinpeng/).",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "688",
+                    "count": 45,
+                    "average": 3.822,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

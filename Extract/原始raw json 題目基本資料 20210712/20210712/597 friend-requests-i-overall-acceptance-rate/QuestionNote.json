@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "597",
+            "article": "{\"id\": 161, \"url\": \"/articles/friend-requests-i-overall-acceptance-rate/\", \"topicId\": 127740}",
+            "solution": {
+                "id": "161",
+                "content": "[TOC]\n\n## Solution\n---\n#### Approach: Using `ROUND` and `IFNULL` [Accepted]\n\n**Intuition**\n\nCount the accepted requests and then divides it by the number of all requests.\n\n**Algorithm**\n\nTo get the distinct number of accepted requests, we can query from the **RequestAccepted** table.\n```sql\nSELECT COUNT(*) FROM (SELECT DISTINCT requester_id, accepter_id FROM RequestAccepted) AS A;\n```\n\nWith the same technique, we can have the total number of requests from the **FriendRequest** table:\n```sql\nSELECT COUNT(*) FROM (SELECT DISTINCT sender_id, send_to_id FROM FriendRequest) AS B;\n```\n\nAt last, divide these two numbers and [`ROUND`](https://dev.mysql.com/doc/refman/5.7/en/mathematical-functions.html#function_round) it to a scale of 2 decimal places to get the required acceptance rate.\n\nWait! The divisor (total number of requests) could be '0' if the table **friend_request** is empty. So, we have to utilize  [`IFNULL`](https://dev.mysql.com/doc/refman/5.7/en/control-flow-functions.html#function_ifnull) to deal with this special case.\n\n**MySQL**\n\n```sql\nSELECT\nROUND(\n    IFNULL(\n    (SELECT COUNT(*) FROM (SELECT DISTINCT requester_id, accepter_id FROM RequestAccepted) AS A)\n    /\n    (SELECT COUNT(*) FROM (SELECT DISTINCT sender_id, send_to_id FROM FriendRequest) AS B),\n    0)\n, 2) AS accept_rate;\n```",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "156",
+                    "count": 24,
+                    "average": 4.292,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

@@ -1,0 +1,87 @@
+{
+    "data": {
+        "question": {
+            "questionId": "1551",
+            "questionFrontendId": "1421",
+            "boundTopicId": null,
+            "title": "NPV Queries",
+            "titleSlug": "npv-queries",
+            "content": "<p>Table: <code>NPV</code></p>\r\n\r\n<pre>\r\n+---------------+---------+\r\n| Column Name   | Type    |\r\n+---------------+---------+\r\n| id            | int     |\r\n| year          | int     |\r\n| npv           | int     |\r\n+---------------+---------+\r\n(id, year) is the primary key of this table.\r\nThe table has information about the id and the year of each inventory and the corresponding net present value.\r\n</pre>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Table: <code>Queries</code></p>\r\n\r\n<pre>\r\n+---------------+---------+\r\n| Column Name   | Type    |\r\n+---------------+---------+\r\n| id            | int     |\r\n| year          | int     |\r\n+---------------+---------+\r\n(id, year) is the primary key of this table.\r\nThe table has information about the id and the year of each inventory query.\r\n</pre>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Write an SQL query to find the npv of all each query of queries table.</p>\r\n\r\n<p>Return the result table in any order.</p>\r\n\r\n<p>The query result format is in the following example:</p>\r\n\r\n<pre>\r\nNPV table:\r\n+------+--------+--------+\r\n| id   | year   | npv    |\r\n+------+--------+--------+\r\n| 1    | 2018   | 100    |\r\n| 7    | 2020   | 30     |\r\n| 13   | 2019   | 40     |\r\n| 1    | 2019   | 113    |\r\n| 2    | 2008   | 121    |\r\n| 3    | 2009   | 12     |\r\n| 11   | 2020   | 99     |\r\n| 7    | 2019   | 0      |\r\n+------+--------+--------+\r\n\r\nQueries table:\r\n+------+--------+\r\n| id   | year   |\r\n+------+--------+\r\n| 1    | 2019   |\r\n| 2    | 2008   |\r\n| 3    | 2009   |\r\n| 7    | 2018   |\r\n| 7    | 2019   |\r\n| 7    | 2020   |\r\n| 13   | 2019   |\r\n+------+--------+\r\n\r\nResult table:\r\n+------+--------+--------+\r\n| id   | year   | npv    |\r\n+------+--------+--------+\r\n| 1    | 2019   | 113    |\r\n| 2    | 2008   | 121    |\r\n| 3    | 2009   | 12     |\r\n| 7    | 2018   | 0      |\r\n| 7    | 2019   | 0      |\r\n| 7    | 2020   | 30     |\r\n| 13   | 2019   | 40     |\r\n+------+--------+--------+\r\n\r\nThe npv value of (7, 2018) is not present in the NPV table, we consider it 0.\r\nThe npv values of all other queries can be found in the NPV table.\r\n</pre>",
+            "translatedTitle": null,
+            "translatedContent": null,
+            "isPaidOnly": true,
+            "difficulty": "Medium",
+            "likes": 14,
+            "dislikes": 197,
+            "isLiked": null,
+            "similarQuestions": "[]",
+            "exampleTestcases": "{\"headers\":{\"NPV\":[\"id\",\"year\",\"npv\"],\"Queries\":[\"id\",\"year\"]},\"rows\":{\"NPV\":[[1,2018,100],[7,2020,30],[13,2019,40],[1,2019,113],[2,2008,121],[3,2009,21],[11,2020,99],[7,2019,0]],\"Queries\":[[1,2019],[2,2008],[3,2009],[7,2018],[7,2019],[7,2020],[13,2019]]}}\r",
+            "contributors": [],
+            "topicTags": [
+                {
+                    "name": "Database",
+                    "slug": "database",
+                    "translatedName": null,
+                    "__typename": "TopicTagNode"
+                }
+            ],
+            "companyTagStats": "{\"3\": [{\"taggedByAdmin\": true, \"name\": \"Amazon\", \"slug\": \"amazon\", \"timesEncountered\": 0}], \"1\": [], \"2\": []}",
+            "codeSnippets": [
+                {
+                    "lang": "MySQL",
+                    "langSlug": "mysql",
+                    "code": "# Write your MySQL query statement below\n",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "MS SQL Server",
+                    "langSlug": "mssql",
+                    "code": "/* Write your T-SQL query statement below */\n",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Oracle",
+                    "langSlug": "oraclesql",
+                    "code": "/* Write your PL/SQL query statement below */\n",
+                    "__typename": "CodeSnippetNode"
+                }
+            ],
+            "stats": "{\"totalAccepted\": \"10.1K\", \"totalSubmission\": \"12.3K\", \"totalAcceptedRaw\": 10124, \"totalSubmissionRaw\": 12308, \"acRate\": \"82.3%\"}",
+            "hints": [],
+            "solution": null,
+            "status": null,
+            "sampleTestCase": "{\"headers\":{\"NPV\":[\"id\",\"year\",\"npv\"],\"Queries\":[\"id\",\"year\"]},\"rows\":{\"NPV\":[[1,2018,100],[7,2020,30],[13,2019,40],[1,2019,113],[2,2008,121],[3,2009,21],[11,2020,99],[7,2019,0]],\"Queries\":[[1,2019],[2,2008],[3,2009],[7,2018],[7,2019],[7,2020],[13,2019]]}}\r",
+            "metaData": "{\n  \"mysql\": [\n    \"Create Table If Not Exists NPV (id int, year int, npv int)\",\n    \"Create Table If Not Exists Queries (id int, year int)\"\n  ],\n  \"mssql\": [\n    \"Create Table NPV (id int, year int, npv int)\",\n    \"Create Table Queries (id int, year int)\"\n  ],\n  \"oraclesql\": [\n    \"Create Table NPV (id int, year int, npv int)\",\n    \"Create Table Queries (id int, year int)\"\n  ],\n  \"database\": true\n}",
+            "judgerAvailable": true,
+            "judgeType": "large",
+            "mysqlSchemas": [
+                "Create Table If Not Exists NPV (id int, year int, npv int)",
+                "Create Table If Not Exists Queries (id int, year int)",
+                "Truncate table NPV",
+                "insert into NPV (id, year, npv) values ('1', '2018', '100')",
+                "insert into NPV (id, year, npv) values ('7', '2020', '30')",
+                "insert into NPV (id, year, npv) values ('13', '2019', '40')",
+                "insert into NPV (id, year, npv) values ('1', '2019', '113')",
+                "insert into NPV (id, year, npv) values ('2', '2008', '121')",
+                "insert into NPV (id, year, npv) values ('3', '2009', '21')",
+                "insert into NPV (id, year, npv) values ('11', '2020', '99')",
+                "insert into NPV (id, year, npv) values ('7', '2019', '0')",
+                "Truncate table Queries",
+                "insert into Queries (id, year) values ('1', '2019')",
+                "insert into Queries (id, year) values ('2', '2008')",
+                "insert into Queries (id, year) values ('3', '2009')",
+                "insert into Queries (id, year) values ('7', '2018')",
+                "insert into Queries (id, year) values ('7', '2019')",
+                "insert into Queries (id, year) values ('7', '2020')",
+                "insert into Queries (id, year) values ('13', '2019')"
+            ],
+            "enableRunCode": true,
+            "enableTestMode": false,
+            "enableDebugger": false,
+            "envInfo": "{\"mysql\": [\"MySQL\", \"<p><code>MySQL 8.0</code>.</p>\"], \"mssql\": [\"MS SQL Server\", \"<p><code>mssql server 2019</code>.</p>\"], \"oraclesql\": [\"Oracle\", \"<p><code>Oracle Sql 11.2</code>.</p>\"]}",
+            "libraryUrl": null,
+            "adminUrl": null,
+            "__typename": "QuestionNode"
+        }
+    }
+}

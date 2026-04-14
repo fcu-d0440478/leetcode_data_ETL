@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "1098",
+            "article": "{\"id\": 1116, \"url\": \"/articles/largest-unique-number/\", \"topicId\": 1102562}",
+            "solution": {
+                "id": "1116",
+                "content": "[TOC]\n\n## Solution\n\n---\n\n#### Approach 1: By Sorting\n\n**Intuition**\n\nLet's group similar numbers together so that we can easily determine whether a number is unique or not by checking its neighbors. One way to achieve that is by sorting. Since the problem asks for the largest such number, let's sort the numbers first and start from the largest to smallest. We want to check the first and second number in each group to see if they are the same.  In other words we are checking if the size of the group is 1. We can achieve this by iterating from the beginning to the end linearly.\n\n**Algorithm**\n\n1. Sort the array of numbers.\n2. Iterate from largest to smallest number. Starting with the first number, we want to check if the next number is the same as the current number. If not, we return that number.\n3. If it is, we will find the start of the next group by skipping all numbers equal to the current number.\n4. We repeat this for all the numbers in the sequence, if we exhaust all numbers we return `-1`.\n\n<iframe src=\"https://leetcode.com/playground/nQ8PgaYB/shared\" frameBorder=\"0\" width=\"100%\" height=\"361\" name=\"nQ8PgaYB\"></iframe>\n\n**Complexity Analysis**\n\n* Time complexity: $$O(n \\log n) $$. Where $$n$$ is the length of array. This is due to sorting.\n\n* Space complexity: $$O(1)$$. The algorithm does not use any extra space.\n\n\n<br />\n\n---\n\n#### Approach 2: Using Hash Map\n\n**Intuition**\n\nIn the previous approach we saw that grouping the values by sorting allows us to easily find if a number appears more than once, but there is a faster way of grouping the numbers. Instead of sorting we can use a hash map to store the count of each number. Since hash maps are unordered we need to traverse it to find out if the count of the current element is 1. If it is, it is a candidate for our answer. We take the maximum of these candidates and return it as the result.\n\n**Algorithm**\n\n1. Create a hash map that stores the count of each number.\n2. Iterate over the sequence of numbers and populate the map with the count of each number.\n3. Initialize the `result` as `-1`.\n4. Iterate over the map and if the `value` of the `key` is `1`, set `result` equal to the maximum of `key` or the current `result`.\n5. Return the result at the end.\n\n<iframe src=\"https://leetcode.com/playground/66zpWYDe/shared\" frameBorder=\"0\" width=\"100%\" height=\"361\" name=\"66zpWYDe\"></iframe>\n\n**Complexity Analysis**\n\n* Time complexity: $$O(n)$$. Where $$n$$ is the length of the array. This is because we must insert every number into the hash map and insertion into a hash map is a constant time operation.\n\n* Space complexity: $$O(n)$$. In the worst case we will need to store all of the numbers with a frequency of `1`.\n\n</br>",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": true,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "1077",
+                    "count": 9,
+                    "average": 3.778,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

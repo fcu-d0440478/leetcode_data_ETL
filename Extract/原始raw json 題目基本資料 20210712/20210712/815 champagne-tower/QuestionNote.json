@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "815",
+            "article": "{\"id\": 431, \"url\": \"/articles/champagne-tower/\", \"topicId\": 127430}",
+            "solution": {
+                "id": "431",
+                "content": "[TOC]\n\n---\n#### Approach #1: Simulation [Accepted]\n\n**Intuition**\n\nInstead of keeping track of how much champagne should end up in a glass, keep track of the total amount of champagne that flows through a glass.  For example, if `poured = 10` cups are poured at the top, then the total flow-through of the top glass is `10`; the total flow-through of each glass in the second row is `4.5`, and so on.\n\n**Algorithm**\n\nIn general, if a glass has flow-through `X`, then `Q = (X - 1.0) / 2.0` quantity of champagne will equally flow left and right.  We can simulate the entire pour for 100 rows of glasses.  A glass at `(r, c)` will have excess champagne flow towards `(r+1, c)` and `(r+1, c+1)`.\n\n<iframe src=\"https://leetcode.com/playground/tBELYQkj/shared\" frameBorder=\"0\" width=\"100%\" height=\"344\" name=\"tBELYQkj\"></iframe>\n\n**Complexity Analysis**\n\n* Time Complexity:  $$O(R^2)$$, where $$R$$ is the number of rows.  As this is fixed, we can consider this complexity to be $$O(1)$$.\n\n* Space Complexity: $$O(R^2)$$, or $$O(1)$$ by the reasoning above.",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "426",
+                    "count": 39,
+                    "average": 4.59,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

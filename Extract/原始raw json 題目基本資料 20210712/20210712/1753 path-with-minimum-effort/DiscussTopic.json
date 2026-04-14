@@ -1,0 +1,43 @@
+{
+    "data": {
+        "topic": {
+            "id": 908981,
+            "viewCount": 21545,
+            "topLevelCommentCount": 46,
+            "subscribed": false,
+            "title": "Path With Minimum Effort",
+            "pinned": false,
+            "tags": [],
+            "hideFromTrending": false,
+            "post": {
+                "id": 1655517,
+                "voteCount": 0,
+                "voteStatus": 0,
+                "content": "",
+                "updationDate": 1603597350,
+                "creationDate": 1603597350,
+                "status": null,
+                "isHidden": null,
+                "coinRewards": [],
+                "author": {
+                    "isDiscussAdmin": false,
+                    "isDiscussStaff": false,
+                    "username": "Shradha1994",
+                    "nameColor": null,
+                    "activeBadge": null,
+                    "profile": {
+                        "userAvatar": "https://assets.leetcode.com/users/shradha1994/avatar_1595749595.png",
+                        "reputation": 1008,
+                        "__typename": "UserProfileNode"
+                    },
+                    "isActive": true,
+                    "__typename": "UserNode"
+                },
+                "authorIsModerator": false,
+                "isOwnPost": false,
+                "__typename": "PostNode"
+            },
+            "__typename": "TopicNode"
+        }
+    }
+}

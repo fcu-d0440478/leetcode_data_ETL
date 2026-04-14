@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "197",
+            "article": "{\"id\": 211, \"url\": \"/articles/rising-temperature/\", \"topicId\": 127655}",
+            "solution": {
+                "id": "211",
+                "content": "[TOC]\n\n## Solution\n---\n#### Approach: Using `JOIN` and `DATEDIFF()` clause [Accepted]\n\n**Algorithm**\n\nMySQL uses [DATEDIFF](https://dev.mysql.com/doc/refman/5.7/en/date-and-time-functions.html#function_datediff) to compare two date type values.\n\nSo, we can get the result by joining this table **weather** with itself and use this `DATEDIFF()` function.\n\n**MySQL**\n\n```sql\nSELECT\n    weather.id AS 'Id'\nFROM\n    weather\n        JOIN\n    weather w ON DATEDIFF(weather.recordDate, w.recordDate) = 1\n        AND weather.Temperature > w.Temperature\n;\n```",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "206",
+                    "count": 49,
+                    "average": 3.694,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

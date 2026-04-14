@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "1548",
+            "article": "{\"id\": 1084, \"url\": \"/articles/check-if-all-ones-are-at-least-k-places-away/\", \"topicId\": 975428}",
+            "solution": {
+                "id": "1084",
+                "content": "[TOC]\r\n\r\n## Solution\r\n\r\n---\r\n\r\n#### Approach 1: One Pass + Count\r\n\r\nLet's first implement a pretty straightforward one-pass idea:\r\nto iterate over the array and count the number of zeros in-between the \r\n\"neighbor\" `1`s. \r\nEach two neighbor `1`s should have at least $$k$$ zeros in-between.\r\nIf it's not the case, return false.\r\n\r\n![simple](../Figures/1437/one_pass2.png) \r\n*Fig 1. One pass: count the number of zeros in-between the \"neighbour\" `1`s.*\r\n{:align=\"center\"}\r\n\r\n**Implementation**\r\n\r\n<iframe src=\"https://leetcode.com/playground/7XaYZGBz/shared\" frameBorder=\"0\" width=\"100%\" height=\"497\" name=\"7XaYZGBz\"></iframe>\r\n\r\n**Complexity Analysis**\r\n\r\n* Time complexity: $$\\mathcal{O}(N)$$ to parse an array of $$N$$ elements.\r\n    \r\n* Space complexity: $$\\mathcal{O}(1)$$ since we don't allocate any \r\nadditional data structures here. \r\n<br />\r\n<br />\r\n\r\n\r\n---\r\n#### Approach 2: Bit Manipulation\r\n\r\nThis approach would be more suitable for the Facebook variation \r\nof this problem, when the input is not a binary array but an integer.\r\n\r\nIn this situation, the problem could be solved with the bitwise trick to \r\nremove trailing zeros in the binary representation:\r\n\r\n<iframe src=\"https://leetcode.com/playground/AHgm7bM3/shared\" frameBorder=\"0\" width=\"100%\" height=\"123\" name=\"AHgm7bM3\"></iframe>\r\n\r\n![simple](../Figures/1437/bitwise.png) \r\n*Fig 2. Approach 2: use bit manipulations to work with the binary \r\nrepresentation of the integer.*\r\n{:align=\"center\"}\r\n\r\n**Algorithm**\r\n\r\n- Convert binary array into integer `x`. Note that this conversion always works \r\nfine in Python where there is no limit on the value of integers.\r\nIn Java, the usage of this approach is limited by the integer capacity.\r\n\r\n- Consider the base cases: return true if `x == 0` or `k == 0`.\r\n\r\n- Remove trailing zeros in the binary representation of `x`. That ensures that\r\nthe last bit of `x` is 1-bit.\r\n\r\n- While `x` is greater than `1`:\r\n\r\n    - Remove trailing 1-bit with the right shift: `x >>= 1`.\r\n    \r\n    - Remove trailing zeros one by one, and count them using counter `count`. \r\n    The number of zeros in-between 1-bits should be greater or equal to `k`.\r\n    Hence, return false if `count < k`.\r\n    \r\n- We're here because all 1-bits are separated by more than `k` zeros. \r\nReturn true.\r\n\r\n**Implementation**\r\n\r\n<iframe src=\"https://leetcode.com/playground/dd7xfqSU/shared\" frameBorder=\"0\" width=\"100%\" height=\"500\" name=\"dd7xfqSU\"></iframe>\r\n\r\n**Complexity Analysis**\r\n\r\n* Time complexity: $$\\mathcal{O}(N)$$ to parse an array of $$N$$ elements.\r\n    \r\n* Space complexity: $$\\mathcal{O}(1)$$ since we don't allocate any \r\nadditional data structures here.\r\n<br />\r\n<br />\r\n\r\n\r\n---",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "1039",
+                    "count": 13,
+                    "average": 4.923,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

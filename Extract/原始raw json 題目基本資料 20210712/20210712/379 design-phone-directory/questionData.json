@@ -1,0 +1,169 @@
+{
+    "data": {
+        "question": {
+            "questionId": "379",
+            "questionFrontendId": "379",
+            "boundTopicId": null,
+            "title": "Design Phone Directory",
+            "titleSlug": "design-phone-directory",
+            "content": "<p>Design a phone directory that initially has <code>maxNumbers</code> empty slots that can store numbers. The directory should store numbers, check if a certain slot is empty or not, and empty a given slot.</p>\n\n<p>Implement the <code>PhoneDirectory</code> class:</p>\n\n<ul>\n\t<li><code>PhoneDirectory(int maxNumbers)</code> Initializes the phone directory with the number of available slots <code>maxNumbers</code>.</li>\n\t<li><code>int get()</code> Provides a number that is not assigned to anyone. Returns <code>-1</code> if no number is available.</li>\n\t<li><code>bool check(int number)</code> Returns <code>true</code> if the slot <code>number</code> is available and <code>false</code> otherwise.</li>\n\t<li><code>void release(int number)</code> Recycles or releases the slot <code>number</code>.</li>\n</ul>\n\n<p>&nbsp;</p>\n<p><strong>Example 1:</strong></p>\n\n<pre>\n<strong>Input</strong>\n[&quot;PhoneDirectory&quot;, &quot;get&quot;, &quot;get&quot;, &quot;check&quot;, &quot;get&quot;, &quot;check&quot;, &quot;release&quot;, &quot;check&quot;]\n[[3], [], [], [2], [], [2], [2], [2]]\n<strong>Output</strong>\n[null, 0, 1, true, 2, false, null, true]\n\n<strong>Explanation</strong>\nPhoneDirectory phoneDirectory = new PhoneDirectory(3);\nphoneDirectory.get();      // It can return any available phone number. Here we assume it returns 0.\nphoneDirectory.get();      // Assume it returns 1.\nphoneDirectory.check(2);   // The number 2 is available, so return true.\nphoneDirectory.get();      // It returns 2, the only number that is left.\nphoneDirectory.check(2);   // The number 2 is no longer available, so return false.\nphoneDirectory.release(2); // Release number 2 back to the pool.\nphoneDirectory.check(2);   // Number 2 is available again, return true.\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= maxNumbers &lt;= 10<sup>4</sup></code></li>\n\t<li><code>0 &lt;= number &lt; maxNumbers</code></li>\n\t<li>At most <code>2 * 10<sup>4</sup></code> calls will be made to <code>get</code>, <code>check</code>, and <code>release</code>.</li>\n</ul>\n",
+            "translatedTitle": null,
+            "translatedContent": null,
+            "isPaidOnly": true,
+            "difficulty": "Medium",
+            "likes": 244,
+            "dislikes": 343,
+            "isLiked": null,
+            "similarQuestions": "[{\"title\": \"Seat Reservation Manager\", \"titleSlug\": \"seat-reservation-manager\", \"difficulty\": \"Medium\", \"translatedTitle\": null}]",
+            "exampleTestcases": "[\"PhoneDirectory\",\"get\",\"get\",\"check\",\"get\",\"check\",\"release\",\"check\"]\n[[3],[],[],[2],[],[2],[2],[2]]",
+            "contributors": [],
+            "topicTags": [
+                {
+                    "name": "Array",
+                    "slug": "array",
+                    "translatedName": null,
+                    "__typename": "TopicTagNode"
+                },
+                {
+                    "name": "Hash Table",
+                    "slug": "hash-table",
+                    "translatedName": null,
+                    "__typename": "TopicTagNode"
+                },
+                {
+                    "name": "Linked List",
+                    "slug": "linked-list",
+                    "translatedName": null,
+                    "__typename": "TopicTagNode"
+                },
+                {
+                    "name": "Design",
+                    "slug": "design",
+                    "translatedName": null,
+                    "__typename": "TopicTagNode"
+                },
+                {
+                    "name": "Queue",
+                    "slug": "queue",
+                    "translatedName": null,
+                    "__typename": "TopicTagNode"
+                }
+            ],
+            "companyTagStats": "{\"1\": [{\"taggedByAdmin\": false, \"name\": \"Dropbox\", \"slug\": \"dropbox\", \"timesEncountered\": 4}], \"2\": [{\"taggedByAdmin\": true, \"name\": \"Google\", \"slug\": \"google\", \"timesEncountered\": 4}], \"3\": []}",
+            "codeSnippets": [
+                {
+                    "lang": "C++",
+                    "langSlug": "cpp",
+                    "code": "class PhoneDirectory {\npublic:\n    /** Initialize your data structure here\n        @param maxNumbers - The maximum numbers that can be stored in the phone directory. */\n    PhoneDirectory(int maxNumbers) {\n        \n    }\n    \n    /** Provide a number which is not assigned to anyone.\n        @return - Return an available number. Return -1 if none is available. */\n    int get() {\n        \n    }\n    \n    /** Check if a number is available or not. */\n    bool check(int number) {\n        \n    }\n    \n    /** Recycle or release a number. */\n    void release(int number) {\n        \n    }\n};\n\n/**\n * Your PhoneDirectory object will be instantiated and called as such:\n * PhoneDirectory* obj = new PhoneDirectory(maxNumbers);\n * int param_1 = obj->get();\n * bool param_2 = obj->check(number);\n * obj->release(number);\n */",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Java",
+                    "langSlug": "java",
+                    "code": "class PhoneDirectory {\n\n    /** Initialize your data structure here\n        @param maxNumbers - The maximum numbers that can be stored in the phone directory. */\n    public PhoneDirectory(int maxNumbers) {\n        \n    }\n    \n    /** Provide a number which is not assigned to anyone.\n        @return - Return an available number. Return -1 if none is available. */\n    public int get() {\n        \n    }\n    \n    /** Check if a number is available or not. */\n    public boolean check(int number) {\n        \n    }\n    \n    /** Recycle or release a number. */\n    public void release(int number) {\n        \n    }\n}\n\n/**\n * Your PhoneDirectory object will be instantiated and called as such:\n * PhoneDirectory obj = new PhoneDirectory(maxNumbers);\n * int param_1 = obj.get();\n * boolean param_2 = obj.check(number);\n * obj.release(number);\n */",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Python",
+                    "langSlug": "python",
+                    "code": "class PhoneDirectory(object):\n\n    def __init__(self, maxNumbers):\n        \"\"\"\n        Initialize your data structure here\n        @param maxNumbers - The maximum numbers that can be stored in the phone directory.\n        :type maxNumbers: int\n        \"\"\"\n        \n\n    def get(self):\n        \"\"\"\n        Provide a number which is not assigned to anyone.\n        @return - Return an available number. Return -1 if none is available.\n        :rtype: int\n        \"\"\"\n        \n\n    def check(self, number):\n        \"\"\"\n        Check if a number is available or not.\n        :type number: int\n        :rtype: bool\n        \"\"\"\n        \n\n    def release(self, number):\n        \"\"\"\n        Recycle or release a number.\n        :type number: int\n        :rtype: None\n        \"\"\"\n        \n\n\n# Your PhoneDirectory object will be instantiated and called as such:\n# obj = PhoneDirectory(maxNumbers)\n# param_1 = obj.get()\n# param_2 = obj.check(number)\n# obj.release(number)",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Python3",
+                    "langSlug": "python3",
+                    "code": "class PhoneDirectory:\n\n    def __init__(self, maxNumbers: int):\n        \"\"\"\n        Initialize your data structure here\n        @param maxNumbers - The maximum numbers that can be stored in the phone directory.\n        \"\"\"\n        \n\n    def get(self) -> int:\n        \"\"\"\n        Provide a number which is not assigned to anyone.\n        @return - Return an available number. Return -1 if none is available.\n        \"\"\"\n        \n\n    def check(self, number: int) -> bool:\n        \"\"\"\n        Check if a number is available or not.\n        \"\"\"\n        \n\n    def release(self, number: int) -> None:\n        \"\"\"\n        Recycle or release a number.\n        \"\"\"\n        \n\n\n# Your PhoneDirectory object will be instantiated and called as such:\n# obj = PhoneDirectory(maxNumbers)\n# param_1 = obj.get()\n# param_2 = obj.check(number)\n# obj.release(number)",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "C",
+                    "langSlug": "c",
+                    "code": "\n\n\ntypedef struct {\n    \n} PhoneDirectory;\n\n/** Initialize your data structure here\n        @param maxNumbers - The maximum numbers that can be stored in the phone directory. */\n\nPhoneDirectory* phoneDirectoryCreate(int maxNumbers) {\n    \n}\n\n/** Provide a number which is not assigned to anyone.\n        @return - Return an available number. Return -1 if none is available. */\nint phoneDirectoryGet(PhoneDirectory* obj) {\n  \n}\n\n/** Check if a number is available or not. */\nbool phoneDirectoryCheck(PhoneDirectory* obj, int number) {\n  \n}\n\n/** Recycle or release a number. */\nvoid phoneDirectoryRelease(PhoneDirectory* obj, int number) {\n  \n}\n\nvoid phoneDirectoryFree(PhoneDirectory* obj) {\n    \n}\n\n/**\n * Your PhoneDirectory struct will be instantiated and called as such:\n * PhoneDirectory* obj = phoneDirectoryCreate(maxNumbers);\n * int param_1 = phoneDirectoryGet(obj);\n \n * bool param_2 = phoneDirectoryCheck(obj, number);\n \n * phoneDirectoryRelease(obj, number);\n \n * phoneDirectoryFree(obj);\n*/",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "C#",
+                    "langSlug": "csharp",
+                    "code": "public class PhoneDirectory {\n\n    /** Initialize your data structure here\n        @param maxNumbers - The maximum numbers that can be stored in the phone directory. */\n    public PhoneDirectory(int maxNumbers) {\n        \n    }\n    \n    /** Provide a number which is not assigned to anyone.\n        @return - Return an available number. Return -1 if none is available. */\n    public int Get() {\n        \n    }\n    \n    /** Check if a number is available or not. */\n    public bool Check(int number) {\n        \n    }\n    \n    /** Recycle or release a number. */\n    public void Release(int number) {\n        \n    }\n}\n\n/**\n * Your PhoneDirectory object will be instantiated and called as such:\n * PhoneDirectory obj = new PhoneDirectory(maxNumbers);\n * int param_1 = obj.Get();\n * bool param_2 = obj.Check(number);\n * obj.Release(number);\n */",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "JavaScript",
+                    "langSlug": "javascript",
+                    "code": "/**\n * Initialize your data structure here\n        @param maxNumbers - The maximum numbers that can be stored in the phone directory.\n * @param {number} maxNumbers\n */\nvar PhoneDirectory = function(maxNumbers) {\n    \n};\n\n/**\n * Provide a number which is not assigned to anyone.\n        @return - Return an available number. Return -1 if none is available.\n * @return {number}\n */\nPhoneDirectory.prototype.get = function() {\n    \n};\n\n/**\n * Check if a number is available or not. \n * @param {number} number\n * @return {boolean}\n */\nPhoneDirectory.prototype.check = function(number) {\n    \n};\n\n/**\n * Recycle or release a number. \n * @param {number} number\n * @return {void}\n */\nPhoneDirectory.prototype.release = function(number) {\n    \n};\n\n/** \n * Your PhoneDirectory object will be instantiated and called as such:\n * var obj = new PhoneDirectory(maxNumbers)\n * var param_1 = obj.get()\n * var param_2 = obj.check(number)\n * obj.release(number)\n */",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Ruby",
+                    "langSlug": "ruby",
+                    "code": "class PhoneDirectory\n\n=begin\n    Initialize your data structure here\n        @param maxNumbers - The maximum numbers that can be stored in the phone directory.\n    :type max_numbers: Integer\n=end\n    def initialize(max_numbers)\n        \n    end\n\n\n=begin\n    Provide a number which is not assigned to anyone.\n        @return - Return an available number. Return -1 if none is available.\n    :rtype: Integer\n=end\n    def get()\n        \n    end\n\n\n=begin\n    Check if a number is available or not.\n    :type number: Integer\n    :rtype: Boolean\n=end\n    def check(number)\n        \n    end\n\n\n=begin\n    Recycle or release a number.\n    :type number: Integer\n    :rtype: Void\n=end\n    def release(number)\n        \n    end\n\n\nend\n\n# Your PhoneDirectory object will be instantiated and called as such:\n# obj = PhoneDirectory.new(max_numbers)\n# param_1 = obj.get()\n# param_2 = obj.check(number)\n# obj.release(number)",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Swift",
+                    "langSlug": "swift",
+                    "code": "\nclass PhoneDirectory {\n\n    /** Initialize your data structure here\n        @param maxNumbers - The maximum numbers that can be stored in the phone directory. */\n    init(_ maxNumbers: Int) {\n        \n    }\n    \n    /** Provide a number which is not assigned to anyone.\n        @return - Return an available number. Return -1 if none is available. */\n    func get() -> Int {\n        \n    }\n    \n    /** Check if a number is available or not. */\n    func check(_ number: Int) -> Bool {\n        \n    }\n    \n    /** Recycle or release a number. */\n    func release(_ number: Int) {\n        \n    }\n}\n\n/**\n * Your PhoneDirectory object will be instantiated and called as such:\n * let obj = PhoneDirectory(maxNumbers)\n * let ret_1: Int = obj.get()\n * let ret_2: Bool = obj.check(number)\n * obj.release(number)\n */",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Go",
+                    "langSlug": "golang",
+                    "code": "type PhoneDirectory struct {\n    \n}\n\n\n/** Initialize your data structure here\n        @param maxNumbers - The maximum numbers that can be stored in the phone directory. */\nfunc Constructor(maxNumbers int) PhoneDirectory {\n    \n}\n\n\n/** Provide a number which is not assigned to anyone.\n        @return - Return an available number. Return -1 if none is available. */\nfunc (this *PhoneDirectory) Get() int {\n    \n}\n\n\n/** Check if a number is available or not. */\nfunc (this *PhoneDirectory) Check(number int) bool {\n    \n}\n\n\n/** Recycle or release a number. */\nfunc (this *PhoneDirectory) Release(number int)  {\n    \n}\n\n\n/**\n * Your PhoneDirectory object will be instantiated and called as such:\n * obj := Constructor(maxNumbers);\n * param_1 := obj.Get();\n * param_2 := obj.Check(number);\n * obj.Release(number);\n */",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Scala",
+                    "langSlug": "scala",
+                    "code": "class PhoneDirectory(_maxNumbers: Int) {\n\n    /** Initialize your data structure here\n        @param maxNumbers - The maximum numbers that can be stored in the phone directory. */\n    \n\n    /** Provide a number which is not assigned to anyone.\n        @return - Return an available number. Return -1 if none is available. */\n    def get(): Int = {\n        \n    }\n\n    /** Check if a number is available or not. */\n    def check(number: Int): Boolean = {\n        \n    }\n\n    /** Recycle or release a number. */\n    def release(number: Int) {\n        \n    }\n\n}\n\n/**\n * Your PhoneDirectory object will be instantiated and called as such:\n * var obj = new PhoneDirectory(maxNumbers)\n * var param_1 = obj.get()\n * var param_2 = obj.check(number)\n * obj.release(number)\n */",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Kotlin",
+                    "langSlug": "kotlin",
+                    "code": "class PhoneDirectory(maxNumbers: Int) {\n\n    /** Initialize your data structure here\n        @param maxNumbers - The maximum numbers that can be stored in the phone directory. */\n    \n\n    /** Provide a number which is not assigned to anyone.\n        @return - Return an available number. Return -1 if none is available. */\n    fun get(): Int {\n        \n    }\n\n    /** Check if a number is available or not. */\n    fun check(number: Int): Boolean {\n        \n    }\n\n    /** Recycle or release a number. */\n    fun release(number: Int) {\n        \n    }\n\n}\n\n/**\n * Your PhoneDirectory object will be instantiated and called as such:\n * var obj = PhoneDirectory(maxNumbers)\n * var param_1 = obj.get()\n * var param_2 = obj.check(number)\n * obj.release(number)\n */",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Rust",
+                    "langSlug": "rust",
+                    "code": "struct PhoneDirectory {\n\n}\n\n\n/** \n * `&self` means the method takes an immutable reference.\n * If you need a mutable reference, change it to `&mut self` instead.\n */\nimpl PhoneDirectory {\n\n    /** Initialize your data structure here\n        @param maxNumbers - The maximum numbers that can be stored in the phone directory. */\n    fn new(maxNumbers: i32) -> Self {\n        \n    }\n    \n    /** Provide a number which is not assigned to anyone.\n        @return - Return an available number. Return -1 if none is available. */\n    fn get(&self) -> i32 {\n        \n    }\n    \n    /** Check if a number is available or not. */\n    fn check(&self, number: i32) -> bool {\n        \n    }\n    \n    /** Recycle or release a number. */\n    fn release(&self, number: i32) {\n        \n    }\n}\n\n/**\n * Your PhoneDirectory object will be instantiated and called as such:\n * let obj = PhoneDirectory::new(maxNumbers);\n * let ret_1: i32 = obj.get();\n * let ret_2: bool = obj.check(number);\n * obj.release(number);\n */",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "PHP",
+                    "langSlug": "php",
+                    "code": "class PhoneDirectory {\n    /**\n     * Initialize your data structure here\n        @param maxNumbers - The maximum numbers that can be stored in the phone directory.\n     * @param Integer $maxNumbers\n     */\n    function __construct($maxNumbers) {\n        \n    }\n  \n    /**\n     * Provide a number which is not assigned to anyone.\n        @return - Return an available number. Return -1 if none is available.\n     * @return Integer\n     */\n    function get() {\n        \n    }\n  \n    /**\n     * Check if a number is available or not.\n     * @param Integer $number\n     * @return Boolean\n     */\n    function check($number) {\n        \n    }\n  \n    /**\n     * Recycle or release a number.\n     * @param Integer $number\n     * @return NULL\n     */\n    function release($number) {\n        \n    }\n}\n\n/**\n * Your PhoneDirectory object will be instantiated and called as such:\n * $obj = PhoneDirectory($maxNumbers);\n * $ret_1 = $obj->get();\n * $ret_2 = $obj->check($number);\n * $obj->release($number);\n */",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "TypeScript",
+                    "langSlug": "typescript",
+                    "code": "class PhoneDirectory {\n    constructor(maxNumbers: number) {\n\n    }\n\n    get(): number {\n\n    }\n\n    check(number: number): boolean {\n\n    }\n\n    release(number: number): void {\n\n    }\n}\n\n/**\n * Your PhoneDirectory object will be instantiated and called as such:\n * var obj = new PhoneDirectory(maxNumbers)\n * var param_1 = obj.get()\n * var param_2 = obj.check(number)\n * obj.release(number)\n */",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Racket",
+                    "langSlug": "racket",
+                    "code": "(define phone-directory%\n  (class object%\n    (super-new)\n\n    ; max-numbers : exact-integer?\n    (init-field\n      max-numbers)\n    \n    ; get : -> exact-integer?\n    (define/public (get)\n\n      )\n    ; check : exact-integer? -> boolean?\n    (define/public (check number)\n\n      )\n    ; release : exact-integer? -> void?\n    (define/public (release number)\n\n      )))\n\n;; Your phone-directory% object will be instantiated and called as such:\n;; (define obj (new phone-directory% [maxNumbers maxNumbers]))\n;; (define param_1 (send obj get))\n;; (define param_2 (send obj check number))\n;; (send obj release number)",
+                    "__typename": "CodeSnippetNode"
+                }
+            ],
+            "stats": "{\"totalAccepted\": \"47.5K\", \"totalSubmission\": \"96.7K\", \"totalAcceptedRaw\": 47520, \"totalSubmissionRaw\": 96653, \"acRate\": \"49.2%\"}",
+            "hints": [],
+            "solution": null,
+            "status": null,
+            "sampleTestCase": "[\"PhoneDirectory\",\"get\",\"get\",\"check\",\"get\",\"check\",\"release\",\"check\"]\n[[3],[],[],[2],[],[2],[2],[2]]",
+            "metaData": "{\r\n    \"classname\": \"PhoneDirectory\",\r\n    \"constructor\": {\r\n        \"params\": [\r\n            {\r\n                \"type\": \"integer\",\r\n                \"name\": \"maxNumbers\"\r\n            }\r\n        ],\r\n        \"comment\": \"Initialize your data structure here\\n        @param maxNumbers - The maximum numbers that can be stored in the phone directory.\"\r\n    },\r\n    \"methods\": [\r\n        {\r\n            \"name\" : \"get\",\r\n            \"params\": [\r\n            ],\r\n            \"return\": {\r\n                \"type\": \"integer\"\r\n            },\r\n            \"comment\": \"Provide a number which is not assigned to anyone.\\n        @return - Return an available number. Return -1 if none is available.\"\r\n        },\r\n        {\r\n            \"name\" : \"check\",\r\n            \"params\": [\r\n                {\r\n                    \"type\": \"integer\",\r\n                    \"name\": \"number\"\r\n                }\r\n            ],\r\n            \"return\": {\r\n                \"type\": \"boolean\"\r\n            },\r\n            \"comment\": \"Check if a number is available or not.\"\r\n        },\r\n        {\r\n            \"name\" : \"release\",\r\n            \"params\": [\r\n                {\r\n                    \"type\": \"integer\",\r\n                    \"name\": \"number\"\r\n                }\r\n            ],\r\n            \"return\": {\r\n                \"type\": \"void\"\r\n            },\r\n            \"comment\": \"Recycle or release a number.\"\r\n        }\r\n    ],\r\n    \"systemdesign\": true,\r\n    \"params\": [\r\n        {\r\n            \"name\": \"inputs\",\r\n            \"type\": \"integer[]\"\r\n        },\r\n        {\r\n            \"name\": \"inputs\",\r\n            \"type\": \"integer[]\"\r\n        }\r\n    ],\r\n    \"return\": {\r\n        \"type\": \"list<String>\",\r\n        \"dealloc\": true\r\n    }\r\n}",
+            "judgerAvailable": true,
+            "judgeType": "large",
+            "mysqlSchemas": [],
+            "enableRunCode": true,
+            "enableTestMode": false,
+            "enableDebugger": true,
+            "envInfo": "{\"cpp\": [\"C++\", \"<p>Compiled with <code> clang 11 </code> using the latest C++ 17 standard.</p>\\r\\n\\r\\n<p>Your code is compiled with level two optimization (<code>-O2</code>). <a href=\\\"https://github.com/google/sanitizers/wiki/AddressSanitizer\\\" target=\\\"_blank\\\">AddressSanitizer</a> is also enabled to help detect out-of-bounds and use-after-free bugs.</p>\\r\\n\\r\\n<p>Most standard library headers are already included automatically for your convenience.</p>\"], \"java\": [\"Java\", \"<p><code>Java SE 13</code>.</p>\\r\\n\\r\\n<p>Most standard library headers are already included automatically for your convenience.</p>\\r\\n<p>Includes <code>Pair</code> class from https://docs.oracle.com/javase/8/javafx/api/javafx/util/Pair.html.</p>\"], \"python\": [\"Python\", \"<p><code>Python 2.7.12</code>.</p>\\r\\n\\r\\n<p>Most libraries are already imported automatically for your convenience, such as <a href=\\\"https://docs.python.org/2/library/array.html\\\" target=\\\"_blank\\\">array</a>, <a href=\\\"https://docs.python.org/2/library/bisect.html\\\" target=\\\"_blank\\\">bisect</a>, <a href=\\\"https://docs.python.org/2/library/collections.html\\\" target=\\\"_blank\\\">collections</a>. If you need more libraries, you can import it yourself.</p>\\r\\n\\r\\n<p>For Map/TreeMap data structure, you may use <a href=\\\"http://www.grantjenks.com/docs/sortedcontainers/\\\" target=\\\"_blank\\\">sortedcontainers</a> library.</p>\\r\\n\\r\\n<p>Note that Python 2.7 <a href=\\\"https://www.python.org/dev/peps/pep-0373/\\\" target=\\\"_blank\\\">will not be maintained past 2020</a>. For the latest Python, please choose Python3 instead.</p>\"], \"c\": [\"C\", \"<p>Compiled with <code>gcc 8.2</code> using the gnu99 standard.</p>\\r\\n\\r\\n<p>Your code is compiled with level one optimization (<code>-O1</code>). <a href=\\\"https://github.com/google/sanitizers/wiki/AddressSanitizer\\\" target=\\\"_blank\\\">AddressSanitizer</a> is also enabled to help detect out-of-bounds and use-after-free bugs.</p>\\r\\n\\r\\n<p>Most standard library headers are already included automatically for your convenience.</p>\\r\\n\\r\\n<p>For hash table operations, you may use <a href=\\\"https://troydhanson.github.io/uthash/\\\" target=\\\"_blank\\\">uthash</a>. \\\"uthash.h\\\" is included by default. Below are some examples:</p>\\r\\n\\r\\n<p><b>1. Adding an item to a hash.</b>\\r\\n<pre>\\r\\nstruct hash_entry {\\r\\n    int id;            /* we'll use this field as the key */\\r\\n    char name[10];\\r\\n    UT_hash_handle hh; /* makes this structure hashable */\\r\\n};\\r\\n\\r\\nstruct hash_entry *users = NULL;\\r\\n\\r\\nvoid add_user(struct hash_entry *s) {\\r\\n    HASH_ADD_INT(users, id, s);\\r\\n}\\r\\n</pre>\\r\\n</p>\\r\\n\\r\\n<p><b>2. Looking up an item in a hash:</b>\\r\\n<pre>\\r\\nstruct hash_entry *find_user(int user_id) {\\r\\n    struct hash_entry *s;\\r\\n    HASH_FIND_INT(users, &user_id, s);\\r\\n    return s;\\r\\n}\\r\\n</pre>\\r\\n</p>\\r\\n\\r\\n<p><b>3. Deleting an item in a hash:</b>\\r\\n<pre>\\r\\nvoid delete_user(struct hash_entry *user) {\\r\\n    HASH_DEL(users, user);  \\r\\n}\\r\\n</pre>\\r\\n</p>\"], \"csharp\": [\"C#\", \"<p><a href=\\\"https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-8\\\" target=\\\"_blank\\\">C# 8.0 </a></p>\\r\\n\\r\\n<p>Your code is compiled with debug flag enabled (<code>/debug</code>).</p>\"], \"javascript\": [\"JavaScript\", \"<p><code>Node.js 14.8.0</code>.</p>\\r\\n\\r\\n<p>Your code is run with <code>--harmony</code> flag, enabling <a href=\\\"http://node.green/\\\" target=\\\"_blank\\\">new ES6 features</a>.</p>\\r\\n\\r\\n<p><a href=\\\"https://lodash.com\\\" target=\\\"_blank\\\">lodash.js</a> library is included by default.</p>\\r\\n\\r\\n<p>For Priority Queue / Queue data structures, you may use <a href=\\\"https://github.com/datastructures-js/priority-queue\\\" target=\\\"_blank\\\">datastructures-js/priority-queue</a> and <a href=\\\"https://github.com/datastructures-js/queue\\\" target=\\\"_blank\\\">datastructures-js/queue</a>.</p>\"], \"ruby\": [\"Ruby\", \"<p><code>Ruby 2.7.1</code></p>\\r\\n\\r\\n<p>Some common data structure implementations are provided in the Algorithms module: https://www.rubydoc.info/github/kanwei/algorithms/Algorithms</p>\"], \"swift\": [\"Swift\", \"<p><code>Swift 5.3</code>.</p>\"], \"golang\": [\"Go\", \"<p><code>Go 1.16.2</code>.</p>\\r\\n\\r\\n<p>Support <a href=\\\"https://godoc.org/github.com/emirpasic/gods\\\" target=\\\"_blank\\\">https://godoc.org/github.com/emirpasic/gods</a> library.</p>\"], \"python3\": [\"Python3\", \"<p><code>Python 3.9</code>.</p>\\r\\n\\r\\n<p>Most libraries are already imported automatically for your convenience, such as <a href=\\\"https://docs.python.org/3/library/array.html\\\" target=\\\"_blank\\\">array</a>, <a href=\\\"https://docs.python.org/3/library/bisect.html\\\" target=\\\"_blank\\\">bisect</a>, <a href=\\\"https://docs.python.org/3/library/collections.html\\\" target=\\\"_blank\\\">collections</a>. If you need more libraries, you can import it yourself.</p>\\r\\n\\r\\n<p>For Map/TreeMap data structure, you may use <a href=\\\"http://www.grantjenks.com/docs/sortedcontainers/\\\" target=\\\"_blank\\\">sortedcontainers</a> library.</p>\"], \"scala\": [\"Scala\", \"<p><code>Scala 2.13</code>.</p>\"], \"kotlin\": [\"Kotlin\", \"<p><code>Kotlin 1.3.10</code>.</p>\"], \"rust\": [\"Rust\", \"<p><code>Rust 1.45.2</code></p>\\r\\n\\r\\n<p>Supports <a href=\\\"https://crates.io/crates/rand\\\" target=\\\"_blank\\\">rand</a>\\u00a0from crates.io</p>\"], \"php\": [\"PHP\", \"<p><code>PHP 7.2</code>.</p>\\r\\n<p>With bcmath module</p>\"], \"typescript\": [\"Typescript\", \"<p><code>Node.js 14.8.0</code>.</p>\\r\\n\\r\\n<p>Your code is run with <code>--harmony</code> flag, enabling <a href=\\\"http://node.green/\\\" target=\\\"_blank\\\">new ES2020 features</a>.</p>\\r\\n\\r\\n<p><a href=\\\"https://lodash.com\\\" target=\\\"_blank\\\">lodash.js</a> library is included by default.</p>\"], \"racket\": [\"Racket\", \"<p>Run with <code>Racket 8.0</code>.</p>\"]}",
+            "libraryUrl": null,
+            "adminUrl": null,
+            "__typename": "QuestionNode"
+        }
+    }
+}

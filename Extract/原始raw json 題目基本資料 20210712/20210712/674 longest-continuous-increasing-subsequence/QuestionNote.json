@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "674",
+            "article": "{\"id\": 278, \"url\": \"/articles/longest-continuous-increasing-subsequence/\", \"topicId\": 127478}",
+            "solution": {
+                "id": "278",
+                "content": "[TOC]\n\n\n#### Approach #1: Sliding Window [Accepted]\n\n**Intuition and Algorithm**\n\nEvery (continuous) increasing subsequence is disjoint, and the boundary of each such subsequence occurs whenever `nums[i-1] >= nums[i]`.  When it does, it marks the start of a new increasing subsequence at `nums[i]`, and we store such `i` in the variable `anchor`.\n\nFor example, if `nums = [7, 8, 9, 1, 2, 3]`, then `anchor` starts at `0` (`nums[anchor] = 7`) and gets set again to `anchor = 3` (`nums[anchor] = 1`).  Regardless of the value of `anchor`, we record a candidate answer of `i - anchor + 1`, the length of the subarray `nums[anchor], nums[anchor+1], ..., nums[i]`; and our answer gets updated appropriately.\n\n<iframe src=\"https://leetcode.com/playground/n3XVE4by/shared\" frameBorder=\"0\" width=\"100%\" height=\"225\" name=\"n3XVE4by\"></iframe>\n\n**Complexity Analysis**\n\n* Time Complexity: $$O(N)$$, where $$N$$ is the length of `nums`.  We perform one loop through `nums`.\n\n* Space Complexity: $$O(1)$$, the space used by `anchor` and `ans`.",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "273",
+                    "count": 40,
+                    "average": 4.475,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

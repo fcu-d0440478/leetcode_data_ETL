@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "1049",
+            "article": "{\"id\": 731, \"url\": \"/articles/minimum-domino-rotations-for-equal-row/\", \"topicId\": 296460}",
+            "solution": {
+                "id": "731",
+                "content": "[TOC]\n\n## Solution\n\n---\n\n#### Approach 1: Greedy.\n\n**Intuition**\n\nLet's pick up an arbitrary `i`th domino element in the configuration. \nThe element has two sides, `A[i]` is an upper side \nand `B[i]` is a lower side.\n\n![bla](../Figures/1007/config.png)    \n\nThere could be three possible situations here\n\n1 . One could make all elements of `A` row or `B` row \nto be the same and equal to `A[i]` value. \nFor example, if one picks up the `0`th element, \nit's possible to make all elements of `A` row to be equal to `2`.\n\n![bla](../Figures/1007/s1.png) \n\n2 . One could make all elements of `A` row or `B` row \nto be the same and equal to `B[i]` value. \nFor example, if one picks up the `1`th element, \nit's possible to make all elements of `B` row to be equal to `2`.\n\n![bla](../Figures/1007/s2.png)\n\n3 . It's impossible to make all elements of `A` row or `B` row \nto have the same `A[i]` or `B[i]` value. \n\n![bla](../Figures/1007/s3.png) \n\n> The third situation means that it's impossible to make all\nelements in `A` row or `B` row to be equal. \n\nYes, the only one domino element was checked here, and still it's\nenough because the rotation is the only allowed operation here.\n\n**Algorithm**\n\n- Pick up the first element. It has two sides: `A[0]` and `B[0]`.\n\n- Check if one could make all elements in `A` row or `B` row \nto be equal to `A[0]`. \nIf yes, return the minimum number of rotations needed.\n\n- Check if one could make all elements in `A` row or `B` row \nto be equal to `B[0]`.\nIf yes, return the minimum number of rotations needed.\n\n- Otherwise return `-1`.\n\n\n**Implementation**\n\n<iframe src=\"https://leetcode.com/playground/bQ3se2Rp/shared\" frameBorder=\"0\" width=\"100%\" height=\"500\" name=\"bQ3se2Rp\"></iframe>\n\n**Complexity Analysis**\n\n* Time complexity : $$\\mathcal{O}(N)$$ since here one iterates over the\narrays not more than two times.\n \n* Space complexity : $$\\mathcal{O}(1)$$ since it's a constant \nspace solution.",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": true,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "716",
+                    "count": 51,
+                    "average": 4.196,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

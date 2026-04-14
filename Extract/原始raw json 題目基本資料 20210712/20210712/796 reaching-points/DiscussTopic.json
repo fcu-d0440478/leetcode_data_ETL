@@ -1,0 +1,43 @@
+{
+    "data": {
+        "topic": {
+            "id": 127704,
+            "viewCount": 27607,
+            "topLevelCommentCount": 19,
+            "subscribed": false,
+            "title": "Reaching Points",
+            "pinned": false,
+            "tags": [],
+            "hideFromTrending": false,
+            "post": {
+                "id": 255967,
+                "voteCount": 0,
+                "voteStatus": 0,
+                "content": "---\\n\\n**Click [here](https://leetcode.com/articles/reaching-points) to see the full article post**",
+                "updationDate": 1518321797,
+                "creationDate": 1518321797,
+                "status": null,
+                "isHidden": null,
+                "coinRewards": [],
+                "author": {
+                    "isDiscussAdmin": false,
+                    "isDiscussStaff": false,
+                    "username": "awice",
+                    "nameColor": null,
+                    "activeBadge": null,
+                    "profile": {
+                        "userAvatar": "https://assets.leetcode.com/users/awice/avatar_1576905115.png",
+                        "reputation": 6689,
+                        "__typename": "UserProfileNode"
+                    },
+                    "isActive": true,
+                    "__typename": "UserNode"
+                },
+                "authorIsModerator": false,
+                "isOwnPost": false,
+                "__typename": "PostNode"
+            },
+            "__typename": "TopicNode"
+        }
+    }
+}

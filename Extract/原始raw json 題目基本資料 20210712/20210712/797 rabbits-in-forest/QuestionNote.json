@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "797",
+            "article": "{\"id\": 414, \"url\": \"/articles/rabbits-in-forest/\", \"topicId\": 127705}",
+            "solution": {
+                "id": "414",
+                "content": "[TOC]\n\n---\n#### Approach #1: Count [Accepted]\n\n**Intuition**\n\nEach rabbit that says a different number must be a different color, and a rabbit only tells us information about rabbits of its color.  We can count the number of rabbits of each color separately.\n\nNow, say `13` rabbits answer `5`.  What does this imply?  Say one of the rabbits is red.  We could have 5 other red rabbits in this group answering `5`, but not more.  So, say another rabbit in this group is a different color (blue).  We could have 5 other blue rabbits in this group answering `5`, but not more.  Finally, another rabbit must be a different color (green), and there are 5 other green rabbits (in the forest).\n\nNotice there must be a minimum of 18 rabbits saying 5 (answering or in the forest), since there must be at least 3 unique colors among rabbits that answered or would have answered `5`, so it didn't matter that we chose the rabbits to be grouped by color or not when answering.\n\n**Algorithm**\n\nIn general, if `v = count[k]` rabbits answered `k`, there must be at least `a` rabbits that answered or would have answered `k`, where `a` is the smallest multiple of `k+1` such that `a >= count[k]`.\n\nWe add all these `a`s together.\n\n<iframe src=\"https://leetcode.com/playground/aDvqS6CG/shared\" frameBorder=\"0\" width=\"100%\" height=\"242\" name=\"aDvqS6CG\"></iframe>\n\n**Complexity Analysis**\n\n* Time Complexity:  $$O(N)$$, where $$N$$ is the number of rabbits that answered.  In Java, our implementation using `int[]` instead of a `Map` would be $$O(N + W)$$, where $$W$$ is the number of possible different answers that rabbits could say.\n\n* Space Complexity:  $$O(N)$$.  In Java, our implementation is $$O(W)$$.",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": true,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "409",
+                    "count": 9,
+                    "average": 3.333,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "687",
+            "article": "{\"id\": 253, \"url\": \"/articles/longest-univalue-path/\", \"topicId\": 127406}",
+            "solution": {
+                "id": "253",
+                "content": "[TOC]\n\n#### Approach #1: Recursion [Accepted]\n\n**Intuition**\n\nWe can think of any path (of nodes with the same values) as up to two arrows extending from it's root.\n\nSpecifically, the *root* of a path will be the unique node such that the parent of that node does not appear in the path, and an *arrow* will be a path where the root only has one child node in the path.\n\nThen, for each node, we want to know what is the longest possible arrow extending left, and the longest possible arrow extending right?  We can solve this using recursion.\n\n**Algorithm**\n\nLet `arrow_length(node)` be the length of the longest arrow that extends from the `node`.  That will be `1 + arrow_length(node.left)` if `node.left` exists and has the same value as `node`.  Similarly for the `node.right` case.\n\nWhile we are computing arrow lengths, each candidate answer will be the sum of the arrows in both directions from that node.  We record these candidate answers and return the best one.\n\n<iframe src=\"https://leetcode.com/playground/DjHbgZUi/shared\" frameBorder=\"0\" name=\"DjHbgZUi\" width=\"100%\" height=\"428\"></iframe>\n\n**Complexity Analysis**\n\n* Time Complexity: $$O(N)$$, where $$N$$ is the number of nodes in the tree.  We process every node once.\n\n* Space Complexity: $$O(H)$$, where $$H$$ is the height of the tree.  Our recursive call stack could be up to $$H$$ layers deep.",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "250",
+                    "count": 131,
+                    "average": 3.428,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

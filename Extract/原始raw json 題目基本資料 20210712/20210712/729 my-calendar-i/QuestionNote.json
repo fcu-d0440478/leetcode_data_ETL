@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "729",
+            "article": "{\"id\": 297, \"url\": \"/articles/my-calendar-i/\", \"topicId\": 127483}",
+            "solution": {
+                "id": "297",
+                "content": "[TOC]\n\n#### Approach #1: Brute Force [Accepted]\n\n**Intuition**\n\nWhen booking a new event `[start, end)`, check if every current event conflicts with the new event.  If none of them do, we can book the event.\n\n**Algorithm**\n\nWe will maintain a list of interval *events* (not necessarily sorted).  Evidently, two events `[s1, e1)` and `[s2, e2)` do *not* conflict if and only if one of them starts after the other one ends: either `e1 <= s2` OR `e2 <= s1`.  By De Morgan's laws, this means the events conflict when `s1 < e2` AND `s2 < e1`.\n\n<iframe src=\"https://leetcode.com/playground/VrfQDFXC/shared\" frameBorder=\"0\" width=\"100%\" height=\"310\" name=\"VrfQDFXC\"></iframe>\n\n\n**Complexity Analysis**\n\n* Time Complexity: $$O(N^2)$$, where $$N$$ is the number of events booked.  For each new event, we process every previous event to decide whether the new event can be booked.  This leads to $$\\sum_k^N O(k) = O(N^2)$$ complexity.\n\n* Space Complexity: $$O(N)$$, the size of the `calendar`.\n\n---\n#### Approach #2: Balanced Tree [Accepted]\n\n**Intuition**\n\nIf we maintained our events in *sorted* order, we could check whether an event could be booked in $$O(\\log N)$$ time (where $$N$$ is the number of events already booked) by binary searching for where the event should be placed.  We would also have to insert the event in our sorted structure.\n\n**Algorithm**\n\nWe need a data structure that keeps elements sorted and supports fast insertion.  In Java, a `TreeMap` is the perfect candidate.  In Python, we can build our own binary tree structure.\n\nFor Java, we will have a `TreeMap` where the keys are the start of each interval, and the values are the ends of those intervals.  When inserting the interval `[start, end)`, we check if there is a conflict on each side with neighboring intervals: we would like `calendar.get(prev)) <= start <= end <= next` for the booking to be valid (or for `prev` or `next` to be null respectively.)\n\nFor Python, we will create a binary tree.  Each node represents some interval `[self.start, self.end)` while `self.left, self.right` represents nodes that are smaller or larger than the current node.\n\n<iframe src=\"https://leetcode.com/playground/fkctVGim/shared\" frameBorder=\"0\" width=\"100%\" height=\"500\" name=\"fkctVGim\"></iframe>\n\n**Complexity Analysis**\n\n* Time Complexity (Java): $$O(N \\log N)$$, where $$N$$ is the number of events booked.  For each new event, we search that the event is legal in $$O(\\log N)$$ time, then insert it in $$O(1)$$ time.\n\n* Time Complexity (Python): $$O(N^2)$$ worst case, with $$O(N \\log N)$$ on random data.  For each new event, we insert the event into our binary tree.  As this tree may not be balanced, it may take a linear number of steps to add each event.\n\n* Space Complexity: $$O(N)$$, the size of the data structures used.",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "292",
+                    "count": 54,
+                    "average": 4.556,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

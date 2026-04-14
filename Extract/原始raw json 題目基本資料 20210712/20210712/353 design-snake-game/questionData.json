@@ -1,0 +1,164 @@
+{
+    "data": {
+        "question": {
+            "questionId": "353",
+            "questionFrontendId": "353",
+            "boundTopicId": null,
+            "title": "Design Snake Game",
+            "titleSlug": "design-snake-game",
+            "content": "<p>Design a <a href=\"https://en.wikipedia.org/wiki/Snake_(video_game)\" target=\"_blank\">Snake game</a> that is played on a device with screen size <code>height x width</code>. <a href=\"http://patorjk.com/games/snake/\" target=\"_blank\">Play the game online</a> if you are not familiar with the game.</p>\n\n<p>The snake is initially positioned at the top left corner <code>(0, 0)</code> with a length of <code>1</code> unit.</p>\n\n<p>You are given an array <code>food</code> where <code>food[i] = (r<sub>i</sub>, c<sub>i</sub>)</code> is the row and column position of a piece of food that the snake can eat. When a snake eats a piece of food, its length and the game&#39;s score both increase by <code>1</code>.</p>\n\n<p>Each piece of food appears one by one on the screen, meaning the second piece of food will not appear until the snake eats the first piece of food.</p>\n\n<p>When a piece of food appears on the screen, it is <strong>guaranteed</strong> that it will not appear on a block occupied by the snake.</p>\n\n<p>The game is over if the snake goes out of bounds (hits a wall) or if its head occupies a space that its body occupies <strong>after</strong> moving (i.e. a snake of length 4 cannot run into itself).</p>\n\n<p>Implement the <code>SnakeGame</code> class:</p>\n\n<ul>\n\t<li><code>SnakeGame(int width, int height, int[][] food)</code> Initializes the object with a screen of size <code>height x width</code> and the positions of the <code>food</code>.</li>\n\t<li><code>int move(String direction)</code> Returns the score of the game after applying one <code>direction</code> move by the snake. If the game is over, return <code>-1</code>.</li>\n</ul>\n\n<p>&nbsp;</p>\n<p><strong>Example 1:</strong></p>\n<img alt=\"\" src=\"https://assets.leetcode.com/uploads/2021/01/13/snake.jpg\" style=\"width: 800px; height: 302px;\" />\n<pre>\n<strong>Input</strong>\n[&quot;SnakeGame&quot;, &quot;move&quot;, &quot;move&quot;, &quot;move&quot;, &quot;move&quot;, &quot;move&quot;, &quot;move&quot;]\n[[3, 2, [[1, 2], [0, 1]]], [&quot;R&quot;], [&quot;D&quot;], [&quot;R&quot;], [&quot;U&quot;], [&quot;L&quot;], [&quot;U&quot;]]\n<strong>Output</strong>\n[null, 0, 0, 1, 1, 2, -1]\n\n<strong>Explanation</strong>\nSnakeGame snakeGame = new SnakeGame(3, 2, [[1, 2], [0, 1]]);\nsnakeGame.move(&quot;R&quot;); // return 0\nsnakeGame.move(&quot;D&quot;); // return 0\nsnakeGame.move(&quot;R&quot;); // return 1, snake eats the first piece of food. The second piece of food appears\n                     // at (0, 1).\nsnakeGame.move(&quot;U&quot;); // return 1\nsnakeGame.move(&quot;L&quot;); // return 2, snake eats the second food. No more food appears.\nsnakeGame.move(&quot;U&quot;); // return -1, game over because snake collides with border\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= width, height &lt;= 10<sup>4</sup></code></li>\n\t<li><code>1 &lt;= food.length &lt;= 50</code></li>\n\t<li><code>food[i].length == 2</code></li>\n\t<li><code>0 &lt;= r<sub>i</sub> &lt; height</code></li>\n\t<li><code>0 &lt;= c<sub>i</sub> &lt; width</code></li>\n\t<li><code>direction.length == 1</code></li>\n\t<li><code>direction</code> is <code>&#39;U&#39;</code>, <code>&#39;D&#39;</code>, <code>&#39;L&#39;</code>, or <code>&#39;R&#39;</code>.</li>\n\t<li>At most <code>10<sup>4</sup></code> calls will be made to <code>move</code>.</li>\n</ul>\n",
+            "translatedTitle": null,
+            "translatedContent": null,
+            "isPaidOnly": true,
+            "difficulty": "Medium",
+            "likes": 581,
+            "dislikes": 225,
+            "isLiked": null,
+            "similarQuestions": "[]",
+            "exampleTestcases": "[\"SnakeGame\",\"move\",\"move\",\"move\",\"move\",\"move\",\"move\"]\n[[3,2,[[1,2],[0,1]]],[\"R\"],[\"D\"],[\"R\"],[\"U\"],[\"L\"],[\"U\"]]",
+            "contributors": [],
+            "topicTags": [
+                {
+                    "name": "Array",
+                    "slug": "array",
+                    "translatedName": null,
+                    "__typename": "TopicTagNode"
+                },
+                {
+                    "name": "Design",
+                    "slug": "design",
+                    "translatedName": null,
+                    "__typename": "TopicTagNode"
+                },
+                {
+                    "name": "Queue",
+                    "slug": "queue",
+                    "translatedName": null,
+                    "__typename": "TopicTagNode"
+                },
+                {
+                    "name": "Matrix",
+                    "slug": "matrix",
+                    "translatedName": null,
+                    "__typename": "TopicTagNode"
+                }
+            ],
+            "companyTagStats": "{\"1\": [{\"taggedByAdmin\": false, \"name\": \"Amazon\", \"slug\": \"amazon\", \"timesEncountered\": 5}, {\"taggedByAdmin\": true, \"name\": \"Google\", \"slug\": \"google\", \"timesEncountered\": 2}, {\"taggedByAdmin\": false, \"name\": \"Microsoft\", \"slug\": \"microsoft\", \"timesEncountered\": 2}], \"3\": [{\"taggedByAdmin\": false, \"name\": \"Uber\", \"slug\": \"uber\", \"timesEncountered\": 2}, {\"taggedByAdmin\": false, \"name\": \"Bloomberg\", \"slug\": \"bloomberg\", \"timesEncountered\": 2}], \"2\": [{\"taggedByAdmin\": false, \"name\": \"Apple\", \"slug\": \"apple\", \"timesEncountered\": 2}]}",
+            "codeSnippets": [
+                {
+                    "lang": "C++",
+                    "langSlug": "cpp",
+                    "code": "class SnakeGame {\npublic:\n    /** Initialize your data structure here.\n        @param width - screen width\n        @param height - screen height \n        @param food - A list of food positions\n        E.g food = [[1,1], [1,0]] means the first food is positioned at [1,1], the second is at [1,0]. */\n    SnakeGame(int width, int height, vector<vector<int>>& food) {\n        \n    }\n    \n    /** Moves the snake.\n        @param direction - 'U' = Up, 'L' = Left, 'R' = Right, 'D' = Down \n        @return The game's score after the move. Return -1 if game over. \n        Game over when snake crosses the screen boundary or bites its body. */\n    int move(string direction) {\n        \n    }\n};\n\n/**\n * Your SnakeGame object will be instantiated and called as such:\n * SnakeGame* obj = new SnakeGame(width, height, food);\n * int param_1 = obj->move(direction);\n */",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Java",
+                    "langSlug": "java",
+                    "code": "class SnakeGame {\n\n    /** Initialize your data structure here.\n        @param width - screen width\n        @param height - screen height \n        @param food - A list of food positions\n        E.g food = [[1,1], [1,0]] means the first food is positioned at [1,1], the second is at [1,0]. */\n    public SnakeGame(int width, int height, int[][] food) {\n        \n    }\n    \n    /** Moves the snake.\n        @param direction - 'U' = Up, 'L' = Left, 'R' = Right, 'D' = Down \n        @return The game's score after the move. Return -1 if game over. \n        Game over when snake crosses the screen boundary or bites its body. */\n    public int move(String direction) {\n        \n    }\n}\n\n/**\n * Your SnakeGame object will be instantiated and called as such:\n * SnakeGame obj = new SnakeGame(width, height, food);\n * int param_1 = obj.move(direction);\n */",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Python",
+                    "langSlug": "python",
+                    "code": "class SnakeGame(object):\n\n    def __init__(self, width, height, food):\n        \"\"\"\n        Initialize your data structure here.\n        @param width - screen width\n        @param height - screen height \n        @param food - A list of food positions\n        E.g food = [[1,1], [1,0]] means the first food is positioned at [1,1], the second is at [1,0].\n        :type width: int\n        :type height: int\n        :type food: List[List[int]]\n        \"\"\"\n        \n\n    def move(self, direction):\n        \"\"\"\n        Moves the snake.\n        @param direction - 'U' = Up, 'L' = Left, 'R' = Right, 'D' = Down \n        @return The game's score after the move. Return -1 if game over. \n        Game over when snake crosses the screen boundary or bites its body.\n        :type direction: str\n        :rtype: int\n        \"\"\"\n        \n\n\n# Your SnakeGame object will be instantiated and called as such:\n# obj = SnakeGame(width, height, food)\n# param_1 = obj.move(direction)",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Python3",
+                    "langSlug": "python3",
+                    "code": "class SnakeGame:\n\n    def __init__(self, width: int, height: int, food: List[List[int]]):\n        \"\"\"\n        Initialize your data structure here.\n        @param width - screen width\n        @param height - screen height \n        @param food - A list of food positions\n        E.g food = [[1,1], [1,0]] means the first food is positioned at [1,1], the second is at [1,0].\n        \"\"\"\n        \n\n    def move(self, direction: str) -> int:\n        \"\"\"\n        Moves the snake.\n        @param direction - 'U' = Up, 'L' = Left, 'R' = Right, 'D' = Down \n        @return The game's score after the move. Return -1 if game over. \n        Game over when snake crosses the screen boundary or bites its body.\n        \"\"\"\n        \n\n\n# Your SnakeGame object will be instantiated and called as such:\n# obj = SnakeGame(width, height, food)\n# param_1 = obj.move(direction)",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "C",
+                    "langSlug": "c",
+                    "code": "\n\n\ntypedef struct {\n    \n} SnakeGame;\n\n/** Initialize your data structure here.\n        @param width - screen width\n        @param height - screen height \n        @param food - A list of food positions\n        E.g food = [[1,1], [1,0]] means the first food is positioned at [1,1], the second is at [1,0]. */\n\nSnakeGame* snakeGameCreate(int width, int height, int** food, int foodSize, int* foodColSize) {\n    \n}\n\n/** Moves the snake.\n        @param direction - 'U' = Up, 'L' = Left, 'R' = Right, 'D' = Down \n        @return The game's score after the move. Return -1 if game over. \n        Game over when snake crosses the screen boundary or bites its body. */\nint snakeGameMove(SnakeGame* obj, char * direction) {\n  \n}\n\nvoid snakeGameFree(SnakeGame* obj) {\n    \n}\n\n/**\n * Your SnakeGame struct will be instantiated and called as such:\n * SnakeGame* obj = snakeGameCreate(width, height, food, foodSize, foodColSize);\n * int param_1 = snakeGameMove(obj, direction);\n \n * snakeGameFree(obj);\n*/",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "C#",
+                    "langSlug": "csharp",
+                    "code": "public class SnakeGame {\n\n    /** Initialize your data structure here.\n        @param width - screen width\n        @param height - screen height \n        @param food - A list of food positions\n        E.g food = [[1,1], [1,0]] means the first food is positioned at [1,1], the second is at [1,0]. */\n    public SnakeGame(int width, int height, int[][] food) {\n        \n    }\n    \n    /** Moves the snake.\n        @param direction - 'U' = Up, 'L' = Left, 'R' = Right, 'D' = Down \n        @return The game's score after the move. Return -1 if game over. \n        Game over when snake crosses the screen boundary or bites its body. */\n    public int Move(string direction) {\n        \n    }\n}\n\n/**\n * Your SnakeGame object will be instantiated and called as such:\n * SnakeGame obj = new SnakeGame(width, height, food);\n * int param_1 = obj.Move(direction);\n */",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "JavaScript",
+                    "langSlug": "javascript",
+                    "code": "/**\n * Initialize your data structure here.\n        @param width - screen width\n        @param height - screen height \n        @param food - A list of food positions\n        E.g food = [[1,1], [1,0]] means the first food is positioned at [1,1], the second is at [1,0].\n * @param {number} width\n * @param {number} height\n * @param {number[][]} food\n */\nvar SnakeGame = function(width, height, food) {\n    \n};\n\n/**\n * Moves the snake.\n        @param direction - 'U' = Up, 'L' = Left, 'R' = Right, 'D' = Down \n        @return The game's score after the move. Return -1 if game over. \n        Game over when snake crosses the screen boundary or bites its body. \n * @param {string} direction\n * @return {number}\n */\nSnakeGame.prototype.move = function(direction) {\n    \n};\n\n/** \n * Your SnakeGame object will be instantiated and called as such:\n * var obj = new SnakeGame(width, height, food)\n * var param_1 = obj.move(direction)\n */",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Ruby",
+                    "langSlug": "ruby",
+                    "code": "class SnakeGame\n\n=begin\n    Initialize your data structure here.\n        @param width - screen width\n        @param height - screen height \n        @param food - A list of food positions\n        E.g food = [[1,1], [1,0]] means the first food is positioned at [1,1], the second is at [1,0].\n    :type width: Integer\n    :type height: Integer\n    :type food: Integer[][]\n=end\n    def initialize(width, height, food)\n        \n    end\n\n\n=begin\n    Moves the snake.\n        @param direction - 'U' = Up, 'L' = Left, 'R' = Right, 'D' = Down \n        @return The game's score after the move. Return -1 if game over. \n        Game over when snake crosses the screen boundary or bites its body.\n    :type direction: String\n    :rtype: Integer\n=end\n    def move(direction)\n        \n    end\n\n\nend\n\n# Your SnakeGame object will be instantiated and called as such:\n# obj = SnakeGame.new(width, height, food)\n# param_1 = obj.move(direction)",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Swift",
+                    "langSlug": "swift",
+                    "code": "\nclass SnakeGame {\n\n    /** Initialize your data structure here.\n        @param width - screen width\n        @param height - screen height \n        @param food - A list of food positions\n        E.g food = [[1,1], [1,0]] means the first food is positioned at [1,1], the second is at [1,0]. */\n    init(_ width: Int, _ height: Int, _ food: [[Int]]) {\n        \n    }\n    \n    /** Moves the snake.\n        @param direction - 'U' = Up, 'L' = Left, 'R' = Right, 'D' = Down \n        @return The game's score after the move. Return -1 if game over. \n        Game over when snake crosses the screen boundary or bites its body. */\n    func move(_ direction: String) -> Int {\n        \n    }\n}\n\n/**\n * Your SnakeGame object will be instantiated and called as such:\n * let obj = SnakeGame(width, height, food)\n * let ret_1: Int = obj.move(direction)\n */",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Go",
+                    "langSlug": "golang",
+                    "code": "type SnakeGame struct {\n    \n}\n\n\n/** Initialize your data structure here.\n        @param width - screen width\n        @param height - screen height \n        @param food - A list of food positions\n        E.g food = [[1,1], [1,0]] means the first food is positioned at [1,1], the second is at [1,0]. */\nfunc Constructor(width int, height int, food [][]int) SnakeGame {\n    \n}\n\n\n/** Moves the snake.\n        @param direction - 'U' = Up, 'L' = Left, 'R' = Right, 'D' = Down \n        @return The game's score after the move. Return -1 if game over. \n        Game over when snake crosses the screen boundary or bites its body. */\nfunc (this *SnakeGame) Move(direction string) int {\n    \n}\n\n\n/**\n * Your SnakeGame object will be instantiated and called as such:\n * obj := Constructor(width, height, food);\n * param_1 := obj.Move(direction);\n */",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Scala",
+                    "langSlug": "scala",
+                    "code": "class SnakeGame(_width: Int, _height: Int, _food: Array[Array[Int]]) {\n\n    /** Initialize your data structure here.\n        @param width - screen width\n        @param height - screen height \n        @param food - A list of food positions\n        E.g food = [[1,1], [1,0]] means the first food is positioned at [1,1], the second is at [1,0]. */\n    \n\n    /** Moves the snake.\n        @param direction - 'U' = Up, 'L' = Left, 'R' = Right, 'D' = Down \n        @return The game's score after the move. Return -1 if game over. \n        Game over when snake crosses the screen boundary or bites its body. */\n    def move(direction: String): Int = {\n        \n    }\n\n}\n\n/**\n * Your SnakeGame object will be instantiated and called as such:\n * var obj = new SnakeGame(width, height, food)\n * var param_1 = obj.move(direction)\n */",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Kotlin",
+                    "langSlug": "kotlin",
+                    "code": "class SnakeGame(width: Int, height: Int, food: Array<IntArray>) {\n\n    /** Initialize your data structure here.\n        @param width - screen width\n        @param height - screen height \n        @param food - A list of food positions\n        E.g food = [[1,1], [1,0]] means the first food is positioned at [1,1], the second is at [1,0]. */\n    \n\n    /** Moves the snake.\n        @param direction - 'U' = Up, 'L' = Left, 'R' = Right, 'D' = Down \n        @return The game's score after the move. Return -1 if game over. \n        Game over when snake crosses the screen boundary or bites its body. */\n    fun move(direction: String): Int {\n        \n    }\n\n}\n\n/**\n * Your SnakeGame object will be instantiated and called as such:\n * var obj = SnakeGame(width, height, food)\n * var param_1 = obj.move(direction)\n */",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Rust",
+                    "langSlug": "rust",
+                    "code": "struct SnakeGame {\n\n}\n\n\n/** \n * `&self` means the method takes an immutable reference.\n * If you need a mutable reference, change it to `&mut self` instead.\n */\nimpl SnakeGame {\n\n    /** Initialize your data structure here.\n        @param width - screen width\n        @param height - screen height \n        @param food - A list of food positions\n        E.g food = [[1,1], [1,0]] means the first food is positioned at [1,1], the second is at [1,0]. */\n    fn new(width: i32, height: i32, food: Vec<Vec<i32>>) -> Self {\n        \n    }\n    \n    /** Moves the snake.\n        @param direction - 'U' = Up, 'L' = Left, 'R' = Right, 'D' = Down \n        @return The game's score after the move. Return -1 if game over. \n        Game over when snake crosses the screen boundary or bites its body. */\n    fn make_a_move(&self, direction: String) -> i32 {\n        \n    }\n}\n\n/**\n * Your SnakeGame object will be instantiated and called as such:\n * let obj = SnakeGame::new(width, height, food);\n * let ret_1: i32 = obj.make_a_move(direction);\n */",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "PHP",
+                    "langSlug": "php",
+                    "code": "class SnakeGame {\n    /**\n     * Initialize your data structure here.\n        @param width - screen width\n        @param height - screen height \n        @param food - A list of food positions\n        E.g food = [[1,1], [1,0]] means the first food is positioned at [1,1], the second is at [1,0].\n     * @param Integer $width\n     * @param Integer $height\n     * @param Integer[][] $food\n     */\n    function __construct($width, $height, $food) {\n        \n    }\n  \n    /**\n     * Moves the snake.\n        @param direction - 'U' = Up, 'L' = Left, 'R' = Right, 'D' = Down \n        @return The game's score after the move. Return -1 if game over. \n        Game over when snake crosses the screen boundary or bites its body.\n     * @param String $direction\n     * @return Integer\n     */\n    function move($direction) {\n        \n    }\n}\n\n/**\n * Your SnakeGame object will be instantiated and called as such:\n * $obj = SnakeGame($width, $height, $food);\n * $ret_1 = $obj->move($direction);\n */",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "TypeScript",
+                    "langSlug": "typescript",
+                    "code": "class SnakeGame {\n    /**\n     * Initialize your data structure here.\n            @param width - screen width\n            @param height - screen height \n            @param food - A list of food positions\n            E.g food = [[1,1], [1,0]] means the first food is positioned at [1,1], the second is at [1,0].\n     */\n    constructor(width: number, height: number, food: number[][]) {\n\t\t\n    }\n\n\t/**\n     * Moves the snake.\n            @param direction - 'U' = Up, 'L' = Left, 'R' = Right, 'D' = Down \n            @return The game's score after the move. Return -1 if game over. \n            Game over when snake crosses the screen boundary or bites its body. \n     */\n    move(direction: string): number {\n\n    }\n}\n\n/**\n * Your SnakeGame object will be instantiated and called as such:\n * var obj = new SnakeGame(width, height, food)\n * var param_1 = obj.move(direction)\n */",
+                    "__typename": "CodeSnippetNode"
+                }
+            ],
+            "stats": "{\"totalAccepted\": \"49.3K\", \"totalSubmission\": \"134K\", \"totalAcceptedRaw\": 49285, \"totalSubmissionRaw\": 134009, \"acRate\": \"36.8%\"}",
+            "hints": [],
+            "solution": {
+                "id": "1042",
+                "canSeeDetail": true,
+                "paidOnly": true,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "__typename": "ArticleNode"
+            },
+            "status": null,
+            "sampleTestCase": "[\"SnakeGame\",\"move\",\"move\",\"move\",\"move\",\"move\",\"move\"]\n[[3,2,[[1,2],[0,1]]],[\"R\"],[\"D\"],[\"R\"],[\"U\"],[\"L\"],[\"U\"]]",
+            "metaData": "{\n  \"classname\": \"SnakeGame\",\n  \"constructor\": {\n    \"params\": [\n      {\n        \"type\": \"integer\",\n        \"name\": \"width\"\n      },\n      {\n        \"type\": \"integer\",\n        \"name\": \"height\"\n      },\n      {\n        \"type\": \"integer[][]\",\n        \"name\": \"food\"\n      },\n      {\n        \"type\": \"integer\",\n        \"name\": \"foodSize\",\n        \"lang\": \"c\",\n        \"value\": \"size_3\"\n      }\n    ],\n    \"comment\": \"Initialize your data structure here.\\n        @param width - screen width\\n        @param height - screen height \\n        @param food - A list of food positions\\n        E.g food = [[1,1], [1,0]] means the first food is positioned at [1,1], the second is at [1,0].\"\n  },\n  \"methods\": [\n    {\n      \"name\": \"move\",\n      \"params\": [\n        {\n          \"type\": \"string\",\n          \"name\": \"direction\"\n        }\n      ],\n      \"return\": {\n        \"type\": \"integer\"\n      },\n      \"comment\": \"Moves the snake.\\n        @param direction - 'U' = Up, 'L' = Left, 'R' = Right, 'D' = Down \\n        @return The game's score after the move. Return -1 if game over. \\n        Game over when snake crosses the screen boundary or bites its body.\"\n    }\n  ],\n  \"systemdesign\": true,\n  \"params\": [\n    {\n      \"name\": \"inputs\",\n      \"type\": \"integer[]\"\n    },\n    {\n      \"name\": \"inputs\",\n      \"type\": \"integer[]\"\n    }\n  ],\n  \"return\": {\n    \"type\": \"list<String>\",\n    \"dealloc\": true\n  },\n  \"manual\": true\n}",
+            "judgerAvailable": true,
+            "judgeType": "large",
+            "mysqlSchemas": [],
+            "enableRunCode": true,
+            "enableTestMode": false,
+            "enableDebugger": true,
+            "envInfo": "{\"cpp\": [\"C++\", \"<p>Compiled with <code> clang 11 </code> using the latest C++ 17 standard.</p>\\r\\n\\r\\n<p>Your code is compiled with level two optimization (<code>-O2</code>). <a href=\\\"https://github.com/google/sanitizers/wiki/AddressSanitizer\\\" target=\\\"_blank\\\">AddressSanitizer</a> is also enabled to help detect out-of-bounds and use-after-free bugs.</p>\\r\\n\\r\\n<p>Most standard library headers are already included automatically for your convenience.</p>\"], \"java\": [\"Java\", \"<p><code>Java SE 13</code>.</p>\\r\\n\\r\\n<p>Most standard library headers are already included automatically for your convenience.</p>\\r\\n<p>Includes <code>Pair</code> class from https://docs.oracle.com/javase/8/javafx/api/javafx/util/Pair.html.</p>\"], \"python\": [\"Python\", \"<p><code>Python 2.7.12</code>.</p>\\r\\n\\r\\n<p>Most libraries are already imported automatically for your convenience, such as <a href=\\\"https://docs.python.org/2/library/array.html\\\" target=\\\"_blank\\\">array</a>, <a href=\\\"https://docs.python.org/2/library/bisect.html\\\" target=\\\"_blank\\\">bisect</a>, <a href=\\\"https://docs.python.org/2/library/collections.html\\\" target=\\\"_blank\\\">collections</a>. If you need more libraries, you can import it yourself.</p>\\r\\n\\r\\n<p>For Map/TreeMap data structure, you may use <a href=\\\"http://www.grantjenks.com/docs/sortedcontainers/\\\" target=\\\"_blank\\\">sortedcontainers</a> library.</p>\\r\\n\\r\\n<p>Note that Python 2.7 <a href=\\\"https://www.python.org/dev/peps/pep-0373/\\\" target=\\\"_blank\\\">will not be maintained past 2020</a>. For the latest Python, please choose Python3 instead.</p>\"], \"c\": [\"C\", \"<p>Compiled with <code>gcc 8.2</code> using the gnu99 standard.</p>\\r\\n\\r\\n<p>Your code is compiled with level one optimization (<code>-O1</code>). <a href=\\\"https://github.com/google/sanitizers/wiki/AddressSanitizer\\\" target=\\\"_blank\\\">AddressSanitizer</a> is also enabled to help detect out-of-bounds and use-after-free bugs.</p>\\r\\n\\r\\n<p>Most standard library headers are already included automatically for your convenience.</p>\\r\\n\\r\\n<p>For hash table operations, you may use <a href=\\\"https://troydhanson.github.io/uthash/\\\" target=\\\"_blank\\\">uthash</a>. \\\"uthash.h\\\" is included by default. Below are some examples:</p>\\r\\n\\r\\n<p><b>1. Adding an item to a hash.</b>\\r\\n<pre>\\r\\nstruct hash_entry {\\r\\n    int id;            /* we'll use this field as the key */\\r\\n    char name[10];\\r\\n    UT_hash_handle hh; /* makes this structure hashable */\\r\\n};\\r\\n\\r\\nstruct hash_entry *users = NULL;\\r\\n\\r\\nvoid add_user(struct hash_entry *s) {\\r\\n    HASH_ADD_INT(users, id, s);\\r\\n}\\r\\n</pre>\\r\\n</p>\\r\\n\\r\\n<p><b>2. Looking up an item in a hash:</b>\\r\\n<pre>\\r\\nstruct hash_entry *find_user(int user_id) {\\r\\n    struct hash_entry *s;\\r\\n    HASH_FIND_INT(users, &user_id, s);\\r\\n    return s;\\r\\n}\\r\\n</pre>\\r\\n</p>\\r\\n\\r\\n<p><b>3. Deleting an item in a hash:</b>\\r\\n<pre>\\r\\nvoid delete_user(struct hash_entry *user) {\\r\\n    HASH_DEL(users, user);  \\r\\n}\\r\\n</pre>\\r\\n</p>\"], \"csharp\": [\"C#\", \"<p><a href=\\\"https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-8\\\" target=\\\"_blank\\\">C# 8.0 </a></p>\\r\\n\\r\\n<p>Your code is compiled with debug flag enabled (<code>/debug</code>).</p>\"], \"javascript\": [\"JavaScript\", \"<p><code>Node.js 14.8.0</code>.</p>\\r\\n\\r\\n<p>Your code is run with <code>--harmony</code> flag, enabling <a href=\\\"http://node.green/\\\" target=\\\"_blank\\\">new ES6 features</a>.</p>\\r\\n\\r\\n<p><a href=\\\"https://lodash.com\\\" target=\\\"_blank\\\">lodash.js</a> library is included by default.</p>\\r\\n\\r\\n<p>For Priority Queue / Queue data structures, you may use <a href=\\\"https://github.com/datastructures-js/priority-queue\\\" target=\\\"_blank\\\">datastructures-js/priority-queue</a> and <a href=\\\"https://github.com/datastructures-js/queue\\\" target=\\\"_blank\\\">datastructures-js/queue</a>.</p>\"], \"ruby\": [\"Ruby\", \"<p><code>Ruby 2.7.1</code></p>\\r\\n\\r\\n<p>Some common data structure implementations are provided in the Algorithms module: https://www.rubydoc.info/github/kanwei/algorithms/Algorithms</p>\"], \"swift\": [\"Swift\", \"<p><code>Swift 5.3</code>.</p>\"], \"golang\": [\"Go\", \"<p><code>Go 1.16.2</code>.</p>\\r\\n\\r\\n<p>Support <a href=\\\"https://godoc.org/github.com/emirpasic/gods\\\" target=\\\"_blank\\\">https://godoc.org/github.com/emirpasic/gods</a> library.</p>\"], \"python3\": [\"Python3\", \"<p><code>Python 3.9</code>.</p>\\r\\n\\r\\n<p>Most libraries are already imported automatically for your convenience, such as <a href=\\\"https://docs.python.org/3/library/array.html\\\" target=\\\"_blank\\\">array</a>, <a href=\\\"https://docs.python.org/3/library/bisect.html\\\" target=\\\"_blank\\\">bisect</a>, <a href=\\\"https://docs.python.org/3/library/collections.html\\\" target=\\\"_blank\\\">collections</a>. If you need more libraries, you can import it yourself.</p>\\r\\n\\r\\n<p>For Map/TreeMap data structure, you may use <a href=\\\"http://www.grantjenks.com/docs/sortedcontainers/\\\" target=\\\"_blank\\\">sortedcontainers</a> library.</p>\"], \"scala\": [\"Scala\", \"<p><code>Scala 2.13</code>.</p>\"], \"kotlin\": [\"Kotlin\", \"<p><code>Kotlin 1.3.10</code>.</p>\"], \"rust\": [\"Rust\", \"<p><code>Rust 1.45.2</code></p>\\r\\n\\r\\n<p>Supports <a href=\\\"https://crates.io/crates/rand\\\" target=\\\"_blank\\\">rand</a>\\u00a0from crates.io</p>\"], \"php\": [\"PHP\", \"<p><code>PHP 7.2</code>.</p>\\r\\n<p>With bcmath module</p>\"], \"typescript\": [\"Typescript\", \"<p><code>Node.js 14.8.0</code>.</p>\\r\\n\\r\\n<p>Your code is run with <code>--harmony</code> flag, enabling <a href=\\\"http://node.green/\\\" target=\\\"_blank\\\">new ES2020 features</a>.</p>\\r\\n\\r\\n<p><a href=\\\"https://lodash.com\\\" target=\\\"_blank\\\">lodash.js</a> library is included by default.</p>\"]}",
+            "libraryUrl": null,
+            "adminUrl": null,
+            "__typename": "QuestionNode"
+        }
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "783",
+            "article": "{\"id\": 770, \"url\": \"/articles/search-in-a-bst/\", \"topicId\": 381484}",
+            "solution": {
+                "id": "770",
+                "content": "[TOC]\n\n## Solution\n\n--- \n\n#### Binary Search Tree.\n\nBinary Search Tree is a binary tree where the key in each node \n\n- is greater than any key stored in the left sub-tree, \n\n- and less than any key stored in the right sub-tree.\n\nHere is an example:\n\n![bla](../Figures/700/bst.png)\n\nSuch data structure provides the following operations in a \nlogarithmic time: \n\n- Search. \n\n- [Insert](https://leetcode.com/articles/insert-into-a-bst/). \n\n- [Delete](https://leetcode.com/articles/delete-node-in-a-bst/).\n<br />\n<br />\n\n\n---\n#### Approach 1: Recursion\n\n**Algorithm**\n\nThe recursion implementation is very straightforward:\n\n- If the tree is empty `root == null` \nor the value to find is here `val == root.val` - return root.\n\n- If `val < root.val` - go to search into the left subtree `searchBST(root.left, val)`.\n\n- If `val > root.val` - go to search into the right subtree `searchBST(root.right, val)`.\n\n- Return `root`.\n\n![bla](../Figures/700/recursion.png)\n\n**Implementation**\n\n<iframe src=\"https://leetcode.com/playground/XQYNaftt/shared\" frameBorder=\"0\" width=\"100%\" height=\"174\" name=\"XQYNaftt\"></iframe>\n\n**Complexity Analysis**\n\n* Time complexity : $$\\mathcal{O}(H)$$, where $$H$$ is a tree height. That results in\n$$\\mathcal{O}(\\log N)$$ in the average case, and $$\\mathcal{O}(N)$$ in the worst case. \n\n    Let's compute time complexity with the help of \n    [master theorem](https://en.wikipedia.org/wiki/Master_theorem_(analysis_of_algorithms)) \n    $$T(N) = aT\\left(\\frac{N}{b}\\right) + \\Theta(N^d)$$.\n    The equation represents dividing the problem \n    up into $$a$$ subproblems of size $$\\frac{N}{b}$$ in $$\\Theta(N^d)$$ time. \n    Here at step there is only one subproblem `a = 1`, its size \n    is a half of the initial problem `b = 2`, \n    and all this happens in a constant time `d = 0`, as for\n    the binary search.\n    That means that $$\\log_b{a} = d$$ and hence we're dealing with \n    [case 2](https://en.wikipedia.org/wiki/Master_theorem_(analysis_of_algorithms)#Case_2_example)\n    that results in $$\\mathcal{O}(n^{\\log_b{a}} \\log^{d + 1} N)$$\n    = $$\\mathcal{O}(\\log N)$$ time complexity.\n    \n* Space complexity : $$\\mathcal{O}(H)$$ to keep the recursion stack,\ni.e. $$\\mathcal{O}(\\log N)$$ in the average case, \nand $$\\mathcal{O}(N)$$ in the worst case.\n<br />\n<br />\n\n\n---\n#### Approach 2: Iteration\n\nTo reduce the space complexity, one could convert recursive\napproach into the iterative one:\n\n- While the tree is not empty `root != null` \nand the value to find is _not_ here `val != root.val`:\n\n    - If `val < root.val` - go to search into the left subtree `root = root.left`.\n    \n    - If `val > root.val` - go to search into the right subtree `root = root.right`.\n\n- Return `root`. \n\n![bla](../Figures/700/iteration.png)\n\n**Implementation**\n\n<iframe src=\"https://leetcode.com/playground/ng7BDtDQ/shared\" frameBorder=\"0\" width=\"100%\" height=\"174\" name=\"ng7BDtDQ\"></iframe>\n\n**Complexity Analysis**\n\n* Time complexity : $$\\mathcal{O}(H)$$, where $$H$$ is a tree height. That results in\n$$\\mathcal{O}(\\log N)$$ in the average case, and $$\\mathcal{O}(N)$$ in the worst case. \n\n    Let's compute time complexity with the help of \n    [master theorem](https://en.wikipedia.org/wiki/Master_theorem_(analysis_of_algorithms)) \n    $$T(N) = aT\\left(\\frac{N}{b}\\right) + \\Theta(N^d)$$.\n    The equation represents dividing the problem \n    up into $$a$$ subproblems of size $$\\frac{N}{b}$$ in $$\\Theta(N^d)$$ time. \n    Here at step there is only one subproblem `a = 1`, its size \n    is a half of the initial problem `b = 2`, \n    and all this happens in a constant time `d = 0`, as for\n    the binary search.\n    That means that $$\\log_b{a} = d$$ and hence we're dealing with \n    [case 2](https://en.wikipedia.org/wiki/Master_theorem_(analysis_of_algorithms)#Case_2_example)\n    that results in $$\\mathcal{O}(n^{\\log_b{a}} \\log^{d + 1} N)$$\n    = $$\\mathcal{O}(\\log N)$$ time complexity.\n    \n* Space complexity : $$\\mathcal{O}(1)$$ since it's a constant space\nsolution.",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": true,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "755",
+                    "count": 25,
+                    "average": 4.64,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

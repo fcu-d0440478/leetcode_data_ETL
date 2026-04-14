@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "258",
+            "article": "{\"id\": 958, \"url\": \"/articles/add-digits/\", \"topicId\": 666062}",
+            "solution": {
+                "id": "958",
+                "content": "[TOC]\n\n---\n\n#### Overview\n\nThe value we're asked to compute is the so-called \n[Digital Root](https://en.wikipedia.org/wiki/Digital_root).\nLogarithmic time solution is easy to write, although the main question here \nis how to fit into a constant time.\n\n<iframe src=\"https://leetcode.com/playground/BosT2ysJ/shared\" frameBorder=\"0\" width=\"100%\" height=\"310\" name=\"BosT2ysJ\"></iframe>\n\n<br />\n<br />\n\n\n---\n#### Approach 1: Mathematical: Digital Root\n\n**Formula for the Digital Root**\n\nThere is a known formula to compute a digital root in a decimal \nnumeral system\n\n$$\ndr_{10}(n) = 0, \\qquad \\text{if } n = 0 \n$$\n\n$$\ndr_{10}(n) = 9, \\qquad \\text{if } n = 9 k \n$$\n\n$$\ndr_{10}(n) = n \\mod 9, \\qquad \\text{if } n \\ne 9 k\n$$\n\nHow to derive it? Probably, you already know the following proof from school, where it was used for a divisibility by 9: \"The original number is divisible by 9 if and only if the sum of its digits is divisible by 9\". Let's revise it briefly. \n\nThe input number could be presented in a standard way, where $$d_0, d_1, .. d_k$$ are digits of n:\n\n$$\nn = d_0 + d_1 \\cdot 10^1 + d_2 \\cdot 10^2 + ... + d_k \\cdot 10^k\n$$\n\nOne could expand each power of ten, using the following:\n\n$$\n10 = 9 \\cdot 1 + 1 \\\\ \n100 = 99 + 1 = 9 \\cdot 11 + 1 \\\\ \n1000 = 999 + 1 = 9 \\cdot 111 + 1 \\\\\n... \\\\\n10^k = 1\\underbrace{00..0}_\\text{k times} = \\underbrace{99..9}_\\text{k times} + 1 = 9 \\cdot \\underbrace{11..1}_\\text{k times} + 1\n$$\n\nThat results in \n\n$$\nn = d_0 + d_1 \\cdot (9 \\cdot 1 + 1) + d_2 \\cdot(9 \\cdot 11 + 1) + ... + d_k \\cdot (9 \\cdot \\underbrace{11..1}_\\text{k times} + 1)\n$$\n\nand could be simplified as\n\n$$\nn = (d_0 + d_1 + d_2 + ... + d_k) + 9 \\cdot (d_1 \\cdot 1 + d_2 \\cdot 11 + ... + d_k \\cdot \\underbrace{11..1}_\\text{k times})\n$$\n\nThe last step is to take the modulo from both sides:\n\n$$\nn \\mod 9 = (d_0 + d_1 + d_2 + ... + d_k) \\mod 9\n$$\n\nand to consider separately three cases: the sum of digits is 0, the sum of digits is divisible by 9, and the sum of digits is _not_ divisible by nine:\n\n$$\ndr_{10}(n) = 0, \\qquad \\text{if } n = 0\n$$\n\n$$\ndr_{10}(n) = 9, \\qquad \\text{if } n = 9 k \n$$\n\n$$\ndr_{10}(n) = n \\mod 9, \\qquad \\text{if } n \\ne 9 k\n$$\n\n**Implementation**\n\nThe straightforward implementation is \n\n<iframe src=\"https://leetcode.com/playground/fV6Sbr9f/shared\" frameBorder=\"0\" width=\"100%\" height=\"174\" name=\"fV6Sbr9f\"></iframe>\n\nthough two last cases could be merged into one\n\n$$\ndr_{10}(n) = 0, \\qquad \\text{if } n = 0 \n$$\n\n$$\ndr_{10}(n) = 1 + (n - 1) \\mod 9, \\qquad \\text{if } n \\ne 0\n$$\n\n<iframe src=\"https://leetcode.com/playground/2Vzw4gAg/shared\" frameBorder=\"0\" width=\"100%\" height=\"140\" name=\"2Vzw4gAg\"></iframe>\n\n**Complexity Analysis**\n\n* Time Complexity: $$\\mathcal{O}(1)$$.\n\n* Space Complexity: $$O(1)$$.\n<br />\n<br />\n\n\n---",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "903",
+                    "count": 158,
+                    "average": 4.665,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

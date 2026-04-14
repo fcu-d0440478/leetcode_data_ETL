@@ -1,0 +1,80 @@
+{
+    "data": {
+        "question": {
+            "questionId": "1509",
+            "questionFrontendId": "1378",
+            "boundTopicId": null,
+            "title": "Replace Employee ID With The Unique Identifier",
+            "titleSlug": "replace-employee-id-with-the-unique-identifier",
+            "content": "<p>Table: <code>Employees</code></p>\n\n<pre>\n+---------------+---------+\n| Column Name   | Type    |\n+---------------+---------+\n| id            | int     |\n| name          | varchar |\n+---------------+---------+\nid is the primary key for this table.\nEach row of this table contains the id and the name of an employee in a company.\n</pre>\n\n<p>&nbsp;</p>\n\n<p>Table: <code>EmployeeUNI</code></p>\n\n<pre>\n+---------------+---------+\n| Column Name   | Type    |\n+---------------+---------+\n| id            | int     |\n| unique_id     | int     |\n+---------------+---------+\n(id, unique_id) is the primary key for this table.\nEach row of this table contains the id and the corresponding unique id of an employee in the company.\n</pre>\n\n<p>&nbsp;</p>\n\n<p>Write an SQL query to show the <strong>unique ID </strong>of each user, If a user doesn&#39;t have a unique ID replace just show null.</p>\n\n<p>Return the result table in <strong>any</strong> order.</p>\n\n<p>The query result format is in the following example:</p>\n\n<pre>\nEmployees table:\n+----+----------+\n| id | name     |\n+----+----------+\n| 1  | Alice    |\n| 7  | Bob      |\n| 11 | Meir     |\n| 90 | Winston  |\n| 3  | Jonathan |\n+----+----------+\n\nEmployeeUNI table:\n+----+-----------+\n| id | unique_id |\n+----+-----------+\n| 3  | 1         |\n| 11 | 2         |\n| 90 | 3         |\n+----+-----------+\n\nResult table:\n+-----------+----------+\n| unique_id | name     |\n+-----------+----------+\n| null      | Alice    |\n| null      | Bob      |\n| 2         | Meir     |\n| 3         | Winston  |\n| 1         | Jonathan |\n+-----------+----------+\n\nAlice and Bob don&#39;t have a unique ID, We will show null instead.\nThe unique ID of Meir is 2.\nThe unique ID of Winston is 3.\nThe unique ID of Jonathan is 1.\n</pre>\n",
+            "translatedTitle": null,
+            "translatedContent": null,
+            "isPaidOnly": true,
+            "difficulty": "Easy",
+            "likes": 47,
+            "dislikes": 24,
+            "isLiked": null,
+            "similarQuestions": "[]",
+            "exampleTestcases": "{\"headers\":{\"Employees\":[\"id\",\"name\"],\"EmployeeUNI\":[\"id\",\"unique_id\"]},\"rows\":{\"Employees\":[[1,\"Alice\"],[7,\"Bob\"],[11,\"Meir\"],[90,\"Winston\"],[3,\"Jonathan\"]],\"EmployeeUNI\":[[3,1],[11,2],[90,3]]}}",
+            "contributors": [],
+            "topicTags": [
+                {
+                    "name": "Database",
+                    "slug": "database",
+                    "translatedName": null,
+                    "__typename": "TopicTagNode"
+                }
+            ],
+            "companyTagStats": "{\"3\": [{\"taggedByAdmin\": true, \"name\": \"Point72\", \"slug\": \"point72\", \"timesEncountered\": 0}], \"1\": [], \"2\": []}",
+            "codeSnippets": [
+                {
+                    "lang": "MySQL",
+                    "langSlug": "mysql",
+                    "code": "# Write your MySQL query statement below\n",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "MS SQL Server",
+                    "langSlug": "mssql",
+                    "code": "/* Write your T-SQL query statement below */\n",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Oracle",
+                    "langSlug": "oraclesql",
+                    "code": "/* Write your PL/SQL query statement below */\n",
+                    "__typename": "CodeSnippetNode"
+                }
+            ],
+            "stats": "{\"totalAccepted\": \"20.6K\", \"totalSubmission\": \"22.8K\", \"totalAcceptedRaw\": 20622, \"totalSubmissionRaw\": 22750, \"acRate\": \"90.6%\"}",
+            "hints": [],
+            "solution": null,
+            "status": null,
+            "sampleTestCase": "{\"headers\":{\"Employees\":[\"id\",\"name\"],\"EmployeeUNI\":[\"id\",\"unique_id\"]},\"rows\":{\"Employees\":[[1,\"Alice\"],[7,\"Bob\"],[11,\"Meir\"],[90,\"Winston\"],[3,\"Jonathan\"]],\"EmployeeUNI\":[[3,1],[11,2],[90,3]]}}",
+            "metaData": "{\n  \"mysql\": [\n    \"Create table If Not Exists Employees (id int, name varchar(20))\",\n    \"Create table If Not Exists EmployeeUNI (id int, unique_id int)\"\n  ],\n  \"mssql\": [\n    \"Create table Employees (id int, name varchar(20))\",\n    \"Create table EmployeeUNI (id int, unique_id int)\"\n  ],\n  \"oraclesql\": [\n    \"Create table Employees (id int, name varchar(20))\",\n    \"Create table EmployeeUNI (id int, unique_id int)\"\n  ],\n  \"database\": true\n}",
+            "judgerAvailable": true,
+            "judgeType": "large",
+            "mysqlSchemas": [
+                "Create table If Not Exists Employees (id int, name varchar(20))",
+                "Create table If Not Exists EmployeeUNI (id int, unique_id int)",
+                "Truncate table Employees",
+                "insert into Employees (id, name) values ('1', 'Alice')",
+                "insert into Employees (id, name) values ('7', 'Bob')",
+                "insert into Employees (id, name) values ('11', 'Meir')",
+                "insert into Employees (id, name) values ('90', 'Winston')",
+                "insert into Employees (id, name) values ('3', 'Jonathan')",
+                "Truncate table EmployeeUNI",
+                "insert into EmployeeUNI (id, unique_id) values ('3', '1')",
+                "insert into EmployeeUNI (id, unique_id) values ('11', '2')",
+                "insert into EmployeeUNI (id, unique_id) values ('90', '3')"
+            ],
+            "enableRunCode": true,
+            "enableTestMode": false,
+            "enableDebugger": false,
+            "envInfo": "{\"mysql\": [\"MySQL\", \"<p><code>MySQL 8.0</code>.</p>\"], \"mssql\": [\"MS SQL Server\", \"<p><code>mssql server 2019</code>.</p>\"], \"oraclesql\": [\"Oracle\", \"<p><code>Oracle Sql 11.2</code>.</p>\"]}",
+            "libraryUrl": null,
+            "adminUrl": null,
+            "__typename": "QuestionNode"
+        }
+    }
+}

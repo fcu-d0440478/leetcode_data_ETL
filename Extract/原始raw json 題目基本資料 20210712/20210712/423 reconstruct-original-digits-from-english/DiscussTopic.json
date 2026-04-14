@@ -1,0 +1,43 @@
+{
+    "data": {
+        "topic": {
+            "id": 234747,
+            "viewCount": 5711,
+            "topLevelCommentCount": 13,
+            "subscribed": false,
+            "title": "Reconstruct Original Digits from English",
+            "pinned": false,
+            "tags": [],
+            "hideFromTrending": false,
+            "post": {
+                "id": 468398,
+                "voteCount": 0,
+                "voteStatus": 0,
+                "content": "",
+                "updationDate": 1549800946,
+                "creationDate": 1549800946,
+                "status": null,
+                "isHidden": null,
+                "coinRewards": [],
+                "author": {
+                    "isDiscussAdmin": false,
+                    "isDiscussStaff": false,
+                    "username": "andvary",
+                    "nameColor": null,
+                    "activeBadge": null,
+                    "profile": {
+                        "userAvatar": "https://assets.leetcode.com/users/andvary/avatar_1547455970.png",
+                        "reputation": 1502,
+                        "__typename": "UserProfileNode"
+                    },
+                    "isActive": true,
+                    "__typename": "UserNode"
+                },
+                "authorIsModerator": false,
+                "isOwnPost": false,
+                "__typename": "PostNode"
+            },
+            "__typename": "TopicNode"
+        }
+    }
+}

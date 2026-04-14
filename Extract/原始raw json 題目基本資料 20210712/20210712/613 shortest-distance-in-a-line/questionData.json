@@ -1,0 +1,80 @@
+{
+    "data": {
+        "question": {
+            "questionId": "613",
+            "questionFrontendId": "613",
+            "boundTopicId": null,
+            "title": "Shortest Distance in a Line",
+            "titleSlug": "shortest-distance-in-a-line",
+            "content": "Table <code>point</code> holds the x coordinate of some points on x-axis in a plane, which are all integers.\r\n<p>&nbsp;</p>\r\nWrite a query to find the shortest distance between two points in these points.\r\n\r\n<p>&nbsp;</p>\r\n\r\n<pre>\r\n| x   |\r\n|-----|\r\n| -1  |\r\n| 0   |\r\n| 2   |\r\n</pre>\r\n\r\n<p>&nbsp;</p>\r\nThe shortest distance is &#39;1&#39; obviously, which is from point &#39;-1&#39; to &#39;0&#39;. So the output is as below:\r\n\r\n<p>&nbsp;</p>\r\n\r\n<pre>\r\n| shortest|\r\n|---------|\r\n| 1       |\r\n</pre>\r\n\r\n<p>&nbsp;</p>\r\n<b>Note:</b> Every point is unique, which means there is no duplicates in table <code>point</code>.\r\n\r\n<p>&nbsp;</p>\r\n<b>Follow-up:</b> What if all these points have an id and are arranged from the left most to the right most of x axis?\r\n\r\n<p>&nbsp;</p>\r\n",
+            "translatedTitle": null,
+            "translatedContent": null,
+            "isPaidOnly": true,
+            "difficulty": "Easy",
+            "likes": 203,
+            "dislikes": 27,
+            "isLiked": null,
+            "similarQuestions": "[]",
+            "exampleTestcases": "{\"headers\":{\"point\":[\"x\"]},\"rows\":{\"point\":[[-1],[0],[2]]}}",
+            "contributors": [],
+            "topicTags": [
+                {
+                    "name": "Database",
+                    "slug": "database",
+                    "translatedName": null,
+                    "__typename": "TopicTagNode"
+                }
+            ],
+            "companyTagStats": "{\"1\": [], \"2\": [], \"3\": []}",
+            "codeSnippets": [
+                {
+                    "lang": "MySQL",
+                    "langSlug": "mysql",
+                    "code": "# Write your MySQL query statement below\n",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "MS SQL Server",
+                    "langSlug": "mssql",
+                    "code": "/* Write your T-SQL query statement below */\n",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Oracle",
+                    "langSlug": "oraclesql",
+                    "code": "/* Write your PL/SQL query statement below */\n",
+                    "__typename": "CodeSnippetNode"
+                }
+            ],
+            "stats": "{\"totalAccepted\": \"37.2K\", \"totalSubmission\": \"46.4K\", \"totalAcceptedRaw\": 37214, \"totalSubmissionRaw\": 46360, \"acRate\": \"80.3%\"}",
+            "hints": [],
+            "solution": {
+                "id": "179",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "__typename": "ArticleNode"
+            },
+            "status": null,
+            "sampleTestCase": "{\"headers\":{\"point\":[\"x\"]},\"rows\":{\"point\":[[-1],[0],[2]]}}",
+            "metaData": "{\r\n  \"mysql\": [\r\n    \"CREATE TABLE If Not Exists point (x INT NOT NULL, UNIQUE INDEX x_UNIQUE (x ASC))\"\r\n  ],\r\n  \"mssql\": [\r\n    \"CREATE TABLE point (x INT NOT NULL)\"\r\n  ],\r\n  \"oraclesql\": [\r\n    \"CREATE TABLE point (x INT NOT NULL)\"\r\n  ],\r\n  \"database\": true\r\n}",
+            "judgerAvailable": true,
+            "judgeType": "large",
+            "mysqlSchemas": [
+                "CREATE TABLE If Not Exists point (x INT NOT NULL, UNIQUE INDEX x_UNIQUE (x ASC))",
+                "Truncate table point",
+                "insert into point (x) values ('-1')",
+                "insert into point (x) values ('0')",
+                "insert into point (x) values ('2')"
+            ],
+            "enableRunCode": true,
+            "enableTestMode": false,
+            "enableDebugger": false,
+            "envInfo": "{\"mysql\": [\"MySQL\", \"<p><code>MySQL 8.0</code>.</p>\"], \"mssql\": [\"MS SQL Server\", \"<p><code>mssql server 2019</code>.</p>\"], \"oraclesql\": [\"Oracle\", \"<p><code>Oracle Sql 11.2</code>.</p>\"]}",
+            "libraryUrl": null,
+            "adminUrl": null,
+            "__typename": "QuestionNode"
+        }
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "100",
+            "article": "{\"id\": 706, \"url\": \"/articles/same-tree/\", \"topicId\": 250926}",
+            "solution": {
+                "id": "706",
+                "content": "[TOC]\n\n## Solution\n\n---\n\n#### Approach 1: Recursion\n\n**Intuition**\n\nThe simplest strategy here is to use recursion. \nCheck if `p` and `q` nodes are not `None`, and their values are equal.\nIf all checks are OK, do the same for the child nodes\nrecursively.\n\n**Implementation**\n\n!?!../Documents/100_LIS.json:1000,373!?!\n\n<iframe src=\"https://leetcode.com/playground/nxYY8VVo/shared\" frameBorder=\"0\" width=\"100%\" height=\"395\" name=\"nxYY8VVo\"></iframe>\n\n**Complexity Analysis**\n\n* Time complexity : $$\\mathcal{O}(N)$$, \nwhere N is a number of nodes in the tree, since one visits\neach node exactly once.\n \n* Space complexity : $$\\mathcal{O}(\\log(N))$$ in the best case of completely \nbalanced tree and $$\\mathcal{O}(N)$$ in the worst case\nof completely unbalanced tree, to keep a recursion stack.\n<br />\n<br />\n\n\n---\n#### Approach 2: Iteration\n\n**Intuition**\n\nStart from the root and then at each iteration \npop the current node out of the deque. Then do the same checks as in\n the approach 1 :\n\n- `p` and `p` are not `None`, \n\n- `p.val` is equal to `q.val`,\n\nand if checks are OK, push the child nodes. \n\n**Implementation**\n\n<iframe src=\"https://leetcode.com/playground/F42oaJNc/shared\" frameBorder=\"0\" width=\"100%\" height=\"500\" name=\"F42oaJNc\"></iframe>\n\n**Complexity Analysis**\n\n* Time complexity : $$\\mathcal{O}(N)$$ since each node is visited\nexactly once.\n \n* Space complexity : $$\\mathcal{O}(\\log(N))$$ in the best case of completely \nbalanced tree and $$\\mathcal{O}(N)$$ in the worst case\nof completely unbalanced tree, to keep a deque.",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "691",
+                    "count": 100,
+                    "average": 4.38,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

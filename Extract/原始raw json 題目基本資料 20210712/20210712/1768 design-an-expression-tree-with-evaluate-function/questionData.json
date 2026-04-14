@@ -1,0 +1,114 @@
+{
+    "data": {
+        "question": {
+            "questionId": "1768",
+            "questionFrontendId": "1628",
+            "boundTopicId": null,
+            "title": "Design an Expression Tree With Evaluate Function",
+            "titleSlug": "design-an-expression-tree-with-evaluate-function",
+            "content": "<p>Given the <code>postfix</code> tokens of an arithmetic expression, build and return <em>the binary expression tree that represents this expression.</em></p>\r\n\r\n<p><b>Postfix</b> notation is a notation for writing arithmetic expressions in which the operands (numbers) appear before their operators. For example, the postfix tokens of the expression <code>4*(5-(7+2))</code> are represented in the array <code>postfix = [&quot;4&quot;,&quot;5&quot;,&quot;7&quot;,&quot;2&quot;,&quot;+&quot;,&quot;-&quot;,&quot;*&quot;]</code>.</p>\r\n\r\n<p>The class <code>Node</code> is an interface you should use to implement the binary expression tree. The returned tree will be tested using the <code>evaluate</code> function, which is supposed to evaluate the tree&#39;s value. You should not remove the <code>Node</code> class; however, you can modify it as you wish, and you can define other classes to implement it if needed.</p>\r\n\r\n<p>A <strong><a href=\"https://en.wikipedia.org/wiki/Binary_expression_tree\" target=\"_blank\">binary expression tree</a></strong> is a kind of binary tree used to represent arithmetic expressions. Each node of a binary expression tree has either zero or two children. Leaf nodes (nodes with 0 children) correspond to operands (numbers), and internal nodes (nodes with two children) correspond to the operators <code>&#39;+&#39;</code> (addition), <code>&#39;-&#39;</code> (subtraction), <code>&#39;*&#39;</code> (multiplication), and <code>&#39;/&#39;</code> (division).</p>\r\n\r\n<p>It&#39;s guaranteed that no subtree will yield a value that exceeds <code>10<sup>9</sup></code> in absolute value, and all the operations are valid (i.e., no division by zero).</p>\r\n\r\n<p><strong>Follow up:</strong> Could you design the expression tree such that it is more modular? For example, is your design able to support additional operators without making changes to your existing <code>evaluate</code> implementation?</p>\r\n\r\n<p>&nbsp;</p>\r\n<p><strong>Example 1:</strong></p>\r\n\r\n<p><strong><img alt=\"\" src=\"https://assets.leetcode.com/uploads/2020/10/15/untitled-diagram.png\" style=\"width: 242px; height: 241px;\" /></strong></p>\r\n\r\n<pre>\r\n<strong>Input:</strong> s = [&quot;3&quot;,&quot;4&quot;,&quot;+&quot;,&quot;2&quot;,&quot;*&quot;,&quot;7&quot;,&quot;/&quot;]\r\n<strong>Output:</strong> 2\r\n<strong>Explanation:</strong> this expression evaluates to the above binary tree with expression (<code>(3+4)*2)/7) = 14/7 = 2.</code>\r\n</pre>\r\n\r\n<p><strong>Example 2:</strong></p>\r\n\r\n<p><strong><img alt=\"\" src=\"https://assets.leetcode.com/uploads/2020/10/15/untitled-diagram2.png\" style=\"width: 222px; height: 232px;\" /></strong></p>\r\n\r\n<pre>\r\n<strong>Input:</strong> s = [&quot;4&quot;,&quot;5&quot;,&quot;7&quot;,&quot;2&quot;,&quot;+&quot;,&quot;-&quot;,&quot;*&quot;]\r\n<strong>Output:</strong> -16\r\n<strong>Explanation:</strong> this expression evaluates to the above binary tree with expression 4*(5-<code>(2+7)) = 4*(-4) = -16.</code>\r\n</pre>\r\n\r\n<p><strong>Example 3:</strong></p>\r\n\r\n<pre>\r\n<strong>Input:</strong> s = [&quot;4&quot;,&quot;2&quot;,&quot;+&quot;,&quot;3&quot;,&quot;5&quot;,&quot;1&quot;,&quot;-&quot;,&quot;*&quot;,&quot;+&quot;]\r\n<strong>Output:</strong> 18\r\n</pre>\r\n\r\n<p><strong>Example 4:</strong></p>\r\n\r\n<pre>\r\n<strong>Input:</strong> s = [&quot;100&quot;,&quot;200&quot;,&quot;+&quot;,&quot;2&quot;,&quot;/&quot;,&quot;5&quot;,&quot;*&quot;,&quot;7&quot;,&quot;+&quot;]\r\n<strong>Output:</strong> 757\r\n</pre>\r\n\r\n<p>&nbsp;</p>\r\n<p><strong>Constraints:</strong></p>\r\n\r\n<ul>\r\n\t<li><code>1 &lt;= s.length &lt; 100</code></li>\r\n\t<li><code>s.length</code> is odd.</li>\r\n\t<li><code>s</code> consists of numbers and the characters <code>&#39;+&#39;</code>, <code>&#39;-&#39;</code>, <code>&#39;*&#39;</code>, and <code>&#39;/&#39;</code>.</li>\r\n\t<li>If <code>s[i]</code> is a number, its integer representation is no more than <code>10<sup>5</sup></code>.</li>\r\n\t<li>It is guaranteed that <code>s</code> is a valid expression.</li>\r\n\t<li>The absolute value of the result and intermediate values will not exceed <code>10<sup>9</sup></code>.</li>\r\n\t<li>It is guaranteed that no expression will include division by zero.</li>\r\n</ul>",
+            "translatedTitle": null,
+            "translatedContent": null,
+            "isPaidOnly": true,
+            "difficulty": "Medium",
+            "likes": 136,
+            "dislikes": 29,
+            "isLiked": null,
+            "similarQuestions": "[]",
+            "exampleTestcases": "[\"3\",\"4\",\"+\",\"2\",\"*\",\"7\",\"/\"]\n[\"4\",\"5\",\"7\",\"2\",\"+\",\"-\",\"*\"]\n[\"4\",\"2\",\"+\",\"3\",\"5\",\"1\",\"-\",\"*\",\"+\"]\n[\"100\",\"200\",\"+\",\"2\",\"/\",\"5\",\"*\",\"7\",\"+\"]",
+            "contributors": [],
+            "topicTags": [
+                {
+                    "name": "Math",
+                    "slug": "math",
+                    "translatedName": null,
+                    "__typename": "TopicTagNode"
+                },
+                {
+                    "name": "Stack",
+                    "slug": "stack",
+                    "translatedName": null,
+                    "__typename": "TopicTagNode"
+                },
+                {
+                    "name": "Tree",
+                    "slug": "tree",
+                    "translatedName": null,
+                    "__typename": "TopicTagNode"
+                },
+                {
+                    "name": "Design",
+                    "slug": "design",
+                    "translatedName": null,
+                    "__typename": "TopicTagNode"
+                },
+                {
+                    "name": "Binary Tree",
+                    "slug": "binary-tree",
+                    "translatedName": null,
+                    "__typename": "TopicTagNode"
+                }
+            ],
+            "companyTagStats": "{\"1\": [{\"taggedByAdmin\": true, \"name\": \"Amazon\", \"slug\": \"amazon\", \"timesEncountered\": 6}], \"2\": [], \"3\": []}",
+            "codeSnippets": [
+                {
+                    "lang": "C++",
+                    "langSlug": "cpp",
+                    "code": "/**\n * This is the interface for the expression tree Node.\n * You should not remove it, and you can define some classes to implement it.\n */\n\nclass Node {\npublic:\n    virtual ~Node () {};\n    virtual int evaluate() const = 0;\nprotected:\n    // define your fields here\n};\n\n\n/**\n * This is the TreeBuilder class.\n * You can treat it as the driver code that takes the postinfix input \n * and returns the expression tree represnting it as a Node.\n */\n\nclass TreeBuilder {\npublic:\n    Node* buildTree(vector<string>& postfix) {\n        \n    }\n};\n\n\n/**\n * Your TreeBuilder object will be instantiated and called as such:\n * TreeBuilder* obj = new TreeBuilder();\n * Node* expTree = obj->buildTree(postfix);\n * int ans = expTree->evaluate();\n */",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Java",
+                    "langSlug": "java",
+                    "code": "/**\n * This is the interface for the expression tree Node.\n * You should not remove it, and you can define some classes to implement it.\n */\n\nabstract class Node {\n    public abstract int evaluate();\n    // define your fields here\n};\n\n\n/**\n * This is the TreeBuilder class.\n * You can treat it as the driver code that takes the postinfix input \n * and returns the expression tree represnting it as a Node.\n */\n\nclass TreeBuilder {\n    Node buildTree(String[] postfix) {\n        \n    }\n};\n\n\n/**\n * Your TreeBuilder object will be instantiated and called as such:\n * TreeBuilder obj = new TreeBuilder();\n * Node expTree = obj.buildTree(postfix);\n * int ans = expTree.evaluate();\n */",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Python",
+                    "langSlug": "python",
+                    "code": "import abc \nfrom abc import ABCMeta, abstractmethod \n\"\"\"\nThis is the interface for the expression tree Node.\nYou should not remove it, and you can define some classes to implement it.\n\"\"\"\n\nclass Node:\n    __metaclass__ = ABCMeta\n    # define your fields here\n    @abstractmethod\n    def evaluate(self):\n        pass\n\n\n\"\"\"    \nThis is the TreeBuilder class.\nYou can treat it as the driver code that takes the postinfix input\nand returns the expression tree represnting it as a Node.\n\"\"\"\n\nclass TreeBuilder(object):\n    def buildTree(self, postfix):\n        \"\"\"\n        :type s: List[str]\n        :rtype: int\n        \"\"\"\n\n\"\"\"\nYour TreeBuilder object will be instantiated and called as such:\nobj = TreeBuilder();\nexpTree = obj.buildTree(postfix);\nans = expTree.evaluate();\n\"\"\"\n        ",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Python3",
+                    "langSlug": "python3",
+                    "code": "import abc \nfrom abc import ABC, abstractmethod \n\"\"\"\nThis is the interface for the expression tree Node.\nYou should not remove it, and you can define some classes to implement it.\n\"\"\"\n\nclass Node(ABC):\n    @abstractmethod\n    # define your fields here\n    def evaluate(self) -> int:\n        pass\n\n\n\"\"\"    \nThis is the TreeBuilder class.\nYou can treat it as the driver code that takes the postinfix input\nand returns the expression tree represnting it as a Node.\n\"\"\"\n\nclass TreeBuilder(object):\n    def buildTree(self, postfix: List[str]) -> 'Node':\n        \n\t\t\n\"\"\"\nYour TreeBuilder object will be instantiated and called as such:\nobj = TreeBuilder();\nexpTree = obj.buildTree(postfix);\nans = expTree.evaluate();\n\"\"\"\n        ",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "C#",
+                    "langSlug": "csharp",
+                    "code": "/**\n * This is the interface for the expression tree Node.\n * You should not remove it, and you can define some classes to implement it.\n */\n\npublic abstract class Node {\n    public abstract int evaluate();\n    // define your fields here\n};\n\n\n/**\n * This is the TreeBuilder class.\n * You can treat it as the driver code that takes the postinfix input \n * and returns the expression tree represnting it as a Node.\n */\n\npublic class TreeBuilder {\n    public Node buildTree(string[] postfix) {\n        \n    }\n}\n\n\n/**\n * Your TreeBuilder object will be instantiated and called as such:\n * TreeBuilder obj = new TreeBuilder();\n * Node expTree = obj.buildTree(postfix);\n * int ans = expTree.evaluate();\n */",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "JavaScript",
+                    "langSlug": "javascript",
+                    "code": "/**\n * This is the interface for the expression tree Node.\n * You should not remove it, and you can define some classes to implement it.\n */\n\nvar Node = function () {\n  if (this.constructor === Node) {\n    throw new Error('Cannot instanciate abstract class');\n  }\n};\n\nNode.prototype.evaluate = function () {\n  throw new Error('Cannot call abstract method')\n};\n\n/**\n * This is the TreeBuilder class.\n * You can treat it as the driver code that takes the postinfix input \n * and returns the expression tree represnting it as a Node.\n */\n\nclass TreeBuilder{\n\t/**\n     * @param {string[]} s\n     * @return {Node}\n     */\n\tbuildTree(postfix) {\n    \t\n\t}\n    \n}\n\n/**\n * Your TreeBuilder object will be instantiated and called as such:\n * var obj = new TreeBuilder();\n * var expTree = obj.buildTree(postfix);\n * var ans = expTree.evaluate();\n */",
+                    "__typename": "CodeSnippetNode"
+                }
+            ],
+            "stats": "{\"totalAccepted\": \"5.7K\", \"totalSubmission\": \"7K\", \"totalAcceptedRaw\": 5690, \"totalSubmissionRaw\": 7008, \"acRate\": \"81.2%\"}",
+            "hints": [
+                "Apply the concept of Polymorphism to get a good design",
+                "Implement the Node class using NumericNode and OperatorNode classes.",
+                "NumericNode only maintains the value and evaluate returns this value.",
+                "OperatorNode Maintains the left and right nodes representing the left and right operands, and the evaluate function applies the operator to them."
+            ],
+            "solution": null,
+            "status": null,
+            "sampleTestCase": "[\"3\",\"4\",\"+\",\"2\",\"*\",\"7\",\"/\"]",
+            "metaData": "{\n  \"name\": \"buildTree\",\n  \"params\": [\n    {\n      \"name\": \"s\",\n      \"type\": \"string[]\"\n    }\n  ],\n  \"return\": {\n    \"type\": \"integer\"\n  },\n  \"manual\": true,\n  \"languages\": [\n    \"cpp\",\n    \"java\",\n    \"python\",\n    \"csharp\",\n    \"javascript\",\n    \"python3\"\n  ]\n}",
+            "judgerAvailable": true,
+            "judgeType": "large",
+            "mysqlSchemas": [],
+            "enableRunCode": true,
+            "enableTestMode": false,
+            "enableDebugger": true,
+            "envInfo": "{\"cpp\": [\"C++\", \"<p>Compiled with <code> clang 11 </code> using the latest C++ 17 standard.</p>\\r\\n\\r\\n<p>Your code is compiled with level two optimization (<code>-O2</code>). <a href=\\\"https://github.com/google/sanitizers/wiki/AddressSanitizer\\\" target=\\\"_blank\\\">AddressSanitizer</a> is also enabled to help detect out-of-bounds and use-after-free bugs.</p>\\r\\n\\r\\n<p>Most standard library headers are already included automatically for your convenience.</p>\"], \"java\": [\"Java\", \"<p><code>Java SE 13</code>.</p>\\r\\n\\r\\n<p>Most standard library headers are already included automatically for your convenience.</p>\\r\\n<p>Includes <code>Pair</code> class from https://docs.oracle.com/javase/8/javafx/api/javafx/util/Pair.html.</p>\"], \"python\": [\"Python\", \"<p><code>Python 2.7.12</code>.</p>\\r\\n\\r\\n<p>Most libraries are already imported automatically for your convenience, such as <a href=\\\"https://docs.python.org/2/library/array.html\\\" target=\\\"_blank\\\">array</a>, <a href=\\\"https://docs.python.org/2/library/bisect.html\\\" target=\\\"_blank\\\">bisect</a>, <a href=\\\"https://docs.python.org/2/library/collections.html\\\" target=\\\"_blank\\\">collections</a>. If you need more libraries, you can import it yourself.</p>\\r\\n\\r\\n<p>For Map/TreeMap data structure, you may use <a href=\\\"http://www.grantjenks.com/docs/sortedcontainers/\\\" target=\\\"_blank\\\">sortedcontainers</a> library.</p>\\r\\n\\r\\n<p>Note that Python 2.7 <a href=\\\"https://www.python.org/dev/peps/pep-0373/\\\" target=\\\"_blank\\\">will not be maintained past 2020</a>. For the latest Python, please choose Python3 instead.</p>\"], \"csharp\": [\"C#\", \"<p><a href=\\\"https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-8\\\" target=\\\"_blank\\\">C# 8.0 </a></p>\\r\\n\\r\\n<p>Your code is compiled with debug flag enabled (<code>/debug</code>).</p>\"], \"javascript\": [\"JavaScript\", \"<p><code>Node.js 14.8.0</code>.</p>\\r\\n\\r\\n<p>Your code is run with <code>--harmony</code> flag, enabling <a href=\\\"http://node.green/\\\" target=\\\"_blank\\\">new ES6 features</a>.</p>\\r\\n\\r\\n<p><a href=\\\"https://lodash.com\\\" target=\\\"_blank\\\">lodash.js</a> library is included by default.</p>\\r\\n\\r\\n<p>For Priority Queue / Queue data structures, you may use <a href=\\\"https://github.com/datastructures-js/priority-queue\\\" target=\\\"_blank\\\">datastructures-js/priority-queue</a> and <a href=\\\"https://github.com/datastructures-js/queue\\\" target=\\\"_blank\\\">datastructures-js/queue</a>.</p>\"], \"python3\": [\"Python3\", \"<p><code>Python 3.9</code>.</p>\\r\\n\\r\\n<p>Most libraries are already imported automatically for your convenience, such as <a href=\\\"https://docs.python.org/3/library/array.html\\\" target=\\\"_blank\\\">array</a>, <a href=\\\"https://docs.python.org/3/library/bisect.html\\\" target=\\\"_blank\\\">bisect</a>, <a href=\\\"https://docs.python.org/3/library/collections.html\\\" target=\\\"_blank\\\">collections</a>. If you need more libraries, you can import it yourself.</p>\\r\\n\\r\\n<p>For Map/TreeMap data structure, you may use <a href=\\\"http://www.grantjenks.com/docs/sortedcontainers/\\\" target=\\\"_blank\\\">sortedcontainers</a> library.</p>\"]}",
+            "libraryUrl": null,
+            "adminUrl": null,
+            "__typename": "QuestionNode"
+        }
+    }
+}

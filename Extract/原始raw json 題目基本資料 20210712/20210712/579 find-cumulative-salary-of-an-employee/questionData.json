@@ -1,0 +1,90 @@
+{
+    "data": {
+        "question": {
+            "questionId": "579",
+            "questionFrontendId": "579",
+            "boundTopicId": null,
+            "title": "Find Cumulative Salary of an Employee",
+            "titleSlug": "find-cumulative-salary-of-an-employee",
+            "content": "<p>The <b>Employee</b> table holds the salary information in a year.</p>\r\n\r\n<p>Write a SQL to get the cumulative sum of an employee&#39;s salary over a period of 3 months but exclude the most recent month.</p>\r\n\r\n<p>The result should be displayed by &#39;Id&#39; ascending, and then by &#39;Month&#39; descending.</p>\r\n\r\n<p><b>Example</b><br />\r\n<b>Input</b></p>\r\n\r\n<pre>\r\n| Id | Month | Salary |\r\n|----|-------|--------|\r\n| 1  | 1     | 20     |\r\n| 2  | 1     | 20     |\r\n| 1  | 2     | 30     |\r\n| 2  | 2     | 30     |\r\n| 3  | 2     | 40     |\r\n| 1  | 3     | 40     |\r\n| 3  | 3     | 60     |\r\n| 1  | 4     | 60     |\r\n| 3  | 4     | 70     |\r\n</pre>\r\n<b>Output</b>\r\n\r\n<pre>\r\n\r\n| Id | Month | Salary |\r\n|----|-------|--------|\r\n| 1  | 3     | 90     |\r\n| 1  | 2     | 50     |\r\n| 1  | 1     | 20     |\r\n| 2  | 1     | 20     |\r\n| 3  | 3     | 100    |\r\n| 3  | 2     | 40     |\r\n</pre>\r\n\r\n<p>&nbsp;</p>\r\n<b>Explanation</b>\r\n\r\n<p>Employee &#39;1&#39; has 3 salary records for the following 3 months except the most recent month &#39;4&#39;: salary 40 for month &#39;3&#39;, 30 for month &#39;2&#39; and 20 for month &#39;1&#39;<br />\r\nSo the cumulative sum of salary of this employee over 3 months is 90(40+30+20), 50(30+20) and 20 respectively.</p>\r\n\r\n<pre>\r\n| Id | Month | Salary |\r\n|----|-------|--------|\r\n| 1  | 3     | 90     |\r\n| 1  | 2     | 50     |\r\n| 1  | 1     | 20     |\r\n</pre>\r\nEmployee &#39;2&#39; only has one salary record (month &#39;1&#39;) except its most recent month &#39;2&#39;.\r\n\r\n<pre>\r\n| Id | Month | Salary |\r\n|----|-------|--------|\r\n| 2  | 1     | 20     |\r\n</pre>\r\n\r\n<p>&nbsp;</p>\r\nEmploy &#39;3&#39; has two salary records except its most recent pay month &#39;4&#39;: month &#39;3&#39; with 60 and month &#39;2&#39; with 40. So the cumulative salary is as following.\r\n\r\n<pre>\r\n| Id | Month | Salary |\r\n|----|-------|--------|\r\n| 3  | 3     | 100    |\r\n| 3  | 2     | 40     |\r\n</pre>\r\n\r\n<p>&nbsp;</p>\r\n",
+            "translatedTitle": null,
+            "translatedContent": null,
+            "isPaidOnly": true,
+            "difficulty": "Hard",
+            "likes": 141,
+            "dislikes": 308,
+            "isLiked": null,
+            "similarQuestions": "[]",
+            "exampleTestcases": "{\"headers\": {\"Employee\": [\"Id\", \"Month\", \"Salary\"]}, \"rows\": {\"Employee\": [[1, 1, 20], [2, 1, 20], [1, 2, 30], [2, 2, 30], [3,2,40],[1,3,40], [3,3,60],[1,4,60],[3,4,70]]}}",
+            "contributors": [],
+            "topicTags": [
+                {
+                    "name": "Database",
+                    "slug": "database",
+                    "translatedName": null,
+                    "__typename": "TopicTagNode"
+                }
+            ],
+            "companyTagStats": "{\"2\": [{\"taggedByAdmin\": true, \"name\": \"Amazon\", \"slug\": \"amazon\", \"timesEncountered\": 3}], \"1\": [], \"3\": []}",
+            "codeSnippets": [
+                {
+                    "lang": "MySQL",
+                    "langSlug": "mysql",
+                    "code": "# Write your MySQL query statement below\n",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "MS SQL Server",
+                    "langSlug": "mssql",
+                    "code": "/* Write your T-SQL query statement below */\n",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Oracle",
+                    "langSlug": "oraclesql",
+                    "code": "/* Write your PL/SQL query statement below */\n",
+                    "__typename": "CodeSnippetNode"
+                }
+            ],
+            "stats": "{\"totalAccepted\": \"20K\", \"totalSubmission\": \"51.6K\", \"totalAcceptedRaw\": 20000, \"totalSubmissionRaw\": 51645, \"acRate\": \"38.7%\"}",
+            "hints": [
+                "Seem hard at first glance? Try to divide this problem into some sub-problems. \r\nThink about how to calculate the cumulative sum of one employee, how to get the cumulative sum for many employees, and how to except the most recent month of the result.",
+                "Use the technique of self-join if you have only one table but to write a complex query.",
+                "Still remember how to use the function `sum` and `max`?"
+            ],
+            "solution": {
+                "id": "207",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "__typename": "ArticleNode"
+            },
+            "status": null,
+            "sampleTestCase": "{\"headers\": {\"Employee\": [\"Id\", \"Month\", \"Salary\"]}, \"rows\": {\"Employee\": [[1, 1, 20], [2, 1, 20], [1, 2, 30], [2, 2, 30], [3,2,40],[1,3,40], [3,3,60],[1,4,60],[3,4,70]]}}",
+            "metaData": "{\r\n  \"mysql\": [\r\n    \"Create table If Not Exists Employee (Id int, Month int, Salary int)\"\r\n  ],\r\n  \"mssql\": [\r\n    \"Create table Employee (Id int, Month int, Salary int)\"\r\n  ],\r\n  \"oraclesql\": [\r\n    \"Create table Employee (Id int, Month int, Salary int)\"\r\n  ],\r\n  \"database\": true\r\n}",
+            "judgerAvailable": true,
+            "judgeType": "large",
+            "mysqlSchemas": [
+                "Create table If Not Exists Employee (Id int, Month int, Salary int)",
+                "Truncate table Employee",
+                "insert into Employee (Id, Month, Salary) values ('1', '1', '20')",
+                "insert into Employee (Id, Month, Salary) values ('2', '1', '20')",
+                "insert into Employee (Id, Month, Salary) values ('1', '2', '30')",
+                "insert into Employee (Id, Month, Salary) values ('2', '2', '30')",
+                "insert into Employee (Id, Month, Salary) values ('3', '2', '40')",
+                "insert into Employee (Id, Month, Salary) values ('1', '3', '40')",
+                "insert into Employee (Id, Month, Salary) values ('3', '3', '60')",
+                "insert into Employee (Id, Month, Salary) values ('1', '4', '60')",
+                "insert into Employee (Id, Month, Salary) values ('3', '4', '70')"
+            ],
+            "enableRunCode": true,
+            "enableTestMode": false,
+            "enableDebugger": false,
+            "envInfo": "{\"mysql\": [\"MySQL\", \"<p><code>MySQL 8.0</code>.</p>\"], \"mssql\": [\"MS SQL Server\", \"<p><code>mssql server 2019</code>.</p>\"], \"oraclesql\": [\"Oracle\", \"<p><code>Oracle Sql 11.2</code>.</p>\"]}",
+            "libraryUrl": null,
+            "adminUrl": null,
+            "__typename": "QuestionNode"
+        }
+    }
+}

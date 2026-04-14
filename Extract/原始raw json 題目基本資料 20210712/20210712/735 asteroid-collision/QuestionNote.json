@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "735",
+            "article": "{\"id\": 309, \"url\": \"/articles/asteroid-collision/\", \"topicId\": 127685}",
+            "solution": {
+                "id": "309",
+                "content": "[TOC]\n\n#### Approach #1: Stack [Accepted]\n\n**Intuition**\n\nA row of asteroids is stable if no further collisions will occur.  After adding a new asteroid to the right, some more collisions may happen before it becomes stable again, and all of those collisions (if they happen) must occur right to left.  This is the perfect situation for using a *stack*.\n\n**Algorithm**\n\nSay we have our answer as a stack with rightmost asteroid `top`, and a `new` asteroid comes in.  If `new` is moving right (`new > 0`), or if `top` is moving left (`top < 0`), no collision occurs.\n\nOtherwise, if `abs(new) < abs(top)`, then the `new` asteroid will blow up; if `abs(new) == abs(top)` then both asteroids will blow up; and if `abs(new) > abs(top)`, then the `top` asteroid will blow up (and possibly more asteroids will, so we should continue checking.)\n\n<iframe src=\"https://leetcode.com/playground/K8Aw8z4a/shared\" frameBorder=\"0\" width=\"100%\" height=\"480\" name=\"K8Aw8z4a\"></iframe>\n\n\n**Complexity Analysis**\n\n* Time Complexity: $$O(N)$$, where $$N$$ is the number of asteroids.  Our stack pushes and pops each asteroid at most once.\n\n* Space Complexity: $$O(N)$$. We use a stack to keep track of the intermediate results. In the worst case, the states do not evolve at the end, _i.e._ we need $$O(N)$$ space where $$N$$ is the number of input asteroids.",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "304",
+                    "count": 67,
+                    "average": 3.791,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

@@ -1,0 +1,80 @@
+{
+    "data": {
+        "question": {
+            "questionId": "1763",
+            "questionFrontendId": "1623",
+            "boundTopicId": null,
+            "title": "All Valid Triplets That Can Represent a Country",
+            "titleSlug": "all-valid-triplets-that-can-represent-a-country",
+            "content": "<p>Table: <code>SchoolA</code></p>\n\n<pre>\n+---------------+---------+\n| Column Name   | Type    |\n+---------------+---------+\n| student_id    | int     |\n| student_name  | varchar |\n+---------------+---------+\nstudent_id is the primary key for this table.\nEach row of this table contains the name and the id of a student in school A.\nAll student_name are distinct.\n</pre>\n\n<p>&nbsp;</p>\n\n<p>Table: <code>SchoolB</code></p>\n\n<pre>\n+---------------+---------+\n| Column Name   | Type    |\n+---------------+---------+\n| student_id    | int     |\n| student_name  | varchar |\n+---------------+---------+\nstudent_id is the primary key for this table.\nEach row of this table contains the name and the id of a student in school B.\nAll student_name are distinct.\n</pre>\n\n<p>&nbsp;</p>\n\n<p>Table: <code>SchoolC</code></p>\n\n<pre>\n+---------------+---------+\n| Column Name   | Type    |\n+---------------+---------+\n| student_id    | int     |\n| student_name  | varchar |\n+---------------+---------+\nstudent_id is the primary key for this table.\nEach row of this table contains the name and the id of a student in school C.\nAll student_name are distinct.\n</pre>\n\n<p>&nbsp;</p>\n\n<p>There is a country with three schools, where each student is enrolled in <strong>exactly one</strong> school. The country is joining a competition and wants to select one student from each school to represent the country such that:</p>\n\n<ul>\n\t<li><code>member_A</code> is selected from <code>SchoolA</code>,</li>\n\t<li><code>member_B</code> is selected from <code>SchoolB</code>,</li>\n\t<li><code>member_C</code> is selected from <code>SchoolC</code>, and</li>\n\t<li>The selected students&#39; names and IDs are pairwise distinct (i.e. no two students share the same name, and no two students share the same ID).</li>\n</ul>\n\n<p>Write an SQL query to find all the possible triplets representing the country under the given constraints.</p>\n\n<p>Return the result table in <strong>any order</strong>.</p>\n\n<p>The query result format is in the following example.</p>\n\n<p>&nbsp;</p>\n\n<pre>\n<code>SchoolA</code> table:\n+------------+--------------+\n| student_id | student_name |\n+------------+--------------+\n| 1          | Alice        |\n| 2          | Bob          |\n+------------+--------------+\n\n<code>SchoolB</code> table:\n+------------+--------------+\n| student_id | student_name |\n+------------+--------------+\n| 3          | Tom          |\n+------------+--------------+\n\n<code>SchoolC</code> table:\n+------------+--------------+\n| student_id | student_name |\n+------------+--------------+\n| 3          | Tom          |\n| 2          | Jerry        |\n| 10         | Alice        |\n+------------+--------------+\n\nResult table:\n+----------+----------+----------+\n| member_A | member_B | member_C |\n+----------+----------+----------+\n| Alice    | Tom      | Jerry    |\n| Bob      | Tom      | Alice    |\n+----------+----------+----------+\nLet us see all the possible triplets.\n- (Alice, Tom, Tom) --&gt; Rejected because member_B and member_C have the same name and the same ID.\n- (Alice, Tom, Jerry) --&gt; Valid triplet.\n- (Alice, Tom, Alice) --&gt; Rejected because member_A and member_C have the same name.\n- (Bob, Tom, Tom) --&gt; Rejected because member_B and member_C have the same name and the same ID.\n- (Bob, Tom, Jerry) --&gt; Rejected because member_A and member_C have the same ID.\n- (Bob, Tom, Alice) --&gt; Valid triplet.\n</pre>\n",
+            "translatedTitle": null,
+            "translatedContent": null,
+            "isPaidOnly": true,
+            "difficulty": "Easy",
+            "likes": 34,
+            "dislikes": 55,
+            "isLiked": null,
+            "similarQuestions": "[]",
+            "exampleTestcases": "{\"headers\":{\"SchoolA\":[\"student_id\",\"student_name\"],\"SchoolB\":[\"student_id\",\"student_name\"],\"SchoolC\":[\"student_id\",\"student_name\"]},\"rows\":{\"SchoolA\":[[1,\"Alice\"],[2,\"Bob\"]],\"SchoolB\":[[3,\"Tom\"]],\"SchoolC\":[[3,\"Tom\"],[2,\"Jerry\"],[10,\"Alice\"]]}}",
+            "contributors": [],
+            "topicTags": [
+                {
+                    "name": "Database",
+                    "slug": "database",
+                    "translatedName": null,
+                    "__typename": "TopicTagNode"
+                }
+            ],
+            "companyTagStats": "{\"3\": [{\"taggedByAdmin\": true, \"name\": \"Amazon\", \"slug\": \"amazon\", \"timesEncountered\": 0}], \"1\": [], \"2\": []}",
+            "codeSnippets": [
+                {
+                    "lang": "MySQL",
+                    "langSlug": "mysql",
+                    "code": "# Write your MySQL query statement below\n",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "MS SQL Server",
+                    "langSlug": "mssql",
+                    "code": "/* Write your T-SQL query statement below */\n",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Oracle",
+                    "langSlug": "oraclesql",
+                    "code": "/* Write your PL/SQL query statement below */\n",
+                    "__typename": "CodeSnippetNode"
+                }
+            ],
+            "stats": "{\"totalAccepted\": \"8.3K\", \"totalSubmission\": \"9.4K\", \"totalAcceptedRaw\": 8342, \"totalSubmissionRaw\": 9392, \"acRate\": \"88.8%\"}",
+            "hints": [],
+            "solution": null,
+            "status": null,
+            "sampleTestCase": "{\"headers\":{\"SchoolA\":[\"student_id\",\"student_name\"],\"SchoolB\":[\"student_id\",\"student_name\"],\"SchoolC\":[\"student_id\",\"student_name\"]},\"rows\":{\"SchoolA\":[[1,\"Alice\"],[2,\"Bob\"]],\"SchoolB\":[[3,\"Tom\"]],\"SchoolC\":[[3,\"Tom\"],[2,\"Jerry\"],[10,\"Alice\"]]}}",
+            "metaData": "{\n  \"mysql\": [\n    \"Create table If Not Exists SchoolA (student_id int, student_name varchar(20))\",\n    \"Create table If Not Exists SchoolB (student_id int, student_name varchar(20))\",\n    \"Create table If Not Exists SchoolC (student_id int, student_name varchar(20))\"\n  ],\n  \"mssql\": [\n    \"Create table SchoolA (student_id int, student_name varchar(20))\",\n    \"Create table SchoolB (student_id int, student_name varchar(20))\",\n    \"Create table SchoolC (student_id int, student_name varchar(20))\"\n  ],\n  \"oraclesql\": [\n    \"Create table SchoolA (student_id int, student_name varchar(20))\",\n    \"Create table SchoolB (student_id int, student_name varchar(20))\",\n    \"Create table SchoolC (student_id int, student_name varchar(20))\"\n  ],\n  \"database\": true\n}",
+            "judgerAvailable": true,
+            "judgeType": "large",
+            "mysqlSchemas": [
+                "Create table If Not Exists SchoolA (student_id int, student_name varchar(20))",
+                "Create table If Not Exists SchoolB (student_id int, student_name varchar(20))",
+                "Create table If Not Exists SchoolC (student_id int, student_name varchar(20))",
+                "Truncate table SchoolA",
+                "insert into SchoolA (student_id, student_name) values ('1', 'Alice')",
+                "insert into SchoolA (student_id, student_name) values ('2', 'Bob')",
+                "Truncate table SchoolB",
+                "insert into SchoolB (student_id, student_name) values ('3', 'Tom')",
+                "Truncate table SchoolC",
+                "insert into SchoolC (student_id, student_name) values ('3', 'Tom')",
+                "insert into SchoolC (student_id, student_name) values ('2', 'Jerry')",
+                "insert into SchoolC (student_id, student_name) values ('10', 'Alice')"
+            ],
+            "enableRunCode": true,
+            "enableTestMode": false,
+            "enableDebugger": false,
+            "envInfo": "{\"mysql\": [\"MySQL\", \"<p><code>MySQL 8.0</code>.</p>\"], \"mssql\": [\"MS SQL Server\", \"<p><code>mssql server 2019</code>.</p>\"], \"oraclesql\": [\"Oracle\", \"<p><code>Oracle Sql 11.2</code>.</p>\"]}",
+            "libraryUrl": null,
+            "adminUrl": null,
+            "__typename": "QuestionNode"
+        }
+    }
+}

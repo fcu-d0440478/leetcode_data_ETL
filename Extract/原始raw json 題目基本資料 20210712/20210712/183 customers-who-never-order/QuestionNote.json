@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "183",
+            "article": "{\"id\": 218, \"url\": \"/articles/customers-who-never-order/\", \"topicId\": 127755}",
+            "solution": {
+                "id": "218",
+                "content": "[TOC]\n\n## Solution\n---\n#### Approach: Using sub-query and `NOT IN` clause [Accepted]\n\n**Algorithm**\n\nIf we have a list of customers who have ever ordered, it will be easy to know who never ordered.\n\nWe can use the following code to get such list.\n\n```sql\nselect customerid from orders;\n```\n\nThen, we can use `NOT IN` to query the customers who are not in this list.\n\n**MySQL**\n\n```sql\nselect customers.name as 'Customers'\nfrom customers\nwhere customers.id not in\n(\n    select customerid from orders\n);\n```",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "213",
+                    "count": 29,
+                    "average": 4.517,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

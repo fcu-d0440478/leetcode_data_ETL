@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "298",
+            "article": "{\"id\": 14, \"url\": \"/articles/binary-tree-longest-consecutive-sequence/\", \"topicId\": 127812}",
+            "solution": {
+                "id": "14",
+                "content": "[TOC]\r\n\r\n## Solution\r\n---\r\n#### Approach #1 (Top Down Depth-first Search) [Accepted]\r\n\r\n**Algorithm**\r\n\r\nA top down approach is similar to an in-order traversal. We use a variable `length` to store the current consecutive path length and pass it down the tree. As we traverse, we compare the current node with its parent node to determine if it is consecutive. If not, we reset the length.\r\n\r\n```java\r\nprivate int maxLength = 0;\r\npublic int longestConsecutive(TreeNode root) {\r\n    dfs(root, null, 0);\r\n    return maxLength;\r\n}\r\n\r\nprivate void dfs(TreeNode p, TreeNode parent, int length) {\r\n    if (p == null) return;\r\n    length = (parent != null && p.val == parent.val + 1) ? length + 1 : 1;\r\n    maxLength = Math.max(maxLength, length);\r\n    dfs(p.left, p, length);\r\n    dfs(p.right, p, length);\r\n}\r\n```\r\n\r\n@lightmark presents [a neat approach](https://leetcode.com/discuss/66486/short-and-simple-c-solution) without storing the maxLength as a global variable.\r\n\r\n```java\r\npublic int longestConsecutive(TreeNode root) {\r\n    return dfs(root, null, 0);\r\n}\r\n\r\nprivate int dfs(TreeNode p, TreeNode parent, int length) {\r\n    if (p == null) return length;\r\n    length = (parent != null && p.val == parent.val + 1) ? length + 1 : 1;\r\n    return Math.max(length, Math.max(dfs(p.left, p, length),\r\n                                     dfs(p.right, p, length)));\r\n}\r\n```\r\n\r\n**Complexity analysis**\r\n\r\n* Time complexity : $$O(n)$$.\r\nThe time complexity is the same as an in-order traversal of a binary tree with $$n$$ nodes.\r\n\r\n* Space complexity : $$O(n)$$.\r\nThe extra space comes from implicit stack space due to recursion. For a skewed binary tree, the recursion could go up to $$n$$ levels deep.\r\n\r\n---\r\n#### Approach #2 (Bottom Up Depth-first Search) [Accepted]\r\n\r\n**Algorithm**\r\n\r\nThe bottom-up approach is similar to a post-order traversal. We return the consecutive path length starting at current node to its parent. Then its parent can examine if its node value can be included in this consecutive path.\r\n\r\n```java\r\nprivate int maxLength = 0;\r\npublic int longestConsecutive(TreeNode root) {\r\n    dfs(root);\r\n    return maxLength;\r\n}\r\n\r\nprivate int dfs(TreeNode p) {\r\n    if (p == null) return 0;\r\n    int L = dfs(p.left) + 1;\r\n    int R = dfs(p.right) + 1;\r\n    if (p.left != null && p.val + 1 != p.left.val) {\r\n        L = 1;\r\n    }\r\n    if (p.right != null && p.val + 1 != p.right.val) {\r\n        R = 1;\r\n    }\r\n    int length = Math.max(L, R);\r\n    maxLength = Math.max(maxLength, length);\r\n    return length;\r\n}\r\n```\r\n\r\n**Complexity analysis**\r\n\r\n* Time complexity : $$O(n)$$.\r\nThe time complexity is the same as a post-order traversal in a binary tree, which is $$O(n)$$.\r\n\r\n* Space complexity : $$O(n)$$.\r\nThe extra space comes from implicit stack space due to recursion. For a skewed binary tree, the recursion could go up to $$n$$ levels deep.",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": true,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "7",
+                    "count": 36,
+                    "average": 4.611,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

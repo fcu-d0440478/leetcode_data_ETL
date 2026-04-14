@@ -1,0 +1,74 @@
+{
+    "data": {
+        "question": {
+            "questionId": "1504",
+            "questionFrontendId": "1369",
+            "boundTopicId": null,
+            "title": "Get the Second Most Recent Activity",
+            "titleSlug": "get-the-second-most-recent-activity",
+            "content": "<p>Table: <code>UserActivity</code></p>\r\n\r\n<pre>\r\n+---------------+---------+\r\n| Column Name   | Type    |\r\n+---------------+---------+\r\n| username      | varchar |\r\n| activity      | varchar |\r\n| startDate     | Date    |\r\n| endDate       | Date    |\r\n+---------------+---------+\r\nThis table does not contain primary key.\r\nThis table contain information about the activity performed of each user in a period of time.\r\nA person with username performed a activity from startDate to endDate.\r\n\r\n</pre>\r\n\r\n<p>Write an SQL query to&nbsp;show&nbsp;the <strong>second most recent activity </strong>of each user.</p>\r\n\r\n<p>If the user only has one activity, return that one.&nbsp;</p>\r\n\r\n<p>A&nbsp;user can&#39;t perform more than one activity at the same time. Return the result table in <strong>any</strong> order.</p>\r\n\r\n<p>The query result format is in the following example:</p>\r\n\r\n<pre>\r\n<code>UserActivity</code> table:\r\n+------------+--------------+-------------+-------------+\r\n| username   | activity     | startDate   | endDate     |\r\n+------------+--------------+-------------+-------------+\r\n| Alice      | Travel       | 2020-02-12  | 2020-02-20  |\r\n| Alice      | Dancing      | 2020-02-21  | 2020-02-23  |\r\n| Alice      | Travel       | 2020-02-24  | 2020-02-28  |\r\n| Bob        | Travel       | 2020-02-11  | 2020-02-18  |\r\n+------------+--------------+-------------+-------------+\r\n\r\nResult table:\r\n+------------+--------------+-------------+-------------+\r\n| username   | activity     | startDate   | endDate     |\r\n+------------+--------------+-------------+-------------+\r\n| Alice      | Dancing      | 2020-02-21  | 2020-02-23  |\r\n| Bob        | Travel       | 2020-02-11  | 2020-02-18  |\r\n+------------+--------------+-------------+-------------+\r\n\r\nThe most recent activity of Alice is Travel from 2020-02-24 to 2020-02-28, before that she was dancing from 2020-02-21 to 2020-02-23.\r\nBob only has one record, we just take that one.\r\n</pre>",
+            "translatedTitle": null,
+            "translatedContent": null,
+            "isPaidOnly": true,
+            "difficulty": "Hard",
+            "likes": 70,
+            "dislikes": 7,
+            "isLiked": null,
+            "similarQuestions": "[]",
+            "exampleTestcases": "{\"headers\":{\"UserActivity\":[\"username\",\"activity\",\"startDate\",\"endDate\"]},\"rows\":{\"UserActivity\":[[\"Alice\",\"Travel\",\"2020-02-12\",\"2020-02-20\"],[\"Alice\",\"Dancing\",\"2020-02-21\",\"2020-02-23\"],[\"Alice\",\"Travel\",\"2020-02-24\",\"2020-02-28\"],[\"Bob\",\"Travel\",\"2020-02-11\",\"2020-02-18\"]]}}\r",
+            "contributors": [],
+            "topicTags": [
+                {
+                    "name": "Database",
+                    "slug": "database",
+                    "translatedName": null,
+                    "__typename": "TopicTagNode"
+                }
+            ],
+            "companyTagStats": "{\"3\": [{\"taggedByAdmin\": true, \"name\": \"Microsoft\", \"slug\": \"microsoft\", \"timesEncountered\": 0}], \"1\": [], \"2\": []}",
+            "codeSnippets": [
+                {
+                    "lang": "MySQL",
+                    "langSlug": "mysql",
+                    "code": "# Write your MySQL query statement below\n",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "MS SQL Server",
+                    "langSlug": "mssql",
+                    "code": "/* Write your T-SQL query statement below */\n",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Oracle",
+                    "langSlug": "oraclesql",
+                    "code": "/* Write your PL/SQL query statement below */\n",
+                    "__typename": "CodeSnippetNode"
+                }
+            ],
+            "stats": "{\"totalAccepted\": \"8.5K\", \"totalSubmission\": \"12.3K\", \"totalAcceptedRaw\": 8496, \"totalSubmissionRaw\": 12303, \"acRate\": \"69.1%\"}",
+            "hints": [],
+            "solution": null,
+            "status": null,
+            "sampleTestCase": "{\"headers\":{\"UserActivity\":[\"username\",\"activity\",\"startDate\",\"endDate\"]},\"rows\":{\"UserActivity\":[[\"Alice\",\"Travel\",\"2020-02-12\",\"2020-02-20\"],[\"Alice\",\"Dancing\",\"2020-02-21\",\"2020-02-23\"],[\"Alice\",\"Travel\",\"2020-02-24\",\"2020-02-28\"],[\"Bob\",\"Travel\",\"2020-02-11\",\"2020-02-18\"]]}}\r",
+            "metaData": "{\n  \"mysql\": [\n    \"Create table If Not Exists UserActivity (username varchar(30), activity varchar(30), startDate date, endDate date)\"\n  ],\n  \"mssql\": [\n    \"Create table UserActivity (username varchar(30), activity varchar(30), startDate date, endDate date)\"\n  ],\n  \"oraclesql\": [\n    \"Create table UserActivity (username varchar(30), activity varchar(30), startDate date, endDate date)\",\n    \"ALTER SESSION SET nls_date_format='YYYY-MM-DD'\"\n  ],\n  \"database\": true\n}",
+            "judgerAvailable": true,
+            "judgeType": "large",
+            "mysqlSchemas": [
+                "Create table If Not Exists UserActivity (username varchar(30), activity varchar(30), startDate date, endDate date)",
+                "Truncate table UserActivity",
+                "insert into UserActivity (username, activity, startDate, endDate) values ('Alice', 'Travel', '2020-02-12', '2020-02-20')",
+                "insert into UserActivity (username, activity, startDate, endDate) values ('Alice', 'Dancing', '2020-02-21', '2020-02-23')",
+                "insert into UserActivity (username, activity, startDate, endDate) values ('Alice', 'Travel', '2020-02-24', '2020-02-28')",
+                "insert into UserActivity (username, activity, startDate, endDate) values ('Bob', 'Travel', '2020-02-11', '2020-02-18')"
+            ],
+            "enableRunCode": true,
+            "enableTestMode": false,
+            "enableDebugger": false,
+            "envInfo": "{\"mysql\": [\"MySQL\", \"<p><code>MySQL 8.0</code>.</p>\"], \"mssql\": [\"MS SQL Server\", \"<p><code>mssql server 2019</code>.</p>\"], \"oraclesql\": [\"Oracle\", \"<p><code>Oracle Sql 11.2</code>.</p>\"]}",
+            "libraryUrl": null,
+            "adminUrl": null,
+            "__typename": "QuestionNode"
+        }
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "932",
+            "article": "{\"id\": 546, \"url\": \"/articles/monotonic-array/\", \"topicId\": 165930}",
+            "solution": {
+                "id": "546",
+                "content": "[TOC]\n\n## Solution\n---\n#### Approach 1: Two Pass\n\n**Intuition**\n\nAn array is *monotonic* if it is monotone increasing, or monotone decreasing.  Since `a <= b` and `b <= c` implies `a <= c`, we only need to check adjacent elements to determine if the array is monotone increasing (or decreasing, respectively).  We can check each of these properties in one pass.\n\n**Algorithm**\n\nTo check whether an array `A` is monotone increasing, we'll check `A[i] <= A[i+1]` for all `i`.  The check for monotone decreasing is similar.\n\n<iframe src=\"https://leetcode.com/playground/7a5nAben/shared\" frameBorder=\"0\" width=\"100%\" height=\"344\" name=\"7a5nAben\"></iframe>\n\n**Complexity Analysis**\n\n* Time Complexity:  $$O(N)$$, where $$N$$ is the length of `A`.\n\n* Space Complexity:  $$O(1)$$.\n<br />\n<br />\n\n\n---\n#### Approach 2: One Pass\n\n**Intuition**\n\nTo perform this check in one pass, we want to handle a stream of comparisons from $$\\{-1, 0, 1\\}$$, corresponding to `<`, `==`, or `>`.  For example, with the array `[1, 2, 2, 3, 0]`, we will see the stream `(-1, 0, -1, 1)`.\n\n**Algorithm**\n\nKeep track of `store`, equal to the first non-zero comparison seen (if it exists.)  If we see the opposite comparison, the answer is `False`.\n\nOtherwise, every comparison was (necessarily) in the set $$\\{-1, 0\\}$$, or every comparison was in the set $$\\{0, 1\\}$$, and therefore the array is monotonic.\n\n<iframe src=\"https://leetcode.com/playground/Mp3RXdJy/shared\" frameBorder=\"0\" width=\"100%\" height=\"310\" name=\"Mp3RXdJy\"></iframe>\n\n**Complexity Analysis**\n\n* Time Complexity:  $$O(N)$$, where $$N$$ is the length of `A`.\n\n* Space Complexity:  $$O(1)$$.\n<br />\n<br />\n\n\n---\n#### Approach 3: One Pass (Simple Variant)\n\n**Intuition and Algorithm**\n\nTo perform this check in one pass, we want to remember if it is monotone increasing or monotone decreasing.\n\nIt's monotone increasing if there aren't some adjacent values `A[i], A[i+1]` with `A[i] > A[i+1]`, and similarly for monotone decreasing.\n\nIf it is either monotone increasing or monotone decreasing, then `A` is monotonic.\n\n<iframe src=\"https://leetcode.com/playground/Gqh6PaBh/shared\" frameBorder=\"0\" width=\"100%\" height=\"293\" name=\"Gqh6PaBh\"></iframe>\n\n**Complexity Analysis**\n\n* Time Complexity:  $$O(N)$$, where $$N$$ is the length of `A`.\n\n* Space Complexity:  $$O(1)$$.\n<br />\n<br />",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "537",
+                    "count": 52,
+                    "average": 4.442,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

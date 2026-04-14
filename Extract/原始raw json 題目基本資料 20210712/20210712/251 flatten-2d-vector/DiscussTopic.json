@@ -1,0 +1,43 @@
+{
+    "data": {
+        "topic": {
+            "id": 546559,
+            "viewCount": 11329,
+            "topLevelCommentCount": 11,
+            "subscribed": false,
+            "title": "Flatten 2D Vector",
+            "pinned": false,
+            "tags": [],
+            "hideFromTrending": false,
+            "post": {
+                "id": 1028703,
+                "voteCount": 0,
+                "voteStatus": 0,
+                "content": "",
+                "updationDate": 1584808657,
+                "creationDate": 1584808657,
+                "status": null,
+                "isHidden": null,
+                "coinRewards": [],
+                "author": {
+                    "isDiscussAdmin": false,
+                    "isDiscussStaff": false,
+                    "username": "Hai_dee",
+                    "nameColor": null,
+                    "activeBadge": null,
+                    "profile": {
+                        "userAvatar": "https://assets.leetcode.com/users/Hai_dee/avatar_1626057835.png",
+                        "reputation": 2243,
+                        "__typename": "UserProfileNode"
+                    },
+                    "isActive": true,
+                    "__typename": "UserNode"
+                },
+                "authorIsModerator": false,
+                "isOwnPost": false,
+                "__typename": "PostNode"
+            },
+            "__typename": "TopicNode"
+        }
+    }
+}

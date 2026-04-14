@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "441",
+            "article": "{\"id\": 916, \"url\": \"/articles/arranging-coins/\", \"topicId\": 551419}",
+            "solution": {
+                "id": "916",
+                "content": "[TOC]\r\n\r\n## Solution\r\n\r\n---\r\n\r\n#### Approach 1: Binary Search\r\n\r\nThis question is easy in a sense that one could run an **exhaustive iteration**\r\n to obtain the result.\r\nThat could work, except that it would run out of time when the input becomes too large.\r\nSo let us take a step back to look at the problem, before rushing to the implementation. \r\n\r\nAssume that the answer is $$k$$, _i.e._ we've managed to complete $$k$$ rows of coins.\r\nThese completed rows contain in total $$1 + 2 + ... + k = \\frac{k (k + 1)}{2}$$ coins.\r\n\r\nWe could now reformulate the problem as follows:\r\n\r\n> Find the maximum $$k$$ such that $$\\frac{k (k + 1)}{2} \\le N$$.\r\n\r\nThe problem seems to be one of those **search** problems.\r\nAnd instead of naive iteration, one could resort to another \r\nmore efficient algorithm called \r\n[**_binary search_**](https://en.wikipedia.org/wiki/Binary_search_algorithm),\r\nas we can find in another similar problem called \r\n[search insert position](https://leetcode.com/articles/search-insert-position/). \r\n\r\n**Implementation**\r\n\r\n<iframe src=\"https://leetcode.com/playground/MES8NgB6/shared\" frameBorder=\"0\" width=\"100%\" height=\"378\" name=\"MES8NgB6\"></iframe>\r\n\r\n**Complexity Analysis**\r\n\r\n* Time complexity : $$\\mathcal{O}(\\log N)$$.\r\n \r\n* Space complexity : $$\\mathcal{O}(1)$$.\r\n<br /> \r\n<br />\r\n\r\n\r\n---\r\n#### Approach 2: Math\r\n\r\nIf we look deeper into the formula of the problem,\r\nwe could actually solve it with the help of mathematics,\r\nwithout using any iteration.\r\n\r\nAs a reminder, the constraint of the problem can be expressed as follows:\r\n\r\n$$\r\nk(k + 1) \\le 2N\r\n$$\r\n\r\nThis could be solved by [completing the square](https://en.wikipedia.org/wiki/Completing_the_square)\r\ntechnique,\r\n\r\n$$\r\n\\left(k + \\frac{1}{2}\\right)^2 - \\frac{1}{4} \\le 2N\r\n$$\r\n\r\nthat results in the following answer:\r\n\r\n$$\r\nk = \\left[\\sqrt{2N + \\frac{1}{4}} - \\frac{1}{2}\\right]\r\n$$\r\n\r\n**Implementation**\r\n\r\n<iframe src=\"https://leetcode.com/playground/awABUisT/shared\" frameBorder=\"0\" width=\"100%\" height=\"140\" name=\"awABUisT\"></iframe>\r\n\r\n**Complexity Analysis**\r\n\r\n* Time complexity : $$\\mathcal{O}(1)$$.\r\n \r\n* Space complexity : $$\\mathcal{O}(1)$$. \r\n<br /> \r\n<br />",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "864",
+                    "count": 217,
+                    "average": 4.664,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

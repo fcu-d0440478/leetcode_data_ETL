@@ -1,0 +1,88 @@
+{
+    "data": {
+        "question": {
+            "questionId": "570",
+            "questionFrontendId": "570",
+            "boundTopicId": null,
+            "title": "Managers with at Least 5 Direct Reports",
+            "titleSlug": "managers-with-at-least-5-direct-reports",
+            "content": "<p>The <code>Employee</code> table holds all employees including their managers. Every employee has an Id, and there is also a column for the manager Id.</p>\r\n\r\n<pre>\r\n+------+----------+-----------+----------+\r\n|Id    |Name \t  |Department |ManagerId |\r\n+------+----------+-----------+----------+\r\n|101   |John \t  |A \t      |null      |\r\n|102   |Dan \t  |A \t      |101       |\r\n|103   |James \t  |A \t      |101       |\r\n|104   |Amy \t  |A \t      |101       |\r\n|105   |Anne \t  |A \t      |101       |\r\n|106   |Ron \t  |B \t      |101       |\r\n+------+----------+-----------+----------+\r\n</pre>\r\n\r\n<p>Given the <code>Employee</code> table, write a SQL query that finds out managers with at least 5 direct report. For the above table, your SQL query should return:</p>\r\n\r\n<pre>\r\n+-------+\r\n| Name  |\r\n+-------+\r\n| John  |\r\n+-------+\r\n</pre>\r\n\r\n<p><b>Note:</b><br />\r\nNo one would report to himself.</p>\r\n",
+            "translatedTitle": null,
+            "translatedContent": null,
+            "isPaidOnly": true,
+            "difficulty": "Medium",
+            "likes": 155,
+            "dislikes": 21,
+            "isLiked": null,
+            "similarQuestions": "[]",
+            "exampleTestcases": "{\"headers\": {\"Employee\": [\"Id\", \"Name\", \"Department\", \"ManagerId\"]}, \"rows\": {\"Employee\": [[101, \"John\", \"A\", null],[102, \"Dan\", \"A\", 101], [103, \"James\", \"A\", 101], [104, \"Amy\", \"A\", 101], [105, \"Anne\", \"A\", 101], [106, \"Ron\", \"B\", 101]]}}",
+            "contributors": [],
+            "topicTags": [
+                {
+                    "name": "Database",
+                    "slug": "database",
+                    "translatedName": null,
+                    "__typename": "TopicTagNode"
+                }
+            ],
+            "companyTagStats": "{\"3\": [{\"taggedByAdmin\": false, \"name\": \"Amazon\", \"slug\": \"amazon\", \"timesEncountered\": 3}, {\"taggedByAdmin\": true, \"name\": \"Bloomberg\", \"slug\": \"bloomberg\", \"timesEncountered\": 0}], \"1\": [], \"2\": []}",
+            "codeSnippets": [
+                {
+                    "lang": "MySQL",
+                    "langSlug": "mysql",
+                    "code": "# Write your MySQL query statement below\n",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "MS SQL Server",
+                    "langSlug": "mssql",
+                    "code": "/* Write your T-SQL query statement below */\n",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Oracle",
+                    "langSlug": "oraclesql",
+                    "code": "/* Write your PL/SQL query statement below */\n",
+                    "__typename": "CodeSnippetNode"
+                }
+            ],
+            "stats": "{\"totalAccepted\": \"39.2K\", \"totalSubmission\": \"58.3K\", \"totalAcceptedRaw\": 39188, \"totalSubmissionRaw\": 58336, \"acRate\": \"67.2%\"}",
+            "hints": [
+                "Try to get all the mangerIDs that have count bigger than 5",
+                "Use the last hint's result as a table and do join with origin table at id equals to managerId",
+                "This is a very good example to show the performance of SQL code. Try to work out other solutions and you may be surprised by running time difference.",
+                "If your solution uses 'IN' function and runs more than 5 seconds, try to optimize it by using 'JOIN' instead."
+            ],
+            "solution": {
+                "id": "209",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "__typename": "ArticleNode"
+            },
+            "status": null,
+            "sampleTestCase": "{\"headers\": {\"Employee\": [\"Id\", \"Name\", \"Department\", \"ManagerId\"]}, \"rows\": {\"Employee\": [[101, \"John\", \"A\", null],[102, \"Dan\", \"A\", 101], [103, \"James\", \"A\", 101], [104, \"Amy\", \"A\", 101], [105, \"Anne\", \"A\", 101], [106, \"Ron\", \"B\", 101]]}}",
+            "metaData": "{\r\n  \"mysql\": [\r\n    \"Create table If Not Exists Employee (Id int, Name varchar(255), Department varchar(255), ManagerId int)\"\r\n  ],\r\n  \"mssql\": [\r\n    \"Create table Employee (Id int, Name varchar(255), Department varchar(255), ManagerId int)\"\r\n  ],\r\n  \"oraclesql\": [\r\n    \"Create table Employee (Id int, Name varchar(255), Department varchar(255), ManagerId int)\"\r\n  ],\r\n  \"database\": true\r\n}",
+            "judgerAvailable": true,
+            "judgeType": "large",
+            "mysqlSchemas": [
+                "Create table If Not Exists Employee (Id int, Name varchar(255), Department varchar(255), ManagerId int)",
+                "Truncate table Employee",
+                "insert into Employee (Id, Name, Department, ManagerId) values ('101', 'John', 'A', 'None')",
+                "insert into Employee (Id, Name, Department, ManagerId) values ('102', 'Dan', 'A', '101')",
+                "insert into Employee (Id, Name, Department, ManagerId) values ('103', 'James', 'A', '101')",
+                "insert into Employee (Id, Name, Department, ManagerId) values ('104', 'Amy', 'A', '101')",
+                "insert into Employee (Id, Name, Department, ManagerId) values ('105', 'Anne', 'A', '101')",
+                "insert into Employee (Id, Name, Department, ManagerId) values ('106', 'Ron', 'B', '101')"
+            ],
+            "enableRunCode": true,
+            "enableTestMode": false,
+            "enableDebugger": false,
+            "envInfo": "{\"mysql\": [\"MySQL\", \"<p><code>MySQL 8.0</code>.</p>\"], \"mssql\": [\"MS SQL Server\", \"<p><code>mssql server 2019</code>.</p>\"], \"oraclesql\": [\"Oracle\", \"<p><code>Oracle Sql 11.2</code>.</p>\"]}",
+            "libraryUrl": null,
+            "adminUrl": null,
+            "__typename": "QuestionNode"
+        }
+    }
+}

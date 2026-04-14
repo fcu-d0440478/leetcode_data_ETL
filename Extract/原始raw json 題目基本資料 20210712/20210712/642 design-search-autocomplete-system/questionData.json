@@ -1,0 +1,163 @@
+{
+    "data": {
+        "question": {
+            "questionId": "642",
+            "questionFrontendId": "642",
+            "boundTopicId": null,
+            "title": "Design Search Autocomplete System",
+            "titleSlug": "design-search-autocomplete-system",
+            "content": "<p>Design a search autocomplete system for a search engine. Users may input a sentence (at least one word and end with a special character <code>&#39;#&#39;</code>).</p>\n\n<p>You are given a string array <code>sentences</code> and an integer array <code>times</code> both of length <code>n</code> where <code>sentences[i]</code> is a previously typed sentence and <code>times[i]</code> is the corresponding number of times the sentence was typed. For each input character except <code>&#39;#&#39;</code>, return the top <code>3</code> historical hot sentences that have the same prefix as the part of the sentence already typed.</p>\n\n<p>Here are the specific rules:</p>\n\n<ul>\n\t<li>The hot degree for a sentence is defined as the number of times a user typed the exactly same sentence before.</li>\n\t<li>The returned top <code>3</code> hot sentences should be sorted by hot degree (The first is the hottest one). If several sentences have the same hot degree, use ASCII-code order (smaller one appears first).</li>\n\t<li>If less than <code>3</code> hot sentences exist, return as many as you can.</li>\n\t<li>When the input is a special character, it means the sentence ends, and in this case, you need to return an empty list.</li>\n</ul>\n\n<p>Implement the <code>AutocompleteSystem</code> class:</p>\n\n<ul>\n\t<li><code>AutocompleteSystem(String[] sentences, int[] times)</code> Initializes the object with the <code>sentences</code> and <code>times</code> arrays.</li>\n\t<li><code>List&lt;String&gt; input(char c)</code> This indicates that the user typed the character <code>c</code>.\n\t<ul>\n\t\t<li>Returns an empty array <code>[]</code> if <code>c == &#39;#&#39;</code> and stores the inputted sentence in the system.</li>\n\t\t<li>Returns the top <code>3</code> historical hot sentences that have the same prefix as the part of the sentence already typed. If there are fewer than <code>3</code> matches, return them all.</li>\n\t</ul>\n\t</li>\n</ul>\n\n<p>&nbsp;</p>\n<p><strong>Example 1:</strong></p>\n\n<pre>\n<strong>Input</strong>\n[&quot;AutocompleteSystem&quot;, &quot;input&quot;, &quot;input&quot;, &quot;input&quot;, &quot;input&quot;]\n[[[&quot;i love you&quot;, &quot;island&quot;, &quot;iroman&quot;, &quot;i love leetcode&quot;], [5, 3, 2, 2]], [&quot;i&quot;], [&quot; &quot;], [&quot;a&quot;], [&quot;#&quot;]]\n<strong>Output</strong>\n[null, [&quot;i love you&quot;, &quot;island&quot;, &quot;i love leetcode&quot;], [&quot;i love you&quot;, &quot;i love leetcode&quot;], [], []]\n\n<strong>Explanation</strong>\nAutocompleteSystem obj = new AutocompleteSystem([&quot;i love you&quot;, &quot;island&quot;, &quot;iroman&quot;, &quot;i love leetcode&quot;], [5, 3, 2, 2]);\nobj.input(&quot;i&quot;); // return [&quot;i love you&quot;, &quot;island&quot;, &quot;i love leetcode&quot;]. There are four sentences that have prefix &quot;i&quot;. Among them, &quot;ironman&quot; and &quot;i love leetcode&quot; have same hot degree. Since &#39; &#39; has ASCII code 32 and &#39;r&#39; has ASCII code 114, &quot;i love leetcode&quot; should be in front of &quot;ironman&quot;. Also we only need to output top 3 hot sentences, so &quot;ironman&quot; will be ignored.\nobj.input(&quot; &quot;); // return [&quot;i love you&quot;, &quot;i love leetcode&quot;]. There are only two sentences that have prefix &quot;i &quot;.\nobj.input(&quot;a&quot;); // return []. There are no sentences that have prefix &quot;i a&quot;.\nobj.input(&quot;#&quot;); // return []. The user finished the input, the sentence &quot;i a&quot; should be saved as a historical sentence in system. And the following input will be counted as a new search.\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>n == sentences.length</code></li>\n\t<li><code>n == times.length</code></li>\n\t<li><code>1 &lt;= n &lt;= 100</code></li>\n\t<li><code>1 &lt;= sentences[i].length &lt;= 100</code></li>\n\t<li><code>1 &lt;= times[i] &lt;= 50</code></li>\n\t<li><code>c</code> is a lowercase English letter, a hash <code>&#39;#&#39;</code>, or space <code>&#39; &#39;</code>.</li>\n\t<li>Each tested sentence will be a sequence of characters <code>c</code> that end with the character <code>&#39;#&#39;</code>.</li>\n\t<li>Each tested sentence will have a length in the range <code>[1, 200]</code>.</li>\n\t<li>The words in each input sentence are separated by single spaces.</li>\n\t<li>At most <code>5000</code> calls will be made to <code>input</code>.</li>\n</ul>\n",
+            "translatedTitle": null,
+            "translatedContent": null,
+            "isPaidOnly": true,
+            "difficulty": "Hard",
+            "likes": 1405,
+            "dislikes": 94,
+            "isLiked": null,
+            "similarQuestions": "[{\"title\": \"Implement Trie (Prefix Tree)\", \"titleSlug\": \"implement-trie-prefix-tree\", \"difficulty\": \"Medium\", \"translatedTitle\": null}]",
+            "exampleTestcases": "[\"AutocompleteSystem\",\"input\",\"input\",\"input\",\"input\"]\n[[[\"i love you\",\"island\",\"iroman\",\"i love leetcode\"],[5,3,2,2]],[\"i\"],[\" \"],[\"a\"],[\"#\"]]",
+            "contributors": [],
+            "topicTags": [
+                {
+                    "name": "String",
+                    "slug": "string",
+                    "translatedName": null,
+                    "__typename": "TopicTagNode"
+                },
+                {
+                    "name": "Design",
+                    "slug": "design",
+                    "translatedName": null,
+                    "__typename": "TopicTagNode"
+                },
+                {
+                    "name": "Trie",
+                    "slug": "trie",
+                    "translatedName": null,
+                    "__typename": "TopicTagNode"
+                },
+                {
+                    "name": "Data Stream",
+                    "slug": "data-stream",
+                    "translatedName": null,
+                    "__typename": "TopicTagNode"
+                }
+            ],
+            "companyTagStats": "{\"3\": [{\"taggedByAdmin\": false, \"name\": \"Dropbox\", \"slug\": \"dropbox\", \"timesEncountered\": 7}, {\"taggedByAdmin\": true, \"name\": \"Facebook\", \"slug\": \"facebook\", \"timesEncountered\": 4}, {\"taggedByAdmin\": false, \"name\": \"Adobe\", \"slug\": \"adobe\", \"timesEncountered\": 2}, {\"taggedByAdmin\": false, \"name\": \"eBay\", \"slug\": \"ebay\", \"timesEncountered\": 2}], \"1\": [{\"taggedByAdmin\": false, \"name\": \"Amazon\", \"slug\": \"amazon\", \"timesEncountered\": 13}, {\"taggedByAdmin\": true, \"name\": \"Microsoft\", \"slug\": \"microsoft\", \"timesEncountered\": 8}, {\"taggedByAdmin\": false, \"name\": \"Google\", \"slug\": \"google\", \"timesEncountered\": 4}, {\"taggedByAdmin\": false, \"name\": \"Lyft\", \"slug\": \"lyft\", \"timesEncountered\": 4}, {\"taggedByAdmin\": false, \"name\": \"Snapchat\", \"slug\": \"snapchat\", \"timesEncountered\": 3}, {\"taggedByAdmin\": false, \"name\": \"Uber\", \"slug\": \"uber\", \"timesEncountered\": 2}, {\"taggedByAdmin\": false, \"name\": \"Apple\", \"slug\": \"apple\", \"timesEncountered\": 2}, {\"taggedByAdmin\": false, \"name\": \"Square\", \"slug\": \"square\", \"timesEncountered\": 2}], \"2\": [{\"taggedByAdmin\": false, \"name\": \"Bloomberg\", \"slug\": \"bloomberg\", \"timesEncountered\": 2}, {\"taggedByAdmin\": false, \"name\": \"Goldman Sachs\", \"slug\": \"goldman-sachs\", \"timesEncountered\": 2}]}",
+            "codeSnippets": [
+                {
+                    "lang": "C++",
+                    "langSlug": "cpp",
+                    "code": "class AutocompleteSystem {\npublic:\n    AutocompleteSystem(vector<string>& sentences, vector<int>& times) {\n        \n    }\n    \n    vector<string> input(char c) {\n        \n    }\n};\n\n/**\n * Your AutocompleteSystem object will be instantiated and called as such:\n * AutocompleteSystem* obj = new AutocompleteSystem(sentences, times);\n * vector<string> param_1 = obj->input(c);\n */",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Java",
+                    "langSlug": "java",
+                    "code": "class AutocompleteSystem {\n\n    public AutocompleteSystem(String[] sentences, int[] times) {\n        \n    }\n    \n    public List<String> input(char c) {\n        \n    }\n}\n\n/**\n * Your AutocompleteSystem object will be instantiated and called as such:\n * AutocompleteSystem obj = new AutocompleteSystem(sentences, times);\n * List<String> param_1 = obj.input(c);\n */",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Python",
+                    "langSlug": "python",
+                    "code": "class AutocompleteSystem(object):\n\n    def __init__(self, sentences, times):\n        \"\"\"\n        :type sentences: List[str]\n        :type times: List[int]\n        \"\"\"\n        \n\n    def input(self, c):\n        \"\"\"\n        :type c: str\n        :rtype: List[str]\n        \"\"\"\n        \n\n\n# Your AutocompleteSystem object will be instantiated and called as such:\n# obj = AutocompleteSystem(sentences, times)\n# param_1 = obj.input(c)",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Python3",
+                    "langSlug": "python3",
+                    "code": "class AutocompleteSystem:\n\n    def __init__(self, sentences: List[str], times: List[int]):\n        \n\n    def input(self, c: str) -> List[str]:\n        \n\n\n# Your AutocompleteSystem object will be instantiated and called as such:\n# obj = AutocompleteSystem(sentences, times)\n# param_1 = obj.input(c)",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "C",
+                    "langSlug": "c",
+                    "code": "\n\n\ntypedef struct {\n    \n} AutocompleteSystem;\n\n\nAutocompleteSystem* autocompleteSystemCreate(char ** sentences, int sentencesSize, int* times, int timesSize) {\n    \n}\n\nchar ** autocompleteSystemInput(AutocompleteSystem* obj, char c, int* retSize) {\n  \n}\n\nvoid autocompleteSystemFree(AutocompleteSystem* obj) {\n    \n}\n\n/**\n * Your AutocompleteSystem struct will be instantiated and called as such:\n * AutocompleteSystem* obj = autocompleteSystemCreate(sentences, sentencesSize, times, timesSize);\n * char ** param_1 = autocompleteSystemInput(obj, c, retSize);\n \n * autocompleteSystemFree(obj);\n*/",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "C#",
+                    "langSlug": "csharp",
+                    "code": "public class AutocompleteSystem {\n\n    public AutocompleteSystem(string[] sentences, int[] times) {\n        \n    }\n    \n    public IList<string> Input(char c) {\n        \n    }\n}\n\n/**\n * Your AutocompleteSystem object will be instantiated and called as such:\n * AutocompleteSystem obj = new AutocompleteSystem(sentences, times);\n * IList<string> param_1 = obj.Input(c);\n */",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "JavaScript",
+                    "langSlug": "javascript",
+                    "code": "/**\n * @param {string[]} sentences\n * @param {number[]} times\n */\nvar AutocompleteSystem = function(sentences, times) {\n    \n};\n\n/** \n * @param {character} c\n * @return {string[]}\n */\nAutocompleteSystem.prototype.input = function(c) {\n    \n};\n\n/** \n * Your AutocompleteSystem object will be instantiated and called as such:\n * var obj = new AutocompleteSystem(sentences, times)\n * var param_1 = obj.input(c)\n */",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Ruby",
+                    "langSlug": "ruby",
+                    "code": "class AutocompleteSystem\n\n=begin\n    :type sentences: String[]\n    :type times: Integer[]\n=end\n    def initialize(sentences, times)\n        \n    end\n\n\n=begin\n    :type c: Character\n    :rtype: String[]\n=end\n    def input(c)\n        \n    end\n\n\nend\n\n# Your AutocompleteSystem object will be instantiated and called as such:\n# obj = AutocompleteSystem.new(sentences, times)\n# param_1 = obj.input(c)",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Swift",
+                    "langSlug": "swift",
+                    "code": "\nclass AutocompleteSystem {\n\n    init(_ sentences: [String], _ times: [Int]) {\n        \n    }\n    \n    func input(_ c: Character) -> [String] {\n        \n    }\n}\n\n/**\n * Your AutocompleteSystem object will be instantiated and called as such:\n * let obj = AutocompleteSystem(sentences, times)\n * let ret_1: [String] = obj.input(c)\n */",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Go",
+                    "langSlug": "golang",
+                    "code": "type AutocompleteSystem struct {\n    \n}\n\n\nfunc Constructor(sentences []string, times []int) AutocompleteSystem {\n    \n}\n\n\nfunc (this *AutocompleteSystem) Input(c byte) []string {\n    \n}\n\n\n/**\n * Your AutocompleteSystem object will be instantiated and called as such:\n * obj := Constructor(sentences, times);\n * param_1 := obj.Input(c);\n */",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Scala",
+                    "langSlug": "scala",
+                    "code": "class AutocompleteSystem(_sentences: Array[String], _times: Array[Int]) {\n\n    def input(c: Char): List[String] = {\n        \n    }\n\n}\n\n/**\n * Your AutocompleteSystem object will be instantiated and called as such:\n * var obj = new AutocompleteSystem(sentences, times)\n * var param_1 = obj.input(c)\n */",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Kotlin",
+                    "langSlug": "kotlin",
+                    "code": "class AutocompleteSystem(sentences: Array<String>, times: IntArray) {\n\n    fun input(c: Char): List<String> {\n        \n    }\n\n}\n\n/**\n * Your AutocompleteSystem object will be instantiated and called as such:\n * var obj = AutocompleteSystem(sentences, times)\n * var param_1 = obj.input(c)\n */",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Rust",
+                    "langSlug": "rust",
+                    "code": "struct AutocompleteSystem {\n\n}\n\n\n/** \n * `&self` means the method takes an immutable reference.\n * If you need a mutable reference, change it to `&mut self` instead.\n */\nimpl AutocompleteSystem {\n\n    fn new(sentences: Vec<String>, times: Vec<i32>) -> Self {\n        \n    }\n    \n    fn input(&self, c: char) -> Vec<String> {\n        \n    }\n}\n\n/**\n * Your AutocompleteSystem object will be instantiated and called as such:\n * let obj = AutocompleteSystem::new(sentences, times);\n * let ret_1: Vec<String> = obj.input(c);\n */",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "PHP",
+                    "langSlug": "php",
+                    "code": "class AutocompleteSystem {\n    /**\n     * @param String[] $sentences\n     * @param Integer[] $times\n     */\n    function __construct($sentences, $times) {\n        \n    }\n  \n    /**\n     * @param String $c\n     * @return String[]\n     */\n    function input($c) {\n        \n    }\n}\n\n/**\n * Your AutocompleteSystem object will be instantiated and called as such:\n * $obj = AutocompleteSystem($sentences, $times);\n * $ret_1 = $obj->input($c);\n */",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "TypeScript",
+                    "langSlug": "typescript",
+                    "code": "class AutocompleteSystem {\n    constructor(sentences: string[], times: number[]) {\n\n    }\n\n    input(c: string): string[] {\n\n    }\n}\n\n/**\n * Your AutocompleteSystem object will be instantiated and called as such:\n * var obj = new AutocompleteSystem(sentences, times)\n * var param_1 = obj.input(c)\n */",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Racket",
+                    "langSlug": "racket",
+                    "code": "(define autocomplete-system%\n  (class object%\n    (super-new)\n\n    ; sentences : (listof string?)\n\n    ; times : (listof exact-integer?)\n    (init-field\n      sentences\n      times)\n    \n    ; input : char? -> (listof string?)\n    (define/public (input c)\n\n      )))\n\n;; Your autocomplete-system% object will be instantiated and called as such:\n;; (define obj (new autocomplete-system% [sentences sentences] [times times]))\n;; (define param_1 (send obj input c))",
+                    "__typename": "CodeSnippetNode"
+                }
+            ],
+            "stats": "{\"totalAccepted\": \"88K\", \"totalSubmission\": \"187.1K\", \"totalAcceptedRaw\": 88035, \"totalSubmissionRaw\": 187126, \"acRate\": \"47.0%\"}",
+            "hints": [],
+            "solution": null,
+            "status": null,
+            "sampleTestCase": "[\"AutocompleteSystem\",\"input\",\"input\",\"input\",\"input\"]\n[[[\"i love you\",\"island\",\"iroman\",\"i love leetcode\"],[5,3,2,2]],[\"i\"],[\" \"],[\"a\"],[\"#\"]]",
+            "metaData": "{\r\n    \"classname\": \"AutocompleteSystem\",\r\n    \"maxbytesperline\": 200000,\r\n    \"constructor\": {\r\n        \"params\": [\r\n            {\r\n                \"type\": \"string[]\",\r\n                \"name\": \"sentences\"\r\n            },\r\n            {\r\n                \"type\": \"integer[]\",\r\n                \"name\": \"times\"\r\n            },\r\n            {\r\n                \"type\": \"integer\",\r\n                \"name\": \"sentencesSize\",\r\n                \"lang\": \"c\",\r\n                \"value\": \"size_1\"\r\n            },\r\n            {\r\n                \"type\": \"integer\",\r\n                \"name\": \"timesSize\",\r\n                \"lang\": \"c\",\r\n                \"value\": \"size_2\"\r\n            }\r\n        ]\r\n    },\r\n    \"methods\": [\r\n        {\r\n            \"name\" : \"input\",\r\n            \"params\": [\r\n                {\r\n                    \"type\": \"character\",\r\n                    \"name\": \"c\"\r\n                }\r\n            ],\r\n            \"return\": {\r\n                \"type\": \"list<string>\"\r\n            }\r\n        }\r\n    ],\r\n    \"systemdesign\": true,\r\n    \"params\": [\r\n        {\r\n            \"name\": \"inputs\",\r\n            \"type\": \"integer[]\"\r\n        },\r\n        {\r\n            \"name\": \"inputs\",\r\n            \"type\": \"integer[]\"\r\n        }\r\n    ],\r\n    \"return\": {\r\n        \"type\": \"list<String>\",\r\n        \"dealloc\": true\r\n    }\r\n}",
+            "judgerAvailable": true,
+            "judgeType": "large",
+            "mysqlSchemas": [],
+            "enableRunCode": true,
+            "enableTestMode": false,
+            "enableDebugger": true,
+            "envInfo": "{\"cpp\": [\"C++\", \"<p>Compiled with <code> clang 11 </code> using the latest C++ 17 standard.</p>\\r\\n\\r\\n<p>Your code is compiled with level two optimization (<code>-O2</code>). <a href=\\\"https://github.com/google/sanitizers/wiki/AddressSanitizer\\\" target=\\\"_blank\\\">AddressSanitizer</a> is also enabled to help detect out-of-bounds and use-after-free bugs.</p>\\r\\n\\r\\n<p>Most standard library headers are already included automatically for your convenience.</p>\"], \"java\": [\"Java\", \"<p><code>Java SE 13</code>.</p>\\r\\n\\r\\n<p>Most standard library headers are already included automatically for your convenience.</p>\\r\\n<p>Includes <code>Pair</code> class from https://docs.oracle.com/javase/8/javafx/api/javafx/util/Pair.html.</p>\"], \"python\": [\"Python\", \"<p><code>Python 2.7.12</code>.</p>\\r\\n\\r\\n<p>Most libraries are already imported automatically for your convenience, such as <a href=\\\"https://docs.python.org/2/library/array.html\\\" target=\\\"_blank\\\">array</a>, <a href=\\\"https://docs.python.org/2/library/bisect.html\\\" target=\\\"_blank\\\">bisect</a>, <a href=\\\"https://docs.python.org/2/library/collections.html\\\" target=\\\"_blank\\\">collections</a>. If you need more libraries, you can import it yourself.</p>\\r\\n\\r\\n<p>For Map/TreeMap data structure, you may use <a href=\\\"http://www.grantjenks.com/docs/sortedcontainers/\\\" target=\\\"_blank\\\">sortedcontainers</a> library.</p>\\r\\n\\r\\n<p>Note that Python 2.7 <a href=\\\"https://www.python.org/dev/peps/pep-0373/\\\" target=\\\"_blank\\\">will not be maintained past 2020</a>. For the latest Python, please choose Python3 instead.</p>\"], \"c\": [\"C\", \"<p>Compiled with <code>gcc 8.2</code> using the gnu99 standard.</p>\\r\\n\\r\\n<p>Your code is compiled with level one optimization (<code>-O1</code>). <a href=\\\"https://github.com/google/sanitizers/wiki/AddressSanitizer\\\" target=\\\"_blank\\\">AddressSanitizer</a> is also enabled to help detect out-of-bounds and use-after-free bugs.</p>\\r\\n\\r\\n<p>Most standard library headers are already included automatically for your convenience.</p>\\r\\n\\r\\n<p>For hash table operations, you may use <a href=\\\"https://troydhanson.github.io/uthash/\\\" target=\\\"_blank\\\">uthash</a>. \\\"uthash.h\\\" is included by default. Below are some examples:</p>\\r\\n\\r\\n<p><b>1. Adding an item to a hash.</b>\\r\\n<pre>\\r\\nstruct hash_entry {\\r\\n    int id;            /* we'll use this field as the key */\\r\\n    char name[10];\\r\\n    UT_hash_handle hh; /* makes this structure hashable */\\r\\n};\\r\\n\\r\\nstruct hash_entry *users = NULL;\\r\\n\\r\\nvoid add_user(struct hash_entry *s) {\\r\\n    HASH_ADD_INT(users, id, s);\\r\\n}\\r\\n</pre>\\r\\n</p>\\r\\n\\r\\n<p><b>2. Looking up an item in a hash:</b>\\r\\n<pre>\\r\\nstruct hash_entry *find_user(int user_id) {\\r\\n    struct hash_entry *s;\\r\\n    HASH_FIND_INT(users, &user_id, s);\\r\\n    return s;\\r\\n}\\r\\n</pre>\\r\\n</p>\\r\\n\\r\\n<p><b>3. Deleting an item in a hash:</b>\\r\\n<pre>\\r\\nvoid delete_user(struct hash_entry *user) {\\r\\n    HASH_DEL(users, user);  \\r\\n}\\r\\n</pre>\\r\\n</p>\"], \"csharp\": [\"C#\", \"<p><a href=\\\"https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-8\\\" target=\\\"_blank\\\">C# 8.0 </a></p>\\r\\n\\r\\n<p>Your code is compiled with debug flag enabled (<code>/debug</code>).</p>\"], \"javascript\": [\"JavaScript\", \"<p><code>Node.js 14.8.0</code>.</p>\\r\\n\\r\\n<p>Your code is run with <code>--harmony</code> flag, enabling <a href=\\\"http://node.green/\\\" target=\\\"_blank\\\">new ES6 features</a>.</p>\\r\\n\\r\\n<p><a href=\\\"https://lodash.com\\\" target=\\\"_blank\\\">lodash.js</a> library is included by default.</p>\\r\\n\\r\\n<p>For Priority Queue / Queue data structures, you may use <a href=\\\"https://github.com/datastructures-js/priority-queue\\\" target=\\\"_blank\\\">datastructures-js/priority-queue</a> and <a href=\\\"https://github.com/datastructures-js/queue\\\" target=\\\"_blank\\\">datastructures-js/queue</a>.</p>\"], \"ruby\": [\"Ruby\", \"<p><code>Ruby 2.7.1</code></p>\\r\\n\\r\\n<p>Some common data structure implementations are provided in the Algorithms module: https://www.rubydoc.info/github/kanwei/algorithms/Algorithms</p>\"], \"swift\": [\"Swift\", \"<p><code>Swift 5.3</code>.</p>\"], \"golang\": [\"Go\", \"<p><code>Go 1.16.2</code>.</p>\\r\\n\\r\\n<p>Support <a href=\\\"https://godoc.org/github.com/emirpasic/gods\\\" target=\\\"_blank\\\">https://godoc.org/github.com/emirpasic/gods</a> library.</p>\"], \"python3\": [\"Python3\", \"<p><code>Python 3.9</code>.</p>\\r\\n\\r\\n<p>Most libraries are already imported automatically for your convenience, such as <a href=\\\"https://docs.python.org/3/library/array.html\\\" target=\\\"_blank\\\">array</a>, <a href=\\\"https://docs.python.org/3/library/bisect.html\\\" target=\\\"_blank\\\">bisect</a>, <a href=\\\"https://docs.python.org/3/library/collections.html\\\" target=\\\"_blank\\\">collections</a>. If you need more libraries, you can import it yourself.</p>\\r\\n\\r\\n<p>For Map/TreeMap data structure, you may use <a href=\\\"http://www.grantjenks.com/docs/sortedcontainers/\\\" target=\\\"_blank\\\">sortedcontainers</a> library.</p>\"], \"scala\": [\"Scala\", \"<p><code>Scala 2.13</code>.</p>\"], \"kotlin\": [\"Kotlin\", \"<p><code>Kotlin 1.3.10</code>.</p>\"], \"rust\": [\"Rust\", \"<p><code>Rust 1.45.2</code></p>\\r\\n\\r\\n<p>Supports <a href=\\\"https://crates.io/crates/rand\\\" target=\\\"_blank\\\">rand</a>\\u00a0from crates.io</p>\"], \"php\": [\"PHP\", \"<p><code>PHP 7.2</code>.</p>\\r\\n<p>With bcmath module</p>\"], \"typescript\": [\"Typescript\", \"<p><code>Node.js 14.8.0</code>.</p>\\r\\n\\r\\n<p>Your code is run with <code>--harmony</code> flag, enabling <a href=\\\"http://node.green/\\\" target=\\\"_blank\\\">new ES2020 features</a>.</p>\\r\\n\\r\\n<p><a href=\\\"https://lodash.com\\\" target=\\\"_blank\\\">lodash.js</a> library is included by default.</p>\"], \"racket\": [\"Racket\", \"<p>Run with <code>Racket 8.0</code>.</p>\"]}",
+            "libraryUrl": null,
+            "adminUrl": null,
+            "__typename": "QuestionNode"
+        }
+    }
+}

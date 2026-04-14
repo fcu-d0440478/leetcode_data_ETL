@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "586",
+            "article": "{\"id\": 160, \"url\": \"/articles/customer-placing-the-largest-number-of-orders/\", \"topicId\": 127739}",
+            "solution": {
+                "id": "160",
+                "content": "[TOC]\n\n## Solution\n---\n#### Approach: Using `LIMIT` [Accepted]\n\n**Algorithm**\n\nFirst, we can select the <b>customer_number</b> and the according count of orders using `GROUP BY`.\n```sql\nSELECT\n    customer_number, COUNT(*)\nFROM\n    orders\nGROUP BY customer_number\n```\n\n| customer_number | COUNT(*) |\n|-----------------|----------|\n| 1               | 1        |\n| 2               | 1        |\n| 3               | 2        |\n\nThen, the <b>customer_number</b> of first record is the result after sorting them by order count descending.\n\n| customer_number | COUNT(*) |\n|-----------------|----------|\n| 3               | 2        |\n\nIn MySQL, the [LIMIT](https://dev.mysql.com/doc/refman/5.7/en/select.html) clause can be used to constrain the number of rows returned by the SELECT statement. It takes one or two nonnegative numeric arguments, the first of which specifies the offset of the first row to return, and the second specifies the maximum number of rows to return. The offset of the initial row is 0 (not 1).\n\nIt can be used with only one argument, which specifies the number of rows to return from the beginning of the result set. So `LIMIT 1` will return the first record.\n\n**MySQL**\n\n```sql\nSELECT\n    customer_number\nFROM\n    orders\nGROUP BY customer_number\nORDER BY COUNT(*) DESC\nLIMIT 1\n;\n```",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "155",
+                    "count": 21,
+                    "average": 4.667,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

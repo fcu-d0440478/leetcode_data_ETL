@@ -1,0 +1,43 @@
+{
+    "data": {
+        "topic": {
+            "id": 127538,
+            "viewCount": 16240,
+            "topLevelCommentCount": 23,
+            "subscribed": false,
+            "title": "Ones and Zeroes",
+            "pinned": false,
+            "tags": [],
+            "hideFromTrending": false,
+            "post": {
+                "id": 255698,
+                "voteCount": 0,
+                "voteStatus": 0,
+                "content": "---\\n\\n**Click [here](https://leetcode.com/articles/ones-and-zeroes) to see the full article post**",
+                "updationDate": 1492559194,
+                "creationDate": 1492559194,
+                "status": null,
+                "isHidden": null,
+                "coinRewards": [],
+                "author": {
+                    "isDiscussAdmin": false,
+                    "isDiscussStaff": false,
+                    "username": "vinod23",
+                    "nameColor": null,
+                    "activeBadge": null,
+                    "profile": {
+                        "userAvatar": "https://assets.leetcode.com/users/vinod23/avatar_1532720423.png",
+                        "reputation": 621,
+                        "__typename": "UserProfileNode"
+                    },
+                    "isActive": true,
+                    "__typename": "UserNode"
+                },
+                "authorIsModerator": false,
+                "isOwnPost": false,
+                "__typename": "PostNode"
+            },
+            "__typename": "TopicNode"
+        }
+    }
+}

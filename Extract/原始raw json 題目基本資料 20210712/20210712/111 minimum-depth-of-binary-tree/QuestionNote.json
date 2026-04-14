@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "111",
+            "article": "{\"id\": 602, \"url\": \"/articles/minimum-depth-of-binary-tree/\", \"topicId\": 186920}",
+            "solution": {
+                "id": "602",
+                "content": "[TOC]\n\n## Solution\n\n**Tree definition**\n\nFirst of all, here is the definition of the ```TreeNode``` which we would use.\n\n<iframe src=\"https://leetcode.com/playground/eydaV3xv/shared\" frameBorder=\"0\" width=\"100%\" height=\"225\" name=\"eydaV3xv\"></iframe>\n<br />\n<br />\n\n\n---\n#### Approach 1: Recursion\n\n**Algorithm**\n\nThe intuitive approach is to solve the problem by recursion.\nHere we demonstrate an example with the DFS (Depth First Search) strategy. \n\n<iframe src=\"https://leetcode.com/playground/SPJwa4Wk/shared\" frameBorder=\"0\" width=\"100%\" height=\"412\" name=\"SPJwa4Wk\"></iframe>\n\n**Complexity analysis**\n\n* Time complexity : we visit each node exactly once, \nthus the time complexity is $$\\mathcal{O}(N)$$,\nwhere $$N$$ is the number of nodes.\n\n* Space complexity : in the worst case, the tree is completely unbalanced,\n*e.g.* each node has only one child node, the recursion call would occur\n $$N$$ times (the height of the tree), therefore the storage to keep the call stack would be $$\\mathcal{O}(N)$$.\n But in the best case (the tree is completely balanced), the height of the tree would be $$\\log(N)$$.\n Therefore, the space complexity in this case would be $$\\mathcal{O}(\\log(N))$$.\n<br />\n<br />\n\n\n---\n#### Approach 2: DFS Iteration\n\nWe could also convert the above recursion into iteration, with the help of stack.\n\n>The idea is to visit each leaf with the DFS strategy,\nwhile updating the minimum depth when we reach the leaf node.\n\nSo we start from a stack which contains the root node and the corresponding depth \nwhich is ```1```.\nThen we proceed to the iterations: pop the current node out of the stack and\npush the child nodes. The minimum depth is updated at each leaf node. \n\n<iframe src=\"https://leetcode.com/playground/9WbtWXMG/shared\" frameBorder=\"0\" width=\"100%\" height=\"500\" name=\"9WbtWXMG\"></iframe>  \n\n**Complexity analysis**\n\n* Time complexity : each node is visited exactly once and time complexity is \n$$\\mathcal{O}(N)$$.\n\n* Space complexity : in the worst case we could keep up to the entire tree,\nthat results in $$\\mathcal{O}(N)$$ space complexity.\n<br />\n<br />\n\n\n---\n#### Approach 3: BFS Iteration\n\nThe drawback of the DFS approach in this case is that all nodes should be visited\nto ensure that the minimum depth would be found. Therefore, this results in a $$\\mathcal{O}(N)$$\ncomplexity.\nOne way to optimize the complexity is to use the BFS strategy.\nWe iterate the tree level by level, and the first leaf we reach\n corresponds to the minimum depth. As a result, we do not need to iterate all nodes.\n\n<iframe src=\"https://leetcode.com/playground/bf356Cke/shared\" frameBorder=\"0\" width=\"100%\" height=\"500\" name=\"bf356Cke\"></iframe>  \n\n**Complexity analysis**\n\n* Time complexity : in the worst case for a balanced tree we need\n to visit all nodes level by level up to the tree height, \n that excludes the bottom level only.\n This way we visit $$N/2$$ nodes,\n and thus the time complexity is $$\\mathcal{O}(N)$$.\n\n* Space complexity : is the same as time complexity here \n$$\\mathcal{O}(N)$$.",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": true,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "588",
+                    "count": 44,
+                    "average": 3.727,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "196",
+            "article": "{\"id\": 210, \"url\": \"/articles/delete-duplicate-emails/\", \"topicId\": 127654}",
+            "solution": {
+                "id": "210",
+                "content": "[TOC]\n\n## Solution\n---\n#### Approach: Using `DELETE` and `WHERE` clause [Accepted]\n\n**Algorithm**\n\nBy joining this table with itself on the *Email* column, we can get the following code.\n```sql\nSELECT p1.*\nFROM Person p1,\n    Person p2\nWHERE\n    p1.Email = p2.Email\n;\n```\n\nThen we need to find the bigger id having same email address with other records. So we can add a new condition to the `WHERE` clause like this.\n\n```sql\nSELECT p1.*\nFROM Person p1,\n    Person p2\nWHERE\n    p1.Email = p2.Email AND p1.Id > p2.Id\n;\n```\n\nAs we already get the records to be deleted, we can alter this statement to `DELETE` in the end.\n\n**MySQL**\n\n```sql\nDELETE p1 FROM Person p1,\n    Person p2\nWHERE\n    p1.Email = p2.Email AND p1.Id > p2.Id\n```",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "205",
+                    "count": 65,
+                    "average": 3.508,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

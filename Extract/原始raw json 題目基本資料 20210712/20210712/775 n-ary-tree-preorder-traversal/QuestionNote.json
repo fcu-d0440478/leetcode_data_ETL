@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "775",
+            "article": "{\"id\": 603, \"url\": \"/articles/n-ary-tree-preorder-traversal/\", \"topicId\": 186923}",
+            "solution": {
+                "id": "603",
+                "content": "[TOC]\n\n## Solution\n\n---\n\n#### Approach 1: Iterations\n\n**Algorithm**\n\nFirst of all, here is the definition of the tree ```Node``` which we would use\nin the following implementation.\n\n<iframe src=\"https://leetcode.com/playground/cjuaoyEQ/shared\" frameBorder=\"0\" width=\"100%\" height=\"259\" name=\"cjuaoyEQ\"></iframe>\n\nLet's start from the root and then at each iteration \npop the current node out of the stack and\npush its child nodes. \nIn the implemented strategy we push nodes into output list \nfollowing the order ```Top->Bottom``` and ```Left->Right```, that\nnaturally reproduces preorder traversal.\n\n<iframe src=\"https://leetcode.com/playground/8nHBoHqM/shared\" frameBorder=\"0\" width=\"100%\" height=\"395\" name=\"8nHBoHqM\"></iframe>\n\n\n**Complexity Analysis**\n\n* Time complexity : we visit each node exactly once,\n and for each visit, the complexity of the operation\n (*i.e.* appending the child nodes) is\n proportional to the number of child nodes ```n``` (n-ary tree).\n Therefore the overall time complexity is $$\\mathcal{O}(N)$$,\nwhere $$N$$ is the number of nodes, *i.e.* the size of tree.\n\n* Space complexity : depending on the tree structure, \nwe could keep up to the entire tree, therefore, the space complexity is $$\\mathcal{O}(N)$$.",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": true,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "589",
+                    "count": 18,
+                    "average": 4.833,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

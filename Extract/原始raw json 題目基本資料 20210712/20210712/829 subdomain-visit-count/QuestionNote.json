@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "829",
+            "article": "{\"id\": 440, \"url\": \"/articles/subdomain-visit-count/\", \"topicId\": 127509}",
+            "solution": {
+                "id": "440",
+                "content": "[TOC]\n\n---\n#### Approach #1: Hash Map [Accepted]\n\n**Intuition and Algorithm**\n\nThe algorithm is straightforward: we just do what the problem statement tells us to do.\n\nFor an address like `a.b.c`, we will count `a.b.c`, `b.c`, and `c`.  For an address like `x.y`, we will count `x.y` and `y`.\n\nTo count these strings, we will use a hash map.  To split the strings into the required pieces, we will use library `split` functions.\n\n<iframe src=\"https://leetcode.com/playground/pnxZrtmK/shared\" frameBorder=\"0\" width=\"100%\" height=\"395\" name=\"pnxZrtmK\"></iframe>\n\n**Complexity Analysis**\n\n* Time Complexity:  $$O(N)$$, where $$N$$ is the length of `cpdomains`, and assuming the length of `cpdomains[i]` is fixed.\n\n* Space Complexity: $$O(N)$$, the space used in our count.",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "435",
+                    "count": 41,
+                    "average": 3.561,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

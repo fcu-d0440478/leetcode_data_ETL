@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "1128",
+            "article": "{\"id\": 743, \"url\": \"/articles/remove-all-adjacent-duplicates-in-string/\", \"topicId\": 319000}",
+            "solution": {
+                "id": "743",
+                "content": "[TOC]\n\n## Solution\n\n--- \n\n#### Approach 1: Replace\n\nOne could use here the standard replace function.\nString consists of English lowercase letters, and hence all 26\npossible duplicates are known in advance.\n\nThe idea is very simple:\n\n1. Generate hashset of all 26 possible duplicates from `aa` to `zz`.\n\n2. Iterate over that 26 duplicates and replace them all in string by empty char.\n\nNote that such a strategy could introduce some new duplicates,\nfor example `abbaca` -> `aaca`, and hence step number 2 sometimes\nshould be repeated several times. \nThe idea is to repeat step 2 till the string still changes after the \nreplacements. That could be checked by the string length.\n\n![fig](../Figures/1047/repl.png)\n\n**Algorithm**\n\n- Generate hashset of all 26 possible duplicates from `aa` to `zz`.\n\n- Initiate 'one step before' string length by `prevLength = -1`.\n\n- While previous length is still different from the current one \n`prevLength != S.length()`\n\n    - Set 'one step before' length to be equal to the string length\n    `prevLength = S.length()`.\n\n    - Iterate over all 26 duplicates and replace them in string by empty char.\n    \n- Return S.\n\n**Implementation**\n\n<iframe src=\"https://leetcode.com/playground/GapLYJTx/shared\" frameBorder=\"0\" width=\"100%\" height=\"395\" name=\"GapLYJTx\"></iframe>\n\n**Complexity Analysis**\n\n* Time complexity : $$\\mathcal{O}(N^2)$$, where N is a string length.\nHere we have an onion : while -> for -> replace. \n`while` is executed not more then $$N/2$$ times, \n`for` is always run 26 times, and `replace` has $$\\mathcal{O}(N)$$\nrun time in average. In total that results in \n$$\\mathcal{O}(\\frac{N}{2} \\times 26 \\times N)$$ = $$\\mathcal{O}(N^2)$$.\n\n* Space complexity : $$\\mathcal{O}(N)$$. The hashset of duplicates \nhas the constant length 26, but replace function \nactually creates a copy of the string and thus uses $$\\mathcal{O}(N)$$ space. \n<br /> \n<br />\n\n\n---\n#### Approach 2: Stack\n\nWe could trade an extra space for speed. \nThe idea is to use an output stack to keep track of only\nnon duplicate characters. Here is how it works:\n\n- Current string character is equal to the last element in stack? \nPop that last element out of stack.\n\n- Current string character is _not_ equal to the last element in stack? \nAdd the current character into stack.\n\n> Which data structure to use as the stack here? \n\nSomething that is fast to convert to string for output, \nfor example list in Python and StringBuilder in Java.\n\n!?!../Documents/1047_LIS.json:1000,478!?!\n\n**Algorithm**\n\n- Initiate an empty output stack.\n\n- Iterate over all characters in the string. \n\n    - Current element is equal to the last element in stack? \n    Pop that last element out of stack.\n    \n    - Current element is not equal to the last element in stack? \n    Add the current element into stack.\n    \n- Convert stack into string and return it.\n\n**Implementation**\n\n<iframe src=\"https://leetcode.com/playground/iZNtRfEX/shared\" frameBorder=\"0\" width=\"100%\" height=\"310\" name=\"iZNtRfEX\"></iframe>\n\n**Complexity Analysis**\n\n* Time complexity : $$\\mathcal{O}(N)$$, where N is a string length.\n* Space complexity : $$\\mathcal{O}(N - D)$$ where D is a total length \nfor all duplicates.",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": true,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "728",
+                    "count": 26,
+                    "average": 4.808,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

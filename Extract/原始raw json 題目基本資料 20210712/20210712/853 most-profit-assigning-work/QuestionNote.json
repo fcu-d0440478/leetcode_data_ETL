@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "853",
+            "article": "{\"id\": 457, \"url\": \"/articles/most-profit-assigning-work/\", \"topicId\": 127521}",
+            "solution": {
+                "id": "457",
+                "content": "[TOC]\n\n---\n#### Approach #1: Sorting Events [Accepted]\n\n**Intuition**\n\nWe can consider the workers in any order, so let's process them in order of skill.\n\nIf we processed all jobs with lower skill first, then the profit is just the most profitable job we have seen so far.\n\n**Algorithm**\n\nWe can use a \"two pointer\" approach to process jobs in order.  We will keep track of `best`, the maximum profit seen.\n\nFor each worker with a certain `skill`, after processing all jobs with lower or equal difficulty, we add `best` to our answer.\n\n<iframe src=\"https://leetcode.com/playground/vhFQvfQ9/shared\" frameBorder=\"0\" width=\"100%\" height=\"412\" name=\"vhFQvfQ9\"></iframe>\n\n**Complexity Analysis**\n\n* Time Complexity:  $$O(N \\log N + Q \\log Q)$$, where $$N$$ is the number of jobs, and $$Q$$ is the number of people.\n\n* Space Complexity: $$O(N)$$, the additional space used by `jobs`.",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "451",
+                    "count": 32,
+                    "average": 3.531,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

@@ -1,0 +1,79 @@
+{
+    "data": {
+        "question": {
+            "questionId": "610",
+            "questionFrontendId": "610",
+            "boundTopicId": null,
+            "title": "Triangle Judgement",
+            "titleSlug": "triangle-judgement",
+            "content": "A pupil Tim gets homework to identify whether three line segments could possibly form a triangle.\r\n<p>&nbsp;</p>\r\nHowever, this assignment is very heavy because there are hundreds of records to calculate.\r\n\r\n<p>&nbsp;</p>\r\nCould you help Tim by writing a query to judge whether these three sides can form a triangle, assuming table <code>triangle</code> holds the length of the three sides x, y and z.\r\n\r\n<p>&nbsp;</p>\r\n\r\n<pre>\r\n| x  | y  | z  |\r\n|----|----|----|\r\n| 13 | 15 | 30 |\r\n| 10 | 20 | 15 |\r\n</pre>\r\nFor the sample data above, your query should return the follow result:\r\n\r\n<pre>\r\n| x  | y  | z  | triangle |\r\n|----|----|----|----------|\r\n| 13 | 15 | 30 | No       |\r\n| 10 | 20 | 15 | Yes      |\r\n</pre>\r\n",
+            "translatedTitle": null,
+            "translatedContent": null,
+            "isPaidOnly": true,
+            "difficulty": "Easy",
+            "likes": 159,
+            "dislikes": 34,
+            "isLiked": null,
+            "similarQuestions": "[]",
+            "exampleTestcases": "{\"headers\":{\"triangle\":[\"x\",\"y\",\"z\"]},\"rows\":{\"triangle\":[[13,15,30],[10,20,15]]}}",
+            "contributors": [],
+            "topicTags": [
+                {
+                    "name": "Database",
+                    "slug": "database",
+                    "translatedName": null,
+                    "__typename": "TopicTagNode"
+                }
+            ],
+            "companyTagStats": "{\"1\": [{\"taggedByAdmin\": false, \"name\": \"Facebook\", \"slug\": \"facebook\", \"timesEncountered\": 2}], \"2\": [], \"3\": []}",
+            "codeSnippets": [
+                {
+                    "lang": "MySQL",
+                    "langSlug": "mysql",
+                    "code": "# Write your MySQL query statement below\n",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "MS SQL Server",
+                    "langSlug": "mssql",
+                    "code": "/* Write your T-SQL query statement below */\n",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Oracle",
+                    "langSlug": "oraclesql",
+                    "code": "/* Write your PL/SQL query statement below */\n",
+                    "__typename": "CodeSnippetNode"
+                }
+            ],
+            "stats": "{\"totalAccepted\": \"36K\", \"totalSubmission\": \"51.6K\", \"totalAcceptedRaw\": 35968, \"totalSubmissionRaw\": 51569, \"acRate\": \"69.7%\"}",
+            "hints": [],
+            "solution": {
+                "id": "180",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "__typename": "ArticleNode"
+            },
+            "status": null,
+            "sampleTestCase": "{\"headers\":{\"triangle\":[\"x\",\"y\",\"z\"]},\"rows\":{\"triangle\":[[13,15,30],[10,20,15]]}}",
+            "metaData": "{\r\n  \"mysql\": [\r\n    \"Create table If Not Exists triangle (x int, y int, z int)\"\r\n  ],\r\n  \"mssql\": [\r\n    \"Create table triangle (x int, y int, z int)\"\r\n  ],\r\n  \"oraclesql\": [\r\n    \"Create table triangle (x int, y int, z int)\"\r\n  ],\r\n  \"database\": true\r\n}",
+            "judgerAvailable": true,
+            "judgeType": "large",
+            "mysqlSchemas": [
+                "Create table If Not Exists triangle (x int, y int, z int)",
+                "Truncate table triangle",
+                "insert into triangle (x, y, z) values ('13', '15', '30')",
+                "insert into triangle (x, y, z) values ('10', '20', '15')"
+            ],
+            "enableRunCode": true,
+            "enableTestMode": false,
+            "enableDebugger": false,
+            "envInfo": "{\"mysql\": [\"MySQL\", \"<p><code>MySQL 8.0</code>.</p>\"], \"mssql\": [\"MS SQL Server\", \"<p><code>mssql server 2019</code>.</p>\"], \"oraclesql\": [\"Oracle\", \"<p><code>Oracle Sql 11.2</code>.</p>\"]}",
+            "libraryUrl": null,
+            "adminUrl": null,
+            "__typename": "QuestionNode"
+        }
+    }
+}

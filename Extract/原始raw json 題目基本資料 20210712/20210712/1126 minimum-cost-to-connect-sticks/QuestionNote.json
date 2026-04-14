@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "1126",
+            "article": "{\"id\": 1023, \"url\": \"/articles/minimum-cost-to-connect-sticks/\", \"topicId\": 890025}",
+            "solution": {
+                "id": "1023",
+                "content": "[TOC]\r\n\r\n## Video Solution\r\n\r\n---\r\n\r\n<div>\r\n    <div class=\"video-container\">\r\n        <iframe src=\"https://player.vimeo.com/video/548134877\" width=\"640\" height=\"360\" frameborder=\"0\" allow=\"autoplay; fullscreen\" allowfullscreen></iframe>\r\n    </div>\r\n</div>\r\n\r\n<div>&nbsp;\r\n</div>\r\n\r\n## Solution Article\r\n \r\n---\r\n \r\n#### Approach 1: Greedy\r\n  \r\n \r\n**Intuition and Algorithm**\r\n \r\nAlways pick two of the smallest sticks to connect and continue doing this until you get only one stick. Let's see why this works.\r\n\r\nConsider 4 sticks of the following lengths:\r\n \r\n$$sticks = [a_1, a_2, a_3, a_4]$$\r\n \r\nLet's try to connect them left to right.\r\n \r\nAfter first merge, we will have: \r\n \r\n$$sticks = [(a_1 + a_2), a_3, a_4], cost = (a_1 + a_2)$$\r\n \r\nAfter second merge, we will have: \r\n \r\n$$sticks = [(a_1 + a_2 + a_3), a_4], cost = (a_1 + a_2) + (a_1 + a_2 + a_3)$$\r\n \r\nAnd finally, last stick will look like: \r\n \r\n$$sticks = [(a_1 + a_2 + a_3 + a_4)], cost = (a_1 + a_2) + (a_1 + a_2 + a_3) +(a_1 + a_2 + a_3 + a_4)$$\r\n \r\nThe final cost can be re-written as: $$cost = (3a_1 + 3a_2 + 2a_3 + a_4)$$\r\n \r\nAs we can see, the sticks which are connected first are included in the final cost more than  the ones that are picked later. Hence, it is optimal to pick smaller sticks first to get the smallest cost.\r\n\r\nLet's try to figure out which data structure will be optimal to perform following tasks:\r\n\r\n- Get two of the smallest sticks (`stick1` and `stick2`) from the array.\r\n- Add one stick (`stick1 + stick2`) back to the array.\r\n\r\nWe can use a min heap data structure (which is, generally, implemented as a `PriorityQueue` in most languages) which gives us $$O(\\log{N})$$ complexity for both the operations.\r\n \r\n<iframe src=\"https://leetcode.com/playground/S2bq8eHa/shared\" frameBorder=\"0\" width=\"100%\" height=\"500\" name=\"S2bq8eHa\"></iframe>\r\n \r\n \r\n**Complexity Analysis**\r\n \r\n* Time complexity : $$O(N\\log{N})$$, where $$N$$ is the length of the input array. Let's break it down:\r\n \r\n    * Step 1) Adding $$N$$ elements to the priority queue will be $$O(N\\log{N})$$.\r\n \r\n    * Step 2) We remove two of the smallest elements and then add one element to the priority queue until we are left with one element. Since each such operation will reduce one element from the priority queue, we will perform $$N-1$$ such operations. Now, we know that both `add` and `remove` operations take $$O(\\log{N})$$ in priority queue, therefore, complexity of this step will be $$O(N\\log{N})$$.\r\n \r\n* Space complexity : $$O(N)$$ since we will store $$N$$ elements in our priority queue.",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": true,
+                "hasVideoSolution": true,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "968",
+                    "count": 35,
+                    "average": 4.886,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

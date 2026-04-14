@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "610",
+            "article": "{\"id\": 180, \"url\": \"/articles/triangle-judgement/\", \"topicId\": 127638}",
+            "solution": {
+                "id": "180",
+                "content": "[TOC]\n\n## Solution\n---\n#### Approach: Using `case...when...` [Accepted]\n\n**Algorithm**\n\nIn Math, three segments can form a triangle only if the sum of any of the two segments is larger than the third one.\n(In other words, the subtraction of any of the two segments are smaller than the third one.)\n\nSo, we can use this knowledge to judge with the help of the MySQL control statements [`case...when...`](https://dev.mysql.com/doc/refman/5.7/en/case.html).\n\n**MySQL**\n\n```sql\nSELECT \n    x,\n    y,\n    z,\n    CASE\n        WHEN x + y > z AND x + z > y AND y + z > x THEN 'Yes'\n        ELSE 'No'\n    END AS 'triangle'\nFROM\n    triangle\n;\n```",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "174",
+                    "count": 16,
+                    "average": 4.188,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

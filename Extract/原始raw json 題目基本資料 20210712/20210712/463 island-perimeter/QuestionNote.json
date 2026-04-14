@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "463",
+            "article": "{\"id\": 961, \"url\": \"/articles/island-perimeter/\", \"topicId\": 676413}",
+            "solution": {
+                "id": "961",
+                "content": "[TOC]\r\n\r\n## Solution\r\n\r\n---\r\n\r\n#### Approach 1: Simple Counting\r\n\r\n**Intuition**\r\n\r\nGo through every cell on the grid and whenever you are at cell\r\n `1` (land cell), look for surrounding (`UP`, `RIGHT`, `DOWN`, `LEFT`) cells. A land cell without any surrounding land cell will have a perimeter of `4`. Subtract `1` for each \r\n surrounding land cell. \r\n \r\n When you are at cell `0` (water cell), you don't need to do anything. Just proceed to another cell.\r\n\r\n!?!../Documents/463_Island_Perimeter_1.json:1200,600!?!\r\n\r\n**Implementation**\r\n\r\n<iframe src=\"https://leetcode.com/playground/ihQ6wHqP/shared\" frameBorder=\"0\" width=\"100%\" height=\"500\" name=\"ihQ6wHqP\"></iframe>\r\n\r\n**Complexity Analysis**\r\n\r\n* Time complexity : $$O(mn)$$ where $$m$$ is the number of rows of the grid and $$n$$ is \r\nthe number of columns of the grid. Since two `for` loops  go through all \r\nthe cells on the grid, for a two-dimensional grid of size $$m\\times n$$, the algorithm \r\nwould have to check $$mn$$ cells. \r\n\r\n* Space complexity : $$O(1)$$. Only the `result` variable is updated and there is \r\nno other space requirement.\r\n\r\n<br />\r\n\r\n---\r\n\r\n#### Approach 2: Better Counting\r\n\r\n*Approach 2 has the same time and space complexity as Approach 1. Even though they \r\nhave the same time and space complexities, Approach 2 is slightly more efficient \r\nthan the Approach 1. Rather than checking 4 surrounding neighbors, we only need to check two neighbors (`LEFT` and `UP`) in Approach 2.*\r\n\r\n**Intuition**\r\n\r\nSince we are traversing the grid from left to right, and from top to bottom, \r\nfor each land cell we are currently at, we only need to check whether the \r\n`LEFT` and `UP` cells are land cells with a slight modification on previous \r\napproach.\r\n\r\n* As you go through each cell on the grid, treat all the land cells as having a perimeter of `4` and add that up to the accumulated `result`. \r\n* If that land cell has a neighboring land cell, remove `2` sides (one from each land cell) which will be touching between these two cells.\r\n    * If your current land cell has a `UP` land cell, subtract `2` from your accumulated `result`. \r\n    * If your current land cell has a `LEFT` land cell,\r\nsubtract `2` from your accumulated `result`.\r\n\r\n!?!../Documents/463_Island_Perimeter_2.json:1200,600!?!\r\n\r\n**Implementation**\r\n\r\n<iframe src=\"https://leetcode.com/playground/PW6pYKfT/shared\" frameBorder=\"0\" width=\"100%\" height=\"480\" name=\"PW6pYKfT\"></iframe>\r\n\r\n**Complexity Analysis**\r\n\r\n* Time complexity : $$O(mn)$$ where $$m$$ is the number of rows of the grid and $$n$$ is \r\nthe number of columns of the grid. Since two `for` loops  go through all \r\nthe cells on the grid, for a two-dimensional grid of size $$m\\times n$$, the algorithm \r\nwould have to check $$mn$$ cells. \r\n\r\n* Space complexity : $$O(1)$$. Only the `result` variable is updated and there is \r\nno other space requirement.",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": true,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "906",
+                    "count": 33,
+                    "average": 4.818,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

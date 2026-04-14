@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "509",
+            "article": "{\"id\": 736, \"url\": \"/articles/inorder-successor-in-a-bst-ii/\", \"topicId\": 306596}",
+            "solution": {
+                "id": "736",
+                "content": "[TOC]\n\n## Solution\n\n--- \n\n#### Successor and Predecessor\n\n> Successor = \"after node\", i.e. the next node in the inorder traversal, \nor the smallest node _after_ the current one.  \n\n> Predecessor = \"before node\", i.e. the previous node in the inorder traversal, \nor the largest node _before_ the current one.  \n\n![img](../Figures/510/succ.png)\n<br />\n<br />\n\n\n---\n#### Approach 1: Iteration\n\n**Intuition**\n\nThere are two possible situations here :\n\n- Node has a right child, and hence its successor is somewhere\n lower in the tree. To find the successor, go to the right once\nand then as many times to the left as you could.\n\n![pic](../Figures/510/right_child2.png)\n\n- Node has no right child, then its successor is somewhere\n upper in the tree. To find the successor, go up till the node\n that is _left_ child of its parent. The answer is the parent.\n Beware that there could be no successor (= null successor) in such a situation.\n\n![pac](../Figures/510/case.png)\n\n---\n\n![fic](../Figures/510/casenull.png)\n\n\n**Algorithm**\n\n1. If the node has a right child, and hence its successor is somewhere lower\nin the tree. Go to the right once \nand then as many times to the left as you could.\nReturn the node you end up with.\n\n2. Node has no right child, and hence its successor is somewhere\nupper in the tree. Go up till the node\nthat is _left_ child of its parent. The answer is the parent.\n\n**Implementation**\n\n<iframe src=\"https://leetcode.com/playground/7oMkroXR/shared\" frameBorder=\"0\" width=\"100%\" height=\"310\" name=\"7oMkroXR\"></iframe>\n\n**Complexity Analysis**\n\n* Time complexity : $$\\mathcal{O}(H)$$, where $$H$$ is the height of the tree. \nThat means $$\\mathcal{O}(\\log N)$$ in the average case, \nand $$\\mathcal{O}(N)$$ in the worst case, where $$N$$ is the number of nodes in the tree.\n* Space complexity : $$\\mathcal{O}(1)$$, since no additional space is allocated during the calculation.",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": true,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "721",
+                    "count": 30,
+                    "average": 4.967,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

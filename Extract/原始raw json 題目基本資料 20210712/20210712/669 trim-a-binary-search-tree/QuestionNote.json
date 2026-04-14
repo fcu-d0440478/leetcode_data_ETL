@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "669",
+            "article": "{\"id\": 242, \"url\": \"/articles/trim-a-binary-search-tree/\", \"topicId\": 127569}",
+            "solution": {
+                "id": "242",
+                "content": "[TOC]\n\n## Solution\n\n---\n#### Approach #1: Recursion\n\n**Intuition**\n\nLet `trim(node)` be the desired answer for the subtree at that node.  We can construct the answer recursively.\n\n**Algorithm**\n\nWhen $$\\text{node.val > high}$$, we know that the trimmed binary tree must occur to the left of the node. Similarly, when $$\\text{node.val < low}$$, the trimmed binary tree occurs to the right of the node. Otherwise, we will trim both sides of the tree.\n\n<iframe src=\"https://leetcode.com/playground/JrGecm7C/shared\" frameBorder=\"0\" width=\"100%\" height=\"500\" name=\"JrGecm7C\"></iframe>\n\n**Complexity Analysis**\n\n* Time Complexity:  $$O(N)$$, where $$N$$ is the total number of nodes in the given tree.  We visit each node at most once.\n\n* Space Complexity: $$O(N)$$.  Even though we don't explicitly use any additional memory, the call stack of our recursion could be as large as the number of nodes in the worst case.\n\n---",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "239",
+                    "count": 87,
+                    "average": 4.552,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

@@ -1,0 +1,43 @@
+{
+    "data": {
+        "topic": {
+            "id": 151182,
+            "viewCount": 43429,
+            "topLevelCommentCount": 41,
+            "subscribed": false,
+            "title": "Implement Rand10() Using Rand7()",
+            "pinned": false,
+            "tags": [],
+            "hideFromTrending": false,
+            "post": {
+                "id": 307210,
+                "voteCount": 0,
+                "voteStatus": 0,
+                "content": "",
+                "updationDate": 1531920189,
+                "creationDate": 1531920189,
+                "status": null,
+                "isHidden": null,
+                "coinRewards": [],
+                "author": {
+                    "isDiscussAdmin": true,
+                    "isDiscussStaff": true,
+                    "username": "1337c0d3r",
+                    "nameColor": null,
+                    "activeBadge": null,
+                    "profile": {
+                        "userAvatar": "https://assets.leetcode.com/users/1337c0d3r/avatar_1547177258.png",
+                        "reputation": 3129,
+                        "__typename": "UserProfileNode"
+                    },
+                    "isActive": true,
+                    "__typename": "UserNode"
+                },
+                "authorIsModerator": true,
+                "isOwnPost": false,
+                "__typename": "PostNode"
+            },
+            "__typename": "TopicNode"
+        }
+    }
+}

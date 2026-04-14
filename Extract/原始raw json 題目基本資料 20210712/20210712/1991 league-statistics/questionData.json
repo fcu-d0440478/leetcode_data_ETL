@@ -1,0 +1,79 @@
+{
+    "data": {
+        "question": {
+            "questionId": "1991",
+            "questionFrontendId": "1841",
+            "boundTopicId": null,
+            "title": "League Statistics",
+            "titleSlug": "league-statistics",
+            "content": "<p>Table: <code>Teams</code></p>\r\n\r\n<pre>\r\n+----------------+---------+\r\n| Column Name    | Type    |\r\n+----------------+---------+\r\n| team_id        | int     |\r\n| team_name      | varchar |\r\n+----------------+---------+\r\nteam_id is the primary key for this table.\r\nEach row contains information about one team in the league.\r\n</pre>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Table: <code>Matches</code></p>\r\n\r\n<pre>\r\n+-----------------+---------+\r\n| Column Name     | Type    |\r\n+-----------------+---------+\r\n| home_team_id    | int     |\r\n| away_team_id    | int     |\r\n| home_team_goals | int     |\r\n| away_team_goals | int     |\r\n+-----------------+---------+\r\n(home_team_id, away_team_id) is the primary key for this table.\r\nEach row contains information about one match.\r\nhome_team_goals is the number of goals scored by the home team.\r\naway_team_goals is the number of goals scored by the away team.\r\nThe winner of the match is the team with the higher number of goals.\r\n</pre>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p>Write an SQL query to report the statistics of the league. The statistics should be built using the played matches where the <strong>winning</strong> team gets <strong>three points</strong> and the <strong>losing</strong> team gets <strong>no points</strong>. If a match ends with a <strong>draw</strong>, both teams get <strong>one point</strong>.</p>\r\n\r\n<p>Each row of the result table should contain:</p>\r\n\r\n<ul>\r\n\t<li><code>team_name</code> - The name of the team in the <code>Teams</code> table.</li>\r\n\t<li><code>matches_played</code> - The number of matches played as either a home or away team.</li>\r\n\t<li><code>points</code> - The total points the team has so far.</li>\r\n\t<li><code>goal_for</code> - The total number of goals scored by the team across all matches.</li>\r\n\t<li><code>goal_against</code> - The total number of goals scored by opponent teams against this team across all matches.</li>\r\n\t<li><code>goal_diff</code> - The result of <code>goal_for - goal_against</code>.</li>\r\n</ul>\r\n\r\n<p>Return the result table <strong>in descending order by </strong><code>points</code>. If two or more teams have the same <code>points</code>, order them <strong>in descending order by</strong> <code>goal_diff</code>. If there is still a tie, order them by <code>team_name</code> in <strong>lexicographical order</strong>.</p>\r\n\r\n<p>The query result format is in the following example:</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<pre>\r\nTeams table:\r\n+---------+-----------+\r\n| team_id | team_name |\r\n+---------+-----------+\r\n| 1       | Ajax      |\r\n| 4       | Dortmund  |\r\n| 6       | Arsenal   |\r\n+---------+-----------+\r\n\r\nMatches table:\r\n+--------------+--------------+-----------------+-----------------+\r\n| home_team_id | away_team_id | home_team_goals | away_team_goals |\r\n+--------------+--------------+-----------------+-----------------+\r\n| 1            | 4            | 0               | 1               |\r\n| 1            | 6            | 3               | 3               |\r\n| 4            | 1            | 5               | 2               |\r\n| 6            | 1            | 0               | 0               |\r\n+--------------+--------------+-----------------+-----------------+\r\n\r\n\r\nResult table:\r\n+-----------+----------------+--------+----------+--------------+-----------+\r\n| team_name | matches_played | points | goal_for | goal_against | goal_diff |\r\n+-----------+----------------+--------+----------+--------------+-----------+\r\n| Dortmund  | 2              | 6      | 6        | 2            | 4         |\r\n| Arsenal   | 2              | 2      | 3        | 3            | 0         |\r\n| Ajax      | 4              | 2      | 5        | 9            | -4        |\r\n+-----------+----------------+--------+----------+--------------+-----------+\r\n\r\nAjax (team_id=1) played 4 matches: 2 losses and 2 draws. Total points = 0 + 0 + 1 + 1 = 2.\r\nDortmund (team_id=4) played 2 matches: 2 wins. Total points = 3 + 3 = 6.\r\nArsenal (team_id=6) played 2 matches: 2 draws. Total points = 1 + 1 = 2.\r\nDortmund is the first team in the table. Ajax and Arsenal have the same points, but since Arsenal has a higher goal_diff than Ajax, Arsenal comes before Ajax in the table.\r\n</pre>",
+            "translatedTitle": null,
+            "translatedContent": null,
+            "isPaidOnly": true,
+            "difficulty": "Medium",
+            "likes": 17,
+            "dislikes": 9,
+            "isLiked": null,
+            "similarQuestions": "[]",
+            "exampleTestcases": null,
+            "contributors": [],
+            "topicTags": [
+                {
+                    "name": "Database",
+                    "slug": "database",
+                    "translatedName": null,
+                    "__typename": "TopicTagNode"
+                }
+            ],
+            "companyTagStats": "{\"1\": [], \"2\": [], \"3\": []}",
+            "codeSnippets": [
+                {
+                    "lang": "MySQL",
+                    "langSlug": "mysql",
+                    "code": "# Write your MySQL query statement below\n",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "MS SQL Server",
+                    "langSlug": "mssql",
+                    "code": "/* Write your T-SQL query statement below */\n",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Oracle",
+                    "langSlug": "oraclesql",
+                    "code": "/* Write your PL/SQL query statement below */\n",
+                    "__typename": "CodeSnippetNode"
+                }
+            ],
+            "stats": "{\"totalAccepted\": \"1.6K\", \"totalSubmission\": \"2.6K\", \"totalAcceptedRaw\": 1582, \"totalSubmissionRaw\": 2586, \"acRate\": \"61.2%\"}",
+            "hints": [],
+            "solution": null,
+            "status": null,
+            "sampleTestCase": "{\"headers\":{\"Teams\":[\"team_id\",\"team_name\"],\"Matches\":[\"home_team_id\",\"away_team_id\",\"home_team_goals\",\"away_team_goals\"]},\"rows\":{\"Teams\":[[1,\"Ajax\"],[4,\"Dortmund\"],[6,\"Arsenal\"]],\"Matches\":[[1,4,0,1],[1,6,3,3],[4,1,5,2],[6,1,0,0]]}}",
+            "metaData": "{\n  \"mysql\": [\n    \"Create table If Not Exists Teams (team_id int, team_name varchar(20))\",\n    \"Create table If Not Exists Matches (home_team_id int, away_team_id int, home_team_goals int, away_team_goals int)\"\n  ],\n  \"mssql\": [\n    \"Create table Teams (team_id int, team_name varchar(20))\",\n    \"Create table Matches (home_team_id int, away_team_id int, home_team_goals int, away_team_goals int)\"\n  ],\n  \"oraclesql\": [\n    \"Create table Teams (team_id int, team_name varchar(20))\",\n    \"Create table Matches (home_team_id int, away_team_id int, home_team_goals int, away_team_goals int)\"\n  ],\n  \"database\": true\n}",
+            "judgerAvailable": true,
+            "judgeType": "large",
+            "mysqlSchemas": [
+                "Create table If Not Exists Teams (team_id int, team_name varchar(20))",
+                "Create table If Not Exists Matches (home_team_id int, away_team_id int, home_team_goals int, away_team_goals int)",
+                "Truncate table Teams",
+                "insert into Teams (team_id, team_name) values ('1', 'Ajax')",
+                "insert into Teams (team_id, team_name) values ('4', 'Dortmund')",
+                "insert into Teams (team_id, team_name) values ('6', 'Arsenal')",
+                "Truncate table Matches",
+                "insert into Matches (home_team_id, away_team_id, home_team_goals, away_team_goals) values ('1', '4', '0', '1')",
+                "insert into Matches (home_team_id, away_team_id, home_team_goals, away_team_goals) values ('1', '6', '3', '3')",
+                "insert into Matches (home_team_id, away_team_id, home_team_goals, away_team_goals) values ('4', '1', '5', '2')",
+                "insert into Matches (home_team_id, away_team_id, home_team_goals, away_team_goals) values ('6', '1', '0', '0')"
+            ],
+            "enableRunCode": true,
+            "enableTestMode": false,
+            "enableDebugger": false,
+            "envInfo": "{\"mysql\": [\"MySQL\", \"<p><code>MySQL 8.0</code>.</p>\"], \"mssql\": [\"MS SQL Server\", \"<p><code>mssql server 2019</code>.</p>\"], \"oraclesql\": [\"Oracle\", \"<p><code>Oracle Sql 11.2</code>.</p>\"]}",
+            "libraryUrl": null,
+            "adminUrl": null,
+            "__typename": "QuestionNode"
+        }
+    }
+}

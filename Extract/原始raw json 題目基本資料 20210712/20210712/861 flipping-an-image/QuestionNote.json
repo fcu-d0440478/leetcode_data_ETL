@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "861",
+            "article": "{\"id\": 467, \"url\": \"/articles/flipping-an-image/\", \"topicId\": 130613}",
+            "solution": {
+                "id": "467",
+                "content": "[TOC]\n\n---\n#### Approach #1: Direct [Accepted]\n\n**Intuition and Algorithm**\n\nWe can do this in place.  In each row, the `i`th value from the left is equal to the inverse of the `i`th value from the right.\n\nWe use `(C+1) / 2` (with floor division) to iterate over all indexes `i` in the first half of the row, including the center.\n\n<iframe src=\"https://leetcode.com/playground/z4eHNwcY/shared\" frameBorder=\"0\" width=\"100%\" height=\"276\" name=\"z4eHNwcY\"></iframe>\n\n**Complexity Analysis**\n\n* Time Complexity:  $$O(N)$$, where `N` is the total number of elements in `A`.\n\n* Space Complexity: $$O(1)$$ in *additional* space complexity.",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "459",
+                    "count": 83,
+                    "average": 3.892,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

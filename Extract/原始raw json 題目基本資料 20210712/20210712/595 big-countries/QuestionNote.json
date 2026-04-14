@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "595",
+            "article": "{\"id\": 200, \"url\": \"/articles/big-countries/\", \"topicId\": 127644}",
+            "solution": {
+                "id": "200",
+                "content": "[TOC]\n\n## Solution\n---\n#### Approach I: Using `WHERE` clause and `OR` [Accepted]\n\n**Intuition**\n\nUse `WHERE` clause in SQL to filter these records and get the target countries.\n\n**Algorithm**\n\nAccording to the definition, a big country meets at least one of the following two conditions:\n1. It has an area of bigger than 3 million square km.\n2. It has a population of more than 25 million.\n\nSo for the first condition, we can use the following code to get the big countries of this type.\n```sql\nSELECT name, population, area FROM world WHERE area > 3000000\n```\n\nIn addition, we can use below code to get big countries of more than 25 million people.\n```sql\nSELECT name, population, area FROM world WHERE population > 25000000\n```\n\nAs most people may already come into mind, we can use `OR` to combine these two solutions for the two sub-problems together.\n\n**MySQL**\n\n```sql\nSELECT\n    name, population, area\nFROM\n    world\nWHERE\n    area > 3000000 OR population > 25000000\n;\n```\n\n#### Approach II: Using `WHERE` clause and `UNION` [Accepted]\n\n**Algorithm**\n\nThe idea of this approach is the same as the first one. However, we use `UNION` instead of `OR`.\n\n**MySQL**\n\n```sql\nSELECT\n    name, population, area\nFROM\n    world\nWHERE\n    area > 3000000\n\nUNION\n\nSELECT\n    name, population, area\nFROM\n    world\nWHERE\n    population > 25000000\n;\n```\n>Note: This solution runs a little bit faster than the first one. However, they do not have big difference.",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "197",
+                    "count": 32,
+                    "average": 4.656,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

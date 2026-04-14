@@ -1,0 +1,43 @@
+{
+    "data": {
+        "topic": {
+            "id": 127834,
+            "viewCount": 60336,
+            "topLevelCommentCount": 37,
+            "subscribed": false,
+            "title": "Nim Game",
+            "pinned": false,
+            "tags": [],
+            "hideFromTrending": false,
+            "post": {
+                "id": 260405,
+                "voteCount": 0,
+                "voteStatus": 0,
+                "content": "---\\n**Click [here](https://leetcode.com/articles/nim-game/) to see the full article post**",
+                "updationDate": 1459983793,
+                "creationDate": 1459983793,
+                "status": null,
+                "isHidden": null,
+                "coinRewards": [],
+                "author": {
+                    "isDiscussAdmin": true,
+                    "isDiscussStaff": true,
+                    "username": "1337c0d3r",
+                    "nameColor": null,
+                    "activeBadge": null,
+                    "profile": {
+                        "userAvatar": "https://assets.leetcode.com/users/1337c0d3r/avatar_1547177258.png",
+                        "reputation": 3129,
+                        "__typename": "UserProfileNode"
+                    },
+                    "isActive": true,
+                    "__typename": "UserNode"
+                },
+                "authorIsModerator": true,
+                "isOwnPost": false,
+                "__typename": "PostNode"
+            },
+            "__typename": "TopicNode"
+        }
+    }
+}

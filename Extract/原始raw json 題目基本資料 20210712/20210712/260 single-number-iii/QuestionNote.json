@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "260",
+            "article": "{\"id\": 764, \"url\": \"/articles/single-number-iii/\", \"topicId\": 366935}",
+            "solution": {
+                "id": "764",
+                "content": "[TOC]\n\n## Solution\n\n--- \n\n#### Overview\n\nThe problem could be solved in $$\\mathcal{O}(N)$$ time \nand $$\\mathcal{O}(N)$$ space by using hashmap. \n\nTo solve the problem in a constant space is a bit tricky \nbut could be done with the help of two bitmasks. \n\n![fig](../Figures/260/two2.png)\n<br /> \n<br />\n\n\n---\n#### Approach 1: Hashmap\n\nBuild a hashmap : element -> its frequency. Return only the \nelements with the frequency equal to 1.\n\n**Implementation**\n\n<iframe src=\"https://leetcode.com/playground/atBQ6ERZ/shared\" frameBorder=\"0\" width=\"100%\" height=\"293\" name=\"atBQ6ERZ\"></iframe>\n\n**Complexity Analysis**\n\n* Time complexity : $$\\mathcal{O}(N)$$ to iterate over the input array. \n\n* Space complexity : $$\\mathcal{O}(N)$$ to keep the hashmap of $$N$$ elements.\n<br /> \n<br />\n\n\n---\n#### Approach 2: Two bitmasks \n\n**Prerequisites**\n\nThis article will use two bitwise\ntricks, discussed in details last week :\n\n- If one builds an array bitmask with the help of XOR operator,\nfollowing `bitmask ^= x` strategy,\nthe bitmask would keep only the bits which appear odd number of times. \nThat was discussed in details in the article \n[Single Number II](https://leetcode.com/articles/single-number-ii/).\n\n![fig](../Figures/260/xor3.png)\n\n- `x & (-x)` is a way to isolate the rightmost 1-bit, \ni.e. to keep the rightmost 1-bit and to set all the others bits to zero.\nPlease refer to the article [Power of Two](https://leetcode.com/articles/power-of-two/)\nfor the detailed explanation. \n\n![fig](../Figures/260/isolate3.png)\n\n**Intuition**\n\n> An interview tip. Imagine, you have a problem to indentify an array\nelement (or elements), which appears exactly given number of times.\nProbably, the key is to build first an array bitmask using XOR operator.\nExamples: [In-Place Swap](leetcode.com/articles/single-number-ii/356460/Single-Number-II/324042), \n[Single Number](https://leetcode.com/articles/single-number/), [Single Number II](leetcode.com/articles/single-number-ii/356460/Single-Number-II/324042).\n  \nSo let's create an array bitmask : `bitmask ^= x`. \nThis bitmask will _not_ keep any number which appears twice \nbecause XOR of two equal bits results in a zero bit\n`a^a = 0`.\n\nInstead, the bitmask would keep only the difference\nbetween two numbers (let's call them x and y) which appear just once.\nThe difference here it's the bits which are different for x and y. \n\n![fig](../Figures/260/diff_new.png)\n\n> Could we extract x and y directly from this bitmask? No. \nThough we could use this bitmask as a marker to separate x and y.\n\nLet's do `bitmask & (-bitmask)` to isolate the rightmost 1-bit,\nwhich is different between x and y. Let's say this is 1-bit for x, \nand 0-bit for y. \n\n![fig](../Figures/260/isolate2_new.png)\n\nNow let's use XOR as before, but for the new bitmask `x_bitmask`, \nwhich will contain only the numbers which have\n1-bit in the position of `bitmask & (-bitmask)`. \nThis way, this new bitmask will \ncontain only number x `x_bitmask = x`, because of two reasons:\n\n- y has 0-bit in the position `bitmask & (-bitmask)` and hence will\nnot enter this new bitmask. \n\n- All numbers but x will not be visible in this new bitmask because\nthey appear two times. \n\n![fig](../Figures/260/x_bitmask2.png)\n\nVoila, x is identified. Now to identify y is simple: `y = bitmask^x`.\n\n**Implementation**\n\n<iframe src=\"https://leetcode.com/playground/BHEyFUxt/shared\" frameBorder=\"0\" width=\"100%\" height=\"344\" name=\"BHEyFUxt\"></iframe>\n\n**Complexity Analysis**\n\n* Time complexity : $$\\mathcal{O}(N)$$ to iterate over the input array. \n\n* Space complexity : $$\\mathcal{O}(1)$$, it's a constant space solution.",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": true,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "749",
+                    "count": 49,
+                    "average": 4.653,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

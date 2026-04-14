@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "768",
+            "article": "{\"id\": 374, \"url\": \"/articles/partition-labels/\", \"topicId\": 127422}",
+            "solution": {
+                "id": "374",
+                "content": "[TOC]\n\n#### Approach 1: Greedy\n\n**Intuition**\n\nLet's try to repeatedly choose the smallest left-justified partition.\nConsider the first label, say it's `'a'`.  The first partition must include it, and also the last occurrence of `'a'`.\nHowever, between those two occurrences of `'a'`, there could be other labels that make the minimum size of this partition bigger.  For example, in `\"abccaddbeffe\"`, the minimum first partition is `\"abccaddb\"`. \nThis gives us the idea for the algorithm:  For each letter encountered, process the last occurrence of that letter, extending the current partition `[anchor, j]` appropriately.\n\n**Algorithm**\n\nWe need an array `last[char] -> index of S where char occurs last`.\nThen, let `anchor` and `j` be the start and end of the current partition.\nIf we are at a label that occurs last at some index after `j`, we'll extend the partition `j = last[c]`.  If we are at the end of the partition (`i == j`) then we'll append a partition size to our answer, and set the start of our new partition to `i+1`.\n\n<iframe src=\"https://leetcode.com/playground/LQRLounV/shared\" frameBorder=\"0\" width=\"100%\" height=\"361\" name=\"LQRLounV\"></iframe>\n\n**Complexity Analysis**\n\n* Time Complexity: $$O(N)$$, where $$N$$ is the length of $$S$$.\n\n* Space Complexity: $$O(1)$$ to keep data structure `last` of not more\nthan 26 characters.",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "369",
+                    "count": 191,
+                    "average": 4.372,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

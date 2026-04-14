@@ -1,0 +1,34 @@
+{
+    "data": {
+        "discussQuestionTopicTags": [
+            {
+                "id": "6156",
+                "name": "mysql",
+                "slug": "mysql",
+                "numTopics": 3,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "8695",
+                "name": "mssql",
+                "slug": "mssql",
+                "numTopics": 2,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "14600",
+                "name": "recursive cte",
+                "slug": "recursive-cte",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            },
+            {
+                "id": "8080",
+                "name": "sql server",
+                "slug": "sql-server",
+                "numTopics": 1,
+                "__typename": "DiscussTopicTagNode"
+            }
+        ]
+    }
+}

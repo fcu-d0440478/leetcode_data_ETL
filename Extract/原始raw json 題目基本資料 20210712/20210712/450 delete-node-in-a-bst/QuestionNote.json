@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "450",
+            "article": "{\"id\": 722, \"url\": \"/articles/delete-node-in-a-bst/\", \"topicId\": 281988}",
+            "solution": {
+                "id": "722",
+                "content": "[TOC]\n\n## Solution\n\n--- \n\n#### Three facts to know about BST\n\nHere is list of facts which are better to know before the interview.\n\n> Inorder traversal of BST is an array sorted in the ascending order.\n\nTo compute inorder traversal follow the direction `Left -> Node -> Right`.\n\n<iframe src=\"https://leetcode.com/playground/2WmR9ivr/shared\" frameBorder=\"0\" width=\"100%\" height=\"174\" name=\"2WmR9ivr\"></iframe>\n\n![traversal](../Figures/450/450_inorder.png)\n\n> Successor = \"after node\", i.e. the next node, or the smallest node _after_ the current one.  \n\nIt's also the _next_ node in the inorder traversal. To find a successor, go to the right once\nand then as many times to the left as you could.\n\n<iframe src=\"https://leetcode.com/playground/AJKdScMA/shared\" frameBorder=\"0\" width=\"100%\" height=\"140\" name=\"AJKdScMA\"></iframe>\n\n> Predecessor = \"before node\", i.e. the previous node, or the largest node _before_ the current one.  \n\nIt's also the _previous_ node in the inorder traversal. To find a predecessor, go to the left once\nand then as many times to the right as you could.\n\n<iframe src=\"https://leetcode.com/playground/Ua5dJLMe/shared\" frameBorder=\"0\" width=\"100%\" height=\"140\" name=\"Ua5dJLMe\"></iframe>\n\n![bla](../Figures/450/succ2.png)\n\n<br />\n<br />\n\n\n---\n#### Approach 1: Recursion\n\n**Intuition**\n\nThere are three possible situations here :\n\n- Node is a leaf, and one could delete it straightforward : `node = null`.\n\n![bla](../Figures/450/del_leaf.png)\n\n- Node is not a leaf and has a right child. Then the node could be replaced by its\n_successor_ which is somewhere lower in the right subtree. Then one could proceed down recursively to\ndelete the successor.\n\n![bla](../Figures/450/del_succ.png)\n\n- Node is not a leaf, has no right child and has a left child. That means that its _successor_ is somewhere\n upper in the tree but we don't want to go back.\n Let's use the _predecessor_ here which is somewhere lower in the left subtree.\n The node could be replaced by its\n_predecessor_ and then one could proceed down recursively to delete the predecessor.\n\n![bla](../Figures/450/del_pred.png)\n\n**Algorithm**\n\n- If `key > root.val` then delete the node to delete is in the right subtree\n`root.right = deleteNode(root.right, key)`.\n\n- If `key < root.val` then delete the node to delete is in the left subtree\n`root.left = deleteNode(root.left, key)`.  \n\n- If `key == root.val` then the node to delete is right here. Let's do it :\n\n    - If the node is a leaf, the delete process is straightforward :\n    `root = null`.\n    \n    - If the node is not a leaf and has the right child, then replace the node \n    value by a successor value `root.val = successor.val`, \n    and then recursively delete\n    the successor in the right subtree `root.right = deleteNode(root.right, root.val)`.\n    \n    - If the node is not a leaf and has only the left child, then replace the node \n    value by a predecessor value `root.val = predecessor.val`, and then recursively delete\n    the predecessor in the left subtree `root.left = deleteNode(root.left, root.val)`.\n    \n- Return `root`.\n\n**Implementation**\n\n![bla](../Figures/450/implem2.png)\n\n<iframe src=\"https://leetcode.com/playground/NmG3cUrn/shared\" frameBorder=\"0\" width=\"100%\" height=\"500\" name=\"NmG3cUrn\"></iframe>\n\n**Complexity Analysis**\n\n* Time complexity : $$\\mathcal{O}(\\log N)$$. During the algorithm \nexecution we go down the tree\nall the time - on the left or on the right, \nfirst to search the node to delete ($$\\mathcal{O}(H_1)$$ time\ncomplexity as already \n[discussed](https://leetcode.com/articles/insert-into-a-bst/)) \nand then to actually delete it. $$H_1$$ is a tree height from the root to the node \nto delete.\nDelete process takes $$\\mathcal{O}(H_2)$$ time, where $$H_2$$ is a tree height\nfrom the root to delete to the leafs.\nThat in total results in $$\\mathcal{O}(H_1 + H_2) = \\mathcal{O}(H)$$ time\ncomplexity, where $$H$$ is a tree height, equal to $$\\log N$$ in the case of the balanced tree.    \n    \n* Space complexity : $$\\mathcal{O}(H)$$ to keep the recursion stack, where $$H$$ is a tree\nheight. $$H = \\log N$$ for the balanced tree.",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": true,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "707",
+                    "count": 188,
+                    "average": 4.878,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

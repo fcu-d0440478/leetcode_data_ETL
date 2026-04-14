@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "814",
+            "article": "{\"id\": 428, \"url\": \"/articles/smallest-rotation-with-highest-score/\", \"topicId\": 127427}",
+            "solution": {
+                "id": "428",
+                "content": "[TOC]\n\n---\n#### Approach #1: Interval Stabbing [Accepted]\n\n**Intuition**\n\nSay `N = 10` and `A[2] = 5`.  Then there are 5 rotations that are bad for this number: rotation indexes `0, 1, 2, 8, 9` - these rotations will cause this number to not get 1 point later.\n\nIn general, for each number in the array, we can map out what rotation indexes will be bad for this number.  It will always be a region of one interval, possibly two if the interval wraps around (eg. `8, 9, 0, 1, 2` wraps around, to become `[8, 9]` and `[0, 1, 2]`.)\n\nAt the end of plotting these intervals, we need to know which rotation index has the least intervals overlapping it - this one is the answer.\n\n**Algorithm**\n\nFirst, an element like `A[2] = 5` will not get score in (up to) 5 posiitons: when the 5 is at final index 0, 1, 2, 3, or 4.  When we shift by 2, we'll get final index 0.  If we shift `5-1 = 4` before this, this element will end up at final index 4.  In general (modulo N), a shift of `i - A[i] + 1` to `i` will be the rotation indexes that will make `A[i]` not score a point.\n\nIf we are trying to plot an interval like `[2, 3, 4]`, then instead of doing `bad[2]--; bad[3]--; bad[4]--;`, what we will do instead is keep track of the cumulative total: `bad[2]--; bad[5]++`.  For \"wrap-around\" intervals like `[8, 9, 0, 1, 2]`, we will keep track of this as two separate intervals: `bad[8]--, bad[10]++, bad[0]--, bad[3]++`.  (Actually, because of our implementation, we don't need to remember the `bad[10]++` part.)\n\nAt the end, we want to find a rotation index with the least intervals overlapping.  We'll maintain a cumulative total `cur` representing how many intervals are currently overlapping our current rotation index, then update it as we step through each rotation index.\n\n<iframe src=\"https://leetcode.com/playground/mRb99d8k/shared\" frameBorder=\"0\" width=\"100%\" height=\"480\" name=\"mRb99d8k\"></iframe>\n\n**Complexity Analysis**\n\n* Time Complexity:  $$O(N)$$, where $$N$$ is the length of `A`.\n\n* Space Complexity: $$O(N)$$.",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "423",
+                    "count": 26,
+                    "average": 3.154,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

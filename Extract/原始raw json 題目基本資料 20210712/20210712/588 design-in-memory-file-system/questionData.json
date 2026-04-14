@@ -1,0 +1,170 @@
+{
+    "data": {
+        "question": {
+            "questionId": "588",
+            "questionFrontendId": "588",
+            "boundTopicId": null,
+            "title": "Design In-Memory File System",
+            "titleSlug": "design-in-memory-file-system",
+            "content": "<p>Design a data structure that simulates an in-memory file system.</p>\n\n<p>Implement the FileSystem class:</p>\n\n<ul>\n\t<li><code>FileSystem()</code> Initializes the object of the system.</li>\n\t<li><code>List&lt;String&gt; ls(String path)</code>\n\t<ul>\n\t\t<li>If <code>path</code> is a file path, returns a list that only contains this file&#39;s name.</li>\n\t\t<li>If <code>path</code> is a directory path, returns the list of file and directory names <strong>in this directory</strong>.</li>\n\t</ul>\n\tThe answer should in <strong>lexicographic order</strong>.</li>\n\t<li><code>void mkdir(String path)</code> Makes a new directory according to the given <code>path</code>. The given directory path does not exist. If the middle directories in the path do not exist, you should create them as well.</li>\n\t<li><code>void addContentToFile(String filePath, String content)</code>\n\t<ul>\n\t\t<li>If <code>filePath</code> does not exist, creates that file containing given <code>content</code>.</li>\n\t\t<li>If <code>filePath</code> already exists, appends the given <code>content</code> to original content.</li>\n\t</ul>\n\t</li>\n\t<li><code>String readContentFromFile(String filePath)</code> Returns the content in the file at <code>filePath</code>.</li>\n</ul>\n\n<p>&nbsp;</p>\n<p><strong>Example 1:</strong></p>\n<img alt=\"\" src=\"https://assets.leetcode.com/uploads/2021/04/28/filesystem.png\" style=\"width: 650px; height: 315px;\" />\n<pre>\n<strong>Input</strong>\n[&quot;FileSystem&quot;, &quot;ls&quot;, &quot;mkdir&quot;, &quot;addContentToFile&quot;, &quot;ls&quot;, &quot;readContentFromFile&quot;]\n[[], [&quot;/&quot;], [&quot;/a/b/c&quot;], [&quot;/a/b/c/d&quot;, &quot;hello&quot;], [&quot;/&quot;], [&quot;/a/b/c/d&quot;]]\n<strong>Output</strong>\n[null, [], null, null, [&quot;a&quot;], &quot;hello&quot;]\n\n<strong>Explanation</strong>\nFileSystem fileSystem = new FileSystem();\nfileSystem.ls(&quot;/&quot;);                         // return []\nfileSystem.mkdir(&quot;/a/b/c&quot;);\nfileSystem.addContentToFile(&quot;/a/b/c/d&quot;, &quot;hello&quot;);\nfileSystem.ls(&quot;/&quot;);                         // return [&quot;a&quot;]\nfileSystem.readContentFromFile(&quot;/a/b/c/d&quot;); // return &quot;hello&quot;\n</pre>\n\n<p>&nbsp;</p>\n<p><strong>Constraints:</strong></p>\n\n<ul>\n\t<li><code>1 &lt;= path.length,&nbsp;filePath.length &lt;= 100</code></li>\n\t<li><code>path</code> and <code>filePath</code>&nbsp;are absolute paths which begin with <code>&#39;/&#39;</code>&nbsp;and do not end with <code>&#39;/&#39;</code>&nbsp;except that the path is just&nbsp;<code>&quot;/&quot;</code>.</li>\n\t<li>You can assume that all directory names and file names only contain lowercase letters, and the same names will not exist in the same directory.</li>\n\t<li>You can assume that all operations will be passed valid parameters, and users will not attempt to retrieve file content or list a directory or file that does not exist.</li>\n\t<li><code>1 &lt;= content.length &lt;= 50</code></li>\n\t<li>At most <code>300</code> calls will be made to <code>ls</code>, <code>mkdir</code>,&nbsp;<code>addContentToFile</code>, and&nbsp;<code>readContentFromFile</code>.</li>\n</ul>\n",
+            "translatedTitle": null,
+            "translatedContent": null,
+            "isPaidOnly": true,
+            "difficulty": "Hard",
+            "likes": 648,
+            "dislikes": 82,
+            "isLiked": null,
+            "similarQuestions": "[{\"title\": \"LRU Cache\", \"titleSlug\": \"lru-cache\", \"difficulty\": \"Medium\", \"translatedTitle\": null}, {\"title\": \"LFU Cache\", \"titleSlug\": \"lfu-cache\", \"difficulty\": \"Hard\", \"translatedTitle\": null}, {\"title\": \"Design Log Storage System\", \"titleSlug\": \"design-log-storage-system\", \"difficulty\": \"Medium\", \"translatedTitle\": null}]",
+            "exampleTestcases": "[\"FileSystem\",\"ls\",\"mkdir\",\"addContentToFile\",\"ls\",\"readContentFromFile\"]\n[[],[\"/\"],[\"/a/b/c\"],[\"/a/b/c/d\",\"hello\"],[\"/\"],[\"/a/b/c/d\"]]",
+            "contributors": [],
+            "topicTags": [
+                {
+                    "name": "Hash Table",
+                    "slug": "hash-table",
+                    "translatedName": null,
+                    "__typename": "TopicTagNode"
+                },
+                {
+                    "name": "String",
+                    "slug": "string",
+                    "translatedName": null,
+                    "__typename": "TopicTagNode"
+                },
+                {
+                    "name": "Design",
+                    "slug": "design",
+                    "translatedName": null,
+                    "__typename": "TopicTagNode"
+                },
+                {
+                    "name": "Trie",
+                    "slug": "trie",
+                    "translatedName": null,
+                    "__typename": "TopicTagNode"
+                }
+            ],
+            "companyTagStats": "{\"3\": [{\"taggedByAdmin\": false, \"name\": \"Facebook\", \"slug\": \"facebook\", \"timesEncountered\": 2}, {\"taggedByAdmin\": false, \"name\": \"Goldman Sachs\", \"slug\": \"goldman-sachs\", \"timesEncountered\": 2}, {\"taggedByAdmin\": false, \"name\": \"Salesforce\", \"slug\": \"salesforce\", \"timesEncountered\": 2}, {\"taggedByAdmin\": true, \"name\": \"Baidu\", \"slug\": \"baidu\", \"timesEncountered\": 0}], \"1\": [{\"taggedByAdmin\": false, \"name\": \"Amazon\", \"slug\": \"amazon\", \"timesEncountered\": 7}, {\"taggedByAdmin\": false, \"name\": \"Microsoft\", \"slug\": \"microsoft\", \"timesEncountered\": 4}, {\"taggedByAdmin\": false, \"name\": \"Google\", \"slug\": \"google\", \"timesEncountered\": 3}, {\"taggedByAdmin\": false, \"name\": \"Airbnb\", \"slug\": \"airbnb\", \"timesEncountered\": 2}, {\"taggedByAdmin\": false, \"name\": \"ByteDance\", \"slug\": \"bytedance\", \"timesEncountered\": 2}], \"2\": [{\"taggedByAdmin\": false, \"name\": \"Citadel\", \"slug\": \"citadel\", \"timesEncountered\": 2}]}",
+            "codeSnippets": [
+                {
+                    "lang": "C++",
+                    "langSlug": "cpp",
+                    "code": "class FileSystem {\npublic:\n    FileSystem() {\n        \n    }\n    \n    vector<string> ls(string path) {\n        \n    }\n    \n    void mkdir(string path) {\n        \n    }\n    \n    void addContentToFile(string filePath, string content) {\n        \n    }\n    \n    string readContentFromFile(string filePath) {\n        \n    }\n};\n\n/**\n * Your FileSystem object will be instantiated and called as such:\n * FileSystem* obj = new FileSystem();\n * vector<string> param_1 = obj->ls(path);\n * obj->mkdir(path);\n * obj->addContentToFile(filePath,content);\n * string param_4 = obj->readContentFromFile(filePath);\n */",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Java",
+                    "langSlug": "java",
+                    "code": "class FileSystem {\n\n    public FileSystem() {\n        \n    }\n    \n    public List<String> ls(String path) {\n        \n    }\n    \n    public void mkdir(String path) {\n        \n    }\n    \n    public void addContentToFile(String filePath, String content) {\n        \n    }\n    \n    public String readContentFromFile(String filePath) {\n        \n    }\n}\n\n/**\n * Your FileSystem object will be instantiated and called as such:\n * FileSystem obj = new FileSystem();\n * List<String> param_1 = obj.ls(path);\n * obj.mkdir(path);\n * obj.addContentToFile(filePath,content);\n * String param_4 = obj.readContentFromFile(filePath);\n */",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Python",
+                    "langSlug": "python",
+                    "code": "class FileSystem(object):\n\n    def __init__(self):\n        \n\n    def ls(self, path):\n        \"\"\"\n        :type path: str\n        :rtype: List[str]\n        \"\"\"\n        \n\n    def mkdir(self, path):\n        \"\"\"\n        :type path: str\n        :rtype: None\n        \"\"\"\n        \n\n    def addContentToFile(self, filePath, content):\n        \"\"\"\n        :type filePath: str\n        :type content: str\n        :rtype: None\n        \"\"\"\n        \n\n    def readContentFromFile(self, filePath):\n        \"\"\"\n        :type filePath: str\n        :rtype: str\n        \"\"\"\n        \n\n\n# Your FileSystem object will be instantiated and called as such:\n# obj = FileSystem()\n# param_1 = obj.ls(path)\n# obj.mkdir(path)\n# obj.addContentToFile(filePath,content)\n# param_4 = obj.readContentFromFile(filePath)",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Python3",
+                    "langSlug": "python3",
+                    "code": "class FileSystem:\n\n    def __init__(self):\n        \n\n    def ls(self, path: str) -> List[str]:\n        \n\n    def mkdir(self, path: str) -> None:\n        \n\n    def addContentToFile(self, filePath: str, content: str) -> None:\n        \n\n    def readContentFromFile(self, filePath: str) -> str:\n        \n\n\n# Your FileSystem object will be instantiated and called as such:\n# obj = FileSystem()\n# param_1 = obj.ls(path)\n# obj.mkdir(path)\n# obj.addContentToFile(filePath,content)\n# param_4 = obj.readContentFromFile(filePath)",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "C",
+                    "langSlug": "c",
+                    "code": "\n\n\ntypedef struct {\n    \n} FileSystem;\n\n\nFileSystem* fileSystemCreate() {\n    \n}\n\nchar ** fileSystemLs(FileSystem* obj, char * path, int* retSize) {\n  \n}\n\nvoid fileSystemMkdir(FileSystem* obj, char * path) {\n  \n}\n\nvoid fileSystemAddContentToFile(FileSystem* obj, char * filePath, char * content) {\n  \n}\n\nchar * fileSystemReadContentFromFile(FileSystem* obj, char * filePath) {\n  \n}\n\nvoid fileSystemFree(FileSystem* obj) {\n    \n}\n\n/**\n * Your FileSystem struct will be instantiated and called as such:\n * FileSystem* obj = fileSystemCreate();\n * char ** param_1 = fileSystemLs(obj, path, retSize);\n \n * fileSystemMkdir(obj, path);\n \n * fileSystemAddContentToFile(obj, filePath, content);\n \n * char * param_4 = fileSystemReadContentFromFile(obj, filePath);\n \n * fileSystemFree(obj);\n*/",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "C#",
+                    "langSlug": "csharp",
+                    "code": "public class FileSystem {\n\n    public FileSystem() {\n        \n    }\n    \n    public IList<string> Ls(string path) {\n        \n    }\n    \n    public void Mkdir(string path) {\n        \n    }\n    \n    public void AddContentToFile(string filePath, string content) {\n        \n    }\n    \n    public string ReadContentFromFile(string filePath) {\n        \n    }\n}\n\n/**\n * Your FileSystem object will be instantiated and called as such:\n * FileSystem obj = new FileSystem();\n * IList<string> param_1 = obj.Ls(path);\n * obj.Mkdir(path);\n * obj.AddContentToFile(filePath,content);\n * string param_4 = obj.ReadContentFromFile(filePath);\n */",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "JavaScript",
+                    "langSlug": "javascript",
+                    "code": "\nvar FileSystem = function() {\n    \n};\n\n/** \n * @param {string} path\n * @return {string[]}\n */\nFileSystem.prototype.ls = function(path) {\n    \n};\n\n/** \n * @param {string} path\n * @return {void}\n */\nFileSystem.prototype.mkdir = function(path) {\n    \n};\n\n/** \n * @param {string} filePath \n * @param {string} content\n * @return {void}\n */\nFileSystem.prototype.addContentToFile = function(filePath, content) {\n    \n};\n\n/** \n * @param {string} filePath\n * @return {string}\n */\nFileSystem.prototype.readContentFromFile = function(filePath) {\n    \n};\n\n/** \n * Your FileSystem object will be instantiated and called as such:\n * var obj = new FileSystem()\n * var param_1 = obj.ls(path)\n * obj.mkdir(path)\n * obj.addContentToFile(filePath,content)\n * var param_4 = obj.readContentFromFile(filePath)\n */",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Ruby",
+                    "langSlug": "ruby",
+                    "code": "class FileSystem\n    def initialize()\n        \n    end\n\n\n=begin\n    :type path: String\n    :rtype: String[]\n=end\n    def ls(path)\n        \n    end\n\n\n=begin\n    :type path: String\n    :rtype: Void\n=end\n    def mkdir(path)\n        \n    end\n\n\n=begin\n    :type file_path: String\n    :type content: String\n    :rtype: Void\n=end\n    def add_content_to_file(file_path, content)\n        \n    end\n\n\n=begin\n    :type file_path: String\n    :rtype: String\n=end\n    def read_content_from_file(file_path)\n        \n    end\n\n\nend\n\n# Your FileSystem object will be instantiated and called as such:\n# obj = FileSystem.new()\n# param_1 = obj.ls(path)\n# obj.mkdir(path)\n# obj.add_content_to_file(file_path, content)\n# param_4 = obj.read_content_from_file(file_path)",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Swift",
+                    "langSlug": "swift",
+                    "code": "\nclass FileSystem {\n\n    init() {\n        \n    }\n    \n    func ls(_ path: String) -> [String] {\n        \n    }\n    \n    func mkdir(_ path: String) {\n        \n    }\n    \n    func addContentToFile(_ filePath: String, _ content: String) {\n        \n    }\n    \n    func readContentFromFile(_ filePath: String) -> String {\n        \n    }\n}\n\n/**\n * Your FileSystem object will be instantiated and called as such:\n * let obj = FileSystem()\n * let ret_1: [String] = obj.ls(path)\n * obj.mkdir(path)\n * obj.addContentToFile(filePath, content)\n * let ret_4: String = obj.readContentFromFile(filePath)\n */",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Go",
+                    "langSlug": "golang",
+                    "code": "type FileSystem struct {\n    \n}\n\n\nfunc Constructor() FileSystem {\n    \n}\n\n\nfunc (this *FileSystem) Ls(path string) []string {\n    \n}\n\n\nfunc (this *FileSystem) Mkdir(path string)  {\n    \n}\n\n\nfunc (this *FileSystem) AddContentToFile(filePath string, content string)  {\n    \n}\n\n\nfunc (this *FileSystem) ReadContentFromFile(filePath string) string {\n    \n}\n\n\n/**\n * Your FileSystem object will be instantiated and called as such:\n * obj := Constructor();\n * param_1 := obj.Ls(path);\n * obj.Mkdir(path);\n * obj.AddContentToFile(filePath,content);\n * param_4 := obj.ReadContentFromFile(filePath);\n */",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Scala",
+                    "langSlug": "scala",
+                    "code": "class FileSystem() {\n\n    def ls(path: String): List[String] = {\n        \n    }\n\n    def mkdir(path: String) {\n        \n    }\n\n    def addContentToFile(filePath: String, content: String) {\n        \n    }\n\n    def readContentFromFile(filePath: String): String = {\n        \n    }\n\n}\n\n/**\n * Your FileSystem object will be instantiated and called as such:\n * var obj = new FileSystem()\n * var param_1 = obj.ls(path)\n * obj.mkdir(path)\n * obj.addContentToFile(filePath,content)\n * var param_4 = obj.readContentFromFile(filePath)\n */",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Kotlin",
+                    "langSlug": "kotlin",
+                    "code": "class FileSystem() {\n\n    fun ls(path: String): List<String> {\n        \n    }\n\n    fun mkdir(path: String) {\n        \n    }\n\n    fun addContentToFile(filePath: String, content: String) {\n        \n    }\n\n    fun readContentFromFile(filePath: String): String {\n        \n    }\n\n}\n\n/**\n * Your FileSystem object will be instantiated and called as such:\n * var obj = FileSystem()\n * var param_1 = obj.ls(path)\n * obj.mkdir(path)\n * obj.addContentToFile(filePath,content)\n * var param_4 = obj.readContentFromFile(filePath)\n */",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Rust",
+                    "langSlug": "rust",
+                    "code": "struct FileSystem {\n\n}\n\n\n/** \n * `&self` means the method takes an immutable reference.\n * If you need a mutable reference, change it to `&mut self` instead.\n */\nimpl FileSystem {\n\n    fn new() -> Self {\n        \n    }\n    \n    fn ls(&self, path: String) -> Vec<String> {\n        \n    }\n    \n    fn mkdir(&self, path: String) {\n        \n    }\n    \n    fn add_content_to_file(&self, file_path: String, content: String) {\n        \n    }\n    \n    fn read_content_from_file(&self, file_path: String) -> String {\n        \n    }\n}\n\n/**\n * Your FileSystem object will be instantiated and called as such:\n * let obj = FileSystem::new();\n * let ret_1: Vec<String> = obj.ls(path);\n * obj.mkdir(path);\n * obj.add_content_to_file(filePath, content);\n * let ret_4: String = obj.read_content_from_file(filePath);\n */",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "PHP",
+                    "langSlug": "php",
+                    "code": "class FileSystem {\n    /**\n     */\n    function __construct() {\n        \n    }\n  \n    /**\n     * @param String $path\n     * @return String[]\n     */\n    function ls($path) {\n        \n    }\n  \n    /**\n     * @param String $path\n     * @return NULL\n     */\n    function mkdir($path) {\n        \n    }\n  \n    /**\n     * @param String $filePath\n     * @param String $content\n     * @return NULL\n     */\n    function addContentToFile($filePath, $content) {\n        \n    }\n  \n    /**\n     * @param String $filePath\n     * @return String\n     */\n    function readContentFromFile($filePath) {\n        \n    }\n}\n\n/**\n * Your FileSystem object will be instantiated and called as such:\n * $obj = FileSystem();\n * $ret_1 = $obj->ls($path);\n * $obj->mkdir($path);\n * $obj->addContentToFile($filePath, $content);\n * $ret_4 = $obj->readContentFromFile($filePath);\n */",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "TypeScript",
+                    "langSlug": "typescript",
+                    "code": "class FileSystem {\n    constructor() {\n\n    }\n\n    ls(path: string): string[] {\n\n    }\n\n    mkdir(path: string): void {\n\n    }\n\n    addContentToFile(filePath: string, content: string): void {\n\n    }\n\n    readContentFromFile(filePath: string): string {\n\n    }\n}\n\n/**\n * Your FileSystem object will be instantiated and called as such:\n * var obj = new FileSystem()\n * var param_1 = obj.ls(path)\n * obj.mkdir(path)\n * obj.addContentToFile(filePath,content)\n * var param_4 = obj.readContentFromFile(filePath)\n */",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Racket",
+                    "langSlug": "racket",
+                    "code": "(define file-system%\n  (class object%\n    (super-new)\n    (init-field)\n    \n    ; ls : string? -> (listof string?)\n    (define/public (ls path)\n\n      )\n    ; mkdir : string? -> void?\n    (define/public (mkdir path)\n\n      )\n    ; add-content-to-file : string? string? -> void?\n    (define/public (add-content-to-file filePath content)\n\n      )\n    ; read-content-from-file : string? -> string?\n    (define/public (read-content-from-file filePath)\n\n      )))\n\n;; Your file-system% object will be instantiated and called as such:\n;; (define obj (new file-system%))\n;; (define param_1 (send obj ls path))\n;; (send obj mkdir path)\n;; (send obj add-content-to-file file-path content)\n;; (define param_4 (send obj read-content-from-file file-path))",
+                    "__typename": "CodeSnippetNode"
+                }
+            ],
+            "stats": "{\"totalAccepted\": \"37.1K\", \"totalSubmission\": \"79K\", \"totalAcceptedRaw\": 37103, \"totalSubmissionRaw\": 78974, \"acRate\": \"47.0%\"}",
+            "hints": [],
+            "solution": {
+                "id": "142",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "__typename": "ArticleNode"
+            },
+            "status": null,
+            "sampleTestCase": "[\"FileSystem\",\"ls\",\"mkdir\",\"addContentToFile\",\"ls\",\"readContentFromFile\"]\n[[],[\"/\"],[\"/a/b/c\"],[\"/a/b/c/d\",\"hello\"],[\"/\"],[\"/a/b/c/d\"]]",
+            "metaData": "{\r\n    \"classname\": \"FileSystem\",\r\n    \"maxbytesperline\": 200000,\r\n    \"constructor\": {\r\n        \"params\": [\r\n        ]\r\n    },\r\n    \"methods\": [\r\n        {\r\n            \"name\" : \"ls\",\r\n            \"params\": [\r\n                {\r\n                    \"type\": \"string\",\r\n                    \"name\": \"path\"\r\n                }\r\n            ],\r\n            \"return\": {\r\n                \"type\": \"list<string>\"\r\n            }\r\n        },\r\n        {\r\n            \"name\" : \"mkdir\",\r\n            \"params\": [\r\n                {\r\n                    \"type\": \"string\",\r\n                    \"name\": \"path\"\r\n                }\r\n            ],\r\n            \"return\": {\r\n                \"type\": \"void\"\r\n            }\r\n        },\r\n        {\r\n            \"name\" : \"addContentToFile\",\r\n            \"params\": [\r\n                {\r\n                    \"type\": \"string\",\r\n                    \"name\": \"filePath\"\r\n                },\r\n                {\r\n                    \"type\": \"string\",\r\n                    \"name\": \"content\"\r\n                }\r\n            ],\r\n            \"return\": {\r\n                \"type\": \"void\"\r\n            }\r\n        },\r\n        {\r\n            \"name\" : \"readContentFromFile\",\r\n            \"params\": [\r\n                {\r\n                    \"type\": \"string\",\r\n                    \"name\": \"filePath\"\r\n                }\r\n            ],\r\n            \"return\": {\r\n                \"type\": \"string\"\r\n            }\r\n        }\r\n    ],\r\n    \"systemdesign\": true,\r\n    \"params\": [\r\n        {\r\n            \"name\": \"inputs\",\r\n            \"type\": \"integer[]\"\r\n        },\r\n        {\r\n            \"name\": \"inputs\",\r\n            \"type\": \"integer[]\"\r\n        }\r\n    ],\r\n    \"return\": {\r\n        \"type\": \"list<String>\",\r\n        \"dealloc\": true\r\n    }\r\n}",
+            "judgerAvailable": true,
+            "judgeType": "large",
+            "mysqlSchemas": [],
+            "enableRunCode": true,
+            "enableTestMode": false,
+            "enableDebugger": true,
+            "envInfo": "{\"cpp\": [\"C++\", \"<p>Compiled with <code> clang 11 </code> using the latest C++ 17 standard.</p>\\r\\n\\r\\n<p>Your code is compiled with level two optimization (<code>-O2</code>). <a href=\\\"https://github.com/google/sanitizers/wiki/AddressSanitizer\\\" target=\\\"_blank\\\">AddressSanitizer</a> is also enabled to help detect out-of-bounds and use-after-free bugs.</p>\\r\\n\\r\\n<p>Most standard library headers are already included automatically for your convenience.</p>\"], \"java\": [\"Java\", \"<p><code>Java SE 13</code>.</p>\\r\\n\\r\\n<p>Most standard library headers are already included automatically for your convenience.</p>\\r\\n<p>Includes <code>Pair</code> class from https://docs.oracle.com/javase/8/javafx/api/javafx/util/Pair.html.</p>\"], \"python\": [\"Python\", \"<p><code>Python 2.7.12</code>.</p>\\r\\n\\r\\n<p>Most libraries are already imported automatically for your convenience, such as <a href=\\\"https://docs.python.org/2/library/array.html\\\" target=\\\"_blank\\\">array</a>, <a href=\\\"https://docs.python.org/2/library/bisect.html\\\" target=\\\"_blank\\\">bisect</a>, <a href=\\\"https://docs.python.org/2/library/collections.html\\\" target=\\\"_blank\\\">collections</a>. If you need more libraries, you can import it yourself.</p>\\r\\n\\r\\n<p>For Map/TreeMap data structure, you may use <a href=\\\"http://www.grantjenks.com/docs/sortedcontainers/\\\" target=\\\"_blank\\\">sortedcontainers</a> library.</p>\\r\\n\\r\\n<p>Note that Python 2.7 <a href=\\\"https://www.python.org/dev/peps/pep-0373/\\\" target=\\\"_blank\\\">will not be maintained past 2020</a>. For the latest Python, please choose Python3 instead.</p>\"], \"c\": [\"C\", \"<p>Compiled with <code>gcc 8.2</code> using the gnu99 standard.</p>\\r\\n\\r\\n<p>Your code is compiled with level one optimization (<code>-O1</code>). <a href=\\\"https://github.com/google/sanitizers/wiki/AddressSanitizer\\\" target=\\\"_blank\\\">AddressSanitizer</a> is also enabled to help detect out-of-bounds and use-after-free bugs.</p>\\r\\n\\r\\n<p>Most standard library headers are already included automatically for your convenience.</p>\\r\\n\\r\\n<p>For hash table operations, you may use <a href=\\\"https://troydhanson.github.io/uthash/\\\" target=\\\"_blank\\\">uthash</a>. \\\"uthash.h\\\" is included by default. Below are some examples:</p>\\r\\n\\r\\n<p><b>1. Adding an item to a hash.</b>\\r\\n<pre>\\r\\nstruct hash_entry {\\r\\n    int id;            /* we'll use this field as the key */\\r\\n    char name[10];\\r\\n    UT_hash_handle hh; /* makes this structure hashable */\\r\\n};\\r\\n\\r\\nstruct hash_entry *users = NULL;\\r\\n\\r\\nvoid add_user(struct hash_entry *s) {\\r\\n    HASH_ADD_INT(users, id, s);\\r\\n}\\r\\n</pre>\\r\\n</p>\\r\\n\\r\\n<p><b>2. Looking up an item in a hash:</b>\\r\\n<pre>\\r\\nstruct hash_entry *find_user(int user_id) {\\r\\n    struct hash_entry *s;\\r\\n    HASH_FIND_INT(users, &user_id, s);\\r\\n    return s;\\r\\n}\\r\\n</pre>\\r\\n</p>\\r\\n\\r\\n<p><b>3. Deleting an item in a hash:</b>\\r\\n<pre>\\r\\nvoid delete_user(struct hash_entry *user) {\\r\\n    HASH_DEL(users, user);  \\r\\n}\\r\\n</pre>\\r\\n</p>\"], \"csharp\": [\"C#\", \"<p><a href=\\\"https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-8\\\" target=\\\"_blank\\\">C# 8.0 </a></p>\\r\\n\\r\\n<p>Your code is compiled with debug flag enabled (<code>/debug</code>).</p>\"], \"javascript\": [\"JavaScript\", \"<p><code>Node.js 14.8.0</code>.</p>\\r\\n\\r\\n<p>Your code is run with <code>--harmony</code> flag, enabling <a href=\\\"http://node.green/\\\" target=\\\"_blank\\\">new ES6 features</a>.</p>\\r\\n\\r\\n<p><a href=\\\"https://lodash.com\\\" target=\\\"_blank\\\">lodash.js</a> library is included by default.</p>\\r\\n\\r\\n<p>For Priority Queue / Queue data structures, you may use <a href=\\\"https://github.com/datastructures-js/priority-queue\\\" target=\\\"_blank\\\">datastructures-js/priority-queue</a> and <a href=\\\"https://github.com/datastructures-js/queue\\\" target=\\\"_blank\\\">datastructures-js/queue</a>.</p>\"], \"ruby\": [\"Ruby\", \"<p><code>Ruby 2.7.1</code></p>\\r\\n\\r\\n<p>Some common data structure implementations are provided in the Algorithms module: https://www.rubydoc.info/github/kanwei/algorithms/Algorithms</p>\"], \"swift\": [\"Swift\", \"<p><code>Swift 5.3</code>.</p>\"], \"golang\": [\"Go\", \"<p><code>Go 1.16.2</code>.</p>\\r\\n\\r\\n<p>Support <a href=\\\"https://godoc.org/github.com/emirpasic/gods\\\" target=\\\"_blank\\\">https://godoc.org/github.com/emirpasic/gods</a> library.</p>\"], \"python3\": [\"Python3\", \"<p><code>Python 3.9</code>.</p>\\r\\n\\r\\n<p>Most libraries are already imported automatically for your convenience, such as <a href=\\\"https://docs.python.org/3/library/array.html\\\" target=\\\"_blank\\\">array</a>, <a href=\\\"https://docs.python.org/3/library/bisect.html\\\" target=\\\"_blank\\\">bisect</a>, <a href=\\\"https://docs.python.org/3/library/collections.html\\\" target=\\\"_blank\\\">collections</a>. If you need more libraries, you can import it yourself.</p>\\r\\n\\r\\n<p>For Map/TreeMap data structure, you may use <a href=\\\"http://www.grantjenks.com/docs/sortedcontainers/\\\" target=\\\"_blank\\\">sortedcontainers</a> library.</p>\"], \"scala\": [\"Scala\", \"<p><code>Scala 2.13</code>.</p>\"], \"kotlin\": [\"Kotlin\", \"<p><code>Kotlin 1.3.10</code>.</p>\"], \"rust\": [\"Rust\", \"<p><code>Rust 1.45.2</code></p>\\r\\n\\r\\n<p>Supports <a href=\\\"https://crates.io/crates/rand\\\" target=\\\"_blank\\\">rand</a>\\u00a0from crates.io</p>\"], \"php\": [\"PHP\", \"<p><code>PHP 7.2</code>.</p>\\r\\n<p>With bcmath module</p>\"], \"typescript\": [\"Typescript\", \"<p><code>Node.js 14.8.0</code>.</p>\\r\\n\\r\\n<p>Your code is run with <code>--harmony</code> flag, enabling <a href=\\\"http://node.green/\\\" target=\\\"_blank\\\">new ES2020 features</a>.</p>\\r\\n\\r\\n<p><a href=\\\"https://lodash.com\\\" target=\\\"_blank\\\">lodash.js</a> library is included by default.</p>\"], \"racket\": [\"Racket\", \"<p>Run with <code>Racket 8.0</code>.</p>\"]}",
+            "libraryUrl": null,
+            "adminUrl": null,
+            "__typename": "QuestionNode"
+        }
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "799",
+            "article": "{\"id\": 415, \"url\": \"/articles/minimum-distance-between-bst-nodes/\", \"topicId\": 127706}",
+            "solution": {
+                "id": "415",
+                "content": "[TOC]\n\n---\n#### Approach #1: Write to Array [Accepted]\n\n**Intuition and Algorithm**\n\nWrite all the values to an array, then sort it.  The minimum distance must occur between two adjacent values in the sorted list.\n\n<iframe src=\"https://leetcode.com/playground/TpEMnQbx/shared\" frameBorder=\"0\" width=\"100%\" height=\"429\" name=\"TpEMnQbx\"></iframe>\n\n**Complexity Analysis**\n\n* Time Complexity:  $$O(N \\log N)$$, where $$N$$ is the number of nodes in the tree.  The complexity comes from the sorting operation.\n\n* Space Complexity:  $$O(N)$$, the size of `vals`.\n\n---\n#### Approach #2: In-Order Traversal [Accepted]\n\n**Intuition and Algorithm**\n\nIn a binary search tree, an in-order traversal outputs the values of the tree in order.  By remembering the previous value in this order, we could iterate over each possible difference, keeping the smallest one.\n\n<iframe src=\"https://leetcode.com/playground/NizQHa7c/shared\" frameBorder=\"0\" width=\"100%\" height=\"361\" name=\"NizQHa7c\"></iframe>\n\n**Complexity Analysis**\n\n* Time Complexity:  $$O(N)$$, where $$N$$ is the number of nodes in the tree.  We iterate over every node once.\n\n* Space Complexity:  $$O(H)$$, where $$H$$ is the height of the tree.  This is the space used by the implicit call stack when calling `dfs`.",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": true,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "410",
+                    "count": 19,
+                    "average": 3.579,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

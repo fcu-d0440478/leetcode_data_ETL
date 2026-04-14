@@ -1,0 +1,101 @@
+{
+    "data": {
+        "question": {
+            "questionId": "1774",
+            "questionFrontendId": "1634",
+            "boundTopicId": null,
+            "title": "Add Two Polynomials Represented as Linked Lists",
+            "titleSlug": "add-two-polynomials-represented-as-linked-lists",
+            "content": "<p>A polynomial linked list is a special type of linked list where every node represents a term in a polynomial expression.</p>\r\n\r\n<p>Each node has three attributes:</p>\r\n\r\n<ul>\r\n\t<li><code>coefficient</code>: an integer representing the number multiplier of the term. The coefficient of the term <code><strong>9</strong>x<sup>4</sup></code> is <code>9</code>.</li>\r\n\t<li><code>power</code>: an integer representing the exponent. The power of the term <code>9x<strong><sup>4</sup></strong></code> is <code>4</code>.</li>\r\n\t<li><code>next</code>: a pointer to the next node in the list, or <code>null</code> if it is the last node of the list.</li>\r\n</ul>\r\n\r\n<p>For example, the polynomial <code>5x<sup>3</sup> + 4x - 7</code> is represented by the polynomial linked list illustrated below:</p>\r\n\r\n<p><img alt=\"\" src=\"https://assets.leetcode.com/uploads/2020/09/30/polynomial2.png\" style=\"width: 500px; height: 91px;\" /></p>\r\n\r\n<p>The polynomial linked list must be in its standard form: the polynomial must be in <strong>strictly</strong> descending order by its <code>power</code> value. Also, terms with a <code>coefficient</code> of <code>0</code> are omitted.</p>\r\n\r\n<p>Given two polynomial linked list heads, <code>poly1</code> and <code>poly2</code>, add the polynomials together and return <em>the head of the sum of the polynomials</em>.</p>\r\n\r\n<p><strong><code>PolyNode</code> format:</strong></p>\r\n\r\n<p>The input/output format is as a list of <code>n</code> nodes, where each node is represented as its <code>[coefficient, power]</code>. For example, the polynomial <code>5x<sup>3</sup> + 4x - 7</code> would be represented as: <code>[[5,3],[4,1],[-7,0]]</code>.</p>\r\n\r\n<p>&nbsp;</p>\r\n<p><strong>Example 1:</strong></p>\r\n\r\n<p><img alt=\"\" src=\"https://assets.leetcode.com/uploads/2020/10/14/ex1.png\" style=\"width: 600px; height: 322px;\" /></p>\r\n\r\n<pre>\r\n<strong>Input:</strong> poly1 = [[1,1]], poly2 = [[1,0]]\r\n<strong>Output:</strong> [[1,1],[1,0]]\r\n<strong>Explanation:</strong> poly1 = x. poly2 = 1. The sum is x + 1.\r\n</pre>\r\n\r\n<p><strong>Example 2:</strong></p>\r\n\r\n<pre>\r\n<strong>Input:</strong> poly1 = [[2,2],[4,1],[3,0]], poly2 = [[3,2],[-4,1],[-1,0]]\r\n<strong>Output:</strong> [[5,2],[2,0]]\r\n<strong>Explanation:</strong> poly1 = 2x<sup>2</sup> + 4x + 3. poly2 = 3x<sup>2</sup> - 4x - 1. The sum is 5x<sup>2</sup> + 2. Notice that we omit the &quot;0x&quot; term.\r\n</pre>\r\n\r\n<p><strong>Example 3:</strong></p>\r\n\r\n<pre>\r\n<strong>Input:</strong> poly1 = [[1,2]], poly2 = [[-1,2]]\r\n<strong>Output:</strong> []\r\n<strong>Explanation:</strong> The sum is 0. We return an empty list.\r\n</pre>\r\n\r\n<p>&nbsp;</p>\r\n<p><strong>Constraints:</strong></p>\r\n\r\n<ul>\r\n\t<li><code>0 &lt;= n &lt;= 10<sup>4</sup></code></li>\r\n\t<li><code>-10<sup>9</sup>&nbsp;&lt;= PolyNode.coefficient &lt;= 10<sup>9</sup></code></li>\r\n\t<li><code>PolyNode.coefficient != 0</code></li>\r\n\t<li><code>0&nbsp;&lt;= PolyNode.power &lt;= 10<sup>9</sup></code></li>\r\n\t<li><code>PolyNode.power &gt; PolyNode.next.power</code></li>\r\n</ul>",
+            "translatedTitle": null,
+            "translatedContent": null,
+            "isPaidOnly": true,
+            "difficulty": "Medium",
+            "likes": 47,
+            "dislikes": 2,
+            "isLiked": null,
+            "similarQuestions": "[{\"title\": \"Add Two Numbers\", \"titleSlug\": \"add-two-numbers\", \"difficulty\": \"Medium\", \"translatedTitle\": null}, {\"title\": \"Merge Two Sorted Lists\", \"titleSlug\": \"merge-two-sorted-lists\", \"difficulty\": \"Easy\", \"translatedTitle\": null}, {\"title\": \"Add Two Numbers II\", \"titleSlug\": \"add-two-numbers-ii\", \"difficulty\": \"Medium\", \"translatedTitle\": null}]",
+            "exampleTestcases": "[[1,1]]\n[[1,0]]\n[[2,2],[4,1],[3,0]]\n[[3,2],[-4,1],[-1,0]]\n[[1,2]]\n[[-1,2]]",
+            "contributors": [],
+            "topicTags": [
+                {
+                    "name": "Linked List",
+                    "slug": "linked-list",
+                    "translatedName": null,
+                    "__typename": "TopicTagNode"
+                },
+                {
+                    "name": "Math",
+                    "slug": "math",
+                    "translatedName": null,
+                    "__typename": "TopicTagNode"
+                },
+                {
+                    "name": "Two Pointers",
+                    "slug": "two-pointers",
+                    "translatedName": null,
+                    "__typename": "TopicTagNode"
+                }
+            ],
+            "companyTagStats": "{\"3\": [{\"taggedByAdmin\": true, \"name\": \"Amazon\", \"slug\": \"amazon\", \"timesEncountered\": 0}], \"1\": [], \"2\": []}",
+            "codeSnippets": [
+                {
+                    "lang": "C++",
+                    "langSlug": "cpp",
+                    "code": "/**\n * Definition for polynomial singly-linked list.\n * struct PolyNode {\n *     int coefficient, power;\n *     PolyNode *next;\n *     PolyNode(): coefficient(0), power(0), next(nullptr) {};\n *     PolyNode(int x, int y): coefficient(x), power(y), next(nullptr) {};\n *     PolyNode(int x, int y, PolyNode* next): coefficient(x), power(y), next(next) {};\n * };\n */\n\nclass Solution {\npublic:\n    PolyNode* addPoly(PolyNode* poly1, PolyNode* poly2) {\n        \n    }\n};",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Java",
+                    "langSlug": "java",
+                    "code": "/**\n * Definition for polynomial singly-linked list.\n * class PolyNode {\n *     int coefficient, power;\n *     PolyNode next = null;\n \n *     PolyNode() {}\n *     PolyNode(int x, int y) { this.coefficient = x; this.power = y; }\n *     PolyNode(int x, int y, PolyNode next) { this.coefficient = x; this.power = y; this.next = next; }\n * }\n */\n\nclass Solution {\n    public PolyNode addPoly(PolyNode poly1, PolyNode poly2) {\n        \n    }\n}",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Python",
+                    "langSlug": "python",
+                    "code": "# Definition for polynomial singly-linked list.\n# class PolyNode:\n#     def __init__(self, x=0, y=0, next=None):\n#         self.coefficient = x\n#         self.power = y\n#         self.next = next\n\nclass Solution:\n    def addPoly(self, poly1, poly2):\n        \"\"\"\n        :type poly1: PolyNode\n        :type poly2: PolyNode\n        :rtype: PolyNode\n        \"\"\"\n        \n        ",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Python3",
+                    "langSlug": "python3",
+                    "code": "# Definition for polynomial singly-linked list.\n# class PolyNode:\n#     def __init__(self, x=0, y=0, next=None):\n#         self.coefficient = x\n#         self.power = y\n#         self.next = next\n\nclass Solution:\n    def addPoly(self, poly1: 'PolyNode', poly2: 'PolyNode') -> 'PolyNode':\n        \n        ",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "C#",
+                    "langSlug": "csharp",
+                    "code": "/**\n * Definition for polynomial singly-linked list.\n * public class PolyNode {\n *     public int coefficient, power;\n *     public PolyNode next;\n *\n *     public PolyNode(int x=0, int y=0, PolyNode next=null) {\n *         this.coefficient = x;\n *         this.power = y;\n *         this.next = next;\n *     }\n * }\n */\n\npublic class Solution {\n    public PolyNode AddPoly(PolyNode poly1, PolyNode poly2) {\n        \n    }\n}",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "JavaScript",
+                    "langSlug": "javascript",
+                    "code": "/**\n * Definition for polynomial singly-linked list.\n * function PolyNode(x=0, y=0, next=null) {\n *     this.coefficient = x;\n *     this.power = y;\n *     this.next = next;\n * }\n */\n\n/**\n * @param {PolyNode} poly1\n * @param {PolyNode} poly2\n * @return {PolyNode}\n */\nvar addPoly = function(poly1, poly2) {\n    \n};",
+                    "__typename": "CodeSnippetNode"
+                }
+            ],
+            "stats": "{\"totalAccepted\": \"2.6K\", \"totalSubmission\": \"5K\", \"totalAcceptedRaw\": 2605, \"totalSubmissionRaw\": 4960, \"acRate\": \"52.5%\"}",
+            "hints": [
+                "Process both linked lists at the same time",
+                "If the current power of the two heads is equal, add this power with the sum of the coefficients to the answer list.",
+                "If one head has a larger power, add this power to the answer list and move only this head."
+            ],
+            "solution": null,
+            "status": null,
+            "sampleTestCase": "[[1,1]]\n[[1,0]]",
+            "metaData": "{\n  \"name\": \"addPoly\",\n  \"params\": [\n    {\n      \"type\": \"integer[][]\",\n      \"name\": \"poly1\"\n    },\n    {\n      \"type\": \"integer[][]\",\n      \"name\": \"poly2\"\n    }\n  ],\n  \"return\": {\n    \"type\": \"integer\"\n  },\n  \"manual\": true,\n  \"languages\": [\n    \"cpp\",\n    \"java\",\n    \"javascript\",\n    \"python3\",\n    \"python\",\n    \"csharp\"\n  ]\n}",
+            "judgerAvailable": true,
+            "judgeType": "large",
+            "mysqlSchemas": [],
+            "enableRunCode": true,
+            "enableTestMode": false,
+            "enableDebugger": true,
+            "envInfo": "{\"cpp\": [\"C++\", \"<p>Compiled with <code> clang 11 </code> using the latest C++ 17 standard.</p>\\r\\n\\r\\n<p>Your code is compiled with level two optimization (<code>-O2</code>). <a href=\\\"https://github.com/google/sanitizers/wiki/AddressSanitizer\\\" target=\\\"_blank\\\">AddressSanitizer</a> is also enabled to help detect out-of-bounds and use-after-free bugs.</p>\\r\\n\\r\\n<p>Most standard library headers are already included automatically for your convenience.</p>\"], \"java\": [\"Java\", \"<p><code>Java SE 13</code>.</p>\\r\\n\\r\\n<p>Most standard library headers are already included automatically for your convenience.</p>\\r\\n<p>Includes <code>Pair</code> class from https://docs.oracle.com/javase/8/javafx/api/javafx/util/Pair.html.</p>\"], \"python\": [\"Python\", \"<p><code>Python 2.7.12</code>.</p>\\r\\n\\r\\n<p>Most libraries are already imported automatically for your convenience, such as <a href=\\\"https://docs.python.org/2/library/array.html\\\" target=\\\"_blank\\\">array</a>, <a href=\\\"https://docs.python.org/2/library/bisect.html\\\" target=\\\"_blank\\\">bisect</a>, <a href=\\\"https://docs.python.org/2/library/collections.html\\\" target=\\\"_blank\\\">collections</a>. If you need more libraries, you can import it yourself.</p>\\r\\n\\r\\n<p>For Map/TreeMap data structure, you may use <a href=\\\"http://www.grantjenks.com/docs/sortedcontainers/\\\" target=\\\"_blank\\\">sortedcontainers</a> library.</p>\\r\\n\\r\\n<p>Note that Python 2.7 <a href=\\\"https://www.python.org/dev/peps/pep-0373/\\\" target=\\\"_blank\\\">will not be maintained past 2020</a>. For the latest Python, please choose Python3 instead.</p>\"], \"csharp\": [\"C#\", \"<p><a href=\\\"https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-8\\\" target=\\\"_blank\\\">C# 8.0 </a></p>\\r\\n\\r\\n<p>Your code is compiled with debug flag enabled (<code>/debug</code>).</p>\"], \"javascript\": [\"JavaScript\", \"<p><code>Node.js 14.8.0</code>.</p>\\r\\n\\r\\n<p>Your code is run with <code>--harmony</code> flag, enabling <a href=\\\"http://node.green/\\\" target=\\\"_blank\\\">new ES6 features</a>.</p>\\r\\n\\r\\n<p><a href=\\\"https://lodash.com\\\" target=\\\"_blank\\\">lodash.js</a> library is included by default.</p>\\r\\n\\r\\n<p>For Priority Queue / Queue data structures, you may use <a href=\\\"https://github.com/datastructures-js/priority-queue\\\" target=\\\"_blank\\\">datastructures-js/priority-queue</a> and <a href=\\\"https://github.com/datastructures-js/queue\\\" target=\\\"_blank\\\">datastructures-js/queue</a>.</p>\"], \"python3\": [\"Python3\", \"<p><code>Python 3.9</code>.</p>\\r\\n\\r\\n<p>Most libraries are already imported automatically for your convenience, such as <a href=\\\"https://docs.python.org/3/library/array.html\\\" target=\\\"_blank\\\">array</a>, <a href=\\\"https://docs.python.org/3/library/bisect.html\\\" target=\\\"_blank\\\">bisect</a>, <a href=\\\"https://docs.python.org/3/library/collections.html\\\" target=\\\"_blank\\\">collections</a>. If you need more libraries, you can import it yourself.</p>\\r\\n\\r\\n<p>For Map/TreeMap data structure, you may use <a href=\\\"http://www.grantjenks.com/docs/sortedcontainers/\\\" target=\\\"_blank\\\">sortedcontainers</a> library.</p>\"]}",
+            "libraryUrl": null,
+            "adminUrl": null,
+            "__typename": "QuestionNode"
+        }
+    }
+}

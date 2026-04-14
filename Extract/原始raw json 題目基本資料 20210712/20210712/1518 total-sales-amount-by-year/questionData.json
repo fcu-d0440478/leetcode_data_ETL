@@ -1,0 +1,78 @@
+{
+    "data": {
+        "question": {
+            "questionId": "1518",
+            "questionFrontendId": "1384",
+            "boundTopicId": null,
+            "title": "Total Sales Amount by Year",
+            "titleSlug": "total-sales-amount-by-year",
+            "content": "<p>Table: <code>Product</code></p>\n\n<pre>\n+---------------+---------+\n| Column Name   | Type    |\n+---------------+---------+\n| product_id    | int     |\n| product_name  | varchar |\n+---------------+---------+\nproduct_id is the primary key for this table.\nproduct_name is the name of the product.\n</pre>\n\n<p>&nbsp;</p>\n\n<p>Table: <code>Sales</code></p>\n\n<pre>\n+---------------------+---------+\n| Column Name         | Type    |\n+---------------------+---------+\n| product_id          | int     |\n| period_start        | date    |\n| period_end          | date    |\n| average_daily_sales | int     |\n+---------------------+---------+\nproduct_id is the primary key for this table. \nperiod_start&nbsp;and period_end&nbsp;indicates the start and end date for sales period, both dates are inclusive.\nThe average_daily_sales column holds the average daily&nbsp;sales amount of the items for the&nbsp;period.\n\n</pre>\n\n<p>Write an SQL query to&nbsp;report the&nbsp;Total sales&nbsp;amount of each item for each year, with corresponding product name,&nbsp;product_id, product_name and report_year.</p>\n\n<p>Dates of the sales years are between 2018 to 2020.&nbsp;Return the result table <strong>ordered</strong> by product_id and report_year.</p>\n\n<p>The query result format is in the following example:</p>\n\n<pre>\n<code>Product</code> table:\n+------------+--------------+\n| product_id | product_name |\n+------------+--------------+\n| 1          | LC Phone     |\n| 2          | LC T-Shirt   |\n| 3          | LC Keychain  |\n+------------+--------------+\n\n<code>Sales</code> table:\n+------------+--------------+-------------+---------------------+\n| product_id | period_start | period_end  | average_daily_sales |\n+------------+--------------+-------------+---------------------+\n| 1          | 2019-01-25   | 2019-02-28  | 100                 |\n| 2          | 2018-12-01   | 2020-01-01  | 10                  |\n| 3          | 2019-12-01   | 2020-01-31  | 1                   |\n+------------+--------------+-------------+---------------------+\n\nResult table:\n+------------+--------------+-------------+--------------+\n| product_id | product_name | report_year | total_amount |\n+------------+--------------+-------------+--------------+\n| 1          | LC Phone     |    2019     | 3500         |\n| 2          | LC T-Shirt   |    2018     | 310          |\n| 2          | LC T-Shirt   |    2019     | 3650         |\n| 2          | LC T-Shirt   |    2020     | 10           |\n| 3          | LC Keychain  |    2019     | 31           |\n| 3          | LC Keychain  |    2020     | 31           |\n+------------+--------------+-------------+--------------+\nLC Phone was sold for the period of 2019-01-25 to 2019-02-28, and there are 35 days for this period. Total amount 35*100 = 3500.&nbsp;\nLC T-shirt was sold for the period of 2018-12-01&nbsp;to 2020-01-01, and there are 31, 365, 1 days for years 2018, 2019 and 2020 respectively.\nLC Keychain was sold for the period of 2019-12-01&nbsp;to 2020-01-31, and there are 31, 31 days for years 2019 and 2020 respectively.\n</pre>\n",
+            "translatedTitle": null,
+            "translatedContent": null,
+            "isPaidOnly": true,
+            "difficulty": "Hard",
+            "likes": 97,
+            "dislikes": 41,
+            "isLiked": null,
+            "similarQuestions": "[]",
+            "exampleTestcases": "{\"headers\": {\"Product\": [\"product_id\", \"product_name\"], \"Sales\": [\"product_id\", \"period_start\", \"period_end\", \"average_daily_sales\"]}, \"rows\": {\"Product\": [[1, \"LC Phone \"], [2, \"LC T-Shirt\"], [3, \"LC Keychain\"]], \"Sales\": [[1, \"2019-01-25\", \"2019-02-28\", 100], [2, \"2018-12-01\", \"2020-01-01\", 10], [3, \"2019-12-01\", \"2020-01-31\", 1]]}}",
+            "contributors": [],
+            "topicTags": [
+                {
+                    "name": "Database",
+                    "slug": "database",
+                    "translatedName": null,
+                    "__typename": "TopicTagNode"
+                }
+            ],
+            "companyTagStats": "{\"1\": [], \"2\": [], \"3\": []}",
+            "codeSnippets": [
+                {
+                    "lang": "MySQL",
+                    "langSlug": "mysql",
+                    "code": "# Write your MySQL query statement below\n",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "MS SQL Server",
+                    "langSlug": "mssql",
+                    "code": "/* Write your T-SQL query statement below */\n",
+                    "__typename": "CodeSnippetNode"
+                },
+                {
+                    "lang": "Oracle",
+                    "langSlug": "oraclesql",
+                    "code": "/* Write your PL/SQL query statement below */\n",
+                    "__typename": "CodeSnippetNode"
+                }
+            ],
+            "stats": "{\"totalAccepted\": \"6.1K\", \"totalSubmission\": \"9.3K\", \"totalAcceptedRaw\": 6069, \"totalSubmissionRaw\": 9273, \"acRate\": \"65.4%\"}",
+            "hints": [],
+            "solution": null,
+            "status": null,
+            "sampleTestCase": "{\"headers\": {\"Product\": [\"product_id\", \"product_name\"], \"Sales\": [\"product_id\", \"period_start\", \"period_end\", \"average_daily_sales\"]}, \"rows\": {\"Product\": [[1, \"LC Phone \"], [2, \"LC T-Shirt\"], [3, \"LC Keychain\"]], \"Sales\": [[1, \"2019-01-25\", \"2019-02-28\", 100], [2, \"2018-12-01\", \"2020-01-01\", 10], [3, \"2019-12-01\", \"2020-01-31\", 1]]}}",
+            "metaData": "{\n  \"mysql\": [\n    \"Create table If Not Exists Product (product_id int, product_name varchar(30))\",\n    \"Create table If Not Exists Sales (product_id varchar(30), period_start date, period_end date, average_daily_sales int)\"\n  ],\n  \"mssql\": [\n    \"Create table Product (product_id int, product_name varchar(30))\",\n    \"Create table Sales (product_id varchar(30), period_start date, period_end date, average_daily_sales int)\"\n  ],\n  \"oraclesql\": [\n    \"Create table Product (product_id int, product_name varchar(30))\",\n    \"Create table Sales (product_id varchar(30), period_start date, period_end date, average_daily_sales int)\",\n    \"ALTER SESSION SET nls_date_format='YYYY-MM-DD'\"\n  ],\n  \"database\": true\n}",
+            "judgerAvailable": true,
+            "judgeType": "large",
+            "mysqlSchemas": [
+                "Create table If Not Exists Product (product_id int, product_name varchar(30))",
+                "Create table If Not Exists Sales (product_id varchar(30), period_start date, period_end date, average_daily_sales int)",
+                "Truncate table Product",
+                "insert into Product (product_id, product_name) values ('1', 'LC Phone ')",
+                "insert into Product (product_id, product_name) values ('2', 'LC T-Shirt')",
+                "insert into Product (product_id, product_name) values ('3', 'LC Keychain')",
+                "Truncate table Sales",
+                "insert into Sales (product_id, period_start, period_end, average_daily_sales) values ('1', '2019-01-25', '2019-02-28', '100')",
+                "insert into Sales (product_id, period_start, period_end, average_daily_sales) values ('2', '2018-12-01', '2020-01-01', '10')",
+                "insert into Sales (product_id, period_start, period_end, average_daily_sales) values ('3', '2019-12-01', '2020-01-31', '1')"
+            ],
+            "enableRunCode": true,
+            "enableTestMode": false,
+            "enableDebugger": false,
+            "envInfo": "{\"mysql\": [\"MySQL\", \"<p><code>MySQL 8.0</code>.</p>\"], \"mssql\": [\"MS SQL Server\", \"<p><code>mssql server 2019</code>.</p>\"], \"oraclesql\": [\"Oracle\", \"<p><code>Oracle Sql 11.2</code>.</p>\"]}",
+            "libraryUrl": null,
+            "adminUrl": null,
+            "__typename": "QuestionNode"
+        }
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "832",
+            "article": "{\"id\": 445, \"url\": \"/articles/binary-tree-pruning/\", \"topicId\": 127511}",
+            "solution": {
+                "id": "445",
+                "content": "[TOC]\n\n---\n#### Approach #1: Recursion [Accepted]\n\n**Intuition**\n\nPrune children of the tree recursively.  The only decisions at each node are whether to prune the left child or the right child.\n\n**Algorithm**\n\nWe'll use a function `containsOne(node)` that does two things: it tells us whether the subtree at this `node` contains a `1`, and it also prunes all subtrees not containing `1`.\n\nIf for example, `node.left` does not contain a one, then we should prune it via `node.left = null`.\n\nAlso, the parent needs to be checked.  If for example the tree is a single node `0`, the answer is an empty tree.\n\n<iframe src=\"https://leetcode.com/playground/Xd8odLWd/shared\" frameBorder=\"0\" width=\"100%\" height=\"293\" name=\"Xd8odLWd\"></iframe>\n\n**Complexity Analysis**\n\n* Time Complexity:  $$O(N)$$, where $$N$$ is the number of nodes in the tree.  We process each node once.\n\n* Space Complexity: $$O(H)$$, where $$H$$ is the height of the tree.  This represents the size of the implicit call stack in our recursion.",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "440",
+                    "count": 22,
+                    "average": 4.364,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

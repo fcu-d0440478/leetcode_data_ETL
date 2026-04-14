@@ -1,0 +1,43 @@
+{
+    "data": {
+        "topic": {
+            "id": 1060125,
+            "viewCount": 5194,
+            "topLevelCommentCount": 11,
+            "subscribed": false,
+            "title": "Single-Row Keyboard",
+            "pinned": false,
+            "tags": [],
+            "hideFromTrending": false,
+            "post": {
+                "id": 1910115,
+                "voteCount": 0,
+                "voteStatus": 0,
+                "content": "",
+                "updationDate": 1613015049,
+                "creationDate": 1613015049,
+                "status": null,
+                "isHidden": null,
+                "coinRewards": [],
+                "author": {
+                    "isDiscussAdmin": false,
+                    "isDiscussStaff": false,
+                    "username": "PhoenixDD",
+                    "nameColor": null,
+                    "activeBadge": null,
+                    "profile": {
+                        "userAvatar": "https://assets.leetcode.com/users/PhoenixDD/avatar_1614053814.png",
+                        "reputation": 2543,
+                        "__typename": "UserProfileNode"
+                    },
+                    "isActive": true,
+                    "__typename": "UserNode"
+                },
+                "authorIsModerator": false,
+                "isOwnPost": false,
+                "__typename": "PostNode"
+            },
+            "__typename": "TopicNode"
+        }
+    }
+}

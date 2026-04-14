@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "136",
+            "article": "{\"id\": 234, \"url\": \"/articles/single-number/\", \"topicId\": 127660}",
+            "solution": {
+                "id": "234",
+                "content": "[TOC]\n\n## Solution\n\n---\n\n#### Approach 1: List operation\n\n**Algorithm**\n\n1. Iterate over all the elements in $$\\text{nums}$$\n2. If some number in $$\\text{nums}$$ is new to array, append it\n3. If some number is already in the array, remove it\n\n<iframe src=\"https://leetcode.com/playground/7avfRKL7/shared\" frameBorder=\"0\" width=\"100%\" height=\"293\" name=\"7avfRKL7\"></iframe>\n\n**Complexity Analysis**\n\n* Time complexity : $$O(n^2)$$. We iterate through $$\\text{nums}$$, taking $$O(n)$$ time. We search the whole list to find whether there is duplicate number, taking $$O(n)$$ time. Because search is in the `for` loop, so we have to multiply both time complexities which is $$O(n^2)$$.\n\n* Space complexity : $$O(n)$$.  We need a list of size $$n$$ to contain elements in $$\\text{nums}$$.\n<br />\n<br />\n\n\n---\n#### Approach 2: Hash Table\n\n**Algorithm**\n\nWe use hash table to avoid the $$O(n)$$ time required for searching the elements.\n\n1. Iterate through all elements in `nums` and set up key/value pair.\n2. Return the element which appeared only once.\n\n<iframe src=\"https://leetcode.com/playground/kFCNodJN/shared\" frameBorder=\"0\" width=\"100%\" height=\"310\" name=\"kFCNodJN\"></iframe>\n\n**Complexity Analysis**\n\n* Time complexity : $$O(n \\cdot 1) = O(n)$$.  Time complexity of `for` loop is $$O(n)$$. Time complexity of hash table(dictionary in python) operation `pop` is $$O(1)$$.\n\n* Space complexity : $$O(n)$$. The space required by $$hash\\_table$$ is equal to the number of elements in $$\\text{nums}$$.\n<br />\n<br />\n\n\n---\n#### Approach 3: Math\n\n**Concept**\n\n$$2 * (a + b + c) - (a + a + b + b + c) = c$$\n\n<iframe src=\"https://leetcode.com/playground/4UnTgakr/shared\" frameBorder=\"0\" width=\"100%\" height=\"310\" name=\"4UnTgakr\"></iframe>\n\n**Complexity Analysis**\n\n* Time complexity : $$O(n + n) = O(n)$$. `sum` will call `next` to iterate through $$\\text{nums}$$.\nWe can see it as `sum(list(i, for i in nums))` which means the time complexity is $$O(n)$$ because of the number of elements($$n$$) in $$\\text{nums}$$.\n\n* Space complexity : $$O(n + n) = O(n)$$. `set` needs space for the elements in `nums`\n<br />\n<br />\n\n\n---\n#### Approach 4: Bit Manipulation\n\n**Concept**\n\n- If we take XOR of zero and some bit, it will return that bit\n    - $$a \\oplus 0 = a$$\n- If we take XOR of two same bits, it will return 0\n    - $$a \\oplus a = 0$$\n- $$a \\oplus b \\oplus a = (a \\oplus a) \\oplus b = 0 \\oplus b = b$$\n\nSo we can XOR all bits together to find the unique number.\n\n<iframe src=\"https://leetcode.com/playground/3d3aMiFy/shared\" frameBorder=\"0\" width=\"100%\" height=\"225\" name=\"3d3aMiFy\"></iframe>\n\n**Complexity Analysis**\n\n* Time complexity : $$O(n)$$.  We only iterate through $$\\text{nums}$$, so the time complexity is the number of elements in $$\\text{nums}$$.\n\n* Space complexity : $$O(1)$$.",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "229",
+                    "count": 423,
+                    "average": 4.801,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

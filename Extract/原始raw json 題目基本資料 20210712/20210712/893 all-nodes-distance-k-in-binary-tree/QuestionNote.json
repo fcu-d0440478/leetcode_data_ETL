@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "893",
+            "article": "{\"id\": 498, \"url\": \"/articles/all-nodes-distance-k-in-binary-tree/\", \"topicId\": 143661}",
+            "solution": {
+                "id": "498",
+                "content": "[TOC]\n\n## Solution\n---\n#### Approach 1: Annotate Parent\n\n**Intuition**\n\nIf we know the parent of every node `x`, we know all nodes that are distance `1` from `x`.  We can then perform a breadth first search from the `target` node to find the answer.\n\n**Algorithm**\n\nWe first do a depth first search where we annotate every node with information about it's parent.\n\nAfter, we do a breadth first search to find all nodes a distance `K` from the `target`.\n\n<iframe src=\"https://leetcode.com/playground/AyanwAkX/shared\" frameBorder=\"0\" width=\"100%\" height=\"500\" name=\"AyanwAkX\"></iframe>\n\n**Complexity Analysis**\n\n* Time Complexity:  $$O(N)$$, where $$N$$ is the number of nodes in the given tree.\n\n* Space Complexity:  $$O(N)$$.\n<br />\n<br />\n\n\n---\n#### Approach 2: Percolate Distance\n\n**Intuition**\n\nFrom `root`, say the `target` node is at depth `3` in the left branch.  It means that any nodes that are distance `K - 3` in the right branch should be added to the answer.\n\n**Algorithm**\n\nTraverse every `node` with a depth first search `dfs`.  We'll add all nodes `x` to the answer such that `node` is the node on the path from `x` to `target` that is closest to the `root`.\n\nTo help us, `dfs(node)` will return the distance from `node` to the `target`.  Then, there are 4 cases:\n\n* If `node == target`, then we should add nodes that are distance `K` in the subtree rooted at `target`.\n\n* If `target` is in the left branch of `node`, say at distance `L+1`, then we should look for nodes that are distance `K - L - 1` in the right branch.\n\n* If `target` is in the right branch of `node`, the algorithm proceeds similarly.\n\n* If `target` isn't in either branch of `node`, then we stop.\n\nIn the above algorithm, we make use of the auxillary function `subtree_add(node, dist)` which adds the nodes in the subtree rooted at `node` that are distance `K - dist` from the given `node`.\n\n<iframe src=\"https://leetcode.com/playground/2KNRHywH/shared\" frameBorder=\"0\" width=\"100%\" height=\"500\" name=\"2KNRHywH\"></iframe>\n\n**Complexity Analysis**\n\n* Time Complexity:  $$O(N)$$, where $$N$$ is the number of nodes in the given tree.\n\n* Space Complexity:  $$O(N)$$.\n<br />\n<br />",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "491",
+                    "count": 139,
+                    "average": 3.381,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "data": {
+        "question": {
+            "questionId": "985",
+            "article": "{\"id\": 626, \"url\": \"/articles/bag-of-tokens/\", \"topicId\": 197657}",
+            "solution": {
+                "id": "626",
+                "content": "[TOC]\n\n## Solution\n---\n#### Approach 1: Greedy\n\n**Intuition**\n\nIf we play a token face up, we might as well play the one with the smallest value.  Similarly, if we play a token face down, we might as well play the one with the largest value.\n\n**Algorithm**\n\nWe don't need to play anything until absolutely necessary.  Let's play tokens face up until we can't, then play a token face down and continue.\n\nWe must be careful, as it is easy for our implementation to be incorrect if we do not handle corner cases correctly.  We should always play tokens face up until exhaustion, then play one token face down and continue.\n\nOur loop must be constructed with the right termination condition: we can either play a token face up or face down.\n\nOur final answer could be any of the intermediate answers we got after playing tokens face up (but before playing them face down.)\n\n<iframe src=\"https://leetcode.com/playground/Ryi2cFFH/shared\" frameBorder=\"0\" width=\"100%\" height=\"412\" name=\"Ryi2cFFH\"></iframe>\n\n**Complexity Analysis**\n\n* Time Complexity:  $$O(N \\log N)$$, where $$N$$ is the length of `tokens`.\n\n* Space complexity : $$\\mathcal{O}(N)$$ or $$\\mathcal{O}(\\log{N})$$\n\n  - The space complexity of the sorting algorithm depends on the implementation of each program language.\n\n  - For instance, the `sorted()` function in Python is implemented with the [Timsort](https://en.wikipedia.org/wiki/Timsort) algorithm whose space complexity is $$\\mathcal{O}(N)$$.\n\n  - In Java, the [Arrays.sort()](https://docs.oracle.com/javase/8/docs/api/java/util/Arrays.html#sort-byte:A-) is implemented as a variant of quicksort algorithm whose space complexity is $$\\mathcal{O}(\\log{N})$$.\n\n\n---",
+                "contentTypeId": "107",
+                "canSeeDetail": true,
+                "paidOnly": false,
+                "hasVideoSolution": false,
+                "paidOnlyVideo": true,
+                "rating": {
+                    "id": "612",
+                    "count": 26,
+                    "average": 4.115,
+                    "userRating": null,
+                    "__typename": "RatingNode"
+                },
+                "__typename": "ArticleNode"
+            },
+            "__typename": "QuestionNode"
+        }
+    }
+}
